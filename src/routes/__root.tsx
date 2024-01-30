@@ -1,26 +1,17 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import { LayoutSidebar } from '@/components/shared/LayoutSidebar'
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
 export const Route = createRootRoute({
   component: () => (
-    <>
-      <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Onchain Signals
-        </Link>{' '}
-        <Link to="/leaderboard" className="[&.active]:font-bold">
-          Leaderboard
-        </Link>
-        <Link to="/token-explorer" className="[&.active]:font-bold">
-          Token Explorer
-        </Link>
-        <Link to="/wallet-explorer" className="[&.active]:font-bold">
-          Wallet Explorer
-        </Link>
+    <div className="bg-background w-full min-h-screen bg-[url('/assets/images/background.svg')] bg-cover">
+      <div className="flex items-start">
+        <LayoutSidebar />
+        <div className="ml-[300px]">
+          <Outlet />
+        </div>
       </div>
-      <hr />
-      <Outlet />
       <TanStackRouterDevtools />
-    </>
+    </div>
   ),
 })

@@ -6,4 +6,5 @@ body, html {
   font-family: 'Sora';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  color: var(--Neutral-01, #FCFCFC);
 }
