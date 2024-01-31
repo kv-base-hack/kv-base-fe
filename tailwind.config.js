@@ -6,6 +6,9 @@ export default {
       colors: {
         background: '#111315',
       },
+      fontFamily: {
+        'source-sans-pro': ['Source Sans 3'],
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,14 @@
+import { Heading3 } from '@/components/shared/common/Typography'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/my-portfolio')({
-  component: () => <div>Hello /my-portfolio!</div>
+  component: MyPortfolio,
 })
+
+function MyPortfolio() {
+  return (
+    <div className="w-full h-full">
+      <Heading3>My Portfolio</Heading3>
+    </div>
+  )
+}
