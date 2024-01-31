@@ -18,7 +18,7 @@ export const LayoutSidebar = () => {
       </div>
       {/* content */}
       <div className="flex flex-col items-stretch max-w-full">
-        {SIDEBAR_MENU.map((item: ISidebarMenu, index) => (
+        {SIDEBAR_MENU().map((item: ISidebarMenu, index) => (
           <SidebarMenuItem data={item} key={index} />
         ))}
       </div>

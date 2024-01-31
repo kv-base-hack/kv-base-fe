@@ -1,5 +1,14 @@
+import { Heading3 } from '@/components/shared/common/Typography'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/subcriptions')({
-  component: () => <div>Hello /subcriptions!</div>
+  component: Subcriptions,
 })
+
+function Subcriptions() {
+  return (
+    <div className="w-full h-full">
+      <Heading3>Subcriptions</Heading3>
+    </div>
+  )
+}

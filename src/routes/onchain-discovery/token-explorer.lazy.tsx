@@ -1,3 +1,4 @@
+import { Heading3 } from '@/components/shared/common/Typography'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/onchain-discovery/token-explorer')({
@@ -6,8 +7,8 @@ export const Route = createLazyFileRoute('/onchain-discovery/token-explorer')({
 
 function TokenExplorer() {
   return (
-    <div className="p-2 text-red-500">
-      <h3>Welcome TokenExplorer!</h3>
+    <div className="w-full h-full">
+      <Heading3>Token Explorer</Heading3>
     </div>
   )
 }
