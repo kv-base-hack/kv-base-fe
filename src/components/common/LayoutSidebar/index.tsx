@@ -1,10 +1,10 @@
-import { SidebarMenuItem } from '@/components/shared/LayoutSidebar/SidebarMenuItem'
+import { SidebarMenuItem } from '@/components/common/LayoutSidebar/SidebarMenuItem'
 import FeedbackIcon from '@/components/shared/icons/sidebar/FeedbackIcon'
 import { ISidebarMenu, SIDEBAR_MENU } from '@/constant'
 
 export const LayoutSidebar = () => {
   return (
-    <div className="h-screen fixed overflow-y-auto flex flex-col justify-between items-stretch px-6 py-8 border-r border-solid shadow-2xl backdrop-blur-lg bg-zinc-900 bg-opacity-50 border-r-[color:var(--Stroke,rgba(255,255,255,0.10))] max-w-[300px]">
+    <div className="h-screen fixed overflow-y-auto flex flex-col justify-between items-stretch px-6 py-8 border-r border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-r-white/10 max-w-[300px]">
       {/* header */}
       <div className="flex gap-4 justify-between items-stretch">
         <img

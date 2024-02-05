@@ -5,6 +5,8 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as IndexImport } from './routes/index'
+import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
 
 // Create Virtual Routes
 
@@ -14,17 +16,12 @@ const SubcriptionsLazyImport = createFileRoute('/subcriptions')()
 const MyPortfolioLazyImport = createFileRoute('/my-portfolio')()
 const MarketLazyImport = createFileRoute('/market')()
 const EducationLazyImport = createFileRoute('/education')()
-const DashboardLazyImport = createFileRoute('/dashboard')()
 const BotsStrategyLazyImport = createFileRoute('/bots-strategy')()
-const IndexLazyImport = createFileRoute('/')()
 const OnchainDiscoveryWalletExplorerLazyImport = createFileRoute(
   '/onchain-discovery/wallet-explorer',
 )()
 const OnchainDiscoveryTokenExplorerLazyImport = createFileRoute(
   '/onchain-discovery/token-explorer',
-)()
-const OnchainDiscoveryOnchainSignalsLazyImport = createFileRoute(
-  '/onchain-discovery/onchain-signals',
 )()
 const OnchainDiscoveryLeaderboardLazyImport = createFileRoute(
   '/onchain-discovery/leaderboard',
@@ -64,20 +61,15 @@ const EducationLazyRoute = EducationLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/education.lazy').then((d) => d.Route))
 
-const DashboardLazyRoute = DashboardLazyImport.update({
-  path: '/dashboard',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/dashboard.lazy').then((d) => d.Route))
-
 const BotsStrategyLazyRoute = BotsStrategyLazyImport.update({
   path: '/bots-strategy',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/bots-strategy.lazy').then((d) => d.Route))
 
-const IndexLazyRoute = IndexLazyImport.update({
+const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any)
 
 const OnchainDiscoveryWalletExplorerLazyRoute =
   OnchainDiscoveryWalletExplorerLazyImport.update({
@@ -99,16 +91,6 @@ const OnchainDiscoveryTokenExplorerLazyRoute =
     ),
   )
 
-const OnchainDiscoveryOnchainSignalsLazyRoute =
-  OnchainDiscoveryOnchainSignalsLazyImport.update({
-    path: '/onchain-discovery/onchain-signals',
-    getParentRoute: () => rootRoute,
-  } as any).lazy(() =>
-    import('./routes/onchain-discovery/onchain-signals.lazy').then(
-      (d) => d.Route,
-    ),
-  )
-
 const OnchainDiscoveryLeaderboardLazyRoute =
   OnchainDiscoveryLeaderboardLazyImport.update({
     path: '/onchain-discovery/leaderboard',
@@ -117,20 +99,22 @@ const OnchainDiscoveryLeaderboardLazyRoute =
     import('./routes/onchain-discovery/leaderboard.lazy').then((d) => d.Route),
   )
 
+const OnchainDiscoveryOnchainSignalsRoute =
+  OnchainDiscoveryOnchainSignalsImport.update({
+    path: '/onchain-discovery/onchain-signals',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      preLoaderRoute: typeof IndexLazyImport
+      preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
     '/bots-strategy': {
       preLoaderRoute: typeof BotsStrategyLazyImport
-      parentRoute: typeof rootRoute
-    }
-    '/dashboard': {
-      preLoaderRoute: typeof DashboardLazyImport
       parentRoute: typeof rootRoute
     }
     '/education': {
@@ -157,12 +141,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradingTerminalLazyImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/leaderboard': {
-      preLoaderRoute: typeof OnchainDiscoveryLeaderboardLazyImport
+    '/onchain-discovery/onchain-signals': {
+      preLoaderRoute: typeof OnchainDiscoveryOnchainSignalsImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/onchain-signals': {
-      preLoaderRoute: typeof OnchainDiscoveryOnchainSignalsLazyImport
+    '/onchain-discovery/leaderboard': {
+      preLoaderRoute: typeof OnchainDiscoveryLeaderboardLazyImport
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/token-explorer': {
@@ -179,17 +163,16 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren([
-  IndexLazyRoute,
+  IndexRoute,
   BotsStrategyLazyRoute,
-  DashboardLazyRoute,
   EducationLazyRoute,
   MarketLazyRoute,
   MyPortfolioLazyRoute,
   SubcriptionsLazyRoute,
   SwapLazyRoute,
   TradingTerminalLazyRoute,
+  OnchainDiscoveryOnchainSignalsRoute,
   OnchainDiscoveryLeaderboardLazyRoute,
-  OnchainDiscoveryOnchainSignalsLazyRoute,
   OnchainDiscoveryTokenExplorerLazyRoute,
   OnchainDiscoveryWalletExplorerLazyRoute,
 ])

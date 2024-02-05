@@ -1,7 +1,8 @@
-import { Heading3 } from '@/components/shared/common/Typography'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/trading-terminal')({
+  component: () => <div>Hello /trading-terminal!</div>
+})
   component: TradingTerminal,
 })
 
