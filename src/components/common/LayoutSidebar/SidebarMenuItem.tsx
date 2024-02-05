@@ -28,6 +28,7 @@ const SidebarMenuChildItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
 }
 export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
   const [expanded, setExpanded] = React.useState(false)
+
   const navigate = useNavigate()
   const isActive = document.location.pathname === data.href
 
@@ -65,11 +66,13 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
           )
         ) : null}
       </div>
-      {expanded
-        ? data?.children?.map((child: ISidebarMenu, index: number) => (
+      {expanded && data?.children?.length > 0 ? (
+        <div className="mt-2">
+          {data?.children?.map((child: ISidebarMenu, index: number) => (
             <SidebarMenuChildItem data={child} key={index} />
-          ))
-        : null}
+          ))}
+        </div>
+      ) : null}
     </>
   )
 }

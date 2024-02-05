@@ -1,7 +1,8 @@
-function ArrowRightIcon({ className }: { className?: string }) {
+function ArrowRightIcon({ className, onClick }: { className?: string; onClick?: () => void }) {
   return (
     <svg
       className={className}
+      onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

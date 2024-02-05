@@ -1,4 +1,4 @@
-import { Heading3 } from '@/components/shared/common/Typography'
+import { Heading3 } from '@/components/common/Typography'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/onchain-discovery/token-explorer')({
