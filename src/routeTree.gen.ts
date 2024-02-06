@@ -5,6 +5,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
 
 // Create Virtual Routes
 
@@ -25,9 +26,6 @@ const OnchainDiscoveryTokenExplorerLazyImport = createFileRoute(
 )()
 const OnchainDiscoveryOnchainSignalsLazyImport = createFileRoute(
   '/onchain-discovery/onchain-signals',
-)()
-const OnchainDiscoveryLeaderboardLazyImport = createFileRoute(
-  '/onchain-discovery/leaderboard',
 )()
 
 // Create/Update Routes
@@ -109,8 +107,8 @@ const OnchainDiscoveryOnchainSignalsLazyRoute =
     ),
   )
 
-const OnchainDiscoveryLeaderboardLazyRoute =
-  OnchainDiscoveryLeaderboardLazyImport.update({
+const OnchainDiscoveryLeaderboardRoute =
+  OnchainDiscoveryLeaderboardImport.update({
     path: '/onchain-discovery/leaderboard',
     getParentRoute: () => rootRoute,
   } as any).lazy(() =>
@@ -158,7 +156,7 @@ declare module '@tanstack/react-router' {
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/leaderboard': {
-      preLoaderRoute: typeof OnchainDiscoveryLeaderboardLazyImport
+      preLoaderRoute: typeof OnchainDiscoveryLeaderboardImport
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/onchain-signals': {
@@ -188,7 +186,7 @@ export const routeTree = rootRoute.addChildren([
   SubcriptionsLazyRoute,
   SwapLazyRoute,
   TradingTerminalLazyRoute,
-  OnchainDiscoveryLeaderboardLazyRoute,
+  OnchainDiscoveryLeaderboardRoute,
   OnchainDiscoveryOnchainSignalsLazyRoute,
   OnchainDiscoveryTokenExplorerLazyRoute,
   OnchainDiscoveryWalletExplorerLazyRoute,
