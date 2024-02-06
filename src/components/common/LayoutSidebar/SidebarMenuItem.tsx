@@ -3,7 +3,7 @@ import ArrowUpIcon from '@/components/shared/icons/sidebar/ArrowUpIcon'
 import { ISidebarMenu } from '@/constant'
 import { cn } from '@/lib/utils'
 import { Link, useNavigate } from '@tanstack/react-router'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type SidebarMenuItemProps = {
   data: ISidebarMenu
@@ -30,7 +30,7 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
   const [expanded, setExpanded] = React.useState(false)
 
   const navigate = useNavigate()
-  const isActive = document.location.pathname === data.href
+  const isActive = document.location.pathname.includes(data?.href || '')
 
   const navigateRoute = (href: string | null) => (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -40,10 +40,19 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
     }
   }
 
+  const expandedMenu = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setExpanded(!expanded)
+  }
+
+  useEffect(() => {
+    setExpanded(isActive)
+  }, [isActive])
+
   return (
     <>
       <div
-        onClick={navigateRoute(data.href)}
+        onClick={data.canNavigate ? navigateRoute(data.href) : expandedMenu}
         className={cn(
           'group cursor-pointer flex gap-3 justify-between items-stretch p-3 mt-5 rounded-xl transition-all duration-150 hover:shadow-sm hover:bg-gray-300 hover:bg-opacity-10',
           isActive ? 'shadow-sm bg-gray-300 bg-opacity-10 text-gray-100' : ''

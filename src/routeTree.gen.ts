@@ -5,6 +5,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as DashboardImport } from './routes/dashboard'
 import { Route as IndexImport } from './routes/index'
 import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
 import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
@@ -64,6 +65,11 @@ const BotsStrategyLazyRoute = BotsStrategyLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/bots-strategy.lazy').then((d) => d.Route))
 
+const DashboardRoute = DashboardImport.update({
+  path: '/dashboard',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
@@ -107,6 +113,10 @@ declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/dashboard': {
+      preLoaderRoute: typeof DashboardImport
       parentRoute: typeof rootRoute
     }
     '/bots-strategy': {
@@ -160,6 +170,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
+  DashboardRoute,
   BotsStrategyLazyRoute,
   EducationLazyRoute,
   MarketLazyRoute,

@@ -1,14 +1,11 @@
-import { Heading3 } from '@/components/common/Typography'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
-  component: Dashboard,
+  component: Index,
 })
 
-function Dashboard() {
-  return (
-    <div className="w-full h-full">
-      <Heading3>Dashboard</Heading3>
-    </div>
-  )
+function Index() {
+  const navigate = useNavigate()
+
+  return navigate({ to: '/dashboard' })
 }

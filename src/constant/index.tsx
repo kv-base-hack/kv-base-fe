@@ -14,8 +14,9 @@ import { cn } from '@/lib/utils'
 export type ISidebarMenu = {
   title: string
   icon: JSX.Element
-  href: string | null
+  href: string
   children: ISidebarMenu[]
+  canNavigate: boolean | true
 }
 
 export const SIDEBAR_MENU = () => [
@@ -29,8 +30,9 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
-    href: '/',
+    href: '/dashboard',
     children: [],
+    canNavigate: true,
   },
   {
     title: 'My Portfolio',
@@ -44,31 +46,36 @@ export const SIDEBAR_MENU = () => [
     ),
     href: '/my-portfolio',
     children: [],
+    canNavigate: true,
   },
   {
     title: 'Onchain Discovery',
     icon: (
       <OnchainDiscoveryIcon className="object-contain object-center shrink-0 w-6 aspect-square" />
     ),
-    href: null,
+    href: '/onchain-discovery',
+    canNavigate: false,
     children: [
       {
         title: 'Onchain Signals',
         icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
         href: '/onchain-discovery/onchain-signals',
         children: [],
+        canNavigate: true,
       },
       {
         title: 'Leaderboard',
         icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
         href: '/onchain-discovery/leaderboard',
         children: [],
+        canNavigate: true,
       },
       {
         title: 'Token Explorer',
         icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
         href: '/onchain-discovery/token-explorer',
         children: [],
+        canNavigate: true,
       },
       {
         title: 'Wallet Explorer',
@@ -77,6 +84,7 @@ export const SIDEBAR_MENU = () => [
         ),
         href: '/onchain-discovery/wallet-explorer',
         children: [],
+        canNavigate: true,
       },
     ],
   },
@@ -90,6 +98,7 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
+    canNavigate: true,
     href: '/market',
     children: [],
   },
@@ -103,6 +112,7 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
+    canNavigate: true,
     href: '/swap',
     children: [],
   },
@@ -116,6 +126,7 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
+    canNavigate: true,
     href: '/bots-strategy',
     children: [],
   },
@@ -129,6 +140,7 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
+    canNavigate: true,
     href: '/trading-terminal',
     children: [],
   },
@@ -142,6 +154,7 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
+    canNavigate: true,
     href: '/education',
     children: [],
   },
@@ -155,6 +168,7 @@ export const SIDEBAR_MENU = () => [
         )}
       />
     ),
+    canNavigate: true,
     href: '/subcriptions',
     children: [],
   },
