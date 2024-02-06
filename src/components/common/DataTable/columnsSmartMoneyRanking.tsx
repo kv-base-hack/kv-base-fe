@@ -141,10 +141,12 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   },
   {
     accessorKey: 'largest_trade',
-    header: () => <div className="flex w-full justify-end">Largest Trade</div>,
+    header: () => <div className="flex w-full justify-end text-right">Largest Trade</div>,
     cell: ({ row }) => {
       const { largest_trade } = row.original
-      return <div className="flex w-full justify-end text-neutral-04">{largest_trade}</div>
+      return (
+        <div className="flex text-right w-full justify-end text-neutral-04">{largest_trade}</div>
+      )
     },
   },
 ]

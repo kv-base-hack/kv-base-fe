@@ -1,8 +1,8 @@
 export const Header = () => {
   return (
-    <div className="flex gap-0 justify-between items-stretch self-stretch px-10 py-6 border-b border-solid shadow-2xl backdrop-blur-lg bg-zinc-900 bg-opacity-50 border-b-white/10 max-md:flex-wrap max-md:px-5">
+    <div className="flex gap-0 justify-between items-stretch self-stretch px-10 py-6 border-b border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-b-white/10 max-md:flex-wrap max-md:px-5">
       <div className="flex gap-0 justify-between items-stretch text-base leading-6 whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-        <div className="flex flex-col justify-center items-stretch px-4 py-3 font-semibold tracking-normal rounded-s-lg border-t border-b border-l border-solid bg-zinc-900 bg-opacity-30 border-b-white/10 border-l-white/10 border-t-white/10 text-white text-opacity-90">
+        <div className="flex flex-col justify-center items-stretch px-4 py-3 font-semibold tracking-normal rounded-s-lg border-t border-b border-l border-solid bg-neutral-07/50 bg-opacity-30 border-b-white/10 border-l-white/10 border-t-white/10 text-white text-opacity-90">
           <div className="flex gap-1 justify-between items-stretch">
             <img
               loading="lazy"
