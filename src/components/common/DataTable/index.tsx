@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
                   {!isPlaceholder && (
                     <div
                       className={cn(
-                        'flex items-center font-normal text-sm gap-1 text-neutral-04 whitespace-nowrap',
+                        'flex items-center font-normal text-sm gap-1 text-neutral-04',
                         align === 'end'
                           ? 'justify-end'
                           : align === 'center'

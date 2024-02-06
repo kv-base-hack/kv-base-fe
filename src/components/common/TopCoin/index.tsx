@@ -93,7 +93,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             />
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <div className="flex flex-col grow p-6 w-full text-base font-semibold leading-6 whitespace-nowrap rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-zinc-900 bg-opacity-50 border-[color:var(--Stroke,rgba(255,255,255,0.10))] max-md:px-5 max-md:mt-4 max-md:max-w-full">
             <div className="flex gap-4 justify-between text-xl tracking-tight max-md:flex-wrap max-md:max-w-full">
               <div className="grow justify-center px-4 py-2 text-gray-300 rounded-lg bg-gray-300 bg-opacity-10">

@@ -7,6 +7,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
+import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
 
 // Create Virtual Routes
 
@@ -22,9 +23,6 @@ const OnchainDiscoveryWalletExplorerLazyImport = createFileRoute(
 )()
 const OnchainDiscoveryTokenExplorerLazyImport = createFileRoute(
   '/onchain-discovery/token-explorer',
-)()
-const OnchainDiscoveryLeaderboardLazyImport = createFileRoute(
-  '/onchain-discovery/leaderboard',
 )()
 
 // Create/Update Routes
@@ -91,17 +89,15 @@ const OnchainDiscoveryTokenExplorerLazyRoute =
     ),
   )
 
-const OnchainDiscoveryLeaderboardLazyRoute =
-  OnchainDiscoveryLeaderboardLazyImport.update({
-    path: '/onchain-discovery/leaderboard',
-    getParentRoute: () => rootRoute,
-  } as any).lazy(() =>
-    import('./routes/onchain-discovery/leaderboard.lazy').then((d) => d.Route),
-  )
-
 const OnchainDiscoveryOnchainSignalsRoute =
   OnchainDiscoveryOnchainSignalsImport.update({
     path: '/onchain-discovery/onchain-signals',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const OnchainDiscoveryLeaderboardRoute =
+  OnchainDiscoveryLeaderboardImport.update({
+    path: '/onchain-discovery/leaderboard',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -141,12 +137,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradingTerminalLazyImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/onchain-signals': {
-      preLoaderRoute: typeof OnchainDiscoveryOnchainSignalsImport
+    '/onchain-discovery/leaderboard': {
+      preLoaderRoute: typeof OnchainDiscoveryLeaderboardImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/leaderboard': {
-      preLoaderRoute: typeof OnchainDiscoveryLeaderboardLazyImport
+    '/onchain-discovery/onchain-signals': {
+      preLoaderRoute: typeof OnchainDiscoveryOnchainSignalsImport
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/token-explorer': {
@@ -171,8 +167,8 @@ export const routeTree = rootRoute.addChildren([
   SubcriptionsLazyRoute,
   SwapLazyRoute,
   TradingTerminalLazyRoute,
+  OnchainDiscoveryLeaderboardRoute,
   OnchainDiscoveryOnchainSignalsRoute,
-  OnchainDiscoveryLeaderboardLazyRoute,
   OnchainDiscoveryTokenExplorerLazyRoute,
   OnchainDiscoveryWalletExplorerLazyRoute,
 ])

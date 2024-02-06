@@ -65,7 +65,7 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
   },
   {
     accessorKey: 'realized_percentage',
-    header: () => 'Realized Percentage',
+    header: () => <div className="text-center">Realized Percentage</div>,
     cell: ({ row }) => {
       const { realized_percentage } = row.original
       return <div className="flex w-full justify-center">{realized_percentage}%</div>
