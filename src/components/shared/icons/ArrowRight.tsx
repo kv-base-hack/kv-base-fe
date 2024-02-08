@@ -13,8 +13,8 @@ function ArrowRightIcon({ className, onClick }: { className?: string; onClick?: 
           id="Stroke 50"
           d="M6.16699 3.33366L10.8337 8.00033L6.16699 12.667"
           stroke="#6F767E"
-          stroke-width="1.5"
-          stroke-linecap="square"
+          strokeWidth="1.5"
+          strokeLinecap="square"
         />
       </g>
     </svg>
