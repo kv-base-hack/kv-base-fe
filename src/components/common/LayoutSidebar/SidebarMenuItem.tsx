@@ -10,7 +10,7 @@ type SidebarMenuItemProps = {
 }
 
 const SidebarMenuChildItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
-  const isActive = document.location.pathname === data.href
+  const isActive = document.location.pathname.includes(data.href || '')
   return (
     <Link
       to={data.href || '/'}

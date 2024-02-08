@@ -1,4 +1,5 @@
 import { nFormatter } from '@/utils/nFormatter'
+import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 
 export type SmartMoneyRanking = {
@@ -29,7 +30,16 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     header: () => 'Smart Money',
     cell: ({ row }) => {
       const { smart_money } = row.original
-      return <div>{smart_money}</div>
+      return (
+        <Link
+          className="underline"
+          to="/onchain-discovery/wallet-explorer/$groupId/deep"
+          params={{
+            groupId: '1',
+          }}>
+          {smart_money}
+        </Link>
+      )
     },
   },
   {

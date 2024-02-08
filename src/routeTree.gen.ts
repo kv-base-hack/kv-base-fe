@@ -7,8 +7,11 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as DashboardImport } from './routes/dashboard'
 import { Route as IndexImport } from './routes/index'
+import { Route as OnchainDiscoveryWalletExplorerImport } from './routes/onchain-discovery/wallet-explorer'
+import { Route as OnchainDiscoveryTokenExplorerImport } from './routes/onchain-discovery/token-explorer'
 import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
 import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
+import { Route as OnchainDiscoveryWalletExplorerGroupIdDeepImport } from './routes/onchain-discovery/wallet-explorer_.$groupId.deep'
 
 // Create Virtual Routes
 
@@ -19,12 +22,6 @@ const MyPortfolioLazyImport = createFileRoute('/my-portfolio')()
 const MarketLazyImport = createFileRoute('/market')()
 const EducationLazyImport = createFileRoute('/education')()
 const BotsStrategyLazyImport = createFileRoute('/bots-strategy')()
-const OnchainDiscoveryWalletExplorerLazyImport = createFileRoute(
-  '/onchain-discovery/wallet-explorer',
-)()
-const OnchainDiscoveryTokenExplorerLazyImport = createFileRoute(
-  '/onchain-discovery/token-explorer',
-)()
 
 // Create/Update Routes
 
@@ -75,25 +72,17 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const OnchainDiscoveryWalletExplorerLazyRoute =
-  OnchainDiscoveryWalletExplorerLazyImport.update({
+const OnchainDiscoveryWalletExplorerRoute =
+  OnchainDiscoveryWalletExplorerImport.update({
     path: '/onchain-discovery/wallet-explorer',
     getParentRoute: () => rootRoute,
-  } as any).lazy(() =>
-    import('./routes/onchain-discovery/wallet-explorer.lazy').then(
-      (d) => d.Route,
-    ),
-  )
+  } as any)
 
-const OnchainDiscoveryTokenExplorerLazyRoute =
-  OnchainDiscoveryTokenExplorerLazyImport.update({
+const OnchainDiscoveryTokenExplorerRoute =
+  OnchainDiscoveryTokenExplorerImport.update({
     path: '/onchain-discovery/token-explorer',
     getParentRoute: () => rootRoute,
-  } as any).lazy(() =>
-    import('./routes/onchain-discovery/token-explorer.lazy').then(
-      (d) => d.Route,
-    ),
-  )
+  } as any)
 
 const OnchainDiscoveryOnchainSignalsRoute =
   OnchainDiscoveryOnchainSignalsImport.update({
@@ -104,6 +93,12 @@ const OnchainDiscoveryOnchainSignalsRoute =
 const OnchainDiscoveryLeaderboardRoute =
   OnchainDiscoveryLeaderboardImport.update({
     path: '/onchain-discovery/leaderboard',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const OnchainDiscoveryWalletExplorerGroupIdDeepRoute =
+  OnchainDiscoveryWalletExplorerGroupIdDeepImport.update({
+    path: '/onchain-discovery/wallet-explorer/$groupId/deep',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -156,11 +151,15 @@ declare module '@tanstack/react-router' {
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/token-explorer': {
-      preLoaderRoute: typeof OnchainDiscoveryTokenExplorerLazyImport
+      preLoaderRoute: typeof OnchainDiscoveryTokenExplorerImport
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/wallet-explorer': {
-      preLoaderRoute: typeof OnchainDiscoveryWalletExplorerLazyImport
+      preLoaderRoute: typeof OnchainDiscoveryWalletExplorerImport
+      parentRoute: typeof rootRoute
+    }
+    '/onchain-discovery/wallet-explorer/$groupId/deep': {
+      preLoaderRoute: typeof OnchainDiscoveryWalletExplorerGroupIdDeepImport
       parentRoute: typeof rootRoute
     }
   }
@@ -180,6 +179,7 @@ export const routeTree = rootRoute.addChildren([
   TradingTerminalLazyRoute,
   OnchainDiscoveryLeaderboardRoute,
   OnchainDiscoveryOnchainSignalsRoute,
-  OnchainDiscoveryTokenExplorerLazyRoute,
-  OnchainDiscoveryWalletExplorerLazyRoute,
+  OnchainDiscoveryTokenExplorerRoute,
+  OnchainDiscoveryWalletExplorerRoute,
+  OnchainDiscoveryWalletExplorerGroupIdDeepRoute,
 ])

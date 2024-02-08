@@ -57,7 +57,7 @@ export const SIDEBAR_MENU = () => [
     canNavigate: false,
     children: [
       {
-        title: 'Onchain Signals',
+        title: 'Onchain Signal',
         icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
         href: '/onchain-discovery/onchain-signals',
         children: [],
