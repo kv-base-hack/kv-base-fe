@@ -25,7 +25,7 @@ ChartJS.register(
   BarElement
 )
 
-export const ChartCategoryDetail = ({
+export const ChartTokenDetail = ({
   dataChart,
   changePrice,
 }: {

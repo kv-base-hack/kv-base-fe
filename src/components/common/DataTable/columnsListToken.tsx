@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
-import { ChartCategoryDetail } from '@/components/common/Chart'
+import { ChartTokenDetail } from '@/components/common/Chart'
 
 export type ListToken = {
   id: string
@@ -192,7 +192,7 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
       const { price_chart } = row.original
       return (
         <div className="flex items-center w-full justify-center relative rounded-2xl">
-          <ChartCategoryDetail dataChart={price_chart} changePrice={1} />
+          <ChartTokenDetail dataChart={price_chart} changePrice={1} />
         </div>
       )
     },
