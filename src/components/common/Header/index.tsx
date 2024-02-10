@@ -70,7 +70,7 @@ export const Header = () => {
                 <div className="grow">MEMEAI</div>
                 <img
                   loading="lazy"
-                  src="/assets/icons/token/memeai.svg"
+                  src="/assets/icons/token/usdt.svg"
                   className="object-center justify-center items-center my-auto w-4 aspect-square"
                 />
               </div>

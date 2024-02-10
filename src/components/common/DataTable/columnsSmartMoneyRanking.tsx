@@ -90,7 +90,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/memeai.svg"
+            src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{most_profitable_trade}</div>
@@ -107,7 +107,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/memeai.svg"
+            src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{current_largest_position}</div>
@@ -124,7 +124,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/memeai.svg"
+            src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{most_bought_token_24h}</div>
@@ -141,7 +141,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/memeai.svg"
+            src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{most_sell_token_24h}</div>

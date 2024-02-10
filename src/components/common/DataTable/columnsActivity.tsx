@@ -51,7 +51,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/memeai.svg"
+            src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{symbol}</div>

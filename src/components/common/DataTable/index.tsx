@@ -18,6 +18,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { cn } from '@/lib/utils'
+import { SortIcon } from '@/components/shared/icons/SortIcon'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -38,6 +39,7 @@ export function DataTable<TData, TValue>({
   isFetching,
   rowClassName,
   noneBorder,
+  noneBgHeader,
   emptyData,
   contentClassName,
   tableClassName,
@@ -57,7 +59,13 @@ export function DataTable<TData, TValue>({
 
   return (
     <Table className={tableClassName}>
-      <TableHeader>
+      <TableHeader
+        className={cn(noneBgHeader ? '' : 'bg-neutral-06')}
+        style={{
+          backgroundColor: noneBgHeader
+            ? ''
+            : 'linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 48.44%, rgba(255, 255, 255, 0.02) 100%)',
+        }}>
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
             {headerGroup.headers.map((header) => {
@@ -88,6 +96,7 @@ export function DataTable<TData, TValue>({
                       )}
                       onClick={column.getToggleSortingHandler()}>
                       {flexRender(column.columnDef.header, getContext())}
+                      {column.getCanSort() && <SortIcon />}
                     </div>
                   )}
                 </TableHead>

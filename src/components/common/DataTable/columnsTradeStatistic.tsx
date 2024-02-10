@@ -23,7 +23,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
           {symbol !== 'Total' ? (
             <img
               loading="lazy"
-              src="/assets/icons/token/memeai.svg"
+              src="/assets/icons/token/usdt.svg"
               className="w-6 aspect-square fill-blue-950"
             />
           ) : null}

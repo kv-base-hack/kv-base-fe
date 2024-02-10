@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         'primary-2': '#83BF6E',
+        'semantic-success-1': '#0FB672',
+        'semantic-error-1': '#F86868',
         background: '#111315',
         'neutral-00': '#FFFFFF',
         'neutral-01': '#FCFCFC',
@@ -15,6 +17,7 @@ export default {
         'neutral-06': '#272B30',
         'neutral-07': '#1A1D1F',
         'neutral-08': '#111315',
+        'neutral-dark-05': '#A7ACB4',
         'neutral-dark-08': '#525860',
       },
       fontFamily: {
