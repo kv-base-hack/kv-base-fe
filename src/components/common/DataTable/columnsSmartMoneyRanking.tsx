@@ -20,6 +20,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'id',
     header: () => '#',
+    enableSorting: false,
     cell: ({ row }) => {
       const { id } = row.original
       return <div>{id}</div>
@@ -28,6 +29,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'smart_money',
     header: () => 'Smart Money',
+    enableSorting: false,
     cell: ({ row }) => {
       const { smart_money } = row.original
       return (
@@ -45,14 +47,27 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'badge',
     header: () => 'Badge',
+    enableSorting: false,
     cell: ({ row }) => {
       const { badge } = row.original
       console.log({ badge })
       return (
         <div className="flex gap-1 self-stretch pr-5">
-          <img loading="lazy" srcSet="..." className="w-6 aspect-[0.93]" />
-          <img loading="lazy" srcSet="..." className="w-6 aspect-[0.93]" />
-          <img loading="lazy" srcSet="..." className="w-6 aspect-[0.93]" />
+          <img
+            loading="lazy"
+            srcSet="/assets/images/ranking/gold.png"
+            className="w-6 aspect-[0.93]"
+          />
+          <img
+            loading="lazy"
+            srcSet="/assets/images/ranking/platium.png"
+            className="w-6 aspect-[0.93]"
+          />
+          <img
+            loading="lazy"
+            srcSet="/assets/images/ranking/fire.png"
+            className="w-6 aspect-[0.93]"
+          />
         </div>
       )
     },
@@ -60,6 +75,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'roi',
     header: () => 'ROI',
+    enableSorting: false,
     cell: ({ row }) => {
       const { roi } = row.original
       return <div className="text-primary-2">{roi}%</div>
@@ -68,6 +84,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'net_profit',
     header: () => 'Net Profit',
+    enableSorting: false,
     cell: ({ row }) => {
       const { net_profit } = row.original
       return <div className="text-primary-2">${nFormatter(net_profit, 2)}</div>
@@ -76,6 +93,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'total_balance',
     header: () => 'Total Balance',
+    enableSorting: false,
     cell: ({ row }) => {
       const { total_balance } = row.original
       return <div>${nFormatter(total_balance, 2)}</div>
@@ -84,6 +102,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'most_profitable_trade',
     header: () => 'Most Profitable Trade',
+    enableSorting: false,
     cell: ({ row }) => {
       const { most_profitable_trade } = row.original
       return (
@@ -101,6 +120,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'current_largest_position',
     header: () => 'Current Largest Position',
+    enableSorting: false,
     cell: ({ row }) => {
       const { current_largest_position } = row.original
       return (
@@ -118,6 +138,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'most_bought_token_24h',
     header: () => 'Most Bought Token (24h)',
+    enableSorting: false,
     cell: ({ row }) => {
       const { most_bought_token_24h } = row.original
       return (
@@ -135,6 +156,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   {
     accessorKey: 'most_sell_token_24h',
     header: () => 'Most Sell Token (24h)',
+    enableSorting: false,
     cell: ({ row }) => {
       const { most_sell_token_24h } = row.original
       return (
@@ -151,6 +173,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
   },
   {
     accessorKey: 'largest_trade',
+    enableSorting: false,
     header: () => <div className="flex w-full justify-end text-right">Largest Trade</div>,
     cell: ({ row }) => {
       const { largest_trade } = row.original

@@ -11,6 +11,7 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
   {
     accessorKey: 'symbol',
     header: () => 'Symbol',
+    enableSorting: false,
     cell: ({ row }) => {
       const { symbol } = row.original
       return (
@@ -28,6 +29,7 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
   {
     accessorKey: 'amount',
     header: () => 'Amount',
+    enableSorting: false,
     cell: ({ row }) => {
       const { amount } = row.original
       return <div>{numeral(amount).format('0,0.[00]')}</div>

@@ -11,6 +11,7 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
+import ArrowDownIcon from '@/components/shared/icons/ArrowDownIcon'
 import { cn } from '@/lib/utils'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
@@ -152,22 +153,14 @@ async function getDataSmartMoneyRanking(): Promise<SmartMoneyRanking[]> {
 
 const RightGroup = () => {
   return (
-    <div className="flex gap-4 px-3 text-base tracking-normal leading-6 text-gray-500 whitespace-nowrap rounded-lg">
-      <div className="flex gap-2 justify-between px-4 py-2 rounded-xl border-2 border-solid border-[color:var(--Neutral-06,#272B30)]">
+    <div className="flex gap-4 justify-between px-3 text-gray-500 rounded-lg">
+      <div className="flex items-center gap-2 justify-between px-4 py-2 rounded-xl border-2 border-solid border-white/10">
         <div className="grow">Filter by Token</div>
-        <img
-          loading="lazy"
-          src="/assets/icons/arrow-down.svg"
-          className="my-auto w-4 aspect-square"
-        />
+        <ArrowDownIcon />
       </div>
-      <div className="flex gap-2 justify-between px-4 py-2 rounded-xl border-2 border-solid border-[color:var(--Neutral-06,#272B30)]">
+      <div className="flex items-center gap-2 justify-between px-4 py-2 rounded-xl border-2 border-solid border-white/10">
         <div className="grow">Filter by Badge</div>
-        <img
-          loading="lazy"
-          src="/assets/icons/arrow-down.svg"
-          className="my-auto w-4 aspect-square"
-        />
+        <ArrowDownIcon />
       </div>
     </div>
   )
@@ -244,6 +237,7 @@ function Leaderboard() {
                 columns={columnsSmartMoneyRanking}
                 data={dataSmartMoneyRanking}
                 noneBorder
+                noneBgHeader
                 emptyData="No results."
               />
             ) : null}
@@ -272,6 +266,7 @@ function Leaderboard() {
                 columns={columnsPerformanceToken}
                 data={dataPerformanceToken}
                 noneBorder
+                noneBgHeader
                 emptyData="No results."
               />
             ) : null}

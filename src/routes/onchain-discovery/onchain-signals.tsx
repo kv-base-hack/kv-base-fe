@@ -339,6 +339,7 @@ function OnchainSignals() {
                   columns={columnsPerformanceToken}
                   data={dataPerformanceToken}
                   noneBorder
+                  noneBgHeader
                   emptyData="No results."
                 />
               ) : null}
@@ -363,6 +364,7 @@ function OnchainSignals() {
                   columns={columnsActivity}
                   data={dataActivity}
                   noneBorder
+                  noneBgHeader
                   emptyData="No results."
                 />
               ) : null}
@@ -390,6 +392,7 @@ function OnchainSignals() {
                   columns={columnsActivity}
                   data={dataActivity}
                   noneBorder
+                  noneBgHeader
                   emptyData="No results."
                 />
               ) : null}
@@ -414,6 +417,7 @@ function OnchainSignals() {
                   columns={columnsPerformanceToken}
                   data={dataPerformanceToken}
                   noneBorder
+                  noneBgHeader
                   emptyData="No results."
                 />
               ) : null}

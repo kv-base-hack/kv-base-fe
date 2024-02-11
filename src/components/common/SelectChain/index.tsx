@@ -13,7 +13,7 @@ export const SelectChain = () => {
       <img
         loading="lazy"
         src="/assets/icons/arrow-down.svg"
-        className="object-center justify-center items-center my-auto w-5 aspect-square"
+        className="object-center justify-center items-center my-auto w-5 h-5 aspect-square"
       />
     </div>
   )

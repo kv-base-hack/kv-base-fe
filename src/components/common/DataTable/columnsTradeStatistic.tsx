@@ -16,6 +16,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
   {
     accessorKey: 'symbol',
     header: () => 'Symbol',
+    enableSorting: false,
     cell: ({ row }) => {
       const { symbol } = row.original
       return (
@@ -35,6 +36,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
   {
     accessorKey: 'pnl',
     header: () => 'PnL',
+    enableSorting: false,
     cell: ({ row }) => {
       const { pnl } = row.original
       return <div>{nFormatter(pnl, 2)}</div>
@@ -43,6 +45,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
   {
     accessorKey: 'total_spent',
     header: () => 'Total Spent',
+    enableSorting: false,
     cell: ({ row }) => {
       const { total_spent } = row.original
       return <div>{nFormatter(total_spent, 2)}</div>
@@ -51,6 +54,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
   {
     accessorKey: 'realized_gains',
     header: () => 'Realized Gains',
+    enableSorting: false,
     cell: ({ row }) => {
       const { realized_gains } = row.original
       return <div>{numeral(realized_gains).format('$0,0.[000000]')}</div>
@@ -59,6 +63,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
   {
     accessorKey: 'unrealized_gains',
     header: () => 'Unrealized Gains',
+    enableSorting: false,
     cell: ({ row }) => {
       const { unrealized_gains } = row.original
       return <div>{unrealized_gains}%</div>
@@ -67,6 +72,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
   {
     accessorKey: 'avg_roi',
     header: () => 'Avg ROI',
+    enableSorting: false,
     cell: ({ row }) => {
       const { avg_roi } = row.original
       return <div>{avg_roi}%</div>

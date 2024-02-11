@@ -37,7 +37,7 @@ function WalletExplorer() {
         </div>
       </div>
       {/* table */}
-      <div className="m-10">
+      <div className="mx-10 mb-10 mt-4">
         <WrapTableNoTitle>
           <div className="mt-8">
             {dataSmartMoneyRanking ? (
@@ -46,6 +46,7 @@ function WalletExplorer() {
                 columns={columnsSmartMoneyRanking}
                 data={dataSmartMoneyRanking}
                 noneBorder
+                noneBgHeader
                 emptyData="No results."
               />
             ) : null}

@@ -29,6 +29,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'time',
     header: () => 'Time',
+    enableSorting: false,
     cell: ({ row }) => {
       const { time } = row.original
       return <div className="text-neutral-04">{time}</div>
@@ -37,6 +38,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'smart_money',
     header: () => 'Smart Money',
+    enableSorting: false,
     cell: ({ row }) => {
       const { smart_money } = row.original
       return <div className="underline">{smart_money}</div>
@@ -45,6 +47,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'symbol',
     header: () => 'Symbol',
+    enableSorting: false,
     cell: ({ row }) => {
       const { symbol } = row.original
       return (
@@ -62,6 +65,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'movements',
     header: () => 'Movements',
+    enableSorting: false,
     cell: ({ row }) => {
       const { movements } = row.original
       return (
@@ -74,6 +78,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'value',
     header: () => 'Value',
+    enableSorting: false,
     cell: ({ row }) => {
       const { value } = row.original
       return (
@@ -86,6 +91,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'avg_cost',
     header: () => 'Avg Cost',
+    enableSorting: false,
     cell: ({ row }) => {
       const { avg_cost } = row.original
       return <div>{numeral(avg_cost).format('$0,0.[000000]')}</div>
@@ -94,6 +100,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'realized_pnl',
     header: () => 'Realized PnL',
+    enableSorting: false,
     cell: ({ row }) => {
       const { realized_pnl } = row.original
       return (
@@ -110,6 +117,7 @@ export const columnsActivity: ColumnDef<Activity>[] = [
   {
     accessorKey: 'unrealized_pnl',
     header: () => 'Unrealized PnL',
+    enableSorting: false,
     cell: ({ row }) => {
       const { unrealized_pnl } = row.original
       return (
