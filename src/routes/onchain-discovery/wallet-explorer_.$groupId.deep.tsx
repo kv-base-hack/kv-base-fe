@@ -7,6 +7,7 @@ import {
   columnsTradeStatistic,
 } from '@/components/common/DataTable/columnsTradeStatistic'
 import { PaginationCustom } from '@/components/common/Pagination'
+import AvatarIcon from '@/components/shared/icons/Avatar'
 import { activityQueryOptions } from '@/query/wallet-explorer/getActivity'
 import { portfolioQueryOptions } from '@/query/wallet-explorer/getPortfolio'
 import { tradeStatisticQueryOptions } from '@/query/wallet-explorer/getTradeStatistic'
@@ -57,15 +58,27 @@ function WalletExplorerDetail() {
         </div>
         <div className="flex gap-5 justify-between mt-4 w-full max-md:flex-wrap max-md:max-w-full">
           <div className="flex gap-4 justify-between">
-            <img loading="lazy" srcSet="..." className="w-24 aspect-square" />
+            <AvatarIcon className="w-24 aspect-square" />
             <div className="flex flex-col flex-1 justify-end self-start px-5">
               <div className="text-xl font-bold tracking-tight leading-7 text-white text-opacity-90">
                 Whale Untag
               </div>
               <div className="flex gap-1 pr-20 mt-2 max-md:pr-5">
-                <img loading="lazy" srcSet="..." className="w-6 aspect-[0.93]" />
-                <img loading="lazy" srcSet="..." className="w-6 aspect-[0.93]" />
-                <img loading="lazy" srcSet="..." className="w-6 aspect-[0.93]" />
+                <img
+                  loading="lazy"
+                  srcSet="/assets/images/ranking/gold.png"
+                  className="w-6 aspect-[0.93]"
+                />
+                <img
+                  loading="lazy"
+                  srcSet="/assets/images/ranking/platium.png"
+                  className="w-6 aspect-[0.93]"
+                />
+                <img
+                  loading="lazy"
+                  srcSet="/assets/images/ranking/fire.png"
+                  className="w-6 aspect-[0.93]"
+                />
               </div>
               <div className="mt-2 text-lg tracking-normal leading-6 text-gray-400">
                 0xb587...c5731178d
@@ -103,6 +116,7 @@ function WalletExplorerDetail() {
                   columns={columnsTradeStatistic}
                   data={tradeStatistic}
                   noneBorder
+                  noneBgHeader
                   emptyData="No results."
                 />
               ) : null}
@@ -118,6 +132,7 @@ function WalletExplorerDetail() {
                   columns={columnsPortfolio}
                   data={portfolio}
                   noneBorder
+                  noneBgHeader
                   emptyData="No results."
                 />
               ) : null}
@@ -143,6 +158,7 @@ function WalletExplorerDetail() {
                 columns={columnsActivity}
                 data={dataActivity}
                 noneBorder
+                noneBgHeader
                 emptyData="No results."
               />
             ) : null}
