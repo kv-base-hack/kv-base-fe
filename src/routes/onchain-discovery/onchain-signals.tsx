@@ -276,7 +276,7 @@ function OnchainSignals() {
             ? ''
             : 'We do not encourage people to copy trade these individuals because this Insider Trade is just speculation'
         }>
-        <SelectChain />
+        <SelectChain name="Ethereum Chain" />
       </GroupHeader>
       {/* top coin */}
       {tab === 'smart_money' ? <TopCoin className="mx-10 mt-4" /> : null}

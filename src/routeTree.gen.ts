@@ -12,6 +12,7 @@ import { Route as OnchainDiscoveryTokenExplorerImport } from './routes/onchain-d
 import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
 import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
 import { Route as OnchainDiscoveryWalletExplorerGroupIdDeepImport } from './routes/onchain-discovery/wallet-explorer_.$groupId.deep'
+import { Route as OnchainDiscoveryTokenExplorerTokenDeepImport } from './routes/onchain-discovery/token-explorer_.$token.deep'
 
 // Create Virtual Routes
 
@@ -102,6 +103,12 @@ const OnchainDiscoveryWalletExplorerGroupIdDeepRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const OnchainDiscoveryTokenExplorerTokenDeepRoute =
+  OnchainDiscoveryTokenExplorerTokenDeepImport.update({
+    path: '/onchain-discovery/token-explorer/$token/deep',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -158,6 +165,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OnchainDiscoveryWalletExplorerImport
       parentRoute: typeof rootRoute
     }
+    '/onchain-discovery/token-explorer/$token/deep': {
+      preLoaderRoute: typeof OnchainDiscoveryTokenExplorerTokenDeepImport
+      parentRoute: typeof rootRoute
+    }
     '/onchain-discovery/wallet-explorer/$groupId/deep': {
       preLoaderRoute: typeof OnchainDiscoveryWalletExplorerGroupIdDeepImport
       parentRoute: typeof rootRoute
@@ -181,5 +192,6 @@ export const routeTree = rootRoute.addChildren([
   OnchainDiscoveryOnchainSignalsRoute,
   OnchainDiscoveryTokenExplorerRoute,
   OnchainDiscoveryWalletExplorerRoute,
+  OnchainDiscoveryTokenExplorerTokenDeepRoute,
   OnchainDiscoveryWalletExplorerGroupIdDeepRoute,
 ])
