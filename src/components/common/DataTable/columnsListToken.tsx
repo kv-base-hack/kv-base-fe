@@ -3,6 +3,7 @@ import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
 import { ChartTokenDetail } from '@/components/common/Chart'
+import { Link } from '@tanstack/react-router'
 
 export type ListToken = {
   id: string
@@ -37,14 +38,21 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
     cell: ({ row }) => {
       const { symbol } = row.original
       return (
-        <div className="flex gap-3 w-full items-center justify-start">
-          <img
-            loading="lazy"
-            src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
-          />
-          <div>{symbol}</div>
-        </div>
+        <Link
+          className="underline"
+          to="/onchain-discovery/token-explorer/$token/deep"
+          params={{
+            token: 'eth',
+          }}>
+          <div className="flex gap-3 w-full items-center justify-start">
+            <img
+              loading="lazy"
+              src="/assets/icons/token/usdt.svg"
+              className="w-6 aspect-square fill-blue-950"
+            />
+            <div>{symbol}</div>
+          </div>
+        </Link>
       )
     },
   },

@@ -223,7 +223,7 @@ function Leaderboard() {
             ? ''
             : 'We do not encourage people to copy trade these individuals because this Insider Trade is just speculation'
         }>
-        <SelectChain />
+        <SelectChain name="Ethereum Chain" />
       </GroupHeader>
       {/* table */}
       <div className="m-10">

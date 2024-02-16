@@ -1,3 +1,4 @@
+import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { cn } from '@/lib/utils'
 import { nFormatter } from '@/utils/nFormatter'
@@ -39,38 +40,27 @@ const DUMMY_TOP_BOUGHT = [
   },
 ]
 
+const DateGroup = () => {
+  return (
+    <div className="flex gap-5 justify-between items-center text-base tracking-normal text-gray-500">
+      <div className="justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.6] bg-gray-300 bg-opacity-10">
+        1H
+      </div>{' '}
+      <div className="self-stretch my-auto">4H</div>
+      <div className="self-stretch my-auto">1D</div>
+      <div className="grow self-stretch my-auto">3D</div>
+    </div>
+  )
+}
+
 export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
   const [page, setPage] = useState(1)
-  const [tab, setTab] = useState('top_coin_bought')
-  const [tab2, setTab2] = useState('top_coin_sold')
 
   return (
     <div className={cn('self-stretch', className)}>
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
-        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col grow p-6 w-full text-base font-semibold leading-6 whitespace-nowrap rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-white/10 max-md:pl-5 max-md:mt-4 max-md:max-w-full">
-            <div className="flex gap-4 justify-between text-xl tracking-tight max-md:flex-wrap max-md:max-w-full">
-              <div
-                onClick={() => setTab('top_coin_bought')}
-                className={cn(
-                  tab === 'top_coin_bought'
-                    ? 'text-gray-300 rounded-lg bg-gray-300 bg-opacity-10'
-                    : 'my-auto text-gray-500',
-                  'grow cursor-pointer justify-center px-4 py-2'
-                )}>
-                Top Coins Bought 24h
-              </div>
-              <div
-                onClick={() => setTab('top_coin_inflow')}
-                className={cn(
-                  tab === 'top_coin_inflow'
-                    ? 'text-gray-300 rounded-lg bg-gray-300 bg-opacity-10'
-                    : 'my-auto text-gray-500',
-                  'grow cursor-pointer justify-center px-4 py-2'
-                )}>
-                Top Coins Inflow 24h
-              </div>
-            </div>
+        <div className="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
+          <WrapTable title="Top Coin Inflow" colorHeader="bg-green-400" childHeader={<DateGroup />}>
             <div className="mt-8">
               {DUMMY_TOP_BOUGHT?.map((item, index) => (
                 <div key={index} className="flex flex-col w-full">
@@ -97,7 +87,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
                     </div>
                   </div>
                   {index < DUMMY_TOP_BOUGHT.length - 1 ? (
-                    <div className="mt-3 max-w-full h-px rounded-sm bg-neutral-07/50 w-full max-md:mr-2" />
+                    <div className="mt-3 max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
                   ) : null}
                 </div>
               ))}
@@ -110,32 +100,10 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
               total={10}
               setPage={setPage}
             />
-          </div>
+          </WrapTable>
         </div>
-        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col grow p-6 w-full text-base font-semibold leading-6 whitespace-nowrap rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-zinc-900 bg-opacity-50 border-[color:var(--Stroke,rgba(255,255,255,0.10))] max-md:px-5 max-md:mt-4 max-md:max-w-full">
-            <div className="flex gap-4 justify-between text-xl tracking-tight max-md:flex-wrap max-md:max-w-full">
-              <div
-                onClick={() => setTab2('top_coin_sold')}
-                className={cn(
-                  tab2 === 'top_coin_sold'
-                    ? 'text-gray-300 rounded-lg bg-gray-300 bg-opacity-10'
-                    : 'my-auto text-gray-500',
-                  'grow cursor-pointer justify-center px-4 py-2'
-                )}>
-                Top Coins Sold 24h
-              </div>
-              <div
-                onClick={() => setTab2('top_coin_outflow')}
-                className={cn(
-                  tab2 === 'top_coin_outflow'
-                    ? 'text-gray-300 rounded-lg bg-gray-300 bg-opacity-10'
-                    : 'my-auto text-gray-500',
-                  'grow cursor-pointer justify-center px-4 py-2'
-                )}>
-                Top Coins Outflow 24h
-              </div>
-            </div>
+        <div className="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
+          <WrapTable title="Top Coin Inflow" colorHeader="bg-red-400" childHeader={<DateGroup />}>
             <div className="mt-8">
               {DUMMY_TOP_BOUGHT?.map((item, index) => (
                 <div key={index} className="flex flex-col w-full">
@@ -162,7 +130,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
                     </div>
                   </div>
                   {index < DUMMY_TOP_BOUGHT.length - 1 ? (
-                    <div className="mt-3 max-w-full h-px rounded-sm bg-neutral-07/50 w-full max-md:mr-2" />
+                    <div className="mt-3 max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
                   ) : null}
                 </div>
               ))}
@@ -175,7 +143,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
               total={10}
               setPage={setPage}
             />
-          </div>
+          </WrapTable>
         </div>
       </div>
     </div>
