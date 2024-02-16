@@ -5,6 +5,7 @@ type WrapTableProps = {
   children: React.ReactNode
   childHeader?: React.ReactNode
   className?: string
+  colorHeader?: string
 }
 
 export const WrapTable: React.FC<WrapTableProps> = ({
@@ -12,6 +13,7 @@ export const WrapTable: React.FC<WrapTableProps> = ({
   children,
   childHeader,
   className,
+  colorHeader = 'bg-yellow-200',
 }) => {
   return (
     <div
@@ -21,7 +23,7 @@ export const WrapTable: React.FC<WrapTableProps> = ({
       )}>
       <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full">
         <div className="flex gap-4 my-auto text-xl tracking-tight text-zinc-100">
-          <div className="w-4 h-8 bg-yellow-200 rounded" />
+          <div className={cn('w-4 h-8 rounded', colorHeader)} />
           <div className="grow">{title}</div>
         </div>
         {childHeader}
