@@ -1,21 +1,131 @@
 import { LineChart } from '@/components/common/ChartDetail/LineChart'
+import { ContractDetail } from '@/components/common/ContractDetail'
+import { Activity } from '@/components/common/DataTable/columnsActivity'
 import { GroupHeader } from '@/components/common/GroupHeader'
+import { News } from '@/components/common/News'
+import { Onchain } from '@/components/common/Onchain'
 import { SelectChain } from '@/components/common/SelectChain'
-import ArrowDown from '@/components/shared/icons/ArowDown'
-import Community from '@/components/shared/icons/Community'
-import Copy from '@/components/shared/icons/Copy'
-import Explorers from '@/components/shared/icons/Explorers'
-import Info from '@/components/shared/icons/Info'
-import Link from '@/components/shared/icons/Link'
-import Metamask from '@/components/shared/icons/Metamask'
-import OpenLink from '@/components/shared/icons/OpenLink'
-import SourceCode from '@/components/shared/icons/SourceCode'
-import Whitepaper from '@/components/shared/icons/Whitepaper'
+import { Technical } from '@/components/common/Technical'
 import { cn } from '@/lib/utils'
 import { createFileRoute } from '@tanstack/react-router'
 import { useCallback, useState } from 'react'
 
+async function getDataActivity(): Promise<Activity[]> {
+  return [
+    {
+      id: '1',
+      time: 'Nov 19, 01:24',
+      smart_money: 'Amber Group',
+      symbol: 'USDT',
+      movements: 'OUTFLOW',
+      value: {
+        total: 14740000,
+        amount: 2000000,
+        symbol: 'BLUR',
+      },
+      avg_cost: 0.524773,
+      realized_pnl: {
+        percent: 2.1,
+        amount: 300000,
+      },
+      unrealized_pnl: {
+        percent: 8.4,
+        amount: 1200000,
+      },
+    },
+    {
+      id: '2',
+      time: 'Nov 19, 01:24',
+      smart_money: 'Amber Group',
+      symbol: 'USDT',
+      movements: 'OUTFLOW',
+      value: {
+        total: 14740000,
+        amount: 2000000,
+        symbol: 'BLUR',
+      },
+      avg_cost: 0.524773,
+      realized_pnl: {
+        percent: 2.1,
+        amount: 300000,
+      },
+      unrealized_pnl: {
+        percent: 8.4,
+        amount: 1200000,
+      },
+    },
+    {
+      id: '3',
+      time: 'Nov 19, 01:24',
+      smart_money: 'Amber Group',
+      symbol: 'USDT',
+      movements: 'OUTFLOW',
+      value: {
+        total: 14740000,
+        amount: 2000000,
+        symbol: 'BLUR',
+      },
+      avg_cost: 0.524773,
+      realized_pnl: {
+        percent: 2.1,
+        amount: 300000,
+      },
+      unrealized_pnl: {
+        percent: 8.4,
+        amount: 1200000,
+      },
+    },
+    {
+      id: '4',
+      time: 'Nov 19, 01:24',
+      smart_money: 'Amber Group',
+      symbol: 'USDT',
+      movements: 'OUTFLOW',
+      value: {
+        total: 14740000,
+        amount: 2000000,
+        symbol: 'BLUR',
+      },
+      avg_cost: 0.524773,
+      realized_pnl: {
+        percent: 2.1,
+        amount: 300000,
+      },
+      unrealized_pnl: {
+        percent: 8.4,
+        amount: 1200000,
+      },
+    },
+    {
+      id: '5',
+      time: 'Nov 19, 01:24',
+      smart_money: 'Amber Group',
+      symbol: 'USDT',
+      movements: 'OUTFLOW',
+      value: {
+        total: 14740000,
+        amount: 2000000,
+        symbol: 'BLUR',
+      },
+      avg_cost: 0.524773,
+      realized_pnl: {
+        percent: 2.1,
+        amount: 300000,
+      },
+      unrealized_pnl: {
+        percent: 8.4,
+        amount: 1200000,
+      },
+    },
+  ]
+}
+
 export const Route = createFileRoute('/onchain-discovery/token-explorer/$token/deep')({
+  loader: async () => {
+    return {
+      dataActivity: await getDataActivity(),
+    }
+  },
   component: TokenExplorerDetail,
 })
 
@@ -69,6 +179,8 @@ function TokenExplorerDetail() {
   const [mode, setMode] = useState('1d')
   const [tab, setTabs] = useState('onchain')
 
+  const { dataActivity } = Route.useLoaderData()
+
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
   }
@@ -76,6 +188,18 @@ function TokenExplorerDetail() {
   const handleModeChange = useCallback((mode: string) => {
     setMode(mode)
   }, [])
+
+  const renderContentTab = (tab: string) => {
+    switch (tab) {
+      case 'onchain':
+        return <Onchain dataActivity={dataActivity} />
+      case 'news':
+        return <News />
+      case 'technical':
+        return <Technical />
+    }
+    return null
+  }
 
   return (
     <div className="w-full h-full">
@@ -93,120 +217,17 @@ function TokenExplorerDetail() {
           />
         </div>
         <div className="flex flex-col justify-start self-stretch p-6 rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10 w-5/12">
-          <div className="text-sm leading-5 text-gray-300">Contract</div>
-          <div className="flex gap-0 items-center justify-start mt-2 text-gray-300 whitespace-nowrap">
-            <div className="flex gap-2 justify-center py-1 pl-2 pr-4 text-xs leading-4 rounded-s-lg bg-white bg-opacity-10">
-              <div className="flex gap-2 justify-between">
-                <img
-                  loading="lazy"
-                  srcSet="/assets/icons/token/eth.png"
-                  className="w-5 aspect-square"
-                />
-                <div className="grow my-auto">0x698...311933</div>
-              </div>
-              <Copy />
-              <Metamask />
-              <img
-                loading="lazy"
-                src="/assets/icons/gecko-terminal.png"
-                className="self-start aspect-square w-[19px]"
-              />
-            </div>
-            <div className="justify-center p-2 text-xs font-black leading-3 rounded-e-lg aspect-[1.46] bg-zinc-600">
-              ...
-            </div>
-          </div>
-          <div className="flex justify-start gap-1 mt-4 ml-0 text-xs leading-4 text-center text-gray-300 whitespace-nowrap">
-            <div className="flex gap-2 px-2 py-1 rounded-lg bg-white bg-opacity-10">
-              <Link />
-              <div>Website</div>
-              <ArrowDown />
-            </div>
-            <div className="flex gap-2 px-2 py-1 rounded-lg bg-white bg-opacity-10">
-              <Explorers />
-              <div>Explorers</div>
-              <ArrowDown />
-            </div>
-            <div className="flex gap-2 px-2 py-1 rounded-lg bg-white bg-opacity-10">
-              <Community />
-              <div>Community</div>
-              <ArrowDown />
-            </div>
-          </div>
-          <div className="flex gap-1 justify-start mt-1 ml-0 text-xs leading-4 text-gray-300">
-            <div className="flex gap-2 py-1 px-2 rounded-lg bg-white bg-opacity-10">
-              <SourceCode />
-              <div>Source code</div>
-              <OpenLink />
-            </div>
-            <div className="flex gap-2 py-1 px-2 whitespace-nowrap rounded-lg bg-white bg-opacity-10">
-              <Whitepaper />
-              <div>Whitepaper</div>
-              <OpenLink />
-            </div>
-          </div>
-          <div className="self-start mt-4 text-sm leading-5 text-gray-300">Tags</div>
-          <div className="flex gap-1 self-start py-0.5 mt-2 text-xs font-semibold leading-5 text-gray-300 whitespace-nowrap">
-            <div className="justify-center px-2 py-0.5 aspect-[1.86] bg-white bg-opacity-10 rounded-[40px]">
-              LPoS
-            </div>
-            <div className="justify-center px-2 py-0.5 aspect-[2.68] bg-white bg-opacity-10 rounded-[40px]">
-              Platform
-            </div>
-            <div className="grow justify-center px-2 py-0.5 bg-white bg-opacity-10 rounded-[40px]">
-              Smart Contracts
-            </div>
-          </div>
-          <div className="flex gap-5 justify-between py-2.5 mt-4 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200 border-b-gray-200/10">
-            <div className="flex gap-1.5 my-auto text-white text-opacity-60">
-              <div className="grow">Market Cap </div>
-              <Info />
-            </div>
-            <div className="text-right text-white">$237,975,500</div>
-          </div>
-          <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200/10">
-            <div className="flex gap-1.5 my-auto text-white text-opacity-60">
-              <div className="grow">24 Hour Trading Vol </div>
-              <Info />
-            </div>
-            <div className="text-right text-white">$365,028,275</div>
-          </div>
-          <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
-            <div className="flex gap-4 my-auto text-white text-opacity-60">
-              <div className="flex-auto">Circulating Supply </div>
-              <Info />
-            </div>
-            <div className="text-right text-white">$365,028,275</div>
-          </div>
-          <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
-            <div className="flex gap-5 justify-between my-auto text-white text-opacity-60">
-              <div>Total Supply </div>
-              <Info />
-            </div>
-            <div className="text-right text-white">$365,028,275</div>
-          </div>
-          <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
-            <div className="flex gap-5 justify-between my-auto text-white text-opacity-60">
-              <div>Max Supply </div>
-              <Info />
-            </div>
-            <div className="text-right text-white">$365,028,275</div>
-          </div>
-          <div className="flex gap-5 justify-between pt-2.5 pb-0.5 w-full text-sm leading-5 whitespace-nowrap">
-            <div className="flex gap-1.5 self-start text-white text-opacity-60">
-              <div className="grow">Fully Diluted Valuation </div>
-              <Info />
-            </div>
-            <div className="text-right text-white">$238,785,857</div>
-          </div>
+          <ContractDetail />
         </div>
       </div>
       <div className="mx-10 bg-[url('/assets/images/bg-tabs.svg')] w-full bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start self-stretch px-5 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">
         <div className="flex relative gap-5 justify-between">
           <div
             onClick={handleChangeTab('onchain')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-zinc-50">
-            <div>Onchain</div>
+            className="cursor-pointer flex flex-col flex-1 justify-between pt-3">
+            <div className={cn(tab === 'onchain' ? 'text-neutral-01' : 'text-neutral-04')}>
+              Onchain
+            </div>
             <div
               className={cn(
                 'shrink-0 mt-4 h-1 rounded-sm',
@@ -216,16 +237,18 @@ function TokenExplorerDetail() {
           </div>
           <div
             onClick={handleChangeTab('news')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-gray-500">
-            <div>News</div>
+            className="cursor-pointer flex flex-col flex-1 justify-between pt-3">
+            <div className={cn(tab === 'news' ? 'text-neutral-01' : 'text-neutral-04')}>News</div>
             <div
               className={cn('shrink-0 mt-4 h-1 rounded-sm', tab === 'news' ? 'bg-amber-200' : '')}
             />
           </div>
           <div
             onClick={handleChangeTab('technical')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-gray-500">
-            <div>Technical</div>
+            className="cursor-pointer flex flex-col flex-1 justify-between pt-3">
+            <div className={cn(tab === 'technical' ? 'text-neutral-01' : 'text-neutral-04')}>
+              Technical
+            </div>
             <div
               className={cn(
                 'shrink-0 mt-4 h-1 rounded-sm',
@@ -235,6 +258,7 @@ function TokenExplorerDetail() {
           </div>
         </div>
       </div>
+      <div className="m-10 mt-4">{renderContentTab(tab)}</div>
     </div>
   )
 }
