@@ -30,7 +30,10 @@ function TokenExplorer() {
       <div className="flex flex-col mx-10 my-4 justify-center py-2 text-base font-semibold tracking-normal leading-6 text-gray-500 rounded-xl border border-solid shadow-2xl backdrop-blur-lg bg-gray-300 bg-opacity-10 border-white/10 max-w-[360px]">
         <div className="flex gap-3 justify-between px-2">
           <SearchIcon />
-          <div className="flex-auto">Search address</div>
+          <input
+            className="flex-auto bg-transparent outline-none text-neutral-01"
+            placeholder="Search address"
+          />
         </div>
       </div>
       {/* table */}
@@ -39,7 +42,7 @@ function TokenExplorer() {
           <div className="mt-8">
             {dataToken ? (
               <DataTable
-                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-zinc-800 bg-neutral-07/50"
+                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
                 columns={columnsListToken}
                 data={dataToken}
                 emptyData="No results."

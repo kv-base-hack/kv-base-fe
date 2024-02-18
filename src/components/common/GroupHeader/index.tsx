@@ -19,11 +19,11 @@ export const GroupHeader: React.FC<GroupHeaderProps> = ({
   return (
     <div className={cn('flex flex-col self-stretch', className)}>
       <div className="flex gap-4 justify-start pr-20 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-        <div className="text-4xl leading-[60px] text-zinc-50 max-md:max-w-full">{title}</div>
+        <div className="text-4xl leading-[60px] text-neutral-01 max-md:max-w-full">{title}</div>
         {children}
       </div>
       {desc ? (
-        <div className="mt-4 w-full text-base tracking-normal leading-6 text-zinc-50 max-md:max-w-full">
+        <div className="mt-4 w-full text-base tracking-normal leading-6 text-neutral-01 max-md:max-w-full">
           {desc}
         </div>
       ) : null}

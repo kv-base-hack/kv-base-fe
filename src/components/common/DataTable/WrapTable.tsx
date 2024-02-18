@@ -22,7 +22,7 @@ export const WrapTable: React.FC<WrapTableProps> = ({
         className
       )}>
       <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full">
-        <div className="flex gap-4 my-auto text-xl tracking-tight text-zinc-100">
+        <div className="flex gap-4 my-auto text-xl tracking-tight text-neutral-02">
           <div className={cn('w-4 h-8 rounded', colorHeader)} />
           <div className="grow">{title}</div>
         </div>

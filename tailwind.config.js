@@ -5,7 +5,9 @@ export default {
     extend: {
       colors: {
         'primary-2': '#83BF6E',
+        'secondary-1': '#FFBC99',
         'secondary-2': '#CABDFF',
+        'secondary-4': '#B5E4CA',
         'semantic-success-1': '#0FB672',
         'semantic-error-1': '#F86868',
         background: '#111315',

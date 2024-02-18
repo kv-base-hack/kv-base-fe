@@ -241,7 +241,7 @@ function OnchainSignals() {
         <div className="flex relative gap-5 justify-between">
           <div
             onClick={handleChangeTab('smart_money')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-zinc-50">
+            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-neutral-01">
             <div>Smart Money</div>
             <div
               className={cn(
@@ -312,7 +312,7 @@ function OnchainSignals() {
             <div className="mt-8">
               {dataActivity ? (
                 <DataTable
-                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-zinc-800 bg-neutral-07/50"
+                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
                   columns={columnsActivity}
                   data={dataActivity}
                   noneBorder
@@ -340,7 +340,7 @@ function OnchainSignals() {
             <div className="mt-8">
               {dataActivity ? (
                 <DataTable
-                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-zinc-800 bg-neutral-07/50"
+                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
                   columns={columnsActivity}
                   data={dataActivity}
                   noneBorder
