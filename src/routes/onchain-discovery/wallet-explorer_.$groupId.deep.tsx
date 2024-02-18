@@ -85,7 +85,7 @@ function WalletExplorerDetail() {
               </div>
             </div>
           </div>
-          <div className="flex gap-5 justify-between px-4 py-6 text-base tracking-normal leading-6 whitespace-nowrap rounded-lg border border-solid bg-zinc-900 bg-opacity-50 border-stone-500 max-md:flex-wrap max-md:max-w-full">
+          <div className="flex gap-5 justify-between px-4 py-6 text-base tracking-normal leading-6 whitespace-nowrap rounded-lg border border-solid bg-neutral-07 bg-opacity-50 border-stone-500 max-md:flex-wrap max-md:max-w-full">
             <div className="flex flex-col flex-1 justify-center">
               <div className="font-semibold text-gray-300">Total Balance</div>
               <div className="self-center mt-1 text-yellow-200">$4.097B</div>
@@ -112,7 +112,7 @@ function WalletExplorerDetail() {
             <div className="mt-8">
               {tradeStatistic ? (
                 <DataTable
-                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-zinc-800 bg-neutral-07/50"
+                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
                   columns={columnsTradeStatistic}
                   data={tradeStatistic}
                   noneBorder
@@ -128,7 +128,7 @@ function WalletExplorerDetail() {
             <div className="mt-8">
               {portfolio ? (
                 <DataTable
-                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-zinc-800 bg-neutral-07/50"
+                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
                   columns={columnsPortfolio}
                   data={portfolio}
                   noneBorder
@@ -154,7 +154,7 @@ function WalletExplorerDetail() {
           <div className="mt-8">
             {dataActivity ? (
               <DataTable
-                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-zinc-800 bg-neutral-07/50"
+                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
                 columns={columnsActivity}
                 data={dataActivity}
                 noneBorder

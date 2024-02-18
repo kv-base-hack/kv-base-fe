@@ -31,7 +31,7 @@ export const ContractDetail = () => {
             className="self-start aspect-square w-[19px]"
           />
         </div>
-        <div className="justify-center p-2 text-xs font-black leading-3 rounded-e-lg aspect-[1.46] bg-zinc-600">
+        <div className="justify-center p-2 text-xs font-black leading-3 rounded-e-lg aspect-[1.46] bg-neutral-dark-08">
           ...
         </div>
       </div>
@@ -77,42 +77,42 @@ export const ContractDetail = () => {
         </div>
       </div>
       <div className="flex gap-5 justify-between py-2.5 mt-4 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200 border-b-gray-200/10">
-        <div className="flex gap-1.5 my-auto text-white text-opacity-60">
+        <div className="flex gap-1.5 items-center my-auto text-white text-opacity-60">
           <div className="grow">Market Cap </div>
           <Info />
         </div>
         <div className="text-right text-white">$237,975,500</div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200/10">
-        <div className="flex gap-1.5 my-auto text-white text-opacity-60">
+        <div className="flex gap-1.5 items-center my-auto text-white text-opacity-60">
           <div className="grow">24 Hour Trading Vol </div>
           <Info />
         </div>
         <div className="text-right text-white">$365,028,275</div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
-        <div className="flex gap-4 my-auto text-white text-opacity-60">
+        <div className="flex gap-4 items-center my-auto text-white text-opacity-60">
           <div className="flex-auto">Circulating Supply </div>
           <Info />
         </div>
         <div className="text-right text-white">$365,028,275</div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
-        <div className="flex gap-5 justify-between my-auto text-white text-opacity-60">
+        <div className="flex gap-5 items-center justify-between my-auto text-white text-opacity-60">
           <div>Total Supply </div>
           <Info />
         </div>
         <div className="text-right text-white">$365,028,275</div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
-        <div className="flex gap-5 justify-between my-auto text-white text-opacity-60">
+        <div className="flex gap-5 items-center justify-between my-auto text-white text-opacity-60">
           <div>Max Supply </div>
           <Info />
         </div>
         <div className="text-right text-white">$365,028,275</div>
       </div>
       <div className="flex gap-5 justify-between pt-2.5 pb-0.5 w-full text-sm leading-5 whitespace-nowrap">
-        <div className="flex gap-1.5 self-start text-white text-opacity-60">
+        <div className="flex gap-1.5 items-center self-start text-white text-opacity-60">
           <div className="grow">Fully Diluted Valuation </div>
           <Info />
         </div>

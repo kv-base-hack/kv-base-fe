@@ -32,7 +32,7 @@ export const Technical = () => {
                 className="my-auto w-10 aspect-square fill-blue-950"
               />
               <div className="flex flex-col flex-1 pr-9">
-                <div className="flex gap-1.5 justify-between text-lg tracking-tight leading-8 whitespace-nowrap text-zinc-50">
+                <div className="flex gap-1.5 justify-between text-lg tracking-tight leading-8 whitespace-nowrap text-neutral-01">
                   <div>LDO</div>
                   <div className="grow">RSI Overbought</div>
                 </div>

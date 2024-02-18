@@ -1,6 +1,7 @@
 import { LineChart } from '@/components/common/ChartDetail/LineChart'
 import { ContractDetail } from '@/components/common/ContractDetail'
 import { Activity } from '@/components/common/DataTable/columnsActivity'
+import { SmartMoneyRanking } from '@/components/common/DataTable/columnsSmartMoneyRanking'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { News } from '@/components/common/News'
 import { Onchain } from '@/components/common/Onchain'
@@ -120,10 +121,81 @@ async function getDataActivity(): Promise<Activity[]> {
   ]
 }
 
+async function getSmartMoneyRanking(): Promise<SmartMoneyRanking[]> {
+  return [
+    {
+      id: '1',
+      smart_money: 'Amber Group',
+      badge: ['silver', 'gold'],
+      roi: 1.364,
+      net_profit: 12000000,
+      total_balance: 15800000,
+      most_profitable_trade: 'USDT',
+      current_largest_position: 'USDT',
+      most_bought_token_24h: 'USDT',
+      most_sell_token_24h: 'USDT',
+      largest_trade: '16 days 1hr ago',
+    },
+    {
+      id: '2',
+      smart_money: 'Amber Group',
+      badge: ['silver', 'gold'],
+      roi: 1.364,
+      net_profit: 12000000,
+      total_balance: 15800000,
+      most_profitable_trade: 'USDT',
+      current_largest_position: 'USDT',
+      most_bought_token_24h: 'USDT',
+      most_sell_token_24h: 'USDT',
+      largest_trade: '16 days 1hr ago',
+    },
+    {
+      id: '3',
+      smart_money: 'Amber Group',
+      badge: ['silver', 'gold'],
+      roi: 1.364,
+      net_profit: 12000000,
+      total_balance: 15800000,
+      most_profitable_trade: 'USDT',
+      current_largest_position: 'USDT',
+      most_bought_token_24h: 'USDT',
+      most_sell_token_24h: 'USDT',
+      largest_trade: '16 days 1hr ago',
+    },
+    {
+      id: '4',
+      smart_money: 'Amber Group',
+      badge: ['silver', 'gold'],
+      roi: 1.364,
+      net_profit: 12000000,
+      total_balance: 15800000,
+      most_profitable_trade: 'USDT',
+      current_largest_position: 'USDT',
+      most_bought_token_24h: 'USDT',
+      most_sell_token_24h: 'USDT',
+      largest_trade: '16 days 1hr ago',
+    },
+    {
+      id: '5',
+      smart_money: 'Amber Group',
+      badge: ['silver', 'gold'],
+      roi: 1.364,
+      net_profit: 12000000,
+      total_balance: 15800000,
+      most_profitable_trade: 'USDT',
+      current_largest_position: 'USDT',
+      most_bought_token_24h: 'USDT',
+      most_sell_token_24h: 'USDT',
+      largest_trade: '16 days 1hr ago',
+    },
+  ]
+}
+
 export const Route = createFileRoute('/onchain-discovery/token-explorer/$token/deep')({
   loader: async () => {
     return {
       dataActivity: await getDataActivity(),
+      dataSmartMoneyRanking: await getSmartMoneyRanking(),
     }
   },
   component: TokenExplorerDetail,
@@ -179,7 +251,7 @@ function TokenExplorerDetail() {
   const [mode, setMode] = useState('1d')
   const [tab, setTabs] = useState('onchain')
 
-  const { dataActivity } = Route.useLoaderData()
+  const { dataActivity, dataSmartMoneyRanking } = Route.useLoaderData()
 
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
@@ -192,7 +264,7 @@ function TokenExplorerDetail() {
   const renderContentTab = (tab: string) => {
     switch (tab) {
       case 'onchain':
-        return <Onchain dataActivity={dataActivity} />
+        return <Onchain dataActivity={dataActivity} dataSmartMoneyRanking={dataSmartMoneyRanking} />
       case 'news':
         return <News />
       case 'technical':
