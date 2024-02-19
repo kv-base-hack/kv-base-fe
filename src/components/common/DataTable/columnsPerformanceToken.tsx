@@ -1,3 +1,5 @@
+import { TooltipCustom } from '@/components/common/Tooltip'
+import Info from '@/components/shared/icons/Info'
 import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
@@ -34,7 +36,16 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
   },
   {
     accessorKey: 'gains',
-    header: () => 'Gains',
+    header: () => (
+      <div className="flex items-center gap-2">
+        <div>Gains</div>
+        <TooltipCustom
+          className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+          content="Smart Money's earnings from purchasing this token over 1 day, 7 days, and 30 days.">
+          <Info />
+        </TooltipCustom>
+      </div>
+    ),
     enableSorting: false,
     cell: ({ row }) => {
       const { gains } = row.original
@@ -43,7 +54,16 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
   },
   {
     accessorKey: 'net_flow',
-    header: () => 'Net Flow',
+    header: () => (
+      <div className="flex items-center gap-2">
+        <div>Net Flow</div>
+        <TooltipCustom
+          className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+          content="The net flow of the token bought and sold by Smart Money within 1 day, 7 days, and 30 days.">
+          <Info />
+        </TooltipCustom>
+      </div>
+    ),
     enableSorting: false,
     cell: ({ row }) => {
       const { net_flow } = row.original
@@ -52,7 +72,16 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
   },
   {
     accessorKey: 'avg_cost',
-    header: () => 'Avg Cost',
+    header: () => (
+      <div className="flex items-center gap-2">
+        <div>Avg Cost</div>
+        <TooltipCustom
+          className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+          content="The average purchase price of the token by Smart Money.">
+          <Info />
+        </TooltipCustom>
+      </div>
+    ),
     enableSorting: false,
     cell: ({ row }) => {
       const { avg_cost } = row.original
@@ -70,7 +99,16 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
   },
   {
     accessorKey: 'realized_percentage',
-    header: () => <div className="text-center">Realized Percentage</div>,
+    header: () => (
+      <div className="flex items-center justify-center gap-2">
+        <div className="text-center">Realized Percentage</div>
+        <TooltipCustom
+          className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+          content="The percentage of tokens sold after purchase.">
+          <Info />
+        </TooltipCustom>
+      </div>
+    ),
     enableSorting: false,
     cell: ({ row }) => {
       const { realized_percentage } = row.original

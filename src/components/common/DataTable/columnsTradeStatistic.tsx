@@ -21,13 +21,11 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
       const { symbol } = row.original
       return (
         <div className="flex gap-3 items-center justify-between text-right">
-          {symbol !== 'Total' ? (
-            <img
-              loading="lazy"
-              src="/assets/icons/token/usdt.svg"
-              className="w-6 aspect-square fill-blue-950"
-            />
-          ) : null}
+          <img
+            loading="lazy"
+            src="/assets/icons/token/usdt.svg"
+            className="w-6 aspect-square fill-blue-950"
+          />
           <div>{symbol}</div>
         </div>
       )

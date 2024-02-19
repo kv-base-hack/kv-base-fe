@@ -22,9 +22,13 @@ export default {
         'neutral-08': '#111315',
         'neutral-dark-05': '#A7ACB4',
         'neutral-dark-08': '#525860',
+        'yellow-border': '#7E7244',
       },
       fontFamily: {
         'source-sans-pro': ['Source Sans 3'],
+      },
+      boxShadow: {
+        box: '0px 1px 1px 0px rgba(255, 255, 255, 0.11) inset, 0px -2px 1px 0px rgba(0, 0, 0, 0.40) inset;',
       },
     },
   },

@@ -27,6 +27,7 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
       const { id } = row.original
       return <div>{id}</div>
     },
+    size: 50,
   },
   {
     accessorKey: 'symbol',

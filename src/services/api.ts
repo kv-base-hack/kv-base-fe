@@ -222,15 +222,6 @@ export const tradeStatistic = async (groupId: string) => {
       unrealized_gains: 0.26,
       avg_roi: 50.66,
     },
-    {
-      id: '5',
-      symbol: 'Total',
-      pnl: 320000,
-      total_spent: 1560000,
-      realized_gains: 0.524232,
-      unrealized_gains: 0.26,
-      avg_roi: 50.66,
-    },
   ]
 }
 

@@ -25,6 +25,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
       const { id } = row.original
       return <div>{id}</div>
     },
+    size: 50,
   },
   {
     accessorKey: 'smart_money',

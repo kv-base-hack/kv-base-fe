@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import './index.css'
+import 'react-perfect-scrollbar/dist/css/styles.css'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'

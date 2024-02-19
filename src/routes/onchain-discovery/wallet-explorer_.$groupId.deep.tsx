@@ -85,22 +85,29 @@ function WalletExplorerDetail() {
               </div>
             </div>
           </div>
-          <div className="flex gap-5 justify-between px-4 py-6 text-base tracking-normal leading-6 whitespace-nowrap rounded-lg border border-solid bg-neutral-07 bg-opacity-50 border-stone-500 max-md:flex-wrap max-md:max-w-full">
+          <div
+            style={{
+              borderImage: 'linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;',
+            }}
+            className="flex gap-5 justify-between px-4 py-6 text-base tracking-normal leading-6 whitespace-nowrap rounded-lg border-t border-solid bg-neutral-07 bg-opacity-50 border-yellow-border w-2/3">
             <div className="flex flex-col flex-1 justify-center">
-              <div className="font-semibold text-gray-300">Total Balance</div>
+              <div className="self-center font-semibold text-gray-300">Total Balance</div>
               <div className="self-center mt-1 text-yellow-200">$4.097B</div>
             </div>
+            <div className="w-px h-full bg-white/10"></div>
             <div className="flex flex-col flex-1 justify-center">
               <div className="self-center font-semibold text-gray-300">PnL (ROI)</div>
-              <div className="mt-1 text-emerald-500">$29.7M (+2500%)</div>
+              <div className="self-center mt-1 text-emerald-500">$29.7M (+2500%)</div>
             </div>
+            <div className="w-px h-full bg-white/10"></div>
             <div className="flex flex-col flex-1 justify-center">
-              <div className="font-semibold text-gray-300">Win rate</div>
+              <div className="self-center font-semibold text-gray-300">Win rate</div>
               <div className="self-center mt-1 text-stone-400">67%</div>
             </div>
+            <div className="w-px h-full bg-white/10"></div>
             <div className="flex flex-col flex-1 justify-center">
-              <div className="font-semibold text-gray-300">Active since</div>
-              <div className="mt-1 text-gray-300">2023-05-09</div>
+              <div className="self-center font-semibold text-gray-300">Active since</div>
+              <div className="self-center mt-1 text-gray-300">2023-05-09</div>
             </div>
           </div>
         </div>
@@ -120,6 +127,14 @@ function WalletExplorerDetail() {
                   emptyData="No results."
                 />
               ) : null}
+            </div>
+            <div className="flex items-center justify-between p-4 w-full mt-12">
+              <div className="text-left w-full">TOTAL</div>
+              <div className="text-left w-full">+$5.493M</div>
+              <div className="text-left w-full">$3.507M</div>
+              <div className="text-left w-full">$0.524773</div>
+              <div className="text-left w-full">0.28%</div>
+              <div className="text-left w-full">+156.63%</div>
             </div>
           </WrapTable>
         </div>

@@ -55,7 +55,7 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
         onClick={data.canNavigate ? navigateRoute(data.href) : expandedMenu}
         className={cn(
           'group cursor-pointer flex gap-3 justify-between items-stretch p-3 mt-5 rounded-xl transition-all duration-150 hover:shadow-sm hover:bg-gray-300 hover:bg-opacity-10',
-          isActive ? 'shadow-sm bg-gray-300 bg-opacity-10 text-gray-100' : ''
+          isActive ? 'shadow-box bg-gray-300 bg-opacity-10 text-gray-100' : ''
         )}>
         <div className="flex gap-3 justify-between items-stretch">
           {data.icon}
