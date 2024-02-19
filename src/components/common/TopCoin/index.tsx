@@ -60,13 +60,17 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
     <div className={cn('self-stretch', className)}>
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
         <div className="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
-          <WrapTable title="Top Coin Inflow" colorHeader="bg-green-400" childHeader={<DateGroup />}>
+          <WrapTable
+            title="CEX Withdraw"
+            info="A list of Tokens ranked by net withdrawals to Centralized exchanges. Net deposits are calculated as Withdrawals minus Deposits."
+            colorHeader="bg-green-400"
+            childHeader={<DateGroup />}>
             <div className="mt-8">
               {DUMMY_TOP_BOUGHT?.map((item, index) => (
                 <div key={index} className="flex flex-col w-full">
                   <div className="flex gap-2 mt-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
                     <div className="flex items-center justify-start w-3/4 gap-3">
-                      <div className="flex gap-3 text-gray-300 w-1/3">
+                      <div className="flex gap-3 text-gray-300 w-[140px]">
                         <span className="w-3 flex justify-center">{item.id}</span>
                         <img
                           loading="lazy"
@@ -103,13 +107,17 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
           </WrapTable>
         </div>
         <div className="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
-          <WrapTable title="Top Coin Inflow" colorHeader="bg-red-400" childHeader={<DateGroup />}>
+          <WrapTable
+            title="CEX Deposit"
+            info="A list of Tokens ranked by net deposits to Centralized exchanges. Net deposits are calculated as Deposits minus Withdrawals."
+            colorHeader="bg-red-400"
+            childHeader={<DateGroup />}>
             <div className="mt-8">
               {DUMMY_TOP_BOUGHT?.map((item, index) => (
                 <div key={index} className="flex flex-col w-full">
                   <div className="flex gap-2 mt-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
                     <div className="flex items-center justify-start w-3/4 gap-3">
-                      <div className="flex gap-3 text-gray-300 w-1/3">
+                      <div className="flex gap-3 text-gray-300 w-[140px]">
                         <span className="w-3 flex justify-center">{item.id}</span>
                         <img
                           loading="lazy"
