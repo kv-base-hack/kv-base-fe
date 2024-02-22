@@ -4,7 +4,7 @@ import { ISidebarMenu, SIDEBAR_MENU } from '@/constant'
 
 export const LayoutSidebar = () => {
   return (
-    <div className="scrollbar-hide h-screen fixed overflow-y-auto flex flex-col justify-between items-stretch px-6 py-8 border-r border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-r-white/10 max-w-[300px] 2xl:max-w-[330px]">
+    <div className="scrollbar-hide h-screen fixed overflow-y-auto flex flex-col justify-between items-start px-6 py-8 border-r border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-r-white/10 max-w-[300px] 2xl:max-w-[330px]">
       {/* header */}
       <div className="flex gap-4 justify-between items-stretch">
         <img
@@ -17,7 +17,7 @@ export const LayoutSidebar = () => {
         </div>
       </div>
       {/* content */}
-      <div className="flex flex-col items-stretch max-w-full">
+      <div className="flex flex-col h-full items-stretch max-w-full">
         {SIDEBAR_MENU().map((item: ISidebarMenu, index) => (
           <SidebarMenuItem data={item} key={index} />
         ))}
