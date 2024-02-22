@@ -86,28 +86,30 @@ function WalletExplorerDetail() {
             </div>
           </div>
           <div
+            className="rounded-lg backdrop-blur-[50px] w-2/3 px-px"
             style={{
-              borderImage: 'linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;',
-            }}
-            className="flex gap-5 justify-between px-4 py-6 text-base tracking-normal leading-6 whitespace-nowrap rounded-lg border-t border-solid bg-neutral-07 bg-opacity-50 border-yellow-border w-2/3">
-            <div className="flex flex-col flex-1 justify-center">
-              <div className="self-center font-semibold text-gray-300">Total Balance</div>
-              <div className="self-center mt-1 text-yellow-200">$4.097B</div>
-            </div>
-            <div className="w-px h-full bg-white/10"></div>
-            <div className="flex flex-col flex-1 justify-center">
-              <div className="self-center font-semibold text-gray-300">PnL (ROI)</div>
-              <div className="self-center mt-1 text-emerald-500">$29.7M (+2500%)</div>
-            </div>
-            <div className="w-px h-full bg-white/10"></div>
-            <div className="flex flex-col flex-1 justify-center">
-              <div className="self-center font-semibold text-gray-300">Win rate</div>
-              <div className="self-center mt-1 text-stone-400">67%</div>
-            </div>
-            <div className="w-px h-full bg-white/10"></div>
-            <div className="flex flex-col flex-1 justify-center">
-              <div className="self-center font-semibold text-gray-300">Active since</div>
-              <div className="self-center mt-1 text-gray-300">2023-05-09</div>
+              background: 'linear-gradient(180deg, #7e7244, #1A1D1F)',
+            }}>
+            <div className="flex gap-5 m-auto mt-px justify-between px-4 py-6 text-base tracking-normal leading-6 w-full h-full rounded-lg backdrop-blur-[5px] bg-neutral-07">
+              <div className="flex flex-col flex-1 justify-center">
+                <div className="self-center font-semibold text-gray-300">Total Balance</div>
+                <div className="self-center mt-1 text-yellow-200">$4.097B</div>
+              </div>
+              <div className="w-px h-full bg-white/10"></div>
+              <div className="flex flex-col flex-1 justify-center">
+                <div className="self-center font-semibold text-gray-300">PnL (ROI)</div>
+                <div className="self-center mt-1 text-emerald-500">$29.7M (+2500%)</div>
+              </div>
+              <div className="w-px h-full bg-white/10"></div>
+              <div className="flex flex-col flex-1 justify-center">
+                <div className="self-center font-semibold text-gray-300">Win rate</div>
+                <div className="self-center mt-1 text-stone-400">67%</div>
+              </div>
+              <div className="w-px h-full bg-white/10"></div>
+              <div className="flex flex-col flex-1 justify-center">
+                <div className="self-center font-semibold text-gray-300">Active since</div>
+                <div className="self-center mt-1 text-gray-300">2023-05-09</div>
+              </div>
             </div>
           </div>
         </div>

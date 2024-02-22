@@ -11,8 +11,11 @@ import { Route as OnchainDiscoveryWalletExplorerImport } from './routes/onchain-
 import { Route as OnchainDiscoveryTokenExplorerImport } from './routes/onchain-discovery/token-explorer'
 import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
 import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
+import { Route as AcademyCoursesImport } from './routes/academy/courses'
+import { Route as AcademyArticlesImport } from './routes/academy/articles'
 import { Route as OnchainDiscoveryWalletExplorerGroupIdDeepImport } from './routes/onchain-discovery/wallet-explorer_.$groupId.deep'
 import { Route as OnchainDiscoveryTokenExplorerTokenDeepImport } from './routes/onchain-discovery/token-explorer_.$token.deep'
+import { Route as AcademyArticlesArticleIdDeepImport } from './routes/academy/articles_.$articleId.deep'
 
 // Create Virtual Routes
 
@@ -97,6 +100,16 @@ const OnchainDiscoveryLeaderboardRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const AcademyCoursesRoute = AcademyCoursesImport.update({
+  path: '/academy/courses',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AcademyArticlesRoute = AcademyArticlesImport.update({
+  path: '/academy/articles',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const OnchainDiscoveryWalletExplorerGroupIdDeepRoute =
   OnchainDiscoveryWalletExplorerGroupIdDeepImport.update({
     path: '/onchain-discovery/wallet-explorer/$groupId/deep',
@@ -106,6 +119,12 @@ const OnchainDiscoveryWalletExplorerGroupIdDeepRoute =
 const OnchainDiscoveryTokenExplorerTokenDeepRoute =
   OnchainDiscoveryTokenExplorerTokenDeepImport.update({
     path: '/onchain-discovery/token-explorer/$token/deep',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const AcademyArticlesArticleIdDeepRoute =
+  AcademyArticlesArticleIdDeepImport.update({
+    path: '/academy/articles/$articleId/deep',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -149,6 +168,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradingTerminalLazyImport
       parentRoute: typeof rootRoute
     }
+    '/academy/articles': {
+      preLoaderRoute: typeof AcademyArticlesImport
+      parentRoute: typeof rootRoute
+    }
+    '/academy/courses': {
+      preLoaderRoute: typeof AcademyCoursesImport
+      parentRoute: typeof rootRoute
+    }
     '/onchain-discovery/leaderboard': {
       preLoaderRoute: typeof OnchainDiscoveryLeaderboardImport
       parentRoute: typeof rootRoute
@@ -163,6 +190,10 @@ declare module '@tanstack/react-router' {
     }
     '/onchain-discovery/wallet-explorer': {
       preLoaderRoute: typeof OnchainDiscoveryWalletExplorerImport
+      parentRoute: typeof rootRoute
+    }
+    '/academy/articles/$articleId/deep': {
+      preLoaderRoute: typeof AcademyArticlesArticleIdDeepImport
       parentRoute: typeof rootRoute
     }
     '/onchain-discovery/token-explorer/$token/deep': {
@@ -188,10 +219,13 @@ export const routeTree = rootRoute.addChildren([
   SubcriptionsLazyRoute,
   SwapLazyRoute,
   TradingTerminalLazyRoute,
+  AcademyArticlesRoute,
+  AcademyCoursesRoute,
   OnchainDiscoveryLeaderboardRoute,
   OnchainDiscoveryOnchainSignalsRoute,
   OnchainDiscoveryTokenExplorerRoute,
   OnchainDiscoveryWalletExplorerRoute,
+  AcademyArticlesArticleIdDeepRoute,
   OnchainDiscoveryTokenExplorerTokenDeepRoute,
   OnchainDiscoveryWalletExplorerGroupIdDeepRoute,
 ])
