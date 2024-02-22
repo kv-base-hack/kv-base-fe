@@ -1,3 +1,7 @@
+import { CexInResponse } from '@/types/cexIn'
+import { CexOutResponse } from '@/types/cexOut'
+import axios from 'axios'
+
 export const fetchSmartMoneyRanking = async () => {
   console.log(`Fetching ...`)
   await new Promise((r) => setTimeout(r, 500))
@@ -178,6 +182,73 @@ export const activity = async (groupId: string) => {
         percent: 8.4,
         amount: 1200000,
       },
+    },
+  ]
+}
+
+export const performanceTokenOnchain = async () => {
+  console.log(`Fetching ...`)
+  await new Promise((r) => setTimeout(r, 500))
+  return [
+    {
+      id: '1',
+      symbol: 'USDT',
+      gains: 207220.61,
+      net_flow: 1964000,
+      avg_cost: 0.022692,
+      current_price: 0.0242551,
+      realized_percentage: 35.89,
+      avg_roi: 245.01,
+    },
+    {
+      id: '2',
+      symbol: 'USDT',
+      gains: 207220.61,
+      net_flow: 1964000,
+      avg_cost: 0.022692,
+      current_price: 0.0242551,
+      realized_percentage: 35.89,
+      avg_roi: 245.01,
+    },
+    {
+      id: '3',
+      symbol: 'USDT',
+      gains: 207220.61,
+      net_flow: 1964000,
+      avg_cost: 0.022692,
+      current_price: 0.0242551,
+      realized_percentage: 35.89,
+      avg_roi: 245.01,
+    },
+    {
+      id: '4',
+      symbol: 'USDT',
+      gains: 207220.61,
+      net_flow: 1964000,
+      avg_cost: 0.022692,
+      current_price: 0.0242551,
+      realized_percentage: 35.89,
+      avg_roi: 245.01,
+    },
+    {
+      id: '5',
+      symbol: 'USDT',
+      gains: 207220.61,
+      net_flow: 1964000,
+      avg_cost: 0.022692,
+      current_price: 0.0242551,
+      realized_percentage: 35.89,
+      avg_roi: 245.01,
+    },
+    {
+      id: '6',
+      symbol: 'USDT',
+      gains: 207220.61,
+      net_flow: 1964000,
+      avg_cost: 0.022692,
+      current_price: 0.0242551,
+      realized_percentage: 35.89,
+      avg_roi: 245.01,
     },
   ]
 }
@@ -702,4 +773,28 @@ export const fetchListToken = async () => {
       ],
     },
   ]
+}
+
+export const getCexIn = async ({
+  limitTopNetCexIn = 5,
+  duration = '24h',
+}): Promise<CexInResponse> => {
+  return await axios.get('http://27.71.16.59:8030/v1/token_cex_in', {
+    params: {
+      limitTopNetCexIn,
+      duration,
+    },
+  })
+}
+
+export const getCexOut = async ({
+  limitTopNetCexOut = 5,
+  duration = '24h',
+}): Promise<CexOutResponse> => {
+  return await axios.get('http://27.71.16.59:8030/v1/token_cex_out', {
+    params: {
+      limitTopNetCexOut,
+      duration,
+    },
+  })
 }
