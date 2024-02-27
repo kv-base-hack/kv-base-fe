@@ -1,7 +1,5 @@
 import { LineChart } from '@/components/common/ChartDetail/LineChart'
 import { ContractDetail } from '@/components/common/ContractDetail'
-import { Activity } from '@/components/common/DataTable/columnsActivity'
-import { SmartMoneyRanking } from '@/components/common/DataTable/columnsSmartMoneyRanking'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { News } from '@/components/common/News'
 import { Onchain } from '@/components/common/Onchain'
@@ -11,197 +9,11 @@ import { cn } from '@/lib/utils'
 import { createFileRoute } from '@tanstack/react-router'
 import { useCallback, useState } from 'react'
 
-async function getDataActivity(): Promise<Activity[]> {
-  return [
-    {
-      id: '1',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '2',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '3',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '4',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '5',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-  ]
-}
-
-async function getSmartMoneyRanking(): Promise<SmartMoneyRanking[]> {
-  return [
-    {
-      id: '1',
-      smart_money: 'Amber Group',
-      badge: ['silver', 'gold'],
-      roi: 1.364,
-      net_profit: 12000000,
-      total_balance: 15800000,
-      most_profitable_trade: 'USDT',
-      current_largest_position: 'USDT',
-      most_bought_token_24h: 'USDT',
-      most_sell_token_24h: 'USDT',
-      largest_trade: '16 days 1hr ago',
-    },
-    {
-      id: '2',
-      smart_money: 'Amber Group',
-      badge: ['silver', 'gold'],
-      roi: 1.364,
-      net_profit: 12000000,
-      total_balance: 15800000,
-      most_profitable_trade: 'USDT',
-      current_largest_position: 'USDT',
-      most_bought_token_24h: 'USDT',
-      most_sell_token_24h: 'USDT',
-      largest_trade: '16 days 1hr ago',
-    },
-    {
-      id: '3',
-      smart_money: 'Amber Group',
-      badge: ['silver', 'gold'],
-      roi: 1.364,
-      net_profit: 12000000,
-      total_balance: 15800000,
-      most_profitable_trade: 'USDT',
-      current_largest_position: 'USDT',
-      most_bought_token_24h: 'USDT',
-      most_sell_token_24h: 'USDT',
-      largest_trade: '16 days 1hr ago',
-    },
-    {
-      id: '4',
-      smart_money: 'Amber Group',
-      badge: ['silver', 'gold'],
-      roi: 1.364,
-      net_profit: 12000000,
-      total_balance: 15800000,
-      most_profitable_trade: 'USDT',
-      current_largest_position: 'USDT',
-      most_bought_token_24h: 'USDT',
-      most_sell_token_24h: 'USDT',
-      largest_trade: '16 days 1hr ago',
-    },
-    {
-      id: '5',
-      smart_money: 'Amber Group',
-      badge: ['silver', 'gold'],
-      roi: 1.364,
-      net_profit: 12000000,
-      total_balance: 15800000,
-      most_profitable_trade: 'USDT',
-      current_largest_position: 'USDT',
-      most_bought_token_24h: 'USDT',
-      most_sell_token_24h: 'USDT',
-      largest_trade: '16 days 1hr ago',
-    },
-  ]
-}
-
 export const Route = createFileRoute('/onchain-discovery/token-explorer/$token/deep')({
-  loader: async () => {
-    return {
-      dataActivity: await getDataActivity(),
-      dataSmartMoneyRanking: await getSmartMoneyRanking(),
-    }
-  },
   component: TokenExplorerDetail,
 })
 
-const DUMMY = [
+const DUMMY_CHART = [
   [1700582400, 1.2820760583722837],
   [1700596800, 1.293678752367937],
   [1700611200, 1.267607134722679],
@@ -251,8 +63,6 @@ function TokenExplorerDetail() {
   const [mode, setMode] = useState('1d')
   const [tab, setTabs] = useState('onchain')
 
-  const { dataActivity, dataSmartMoneyRanking } = Route.useLoaderData()
-
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
   }
@@ -264,7 +74,7 @@ function TokenExplorerDetail() {
   const renderContentTab = (tab: string) => {
     switch (tab) {
       case 'onchain':
-        return <Onchain dataActivity={dataActivity} dataSmartMoneyRanking={dataSmartMoneyRanking} />
+        return <Onchain />
       case 'news':
         return <News />
       case 'technical':
@@ -274,7 +84,7 @@ function TokenExplorerDetail() {
   }
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full pt-2">
       <GroupHeader className="mt-4 mx-10" title="Token Explorer" desc="">
         <SelectChain name="ETH" />
       </GroupHeader>
@@ -282,9 +92,9 @@ function TokenExplorerDetail() {
         <div className="w-7/12 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">
           <LineChart
             mode={mode}
-            sparkLineIn7D={DUMMY}
+            sparkLineIn7D={DUMMY_CHART}
             onModeChange={handleModeChange}
-            value={345.29}
+            value={103.15}
             loading={false}
           />
         </div>
@@ -292,7 +102,7 @@ function TokenExplorerDetail() {
           <ContractDetail />
         </div>
       </div>
-      <div className="mx-10 bg-[url('/assets/images/bg-tabs.svg')] w-full bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start self-stretch px-5 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">
+      <div className="mx-10 bg-[url('/assets/images/bg-tabs.svg')] w-auto bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start px-5 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">
         <div className="flex relative gap-5 justify-between">
           <div
             onClick={handleChangeTab('onchain')}

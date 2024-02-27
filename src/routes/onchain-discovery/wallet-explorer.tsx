@@ -1,30 +1,27 @@
 import { DataTable } from '@/components/common/DataTable'
-import {
-  columnsSmartMoneyRanking,
-  SmartMoneyRanking,
-} from '@/components/common/DataTable/columnsSmartMoneyRanking'
 import { WrapTableNoTitle } from '@/components/common/DataTable/WrapTableNoTitle'
+import { columnsLeaderboard } from '@/components/common/DataTable/columnLeaderboard'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import SearchIcon from '@/components/shared/icons/SearchIcon'
-import { smartMoneyRankingQueryOptions } from '@/query/wallet-explorer/getSmartMoneyRanking'
-import { useSuspenseQuery } from '@tanstack/react-query'
+import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
 export const Route = createFileRoute('/onchain-discovery/wallet-explorer')({
-  loader: async ({ context: { queryClient } }: any) =>
-    queryClient.ensureQueryData(smartMoneyRankingQueryOptions),
   component: WalletExplorer,
 })
 
 function WalletExplorer() {
-  const smartMoneyRankingQuery = useSuspenseQuery(smartMoneyRankingQueryOptions)
-  const dataSmartMoneyRanking = smartMoneyRankingQuery.data as SmartMoneyRanking[]
   const [page, setPage] = useState(1)
+  //
+  //
+  const leaderboardQuery = useLeaderboardQuery()
+  const dataLeaderboard = leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
+  //
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full pt-2">
       {/* header */}
       <GroupHeader
         className="mt-4 mx-10"
@@ -43,16 +40,15 @@ function WalletExplorer() {
       <div className="mx-10 mb-10 mt-4">
         <WrapTableNoTitle>
           <div className="mt-8">
-            {dataSmartMoneyRanking ? (
-              <DataTable
-                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                columns={columnsSmartMoneyRanking}
-                data={dataSmartMoneyRanking}
-                noneBorder
-                noneBgHeader
-                emptyData="No results."
-              />
-            ) : null}
+            <DataTable
+              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+              columns={columnsLeaderboard}
+              data={dataLeaderboard || []}
+              isFetching={leaderboardQuery.isFetching}
+              noneBorder
+              noneBgHeader
+              emptyData="No results."
+            />
           </div>
           <PaginationCustom
             className="mt-8"

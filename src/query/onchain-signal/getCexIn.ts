@@ -1,16 +1,16 @@
 import { getCexIn } from '@/services/api'
-import { queryOptions } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 
 const GET_CEX_IN = 'GET_CEX_IN'
 
-export const cexInQueryOptions = ({
+export const useCexInQuery = ({
   limitTopNetCexIn,
   duration,
 }: {
   limitTopNetCexIn: number
   duration: string
 }) =>
-  queryOptions({
-    queryKey: [GET_CEX_IN],
+  useQuery({
+    queryKey: [GET_CEX_IN, { limitTopNetCexIn, duration }],
     queryFn: () => getCexIn({ limitTopNetCexIn, duration }),
   })

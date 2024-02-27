@@ -10,7 +10,9 @@ export const Route = createRootRoute({
         <LayoutSidebar />
         <div className="ml-[300px] w-full">
           <Header />
-          <Outlet />
+          <div className="mt-[100px]">
+            <Outlet />
+          </div>
         </div>
       </div>
       <TanStackRouterDevtools />

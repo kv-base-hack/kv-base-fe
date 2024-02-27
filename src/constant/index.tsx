@@ -1,10 +1,10 @@
-// import BotsStrategyIcon from '@/components/shared/icons/sidebar/BotsStrategyIcon'
-// import EducationIcon from '@/components/shared/icons/sidebar/EducationIcon'
-// import HomeIcon from '@/components/shared/icons/sidebar/HomeIcon'
-// import MarketIcon from '@/components/shared/icons/sidebar/MarketIcon'
-// import PortfolioIcon from '@/components/shared/icons/sidebar/PortfolioIcon'
-// import SubcriptionsIcon from '@/components/shared/icons/sidebar/Subcriptions'
-// import TradingTerminalIcon from '@/components/shared/icons/sidebar/TradingTerminal'
+import BotsStrategyIcon from '@/components/shared/icons/sidebar/BotsStrategyIcon'
+import EducationIcon from '@/components/shared/icons/sidebar/EducationIcon'
+import HomeIcon from '@/components/shared/icons/sidebar/HomeIcon'
+import MarketIcon from '@/components/shared/icons/sidebar/MarketIcon'
+import PortfolioIcon from '@/components/shared/icons/sidebar/PortfolioIcon'
+import SubcriptionsIcon from '@/components/shared/icons/sidebar/Subcriptions'
+import TradingTerminalIcon from '@/components/shared/icons/sidebar/TradingTerminal'
 import AcademyIcon from '@/components/shared/icons/sidebar/AcademyIcon'
 import LeafTreeIcon from '@/components/shared/icons/sidebar/LeafTreeIcon'
 import LeafTreeLastIcon from '@/components/shared/icons/sidebar/LeafTreeLastIcon'
@@ -21,34 +21,34 @@ export type ISidebarMenu = {
 }
 
 export const SIDEBAR_MENU = () => [
-  // {
-  //   title: 'Dashboard',
-  //   icon: (
-  //     <HomeIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   href: '/dashboard',
-  //   children: [],
-  //   canNavigate: true,
-  // },
-  // {
-  //   title: 'My Portfolio',
-  //   icon: (
-  //     <PortfolioIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/my-portfolio' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   href: '/my-portfolio',
-  //   children: [],
-  //   canNavigate: true,
-  // },
+  {
+    title: 'Dashboard',
+    icon: (
+      <HomeIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    href: '/dashboard',
+    children: [],
+    canNavigate: true,
+  },
+  {
+    title: 'My Portfolio',
+    icon: (
+      <PortfolioIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/my-portfolio' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    href: '/my-portfolio',
+    children: [],
+    canNavigate: true,
+  },
   {
     title: 'Onchain Discovery',
     icon: (
@@ -89,20 +89,20 @@ export const SIDEBAR_MENU = () => [
       },
     ],
   },
-  // {
-  //   title: 'Market',
-  //   icon: (
-  //     <MarketIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/market' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   canNavigate: true,
-  //   href: '/market',
-  //   children: [],
-  // },
+  {
+    title: 'Market',
+    icon: (
+      <MarketIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/market' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    canNavigate: true,
+    href: '/market',
+    children: [],
+  },
   {
     title: 'Swap',
     icon: (
@@ -141,60 +141,60 @@ export const SIDEBAR_MENU = () => [
       },
     ],
   },
-  // {
-  //   title: 'Bots Strategy',
-  //   icon: (
-  //     <BotsStrategyIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/bots-strategy' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   canNavigate: true,
-  //   href: '/bots-strategy',
-  //   children: [],
-  // },
-  // {
-  //   title: 'Trading Terminal',
-  //   icon: (
-  //     <TradingTerminalIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/trading-terminal' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   canNavigate: true,
-  //   href: '/trading-terminal',
-  //   children: [],
-  // },
-  // {
-  //   title: 'Education',
-  //   icon: (
-  //     <EducationIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/education' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   canNavigate: true,
-  //   href: '/education',
-  //   children: [],
-  // },
-  // {
-  //   title: 'Subcriptions',
-  //   icon: (
-  //     <SubcriptionsIcon
-  //       className={cn(
-  //         'object-contain object-center shrink-0 w-6 aspect-square',
-  //         document.location.pathname === '/subcriptions' ? 'text-gray-100' : 'text-[#6F767E]'
-  //       )}
-  //     />
-  //   ),
-  //   canNavigate: true,
-  //   href: '/subcriptions',
-  //   children: [],
-  // },
+  {
+    title: 'Bots Strategy',
+    icon: (
+      <BotsStrategyIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/bots-strategy' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    canNavigate: true,
+    href: '/bots-strategy',
+    children: [],
+  },
+  {
+    title: 'Trading Terminal',
+    icon: (
+      <TradingTerminalIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/trading-terminal' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    canNavigate: true,
+    href: '/trading-terminal',
+    children: [],
+  },
+  {
+    title: 'Education',
+    icon: (
+      <EducationIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/education' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    canNavigate: true,
+    href: '/education',
+    children: [],
+  },
+  {
+    title: 'Subcriptions',
+    icon: (
+      <SubcriptionsIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/subcriptions' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    canNavigate: true,
+    href: '/subcriptions',
+    children: [],
+  },
 ]

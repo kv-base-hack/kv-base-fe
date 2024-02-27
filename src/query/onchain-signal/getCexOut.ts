@@ -1,16 +1,16 @@
 import { getCexOut } from '@/services/api'
-import { queryOptions } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 
 const GET_CEX_OUT = 'GET_CEX_OUT'
 
-export const cexOutQueryOptions = ({
+export const useCexOutQuery = ({
   limitTopNetCexOut,
   duration,
 }: {
   limitTopNetCexOut: number
   duration: string
 }) =>
-  queryOptions({
+  useQuery({
     queryKey: [GET_CEX_OUT, { limitTopNetCexOut, duration }],
     queryFn: () => getCexOut({ limitTopNetCexOut, duration }),
   })
