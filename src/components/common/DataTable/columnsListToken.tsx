@@ -2,30 +2,19 @@ import { cn } from '@/lib/utils'
 import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
-import { ChartTokenDetail } from '@/components/common/Chart'
+// import { ChartTokenDetail } from '@/components/common/Chart'
 import { Link } from '@tanstack/react-router'
+import { DATA_TOKEN } from '@/constant/token'
+import { TrendingToken } from '@/types/trendingToken'
 
-export type ListToken = {
-  id: string
-  symbol: string
-  price: number
-  price_24h: number
-  price_7d: number
-  open_interest: number
-  market_cap: number
-  volumn_24h: number
-  price_chart: number[][]
-}
-
-export const columnsListToken: ColumnDef<ListToken>[] = [
+export const columnsListToken: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'id',
     header: () => (
       <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">#</div>
     ),
     cell: ({ row }) => {
-      const { id } = row.original
-      return <div>{id}</div>
+      return <div>{row.index + 1}</div>
     },
     size: 50,
   },
@@ -36,24 +25,35 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
         Token Name
       </div>
     ),
+    size: 250,
     cell: ({ row }) => {
-      const { symbol } = row.original
-      return (
+      const { symbol, name, address } = row.original
+      return address ? (
         <Link
-          className="underline"
           to="/onchain-discovery/token-explorer/$token/deep"
           params={{
-            token: 'eth',
+            token: address,
           }}>
-          <div className="flex gap-3 w-full items-center justify-start">
+          <div className="flex gap-1.5 w-full items-center justify-start">
             <img
               loading="lazy"
-              src="/assets/icons/token/usdt.svg"
+              src={DATA_TOKEN?.find((el) => el.token === symbol)?.image_url}
               className="w-6 aspect-square fill-blue-950"
             />
-            <div>{symbol}</div>
+            <div>{name}</div>
+            <div className="text-normal text-neutral-dark-05">{symbol}</div>
           </div>
         </Link>
+      ) : (
+        <div className="flex cursor-not-allowed gap-1.5 w-full items-center justify-start">
+          <img
+            loading="lazy"
+            src={DATA_TOKEN?.find((el) => el.token === symbol)?.image_url}
+            className="w-6 aspect-square fill-blue-950"
+          />
+          <div>{name}</div>
+          <div className="text-normal text-neutral-dark-05">{symbol}</div>
+        </div>
       )
     },
   },
@@ -64,7 +64,7 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
     ),
     cell: ({ row }) => {
       const { price } = row.original
-      return <div>{numeral(price).format('$0,0.00[00]')}</div>
+      return <div>{price}</div>
     },
   },
   {
@@ -73,11 +73,14 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
       <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">24h</div>
     ),
     cell: ({ row }) => {
-      const { price_24h } = row.original
+      const { price_change_percentage_24h } = row.original
       return (
-        <div className={cn(price_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1')}>
-          {price_24h > 0 ? '+' : '-'}
-          {numeral(price_24h).format('0,0.[00]')}%
+        <div
+          className={cn(
+            price_change_percentage_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
+          )}>
+          {price_change_percentage_24h > 0 ? '+' : ''}
+          {numeral(price_change_percentage_24h).format('0,0.[00]')}%
         </div>
       )
     },
@@ -87,14 +90,8 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
     header: () => (
       <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">7d</div>
     ),
-    cell: ({ row }) => {
-      const { price_7d } = row.original
-      return (
-        <div className={cn(price_7d > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1')}>
-          {price_7d > 0 ? '+' : ''}
-          {numeral(price_7d).format('0,0.[00]')}%
-        </div>
-      )
+    cell: () => {
+      return <div>-</div>
     },
   },
   {
@@ -104,9 +101,8 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
         Open Interest
       </div>
     ),
-    cell: ({ row }) => {
-      const { open_interest } = row.original
-      return <div className="w-full text-center">${nFormatter(open_interest, 2)}</div>
+    cell: () => {
+      return <div className="w-full text-center">-</div>
     },
   },
   {
@@ -138,9 +134,10 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
     ),
     cell: ({ row }) => {
       const { market_cap } = row.original
+      const format = market_cap?.split('$')?.[1]?.split(',')?.join('')
       return (
         <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
-          ${nFormatter(market_cap, 2)}
+          ${nFormatter(parseFloat(format), 2)}
         </div>
       )
     },
@@ -151,7 +148,7 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
     header: () => (
       <div className="flex items-center justify-center w-full gap-1 whitespace-nowrap">
         <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
-          Volume (24h)
+          Total Volumn
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -185,25 +182,41 @@ export const columnsListToken: ColumnDef<ListToken>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      const { volumn_24h } = row.original
-      return <div className="w-full text-center">${nFormatter(volumn_24h, 2)}</div>
+      const { total_volume } = row.original
+      const format = total_volume?.split('$')?.[1]?.split(',')?.join('')
+      return <div className="w-full text-center">${nFormatter(format, 2)}</div>
     },
   },
-  {
-    accessorKey: 'price_chart',
-    header: () => (
-      <div className="text-center w-full text-neutral-dark-05 text-sm not-italic font-bold leading-5">
-        Chart
-      </div>
-    ),
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { price_chart } = row.original
-      return (
-        <div className="flex items-center w-full justify-center relative rounded-2xl">
-          <ChartTokenDetail dataChart={price_chart} changePrice={1} />
-        </div>
-      )
-    },
-  },
+  // {
+  //   accessorKey: 'price_chart',
+  //   header: () => (
+  //     <div className="text-center w-full text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+  //       Chart
+  //     </div>
+  //   ),
+  //   enableSorting: false,
+  //   cell: () => {
+  //     return (
+  //       <div className="flex items-center w-full justify-center relative rounded-2xl">
+  //         <ChartTokenDetail
+  //           dataChart={[
+  //             [1707580800000, 0.999893, 1.001, 0.999685, 0.999685],
+  //             [1707566400000, 0.998762, 0.999885, 0.99841, 0.999083],
+  //             [1707552000000, 0.999482, 1.001, 0.999482, 1.001],
+  //             [1707537600000, 0.999745, 1, 0.999745, 1],
+  //             [1707523200000, 0.999406, 1, 0.999406, 1],
+  //             [1707508800000, 1, 1.001, 0.997821, 0.997821],
+  //             [1707494400000, 0.999803, 0.999842, 0.998952, 0.998952],
+  //             [1707480000000, 0.999499, 1.003, 0.999499, 1.001],
+  //             [1707465600000, 1, 1, 0.999996, 1],
+  //             [1707451200000, 0.999893, 1.003, 0.999893, 1.003],
+  //             [1707436800000, 0.999348, 1, 0.998982, 1],
+  //             [1707422400000, 1, 1.001, 0.998037, 1.001],
+  //           ]}
+  //           changePrice={1}
+  //         />
+  //       </div>
+  //     )
+  //   },
+  // },
 ]

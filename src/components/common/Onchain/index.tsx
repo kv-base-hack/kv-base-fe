@@ -1,14 +1,13 @@
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { Activity, columnsActivity } from '@/components/common/DataTable/columnsActivity'
-import {
-  SmartMoneyRanking,
-  columnsSmartMoneyRanking,
-} from '@/components/common/DataTable/columnsSmartMoneyRanking'
+import { columnsActivity } from '@/components/common/DataTable/columnsActivity'
+import { columnsSmartMoneyRanking } from '@/components/common/DataTable/columnsSmartMoneyRanking'
 import { PaginationCustom } from '@/components/common/Pagination'
 import Calendar from '@/components/shared/icons/Calendar'
 import Info from '@/components/shared/icons/Info'
 import SwapDate from '@/components/shared/icons/SwapDate'
+import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
+import { useTopUserProfitQuery } from '@/query/onchain-signal/getTopUserProfit'
 import { useState } from 'react'
 
 const TypeActivityGroup = () => {
@@ -25,49 +24,48 @@ const TypeActivityGroup = () => {
   )
 }
 
-export const Onchain = ({
-  dataActivity,
-  dataSmartMoneyRanking,
-}: {
-  dataActivity: Activity[]
-  dataSmartMoneyRanking: SmartMoneyRanking[]
-}) => {
+export const Onchain = () => {
   const [page, setPage] = useState(1)
+
+  //
+  const topUserProfitQuery = useTopUserProfitQuery({
+    limitTopAddress: 5,
+    duration: '24h',
+  })
+  const dataTopUserProfit = topUserProfitQuery.data?.data.topUserProfit
+  //
+
+  const activityQuery = useTopActivityQuery({
+    action: 'all',
+  })
+  const dataActivity = activityQuery.data?.data.activities
+
   return (
     <>
       <div className="flex my-4 items-center gap-4 self-stretch font-semibold whitespace-nowrap leading-[160%] max-md:flex-wrap">
         <div className="flex gap-2 my-auto text-xl tracking-tight">
           <div className="flex gap-2 justify-between text-gray-300">
-            <div>ETH</div>
+            <div>SOL</div>
             <img
               loading="lazy"
-              src="/assets/icons/chain/ethereum.svg"
+              src="/assets/icons/chain/solana.svg"
               className="object-center w-6 aspect-square"
             />
           </div>
           <div className="grow text-gray-300">Onchain Signal</div>
         </div>
-        <div className="flex gap-2 justify-between text-base tracking-normal max-md:flex-wrap max-md:max-w-full">
-          <div className="grow cursor-pointer justify-center px-4 py-2 text-gray-300 rounded-lg bg-neutral-06">
-            Smart Money
-          </div>
-          <div className="grow cursor-pointer justify-center px-4 py-2 text-gray-500 rounded-lg bg-neutral-07">
-            Insider Trade
-          </div>
-        </div>
       </div>
       <WrapTable title="Smart Money Ranking" childHeader={<TypeActivityGroup />}>
         <div className="mt-8">
-          {dataSmartMoneyRanking ? (
-            <DataTable
-              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-              columns={columnsSmartMoneyRanking}
-              data={dataSmartMoneyRanking}
-              noneBorder
-              noneBgHeader
-              emptyData="No results."
-            />
-          ) : null}
+          <DataTable
+            className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+            columns={columnsSmartMoneyRanking}
+            data={dataTopUserProfit || []}
+            isFetching={topUserProfitQuery.isFetching}
+            noneBorder
+            noneBgHeader
+            emptyData="No results."
+          />
         </div>
         <PaginationCustom
           className="mt-8"
@@ -83,16 +81,15 @@ export const Onchain = ({
         title="Smart Money's Activity"
         childHeader={<TypeActivityGroup />}>
         <div className="mt-8">
-          {dataActivity ? (
-            <DataTable
-              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-              columns={columnsActivity}
-              data={dataActivity}
-              noneBorder
-              noneBgHeader
-              emptyData="No results."
-            />
-          ) : null}
+          <DataTable
+            className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+            columns={columnsActivity}
+            data={dataActivity?.slice(0, 10) || []}
+            isFetching={activityQuery.isFetching}
+            noneBorder
+            noneBgHeader
+            emptyData="No results."
+          />
         </div>
         <PaginationCustom
           className="mt-8"

@@ -3,6 +3,9 @@ import { PaginationCustom } from '@/components/common/Pagination'
 import ArrowDown from '@/components/shared/icons/ArowDown'
 import CheckIcon from '@/components/shared/icons/CheckIcon'
 import PlusIcon from '@/components/shared/icons/PlusIcon'
+import { useArticleQuery } from '@/query/course/useArticle'
+import { useTopicQuery } from '@/query/course/useTopic'
+import { Article } from '@/types/article'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
@@ -12,12 +15,18 @@ export const Route = createFileRoute('/academy/articles')({
 
 function Articles() {
   const [page, setPage] = useState(1)
-
+  const articleQuery = useArticleQuery()
+  const dataArticle = articleQuery.data?.data
+  //
+  const topicQuery = useTopicQuery()
+  const dataTopic = topicQuery.data?.data
   return (
     <div className="w-full h-full">
       <div className="flex flex-col mb-10">
         <div className="flex m-10 mb-4 gap-4 text-neutral-300 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-          <div className="text-4xl font-semibold tracking-tighter leading-10">Articles (457)</div>
+          <div className="text-4xl font-semibold tracking-tighter leading-10">
+            Articles ({dataArticle?.length})
+          </div>
           <div className="flex items-center gap-2 px-4 py-2 my-auto text-base tracking-normal leading-6 rounded-xl border-2 border-solid bg-neutral-07/50 border-white/10">
             <div className="grow">Recently published</div>
             <ArrowDown />
@@ -29,99 +38,15 @@ function Articles() {
               <div className="self-stretch text-base tracking-normal leading-6 max-md:max-w-full">
                 Topics
               </div>
-              <div className="flex gap-1 mt-4 max-md:flex-wrap max-md:max-w-full">
-                <div className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Altcoin</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Binance</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Bitcoin</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Blockchain</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Community</div>
-                  <PlusIcon />
-                </div>
-              </div>
-              <div className="flex gap-px mt-2 max-md:flex-wrap max-md:max-w-full">
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Consensus</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Cryptography</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">DeFi</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Economics</div>
-                  <PlusIcon />
-                </div>
-              </div>
-              <div className="flex gap-1 mt-2 max-md:flex-wrap max-md:max-w-full">
-                <div className="flex items-center gap-1 justify-between px-5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Ethereum</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">History</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Metaverse</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Mining</div>
-                  <PlusIcon />
-                </div>
-              </div>
-              <div className="flex gap-1 mt-2 max-md:flex-wrap max-md:max-w-full">
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Personal Finance</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Privacy</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Security</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Tech</div>
-                  <PlusIcon />
-                </div>
-              </div>
-              <div className="flex gap-0.5 mt-2 max-md:flex-wrap max-md:max-w-full">
-                <div className="flex items-center gap-1 justify-between px-3.5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Technical Analysis</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-3.5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Trading</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-4 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Tutorials</div>
-                  <PlusIcon />
-                </div>
-                <div className="flex items-center gap-1 justify-between px-3.5 py-1 bg-gray-800 rounded-[100px]">
-                  <div className="grow">Use Cases</div>
-                  <PlusIcon />
-                </div>
+              <div className="flex flex-wrap gap-2">
+                {dataTopic?.map((topic: string, index: number) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
+                    <div className="grow">{topic}</div>
+                    <PlusIcon />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -157,8 +82,8 @@ function Articles() {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-4 m-10">
-          {[...Array(10)].map((_, index) => (
-            <ArticleItem key={index} />
+          {dataArticle?.map((article: Article, index: number) => (
+            <ArticleItem key={index} article={article} />
           ))}
         </div>
         <PaginationCustom

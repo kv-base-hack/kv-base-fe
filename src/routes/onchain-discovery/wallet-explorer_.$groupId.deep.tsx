@@ -1,59 +1,67 @@
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { Activity, columnsActivity } from '@/components/common/DataTable/columnsActivity'
+import { columnsActivity } from '@/components/common/DataTable/columnsActivity'
 import { Portfolio, columnsPortfolio } from '@/components/common/DataTable/columnsPortfolio'
 import {
   TradeStatistic,
   columnsTradeStatistic,
 } from '@/components/common/DataTable/columnsTradeStatistic'
+import { DateGroup } from '@/components/common/DateGroup'
 import { PaginationCustom } from '@/components/common/Pagination'
 import AvatarIcon from '@/components/shared/icons/Avatar'
-import { activityQueryOptions } from '@/query/wallet-explorer/getActivity'
-import { portfolioQueryOptions } from '@/query/wallet-explorer/getPortfolio'
-import { tradeStatisticQueryOptions } from '@/query/wallet-explorer/getTradeStatistic'
-import { useSuspenseQuery } from '@tanstack/react-query'
+import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
+import { usePortfolioQuery } from '@/query/wallet-explorer/getPortfolio'
+import { useTradeStatisticQuery } from '@/query/wallet-explorer/getTradeStatistic'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
-const TypeActivityGroup = () => {
-  return (
-    <div className="flex gap-5 justify-between items-center text-base tracking-normal text-gray-500">
-      <div className="justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.6] bg-gray-300 bg-opacity-10">
-        All
-      </div>
-      <div className="self-stretch my-auto">Inflow</div>
-      <div className="self-stretch my-auto">Outflow</div>
-      <div className="grow self-stretch my-auto">Buying</div>
-      <div className="grow self-stretch my-auto">Selling</div>
-    </div>
-  )
-}
+const DATA_ACTIVITY = [
+  {
+    value: 'all',
+    label: 'All',
+  },
+  {
+    value: 'inflow',
+    label: 'Inflow',
+  },
+  {
+    value: 'outflow',
+    label: 'Outflow',
+  },
+  {
+    value: 'buying',
+    label: 'Buying',
+  },
+  {
+    value: 'selling',
+    label: 'Selling',
+  },
+]
 
 export const Route = createFileRoute('/onchain-discovery/wallet-explorer/$groupId/deep')({
-  loader: async (opts: any) => {
-    await opts.context.queryClient.ensureQueryData(activityQueryOptions(opts.params.groupId))
-    await opts.context.queryClient.ensureQueryData(tradeStatisticQueryOptions(opts.params.groupId))
-    await opts.context.queryClient.ensureQueryData(portfolioQueryOptions(opts.params.groupId))
-  },
   component: WalletExplorerDetail,
 })
 
 function WalletExplorerDetail() {
   const params = Route.useParams()
-  const tradeStatisticQuery = useSuspenseQuery(tradeStatisticQueryOptions(params.groupId))
-  const tradeStatistic = tradeStatisticQuery.data as TradeStatistic[]
-  //
-  const portfolioQuery = useSuspenseQuery(portfolioQueryOptions(params.groupId))
-  const portfolio = portfolioQuery.data as Portfolio[]
-  //
-  const smartMoneyRankingQuery = useSuspenseQuery(activityQueryOptions(params.groupId))
-  const dataActivity = smartMoneyRankingQuery.data as Activity[]
   const [page, setPage] = useState(1)
+  const [filterActivity, setFilterActivity] = useState('all')
+
+  const tradeStatisticQuery = useTradeStatisticQuery(params.groupId)
+  const tradeStatistic = (tradeStatisticQuery.data as TradeStatistic[]) || []
+  //
+  const portfolioQuery = usePortfolioQuery(params.groupId)
+  const portfolio = (portfolioQuery.data as Portfolio[]) || []
+  //
+  const activityQuery = useTopActivityQuery({
+    action: filterActivity,
+  })
+  const dataActivity = activityQuery.data?.data.activities
 
   return (
-    <div className="w-full h-full">
-      <div className="flex flex-col mx-10 mt-10 justify-center self-stretch">
-        <div className="w-full text-4xl text-gray-300 leading-[60px] max-md:max-w-full">
+    <div className="w-full h-full pt-2">
+      <div className="flex flex-col mx-10 mt-4 justify-center self-stretch">
+        <div className="w-full text-4xl text-neutral-02 leading-[60px] max-md:max-w-full">
           Wallet Explorer
         </div>
         <div className="flex gap-5 justify-between mt-4 w-full max-md:flex-wrap max-md:max-w-full">
@@ -93,12 +101,12 @@ function WalletExplorerDetail() {
             <div className="flex gap-5 m-auto mt-px justify-between px-4 py-6 text-base tracking-normal leading-6 w-full h-full rounded-lg backdrop-blur-[5px] bg-neutral-07">
               <div className="flex flex-col flex-1 justify-center">
                 <div className="self-center font-semibold text-gray-300">Total Balance</div>
-                <div className="self-center mt-1 text-yellow-200">$4.097B</div>
+                <div className="self-center mt-1 text-yellow-200">$1.097M</div>
               </div>
               <div className="w-px h-full bg-white/10"></div>
               <div className="flex flex-col flex-1 justify-center">
                 <div className="self-center font-semibold text-gray-300">PnL (ROI)</div>
-                <div className="self-center mt-1 text-emerald-500">$29.7M (+2500%)</div>
+                <div className="self-center mt-1 text-emerald-500">$1.7M (+2500%)</div>
               </div>
               <div className="w-px h-full bg-white/10"></div>
               <div className="flex flex-col flex-1 justify-center">
@@ -167,18 +175,25 @@ function WalletExplorerDetail() {
       </div>
       {/* table */}
       <div className="m-10">
-        <WrapTable title="Insider Trade’s Activity" childHeader={<TypeActivityGroup />}>
+        <WrapTable
+          title="Smart Money’s Activity"
+          childHeader={
+            <DateGroup
+              dataSource={DATA_ACTIVITY}
+              active={filterActivity}
+              handleActive={setFilterActivity}
+            />
+          }>
           <div className="mt-8">
-            {dataActivity ? (
-              <DataTable
-                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                columns={columnsActivity}
-                data={dataActivity}
-                noneBorder
-                noneBgHeader
-                emptyData="No results."
-              />
-            ) : null}
+            <DataTable
+              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+              columns={columnsActivity}
+              data={dataActivity?.slice(0, 10) || []}
+              isFetching={activityQuery.isFetching}
+              noneBorder
+              noneBgHeader
+              emptyData="No results."
+            />
           </div>
           <PaginationCustom
             className="mt-8"

@@ -5,7 +5,13 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SwapImport } from './routes/swap'
+import { Route as SubcriptionsImport } from './routes/subcriptions'
+import { Route as MyPortfolioImport } from './routes/my-portfolio'
+import { Route as MarketImport } from './routes/market'
+import { Route as EducationImport } from './routes/education'
 import { Route as DashboardImport } from './routes/dashboard'
+import { Route as BotsStrategyImport } from './routes/bots-strategy'
 import { Route as IndexImport } from './routes/index'
 import { Route as OnchainDiscoveryWalletExplorerImport } from './routes/onchain-discovery/wallet-explorer'
 import { Route as OnchainDiscoveryTokenExplorerImport } from './routes/onchain-discovery/token-explorer'
@@ -15,17 +21,12 @@ import { Route as AcademyCoursesImport } from './routes/academy/courses'
 import { Route as AcademyArticlesImport } from './routes/academy/articles'
 import { Route as OnchainDiscoveryWalletExplorerGroupIdDeepImport } from './routes/onchain-discovery/wallet-explorer_.$groupId.deep'
 import { Route as OnchainDiscoveryTokenExplorerTokenDeepImport } from './routes/onchain-discovery/token-explorer_.$token.deep'
+import { Route as AcademyCoursesCourseIdDeepImport } from './routes/academy/courses_.$courseId.deep'
 import { Route as AcademyArticlesArticleIdDeepImport } from './routes/academy/articles_.$articleId.deep'
 
 // Create Virtual Routes
 
 const TradingTerminalLazyImport = createFileRoute('/trading-terminal')()
-const SwapLazyImport = createFileRoute('/swap')()
-const SubcriptionsLazyImport = createFileRoute('/subcriptions')()
-const MyPortfolioLazyImport = createFileRoute('/my-portfolio')()
-const MarketLazyImport = createFileRoute('/market')()
-const EducationLazyImport = createFileRoute('/education')()
-const BotsStrategyLazyImport = createFileRoute('/bots-strategy')()
 
 // Create/Update Routes
 
@@ -36,38 +37,38 @@ const TradingTerminalLazyRoute = TradingTerminalLazyImport.update({
   import('./routes/trading-terminal.lazy').then((d) => d.Route),
 )
 
-const SwapLazyRoute = SwapLazyImport.update({
+const SwapRoute = SwapImport.update({
   path: '/swap',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/swap.lazy').then((d) => d.Route))
+} as any)
 
-const SubcriptionsLazyRoute = SubcriptionsLazyImport.update({
+const SubcriptionsRoute = SubcriptionsImport.update({
   path: '/subcriptions',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/subcriptions.lazy').then((d) => d.Route))
+} as any)
 
-const MyPortfolioLazyRoute = MyPortfolioLazyImport.update({
+const MyPortfolioRoute = MyPortfolioImport.update({
   path: '/my-portfolio',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/my-portfolio.lazy').then((d) => d.Route))
+} as any)
 
-const MarketLazyRoute = MarketLazyImport.update({
+const MarketRoute = MarketImport.update({
   path: '/market',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/market.lazy').then((d) => d.Route))
+} as any)
 
-const EducationLazyRoute = EducationLazyImport.update({
+const EducationRoute = EducationImport.update({
   path: '/education',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/education.lazy').then((d) => d.Route))
-
-const BotsStrategyLazyRoute = BotsStrategyLazyImport.update({
-  path: '/bots-strategy',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/bots-strategy.lazy').then((d) => d.Route))
+} as any)
 
 const DashboardRoute = DashboardImport.update({
   path: '/dashboard',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BotsStrategyRoute = BotsStrategyImport.update({
+  path: '/bots-strategy',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -122,6 +123,13 @@ const OnchainDiscoveryTokenExplorerTokenDeepRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const AcademyCoursesCourseIdDeepRoute = AcademyCoursesCourseIdDeepImport.update(
+  {
+    path: '/academy/courses/$courseId/deep',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
 const AcademyArticlesArticleIdDeepRoute =
   AcademyArticlesArticleIdDeepImport.update({
     path: '/academy/articles/$articleId/deep',
@@ -136,32 +144,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/bots-strategy': {
+      preLoaderRoute: typeof BotsStrategyImport
+      parentRoute: typeof rootRoute
+    }
     '/dashboard': {
       preLoaderRoute: typeof DashboardImport
       parentRoute: typeof rootRoute
     }
-    '/bots-strategy': {
-      preLoaderRoute: typeof BotsStrategyLazyImport
-      parentRoute: typeof rootRoute
-    }
     '/education': {
-      preLoaderRoute: typeof EducationLazyImport
+      preLoaderRoute: typeof EducationImport
       parentRoute: typeof rootRoute
     }
     '/market': {
-      preLoaderRoute: typeof MarketLazyImport
+      preLoaderRoute: typeof MarketImport
       parentRoute: typeof rootRoute
     }
     '/my-portfolio': {
-      preLoaderRoute: typeof MyPortfolioLazyImport
+      preLoaderRoute: typeof MyPortfolioImport
       parentRoute: typeof rootRoute
     }
     '/subcriptions': {
-      preLoaderRoute: typeof SubcriptionsLazyImport
+      preLoaderRoute: typeof SubcriptionsImport
       parentRoute: typeof rootRoute
     }
     '/swap': {
-      preLoaderRoute: typeof SwapLazyImport
+      preLoaderRoute: typeof SwapImport
       parentRoute: typeof rootRoute
     }
     '/trading-terminal': {
@@ -196,6 +204,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademyArticlesArticleIdDeepImport
       parentRoute: typeof rootRoute
     }
+    '/academy/courses/$courseId/deep': {
+      preLoaderRoute: typeof AcademyCoursesCourseIdDeepImport
+      parentRoute: typeof rootRoute
+    }
     '/onchain-discovery/token-explorer/$token/deep': {
       preLoaderRoute: typeof OnchainDiscoveryTokenExplorerTokenDeepImport
       parentRoute: typeof rootRoute
@@ -211,13 +223,13 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
+  BotsStrategyRoute,
   DashboardRoute,
-  BotsStrategyLazyRoute,
-  EducationLazyRoute,
-  MarketLazyRoute,
-  MyPortfolioLazyRoute,
-  SubcriptionsLazyRoute,
-  SwapLazyRoute,
+  EducationRoute,
+  MarketRoute,
+  MyPortfolioRoute,
+  SubcriptionsRoute,
+  SwapRoute,
   TradingTerminalLazyRoute,
   AcademyArticlesRoute,
   AcademyCoursesRoute,
@@ -226,6 +238,7 @@ export const routeTree = rootRoute.addChildren([
   OnchainDiscoveryTokenExplorerRoute,
   OnchainDiscoveryWalletExplorerRoute,
   AcademyArticlesArticleIdDeepRoute,
+  AcademyCoursesCourseIdDeepRoute,
   OnchainDiscoveryTokenExplorerTokenDeepRoute,
   OnchainDiscoveryWalletExplorerGroupIdDeepRoute,
 ])

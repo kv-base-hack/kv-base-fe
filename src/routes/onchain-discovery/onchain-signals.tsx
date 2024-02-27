@@ -1,235 +1,81 @@
 import { DataTable } from '@/components/common/DataTable'
-import { Activity, columnsActivity } from '@/components/common/DataTable/columnsActivity'
-import {
-  PerformingToken,
-  columnsPerformanceToken,
-} from '@/components/common/DataTable/columnsPerformanceToken'
+import { columnsActivity } from '@/components/common/DataTable/columnsActivity'
+import { columnsPerformanceToken } from '@/components/common/DataTable/columnsPerformanceToken'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
+import { DateGroup } from '@/components/common/DateGroup'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
 import { TopCoin } from '@/components/common/TopCoin'
 import { cn } from '@/lib/utils'
+import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
+import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
 import { createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
-
-async function getDataPerformanceToken(): Promise<PerformingToken[]> {
-  return [
-    {
-      id: '1',
-      symbol: 'USDT',
-      gains: 207220.61,
-      net_flow: 1964000,
-      avg_cost: 0.022692,
-      current_price: 0.0242551,
-      realized_percentage: 35.89,
-      avg_roi: 245.01,
-    },
-    {
-      id: '2',
-      symbol: 'USDT',
-      gains: 207220.61,
-      net_flow: 1964000,
-      avg_cost: 0.022692,
-      current_price: 0.0242551,
-      realized_percentage: 35.89,
-      avg_roi: 245.01,
-    },
-    {
-      id: '3',
-      symbol: 'USDT',
-      gains: 207220.61,
-      net_flow: 1964000,
-      avg_cost: 0.022692,
-      current_price: 0.0242551,
-      realized_percentage: 35.89,
-      avg_roi: 245.01,
-    },
-    {
-      id: '4',
-      symbol: 'USDT',
-      gains: 207220.61,
-      net_flow: 1964000,
-      avg_cost: 0.022692,
-      current_price: 0.0242551,
-      realized_percentage: 35.89,
-      avg_roi: 245.01,
-    },
-    {
-      id: '5',
-      symbol: 'USDT',
-      gains: 207220.61,
-      net_flow: 1964000,
-      avg_cost: 0.022692,
-      current_price: 0.0242551,
-      realized_percentage: 35.89,
-      avg_roi: 245.01,
-    },
-    {
-      id: '6',
-      symbol: 'USDT',
-      gains: 207220.61,
-      net_flow: 1964000,
-      avg_cost: 0.022692,
-      current_price: 0.0242551,
-      realized_percentage: 35.89,
-      avg_roi: 245.01,
-    },
-  ]
-}
-
-async function getDataActivity(): Promise<Activity[]> {
-  return [
-    {
-      id: '1',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '2',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '3',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '4',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-    {
-      id: '5',
-      time: 'Nov 19, 01:24',
-      smart_money: 'Amber Group',
-      symbol: 'USDT',
-      movements: 'OUTFLOW',
-      value: {
-        total: 14740000,
-        amount: 2000000,
-        symbol: 'BLUR',
-      },
-      avg_cost: 0.524773,
-      realized_pnl: {
-        percent: 2.1,
-        amount: 300000,
-      },
-      unrealized_pnl: {
-        percent: 8.4,
-        amount: 1200000,
-      },
-    },
-  ]
-}
-
-const DateGroup = () => {
-  return (
-    <div className="flex gap-5 justify-between items-center text-base tracking-normal text-gray-500">
-      <div className="justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.6] bg-gray-300 bg-opacity-10">
-        24H
-      </div>{' '}
-      <div className="self-stretch my-auto">7D</div>
-      <div className="self-stretch my-auto">30D</div>
-      <div className="grow self-stretch my-auto">3M</div>
-    </div>
-  )
-}
-
-const TypeActivityGroup = ({ tab }: { tab: string }) => {
-  return (
-    <div className="flex gap-5 justify-between items-center text-base tracking-normal text-gray-500">
-      <div className="justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.6] bg-gray-300 bg-opacity-10">
-        All
-      </div>{' '}
-      {tab === 'smart_money' ? <div className="self-stretch my-auto">Inflow</div> : null}
-      {tab === 'smart_money' ? <div className="self-stretch my-auto">Outflow</div> : null}
-      <div className="grow self-stretch my-auto">Buying</div>
-      <div className="grow self-stretch my-auto">Selling</div>
-    </div>
-  )
-}
+import { Suspense, useState } from 'react'
 
 export const Route = createFileRoute('/onchain-discovery/onchain-signals')({
-  loader: async () => {
-    return {
-      dataPerformanceToken: await getDataPerformanceToken(),
-      dataActivity: await getDataActivity(),
-    }
-  },
   component: OnchainSignals,
 })
 
+const DATA_DATE = [
+  {
+    value: '1h',
+    label: '1h',
+  },
+  {
+    value: '4h',
+    label: '4h',
+  },
+  {
+    value: '24h',
+    label: '1D',
+  },
+  {
+    value: '168h',
+    label: '3D',
+  },
+]
+
+const DATA_ACTIVITY = [
+  {
+    value: 'all',
+    label: 'All',
+  },
+  {
+    value: 'inflow',
+    label: 'Inflow',
+  },
+  {
+    value: 'outflow',
+    label: 'Outflow',
+  },
+  {
+    value: 'buying',
+    label: 'Buying',
+  },
+  {
+    value: 'selling',
+    label: 'Selling',
+  },
+]
 function OnchainSignals() {
-  const { dataPerformanceToken, dataActivity } = Route.useLoaderData()
-  const [page, setPage] = useState(1)
   const [tab, setTabs] = useState('smart_money')
 
+  const [page, setPage] = useState(1)
+  const [filterDate, setFilterDate] = useState('24h')
+  const [filterActivity, setFilterActivity] = useState('all')
+
+  const activityQuery = useTopActivityQuery({
+    action: filterActivity,
+  })
+  const dataActivity = activityQuery.data?.data.activities || []
+  //
+  const topTokenProfitQuery = useTopTokenProfitQuery({
+    limitTokenAddress: 5,
+    duration: filterDate,
+  })
+  const dataTopTokenProfit = topTokenProfitQuery.data?.data.topTokenProfit || []
+  //
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
   }
@@ -279,22 +125,27 @@ function OnchainSignals() {
         <SelectChain name="Ethereum Chain" />
       </GroupHeader>
       {/* top coin */}
-      {tab === 'smart_money' ? <TopCoin className="mx-10 mt-4" /> : null}
+      <Suspense fallback={<div>Loading...</div>}>
+        {tab === 'smart_money' ? <TopCoin className="mx-10 mt-4" /> : null}
+      </Suspense>
       {/* table */}
       {tab === 'smart_money' ? (
         <div className="m-10">
-          <WrapTable title="Smart Money's Top Performing Tokens" childHeader={<DateGroup />}>
+          <WrapTable
+            title="Smart Money's Top Performing Tokens"
+            childHeader={
+              <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />
+            }>
             <div className="mt-8">
-              {dataPerformanceToken ? (
-                <DataTable
-                  className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
-                  columns={columnsPerformanceToken}
-                  data={dataPerformanceToken}
-                  noneBorder
-                  noneBgHeader
-                  emptyData="No results."
-                />
-              ) : null}
+              <DataTable
+                className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
+                columns={columnsPerformanceToken}
+                data={dataTopTokenProfit || []}
+                isFetching={topTokenProfitQuery.isFetching}
+                noneBorder
+                noneBgHeader
+                emptyData="No results."
+              />
             </div>
             <PaginationCustom
               className="mt-8"
@@ -308,18 +159,25 @@ function OnchainSignals() {
         </div>
       ) : (
         <div className="m-10">
-          <WrapTable title="Insider Trade’s Activity" childHeader={<TypeActivityGroup tab={tab} />}>
+          <WrapTable
+            title="Insider Trade’s Activity"
+            childHeader={
+              <DateGroup
+                dataSource={DATA_ACTIVITY}
+                active={filterActivity}
+                handleActive={setFilterActivity}
+              />
+            }>
             <div className="mt-8">
-              {dataActivity ? (
-                <DataTable
-                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                  columns={columnsActivity}
-                  data={dataActivity}
-                  noneBorder
-                  noneBgHeader
-                  emptyData="No results."
-                />
-              ) : null}
+              <DataTable
+                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+                columns={columnsActivity}
+                data={dataActivity}
+                isFetching={activityQuery.isFetching}
+                noneBorder
+                noneBgHeader
+                emptyData="No results."
+              />
             </div>
             <PaginationCustom
               className="mt-8"
@@ -336,18 +194,23 @@ function OnchainSignals() {
         <div className="m-10">
           <WrapTable
             title={tab === 'smart_money' ? "Smart Money's Activity" : 'Insider Trade’s Activity'}
-            childHeader={<TypeActivityGroup tab={tab} />}>
+            childHeader={
+              <DateGroup
+                dataSource={DATA_ACTIVITY}
+                active={filterActivity}
+                handleActive={setFilterActivity}
+              />
+            }>
             <div className="mt-8">
-              {dataActivity ? (
-                <DataTable
-                  className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                  columns={columnsActivity}
-                  data={dataActivity}
-                  noneBorder
-                  noneBgHeader
-                  emptyData="No results."
-                />
-              ) : null}
+              <DataTable
+                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+                columns={columnsActivity}
+                data={dataActivity}
+                isFetching={activityQuery.isFetching}
+                noneBorder
+                noneBgHeader
+                emptyData="No results."
+              />
             </div>
             <PaginationCustom
               className="mt-8"
@@ -361,18 +224,21 @@ function OnchainSignals() {
         </div>
       ) : (
         <div className="m-10">
-          <WrapTable title="Insider Trade's Top Performing Tokens" childHeader={<DateGroup />}>
+          <WrapTable
+            title="Insider Trade's Top Performing Tokens"
+            childHeader={
+              <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />
+            }>
             <div className="mt-8">
-              {dataPerformanceToken ? (
-                <DataTable
-                  className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
-                  columns={columnsPerformanceToken}
-                  data={dataPerformanceToken}
-                  noneBorder
-                  noneBgHeader
-                  emptyData="No results."
-                />
-              ) : null}
+              <DataTable
+                className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
+                columns={columnsPerformanceToken}
+                data={dataTopTokenProfit}
+                isFetching={topTokenProfitQuery.isFetching}
+                noneBorder
+                noneBgHeader
+                emptyData="No results."
+              />
             </div>
             <PaginationCustom
               className="mt-8"

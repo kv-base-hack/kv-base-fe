@@ -1,6 +1,9 @@
+import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
+import { TopActivity } from '@/types/topActivity'
 import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
+import moment from 'moment'
 import numeral from 'numeral'
 
 export type Activity = {
@@ -25,14 +28,14 @@ export type Activity = {
   }
 }
 
-export const columnsActivity: ColumnDef<Activity>[] = [
+export const columnsActivity: ColumnDef<TopActivity>[] = [
   {
     accessorKey: 'time',
     header: () => 'Time',
     enableSorting: false,
     cell: ({ row }) => {
       const { time } = row.original
-      return <div className="text-neutral-04">{time}</div>
+      return <div className="text-neutral-04">{moment(time).format('MMM DD, hh:mm')}</div>
     },
   },
   {
@@ -40,8 +43,8 @@ export const columnsActivity: ColumnDef<Activity>[] = [
     header: () => 'Smart Money',
     enableSorting: false,
     cell: ({ row }) => {
-      const { smart_money } = row.original
-      return <div className="underline">{smart_money}</div>
+      const { sender } = row.original
+      return <div className="underline max-w-32 truncate">{sender}</div>
     },
   },
   {
@@ -54,7 +57,11 @@ export const columnsActivity: ColumnDef<Activity>[] = [
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/usdt.svg"
+            src={
+              row?.original?.token_image_url
+                ? row?.original?.token_image_url
+                : DATA_TOKEN?.find((item) => item.token === symbol)?.image_url
+            }
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{symbol}</div>
@@ -67,10 +74,22 @@ export const columnsActivity: ColumnDef<Activity>[] = [
     header: () => 'Movements',
     enableSorting: false,
     cell: ({ row }) => {
-      const { movements } = row.original
+      const { movement } = row.original
       return (
-        <div className="justify-center self-stretch px-2 py-0.5 my-auto text-center text-red-300 whitespace-nowrap rounded-md bg-amber-200 bg-opacity-10">
-          {movements}
+        <div
+          className={cn(
+            'uppercase justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap rounded-md bg-opacity-10',
+            movement === 'outflow'
+              ? 'bg-amber-200 text-red-300'
+              : movement === 'inflow'
+                ? 'bg-secondary-4 text-secondary-4'
+                : movement === 'buying'
+                  ? 'bg-primary-2 text-primary-2'
+                  : movement === 'selling'
+                    ? 'bg-semantic-error-3 text-semantic-error-3'
+                    : 'bg-primary-2 text-primary-2'
+          )}>
+          {movement}
         </div>
       )
     },
@@ -79,54 +98,25 @@ export const columnsActivity: ColumnDef<Activity>[] = [
     accessorKey: 'value',
     header: () => 'Value',
     enableSorting: false,
+    size: 220,
     cell: ({ row }) => {
-      const { value } = row.original
+      const { value_in_usdt, symbol, value_in_token } = row.original
       return (
         <div>
-          {nFormatter(value.amount, 2)} {value.symbol} (${nFormatter(value.total, 2)})
+          {nFormatter(value_in_token, 2)} {symbol} (${nFormatter(value_in_usdt, 2)})
         </div>
       )
     },
   },
   {
-    accessorKey: 'avg_cost',
-    header: () => 'Avg Cost',
+    accessorKey: 'current_price',
+    header: () => 'Current Price',
     enableSorting: false,
     cell: ({ row }) => {
-      const { avg_cost } = row.original
-      return <div>{numeral(avg_cost).format('$0,0.[000000]')}</div>
-    },
-  },
-  {
-    accessorKey: 'realized_pnl',
-    header: () => 'Realized PnL',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { realized_pnl } = row.original
+      const { price } = row.original
       return (
-        <div
-          className={cn(
-            realized_pnl.amount > 0 ? 'text-primary-2' : 'text-red-400',
-            'flex items-center justify-center'
-          )}>
-          {nFormatter(realized_pnl.amount, 2)} (${nFormatter(realized_pnl.percent, 2)})
-        </div>
-      )
-    },
-  },
-  {
-    accessorKey: 'unrealized_pnl',
-    header: () => 'Unrealized PnL',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { unrealized_pnl } = row.original
-      return (
-        <div
-          className={cn(
-            unrealized_pnl.amount > 0 ? 'text-primary-2' : 'text-red-400',
-            'flex items-center justify-center'
-          )}>
-          {nFormatter(unrealized_pnl.amount, 2)} (${nFormatter(unrealized_pnl.percent, 2)})
+        <div className={cn('flex items-center justify-center')}>
+          {numeral(price).format('$0,0.[0000]')}
         </div>
       )
     },
