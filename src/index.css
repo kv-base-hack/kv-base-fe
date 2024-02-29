@@ -59,3 +59,16 @@ body, html {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+.rc-pagination-item {
+  color: var(--Neutral-04, #6F767E);
+  cursor: pointer;
+  font-family: 'Sora';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.rc-pagination-item-active {
+  color: var(--Neutral-03, #D6D9DC);
+}

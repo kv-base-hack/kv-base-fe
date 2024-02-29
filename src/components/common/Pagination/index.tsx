@@ -89,8 +89,8 @@ export const PaginationCustom = ({
           onBlur={handleBlur}
           onChange={handleToPage}
         />
-        <span className="text-neutral-dark-4">of</span>
-        <span className="font-bold text-neutral-dark-1">{totalPage}</span>
+        <span className="text-neutral-04">of</span>
+        <span className="font-bold text-neutral-03">{totalPage}</span>
       </div>
     </div>
   )

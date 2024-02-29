@@ -26,6 +26,7 @@ const TypeActivityGroup = () => {
 
 export const Onchain = () => {
   const [page, setPage] = useState(1)
+  const [pageActivity, setPageActivity] = useState(1)
 
   //
   const topUserProfitQuery = useTopUserProfitQuery({
@@ -34,11 +35,14 @@ export const Onchain = () => {
   })
   const dataTopUserProfit = topUserProfitQuery.data?.data.topUserProfit
   //
-
   const activityQuery = useTopActivityQuery({
     action: 'all',
+    limit: 10,
+    start: pageActivity,
+    chain: 'eth',
   })
-  const dataActivity = activityQuery.data?.data.activities
+  const dataActivity = activityQuery.data?.data.activities || []
+  const totalActivity = activityQuery.data?.data.total || 1
 
   return (
     <>
@@ -93,11 +97,11 @@ export const Onchain = () => {
         </div>
         <PaginationCustom
           className="mt-8"
-          currentPage={page}
-          updatePage={() => null}
+          currentPage={pageActivity}
+          updatePage={(page: number) => setPageActivity(page)}
           pageSize={10}
-          total={10}
-          setPage={setPage}
+          total={totalActivity}
+          setPage={setPageActivity}
         />
       </WrapTable>
       {/* */}

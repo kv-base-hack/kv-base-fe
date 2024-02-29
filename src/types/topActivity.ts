@@ -1,5 +1,6 @@
 export interface DataTopActivity {
   activities: TopActivity[]
+  total: number
 }
 
 export interface TopActivity {

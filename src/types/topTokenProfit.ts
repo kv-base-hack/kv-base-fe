@@ -1,5 +1,6 @@
 export interface DataTopTokenProfit {
-  topTokenProfit: TopTokenProfit[]
+  top_token_profit: TopTokenProfit[]
+  total?: number
 }
 
 export interface TopTokenProfit {

@@ -61,20 +61,28 @@ const DATA_ACTIVITY = [
 function OnchainSignals() {
   const [tab, setTabs] = useState('smart_money')
 
-  const [page, setPage] = useState(1)
+  const [pageActivity, setPageActivity] = useState(1)
+  const [pageTopProfit, setPageTopProfit] = useState(1)
   const [filterDate, setFilterDate] = useState('24h')
   const [filterActivity, setFilterActivity] = useState('all')
 
   const activityQuery = useTopActivityQuery({
     action: filterActivity,
+    limit: 10,
+    start: pageActivity,
+    chain: 'eth',
   })
   const dataActivity = activityQuery.data?.data.activities || []
+  const totalActivity = activityQuery.data?.data.total || 1
   //
   const topTokenProfitQuery = useTopTokenProfitQuery({
-    limitTokenAddress: 5,
+    limit: 10,
+    start: pageTopProfit,
+    chain: 'eth',
     duration: filterDate,
   })
-  const dataTopTokenProfit = topTokenProfitQuery.data?.data.topTokenProfit || []
+  const dataTopTokenProfit = topTokenProfitQuery.data?.data.top_token_profit || []
+  const totalTopTokenProfit = topTokenProfitQuery.data?.data.total || 1
   //
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
@@ -149,11 +157,11 @@ function OnchainSignals() {
             </div>
             <PaginationCustom
               className="mt-8"
-              currentPage={page}
-              updatePage={() => null}
+              currentPage={pageTopProfit}
+              updatePage={(page: number) => setPageTopProfit(page)}
               pageSize={10}
-              total={10}
-              setPage={setPage}
+              total={totalTopTokenProfit}
+              setPage={setPageTopProfit}
             />
           </WrapTable>
         </div>
@@ -181,11 +189,11 @@ function OnchainSignals() {
             </div>
             <PaginationCustom
               className="mt-8"
-              currentPage={page}
-              updatePage={() => null}
+              currentPage={pageActivity}
+              updatePage={(page: number) => setPageActivity(page)}
               pageSize={10}
-              total={10}
-              setPage={setPage}
+              total={totalActivity}
+              setPage={setPageActivity}
             />
           </WrapTable>
         </div>
@@ -214,11 +222,11 @@ function OnchainSignals() {
             </div>
             <PaginationCustom
               className="mt-8"
-              currentPage={page}
-              updatePage={() => null}
+              currentPage={pageActivity}
+              updatePage={(page: number) => setPageActivity(page)}
               pageSize={10}
-              total={10}
-              setPage={setPage}
+              total={totalActivity}
+              setPage={setPageActivity}
             />
           </WrapTable>
         </div>
@@ -242,11 +250,11 @@ function OnchainSignals() {
             </div>
             <PaginationCustom
               className="mt-8"
-              currentPage={page}
-              updatePage={() => null}
+              currentPage={pageTopProfit}
+              updatePage={(page: number) => setPageTopProfit(page)}
               pageSize={10}
-              total={10}
-              setPage={setPage}
+              total={totalTopTokenProfit}
+              setPage={setPageTopProfit}
             />
           </WrapTable>
         </div>

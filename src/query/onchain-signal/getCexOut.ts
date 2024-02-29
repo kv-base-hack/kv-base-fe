@@ -4,13 +4,17 @@ import { useQuery } from '@tanstack/react-query'
 const GET_CEX_OUT = 'GET_CEX_OUT'
 
 export const useCexOutQuery = ({
-  limitTopNetCexOut,
+  limit,
   duration,
+  start,
+  chain,
 }: {
-  limitTopNetCexOut: number
+  limit: number
   duration: string
+  start: number
+  chain: string
 }) =>
   useQuery({
-    queryKey: [GET_CEX_OUT, { limitTopNetCexOut, duration }],
-    queryFn: () => getCexOut({ limitTopNetCexOut, duration }),
+    queryKey: [GET_CEX_OUT, { limit, duration, start, chain }],
+    queryFn: () => getCexOut({ limit, duration, start, chain }),
   })
