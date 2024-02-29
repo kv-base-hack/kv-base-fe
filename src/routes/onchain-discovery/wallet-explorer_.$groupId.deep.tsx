@@ -45,6 +45,7 @@ export const Route = createFileRoute('/onchain-discovery/wallet-explorer/$groupI
 function WalletExplorerDetail() {
   const params = Route.useParams()
   const [page, setPage] = useState(1)
+  const [pageActivity, setPageActivity] = useState(1)
   const [filterActivity, setFilterActivity] = useState('all')
 
   const tradeStatisticQuery = useTradeStatisticQuery(params.groupId)
@@ -55,8 +56,12 @@ function WalletExplorerDetail() {
   //
   const activityQuery = useTopActivityQuery({
     action: filterActivity,
+    limit: 10,
+    start: pageActivity,
+    chain: 'eth',
   })
-  const dataActivity = activityQuery.data?.data.activities
+  const dataActivity = activityQuery.data?.data.activities || []
+  const totalActivity = activityQuery.data?.data.total || 1
 
   return (
     <div className="w-full h-full pt-2">
@@ -197,11 +202,11 @@ function WalletExplorerDetail() {
           </div>
           <PaginationCustom
             className="mt-8"
-            currentPage={page}
-            updatePage={() => null}
+            currentPage={pageActivity}
+            updatePage={(page: number) => setPageActivity(page)}
             pageSize={10}
-            total={10}
-            setPage={setPage}
+            total={totalActivity}
+            setPage={setPageActivity}
           />
         </WrapTable>
       </div>

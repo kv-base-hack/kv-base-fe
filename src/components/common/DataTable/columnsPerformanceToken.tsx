@@ -1,35 +1,29 @@
 import { TooltipCustom } from '@/components/common/Tooltip'
 import Info from '@/components/shared/icons/Info'
+import { DATA_TOKEN } from '@/constant/token'
+import { TopTokenProfit } from '@/types/topTokenProfit'
 import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
 
-export type PerformingToken = {
-  id: string
-  symbol: string
-  gains: number
-  net_flow: number
-  avg_cost: number
-  current_price: number
-  realized_percentage: number
-  avg_roi: number
-}
-
-export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
+export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
   {
     accessorKey: 'symbol',
     header: () => 'Symbol',
     enableSorting: false,
     cell: ({ row }) => {
-      const { symbol } = row.original
       return (
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
-            src="/assets/icons/token/usdt.svg"
+            src={
+              row?.original?.image_url
+                ? row?.original?.image_url
+                : DATA_TOKEN?.find((item) => item.token === row?.original?.symbol)?.image_url
+            }
             className="w-6 aspect-square fill-blue-950"
           />
-          <div>{symbol}</div>
+          <div>{row?.original?.symbol}</div>
         </div>
       )
     },
@@ -49,27 +43,27 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { gains } = row.original
-      return <div className="text-primary-2">{numeral(gains).format('$0,0.00')}</div>
+      return <div className="text-primary-2">${nFormatter(gains, 3)}</div>
     },
   },
-  {
-    accessorKey: 'net_flow',
-    header: () => (
-      <div className="flex items-center gap-2">
-        <div>Net Flow</div>
-        <TooltipCustom
-          className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
-          content="The net flow of the token bought and sold by Smart Money within 1 day, 7 days, and 30 days.">
-          <Info />
-        </TooltipCustom>
-      </div>
-    ),
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { net_flow } = row.original
-      return <div>${nFormatter(net_flow, 3)}</div>
-    },
-  },
+  // {
+  //   accessorKey: 'net_flow',
+  //   header: () => (
+  //     <div className="flex items-center gap-2">
+  //       <div>Net Flow</div>
+  //       <TooltipCustom
+  //         className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+  //         content="The net flow of the token bought and sold by Smart Money within 1 day, 7 days, and 30 days.">
+  //         <Info />
+  //       </TooltipCustom>
+  //     </div>
+  //   ),
+  //   enableSorting: false,
+  //   cell: ({ row }) => {
+  //     const { net_flow } = row.original
+  //     return <div>{nFormatter(net_flow, 3)}</div>
+  //   },
+  // },
   {
     accessorKey: 'avg_cost',
     header: () => (
@@ -112,7 +106,11 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { realized_percentage } = row.original
-      return <div className="flex w-full justify-center">{realized_percentage}%</div>
+      return (
+        <div className="flex w-full justify-center">
+          {realized_percentage ? `${realized_percentage}%` : '-'}
+        </div>
+      )
     },
   },
   {
@@ -121,7 +119,7 @@ export const columnsPerformanceToken: ColumnDef<PerformingToken>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { avg_roi } = row.original
-      return <div className="flex w-full justify-end">{avg_roi}%</div>
+      return <div className="flex w-full justify-end">{avg_roi ? `${avg_roi}%` : '-'}</div>
     },
   },
 ]

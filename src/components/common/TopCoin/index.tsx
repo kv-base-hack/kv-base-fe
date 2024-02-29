@@ -1,5 +1,6 @@
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { DateGroup } from '@/components/common/DateGroup'
+import { PaginationCustom } from '@/components/common/Pagination'
 import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { useCexInQuery } from '@/query/onchain-signal/getCexIn'
@@ -31,21 +32,30 @@ const DATA_DATE = [
 ]
 
 export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
+  const [cexInPage, setCexInPage] = useState(1)
+  const [cexOutPage, setCexOutPage] = useState(1)
   const [cexOutTab, setCexOutTab] = useState('24h')
   const [cexInTab, setCexInTab] = useState('24h')
 
   const cexInQuery = useCexInQuery({
-    limitTopNetCexIn: 8,
+    limit: 5,
+    start: cexInPage,
+    chain: 'eth',
     duration: cexInTab,
   })
-  const dataCexIn = cexInQuery.data?.data.topCexIn || []
+  const dataCexIn = cexInQuery.data?.data.top_cex_in || []
+  const totalCexIn = cexInQuery.data?.data.total || 1
+
   const sumCexIn = dataCexIn.reduce((acc: number, cur) => acc + cur.value, 0)
   //
   const cexOutQuery = useCexOutQuery({
-    limitTopNetCexOut: 8,
+    limit: 5,
+    start: cexOutPage,
+    chain: 'eth',
     duration: cexOutTab,
   })
-  const dataCexOut = cexOutQuery.data?.data.topCexOut || []
+  const dataCexOut = cexOutQuery.data?.data.top_cex_out || []
+  const totalCexOut = cexOutQuery.data?.data.total || 1
   const sumCexOut = dataCexOut.reduce((acc: number, cur) => acc + cur.value, 0)
   //
 
@@ -91,6 +101,14 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
                 </div>
               ))}
             </div>
+            <PaginationCustom
+              className="mt-8"
+              currentPage={cexOutPage}
+              updatePage={(page: number) => setCexOutPage(page)}
+              pageSize={5}
+              total={totalCexOut}
+              setPage={setCexOutPage}
+            />
           </WrapTable>
         </div>
         <div className="flex flex-col w-1/2 max-md:ml-0 max-md:w-full">
@@ -132,6 +150,14 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
                 </div>
               ))}
             </div>
+            <PaginationCustom
+              className="mt-8"
+              currentPage={cexInPage}
+              updatePage={(page: number) => setCexInPage(page)}
+              pageSize={5}
+              total={totalCexIn}
+              setPage={setCexInPage}
+            />
           </WrapTable>
         </div>
       </div>

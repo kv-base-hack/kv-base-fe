@@ -1,5 +1,6 @@
 export interface DataCexOut {
-  topCexOut: TopCexOut[]
+  top_cex_out: TopCexOut[]
+  total: number
 }
 
 export interface TopCexOut {
