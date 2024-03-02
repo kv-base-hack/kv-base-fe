@@ -11,7 +11,7 @@ import { TrendingTokenResponse } from '@/types/trendingToken'
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://27.71.16.59:8040',
+  baseURL: 'https://onchain.kai.13thstation.xyz',
 })
 
 const api_1 = axios.create({
