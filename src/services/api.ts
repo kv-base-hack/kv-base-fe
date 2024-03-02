@@ -11,7 +11,7 @@ import { TrendingTokenResponse } from '@/types/trendingToken'
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://27.71.16.59:8040',
+  baseURL: 'https://onchain.kai.13thstation.xyz',
 })
 
 const api_1 = axios.create({
@@ -282,48 +282,36 @@ export const getTrendingToken = async (): Promise<TrendingTokenResponse> => {
 }
 
 export const getCexIn = async ({
-  limit = 5,
-  start = 1,
+  limitTopNetCexIn = 5,
   duration = '24h',
-  chain = 'eth',
 }): Promise<CexInResponse> => {
   return await api.get('/v1/token_cex_in', {
     params: {
-      limit,
+      limitTopNetCexIn,
       duration,
-      start,
-      chain,
     },
   })
 }
 
 export const getCexOut = async ({
-  limit = 5,
-  start = 1,
+  limitTopNetCexOut = 5,
   duration = '24h',
-  chain = 'eth',
 }): Promise<CexOutResponse> => {
   return await api.get('/v1/token_cex_out', {
     params: {
-      limit,
+      limitTopNetCexOut,
       duration,
-      start,
-      chain,
     },
   })
 }
 
 export const getTopTokenProfit = async ({
-  limit = 10,
+  limitTokenAddress = 5,
   duration = '24h',
-  start = 1,
-  chain = 'eth',
 }): Promise<TopTokenProfitResponse> => {
   return await api.get('/v1/token/profit', {
     params: {
-      limit,
-      start,
-      chain,
+      limitTokenAddress,
       duration,
     },
   })
@@ -341,17 +329,14 @@ export const getTopUserProfit = async ({
   })
 }
 export const getTopActivity = async ({
-  action = 'all',
-  limit = 10,
-  start = 1,
-  chain = 'eth',
+  action,
+}: {
+  action: string
 }): Promise<TopActivityResponse> => {
   return await api.get('/v1/activities', {
     params: {
-      chain,
+      chain: 'solana',
       action,
-      limit,
-      start,
     },
   })
 }
