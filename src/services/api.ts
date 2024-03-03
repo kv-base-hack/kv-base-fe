@@ -359,7 +359,7 @@ export const getTopActivity = async ({
 export const getLeaderboard = async (): Promise<LeaderboardResponse> => {
   return await api.get('/v1/leaderboard', {
     params: {
-      chain: 'solana',
+      chain: 'eth',
     },
   })
 }
@@ -372,7 +372,7 @@ export const getTokenList = async ({
   return await api.get('/v1/token/list', {
     params: {
       symbol_search,
-      chain: 'solana',
+      chain: 'eth',
     },
   })
 }
