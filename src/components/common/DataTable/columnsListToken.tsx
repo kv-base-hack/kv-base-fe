@@ -64,7 +64,7 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
     ),
     cell: ({ row }) => {
       const { price } = row.original
-      return <div>{price}</div>
+      return <div dangerouslySetInnerHTML={{ __html: price }}></div>
     },
   },
   {

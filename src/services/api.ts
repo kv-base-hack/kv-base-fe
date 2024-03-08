@@ -356,10 +356,16 @@ export const getTopActivity = async ({
   })
 }
 
-export const getLeaderboard = async (): Promise<LeaderboardResponse> => {
+export const getLeaderboard = async ({
+  limit = 5,
+  start = 1,
+  chain = 'eth',
+}): Promise<LeaderboardResponse> => {
   return await api.get('/v1/leaderboard', {
     params: {
-      chain: 'eth',
+      chain,
+      limit,
+      start,
     },
   })
 }
