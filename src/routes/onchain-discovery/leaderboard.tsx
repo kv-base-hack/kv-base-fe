@@ -32,9 +32,15 @@ export const Route = createFileRoute('/onchain-discovery/leaderboard')({
 
 function Leaderboard() {
   const [pageTopProfit, setPageTopProfit] = useState(1)
+  const [pageLeaderboard, setPageLeaderboard] = useState(1)
   //
-  const leaderboardQuery = useLeaderboardQuery()
+  const leaderboardQuery = useLeaderboardQuery({
+    start: pageLeaderboard,
+    limit: 10,
+    chain: 'eth',
+  })
   const dataLeaderboard = leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
+  const totalLeaderboard = leaderboardQuery.data?.data.total || 1
   //
   const topTokenProfitQuery = useTopTokenProfitQuery({
     limit: 10,
@@ -71,11 +77,11 @@ function Leaderboard() {
           </div>
           <PaginationCustom
             className="mt-8"
-            currentPage={pageTopProfit}
-            updatePage={(page: number) => setPageTopProfit(page)}
+            currentPage={pageLeaderboard}
+            updatePage={(page: number) => setPageLeaderboard(page)}
             pageSize={10}
-            total={totalTopTokenProfit}
-            setPage={setPageTopProfit}
+            total={totalLeaderboard}
+            setPage={setPageLeaderboard}
           />
         </WrapTable>
       </div>

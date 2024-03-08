@@ -15,9 +15,13 @@ export const Route = createFileRoute('/onchain-discovery/wallet-explorer')({
 function WalletExplorer() {
   const [page, setPage] = useState(1)
   //
-  //
-  const leaderboardQuery = useLeaderboardQuery()
+  const leaderboardQuery = useLeaderboardQuery({
+    start: page,
+    limit: 10,
+    chain: 'eth',
+  })
   const dataLeaderboard = leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
+  const totalLeaderboard = leaderboardQuery.data?.data.total || 1
   //
 
   return (
@@ -53,9 +57,9 @@ function WalletExplorer() {
           <PaginationCustom
             className="mt-8"
             currentPage={page}
-            updatePage={() => null}
+            updatePage={(page: number) => setPage(page)}
             pageSize={10}
-            total={10}
+            total={totalLeaderboard}
             setPage={setPage}
           />
         </WrapTableNoTitle>

@@ -1,5 +1,6 @@
 export interface DataLeaderboard {
   leaderboard: Leaderboard[]
+  total: number
 }
 
 export interface Leaderboard {
