@@ -1,22 +1,9 @@
+import { TopUserProfit } from '@/types/topUserProfit'
 import { nFormatter } from '@/utils/nFormatter'
 import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 
-export type SmartMoneyRanking = {
-  id: string
-  smart_money: string
-  badge: string[]
-  roi: number
-  net_profit: number
-  total_balance: number
-  most_profitable_trade: string
-  current_largest_position: string
-  most_bought_token_24h: string
-  most_sell_token_24h: string
-  largest_trade: string
-}
-
-export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
+export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
   {
     accessorKey: 'id',
     header: () => '#',
@@ -79,7 +66,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { roi } = row.original
-      return <div className="text-primary-2">{roi}%</div>
+      return <div className="text-primary-2">{roi ? `${roi}%` : '-'}</div>
     },
   },
   {
@@ -88,7 +75,9 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { net_profit } = row.original
-      return <div className="text-primary-2">${nFormatter(net_profit, 2)}</div>
+      return (
+        <div className="text-primary-2">{net_profit ? `$${nFormatter(net_profit, 2)}` : '-'}</div>
+      )
     },
   },
   {
@@ -97,7 +86,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { total_balance } = row.original
-      return <div>${nFormatter(total_balance, 2)}</div>
+      return <div>{total_balance ? `$${nFormatter(total_balance, 2)}` : '-'}</div>
     },
   },
   {
@@ -106,7 +95,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { most_profitable_trade } = row.original
-      return (
+      return most_profitable_trade ? (
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
@@ -115,7 +104,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
           />
           <div>{most_profitable_trade}</div>
         </div>
-      )
+      ) : null
     },
   },
   {
@@ -124,7 +113,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { current_largest_position } = row.original
-      return (
+      return current_largest_position ? (
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
@@ -133,7 +122,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
           />
           <div>{current_largest_position}</div>
         </div>
-      )
+      ) : null
     },
   },
   {
@@ -142,7 +131,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { most_bought_token_24h } = row.original
-      return (
+      return most_bought_token_24h ? (
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
@@ -151,7 +140,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
           />
           <div>{most_bought_token_24h}</div>
         </div>
-      )
+      ) : null
     },
   },
   {
@@ -160,7 +149,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { most_sell_token_24h } = row.original
-      return (
+      return most_sell_token_24h ? (
         <div className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
@@ -169,7 +158,7 @@ export const columnsSmartMoneyRanking: ColumnDef<SmartMoneyRanking>[] = [
           />
           <div>{most_sell_token_24h}</div>
         </div>
-      )
+      ) : null
     },
   },
   {
