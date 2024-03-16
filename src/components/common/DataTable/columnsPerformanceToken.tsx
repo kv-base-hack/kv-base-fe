@@ -3,6 +3,7 @@ import Info from '@/components/shared/icons/Info'
 import { DATA_TOKEN } from '@/constant/token'
 import { TopTokenProfit } from '@/types/topTokenProfit'
 import { nFormatter } from '@/utils/nFormatter'
+import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
 
@@ -13,7 +14,13 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       return (
-        <div className="flex gap-3 items-center justify-between text-right">
+        <Link
+          disabled={!row?.original?.address}
+          to="/onchain-discovery/token-explorer/$token/deep"
+          params={{
+            token: row.original.address,
+          }}
+          className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
             src={
@@ -24,7 +31,7 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{row?.original?.symbol}</div>
-        </div>
+        </Link>
       )
     },
   },

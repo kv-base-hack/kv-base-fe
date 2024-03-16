@@ -10,6 +10,7 @@ export default {
         'secondary-4': '#B5E4CA',
         'semantic-success-1': '#0FB672',
         'semantic-error-1': '#F86868',
+        'semantic-error-3': '#FF6A55',
         background: '#111315',
         'neutral-00': '#FFFFFF',
         'neutral-01': '#FCFCFC',

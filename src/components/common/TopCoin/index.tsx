@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import { useCexInQuery } from '@/query/onchain-signal/getCexIn'
 import { useCexOutQuery } from '@/query/onchain-signal/getCexOut'
 import { nFormatter } from '@/utils/nFormatter'
+import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 
 type TopCoinProps = {
@@ -72,8 +73,14 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             }>
             <div className="mt-8">
               {dataCexOut?.map((item, index) => (
-                <div key={index} className="flex flex-col w-full">
-                  <div className="flex gap-2 mt-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
+                <Link
+                  to="/onchain-discovery/token-explorer/$token/deep"
+                  params={{
+                    token: item.address,
+                  }}
+                  key={index}
+                  className="flex hover:bg-neutral-04/10 cursor-pointer transition-all duration-150 flex-col w-full">
+                  <div className="flex gap-2 mt-3 mb-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
                     <div className="flex items-center justify-start w-3/4 gap-3">
                       <div className="flex gap-3 text-gray-300 w-[140px]">
                         <span className="w-3 flex justify-center">{index + 1}</span>
@@ -96,9 +103,9 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
                     </div>
                   </div>
                   {index < dataCexOut.length - 1 ? (
-                    <div className="mt-3 max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
+                    <div className="max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
                   ) : null}
-                </div>
+                </Link>
               ))}
             </div>
             <PaginationCustom
@@ -121,8 +128,14 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             }>
             <div className="mt-8">
               {dataCexIn?.map((item, index) => (
-                <div key={index} className="flex flex-col w-full">
-                  <div className="flex gap-2 mt-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
+                <Link
+                  to="/onchain-discovery/token-explorer/$token/deep"
+                  params={{
+                    token: item.address,
+                  }}
+                  key={index}
+                  className="flex hover:bg-neutral-04/10 cursor-pointer transition-all duration-150 flex-col w-full">
+                  <div className="flex gap-2 my-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
                     <div className="flex items-center justify-start w-3/4 gap-3">
                       <div className="flex gap-3 text-gray-300 w-[140px]">
                         <span className="w-3 flex justify-center">{index + 1}</span>
@@ -145,9 +158,9 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
                     </div>
                   </div>
                   {index < dataCexIn.length - 1 ? (
-                    <div className="mt-3 max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
+                    <div className="max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
                   ) : null}
-                </div>
+                </Link>
               ))}
             </div>
             <PaginationCustom

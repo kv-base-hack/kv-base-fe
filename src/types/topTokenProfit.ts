@@ -5,7 +5,7 @@ export interface DataTopTokenProfit {
 
 export interface TopTokenProfit {
   id: string
-  address?: string
+  address: string
   value?: number
   symbol: string
   gains: number
