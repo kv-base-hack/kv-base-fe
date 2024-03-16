@@ -9,6 +9,7 @@ import {
 import { DateGroup } from '@/components/common/DateGroup'
 import { PaginationCustom } from '@/components/common/Pagination'
 import AvatarIcon from '@/components/shared/icons/Avatar'
+import { CHAIN } from '@/constant/chain'
 import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
 import { usePortfolioQuery } from '@/query/wallet-explorer/getPortfolio'
 import { useTradeStatisticQuery } from '@/query/wallet-explorer/getTradeStatistic'
@@ -58,7 +59,7 @@ function WalletExplorerDetail() {
     action: filterActivity,
     limit: 10,
     start: pageActivity,
-    chain: 'eth',
+    chain: CHAIN,
   })
   const dataActivity = activityQuery.data?.data.activities || []
   const totalActivity = activityQuery.data?.data.total || 1

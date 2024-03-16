@@ -1,7 +1,11 @@
+import { CHAIN } from '@/constant/chain'
 import { CexInResponse } from '@/types/cexIn'
 import { CexOutResponse } from '@/types/cexOut'
 import { CourseResponse } from '@/types/course'
 import { LeaderboardResponse } from '@/types/leaderboard'
+import { TokenInspectActivityResponse } from '@/types/tokenInspectActivity'
+import { TokenInspectBuySellResponse } from '@/types/tokenInspectBuySell'
+import { TokenInspectDepositWithdrawResponse } from '@/types/tokenInspectDepositWithdraw'
 import { TokenListResponse } from '@/types/tokenList'
 import { TopActivityResponse } from '@/types/topActivity'
 import { TopTokenProfitResponse } from '@/types/topTokenProfit'
@@ -294,7 +298,7 @@ export const getCexIn = async ({
   limit = 5,
   start = 1,
   duration = '24h',
-  chain = 'eth',
+  chain = CHAIN,
 }): Promise<CexInResponse> => {
   return await api.get('/v1/token_cex_in', {
     params: {
@@ -310,7 +314,7 @@ export const getCexOut = async ({
   limit = 5,
   start = 1,
   duration = '24h',
-  chain = 'eth',
+  chain = CHAIN,
 }): Promise<CexOutResponse> => {
   return await api.get('/v1/token_cex_out', {
     params: {
@@ -326,7 +330,7 @@ export const getTopTokenProfit = async ({
   limit = 10,
   duration = '24h',
   start = 1,
-  chain = 'eth',
+  chain = CHAIN,
 }): Promise<TopTokenProfitResponse> => {
   return await api.get('/v1/token/profit', {
     params: {
@@ -353,7 +357,7 @@ export const getTopActivity = async ({
   action = 'all',
   limit = 10,
   start = 1,
-  chain = 'eth',
+  chain = CHAIN,
 }): Promise<TopActivityResponse> => {
   return await api.get('/v1/activities', {
     params: {
@@ -368,13 +372,73 @@ export const getTopActivity = async ({
 export const getLeaderboard = async ({
   limit = 5,
   start = 1,
-  chain = 'eth',
+  chain = CHAIN,
 }): Promise<LeaderboardResponse> => {
   return await api.get('/v1/leaderboard', {
     params: {
       chain,
       limit,
       start,
+    },
+  })
+}
+
+export const getTokenInspectDepositWithdraw = async ({
+  duration,
+  address,
+  chain = CHAIN,
+}: {
+  duration: string
+  address: string
+  chain: string
+}): Promise<TokenInspectDepositWithdrawResponse> => {
+  return await api.get('/v1/token/inspect/depositwithdraw', {
+    params: {
+      chain,
+      duration,
+      address,
+    },
+  })
+}
+
+export const getTokenInspectBuySell = async ({
+  duration,
+  address,
+  chain = CHAIN,
+}: {
+  duration: string
+  address: string
+  chain: string
+}): Promise<TokenInspectBuySellResponse> => {
+  return await api.get('/v1/token/inspect/buysell', {
+    params: {
+      chain,
+      duration,
+      address,
+    },
+  })
+}
+
+export const getTokenInspectActivity = async ({
+  limit = 5,
+  start = 1,
+  action,
+  address,
+  chain = CHAIN,
+}: {
+  limit: number
+  start: number
+  action: string
+  address: string
+  chain: string
+}): Promise<TokenInspectActivityResponse> => {
+  return await api.get('/v1/token/inspect/activities', {
+    params: {
+      chain,
+      limit,
+      start,
+      action,
+      address,
     },
   })
 }
@@ -387,7 +451,7 @@ export const getTokenList = async ({
   return await api.get('/v1/token/list', {
     params: {
       symbol_search,
-      chain: 'eth',
+      chain: CHAIN,
     },
   })
 }

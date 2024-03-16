@@ -1,33 +1,72 @@
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { columnsActivity } from '@/components/common/DataTable/columnsActivity'
 import { columnsSmartMoneyRanking } from '@/components/common/DataTable/columnsSmartMoneyRanking'
+import { columnsTokenInspectActivity } from '@/components/common/DataTable/columnsTokenInspectActivity'
+import { DateGroup } from '@/components/common/DateGroup'
 import { PaginationCustom } from '@/components/common/Pagination'
 import Calendar from '@/components/shared/icons/Calendar'
 import Info from '@/components/shared/icons/Info'
 import SwapDate from '@/components/shared/icons/SwapDate'
-import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
+import { CHAIN } from '@/constant/chain'
+import { DATA_TOKEN } from '@/constant/token'
 import { useTopUserProfitQuery } from '@/query/onchain-signal/getTopUserProfit'
+import { useTokenInspectActivityQuery } from '@/query/token-explorer/getTokenInspectActivity'
+import { useTokenInspectBuySellQuery } from '@/query/token-explorer/getTokenInspectBuySell'
+import { useTokenInspectDepositWithdrawQuery } from '@/query/token-explorer/getTokenInspectDepositWithdraw'
+import { nFormatter } from '@/utils/nFormatter'
+import { useParams } from '@tanstack/react-router'
+import numeral from 'numeral'
 import { useState } from 'react'
 
-const TypeActivityGroup = () => {
-  return (
-    <div className="flex gap-5 justify-between items-center text-base tracking-normal text-gray-500">
-      <div className="justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.6] bg-gray-300 bg-opacity-10">
-        All
-      </div>{' '}
-      <div className="self-stretch my-auto">Inflow</div>
-      <div className="self-stretch my-auto">Outflow</div>
-      <div className="grow self-stretch my-auto">Buying</div>
-      <div className="grow self-stretch my-auto">Selling</div>
-    </div>
-  )
-}
+const DATA_ACTIVITY = [
+  {
+    value: 'all',
+    label: 'All',
+  },
+  {
+    value: 'inflow',
+    label: 'Inflow',
+  },
+  {
+    value: 'outflow',
+    label: 'Outflow',
+  },
+  {
+    value: 'buying',
+    label: 'Buying',
+  },
+  {
+    value: 'selling',
+    label: 'Selling',
+  },
+]
+
+const DATA_DATE = [
+  {
+    value: '1h',
+    label: '1h',
+  },
+  {
+    value: '4h',
+    label: '4h',
+  },
+  {
+    value: '24h',
+    label: '1D',
+  },
+  {
+    value: '168h',
+    label: '3D',
+  },
+]
 
 export const Onchain = () => {
   const [page, setPage] = useState(1)
   const [pageActivity, setPageActivity] = useState(1)
-
+  const [filterActivity, setFilterActivity] = useState('all')
+  const [durationWithDrawDeposit, setDurationWithDrawDeposit] = useState('24h')
+  const [durationSellBuy, setDurationSellBuy] = useState('24h')
+  const params: { token: string } = useParams({ strict: false })
   //
   const topUserProfitQuery = useTopUserProfitQuery({
     limitTopAddress: 5,
@@ -35,31 +74,79 @@ export const Onchain = () => {
   })
   const dataTopUserProfit = topUserProfitQuery.data?.data.topUserProfit
   //
-  const activityQuery = useTopActivityQuery({
-    action: 'all',
+  const activityQuery = useTokenInspectActivityQuery({
+    action: filterActivity,
     limit: 10,
     start: pageActivity,
-    chain: 'eth',
+    chain: CHAIN,
+    address: params?.token,
   })
   const dataActivity = activityQuery.data?.data.activities || []
-  const totalActivity = activityQuery.data?.data.total || 1
+  const totalActivity = activityQuery.data?.data?.total || 1
+  //
+  const tokenInspectDepositWithdraw = useTokenInspectDepositWithdrawQuery({
+    address: params?.token,
+    duration: durationWithDrawDeposit,
+    chain: CHAIN,
+  })
+  const dataTokenInspectDW = tokenInspectDepositWithdraw.data?.data
 
+  const totalWithdrawDeposit =
+    (dataTokenInspectDW?.cex_in_flow || 0) + (dataTokenInspectDW?.cex_out_flow || 0)
+
+  const percentWithdraw = (
+    ((dataTokenInspectDW?.cex_out_flow || 0) / (totalWithdrawDeposit || 1)) *
+    100
+  ).toFixed(2)
+
+  const percentDeposit = (
+    ((dataTokenInspectDW?.cex_in_flow || 0) / (totalWithdrawDeposit || 1)) *
+    100
+  ).toFixed(2)
+  //
+  const tokenInspectBuySell = useTokenInspectBuySellQuery({
+    address: params?.token,
+    duration: durationSellBuy,
+    chain: CHAIN,
+  })
+  const dataTokenInspectBS = tokenInspectBuySell.data?.data
+
+  const totalBuySell =
+    (dataTokenInspectBS?.in_flow_in_token || 0) + (dataTokenInspectBS?.out_flow_in_token || 0)
+
+  const percentBuy = (
+    ((dataTokenInspectBS?.in_flow_in_token || 0) / (totalBuySell || 1)) *
+    100
+  ).toFixed(2)
+
+  const percentSell = (
+    ((dataTokenInspectBS?.out_flow_in_token || 0) / (totalBuySell || 1)) *
+    100
+  ).toFixed(2)
   return (
     <>
       <div className="flex my-4 items-center gap-4 self-stretch font-semibold whitespace-nowrap leading-[160%] max-md:flex-wrap">
         <div className="flex gap-2 my-auto text-xl tracking-tight">
           <div className="flex gap-2 justify-between text-gray-300">
-            <div>SOL</div>
+            <div>{dataActivity?.[0]?.symbol}</div>
             <img
               loading="lazy"
-              src="/assets/icons/chain/solana.svg"
+              src={DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)?.image_url}
               className="object-center w-6 aspect-square"
             />
           </div>
           <div className="grow text-gray-300">Onchain Signal</div>
         </div>
       </div>
-      <WrapTable title="Smart Money Ranking" childHeader={<TypeActivityGroup />}>
+      <WrapTable
+        title="Smart Money Ranking"
+        childHeader={
+          <DateGroup
+            dataSource={DATA_ACTIVITY}
+            active={filterActivity}
+            handleActive={setFilterActivity}
+          />
+        }>
         <div className="mt-8">
           <DataTable
             className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
@@ -83,11 +170,17 @@ export const Onchain = () => {
       <WrapTable
         className="mt-4"
         title="Smart Money's Activity"
-        childHeader={<TypeActivityGroup />}>
+        childHeader={
+          <DateGroup
+            dataSource={DATA_ACTIVITY}
+            active={filterActivity}
+            handleActive={setFilterActivity}
+          />
+        }>
         <div className="mt-8">
           <DataTable
             className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-            columns={columnsActivity}
+            columns={columnsTokenInspectActivity}
             data={dataActivity?.slice(0, 10) || []}
             isFetching={activityQuery.isFetching}
             noneBorder
@@ -152,23 +245,28 @@ export const Onchain = () => {
                 <div className="grow text-xl font-semibold tracking-tight leading-8 text-gray-300">
                   Withdraw vs Deposit
                 </div>
-                <div className="flex gap-5 justify-between items-center text-sm font-bold tracking-normal leading-4 text-gray-500">
-                  <div className="cursor-pointer justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.88] bg-gray-300 bg-opacity-10">
-                    24H
-                  </div>
-                  <div className="cursor-pointer self-stretch my-auto">7D</div>
-                  <div className="cursor-pointer self-stretch my-auto">30D</div>
-                  <div className="cursor-pointer grow self-stretch my-auto">3M</div>
-                </div>
+                <DateGroup
+                  dataSource={DATA_DATE}
+                  active={durationWithDrawDeposit}
+                  handleActive={setDurationWithDrawDeposit}
+                />
               </div>
               <div className="flex gap-5 justify-between py-4 max-md:flex-wrap max-md:max-w-full">
                 <div className="flex flex-col justify-between text-lg tracking-tight leading-8 text-white basis-0">
-                  <div>48.23%</div>
-                  <div className="mt-56 max-md:mt-10">51.76%</div>
+                  <div>{percentWithdraw}%</div>
+                  <div className="mt-56 max-md:mt-10">{percentDeposit}%</div>
                 </div>
                 <div className="h-full w-[30px]">
-                  <div style={{ height: '48.23%' }} className="bg-semantic-error-1"></div>
-                  <div style={{ height: '51.76%' }} className="bg-primary-2"></div>
+                  <div
+                    style={{
+                      height: `${percentWithdraw}%`,
+                    }}
+                    className="bg-semantic-error-1"></div>
+                  <div
+                    style={{
+                      height: `${percentDeposit}%`,
+                    }}
+                    className="bg-primary-2"></div>
                 </div>
                 <div className="flex flex-col flex-1 justify-between">
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
@@ -180,8 +278,8 @@ export const Onchain = () => {
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
-                        <div>1,000,463.63</div>
-                        <div>$14.576M</div>
+                        <div>{numeral(dataTokenInspectDW?.cex_out_flow || 0).format('0,0.00')}</div>
+                        <div>${nFormatter(dataTokenInspectDW?.cex_out_flow_in_usdt || 0, 2)}</div>
                       </div>
                     </div>
                   </div>
@@ -194,8 +292,8 @@ export const Onchain = () => {
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
-                        <div>1,000,463.63</div>
-                        <div>$14.576M</div>
+                        <div>{numeral(dataTokenInspectDW?.cex_in_flow || 0).format('0,0.00')}</div>
+                        <div>${nFormatter(dataTokenInspectDW?.cex_in_flow_in_usdt || 0, 2)}</div>
                       </div>
                     </div>
                   </div>
@@ -209,23 +307,20 @@ export const Onchain = () => {
                 <div className="flex-auto text-xl font-semibold tracking-tight leading-8 text-gray-300">
                   Sell vs Buy
                 </div>
-                <div className="flex gap-5 justify-between items-center text-sm font-bold tracking-normal leading-4 text-gray-500 whitespace-nowrap">
-                  <div className="cursor-pointer justify-center self-stretch px-4 py-2 text-gray-300 rounded-lg aspect-[1.88] bg-gray-300 bg-opacity-10">
-                    24H
-                  </div>
-                  <div className="cursor-pointer self-stretch my-auto">7D</div>
-                  <div className="cursor-pointer self-stretch my-auto">30D</div>
-                  <div className="cursor-pointer grow self-stretch my-auto">3M</div>
-                </div>
+                <DateGroup
+                  dataSource={DATA_DATE}
+                  active={durationSellBuy}
+                  handleActive={setDurationSellBuy}
+                />
               </div>
               <div className="flex gap-5 justify-between py-4 whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
                 <div className="flex flex-col justify-between text-lg tracking-tight leading-8 text-white basis-0">
-                  <div>20%</div>
-                  <div className="mt-56 max-md:mt-10">80%</div>
+                  <div>{percentSell}%</div>
+                  <div className="mt-56 max-md:mt-10">{percentBuy}%</div>
                 </div>
                 <div className="h-full w-[30px]">
-                  <div style={{ height: '20%' }} className="bg-semantic-error-1"></div>
-                  <div style={{ height: '80%' }} className="bg-primary-2"></div>
+                  <div style={{ height: `${percentSell}%` }} className="bg-semantic-error-1"></div>
+                  <div style={{ height: `${percentBuy}%` }} className="bg-primary-2"></div>
                 </div>
                 <div className="flex flex-col flex-1 justify-between">
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
@@ -237,8 +332,10 @@ export const Onchain = () => {
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
-                        <div>1,000,463.63</div>
-                        <div>$14.576M</div>
+                        <div>
+                          {numeral(dataTokenInspectBS?.out_flow_in_token || 0).format('0,0.00')}
+                        </div>
+                        <div>${nFormatter(dataTokenInspectBS?.out_flow_in_usdt || 0, 2)}</div>
                       </div>
                     </div>
                   </div>
@@ -251,8 +348,10 @@ export const Onchain = () => {
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
-                        <div>1,000,463.63</div>
-                        <div>$14.576M</div>
+                        <div>
+                          {numeral(dataTokenInspectBS?.in_flow_in_token || 0).format('0,0.00')}
+                        </div>
+                        <div>${nFormatter(dataTokenInspectBS?.in_flow_in_usdt || 0, 2)}</div>
                       </div>
                     </div>
                   </div>

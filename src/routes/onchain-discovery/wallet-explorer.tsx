@@ -4,6 +4,7 @@ import { columnsLeaderboard } from '@/components/common/DataTable/columnLeaderbo
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import SearchIcon from '@/components/shared/icons/SearchIcon'
+import { CHAIN } from '@/constant/chain'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
@@ -18,7 +19,7 @@ function WalletExplorer() {
   const leaderboardQuery = useLeaderboardQuery({
     start: page,
     limit: 10,
-    chain: 'eth',
+    chain: CHAIN,
   })
   const dataLeaderboard = leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
   const totalLeaderboard = leaderboardQuery.data?.data.total || 1
