@@ -1,10 +1,12 @@
 import { nFormatter } from '@/utils/nFormatter'
+import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 import numeral from 'numeral'
 
 export type TradeStatistic = {
   id: string
   symbol: string
+  address: string
   pnl: number
   total_spent: number
   realized_gains: number
@@ -20,14 +22,20 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
     cell: ({ row }) => {
       const { symbol } = row.original
       return (
-        <div className="flex gap-3 items-center justify-between text-right">
+        <Link
+          disabled={!row?.original?.address}
+          to="/onchain-discovery/token-explorer/$token/deep"
+          params={{
+            token: row.original.address,
+          }}
+          className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{symbol}</div>
-        </div>
+        </Link>
       )
     },
   },

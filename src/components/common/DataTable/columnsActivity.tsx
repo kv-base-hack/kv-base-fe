@@ -2,6 +2,7 @@ import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { TopActivity } from '@/types/topActivity'
 import { nFormatter } from '@/utils/nFormatter'
+import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 import moment from 'moment'
 import numeral from 'numeral'
@@ -54,7 +55,13 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
     cell: ({ row }) => {
       const { symbol } = row.original
       return (
-        <div className="flex gap-3 items-center justify-between text-right">
+        <Link
+          disabled={!row?.original?.token_address}
+          to="/onchain-discovery/token-explorer/$token/deep"
+          params={{
+            token: row.original.token_address,
+          }}
+          className="flex gap-3 items-center justify-between text-right">
           <img
             loading="lazy"
             src={
@@ -65,7 +72,7 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{symbol}</div>
-        </div>
+        </Link>
       )
     },
   },

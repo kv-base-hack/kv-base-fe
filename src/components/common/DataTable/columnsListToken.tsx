@@ -28,8 +28,9 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
     size: 250,
     cell: ({ row }) => {
       const { symbol, name, address } = row.original
-      return address ? (
+      return (
         <Link
+          disabled={!address}
           to="/onchain-discovery/token-explorer/$token/deep"
           params={{
             token: address,
@@ -44,16 +45,6 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
             <div className="text-normal text-neutral-dark-05">{symbol}</div>
           </div>
         </Link>
-      ) : (
-        <div className="flex cursor-not-allowed gap-1.5 w-full items-center justify-start">
-          <img
-            loading="lazy"
-            src={DATA_TOKEN?.find((el) => el.token === symbol)?.image_url}
-            className="w-6 aspect-square fill-blue-950"
-          />
-          <div>{name}</div>
-          <div className="text-normal text-neutral-dark-05">{symbol}</div>
-        </div>
       )
     },
   },

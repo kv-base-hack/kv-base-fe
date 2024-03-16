@@ -209,6 +209,7 @@ export const tradeStatistic = async (groupId: string) => {
     {
       id: '1',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       pnl: 320000,
       total_spent: 1560000,
       realized_gains: 0.524232,
@@ -218,6 +219,7 @@ export const tradeStatistic = async (groupId: string) => {
     {
       id: '2',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       pnl: 320000,
       total_spent: 1560000,
       realized_gains: 0.524232,
@@ -227,6 +229,7 @@ export const tradeStatistic = async (groupId: string) => {
     {
       id: '3',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       pnl: 320000,
       total_spent: 1560000,
       realized_gains: 0.524232,
@@ -236,6 +239,7 @@ export const tradeStatistic = async (groupId: string) => {
     {
       id: '4',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       pnl: 320000,
       total_spent: 1560000,
       realized_gains: 0.524232,
@@ -252,26 +256,31 @@ export const portfolio = async (groupId: string) => {
     {
       id: '1',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       amount: 39939.33,
     },
     {
       id: '2',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       amount: 39939.33,
     },
     {
       id: '3',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       amount: 39939.33,
     },
     {
       id: '4',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       amount: 39939.33,
     },
     {
       id: '5',
       symbol: 'USDT',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       amount: 39939.33,
     },
   ]
