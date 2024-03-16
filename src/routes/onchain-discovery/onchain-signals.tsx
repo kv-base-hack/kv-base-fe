@@ -7,6 +7,7 @@ import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
 import { TopCoin } from '@/components/common/TopCoin'
+import { CHAIN } from '@/constant/chain'
 import { cn } from '@/lib/utils'
 import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
@@ -70,7 +71,7 @@ function OnchainSignals() {
     action: filterActivity,
     limit: 10,
     start: pageActivity,
-    chain: 'eth',
+    chain: CHAIN,
   })
   const dataActivity = activityQuery.data?.data.activities || []
   const totalActivity = activityQuery.data?.data.total || 1
@@ -78,7 +79,7 @@ function OnchainSignals() {
   const topTokenProfitQuery = useTopTokenProfitQuery({
     limit: 10,
     start: pageTopProfit,
-    chain: 'eth',
+    chain: CHAIN,
     duration: filterDate,
   })
   const dataTopTokenProfit = topTokenProfitQuery.data?.data.top_token_profit || []

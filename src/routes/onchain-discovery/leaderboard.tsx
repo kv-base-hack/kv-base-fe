@@ -6,6 +6,7 @@ import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
 import ArrowDownIcon from '@/components/shared/icons/ArrowDownIcon'
+import { CHAIN } from '@/constant/chain'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
 import { createFileRoute } from '@tanstack/react-router'
@@ -37,7 +38,7 @@ function Leaderboard() {
   const leaderboardQuery = useLeaderboardQuery({
     start: pageLeaderboard,
     limit: 10,
-    chain: 'eth',
+    chain: CHAIN,
   })
   const dataLeaderboard = leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
   const totalLeaderboard = leaderboardQuery.data?.data.total || 1
@@ -45,7 +46,7 @@ function Leaderboard() {
   const topTokenProfitQuery = useTopTokenProfitQuery({
     limit: 10,
     start: pageTopProfit,
-    chain: 'eth',
+    chain: CHAIN,
     duration: '24h',
   })
   const dataTopTokenProfit = topTokenProfitQuery.data?.data.top_token_profit || []
