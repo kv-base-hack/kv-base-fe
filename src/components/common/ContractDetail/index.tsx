@@ -8,8 +8,16 @@ import Metamask from '@/components/shared/icons/Metamask'
 import OpenLink from '@/components/shared/icons/OpenLink'
 import SourceCode from '@/components/shared/icons/SourceCode'
 import Whitepaper from '@/components/shared/icons/Whitepaper'
+import { TokenInfo } from '@/types/tokenInfo'
+import numeral from 'numeral'
 
-export const ContractDetail = () => {
+export const ContractDetail = ({
+  dataTokenInfo,
+  address,
+}: {
+  dataTokenInfo?: TokenInfo
+  address: string
+}) => {
   return (
     <>
       <div className="text-sm leading-5 text-gray-300">Contract</div>
@@ -21,7 +29,7 @@ export const ContractDetail = () => {
               srcSet="/assets/icons/token/eth.png"
               className="w-5 aspect-square"
             />
-            <div className="grow my-auto">0x698...311933</div>
+            <div className="grow my-auto">{`${address?.substring(0, 6)}...${address?.slice(-6)}`}</div>
           </div>
           <Copy />
           <Metamask />
@@ -81,42 +89,48 @@ export const ContractDetail = () => {
           <div className="grow">Market Cap </div>
           <Info />
         </div>
-        <div className="text-right text-white">$237,975,500</div>
+        <div className="text-right text-white">
+          {numeral(dataTokenInfo?.market_cap).format('$0,0.[00]')}
+        </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200/10">
         <div className="flex gap-1.5 items-center my-auto text-white text-opacity-60">
           <div className="grow">24 Hour Trading Vol </div>
           <Info />
         </div>
-        <div className="text-right text-white">$365,028,275</div>
+        <div className="text-right text-white">-</div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
         <div className="flex gap-4 items-center my-auto text-white text-opacity-60">
           <div className="flex-auto">Circulating Supply </div>
           <Info />
         </div>
-        <div className="text-right text-white">$365,028,275</div>
+        <div className="text-right text-white">-</div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
         <div className="flex gap-5 items-center justify-between my-auto text-white text-opacity-60">
           <div>Total Supply </div>
           <Info />
         </div>
-        <div className="text-right text-white">$365,028,275</div>
+        <div className="text-right text-white">
+          {numeral(dataTokenInfo?.total_supply).format('$0,0.[00]')}
+        </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
         <div className="flex gap-5 items-center justify-between my-auto text-white text-opacity-60">
           <div>Max Supply </div>
           <Info />
         </div>
-        <div className="text-right text-white">$365,028,275</div>
+        <div className="text-right text-white">
+          {numeral(dataTokenInfo?.max_supply).format('$0,0.[00]')}
+        </div>
       </div>
       <div className="flex gap-5 justify-between pt-2.5 pb-0.5 w-full text-sm leading-5 whitespace-nowrap">
         <div className="flex gap-1.5 items-center self-start text-white text-opacity-60">
           <div className="grow">Fully Diluted Valuation </div>
           <Info />
         </div>
-        <div className="text-right text-white">$238,785,857</div>
+        <div className="text-right text-white">-</div>
       </div>
     </>
   )

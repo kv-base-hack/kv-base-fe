@@ -8,21 +8,23 @@ import SkeletonChart from '@/components/common/Skeleton/SkeletonChart'
 import { ArrowUpRight } from '@/components/shared/icons/ArrowUpRight'
 import SkeletonCell from '@/components/common/Skeleton/SkeletonCell'
 import { CustomDotActive } from '@/components/shared/icons/CustomDotActive'
+import { TokenInfo } from '@/types/tokenInfo'
+import { DATA_TOKEN } from '@/constant/token'
 
 const modes = ['1h', '1d', '1w', '1m', '1y']
 
 export function LineChart({
   mode,
   sparkLineIn7D,
-  value,
+  dataTokenInfo,
   onModeChange,
   loading,
 }: {
   mode: string
   sparkLineIn7D: number[][]
-  value: number
   onModeChange: (mode: string) => void
   loading?: boolean
+  dataTokenInfo?: TokenInfo
 }) {
   const [valueIndex, setValueIndex] = useState<number>()
 
@@ -66,12 +68,12 @@ export function LineChart({
           <div className="flex gap-3 text-sm leading-5 whitespace-nowrap">
             <img
               loading="lazy"
-              src="/assets/icons/chain/ethereum.svg"
+              src={DATA_TOKEN?.find((el) => el.token === dataTokenInfo?.symbol)?.image_url}
               className="object-center w-6 aspect-square"
             />
             <div className="flex gap-1 my-auto">
-              <div className="grow font-bold text-gray-300">Ethereum</div>
-              <div className="text-gray-400">ETH</div>
+              <div className="grow font-bold text-gray-300">{dataTokenInfo?.name}</div>
+              <div className="text-gray-400">{dataTokenInfo?.symbol}</div>
             </div>
           </div>
           <div className={loading ? 'flex flex-col gap-2' : 'mt-2'}>
@@ -81,7 +83,7 @@ export function LineChart({
               <p className="text-[28px] font-bold text-[#fefefe]">
                 {valueIndex
                   ? numeral(valueIndex).format('$0,0.[0000]')
-                  : numeral(value).format('$0,0.[0000]')}
+                  : numeral(dataTokenInfo?.usd_price).format('$0,0.[00000000000]')}
               </p>
             )}
             {loading ? (
@@ -128,7 +130,7 @@ export function LineChart({
                   strokeDasharray: '5 5',
                 }}
                 position={{ y: 0 }}
-                content={<CustomTooltip setValueIndex={setValueIndex} />}
+                content={<CustomTooltip active setValueIndex={setValueIndex} />}
               />
               <XAxis
                 dataKey="date"

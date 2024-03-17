@@ -3,6 +3,7 @@ import { CexInResponse } from '@/types/cexIn'
 import { CexOutResponse } from '@/types/cexOut'
 import { CourseResponse } from '@/types/course'
 import { LeaderboardResponse } from '@/types/leaderboard'
+import { TokenInfoResponse } from '@/types/tokenInfo'
 import { TokenInspectActivityResponse } from '@/types/tokenInspectActivity'
 import { TokenInspectBuySellResponse } from '@/types/tokenInspectBuySell'
 import { TokenInspectDepositWithdrawResponse } from '@/types/tokenInspectDepositWithdraw'
@@ -452,6 +453,21 @@ export const getTokenList = async ({
     params: {
       symbol_search,
       chain: CHAIN,
+    },
+  })
+}
+
+export const getTokenInfo = async ({
+  chain,
+  address,
+}: {
+  chain: string
+  address: string
+}): Promise<TokenInfoResponse> => {
+  return await api.get('/v1/token/info', {
+    params: {
+      address,
+      chain,
     },
   })
 }
