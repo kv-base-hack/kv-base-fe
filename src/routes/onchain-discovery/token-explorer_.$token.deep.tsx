@@ -5,7 +5,9 @@ import { News } from '@/components/common/News'
 import { Onchain } from '@/components/common/Onchain'
 import { SelectChain } from '@/components/common/SelectChain'
 import { Technical } from '@/components/common/Technical'
+import { CHAIN } from '@/constant/chain'
 import { cn } from '@/lib/utils'
+import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 import { createFileRoute } from '@tanstack/react-router'
 import { useCallback, useState } from 'react'
 
@@ -60,8 +62,16 @@ const DUMMY_CHART = [
 ]
 
 function TokenExplorerDetail() {
+  const params = Route.useParams()
   const [mode, setMode] = useState('1d')
   const [tab, setTabs] = useState('onchain')
+
+  //
+  const tokenInfoQuery = useTokenInfoQuery({
+    address: params.token,
+    chain: CHAIN,
+  })
+  const dataTokenInfo = tokenInfoQuery.data?.data.info
 
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
@@ -74,7 +84,7 @@ function TokenExplorerDetail() {
   const renderContentTab = (tab: string) => {
     switch (tab) {
       case 'onchain':
-        return <Onchain />
+        return <Onchain dataTokenInfo={dataTokenInfo} />
       case 'news':
         return <News />
       case 'technical':
@@ -82,7 +92,6 @@ function TokenExplorerDetail() {
     }
     return null
   }
-
   return (
     <div className="w-full h-full pt-2">
       <GroupHeader className="mt-4 mx-10" title="Token Explorer" desc="">
@@ -91,15 +100,15 @@ function TokenExplorerDetail() {
       <div className="mx-10 mt-4 flex items-start gap-4 mb-4">
         <div className="w-7/12 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">
           <LineChart
+            dataTokenInfo={dataTokenInfo}
             mode={mode}
             sparkLineIn7D={DUMMY_CHART}
             onModeChange={handleModeChange}
-            value={103.15}
-            loading={false}
+            loading={tokenInfoQuery.isLoading}
           />
         </div>
         <div className="flex flex-col justify-start self-stretch p-6 rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10 w-5/12">
-          <ContractDetail />
+          <ContractDetail dataTokenInfo={dataTokenInfo} address={params.token} />
         </div>
       </div>
       <div className="mx-10 bg-[url('/assets/images/bg-tabs.svg')] w-auto bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start px-5 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">

@@ -13,6 +13,7 @@ import { useTopUserProfitQuery } from '@/query/onchain-signal/getTopUserProfit'
 import { useTokenInspectActivityQuery } from '@/query/token-explorer/getTokenInspectActivity'
 import { useTokenInspectBuySellQuery } from '@/query/token-explorer/getTokenInspectBuySell'
 import { useTokenInspectDepositWithdrawQuery } from '@/query/token-explorer/getTokenInspectDepositWithdraw'
+import { TokenInfo } from '@/types/tokenInfo'
 import { nFormatter } from '@/utils/nFormatter'
 import { useParams } from '@tanstack/react-router'
 import numeral from 'numeral'
@@ -60,7 +61,7 @@ const DATA_DATE = [
   },
 ]
 
-export const Onchain = () => {
+export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
   const [page, setPage] = useState(1)
   const [pageActivity, setPageActivity] = useState(1)
   const [filterActivity, setFilterActivity] = useState('all')
@@ -124,13 +125,13 @@ export const Onchain = () => {
     100
   ).toFixed(2)
 
-  const tmpLogo = DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)?.image_url
+  const tmpLogo = DATA_TOKEN?.find((el) => el.token === dataTokenInfo?.symbol)?.image_url
   return (
     <>
       <div className="flex my-4 items-center gap-4 self-stretch font-semibold whitespace-nowrap leading-[160%] max-md:flex-wrap">
         <div className="flex gap-2 my-auto text-xl tracking-tight">
           <div className="flex gap-2 justify-between text-gray-300">
-            <div>{dataActivity?.[0]?.symbol}</div>
+            <div>{dataTokenInfo?.symbol}</div>
             <img loading="lazy" src={tmpLogo} className="object-center w-6 aspect-square" />
           </div>
           <div className="grow text-gray-300">Onchain Signal</div>
