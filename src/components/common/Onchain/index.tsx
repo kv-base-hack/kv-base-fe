@@ -123,17 +123,15 @@ export const Onchain = () => {
     ((dataTokenInspectBS?.out_flow_in_token || 0) / (totalBuySell || 1)) *
     100
   ).toFixed(2)
+
+  const tmpLogo = DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)?.image_url
   return (
     <>
       <div className="flex my-4 items-center gap-4 self-stretch font-semibold whitespace-nowrap leading-[160%] max-md:flex-wrap">
         <div className="flex gap-2 my-auto text-xl tracking-tight">
           <div className="flex gap-2 justify-between text-gray-300">
             <div>{dataActivity?.[0]?.symbol}</div>
-            <img
-              loading="lazy"
-              src={DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)?.image_url}
-              className="object-center w-6 aspect-square"
-            />
+            <img loading="lazy" src={tmpLogo} className="object-center w-6 aspect-square" />
           </div>
           <div className="grow text-gray-300">Onchain Signal</div>
         </div>
@@ -272,11 +270,7 @@ export const Onchain = () => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
                     <div className="text-2xl leading-9 text-red-400">Withdraw</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img
-                        loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
-                        className="my-auto w-10 aspect-square"
-                      />
+                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>{numeral(dataTokenInspectDW?.cex_out_flow || 0).format('0,0.00')}</div>
                         <div>${nFormatter(dataTokenInspectDW?.cex_out_flow_in_usdt || 0, 2)}</div>
@@ -286,11 +280,7 @@ export const Onchain = () => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 mt-14 w-full rounded-lg border border-solid border-secondary-4 max-md:pr-5 max-md:mt-10">
                     <div className="text-2xl leading-9 text-stone-400">Deposit</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img
-                        loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
-                        className="my-auto w-10 aspect-square"
-                      />
+                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>{numeral(dataTokenInspectDW?.cex_in_flow || 0).format('0,0.00')}</div>
                         <div>${nFormatter(dataTokenInspectDW?.cex_in_flow_in_usdt || 0, 2)}</div>
@@ -326,11 +316,7 @@ export const Onchain = () => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
                     <div className="text-2xl leading-9 text-red-400">Sell</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img
-                        loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
-                        className="my-auto w-10 aspect-square"
-                      />
+                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>
                           {numeral(dataTokenInspectBS?.out_flow_in_token || 0).format('0,0.00')}
@@ -342,11 +328,7 @@ export const Onchain = () => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 mt-14 w-full rounded-lg border border-solid border-secondary-4 max-md:pr-5 max-md:mt-10">
                     <div className="text-2xl leading-9 text-stone-400">Buy</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img
-                        loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
-                        className="my-auto w-10 aspect-square"
-                      />
+                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>
                           {numeral(dataTokenInspectBS?.in_flow_in_token || 0).format('0,0.00')}
