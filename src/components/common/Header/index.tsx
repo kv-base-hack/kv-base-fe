@@ -1,3 +1,4 @@
+import { ButtonConnectWallet } from '@/components/common/ConnectWallet'
 import { DATA_TOKEN } from '@/constant/token'
 import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 
@@ -56,13 +57,7 @@ export const Header = () => {
             className="object-center justify-center items-center my-auto w-5 aspect-square"
           />
         </div>
-        <div className="flex flex-col flex-1 justify-center items-stretch text-base font-bold tracking-wide leading-6 uppercase whitespace-nowrap bg-yellow-200 rounded-xl text-zinc-800">
-          <div
-            id="connect-button"
-            className="justify-center font-source-sans-pro items-stretch px-4 py-3 bg-white bg-opacity-10 rounded-[360px]">
-            Connect Wallet
-          </div>
-        </div>
+        <ButtonConnectWallet />
       </div>
     </div>
   )
