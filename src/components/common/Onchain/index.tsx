@@ -274,7 +274,10 @@ export const Onchain = () => {
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
                       <img
                         loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
+                        src={
+                          DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)
+                            ?.image_url
+                        }
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
@@ -288,7 +291,10 @@ export const Onchain = () => {
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
                       <img
                         loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
+                        src={
+                          DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)
+                            ?.image_url
+                        }
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
@@ -328,7 +334,10 @@ export const Onchain = () => {
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
                       <img
                         loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
+                        src={
+                          DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)
+                            ?.image_url
+                        }
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
@@ -344,7 +353,10 @@ export const Onchain = () => {
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
                       <img
                         loading="lazy"
-                        src="/assets/icons/token/usdt.svg"
+                        src={
+                          DATA_TOKEN?.find((el) => el.token === dataActivity?.[0]?.symbol)
+                            ?.image_url
+                        }
                         className="my-auto w-10 aspect-square"
                       />
                       <div className="flex flex-col flex-1 justify-center">
