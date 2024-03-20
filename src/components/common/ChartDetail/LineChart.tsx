@@ -10,8 +10,27 @@ import SkeletonCell from '@/components/common/Skeleton/SkeletonCell'
 import { CustomDotActive } from '@/components/shared/icons/CustomDotActive'
 import { TokenInfo } from '@/types/tokenInfo'
 import { DATA_TOKEN } from '@/constant/token'
+import { cn } from '@/lib/utils'
 
 const modes = ['1h', '1d', '1w', '1m', '1y']
+
+const checkPercent = (time: string, dataTokenInfo?: TokenInfo) => {
+  if (dataTokenInfo) {
+    switch (time) {
+      case '1h':
+        return dataTokenInfo.percent_change_1h
+      case '1d':
+        return dataTokenInfo.percent_change_24h
+      case '1w':
+        return dataTokenInfo.percent_change_7d
+      case '1m':
+        return 0
+      case '1y':
+        return 0
+    }
+  }
+  return 0
+}
 
 export function LineChart({
   mode,
@@ -61,6 +80,7 @@ export function LineChart({
 
   const space = (maxPrice - minPrice) / 5
 
+  const percentChange = checkPercent(mode, dataTokenInfo)
   return (
     <div className="rounded-lg h-full border border-white/10 flex flex-col gap-4">
       <div className="flex items-start justify-between px-6 pt-4">
@@ -90,8 +110,18 @@ export function LineChart({
               <SkeletonCell />
             ) : (
               <div className="flex items-center gap-1">
-                <span className="font-manrope text-title-2 text-semantic-success-1">1.74%</span>
-                <ArrowUpRight className="text-semantic-success-1" />
+                <span
+                  className={cn(
+                    'font-manrope text-title-2',
+                    percentChange > 0 ? 'text-semantic-success-1' : 'text-semantic-error-3'
+                  )}>
+                  {percentChange.toFixed(2)}%
+                </span>
+                <ArrowUpRight
+                  className={
+                    percentChange > 0 ? 'text-semantic-success-1' : 'text-semantic-error-3'
+                  }
+                />
               </div>
             )}
           </div>

@@ -73,16 +73,14 @@ export const ContractDetail = ({
         </div>
       </div>
       <div className="self-start mt-4 text-sm leading-5 text-gray-300">Tags</div>
-      <div className="flex gap-1 self-start py-0.5 mt-2 text-xs font-semibold leading-5 text-gray-300 whitespace-nowrap">
-        <div className="justify-center px-2 py-0.5 aspect-[1.86] bg-white bg-opacity-10 rounded-[40px]">
-          LPoS
-        </div>
-        <div className="justify-center px-2 py-0.5 aspect-[2.68] bg-white bg-opacity-10 rounded-[40px]">
-          Platform
-        </div>
-        <div className="grow justify-center px-2 py-0.5 bg-white bg-opacity-10 rounded-[40px]">
-          Smart Contracts
-        </div>
+      <div className="flex flex-wrap gap-1 self-start py-0.5 mt-2 text-xs font-semibold leading-5 text-gray-300 whitespace-nowrap">
+        {dataTokenInfo?.tags.map((tag, index) => (
+          <div
+            key={index}
+            className="justify-center px-2 py-0.5 bg-white bg-opacity-10 rounded-[40px]">
+            {tag}
+          </div>
+        ))}
       </div>
       <div className="flex gap-5 justify-between py-2.5 mt-4 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200 border-b-gray-200/10">
         <div className="flex gap-1.5 items-center my-auto text-white text-opacity-60">
@@ -98,14 +96,18 @@ export const ContractDetail = ({
           <div className="grow">24 Hour Trading Vol </div>
           <Info />
         </div>
-        <div className="text-right text-white">-</div>
+        <div className="text-right text-white">
+          {numeral(dataTokenInfo?.volume_24h).format('$0,0.[00]')}
+        </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
         <div className="flex gap-4 items-center my-auto text-white text-opacity-60">
           <div className="flex-auto">Circulating Supply </div>
           <Info />
         </div>
-        <div className="text-right text-white">-</div>
+        <div className="text-right text-white">
+          {numeral(dataTokenInfo?.circulating_supply).format('$0,0.[00]')}
+        </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
         <div className="flex gap-5 items-center justify-between my-auto text-white text-opacity-60">
@@ -130,7 +132,9 @@ export const ContractDetail = ({
           <div className="grow">Fully Diluted Valuation </div>
           <Info />
         </div>
-        <div className="text-right text-white">-</div>
+        <div className="text-right text-white">
+          {numeral(dataTokenInfo?.fully_diluted_valuation).format('$0,0.[00]')}
+        </div>
       </div>
     </>
   )
