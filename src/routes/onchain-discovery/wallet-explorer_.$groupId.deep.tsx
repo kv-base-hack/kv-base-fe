@@ -9,7 +9,8 @@ import {
 import { DateGroup } from '@/components/common/DateGroup'
 import { PaginationCustom } from '@/components/common/Pagination'
 import AvatarIcon from '@/components/shared/icons/Avatar'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
 import { usePortfolioQuery } from '@/query/wallet-explorer/getPortfolio'
 import { useTradeStatisticQuery } from '@/query/wallet-explorer/getTradeStatistic'
@@ -22,12 +23,12 @@ const DATA_ACTIVITY = [
     label: 'All',
   },
   {
-    value: 'inflow',
-    label: 'Inflow',
+    value: 'deposit',
+    label: 'Deposit',
   },
   {
-    value: 'outflow',
-    label: 'Outflow',
+    value: 'withdraw',
+    label: 'Withdraw',
   },
   {
     value: 'buying',
@@ -45,6 +46,7 @@ export const Route = createFileRoute('/onchain-discovery/wallet-explorer/$groupI
 
 function WalletExplorerDetail() {
   const params = Route.useParams()
+  const CHAIN = useAtomValue(chainAtom)
   const [page, setPage] = useState(1)
   const [pageActivity, setPageActivity] = useState(1)
   const [filterActivity, setFilterActivity] = useState('all')

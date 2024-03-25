@@ -4,14 +4,17 @@ import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@/components/
 import { useTokenListQuery } from '@/query/token-explorer/getListToken'
 import { ChangeEvent, useState } from 'react'
 import { useDebounce } from 'react-use'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { DATA_TOKEN } from '@/constant/token'
 import { Link } from '@tanstack/react-router'
 
 export function DialogSelectToken() {
   const [search, setSearch] = useState('')
   const [debounceSearch, setDebounceSearch] = useState('')
+  const CHAIN = useAtomValue(chainAtom)
 
-  const listTokenQuery = useTokenListQuery({ symbol_search: debounceSearch })
+  const listTokenQuery = useTokenListQuery({ symbol_search: debounceSearch, chain: CHAIN })
   const listTokenData = listTokenQuery.data?.data?.tokens
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {

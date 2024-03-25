@@ -5,7 +5,8 @@ import { News } from '@/components/common/News'
 import { Onchain } from '@/components/common/Onchain'
 import { SelectChain } from '@/components/common/SelectChain'
 import { Technical } from '@/components/common/Technical'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { cn } from '@/lib/utils'
 import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 import { createFileRoute } from '@tanstack/react-router'
@@ -65,6 +66,7 @@ function TokenExplorerDetail() {
   const params = Route.useParams()
   const [mode, setMode] = useState('1d')
   const [tab, setTabs] = useState('onchain')
+  const CHAIN = useAtomValue(chainAtom)
 
   //
   const tokenInfoQuery = useTokenInfoQuery({

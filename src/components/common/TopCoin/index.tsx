@@ -1,7 +1,8 @@
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { DateGroup } from '@/components/common/DateGroup'
 import { PaginationCustom } from '@/components/common/Pagination'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { useCexInQuery } from '@/query/onchain-signal/getCexIn'
@@ -38,6 +39,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
   const [cexOutPage, setCexOutPage] = useState(1)
   const [cexOutTab, setCexOutTab] = useState('24h')
   const [cexInTab, setCexInTab] = useState('24h')
+  const CHAIN = useAtomValue(chainAtom)
 
   const cexInQuery = useCexInQuery({
     limit: 5,

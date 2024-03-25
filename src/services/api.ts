@@ -1,4 +1,3 @@
-import { CHAIN } from '@/constant/chain'
 import { CexInResponse } from '@/types/cexIn'
 import { CexOutResponse } from '@/types/cexOut'
 import { CourseResponse } from '@/types/course'
@@ -104,7 +103,7 @@ export const activity = async (groupId: string) => {
       time: 'Nov 19, 01:24',
       smart_money: 'Amber Group',
       symbol: 'USDT',
-      movements: 'OUTFLOW',
+      movements: 'WITHDRAW',
       value: {
         total: 14740000,
         amount: 2000000,
@@ -125,7 +124,7 @@ export const activity = async (groupId: string) => {
       time: 'Nov 19, 01:24',
       smart_money: 'Amber Group',
       symbol: 'USDT',
-      movements: 'OUTFLOW',
+      movements: 'WITHDRAW',
       value: {
         total: 14740000,
         amount: 2000000,
@@ -146,7 +145,7 @@ export const activity = async (groupId: string) => {
       time: 'Nov 19, 01:24',
       smart_money: 'Amber Group',
       symbol: 'USDT',
-      movements: 'OUTFLOW',
+      movements: 'WITHDRAW',
       value: {
         total: 14740000,
         amount: 2000000,
@@ -167,7 +166,7 @@ export const activity = async (groupId: string) => {
       time: 'Nov 19, 01:24',
       smart_money: 'Amber Group',
       symbol: 'USDT',
-      movements: 'OUTFLOW',
+      movements: 'WITHDRAW',
       value: {
         total: 14740000,
         amount: 2000000,
@@ -188,7 +187,7 @@ export const activity = async (groupId: string) => {
       time: 'Nov 19, 01:24',
       smart_money: 'Amber Group',
       symbol: 'USDT',
-      movements: 'OUTFLOW',
+      movements: 'WITHDRAW',
       value: {
         total: 14740000,
         amount: 2000000,
@@ -299,7 +298,12 @@ export const getCexIn = async ({
   limit = 5,
   start = 1,
   duration = '24h',
-  chain = CHAIN,
+  chain,
+}: {
+  limit?: number
+  start?: number
+  duration?: string
+  chain: string
 }): Promise<CexInResponse> => {
   return await api.get('/v1/token_cex_in', {
     params: {
@@ -315,7 +319,12 @@ export const getCexOut = async ({
   limit = 5,
   start = 1,
   duration = '24h',
-  chain = CHAIN,
+  chain,
+}: {
+  limit?: number
+  start?: number
+  duration?: string
+  chain: string
 }): Promise<CexOutResponse> => {
   return await api.get('/v1/token_cex_out', {
     params: {
@@ -331,7 +340,12 @@ export const getTopTokenProfit = async ({
   limit = 10,
   duration = '24h',
   start = 1,
-  chain = CHAIN,
+  chain,
+}: {
+  limit?: number
+  start?: number
+  duration?: string
+  chain: string
 }): Promise<TopTokenProfitResponse> => {
   return await api.get('/v1/token/profit', {
     params: {
@@ -358,7 +372,12 @@ export const getTopActivity = async ({
   action = 'all',
   limit = 10,
   start = 1,
-  chain = CHAIN,
+  chain,
+}: {
+  action?: string
+  limit?: number
+  start?: number
+  chain: string
 }): Promise<TopActivityResponse> => {
   return await api.get('/v1/activities', {
     params: {
@@ -373,7 +392,11 @@ export const getTopActivity = async ({
 export const getLeaderboard = async ({
   limit = 5,
   start = 1,
-  chain = CHAIN,
+  chain,
+}: {
+  limit?: number
+  start?: number
+  chain: string
 }): Promise<LeaderboardResponse> => {
   return await api.get('/v1/leaderboard', {
     params: {
@@ -387,7 +410,7 @@ export const getLeaderboard = async ({
 export const getTokenInspectDepositWithdraw = async ({
   duration,
   address,
-  chain = CHAIN,
+  chain,
 }: {
   duration: string
   address: string
@@ -405,7 +428,7 @@ export const getTokenInspectDepositWithdraw = async ({
 export const getTokenInspectBuySell = async ({
   duration,
   address,
-  chain = CHAIN,
+  chain,
 }: {
   duration: string
   address: string
@@ -425,7 +448,7 @@ export const getTokenInspectActivity = async ({
   start = 1,
   action,
   address,
-  chain = CHAIN,
+  chain,
 }: {
   limit: number
   start: number
@@ -446,13 +469,15 @@ export const getTokenInspectActivity = async ({
 
 export const getTokenList = async ({
   symbol_search,
+  chain,
 }: {
   symbol_search: string
+  chain: string
 }): Promise<TokenListResponse> => {
   return await api.get('/v1/token/list', {
     params: {
       symbol_search,
-      chain: CHAIN,
+      chain,
     },
   })
 }
