@@ -7,7 +7,8 @@ import { PaginationCustom } from '@/components/common/Pagination'
 import Calendar from '@/components/shared/icons/Calendar'
 import Info from '@/components/shared/icons/Info'
 import SwapDate from '@/components/shared/icons/SwapDate'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { DATA_TOKEN } from '@/constant/token'
 import { useTopUserProfitQuery } from '@/query/onchain-signal/getTopUserProfit'
 import { useTokenInspectActivityQuery } from '@/query/token-explorer/getTokenInspectActivity'
@@ -25,12 +26,12 @@ const DATA_ACTIVITY = [
     label: 'All',
   },
   {
-    value: 'inflow',
-    label: 'Inflow',
+    value: 'deposit',
+    label: 'Deposit',
   },
   {
-    value: 'outflow',
-    label: 'Outflow',
+    value: 'withdraw',
+    label: 'Withdraw',
   },
   {
     value: 'buying',
@@ -68,6 +69,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
   const [durationWithDrawDeposit, setDurationWithDrawDeposit] = useState('24h')
   const [durationSellBuy, setDurationSellBuy] = useState('24h')
   const params: { token: string } = useParams({ strict: false })
+  const CHAIN = useAtomValue(chainAtom)
   //
   const topUserProfitQuery = useTopUserProfitQuery({
     limitTopAddress: 5,

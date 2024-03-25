@@ -4,7 +4,8 @@ import { columnsLeaderboard } from '@/components/common/DataTable/columnLeaderbo
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import SearchIcon from '@/components/shared/icons/SearchIcon'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
@@ -15,6 +16,7 @@ export const Route = createFileRoute('/onchain-discovery/wallet-explorer')({
 
 function WalletExplorer() {
   const [page, setPage] = useState(1)
+  const CHAIN = useAtomValue(chainAtom)
   //
   const leaderboardQuery = useLeaderboardQuery({
     start: page,

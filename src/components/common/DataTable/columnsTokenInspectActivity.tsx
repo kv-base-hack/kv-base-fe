@@ -64,9 +64,9 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
         <div
           className={cn(
             'uppercase justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap rounded-md bg-opacity-10',
-            movement === 'outflow'
+            movement === 'deposit'
               ? 'bg-amber-200 text-red-300'
-              : movement === 'inflow'
+              : movement === 'withdraw'
                 ? 'bg-secondary-4 text-secondary-4'
                 : movement === 'buying'
                   ? 'bg-primary-2 text-primary-2'

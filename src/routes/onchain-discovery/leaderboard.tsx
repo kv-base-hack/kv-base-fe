@@ -6,7 +6,8 @@ import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
 import ArrowDownIcon from '@/components/shared/icons/ArrowDownIcon'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
 import { createFileRoute } from '@tanstack/react-router'
@@ -32,6 +33,7 @@ export const Route = createFileRoute('/onchain-discovery/leaderboard')({
 })
 
 function Leaderboard() {
+  const CHAIN = useAtomValue(chainAtom)
   const [pageTopProfit, setPageTopProfit] = useState(1)
   const [pageLeaderboard, setPageLeaderboard] = useState(1)
   //

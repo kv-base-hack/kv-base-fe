@@ -7,7 +7,8 @@ import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
 import { TopCoin } from '@/components/common/TopCoin'
-import { CHAIN } from '@/constant/chain'
+import { chainAtom } from '@/atom/chain'
+import { useAtomValue } from 'jotai'
 import { cn } from '@/lib/utils'
 import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
@@ -43,12 +44,12 @@ const DATA_ACTIVITY = [
     label: 'All',
   },
   {
-    value: 'inflow',
-    label: 'Inflow',
+    value: 'deposit',
+    label: 'Deposit',
   },
   {
-    value: 'outflow',
-    label: 'Outflow',
+    value: 'withdraw',
+    label: 'Withdraw',
   },
   {
     value: 'buying',
@@ -61,6 +62,7 @@ const DATA_ACTIVITY = [
 ]
 function OnchainSignals() {
   const [tab, setTabs] = useState('smart_money')
+  const CHAIN = useAtomValue(chainAtom)
 
   const [pageActivity, setPageActivity] = useState(1)
   const [pageTopProfit, setPageTopProfit] = useState(1)
