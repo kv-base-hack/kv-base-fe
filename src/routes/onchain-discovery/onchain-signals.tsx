@@ -133,7 +133,7 @@ function OnchainSignals() {
             ? ''
             : 'We do not encourage people to copy trade these individuals because this Insider Trade is just speculation'
         }>
-        <SelectChain name="Ethereum Chain" />
+        <SelectChain />
       </GroupHeader>
       {/* top coin */}
       <Suspense fallback={<div>Loading...</div>}>

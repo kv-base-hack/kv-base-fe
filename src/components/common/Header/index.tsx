@@ -1,4 +1,5 @@
 import { ButtonConnectWallet } from '@/components/common/ConnectWallet'
+import { SelectChain } from '@/components/common/SelectChain'
 import { DATA_TOKEN } from '@/constant/token'
 import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 
@@ -45,18 +46,7 @@ export const Header = () => {
         </div>
       </div>
       <div className="flex gap-4 justify-between items-stretch">
-        <div className="cursor-pointer flex gap-2 justify-between items-stretch px-4 py-3 rounded-lg transition-all duration-150 hover:bg-white/10">
-          <img
-            loading="lazy"
-            src="/assets/icons/chain/polygon.svg"
-            className="object-center w-8 aspect-square"
-          />
-          <img
-            loading="lazy"
-            src="/assets/icons/arrow-down.svg"
-            className="object-center justify-center items-center my-auto w-5 aspect-square"
-          />
-        </div>
+        <SelectChain size="lg" showName={false} />
         <ButtonConnectWallet />
       </div>
     </div>

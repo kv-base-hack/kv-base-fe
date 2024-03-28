@@ -65,14 +65,14 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
           className={cn(
             'uppercase justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap rounded-md bg-opacity-10',
             movement === 'deposit'
-              ? 'bg-amber-200 text-red-300'
+              ? 'bg-secondary-1/10 text-secondary-1'
               : movement === 'withdraw'
-                ? 'bg-secondary-4 text-secondary-4'
+                ? 'bg-secondary-4/10 text-secondary-4'
                 : movement === 'buying'
-                  ? 'bg-primary-2 text-primary-2'
+                  ? 'bg-primary-2/10 text-primary-2'
                   : movement === 'selling'
-                    ? 'bg-semantic-error-3 text-semantic-error-3'
-                    : 'bg-primary-2 text-primary-2'
+                    ? 'bg-primary-3/10 text-primary-3'
+                    : 'bg-primary-2/10 text-primary-2'
           )}>
           {movement}
         </div>
