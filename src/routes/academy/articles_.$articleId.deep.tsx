@@ -105,7 +105,7 @@ function ArticleDetail() {
                   <Copy />
                 </div>
                 <div className="mt-20">
-                  {h2Titles.map((title: string, index: number) => (
+                  {h2Titles?.map((title: string, index: number) => (
                     <div
                       key={index}
                       className={cn(

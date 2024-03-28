@@ -4,13 +4,17 @@ import { useQuery } from '@tanstack/react-query'
 const GET_TOP_USER_PROFIT = 'GET_TOP_USER_PROFIT'
 
 export const useTopUserProfitQuery = ({
-  limitTopAddress,
+  limit,
   duration,
+  chain,
+  start,
 }: {
-  limitTopAddress: number
   duration: string
+  chain: string
+  start: number
+  limit: number
 }) =>
   useQuery({
-    queryKey: [GET_TOP_USER_PROFIT, { limitTopAddress, duration }],
-    queryFn: () => getTopUserProfit({ limitTopAddress, duration }),
+    queryKey: [GET_TOP_USER_PROFIT, { limit, duration, chain, start }],
+    queryFn: () => getTopUserProfit({ limit, duration, chain, start }),
   })
