@@ -74,7 +74,7 @@ export const ContractDetail = ({
       </div>
       <div className="self-start mt-4 text-sm leading-5 text-gray-300">Tags</div>
       <div className="flex flex-wrap gap-1 self-start py-0.5 mt-2 text-xs font-semibold leading-5 text-gray-300 whitespace-nowrap">
-        {dataTokenInfo?.tags.map((tag, index) => (
+        {dataTokenInfo?.tags?.map((tag, index) => (
           <div
             key={index}
             className="justify-center px-2 py-0.5 bg-white bg-opacity-10 rounded-[40px]">
