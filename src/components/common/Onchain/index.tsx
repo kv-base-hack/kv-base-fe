@@ -63,8 +63,8 @@ const DATA_DATE = [
 ]
 
 export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
-  const [page, setPage] = useState(1)
   const [pageActivity, setPageActivity] = useState(1)
+  const [pageUserProfit, setPageUserProfit] = useState(1)
   const [filterActivity, setFilterActivity] = useState('all')
   const [durationWithDrawDeposit, setDurationWithDrawDeposit] = useState('24h')
   const [durationSellBuy, setDurationSellBuy] = useState('24h')
@@ -72,10 +72,13 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
   const CHAIN = useAtomValue(chainAtom)
   //
   const topUserProfitQuery = useTopUserProfitQuery({
-    limitTopAddress: 5,
+    limit: 10,
+    start: pageUserProfit,
+    chain: CHAIN,
     duration: '24h',
   })
   const dataTopUserProfit = topUserProfitQuery.data?.data.topUserProfit
+  const totalUserProfit = topUserProfitQuery.data?.data.total || 1
   //
   const activityQuery = useTokenInspectActivityQuery({
     action: filterActivity,
@@ -139,15 +142,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
           <div className="grow text-gray-300">Onchain Signal</div>
         </div>
       </div>
-      <WrapTable
-        title="Smart Money Ranking"
-        childHeader={
-          <DateGroup
-            dataSource={DATA_ACTIVITY}
-            active={filterActivity}
-            handleActive={setFilterActivity}
-          />
-        }>
+      <WrapTable title="Smart Money Ranking">
         <div className="mt-8">
           <DataTable
             className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
@@ -161,11 +156,11 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
         </div>
         <PaginationCustom
           className="mt-8"
-          currentPage={page}
-          updatePage={() => null}
+          currentPage={pageUserProfit}
+          updatePage={(page: number) => setPageUserProfit(page)}
           pageSize={10}
-          total={10}
-          setPage={setPage}
+          total={totalUserProfit}
+          setPage={setPageUserProfit}
         />
       </WrapTable>
       <WrapTable

@@ -12,7 +12,7 @@ export const ArticleItem = ({ article }: { article: Article }) => {
           className="object-cover rounded-2xl absolute inset-0 size-full"
         />
         <div className="flex relative gap-2 mb-20">
-          {article.topics.map((topic, index) =>
+          {article?.topics?.map((topic, index) =>
             index < 2 ? (
               <div
                 key={index}

@@ -1,5 +1,6 @@
 export interface DataTopUserProfit {
   topUserProfit: TopUserProfit[]
+  total?: number
 }
 
 export interface TopUserProfit {

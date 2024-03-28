@@ -358,13 +358,22 @@ export const getTopTokenProfit = async ({
 }
 
 export const getTopUserProfit = async ({
-  limitTopAddress = 5,
   duration = '24h',
+  chain,
+  start,
+  limit,
+}: {
+  duration: string
+  chain: string
+  start: number
+  limit: number
 }): Promise<TopUserProfitResponse> => {
   return await api.get('/v1/user/profit', {
     params: {
-      limitTopAddress,
       duration,
+      chain,
+      start,
+      limit,
     },
   })
 }

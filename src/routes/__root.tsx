@@ -10,7 +10,7 @@ export const Route = createRootRoute({
         <LayoutSidebar />
         <div className="ml-[300px] w-full">
           <Header />
-          <div className="mt-[105px]">
+          <div className="mt-[100px]">
             <Outlet />
           </div>
         </div>

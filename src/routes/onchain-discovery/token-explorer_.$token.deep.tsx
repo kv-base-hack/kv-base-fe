@@ -97,7 +97,7 @@ function TokenExplorerDetail() {
   return (
     <div className="w-full h-full pt-2">
       <GroupHeader className="mt-4 mx-10" title="Token Explorer" desc="">
-        <SelectChain name="ETH" />
+        <SelectChain />
       </GroupHeader>
       <div className="mx-10 mt-4 flex items-start gap-4 mb-4">
         <div className="w-7/12 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">

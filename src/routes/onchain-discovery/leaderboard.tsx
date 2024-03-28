@@ -62,7 +62,7 @@ function Leaderboard() {
         className="mt-4 mx-10"
         title="Leaderboard"
         desc="Showcases ranked profiles of Insider Trade based on their returns, highlights their most profitable trades, and reveals their recent market moves">
-        <SelectChain name="Ethereum" />
+        <SelectChain />
       </GroupHeader>
       {/* table */}
       <div className="m-10">

@@ -16,7 +16,7 @@ export const DateGroup = ({
 }) => {
   return (
     <div className="flex gap-1 cursor-pointer justify-between items-center text-base tracking-normal text-gray-500">
-      {dataSource.map((item: { value: string; label: string }, index: number) => {
+      {dataSource?.map((item: { value: string; label: string }, index: number) => {
         return (
           <div
             key={index}

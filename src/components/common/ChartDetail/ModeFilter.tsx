@@ -17,7 +17,7 @@ export const ModeFilter = ({
       className="flex overflow-hidden gap-2"
       value={value}
       onValueChange={onChange}>
-      {options.map((o) => (
+      {options?.map((o) => (
         <ToggleGroup.Item
           key={o}
           value={o}
