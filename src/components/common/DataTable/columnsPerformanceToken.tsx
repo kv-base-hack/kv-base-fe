@@ -13,9 +13,8 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
     header: () => 'Symbol',
     enableSorting: false,
     cell: ({ row }) => {
-      return (
+      return row?.original?.address ? (
         <Link
-          disabled={!row?.original?.address}
           to="/onchain-discovery/token-explorer/$token/deep"
           params={{
             token: row.original.address,
@@ -32,6 +31,19 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
           />
           <div>{row?.original?.symbol}</div>
         </Link>
+      ) : (
+        <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+          <img
+            loading="lazy"
+            src={
+              row?.original?.image_url
+                ? row?.original?.image_url
+                : DATA_TOKEN?.find((item) => item.token === row?.original?.symbol)?.image_url
+            }
+            className="w-6 aspect-square fill-blue-950"
+          />
+          <div>{row?.original?.symbol}</div>
+        </div>
       )
     },
   },
@@ -95,7 +107,7 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { current_price } = row.original
-      return <div>{numeral(current_price).format('$0,0.[000000]')}</div>
+      return <div>{numeral(current_price).format('$0,0.[0000000000]')}</div>
     },
   },
   {

@@ -21,9 +21,8 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { symbol } = row.original
-      return (
+      return row?.original?.address ? (
         <Link
-          disabled={!row?.original?.address}
           to="/onchain-discovery/token-explorer/$token/deep"
           params={{
             token: row.original.address,
@@ -36,6 +35,15 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
           />
           <div>{symbol}</div>
         </Link>
+      ) : (
+        <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+          <img
+            loading="lazy"
+            src="/assets/icons/token/usdt.svg"
+            className="w-6 aspect-square fill-blue-950"
+          />
+          <div>{symbol}</div>
+        </div>
       )
     },
   },

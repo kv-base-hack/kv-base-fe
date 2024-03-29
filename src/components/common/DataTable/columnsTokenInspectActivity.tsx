@@ -32,9 +32,8 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { symbol } = row.original
-      return (
+      return row?.original?.token_address ? (
         <Link
-          disabled={!row?.original?.token_address}
           to="/onchain-discovery/token-explorer/$token/deep"
           params={{
             token: row.original.token_address,
@@ -51,6 +50,19 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
           />
           <div>{symbol}</div>
         </Link>
+      ) : (
+        <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+          <img
+            loading="lazy"
+            src={
+              row?.original?.token_image_url
+                ? row?.original?.token_image_url
+                : DATA_TOKEN?.find((item) => item.token === symbol)?.image_url
+            }
+            className="w-6 aspect-square fill-blue-950"
+          />
+          <div>{symbol}</div>
+        </div>
       )
     },
   },
@@ -101,7 +113,7 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
       const { price } = row.original
       return (
         <div className={cn('flex items-center justify-center')}>
-          {numeral(price).format('$0,0.[0000]')}
+          {numeral(price).format('$0,0.[0000000000]')}
         </div>
       )
     },
