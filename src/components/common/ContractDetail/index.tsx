@@ -88,7 +88,7 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.market_cap).format('$0,0.[00]')}
+          {numeral(dataTokenInfo?.market_cap).format('$0,0.[00000000]')}
         </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 whitespace-nowrap border-b border-solid border-b-gray-200/10">
@@ -97,7 +97,7 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.volume_24h).format('$0,0.[00]')}
+          {numeral(dataTokenInfo?.volume_24h).format('$0,0.[00000000]')}
         </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
@@ -106,7 +106,7 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.circulating_supply).format('$0,0.[00]')}
+          {numeral(dataTokenInfo?.circulating_supply).format('$0,0.[00000000]')}
         </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
@@ -115,7 +115,7 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.total_supply).format('$0,0.[00]')}
+          {numeral(dataTokenInfo?.total_supply).format('$0,0.[00000000]')}
         </div>
       </div>
       <div className="flex gap-5 justify-between py-3 w-full text-sm leading-5 border-b border-solid border-b-gray-200 border-b-gray-200/10">
@@ -124,7 +124,7 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.max_supply).format('$0,0.[00]')}
+          {numeral(dataTokenInfo?.max_supply).format('$0,0.[00000000]')}
         </div>
       </div>
       <div className="flex gap-5 justify-between pt-2.5 pb-0.5 w-full text-sm leading-5 whitespace-nowrap">
@@ -133,7 +133,7 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.fully_diluted_valuation).format('$0,0.[00]')}
+          {numeral(dataTokenInfo?.fully_diluted_valuation).format('$0,0.[00000000]')}
         </div>
       </div>
     </>

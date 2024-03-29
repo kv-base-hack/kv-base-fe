@@ -102,7 +102,7 @@ export function LineChart({
             ) : (
               <p className="text-[28px] font-bold text-[#fefefe]">
                 {valueIndex
-                  ? numeral(valueIndex).format('$0,0.[0000]')
+                  ? numeral(valueIndex).format('$0,0.[00000000]')
                   : numeral(dataTokenInfo?.usd_price).format('$0,0.[00000000000]')}
               </p>
             )}
@@ -160,7 +160,14 @@ export function LineChart({
                   strokeDasharray: '5 5',
                 }}
                 position={{ y: 0 }}
-                content={<CustomTooltip active setValueIndex={setValueIndex} />}
+                content={
+                  <CustomTooltip
+                    payload={[dataTokenInfo?.usd_price]}
+                    label={dataTokenInfo?.symbol}
+                    active
+                    setValueIndex={setValueIndex}
+                  />
+                }
               />
               <XAxis
                 dataKey="date"
@@ -202,10 +209,20 @@ export function LineChart({
   )
 }
 
-const CustomTooltip = ({ active, payload, label, setValueIndex }: any) => {
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+  setValueIndex,
+}: {
+  active: any
+  payload: any
+  label: any
+  setValueIndex: any
+}) => {
+  const price = payload[0]?.payload?.price
+  setValueIndex(price)
   if (active && payload && payload.length) {
-    const price = payload[0]?.payload?.price
-    setValueIndex(price)
     return (
       <div>
         <p className="text-[#A7ACB4] text-sm font-normal font-inter">{label}</p>

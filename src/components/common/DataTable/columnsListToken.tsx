@@ -27,24 +27,32 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
     ),
     size: 250,
     cell: ({ row }) => {
-      const { symbol, name, address } = row.original
-      return (
+      return row?.original?.address ? (
         <Link
-          disabled={!address}
           to="/onchain-discovery/token-explorer/$token/deep"
           params={{
-            token: address,
+            token: row?.original?.address,
           }}>
           <div className="flex gap-1.5 w-full items-center justify-start">
             <img
               loading="lazy"
-              src={DATA_TOKEN?.find((el) => el.token === symbol)?.image_url}
+              src={DATA_TOKEN?.find((el) => el.token === row?.original?.symbol)?.image_url}
               className="w-6 aspect-square fill-blue-950"
             />
-            <div>{name}</div>
-            <div className="text-normal text-neutral-dark-05">{symbol}</div>
+            <div>{row?.original?.name}</div>
+            <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
           </div>
         </Link>
+      ) : (
+        <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+          <img
+            loading="lazy"
+            src={DATA_TOKEN?.find((el) => el.token === row?.original?.symbol)?.image_url}
+            className="w-6 aspect-square fill-blue-950"
+          />
+          <div>{row?.original?.name}</div>
+          <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+        </div>
       )
     },
   },
@@ -71,7 +79,7 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
             price_change_percentage_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
           )}>
           {price_change_percentage_24h > 0 ? '+' : ''}
-          {numeral(price_change_percentage_24h).format('0,0.[00]')}%
+          {numeral(price_change_percentage_24h).format('0,0.[00000000]')}%
         </div>
       )
     },

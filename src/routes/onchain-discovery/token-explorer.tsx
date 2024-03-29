@@ -14,7 +14,7 @@ export const Route = createFileRoute('/onchain-discovery/token-explorer')({
 
 function TokenExplorer() {
   const trendingTokenQuery = useTrendingTokenQuery()
-  const dataToken = trendingTokenQuery.data?.data.trending_tokens
+  const dataToken = trendingTokenQuery.data?.data?.trending_tokens || []
   const [page, setPage] = useState(1)
 
   return (

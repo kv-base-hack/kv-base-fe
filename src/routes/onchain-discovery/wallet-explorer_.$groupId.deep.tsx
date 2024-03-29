@@ -184,7 +184,7 @@ function WalletExplorerDetail() {
       {/* table */}
       <div className="m-10">
         <WrapTable
-          title="Smart Money’s Activity"
+          title="Activity"
           childHeader={
             <DateGroup
               dataSource={DATA_ACTIVITY}

@@ -40,7 +40,7 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { amount } = row.original
-      return <div>{numeral(amount).format('0,0.[00]')}</div>
+      return <div>{numeral(amount).format('0,0.[00000000]')}</div>
     },
   },
 ]

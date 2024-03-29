@@ -123,7 +123,7 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
       const { price } = row.original
       return (
         <div className={cn('flex items-center justify-center')}>
-          {numeral(price).format('$0,0.[0000]')}
+          {numeral(price).format('$0,0.[0000000000]')}
         </div>
       )
     },
