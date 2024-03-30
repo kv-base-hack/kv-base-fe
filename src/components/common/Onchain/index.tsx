@@ -19,6 +19,7 @@ import { nFormatter } from '@/utils/nFormatter'
 import { useParams } from '@tanstack/react-router'
 import numeral from 'numeral'
 import { useState } from 'react'
+import { ChartCompare } from '@/components/common/Onchain/ChartCompare'
 
 const DATA_ACTIVITY = [
   {
@@ -132,7 +133,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
 
   const tmpLogo = DATA_TOKEN?.find((el) => el.token === dataTokenInfo?.symbol)?.image_url
   return (
-    <>
+    <div>
       <div className="flex my-4 items-center gap-4 self-stretch font-semibold whitespace-nowrap leading-[160%] max-md:flex-wrap">
         <div className="flex gap-2 my-auto text-xl tracking-tight">
           <div className="flex gap-2 justify-between text-gray-300">
@@ -227,9 +228,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
               <div>Price</div>
             </div>
           </div>
-          <div className="flex overflow-hidden relative flex-col justify-center items-center px-16 py-12 mt-4 min-h-[275px] max-md:px-5 max-md:max-w-full">
-            <div>Chart</div>
-          </div>
+          <ChartCompare />
         </div>
       </div>
       {/* */}
@@ -341,6 +340,6 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
