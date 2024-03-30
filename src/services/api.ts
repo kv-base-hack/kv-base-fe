@@ -2,6 +2,7 @@ import { CexInResponse } from '@/types/cexIn'
 import { CexOutResponse } from '@/types/cexOut'
 import { CourseResponse } from '@/types/course'
 import { LeaderboardResponse } from '@/types/leaderboard'
+import { PriceWithTransferResponse } from '@/types/priceWithTransfer'
 import { TokenInfoResponse } from '@/types/tokenInfo'
 import { TokenInspectActivityResponse } from '@/types/tokenInspectActivity'
 import { TokenInspectBuySellResponse } from '@/types/tokenInspectBuySell'
@@ -523,4 +524,19 @@ export const getArticle = async (): Promise<any> => {
 }
 export const getArticleDetail = async ({ id }: { id: string }): Promise<any> => {
   return await api_1.get(`/article/${id}`)
+}
+
+export const getPriceWithTransfer = async ({
+  address,
+  chain,
+}: {
+  address: string
+  chain: string
+}): Promise<PriceWithTransferResponse> => {
+  return await api.get('v1/token/price_with_transfer', {
+    params: {
+      address,
+      chain,
+    },
+  })
 }
