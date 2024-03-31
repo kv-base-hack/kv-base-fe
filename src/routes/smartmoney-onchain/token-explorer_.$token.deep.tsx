@@ -1,4 +1,3 @@
-import { LineChart } from '@/components/common/ChartDetail/LineChart'
 import { ContractDetail } from '@/components/common/ContractDetail'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { News } from '@/components/common/News'
@@ -11,8 +10,9 @@ import { cn } from '@/lib/utils'
 import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 import { createFileRoute } from '@tanstack/react-router'
 import { useCallback, useState } from 'react'
+import { WrapLineChart } from '@/components/common/ChartDetail/WrapLineChart'
 
-export const Route = createFileRoute('/onchain-discovery/token-explorer/$token/deep')({
+export const Route = createFileRoute('/smartmoney-onchain/token-explorer/$token/deep')({
   component: TokenExplorerDetail,
 })
 
@@ -101,7 +101,7 @@ function TokenExplorerDetail() {
       </GroupHeader>
       <div className="mx-10 mt-4 flex items-start gap-4 mb-4">
         <div className="w-7/12 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">
-          <LineChart
+          <WrapLineChart
             dataTokenInfo={dataTokenInfo}
             mode={mode}
             sparkLineIn7D={DUMMY_CHART}

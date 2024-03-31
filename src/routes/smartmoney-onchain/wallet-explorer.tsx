@@ -10,7 +10,7 @@ import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
-export const Route = createFileRoute('/onchain-discovery/wallet-explorer')({
+export const Route = createFileRoute('/smartmoney-onchain/wallet-explorer')({
   component: WalletExplorer,
 })
 

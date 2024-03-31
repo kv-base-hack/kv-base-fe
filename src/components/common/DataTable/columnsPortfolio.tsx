@@ -19,7 +19,7 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
       return (
         <Link
           disabled={!row?.original?.address}
-          to="/onchain-discovery/token-explorer/$token/deep"
+          to="/smartmoney-onchain/token-explorer/$token/deep"
           params={{
             token: row.original.address,
           }}

@@ -23,7 +23,7 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
       return (
         <Link
           className="underline"
-          to="/onchain-discovery/wallet-explorer/$groupId/deep"
+          to="/smartmoney-onchain/wallet-explorer/$groupId/deep"
           params={{
             groupId: '1',
           }}>

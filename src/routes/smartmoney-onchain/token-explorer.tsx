@@ -8,7 +8,7 @@ import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
-export const Route = createFileRoute('/onchain-discovery/token-explorer')({
+export const Route = createFileRoute('/smartmoney-onchain/token-explorer')({
   component: TokenExplorer,
 })
 

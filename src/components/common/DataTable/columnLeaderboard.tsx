@@ -24,7 +24,7 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
       return (
         <Link
           className="w-32 truncate"
-          to="/onchain-discovery/wallet-explorer/$groupId/deep"
+          to="/smartmoney-onchain/wallet-explorer/$groupId/deep"
           params={{
             groupId: '1',
           }}>

@@ -1,4 +1,4 @@
-function OnchainDiscoveryIcon({ className }: { className?: string }) {
+function SmartmoneyOnchainIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -21,4 +21,4 @@ function OnchainDiscoveryIcon({ className }: { className?: string }) {
   )
 }
 
-export default OnchainDiscoveryIcon
+export default SmartmoneyOnchainIcon

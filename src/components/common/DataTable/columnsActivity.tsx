@@ -57,7 +57,7 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
       return (
         <Link
           disabled={!row?.original?.token_address}
-          to="/onchain-discovery/token-explorer/$token/deep"
+          to="/smartmoney-onchain/token-explorer/$token/deep"
           params={{
             token: row.original.token_address,
           }}

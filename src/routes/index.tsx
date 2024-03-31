@@ -5,5 +5,5 @@ export const Route = createFileRoute('/')({
 })
 
 function Index() {
-  return <Navigate to="/onchain-discovery/onchain-signals" />
+  return <Navigate to="/smartmoney-onchain/onchain-signals" />
 }

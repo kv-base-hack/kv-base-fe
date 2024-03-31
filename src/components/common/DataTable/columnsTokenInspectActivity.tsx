@@ -34,7 +34,7 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
       const { symbol } = row.original
       return row?.original?.token_address ? (
         <Link
-          to="/onchain-discovery/token-explorer/$token/deep"
+          to="/smartmoney-onchain/token-explorer/$token/deep"
           params={{
             token: row.original.token_address,
           }}
