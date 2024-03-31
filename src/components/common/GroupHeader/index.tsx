@@ -1,9 +1,10 @@
 import WarningIcon from '@/components/shared/icons/WarningIcon'
 import { cn } from '@/lib/utils'
+import { ReactNode } from 'react'
 
 type GroupHeaderProps = {
   title: string
-  desc?: string
+  desc?: ReactNode | string
   info?: string
   children?: React.ReactNode
   className?: string

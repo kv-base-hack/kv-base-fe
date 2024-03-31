@@ -73,14 +73,14 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ data }) => {
         <div
           onClick={expandedMenu}
           className={cn(
-            'group cursor-pointer flex gap-3 justify-between items-stretch p-3 mt-5 rounded-xl transition-all duration-150 hover:shadow-sm hover:bg-gray-300 hover:bg-opacity-10',
+            'group cursor-pointer flex justify-between items-stretch p-3 mt-5 rounded-xl transition-all duration-150 hover:shadow-sm hover:bg-gray-300 hover:bg-opacity-10',
             isActive ? 'shadow-box bg-gray-300 bg-opacity-10 text-gray-100' : ''
           )}>
           <div className="flex gap-3 justify-between items-stretch">
             {data.icon}
             <div
               className={cn(
-                'grow text-base font-semibold tracking-normal leading-6 text-gray-500 group-hover:text-gray-100',
+                'grow text-[15px] tracking-[-0.15px] lett font-semibold leading-6 text-gray-500 group-hover:text-gray-100',
                 isActive ? 'text-gray-100' : ''
               )}>
               {data.title}

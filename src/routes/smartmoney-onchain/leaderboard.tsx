@@ -28,7 +28,7 @@ const RightGroup = () => {
   )
 }
 
-export const Route = createFileRoute('/onchain-discovery/leaderboard')({
+export const Route = createFileRoute('/smartmoney-onchain/leaderboard')({
   component: Leaderboard,
 })
 

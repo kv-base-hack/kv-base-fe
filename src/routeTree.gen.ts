@@ -5,22 +5,23 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TradingSignalImport } from './routes/trading-signal'
 import { Route as SwapImport } from './routes/swap'
-import { Route as SubcriptionsImport } from './routes/subcriptions'
 import { Route as MyPortfolioImport } from './routes/my-portfolio'
 import { Route as MarketImport } from './routes/market'
+import { Route as KaichatAiAssistantImport } from './routes/kaichat-ai-assistant'
+import { Route as FindGemsImport } from './routes/find-gems'
 import { Route as EducationImport } from './routes/education'
 import { Route as DashboardImport } from './routes/dashboard'
-import { Route as BotsStrategyImport } from './routes/bots-strategy'
 import { Route as IndexImport } from './routes/index'
-import { Route as OnchainDiscoveryWalletExplorerImport } from './routes/onchain-discovery/wallet-explorer'
-import { Route as OnchainDiscoveryTokenExplorerImport } from './routes/onchain-discovery/token-explorer'
-import { Route as OnchainDiscoveryOnchainSignalsImport } from './routes/onchain-discovery/onchain-signals'
-import { Route as OnchainDiscoveryLeaderboardImport } from './routes/onchain-discovery/leaderboard'
+import { Route as SmartmoneyOnchainWalletExplorerImport } from './routes/smartmoney-onchain/wallet-explorer'
+import { Route as SmartmoneyOnchainTokenExplorerImport } from './routes/smartmoney-onchain/token-explorer'
+import { Route as SmartmoneyOnchainOnchainSignalsImport } from './routes/smartmoney-onchain/onchain-signals'
+import { Route as SmartmoneyOnchainLeaderboardImport } from './routes/smartmoney-onchain/leaderboard'
 import { Route as AcademyCoursesImport } from './routes/academy/courses'
 import { Route as AcademyArticlesImport } from './routes/academy/articles'
-import { Route as OnchainDiscoveryWalletExplorerGroupIdDeepImport } from './routes/onchain-discovery/wallet-explorer_.$groupId.deep'
-import { Route as OnchainDiscoveryTokenExplorerTokenDeepImport } from './routes/onchain-discovery/token-explorer_.$token.deep'
+import { Route as SmartmoneyOnchainWalletExplorerGroupIdDeepImport } from './routes/smartmoney-onchain/wallet-explorer_.$groupId.deep'
+import { Route as SmartmoneyOnchainTokenExplorerTokenDeepImport } from './routes/smartmoney-onchain/token-explorer_.$token.deep'
 import { Route as AcademyCoursesCourseIdDeepImport } from './routes/academy/courses_.$courseId.deep'
 import { Route as AcademyArticlesArticleIdDeepImport } from './routes/academy/articles_.$articleId.deep'
 
@@ -37,13 +38,13 @@ const TradingTerminalLazyRoute = TradingTerminalLazyImport.update({
   import('./routes/trading-terminal.lazy').then((d) => d.Route),
 )
 
-const SwapRoute = SwapImport.update({
-  path: '/swap',
+const TradingSignalRoute = TradingSignalImport.update({
+  path: '/trading-signal',
   getParentRoute: () => rootRoute,
 } as any)
 
-const SubcriptionsRoute = SubcriptionsImport.update({
-  path: '/subcriptions',
+const SwapRoute = SwapImport.update({
+  path: '/swap',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -57,6 +58,16 @@ const MarketRoute = MarketImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const KaichatAiAssistantRoute = KaichatAiAssistantImport.update({
+  path: '/kaichat-ai-assistant',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FindGemsRoute = FindGemsImport.update({
+  path: '/find-gems',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const EducationRoute = EducationImport.update({
   path: '/education',
   getParentRoute: () => rootRoute,
@@ -67,37 +78,32 @@ const DashboardRoute = DashboardImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const BotsStrategyRoute = BotsStrategyImport.update({
-  path: '/bots-strategy',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const OnchainDiscoveryWalletExplorerRoute =
-  OnchainDiscoveryWalletExplorerImport.update({
-    path: '/onchain-discovery/wallet-explorer',
+const SmartmoneyOnchainWalletExplorerRoute =
+  SmartmoneyOnchainWalletExplorerImport.update({
+    path: '/smartmoney-onchain/wallet-explorer',
     getParentRoute: () => rootRoute,
   } as any)
 
-const OnchainDiscoveryTokenExplorerRoute =
-  OnchainDiscoveryTokenExplorerImport.update({
-    path: '/onchain-discovery/token-explorer',
+const SmartmoneyOnchainTokenExplorerRoute =
+  SmartmoneyOnchainTokenExplorerImport.update({
+    path: '/smartmoney-onchain/token-explorer',
     getParentRoute: () => rootRoute,
   } as any)
 
-const OnchainDiscoveryOnchainSignalsRoute =
-  OnchainDiscoveryOnchainSignalsImport.update({
-    path: '/onchain-discovery/onchain-signals',
+const SmartmoneyOnchainOnchainSignalsRoute =
+  SmartmoneyOnchainOnchainSignalsImport.update({
+    path: '/smartmoney-onchain/onchain-signals',
     getParentRoute: () => rootRoute,
   } as any)
 
-const OnchainDiscoveryLeaderboardRoute =
-  OnchainDiscoveryLeaderboardImport.update({
-    path: '/onchain-discovery/leaderboard',
+const SmartmoneyOnchainLeaderboardRoute =
+  SmartmoneyOnchainLeaderboardImport.update({
+    path: '/smartmoney-onchain/leaderboard',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -111,15 +117,15 @@ const AcademyArticlesRoute = AcademyArticlesImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const OnchainDiscoveryWalletExplorerGroupIdDeepRoute =
-  OnchainDiscoveryWalletExplorerGroupIdDeepImport.update({
-    path: '/onchain-discovery/wallet-explorer/$groupId/deep',
+const SmartmoneyOnchainWalletExplorerGroupIdDeepRoute =
+  SmartmoneyOnchainWalletExplorerGroupIdDeepImport.update({
+    path: '/smartmoney-onchain/wallet-explorer/$groupId/deep',
     getParentRoute: () => rootRoute,
   } as any)
 
-const OnchainDiscoveryTokenExplorerTokenDeepRoute =
-  OnchainDiscoveryTokenExplorerTokenDeepImport.update({
-    path: '/onchain-discovery/token-explorer/$token/deep',
+const SmartmoneyOnchainTokenExplorerTokenDeepRoute =
+  SmartmoneyOnchainTokenExplorerTokenDeepImport.update({
+    path: '/smartmoney-onchain/token-explorer/$token/deep',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -144,16 +150,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/bots-strategy': {
-      preLoaderRoute: typeof BotsStrategyImport
-      parentRoute: typeof rootRoute
-    }
     '/dashboard': {
       preLoaderRoute: typeof DashboardImport
       parentRoute: typeof rootRoute
     }
     '/education': {
       preLoaderRoute: typeof EducationImport
+      parentRoute: typeof rootRoute
+    }
+    '/find-gems': {
+      preLoaderRoute: typeof FindGemsImport
+      parentRoute: typeof rootRoute
+    }
+    '/kaichat-ai-assistant': {
+      preLoaderRoute: typeof KaichatAiAssistantImport
       parentRoute: typeof rootRoute
     }
     '/market': {
@@ -164,12 +174,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MyPortfolioImport
       parentRoute: typeof rootRoute
     }
-    '/subcriptions': {
-      preLoaderRoute: typeof SubcriptionsImport
-      parentRoute: typeof rootRoute
-    }
     '/swap': {
       preLoaderRoute: typeof SwapImport
+      parentRoute: typeof rootRoute
+    }
+    '/trading-signal': {
+      preLoaderRoute: typeof TradingSignalImport
       parentRoute: typeof rootRoute
     }
     '/trading-terminal': {
@@ -184,20 +194,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademyCoursesImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/leaderboard': {
-      preLoaderRoute: typeof OnchainDiscoveryLeaderboardImport
+    '/smartmoney-onchain/leaderboard': {
+      preLoaderRoute: typeof SmartmoneyOnchainLeaderboardImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/onchain-signals': {
-      preLoaderRoute: typeof OnchainDiscoveryOnchainSignalsImport
+    '/smartmoney-onchain/onchain-signals': {
+      preLoaderRoute: typeof SmartmoneyOnchainOnchainSignalsImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/token-explorer': {
-      preLoaderRoute: typeof OnchainDiscoveryTokenExplorerImport
+    '/smartmoney-onchain/token-explorer': {
+      preLoaderRoute: typeof SmartmoneyOnchainTokenExplorerImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/wallet-explorer': {
-      preLoaderRoute: typeof OnchainDiscoveryWalletExplorerImport
+    '/smartmoney-onchain/wallet-explorer': {
+      preLoaderRoute: typeof SmartmoneyOnchainWalletExplorerImport
       parentRoute: typeof rootRoute
     }
     '/academy/articles/$articleId/deep': {
@@ -208,12 +218,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademyCoursesCourseIdDeepImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/token-explorer/$token/deep': {
-      preLoaderRoute: typeof OnchainDiscoveryTokenExplorerTokenDeepImport
+    '/smartmoney-onchain/token-explorer/$token/deep': {
+      preLoaderRoute: typeof SmartmoneyOnchainTokenExplorerTokenDeepImport
       parentRoute: typeof rootRoute
     }
-    '/onchain-discovery/wallet-explorer/$groupId/deep': {
-      preLoaderRoute: typeof OnchainDiscoveryWalletExplorerGroupIdDeepImport
+    '/smartmoney-onchain/wallet-explorer/$groupId/deep': {
+      preLoaderRoute: typeof SmartmoneyOnchainWalletExplorerGroupIdDeepImport
       parentRoute: typeof rootRoute
     }
   }
@@ -223,22 +233,23 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
-  BotsStrategyRoute,
   DashboardRoute,
   EducationRoute,
+  FindGemsRoute,
+  KaichatAiAssistantRoute,
   MarketRoute,
   MyPortfolioRoute,
-  SubcriptionsRoute,
   SwapRoute,
+  TradingSignalRoute,
   TradingTerminalLazyRoute,
   AcademyArticlesRoute,
   AcademyCoursesRoute,
-  OnchainDiscoveryLeaderboardRoute,
-  OnchainDiscoveryOnchainSignalsRoute,
-  OnchainDiscoveryTokenExplorerRoute,
-  OnchainDiscoveryWalletExplorerRoute,
+  SmartmoneyOnchainLeaderboardRoute,
+  SmartmoneyOnchainOnchainSignalsRoute,
+  SmartmoneyOnchainTokenExplorerRoute,
+  SmartmoneyOnchainWalletExplorerRoute,
   AcademyArticlesArticleIdDeepRoute,
   AcademyCoursesCourseIdDeepRoute,
-  OnchainDiscoveryTokenExplorerTokenDeepRoute,
-  OnchainDiscoveryWalletExplorerGroupIdDeepRoute,
+  SmartmoneyOnchainTokenExplorerTokenDeepRoute,
+  SmartmoneyOnchainWalletExplorerGroupIdDeepRoute,
 ])

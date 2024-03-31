@@ -15,7 +15,7 @@ import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit
 import { createFileRoute } from '@tanstack/react-router'
 import { Suspense, useState } from 'react'
 
-export const Route = createFileRoute('/onchain-discovery/onchain-signals')({
+export const Route = createFileRoute('/smartmoney-onchain/onchain-signals')({
   component: OnchainSignals,
 })
 

@@ -77,7 +77,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             <div className="mt-8">
               {dataCexOut?.map((item, index) => (
                 <Link
-                  to="/onchain-discovery/token-explorer/$token/deep"
+                  to="/smartmoney-onchain/token-explorer/$token/deep"
                   params={{
                     token: item.address,
                   }}
@@ -132,7 +132,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             <div className="mt-8">
               {dataCexIn?.map((item, index) => (
                 <Link
-                  to="/onchain-discovery/token-explorer/$token/deep"
+                  to="/smartmoney-onchain/token-explorer/$token/deep"
                   params={{
                     token: item.address,
                   }}

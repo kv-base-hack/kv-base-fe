@@ -15,7 +15,7 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
     cell: ({ row }) => {
       return row?.original?.address ? (
         <Link
-          to="/onchain-discovery/token-explorer/$token/deep"
+          to="/smartmoney-onchain/token-explorer/$token/deep"
           params={{
             token: row.original.address,
           }}

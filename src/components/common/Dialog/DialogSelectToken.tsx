@@ -65,7 +65,7 @@ export function DialogSelectToken() {
             {listTokenData?.slice(0, 10)?.map((token, index) =>
               token.tokenAddress ? (
                 <Link
-                  to="/onchain-discovery/token-explorer/$token/deep"
+                  to="/smartmoney-onchain/token-explorer/$token/deep"
                   params={{
                     token: token.tokenAddress,
                   }}

@@ -40,7 +40,7 @@ const DATA_ACTIVITY = [
   },
 ]
 
-export const Route = createFileRoute('/onchain-discovery/wallet-explorer/$groupId/deep')({
+export const Route = createFileRoute('/smartmoney-onchain/wallet-explorer/$groupId/deep')({
   component: WalletExplorerDetail,
 })
 
