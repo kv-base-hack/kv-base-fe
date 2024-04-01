@@ -8,7 +8,7 @@ export const Route = createRootRoute({
     <div className="bg-background w-full min-h-screen bg-[url('/assets/images/background.png')] bg-cover">
       <div className="flex items-start">
         <LayoutSidebar />
-        <div className="ml-[300px] w-full">
+        <div className="ml-[300px] 2xl:ml-[330px] w-full">
           <Header />
           <div className="mt-[100px]">
             <Outlet />

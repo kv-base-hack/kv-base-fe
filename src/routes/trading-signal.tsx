@@ -61,8 +61,8 @@ const DUMMY_CHART = [
 
 function TradingSignal() {
   return (
-    <div className="w-full h-full pt-2">
-      <div className="flex flex-col justify-center self-stretch px-10 pb-10 max-md:px-5">
+    <div className="w-full h-full">
+      <div className="flex flex-col justify-center self-stretch p-10 max-md:px-5">
         <GroupHeader
           title="Kaivest Trading Signal"
           desc={
