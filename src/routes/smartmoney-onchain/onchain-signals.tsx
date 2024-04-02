@@ -204,7 +204,7 @@ function OnchainSignals() {
       {tab === 'smart_money' ? (
         <div className="m-10">
           <WrapTable
-            title={tab === 'smart_money' ? "Smart Money's Activity" : 'Insider Trade’s Activity'}
+            title={tab === 'smart_money' ? 'Activity' : 'Insider Trade’s Activity'}
             childHeader={
               <DateGroup
                 dataSource={DATA_ACTIVITY}
