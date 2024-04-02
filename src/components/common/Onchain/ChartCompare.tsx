@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { chainAtom } from '@/atom/chain'
 import { useGetPriceWithTransferQuery } from '@/query/token-explorer/getPriceWithTransfer'
+import { sortByDate } from '@/utils/sortByDate'
 import { useParams } from '@tanstack/react-router'
 import * as echarts from 'echarts'
 import { useAtomValue } from 'jotai'
+import { ceil } from 'lodash'
 import numeral from 'numeral'
 import { useEffect } from 'react'
 
@@ -20,9 +22,8 @@ export const ChartCompare = () => {
   const deposits: number[] = []
   const withdraws: number[] = []
   const prices: number[] = []
-
   // Duyệt qua dictionary và thêm dữ liệu vào các mảng tương ứng
-  for (const date in priceWithTransferData) {
+  for (const date in sortByDate(priceWithTransferData)) {
     dates.push(priceWithTransferData[date].date)
     deposits.push(priceWithTransferData[date].deposit)
     withdraws.push(priceWithTransferData[date].withdraw)
@@ -31,8 +32,10 @@ export const ChartCompare = () => {
 
   useEffect(() => {
     const chartDom = document.getElementById('chart-token-explore')
-
     const myChart = echarts.init(chartDom)
+    const maxDeposit = Math.floor(Math.max(...deposits))
+    const maxWithdraw = Math.floor(Math.max(...withdraws))
+    const compare = maxDeposit > maxWithdraw ? maxDeposit : maxWithdraw
     const option = {
       tooltip: {
         trigger: 'axis',
@@ -75,18 +78,18 @@ export const ChartCompare = () => {
           type: 'value',
           name: 'Deposit',
           min: 0,
-          max: Math.floor(Math.max(...deposits)),
-          interval: Math.floor(Math.max(...deposits)) / 5,
+          max: ceil(compare, -(compare.toString().length - 1)),
+          interval: ceil(compare, -(compare.toString().length - 1)) / 5,
           axisLabel: {
             formatter: '{value}',
           },
         },
         {
           type: 'value',
-          name: 'Withdraw',
+          name: 'Prices',
           min: 0,
-          max: Math.floor(Math.max(...withdraws)),
-          interval: Math.floor(Math.max(...withdraws)) / 5,
+          max: ceil(compare, -(compare.toString().length - 1)),
+          interval: ceil(compare, -(compare.toString().length - 1)) / 5,
           axisLabel: {
             formatter: '{value}',
           },
@@ -94,7 +97,7 @@ export const ChartCompare = () => {
       ],
       series: [
         {
-          name: '',
+          name: 'Deposit',
           type: 'bar',
           tooltip: {
             valueFormatter: function (value: any) {
@@ -104,7 +107,7 @@ export const ChartCompare = () => {
           data: deposits,
         },
         {
-          name: '',
+          name: 'Withdraw',
           type: 'bar',
           tooltip: {
             valueFormatter: function (value: any) {
@@ -114,7 +117,7 @@ export const ChartCompare = () => {
           data: withdraws,
         },
         {
-          name: '',
+          name: 'Price',
           type: 'line',
           yAxisIndex: 1,
           tooltip: {

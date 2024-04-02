@@ -166,7 +166,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
       </WrapTable>
       <WrapTable
         className="mt-4"
-        title="Smart Money's Activity"
+        title="Activity"
         childHeader={
           <DateGroup
             dataSource={DATA_ACTIVITY}
