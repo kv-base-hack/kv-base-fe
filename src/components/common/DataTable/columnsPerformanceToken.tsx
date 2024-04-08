@@ -29,7 +29,7 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
             }
             className="w-6 aspect-square fill-blue-950"
           />
-          <div>{row?.original?.symbol}</div>
+          <div className="underline">{row?.original?.symbol}</div>
         </Link>
       ) : (
         <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">

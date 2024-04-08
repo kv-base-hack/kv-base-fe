@@ -1,15 +1,25 @@
 import { ButtonConnectWallet } from '@/components/common/ConnectWallet'
 import { SelectChain } from '@/components/common/SelectChain'
-import { DATA_TOKEN } from '@/constant/token'
-import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
+import SearchIcon from '@/components/shared/icons/SearchIcon'
+// import { DATA_TOKEN } from '@/constant/token'
+// import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 
 export const Header = () => {
-  const listTokenQuery = useTrendingTokenQuery()
-  const listTokenData = listTokenQuery.data?.data?.trending_tokens
+  // const listTokenQuery = useTrendingTokenQuery()
+  // const listTokenData = listTokenQuery.data?.data?.trending_tokens
   return (
     <div className="z-[9999] fixed w-[calc(100%_-300px)] flex gap-0 justify-between items-stretch self-stretch px-10 py-6 border-b border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-b-white/10 max-md:flex-wrap max-md:px-5">
       <div className="flex gap-0 justify-between items-stretch text-base leading-6 whitespace-nowrap w-[70%]">
-        <div className="flex flex-col justify-center items-stretch px-4 py-3 font-semibold tracking-normal rounded-s-lg border-t border-b border-l border-solid bg-neutral-07/50 bg-opacity-30 border-b-white/10 border-l-white/10 border-t-white/10 text-white text-opacity-90">
+        <div className="flex flex-col justify-center py-2 text-base font-semibold tracking-normal leading-6 text-neutral-04 rounded-xl border border-solid shadow-lg backdrop-blur-lg bg-white/5 bg-opacity-10 border-white/10 min-w-[380px]">
+          <div className="flex gap-3 px-5">
+            <SearchIcon />
+            <input
+              className="flex flex-1 bg-transparent w-full border-none outline-none text-neutral-01"
+              placeholder="Search wallets, tokens or contract ..."
+            />
+          </div>
+        </div>
+        {/* <div className="flex flex-col justify-center items-stretch px-4 py-3 font-semibold tracking-normal rounded-s-lg border-t border-b border-l border-solid bg-neutral-07/50 bg-opacity-30 border-b-white/10 border-l-white/10 border-t-white/10 text-white text-opacity-90">
           <div className="flex gap-1 justify-between items-stretch">
             <img
               loading="lazy"
@@ -43,7 +53,7 @@ export const Header = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="flex gap-4 justify-between items-stretch">
         <SelectChain size="lg" showName={false} />

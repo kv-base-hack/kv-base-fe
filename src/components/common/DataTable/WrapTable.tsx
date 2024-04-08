@@ -1,13 +1,14 @@
 import { TooltipCustom } from '@/components/common/Tooltip'
-import Info from '@/components/shared/icons/Info'
+import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
 import { cn } from '@/lib/utils'
 
 type WrapTableProps = {
-  title: string
+  title: React.ReactNode | string
+  icon?: React.ReactNode
   children: React.ReactNode
   childHeader?: React.ReactNode
-  className?: string
   colorHeader?: string
+  className?: string
   info?: string
 }
 
@@ -15,9 +16,10 @@ export const WrapTable: React.FC<WrapTableProps> = ({
   title,
   children,
   childHeader,
+  colorHeader,
   className,
-  colorHeader = 'bg-yellow-200',
   info,
+  icon,
 }) => {
   return (
     <div
@@ -26,15 +28,15 @@ export const WrapTable: React.FC<WrapTableProps> = ({
         className
       )}>
       <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full">
-        <div className="flex gap-4 my-auto text-xl tracking-tight text-neutral-02">
-          <div className={cn('w-4 h-8 rounded', colorHeader)} />
+        <div className="flex items-center gap-4 my-auto text-xl tracking-tight text-neutral-02">
+          {icon ? icon : <div className={cn('w-4 h-8 rounded', colorHeader)} />}
           <div className="flex items-center gap-2">
             <div className="grow">{title}</div>
             {info ? (
               <TooltipCustom
                 className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
                 content={info}>
-                <Info />
+                <InfoIcon />
               </TooltipCustom>
             ) : null}
           </div>
