@@ -7,6 +7,7 @@ type WrapTableProps = {
   icon?: React.ReactNode
   children: React.ReactNode
   childHeader?: React.ReactNode
+  colorHeader?: string
   className?: string
   info?: string
 }
@@ -15,6 +16,7 @@ export const WrapTable: React.FC<WrapTableProps> = ({
   title,
   children,
   childHeader,
+  colorHeader,
   className,
   info,
   icon,
@@ -27,7 +29,7 @@ export const WrapTable: React.FC<WrapTableProps> = ({
       )}>
       <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full">
         <div className="flex items-center gap-4 my-auto text-xl tracking-tight text-neutral-02">
-          {icon}
+          {icon ? icon : <div className={cn('w-4 h-8 rounded', colorHeader)} />}
           <div className="flex items-center gap-2">
             <div className="grow">{title}</div>
             {info ? (
