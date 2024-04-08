@@ -3,6 +3,7 @@ import { columnsFindGems } from '@/components/common/DataTable/columnsFindGems'
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectChain } from '@/components/common/SelectChain'
+import { cn } from '@/lib/utils'
 import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
@@ -11,10 +12,21 @@ export const Route = createFileRoute('/find-gems')({
   component: FindGems,
 })
 
+const DATA_TAB = [
+  'Top CEX Withdraw',
+  'Top CEX Deposit',
+  'Unusual CEX',
+  'Top Trending',
+  'Insider Trade',
+  'SM Top Buys',
+  'SM Top Sells',
+]
+
 function FindGems() {
   const trendingTokenQuery = useTrendingTokenQuery()
   const dataToken = trendingTokenQuery.data?.data?.trending_tokens || []
   const [page, setPage] = useState(1)
+  const [activeTab, setActiveTab] = useState(0)
 
   return (
     <div className="w-full h-full pt-2">
@@ -24,34 +36,20 @@ function FindGems() {
       <div className="flex px-10 mt-4 flex-col text-base tracking-normal leading-6">
         <div className="flex bg-[url('/assets/images/bg-tabs.svg')] overflow-hidden relative flex-col justify-center px-4 w-full font-semibold text-neutral-04 rounded-lg min-h-[55px] max-md:max-w-full">
           <div className="flex relative gap-4 justify-between max-md:flex-wrap">
-            <div className="flex flex-col justify-between pt-3 text-white">
-              <div>Top CEX Withdraw</div>
-              <div className="shrink-0 mt-4 h-1 bg-amber-200 rounded-sm" />
-            </div>
-            <div className="flex flex-col justify-between pt-3">
-              <div>Top CEX Deposit</div>
-              <div className="shrink-0 mt-4 h-1 rounded-sm bg-primary-2 bg-opacity-0" />
-            </div>
-            <div className="flex flex-col justify-between pt-3">
-              <div>Unusual CEX</div>
-              <div className="shrink-0 mt-4 h-1 rounded-sm bg-primary-2 bg-opacity-0" />
-            </div>
-            <div className="flex flex-col justify-between pt-3">
-              <div>Top Trending</div>
-              <div className="shrink-0 mt-4 h-1 rounded-sm bg-primary-2 bg-opacity-0" />
-            </div>
-            <div className="flex flex-col justify-between pt-3">
-              <div>Insider Trade</div>
-              <div className="shrink-0 mt-4 h-1 rounded-sm bg-primary-2 bg-opacity-0" />
-            </div>
-            <div className="flex flex-col justify-between pt-3">
-              <div>SM Top Buys</div>
-              <div className="shrink-0 mt-4 h-1 rounded-sm bg-primary-2 bg-opacity-0" />
-            </div>
-            <div className="flex flex-col justify-between pt-3">
-              <div>SM Top Sells</div>
-              <div className="shrink-0 mt-4 h-1 rounded-sm bg-primary-2 bg-opacity-0" />
-            </div>
+            {DATA_TAB.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className="flex flex-col cursor-pointer justify-between pt-3">
+                <div>{item}</div>
+                <div
+                  className={cn(
+                    'shrink-0 mt-4 h-1 rounded-sm',
+                    activeTab === index ? 'bg-amber-200' : ''
+                  )}
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div className="flex gap-4 px-5 mt-4 text-neutral-01 max-md:flex-wrap">

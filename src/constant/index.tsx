@@ -5,7 +5,7 @@ import KaichatAIAssistantIcon from '@/components/shared/icons/sidebar/KaichatAIA
 // import MarketIcon from '@/components/shared/icons/sidebar/MarketIcon'
 import SubcriptionsIcon from '@/components/shared/icons/sidebar/Subcriptions'
 // import TradingTerminalIcon from '@/components/shared/icons/sidebar/TradingTerminal'
-import AcademyIcon from '@/components/shared/icons/sidebar/AcademyIcon'
+// import AcademyIcon from '@/components/shared/icons/sidebar/AcademyIcon'
 import LeafTreeIcon from '@/components/shared/icons/sidebar/LeafTreeIcon'
 import LeafTreeLastIcon from '@/components/shared/icons/sidebar/LeafTreeLastIcon'
 import SmartmoneyOnchainIcon from '@/components/shared/icons/sidebar/SmartmoneyOnchainIcon'
@@ -51,20 +51,6 @@ export const SIDEBAR_MENU = () => [
   //   canNavigate: true,
   // },
   {
-    title: 'Trading Signal',
-    icon: (
-      <TradingSignalIcon
-        className={cn(
-          'object-contain object-center shrink-0 w-6 aspect-square',
-          document.location.pathname === '/trading-signal' ? 'text-gray-100' : 'text-[#6F767E]'
-        )}
-      />
-    ),
-    href: '/trading-signal',
-    children: [],
-    canNavigate: true,
-  },
-  {
     title: 'Smartmoney Onchain',
     icon: (
       <SmartmoneyOnchainIcon className="object-contain object-center shrink-0 w-6 aspect-square" />
@@ -73,7 +59,7 @@ export const SIDEBAR_MENU = () => [
     canNavigate: false,
     children: [
       {
-        title: 'Onchain Signal',
+        title: 'Dashboard',
         icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
         href: '/smartmoney-onchain/onchain-signals',
         children: [],
@@ -81,27 +67,29 @@ export const SIDEBAR_MENU = () => [
       },
       {
         title: 'Leaderboard',
-        icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
+        icon: (
+          <LeafTreeLastIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />
+        ),
         href: '/smartmoney-onchain/leaderboard',
         children: [],
         canNavigate: true,
       },
-      {
-        title: 'Token Explorer',
-        icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
-        href: '/smartmoney-onchain/token-explorer',
-        children: [],
-        canNavigate: true,
-      },
-      {
-        title: 'Wallet Explorer',
-        icon: (
-          <LeafTreeLastIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />
-        ),
-        href: '/smartmoney-onchain/wallet-explorer',
-        children: [],
-        canNavigate: true,
-      },
+      // {
+      //   title: 'Token Explorer',
+      //   icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
+      //   href: '/smartmoney-onchain/token-explorer',
+      //   children: [],
+      //   canNavigate: true,
+      // },
+      // {
+      //   title: 'Wallet Explorer',
+      //   icon: (
+      //     <LeafTreeLastIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />
+      //   ),
+      //   href: '/smartmoney-onchain/wallet-explorer',
+      //   children: [],
+      //   canNavigate: true,
+      // },
     ],
   },
   // {
@@ -119,29 +107,43 @@ export const SIDEBAR_MENU = () => [
   //   children: [],
   // },
   {
-    title: 'Academy',
-    icon: <AcademyIcon className="object-contain object-center shrink-0 w-6 aspect-square" />,
-    href: '/academy',
-    canNavigate: false,
-    children: [
-      {
-        title: 'Articles',
-        icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
-        href: '/academy/articles',
-        children: [],
-        canNavigate: true,
-      },
-      {
-        title: 'Courses',
-        icon: (
-          <LeafTreeLastIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />
-        ),
-        href: '/academy/courses',
-        children: [],
-        canNavigate: true,
-      },
-    ],
+    title: 'Trading Signal',
+    icon: (
+      <TradingSignalIcon
+        className={cn(
+          'object-contain object-center shrink-0 w-6 aspect-square',
+          document.location.pathname === '/trading-signal' ? 'text-gray-100' : 'text-[#6F767E]'
+        )}
+      />
+    ),
+    href: '/trading-signal',
+    children: [],
+    canNavigate: true,
   },
+  // {
+  //   title: 'Academy',
+  //   icon: <AcademyIcon className="object-contain object-center shrink-0 w-6 aspect-square" />,
+  //   href: '/academy',
+  //   canNavigate: false,
+  //   children: [
+  //     {
+  //       title: 'Articles',
+  //       icon: <LeafTreeIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />,
+  //       href: '/academy/articles',
+  //       children: [],
+  //       canNavigate: true,
+  //     },
+  //     {
+  //       title: 'Courses',
+  //       icon: (
+  //         <LeafTreeLastIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />
+  //       ),
+  //       href: '/academy/courses',
+  //       children: [],
+  //       canNavigate: true,
+  //     },
+  //   ],
+  // },
   {
     title: 'Find Gems',
     icon: (

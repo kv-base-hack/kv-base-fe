@@ -71,7 +71,7 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
             }
             className="w-6 aspect-square fill-blue-950"
           />
-          <div>{symbol}</div>
+          <div className="underline">{symbol}</div>
         </Link>
       )
     },

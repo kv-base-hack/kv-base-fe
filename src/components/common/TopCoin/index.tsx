@@ -3,13 +3,14 @@ import { DateGroup } from '@/components/common/DateGroup'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
-import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { useCexInQuery } from '@/query/onchain-signal/getCexIn'
 import { useCexOutQuery } from '@/query/onchain-signal/getCexOut'
-import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
+import CexWithdrawIcon from '@/components/shared/icons/dashboard/CexWithdrawIcon'
+import CexDepositIcon from '@/components/shared/icons/dashboard/CexDepositIcon'
+import { DataTable } from '@/components/common/DataTable'
+import { columnsCex } from '@/components/common/DataTable/columnsCex'
 
 type TopCoinProps = {
   className?: string
@@ -50,7 +51,6 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
   const dataCexIn = cexInQuery.data?.data.top_cex_in || []
   const totalCexIn = cexInQuery.data?.data.total || 1
 
-  const sumCexIn = dataCexIn.reduce((acc: number, cur) => acc + cur.value, 0)
   //
   const cexOutQuery = useCexOutQuery({
     limit: 5,
@@ -60,7 +60,6 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
   })
   const dataCexOut = cexOutQuery.data?.data.top_cex_out || []
   const totalCexOut = cexOutQuery.data?.data.total || 1
-  const sumCexOut = dataCexOut.reduce((acc: number, cur) => acc + cur.value, 0)
   //
 
   return (
@@ -70,46 +69,20 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
           <WrapTable
             title="CEX Withdraw"
             info="A list of Tokens ranked by net withdrawals to Centralized exchanges. Net deposits are calculated as Withdrawals minus Deposits."
-            colorHeader="bg-green-400"
+            icon={<CexWithdrawIcon />}
             childHeader={
               <DateGroup dataSource={DATA_DATE} active={cexOutTab} handleActive={setCexOutTab} />
             }>
             <div className="mt-8">
-              {dataCexOut?.map((item, index) => (
-                <Link
-                  to="/smartmoney-onchain/token-explorer/$token/deep"
-                  params={{
-                    token: item.address,
-                  }}
-                  key={index}
-                  className="flex hover:bg-neutral-04/10 cursor-pointer transition-all duration-150 flex-col w-full">
-                  <div className="flex gap-2 mt-3 mb-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
-                    <div className="flex items-center justify-start w-3/4 gap-3">
-                      <div className="flex gap-3 text-gray-300 w-[140px]">
-                        <span className="w-3 flex justify-center">{index + 1}</span>
-                        <img
-                          loading="lazy"
-                          src={DATA_TOKEN?.find((el) => el.token === item.symbol)?.image_url}
-                          className="w-6 h-6 aspect-square"
-                        />
-                        <div className="text-right">{item.symbol}</div>
-                      </div>
-                      <div className="w-2/3 flex justify-start">
-                        <div
-                          className="h-6 bg-green-200 rounded-sm"
-                          style={{ width: `${(item.value / sumCexOut) * 100}%` }}
-                        />
-                      </div>
-                    </div>
-                    <div className="grow text-right text-green-200 w-1/4">
-                      ${nFormatter(item.value, 2)}
-                    </div>
-                  </div>
-                  {index < dataCexOut.length - 1 ? (
-                    <div className="max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
-                  ) : null}
-                </Link>
-              ))}
+              <DataTable
+                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+                columns={columnsCex}
+                data={dataCexOut || []}
+                isFetching={cexOutQuery.isFetching}
+                noneBorder
+                noneBgHeader
+                emptyData="No results."
+              />
             </div>
             <PaginationCustom
               className="mt-8"
@@ -125,46 +98,20 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
           <WrapTable
             title="CEX Deposit"
             info="A list of Tokens ranked by net deposits to Centralized exchanges. Net deposits are calculated as Deposits minus Withdrawals."
-            colorHeader="bg-red-400"
+            icon={<CexDepositIcon />}
             childHeader={
               <DateGroup dataSource={DATA_DATE} active={cexInTab} handleActive={setCexInTab} />
             }>
             <div className="mt-8">
-              {dataCexIn?.map((item, index) => (
-                <Link
-                  to="/smartmoney-onchain/token-explorer/$token/deep"
-                  params={{
-                    token: item.address,
-                  }}
-                  key={index}
-                  className="flex hover:bg-neutral-04/10 cursor-pointer transition-all duration-150 flex-col w-full">
-                  <div className="flex gap-2 my-3 tracking-normal max-md:flex-wrap max-md:mr-2 max-md:max-w-full">
-                    <div className="flex items-center justify-start w-3/4 gap-3">
-                      <div className="flex gap-3 text-gray-300 w-[140px]">
-                        <span className="w-3 flex justify-center">{index + 1}</span>
-                        <img
-                          loading="lazy"
-                          src={DATA_TOKEN?.find((el) => el.token === item.symbol)?.image_url}
-                          className="w-6 h-6 aspect-square"
-                        />
-                        <div className="text-right">{item.symbol}</div>
-                      </div>
-                      <div className="w-2/3 flex justify-start">
-                        <div
-                          className="h-6 bg-red-400 rounded-sm"
-                          style={{ width: `${(item.value / sumCexIn) * 100}%` }}
-                        />
-                      </div>
-                    </div>
-                    <div className="grow text-right text-red-400 w-1/4">
-                      ${nFormatter(item.value, 2)}
-                    </div>
-                  </div>
-                  {index < dataCexIn.length - 1 ? (
-                    <div className="max-w-full h-px rounded-sm bg-neutral-06 w-full max-md:mr-2" />
-                  ) : null}
-                </Link>
-              ))}
+              <DataTable
+                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+                columns={columnsCex}
+                data={dataCexIn || []}
+                isFetching={cexInQuery.isFetching}
+                noneBorder
+                noneBgHeader
+                emptyData="No results."
+              />
             </div>
             <PaginationCustom
               className="mt-8"

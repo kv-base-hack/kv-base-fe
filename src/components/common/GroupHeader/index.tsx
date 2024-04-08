@@ -29,7 +29,7 @@ export const GroupHeader: React.FC<GroupHeaderProps> = ({
         </div>
       ) : null}
       {info ? (
-        <div className="flex gap-2 justify-between pr-5 mt-4 text-base tracking-normal leading-6 text-red-300 max-md:flex-wrap max-md:max-w-full">
+        <div className="flex gap-2 justify-between pr-5 mt-4 text-base tracking-normal leading-6 text-secondary-1 max-md:flex-wrap max-md:max-w-full">
           <WarningIcon />
           <div className="flex-auto max-md:max-w-full">{info}</div>
         </div>

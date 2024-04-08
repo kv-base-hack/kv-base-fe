@@ -17,6 +17,12 @@ const renderChain = (chain: string) => {
         icon: '/assets/icons/chain/ethereum.svg',
       }
     }
+    case 'sui': {
+      return {
+        value: 'Sui',
+        icon: '/assets/icons/chain/sui.svg',
+      }
+    }
     default: {
       return {
         value: 'Solana',
@@ -56,6 +62,7 @@ export const SelectChain = ({
       <SelectContent className="border-none bg-neutral-07 z-[9999]">
         <SelectItem value="solana">Solana</SelectItem>
         <SelectItem value="ethereum">Ethereum</SelectItem>
+        <SelectItem value="sui">Sui</SelectItem>
       </SelectContent>
     </Select>
   )

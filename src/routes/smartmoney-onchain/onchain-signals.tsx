@@ -14,6 +14,9 @@ import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
 import { createFileRoute } from '@tanstack/react-router'
 import { Suspense, useState } from 'react'
+import SmartMoneyTopPerformingIcon from '@/components/shared/icons/dashboard/SmartMoneyTopPerformingIcon'
+import SmartMoneyActivityIcon from '@/components/shared/icons/dashboard/SmartMoneyActivityIcon'
+import { SelectSmartMoney } from '@/components/common/SelectSmartMoney'
 
 export const Route = createFileRoute('/smartmoney-onchain/onchain-signals')({
   component: OnchainSignals,
@@ -122,7 +125,9 @@ function OnchainSignals() {
       </div>
       <GroupHeader
         className="mt-4 mx-10"
-        title={tab === 'smart_money' ? 'Smart Money Signals' : 'Insider Trade Signal (Speculation)'}
+        title={
+          tab === 'smart_money' ? 'Smartmoney Onchain Dashboard' : 'InsiderTrade Onchain Dashboard'
+        }
         desc={
           tab === 'smart_money'
             ? ''
@@ -143,6 +148,7 @@ function OnchainSignals() {
       {tab === 'smart_money' ? (
         <div className="m-10">
           <WrapTable
+            icon={<SmartMoneyTopPerformingIcon />}
             title="Smart Money's Top Performing Tokens"
             childHeader={
               <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />
@@ -171,6 +177,7 @@ function OnchainSignals() {
       ) : (
         <div className="m-10">
           <WrapTable
+            icon={<SmartMoneyTopPerformingIcon />}
             title="Insider Trade’s Activity"
             childHeader={
               <DateGroup
@@ -204,7 +211,17 @@ function OnchainSignals() {
       {tab === 'smart_money' ? (
         <div className="m-10">
           <WrapTable
-            title={tab === 'smart_money' ? 'Activity' : 'Insider Trade’s Activity'}
+            icon={<SmartMoneyActivityIcon />}
+            title={
+              tab === 'smart_money' ? (
+                <div className="flex items-center gap-4">
+                  <div>Smart Money’s Activity</div>
+                  <SelectSmartMoney value="All Smart Money" setValue={() => null} />
+                </div>
+              ) : (
+                'Insider Trade’s Activity'
+              )
+            }
             childHeader={
               <DateGroup
                 dataSource={DATA_ACTIVITY}
@@ -236,6 +253,7 @@ function OnchainSignals() {
       ) : (
         <div className="m-10">
           <WrapTable
+            icon={<SmartMoneyActivityIcon />}
             title="Insider Trade's Top Performing Tokens"
             childHeader={
               <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />

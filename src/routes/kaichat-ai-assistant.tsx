@@ -205,7 +205,7 @@ function KaichatAIAssistant() {
               <div className="flex-1 max-md:max-w-full">
                 General technical analysis for the 4-hour chart of [BTC]...
               </div>
-              <ArrowRightIcon />
+              <ArrowRightIcon className="cursor-pointer" />
             </div>
           </div>
           <div className="flex flex-col justify-center px-2 py-1 mt-4 text-white rounded-xl border border-solid bg-white/5 border-neutral-05 max-md:max-w-full">
@@ -213,7 +213,7 @@ function KaichatAIAssistant() {
               <div className="flex-1 max-md:max-w-full">
                 Show me the trade signal of token [CYBER]
               </div>
-              <ArrowRightIcon />
+              <ArrowRightIcon className="cursor-pointer" />
             </div>
           </div>
           <div className="flex flex-col justify-center px-2 py-1 mt-4 text-white rounded-xl border border-solid bg-white/5 border-neutral-05 max-md:max-w-full">
@@ -221,7 +221,7 @@ function KaichatAIAssistant() {
               <div className="flex-1 max-md:max-w-full">
                 What are the potential entry and exit points for [LINK]
               </div>
-              <ArrowRightIcon />
+              <ArrowRightIcon className="cursor-pointer" />
             </div>
           </div>
         </div>
@@ -231,7 +231,7 @@ function KaichatAIAssistant() {
               className="flex-1 text-neutral-01 bg-transparent max-md:max-w-full outline-none"
               placeholder="Message KAICHAT..."
             />
-            <SendMessageIcon />
+            <SendMessageIcon className="cursor-pointer" />
           </div>
         </div>
       </div>
