@@ -112,11 +112,13 @@ export const SIDEBAR_MENU = () => [
       <TradingSignalIcon
         className={cn(
           'object-contain object-center shrink-0 w-6 aspect-square',
-          document.location.pathname === '/trading-signal' ? 'text-gray-100' : 'text-[#6F767E]'
+          document.location.pathname === '/trading-signal/dashboard'
+            ? 'text-gray-100'
+            : 'text-[#6F767E]'
         )}
       />
     ),
-    href: '/trading-signal',
+    href: '/trading-signal/dashboard',
     children: [],
     canNavigate: true,
   },

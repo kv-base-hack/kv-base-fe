@@ -29,7 +29,11 @@ export const WrapTable: React.FC<WrapTableProps> = ({
       )}>
       <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full">
         <div className="flex items-center gap-4 my-auto text-xl tracking-tight text-neutral-02">
-          {icon ? icon : <div className={cn('w-4 h-8 rounded', colorHeader)} />}
+          {icon ? (
+            icon
+          ) : colorHeader ? (
+            <div className={cn('w-4 h-8 rounded', colorHeader)} />
+          ) : null}
           <div className="flex items-center gap-2">
             <div className="grow">{title}</div>
             {info ? (
