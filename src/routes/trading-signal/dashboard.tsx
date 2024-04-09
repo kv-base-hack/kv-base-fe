@@ -7,9 +7,9 @@ import PNLIcon from '@/components/shared/icons/trading-signal/PNLIcon'
 import ROIIcon from '@/components/shared/icons/trading-signal/ROIIcon'
 import TargetIcon from '@/components/shared/icons/trading-signal/TargetIcon'
 import WinrateIcon from '@/components/shared/icons/trading-signal/WinrateIcon'
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/trading-signal')({
+export const Route = createFileRoute('/trading-signal/dashboard')({
   component: TradingSignal,
 })
 
@@ -144,7 +144,9 @@ function TradingSignal() {
         <div className="mt-8 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-              <div className="flex cursor-pointer flex-col grow p-6 w-full rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-neutral-07/50 border-white border-opacity-10 max-md:px-5 max-md:mt-8 max-md:max-w-full">
+              <Link
+                to="/trading-signal/ai-signal"
+                className="flex cursor-pointer flex-col grow p-6 w-full rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-neutral-07/50 border-white border-opacity-10 max-md:px-5 max-md:mt-8 max-md:max-w-full">
                 <div className="flex gap-4 items-center pr-20 text-xl tracking-tight leading-8 text-neutral-01 max-md:flex-wrap max-md:pr-5">
                   <div>KAIVEST AI Signal </div>
                   <BotIcon />
@@ -208,7 +210,7 @@ function TradingSignal() {
                     Subcribe
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
               <div className="flex cursor-pointer flex-col grow p-6 w-full rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-zinc-900 bg-opacity-50 border-white border-opacity-10 max-md:px-5 max-md:mt-8 max-md:max-w-full">

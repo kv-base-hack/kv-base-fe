@@ -5,7 +5,6 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as TradingSignalImport } from './routes/trading-signal'
 import { Route as SwapImport } from './routes/swap'
 import { Route as MyPortfolioImport } from './routes/my-portfolio'
 import { Route as MarketImport } from './routes/market'
@@ -14,6 +13,8 @@ import { Route as FindGemsImport } from './routes/find-gems'
 import { Route as EducationImport } from './routes/education'
 import { Route as DashboardImport } from './routes/dashboard'
 import { Route as IndexImport } from './routes/index'
+import { Route as TradingSignalDashboardImport } from './routes/trading-signal/dashboard'
+import { Route as TradingSignalAiSignalImport } from './routes/trading-signal/ai-signal'
 import { Route as SmartmoneyOnchainWalletExplorerImport } from './routes/smartmoney-onchain/wallet-explorer'
 import { Route as SmartmoneyOnchainTokenExplorerImport } from './routes/smartmoney-onchain/token-explorer'
 import { Route as SmartmoneyOnchainOnchainSignalsImport } from './routes/smartmoney-onchain/onchain-signals'
@@ -37,11 +38,6 @@ const TradingTerminalLazyRoute = TradingTerminalLazyImport.update({
 } as any).lazy(() =>
   import('./routes/trading-terminal.lazy').then((d) => d.Route),
 )
-
-const TradingSignalRoute = TradingSignalImport.update({
-  path: '/trading-signal',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const SwapRoute = SwapImport.update({
   path: '/swap',
@@ -80,6 +76,16 @@ const DashboardRoute = DashboardImport.update({
 
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TradingSignalDashboardRoute = TradingSignalDashboardImport.update({
+  path: '/trading-signal/dashboard',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TradingSignalAiSignalRoute = TradingSignalAiSignalImport.update({
+  path: '/trading-signal/ai-signal',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -178,10 +184,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SwapImport
       parentRoute: typeof rootRoute
     }
-    '/trading-signal': {
-      preLoaderRoute: typeof TradingSignalImport
-      parentRoute: typeof rootRoute
-    }
     '/trading-terminal': {
       preLoaderRoute: typeof TradingTerminalLazyImport
       parentRoute: typeof rootRoute
@@ -208,6 +210,14 @@ declare module '@tanstack/react-router' {
     }
     '/smartmoney-onchain/wallet-explorer': {
       preLoaderRoute: typeof SmartmoneyOnchainWalletExplorerImport
+      parentRoute: typeof rootRoute
+    }
+    '/trading-signal/ai-signal': {
+      preLoaderRoute: typeof TradingSignalAiSignalImport
+      parentRoute: typeof rootRoute
+    }
+    '/trading-signal/dashboard': {
+      preLoaderRoute: typeof TradingSignalDashboardImport
       parentRoute: typeof rootRoute
     }
     '/academy/articles/$articleId/deep': {
@@ -240,7 +250,6 @@ export const routeTree = rootRoute.addChildren([
   MarketRoute,
   MyPortfolioRoute,
   SwapRoute,
-  TradingSignalRoute,
   TradingTerminalLazyRoute,
   AcademyArticlesRoute,
   AcademyCoursesRoute,
@@ -248,6 +257,8 @@ export const routeTree = rootRoute.addChildren([
   SmartmoneyOnchainOnchainSignalsRoute,
   SmartmoneyOnchainTokenExplorerRoute,
   SmartmoneyOnchainWalletExplorerRoute,
+  TradingSignalAiSignalRoute,
+  TradingSignalDashboardRoute,
   AcademyArticlesArticleIdDeepRoute,
   AcademyCoursesCourseIdDeepRoute,
   SmartmoneyOnchainTokenExplorerTokenDeepRoute,
