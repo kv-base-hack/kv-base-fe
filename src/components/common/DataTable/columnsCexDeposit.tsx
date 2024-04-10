@@ -3,8 +3,9 @@ import { ColumnDef } from '@tanstack/react-table'
 import { Link } from '@tanstack/react-router'
 import { DATA_TOKEN } from '@/constant/token'
 import { TopCexIn } from '@/types/cexIn'
+import { cn } from '@/lib/utils'
 
-export const columnsCex: ColumnDef<TopCexIn>[] = [
+export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
   {
     accessorKey: 'id',
     header: () => (
@@ -54,10 +55,10 @@ export const columnsCex: ColumnDef<TopCexIn>[] = [
     enableSorting: false,
   },
   {
-    accessorKey: 'withdraw_value',
+    accessorKey: 'deposit_value',
     header: () => (
       <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
-        Withdraw Value
+        Deposit Value
       </div>
     ),
     cell: ({ row }) => {
@@ -73,20 +74,34 @@ export const columnsCex: ColumnDef<TopCexIn>[] = [
         24h CEX Netflow
       </div>
     ),
-    cell: () => {
-      return <div className="text-neutral-03">-</div>
+    cell: ({ row }) => {
+      const { net_flow_24h } = row.original
+      return <div className="text-neutral-03 text-center w-full">{nFormatter(net_flow_24h, 2)}</div>
     },
     enableSorting: false,
   },
   {
-    accessorKey: 'roi_24h',
+    accessorKey: 'oi_24h',
     header: () => (
-      <div className="text-sm text-right not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
-        ROI (%24h)
+      <div className="text-sm w-full text-right not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+        OI (%24h)
       </div>
     ),
-    cell: () => {
-      return <div className="text-neutral-03 text-right">-</div>
+    cell: ({ row }) => {
+      const { oi_24h } = row.original
+      return oi_24h ? (
+        <div
+          className={cn(
+            'text-right w-full',
+            oi_24h > 0 ? 'text-primary-2' : 'text-primary-3',
+            oi_24h === 0 && 'text-neutral-03'
+          )}>
+          {oi_24h > 0 ? '+' : ''}
+          {oi_24h.toFixed(2)}%
+        </div>
+      ) : (
+        <div className="text-right w-full">-</div>
+      )
     },
     enableSorting: false,
   },

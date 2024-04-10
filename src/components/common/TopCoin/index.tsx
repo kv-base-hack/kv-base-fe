@@ -10,7 +10,8 @@ import { useState } from 'react'
 import CexWithdrawIcon from '@/components/shared/icons/dashboard/CexWithdrawIcon'
 import CexDepositIcon from '@/components/shared/icons/dashboard/CexDepositIcon'
 import { DataTable } from '@/components/common/DataTable'
-import { columnsCex } from '@/components/common/DataTable/columnsCex'
+import { columnsCexWithdraw } from '@/components/common/DataTable/columnsCexWithdraw'
+import { columnsCexDeposit } from '@/components/common/DataTable/columnsCexDeposit'
 
 type TopCoinProps = {
   className?: string
@@ -76,7 +77,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             <div className="mt-8">
               <DataTable
                 className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                columns={columnsCex}
+                columns={columnsCexWithdraw}
                 data={dataCexOut || []}
                 isFetching={cexOutQuery.isFetching}
                 noneBorder
@@ -105,7 +106,7 @@ export const TopCoin: React.FC<TopCoinProps> = ({ className }) => {
             <div className="mt-8">
               <DataTable
                 className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                columns={columnsCex}
+                columns={columnsCexDeposit}
                 data={dataCexIn || []}
                 isFetching={cexInQuery.isFetching}
                 noneBorder
