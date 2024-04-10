@@ -8,6 +8,10 @@ export interface TopCexIn {
   value: number
   symbol: string
   network: string
+  net_flow_24h: number
+  oi_24h: number
+  current_price: number
+  image_url: string
 }
 
 export interface CexInResponse {
