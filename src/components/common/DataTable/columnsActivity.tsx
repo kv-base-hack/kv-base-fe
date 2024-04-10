@@ -110,7 +110,7 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
       const { value_in_usdt, symbol, value_in_token } = row.original
       return (
         <div>
-          {nFormatter(value_in_token, 2)} {symbol} (${nFormatter(value_in_usdt, 2)})
+          {nFormatter(value_in_token)} {symbol} (${nFormatter(value_in_usdt)})
         </div>
       )
     },

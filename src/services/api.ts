@@ -1,6 +1,10 @@
 import { CexInResponse } from '@/types/cexIn'
 import { CexOutResponse } from '@/types/cexOut'
 import { CourseResponse } from '@/types/course'
+import { FindGemsDepositResponse } from '@/types/find-gems/deposit'
+import { FindGemsTrendingResponse } from '@/types/find-gems/trending'
+import { FindGemsUnusualCexResponse } from '@/types/find-gems/unusual-cex'
+import { FindGemsWithdrawResponse } from '@/types/find-gems/withdraw'
 import { LeaderboardResponse } from '@/types/leaderboard'
 import { PriceWithTransferResponse } from '@/types/priceWithTransfer'
 import { TokenInfoResponse } from '@/types/tokenInfo'
@@ -536,6 +540,78 @@ export const getPriceWithTransfer = async ({
   return await api.get('v1/token/price_with_transfer', {
     params: {
       address,
+      chain,
+    },
+  })
+}
+// find gems
+export const getFindGemsWithdraw = async ({
+  start,
+  limit,
+  chain,
+}: {
+  start: number
+  limit: number
+  chain: string
+}): Promise<FindGemsWithdrawResponse> => {
+  return await api.get('/v1/findgems/withdraw', {
+    params: {
+      start,
+      limit,
+      chain,
+    },
+  })
+}
+
+export const getFindGemsDeposit = async ({
+  start,
+  limit,
+  chain,
+}: {
+  start: number
+  limit: number
+  chain: string
+}): Promise<FindGemsDepositResponse> => {
+  return await api.get('/v1/findgems/deposit', {
+    params: {
+      start,
+      limit,
+      chain,
+    },
+  })
+}
+
+export const getFindGemsUnusualCex = async ({
+  start,
+  limit,
+  chain,
+}: {
+  start: number
+  limit: number
+  chain: string
+}): Promise<FindGemsUnusualCexResponse> => {
+  return await api.get('/v1/findgems/unusual_cex', {
+    params: {
+      start,
+      limit,
+      chain,
+    },
+  })
+}
+
+export const getFindGemsTrending = async ({
+  start,
+  limit,
+  chain,
+}: {
+  start: number
+  limit: number
+  chain: string
+}): Promise<FindGemsTrendingResponse> => {
+  return await api.get('/v1/findgems/trending', {
+    params: {
+      start,
+      limit,
       chain,
     },
   })

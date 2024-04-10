@@ -63,7 +63,7 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     ),
     cell: ({ row }) => {
       const { value } = row.original
-      return <div className="w-full text-center text-neutral-03">${nFormatter(value, 2)}</div>
+      return <div className="w-full text-center text-neutral-03">${nFormatter(value)}</div>
     },
     enableSorting: false,
   },
@@ -76,7 +76,7 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     ),
     cell: ({ row }) => {
       const { net_flow_24h } = row.original
-      return <div className="text-neutral-03 text-center w-full">{nFormatter(net_flow_24h, 2)}</div>
+      return <div className="text-neutral-03 text-center w-full">${nFormatter(net_flow_24h)}</div>
     },
     enableSorting: false,
   },

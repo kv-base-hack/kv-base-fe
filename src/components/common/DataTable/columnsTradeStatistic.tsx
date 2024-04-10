@@ -53,7 +53,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { pnl } = row.original
-      return <div>{nFormatter(pnl, 2)}</div>
+      return <div>{nFormatter(pnl)}</div>
     },
   },
   {
@@ -62,7 +62,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { total_spent } = row.original
-      return <div>{nFormatter(total_spent, 2)}</div>
+      return <div>{nFormatter(total_spent)}</div>
     },
   },
   {
