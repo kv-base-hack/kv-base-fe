@@ -1,7 +1,7 @@
 import { GroupHeader } from '@/components/common/GroupHeader'
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createLazyFileRoute('/trading-terminal')({
+export const Route = createFileRoute('/trading-terminal')({
   component: TradingTerminal,
 })
 

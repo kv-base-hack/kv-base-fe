@@ -270,7 +270,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                       <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>{numeral(dataTokenInspectDW?.cex_out_flow || 0).format('0,0.00')}</div>
-                        <div>${nFormatter(dataTokenInspectDW?.cex_out_flow_in_usdt || 0, 2)}</div>
+                        <div>${nFormatter(dataTokenInspectDW?.cex_out_flow_in_usdt || 0)}</div>
                       </div>
                     </div>
                   </div>
@@ -280,7 +280,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                       <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>{numeral(dataTokenInspectDW?.cex_in_flow || 0).format('0,0.00')}</div>
-                        <div>${nFormatter(dataTokenInspectDW?.cex_in_flow_in_usdt || 0, 2)}</div>
+                        <div>${nFormatter(dataTokenInspectDW?.cex_in_flow_in_usdt || 0)}</div>
                       </div>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                         <div>
                           {numeral(dataTokenInspectBS?.out_flow_in_token || 0).format('0,0.00')}
                         </div>
-                        <div>${nFormatter(dataTokenInspectBS?.out_flow_in_usdt || 0, 2)}</div>
+                        <div>${nFormatter(dataTokenInspectBS?.out_flow_in_usdt || 0)}</div>
                       </div>
                     </div>
                   </div>
@@ -330,7 +330,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                         <div>
                           {numeral(dataTokenInspectBS?.in_flow_in_token || 0).format('0,0.00')}
                         </div>
-                        <div>${nFormatter(dataTokenInspectBS?.in_flow_in_usdt || 0, 2)}</div>
+                        <div>${nFormatter(dataTokenInspectBS?.in_flow_in_usdt || 0)}</div>
                       </div>
                     </div>
                   </div>

@@ -74,9 +74,7 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { net_profit } = row.original
-      return (
-        <div className="text-primary-2">{net_profit ? `$${nFormatter(net_profit, 2)}` : '-'}</div>
-      )
+      return <div className="text-primary-2">{net_profit ? `$${nFormatter(net_profit)}` : '-'}</div>
     },
   },
   {
@@ -85,7 +83,7 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { total_balance } = row.original
-      return <div>{total_balance ? `$${nFormatter(total_balance, 2)}` : '-'}</div>
+      return <div>{total_balance ? `$${nFormatter(total_balance)}` : '-'}</div>
     },
   },
   {

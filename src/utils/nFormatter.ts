@@ -1,19 +1,14 @@
-export const nFormatter = (num: any, digits: any) => {
-  const lookup = [
-    { value: 1, symbol: '' },
-    { value: 1e3, symbol: 'K' },
-    { value: 1e6, symbol: 'M' },
-    { value: 1e9, symbol: 'B' },
-    { value: 1e12, symbol: 'T' },
-    { value: 1e15, symbol: 'P' },
-    { value: 1e18, symbol: 'E' },
-  ]
-  const rx = /\.0+∣(.[0−9]∗[1−9])0+/
-  const item = lookup
-    .slice()
-    .reverse()
-    .find(function (item) {
-      return num >= item.value
-    })
-  return item ? (num / item.value).toFixed(digits).replace(rx, '$1') + item.symbol : '0'
+export function nFormatter(number: number) {
+  const isNegative = number < 0
+  const absoluteNumber = Math.abs(number)
+
+  if (absoluteNumber < 1000) {
+    return (isNegative ? '-' : '') + absoluteNumber.toFixed(0)
+  }
+
+  const suffixes = ['', 'K', 'M', 'B', 'T', 'P', 'E']
+  const suffixIndex = Math.min(Math.floor(Math.log10(absoluteNumber) / 3), suffixes.length - 1)
+  const formattedNumber = (absoluteNumber / Math.pow(10, 3 * suffixIndex)).toFixed(1)
+
+  return (isNegative ? '-' : '') + formattedNumber + suffixes[suffixIndex]
 }

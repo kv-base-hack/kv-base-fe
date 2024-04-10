@@ -62,7 +62,7 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { gains } = row.original
-      return <div className="text-primary-2">${nFormatter(gains, 3)}</div>
+      return <div className="text-primary-2">${nFormatter(gains)}</div>
     },
   },
   // {

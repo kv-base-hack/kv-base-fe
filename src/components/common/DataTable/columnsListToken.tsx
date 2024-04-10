@@ -136,7 +136,7 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
       const format = market_cap?.split('$')?.[1]?.split(',')?.join('')
       return (
         <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
-          ${nFormatter(parseFloat(format), 2)}
+          ${nFormatter(parseFloat(format))}
         </div>
       )
     },
@@ -183,7 +183,7 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
     cell: ({ row }) => {
       const { total_volume } = row.original
       const format = total_volume?.split('$')?.[1]?.split(',')?.join('')
-      return <div className="w-full text-center">${nFormatter(format, 2)}</div>
+      return <div className="w-full text-center">${nFormatter(parseFloat(format))}</div>
     },
   },
   // {
