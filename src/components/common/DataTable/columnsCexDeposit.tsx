@@ -68,10 +68,10 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     enableSorting: false,
   },
   {
-    accessorKey: '24h_cex_netflow',
+    accessorKey: 'cex_netflow',
     header: () => (
       <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
-        24h CEX Netflow
+        CEX Netflow
       </div>
     ),
     cell: ({ row }) => {
@@ -81,10 +81,10 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     enableSorting: false,
   },
   {
-    accessorKey: 'oi_24h',
+    accessorKey: 'oi',
     header: () => (
       <div className="text-sm w-full text-right not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
-        OI (%24h)
+        OI (%)
       </div>
     ),
     cell: ({ row }) => {
