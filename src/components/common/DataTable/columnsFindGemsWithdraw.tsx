@@ -40,7 +40,7 @@ export const columnsFindGemsWithdraw: ColumnDef<TopCexWithdraw>[] = [
           />
           <div className="flex flex-col gap-1.5 w-full items-start justify-start">
             <div className="truncate">{row?.original?.network}</div>
-            <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+            <div className="text-normal text-neutral-dark-03">{row?.original?.symbol}</div>
           </div>
         </Link>
       ) : (
@@ -51,7 +51,7 @@ export const columnsFindGemsWithdraw: ColumnDef<TopCexWithdraw>[] = [
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{row?.original?.network}</div>
-          <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+          <div className="text-normal text-neutral-dark-03">{row?.original?.symbol}</div>
         </div>
       )
     },
@@ -95,7 +95,7 @@ export const columnsFindGemsWithdraw: ColumnDef<TopCexWithdraw>[] = [
   {
     accessorKey: 'oi_1h',
     header: () => (
-      <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">OI (1h%)</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">OI (1h%)</div>
     ),
     cell: ({ row }) => {
       const { oi_1h } = row.original

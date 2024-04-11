@@ -8,8 +8,8 @@ export interface TopCexIn {
   value: number
   symbol: string
   network: string
-  net_flow_24h: number
-  oi_24h: number
+  net_flow: number
+  oi: number
   current_price: number
   image_url: string
 }

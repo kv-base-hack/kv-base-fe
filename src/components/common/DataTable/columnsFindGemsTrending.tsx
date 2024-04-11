@@ -4,6 +4,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import { Link } from '@tanstack/react-router'
 import { DATA_TOKEN } from '@/constant/token'
 import { TrendingToken } from '@/types/find-gems/trending'
+import numeral from 'numeral'
 
 export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
   {
@@ -63,7 +64,9 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
     cell: ({ row }) => {
       const { price } = row.original
       return (
-        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">${price}</div>
+        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">
+          {numeral(price).format('$0,0.[00000000]')}
+        </div>
       )
     },
   },
