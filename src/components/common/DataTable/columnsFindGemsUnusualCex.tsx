@@ -39,7 +39,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
           />
           <div className="flex flex-col gap-1.5 w-full items-start justify-start">
             <div className="truncate">{row?.original?.network}</div>
-            <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+            <div className="text-normal text-neutral-dark-03">{row?.original?.symbol}</div>
           </div>
         </Link>
       ) : (
@@ -63,7 +63,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { current_price } = row.original
       return (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${current_price}
         </div>
       )
@@ -121,7 +121,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { market_cap } = row.original
       return (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${nFormatter(market_cap)}
         </div>
       )
@@ -165,7 +165,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { unusual_percent } = row.original
       return (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           {unusual_percent.toFixed(2)}%
         </div>
       )
@@ -182,7 +182,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { net_flow } = row.original
       return (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${nFormatter(net_flow)}
         </div>
       )
@@ -199,9 +199,9 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { volume_24h } = row.original
       return volume_24h === 0 ? (
-        <div>-</div>
+        <div className="w-full text-center text-neutral-dark-03">-</div>
       ) : (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${nFormatter(volume_24h)}
         </div>
       )

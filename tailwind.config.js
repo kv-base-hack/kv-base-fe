@@ -24,6 +24,7 @@ export default {
         'neutral-06': '#272B30',
         'neutral-07': '#1A1D1F',
         'neutral-08': '#111315',
+        'neutral-dark-03': '#D6D9DC',
         'neutral-dark-05': '#A7ACB4',
         'neutral-dark-08': '#525860',
         'neutral-shades-0475': '#9A9FA5',

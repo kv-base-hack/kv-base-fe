@@ -36,7 +36,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
               src={DATA_TOKEN?.find((el) => el.token === row?.original?.symbol)?.image_url}
               className="w-6 aspect-square fill-blue-950"
             />
-            <div className="text-normal underline text-neutral-dark-05">
+            <div className="text-normal underline text-neutral-dark-03">
               {row?.original?.symbol}
             </div>
           </div>
@@ -48,7 +48,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
             src={DATA_TOKEN?.find((el) => el.token === row?.original?.symbol)?.image_url}
             className="w-6 aspect-square fill-blue-950"
           />
-          <div className="text-normal underline text-neutral-03">{row?.original?.symbol}</div>
+          <div className="text-normal underline text-neutral-dark-03">{row?.original?.symbol}</div>
         </div>
       )
     },
@@ -63,7 +63,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
     ),
     cell: ({ row }) => {
       const { value } = row.original
-      return <div className="w-full text-center text-neutral-03">${nFormatter(value)}</div>
+      return <div className="w-full text-center text-neutral-dark-03">${nFormatter(value)}</div>
     },
     enableSorting: false,
   },
@@ -75,8 +75,8 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      const { net_flow_24h } = row.original
-      return <div className="text-neutral-03 text-center w-full">${nFormatter(net_flow_24h)}</div>
+      const { net_flow } = row.original
+      return <div className="text-neutral-dark-03 text-center w-full">${nFormatter(net_flow)}</div>
     },
     enableSorting: false,
   },
@@ -88,16 +88,16 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      const { oi_24h } = row.original
-      return oi_24h ? (
+      const { oi } = row.original
+      return oi ? (
         <div
           className={cn(
             'text-right w-full',
-            oi_24h > 0 ? 'text-primary-2' : 'text-primary-3',
-            oi_24h === 0 && 'text-neutral-03'
+            oi > 0 ? 'text-primary-2' : 'text-primary-3',
+            oi === 0 && 'text-neutral-dark-03'
           )}>
-          {oi_24h > 0 ? '+' : ''}
-          {oi_24h.toFixed(2)}%
+          {oi > 0 ? '+' : ''}
+          {oi.toFixed(2)}%
         </div>
       ) : (
         <div className="text-right w-full">-</div>

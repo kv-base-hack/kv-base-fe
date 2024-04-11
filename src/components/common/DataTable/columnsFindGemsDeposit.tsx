@@ -39,7 +39,7 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
           />
           <div className="flex flex-col gap-1.5 w-full items-start justify-start">
             <div className="truncate">{row?.original?.network}</div>
-            <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+            <div className="text-normal text-neutral-dark-03">{row?.original?.symbol}</div>
           </div>
         </Link>
       ) : (
@@ -50,7 +50,7 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{row?.original?.network}</div>
-          <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+          <div className="text-normal text-neutral-dark-03">{row?.original?.symbol}</div>
         </div>
       )
     },
@@ -63,7 +63,7 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { current_price } = row.original
       return (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${current_price}
         </div>
       )
@@ -79,11 +79,11 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { price_percent_change_24h } = row.original
       return price_percent_change_24h === 0 ? (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">-</div>
+        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">-</div>
       ) : (
         <div
           className={cn(
-            'text-neutral-dark-05 text-sm not-italic font-bold leading-5',
+            'text-neutral-dark-03 text-sm not-italic font-bold leading-5',
             price_percent_change_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
           )}>
           {price_percent_change_24h > 0 ? '+' : ''}
@@ -100,11 +100,11 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { oi_1h } = row.original
       return oi_1h === 0 ? (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">-</div>
+        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">-</div>
       ) : (
         <div
           className={cn(
-            'text-neutral-dark-05 text-sm not-italic font-bold leading-5',
+            'text-neutral-dark-03 text-sm not-italic font-bold leading-5',
             oi_1h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
           )}>
           {oi_1h > 0 ? '+' : ''}
@@ -121,11 +121,11 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { oi_4h } = row.original
       return oi_4h === 0 ? (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">-</div>
+        <div className="text-neutral-dark-03 text-sm not-italic font-bold leading-5">-</div>
       ) : (
         <div
           className={cn(
-            'text-neutral-dark-05 text-sm not-italic font-bold leading-5',
+            'text-neutral-dark-03 text-sm not-italic font-bold leading-5',
             oi_4h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
           )}>
           {oi_4h > 0 ? '+' : ''}
@@ -147,7 +147,7 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { market_cap } = row.original
       return (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${nFormatter(market_cap)}
         </div>
       )
@@ -166,7 +166,7 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { number_of_deposit } = row.original
       return (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${nFormatter(number_of_deposit)}
         </div>
       )
@@ -185,11 +185,11 @@ export const columnsFindGemsDeposit: ColumnDef<TopCexDeposit>[] = [
     cell: ({ row }) => {
       const { net_flow_24h } = row.original
       return net_flow_24h === 0 ? (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           -
         </div>
       ) : (
-        <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-neutral-dark-03 text-sm not-italic font-bold leading-5">
           ${nFormatter(net_flow_24h)}
         </div>
       )
