@@ -68,8 +68,9 @@ export const PaginationCustom = ({
     <div
       className={cn(
         'flex flex-col md:flex-row justify-center items-center gap-2 mb-10 md:mb-0',
-        className
-      )}>
+        className,
+      )}
+    >
       <div className="flex items-center gap-2">
         <ArrowLeftIcon onClick={handleJumpDownPage} />
         <Pagination
@@ -85,12 +86,12 @@ export const PaginationCustom = ({
       <div className="flex gap-2 items-center text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="w-16 h-6 bg-transparent rounded-2xl text-center font-normal text-neutral-03 border border-neutral-dark-08"
+          className="w-16 h-6 bg-transparent rounded-2xl text-center font-normal text-neutral-07 border border-neutral-dark-08"
           onBlur={handleBlur}
           onChange={handleToPage}
         />
-        <span className="text-neutral-04">of</span>
-        <span className="font-bold text-neutral-03">{totalPage}</span>
+        <span className="text-neutral-07">of</span>
+        <span className="font-bold text-[#6F767E]">{totalPage}</span>
       </div>
     </div>
   )

@@ -70,5 +70,5 @@ body, html {
 }
 
 .rc-pagination-item-active {
-  color: var(--Neutral-03, #D6D9DC);
+  color: var(--Neutral-07, #1A1D1F);
 }

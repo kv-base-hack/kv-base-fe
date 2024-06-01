@@ -11,7 +11,9 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">#</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        #
+      </div>
     ),
     cell: ({ row }) => {
       return <div>{row.index + 1}</div>
@@ -28,21 +30,30 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
     size: 250,
     cell: ({ row }) => {
       return row?.original?.address ? (
-        <Link href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}>
+        <Link
+          href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+        >
           <div className="flex gap-1.5 w-full items-center justify-start">
             <ImageToken
               symbol={row?.original?.symbol}
               className="w-6 aspect-square fill-blue-950"
             />
             <div>{row?.original?.name}</div>
-            <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+            <div className="text-normal text-neutral-dark-05">
+              {row?.original?.symbol}
+            </div>
           </div>
         </Link>
       ) : (
         <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
-          <ImageToken symbol={row?.original?.symbol} className="w-6 aspect-square fill-blue-950" />
+          <ImageToken
+            symbol={row?.original?.symbol}
+            className="w-6 aspect-square fill-blue-950"
+          />
           <div>{row?.original?.name}</div>
-          <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+          <div className="text-normal text-neutral-dark-05">
+            {row?.original?.symbol}
+          </div>
         </div>
       )
     },
@@ -50,7 +61,9 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'price',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">Price</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        Price
+      </div>
     ),
     cell: ({ row }) => {
       const { price } = row.original
@@ -60,15 +73,20 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'price_24h',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">24h</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        24h
+      </div>
     ),
     cell: ({ row }) => {
       const { price_change_percentage_24h } = row.original
       return (
         <div
           className={cn(
-            price_change_percentage_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
-          )}>
+            price_change_percentage_24h > 0
+              ? 'text-semantic-success-1'
+              : 'text-semantic-error-1',
+          )}
+        >
           {price_change_percentage_24h > 0 ? '+' : ''}
           {numeral(price_change_percentage_24h).format('0,0.[00000000]')}%
         </div>
@@ -78,7 +96,9 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'price_7d',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">7d</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        7d
+      </div>
     ),
     cell: () => {
       return <div>-</div>
@@ -108,7 +128,8 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
           width="20"
           height="21"
           viewBox="0 0 20 21"
-          fill="none">
+          fill="none"
+        >
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -145,7 +166,8 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
           width="20"
           height="21"
           viewBox="0 0 20 21"
-          fill="none">
+          fill="none"
+        >
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -174,7 +196,11 @@ export const columnsListToken: ColumnDef<TrendingToken>[] = [
     cell: ({ row }) => {
       const { total_volume } = row.original
       const format = total_volume?.split('$')?.[1]?.split(',')?.join('')
-      return <div className="w-full text-center">${nFormatter(parseFloat(format))}</div>
+      return (
+        <div className="w-full text-center">
+          ${nFormatter(parseFloat(format))}
+        </div>
+      )
     },
   },
   // {

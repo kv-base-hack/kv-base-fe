@@ -9,7 +9,9 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">#</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        #
+      </div>
     ),
     cell: ({ row }) => {
       return <div>{row.index + 1}</div>
@@ -28,18 +30,29 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
       return row?.original?.address ? (
         <Link
           href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
-          className="flex items-center gap-2">
-          <ImageToken symbol={row?.original?.symbol} className="w-6 aspect-square fill-blue-950" />
+          className="flex items-center gap-2"
+        >
+          <ImageToken
+            symbol={row?.original?.symbol}
+            className="w-6 aspect-square fill-blue-950"
+          />
           <div className="flex flex-col gap-1.5 w-full items-start justify-start">
             <div className="truncate">{row?.original?.network}</div>
-            <div className="text-normal text-neutral-dark-03">{row?.original?.symbol}</div>
+            <div className="text-normal text-neutral-dark-03">
+              {row?.original?.symbol}
+            </div>
           </div>
         </Link>
       ) : (
         <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
-          <ImageToken symbol={row?.original?.symbol} className="w-6 aspect-square fill-blue-950" />
+          <ImageToken
+            symbol={row?.original?.symbol}
+            className="w-6 aspect-square fill-blue-950"
+          />
           <div>{row?.original?.network}</div>
-          <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
+          <div className="text-normal text-neutral-dark-05">
+            {row?.original?.symbol}
+          </div>
         </div>
       )
     },
@@ -47,7 +60,9 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'price',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">Price</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        Price
+      </div>
     ),
     cell: ({ row }) => {
       const { current_price } = row.original
@@ -72,8 +87,11 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
       ) : (
         <div
           className={cn(
-            price_percent_change_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1'
-          )}>
+            price_percent_change_24h > 0
+              ? 'text-semantic-success-1'
+              : 'text-semantic-error-1',
+          )}
+        >
           {price_percent_change_24h > 0 ? '+' : ''}
           {price_percent_change_24h.toFixed(2)}%
         </div>
@@ -83,14 +101,20 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'oi_24h',
     header: () => (
-      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">OI (24h%)</div>
+      <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        OI (24h%)
+      </div>
     ),
     cell: ({ row }) => {
       const { oi_24h } = row.original
       return oi_24h === 0 ? (
         <div>-</div>
       ) : (
-        <div className={cn(oi_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1')}>
+        <div
+          className={cn(
+            oi_24h > 0 ? 'text-semantic-success-1' : 'text-semantic-error-1',
+          )}
+        >
           {oi_24h > 0 ? '+' : ''}
           {oi_24h.toFixed(2)}%
         </div>
@@ -135,9 +159,10 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
             action === 'deposit'
               ? 'text-secondary-1 bg-secondary-1/10'
               : action === 'withdraw'
-                ? 'text-secondary-4 bg-secondary-4/10'
-                : ''
-          )}>
+              ? 'text-secondary-4 bg-secondary-4/10'
+              : '',
+          )}
+        >
           {action}
         </div>
       )
@@ -165,7 +190,9 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     enableSorting: false,
     header: () => (
       <div className="flex items-center justify-center w-full gap-1 whitespace-nowrap">
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">Net Flow</div>
+        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+          Net Flow
+        </div>
       </div>
     ),
     cell: ({ row }) => {
@@ -182,7 +209,9 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     enableSorting: false,
     header: () => (
       <div className="flex items-center justify-center w-full gap-1 whitespace-nowrap">
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">24h Vol</div>
+        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+          24h Vol
+        </div>
       </div>
     ),
     cell: ({ row }) => {

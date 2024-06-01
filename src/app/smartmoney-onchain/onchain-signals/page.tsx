@@ -84,7 +84,8 @@ export default function OnchainSignals() {
     chain: CHAIN,
     duration: filterDate,
   })
-  const dataTopTokenProfit = topTokenProfitQuery.data?.data.top_token_profit || []
+  const dataTopTokenProfit =
+    topTokenProfitQuery.data?.data.top_token_profit || []
   const totalTopTokenProfit = topTokenProfitQuery.data?.data.total || 1
   //
   const handleChangeTab = (tab: string) => () => {
@@ -98,23 +99,25 @@ export default function OnchainSignals() {
         <div className="flex relative gap-5 justify-between">
           <div
             onClick={handleChangeTab('smart_money')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-neutral-01">
+            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-neutral-01"
+          >
             <div>Smart Money</div>
             <div
               className={cn(
                 'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'smart_money' ? 'bg-amber-200' : ''
+                tab === 'smart_money' ? 'bg-amber-200' : '',
               )}
             />
           </div>
           <div
             onClick={handleChangeTab('insider_trade')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-gray-500">
+            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-gray-500"
+          >
             <div>Insider Trade</div>
             <div
               className={cn(
                 'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'insider_trade' ? 'bg-amber-200' : ''
+                tab === 'insider_trade' ? 'bg-amber-200' : '',
               )}
             />
           </div>
@@ -123,7 +126,9 @@ export default function OnchainSignals() {
       <GroupHeader
         className="mt-4 mx-10"
         title={
-          tab === 'smart_money' ? 'Smartmoney Onchain Dashboard' : 'InsiderTrade Onchain Dashboard'
+          tab === 'smart_money'
+            ? 'Smartmoney Onchain Dashboard'
+            : 'InsiderTrade Onchain Dashboard'
         }
         desc={
           tab === 'smart_money'
@@ -134,7 +139,8 @@ export default function OnchainSignals() {
           tab === 'smart_money'
             ? ''
             : 'We do not encourage people to copy trade these individuals because this Insider Trade is just speculation'
-        }>
+        }
+      >
         <SelectChain />
       </GroupHeader>
       {/* top coin */}
@@ -148,8 +154,13 @@ export default function OnchainSignals() {
             icon={<SmartMoneyTopPerformingIcon />}
             title="Smart Money's Top Performing Tokens"
             childHeader={
-              <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />
-            }>
+              <DateGroup
+                dataSource={DATA_DATE}
+                active={filterDate}
+                handleActive={setFilterDate}
+              />
+            }
+          >
             <div className="mt-8">
               <DataTable
                 className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
@@ -182,7 +193,8 @@ export default function OnchainSignals() {
                 active={filterActivity}
                 handleActive={setFilterActivity}
               />
-            }>
+            }
+          >
             <div className="mt-8">
               <DataTable
                 className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
@@ -213,7 +225,10 @@ export default function OnchainSignals() {
               tab === 'smart_money' ? (
                 <div className="flex items-center gap-4">
                   <div>Smart Money’s Activity</div>
-                  <SelectSmartMoney value="All Smart Money" setValue={() => null} />
+                  <SelectSmartMoney
+                    value="All Smart Money"
+                    setValue={() => null}
+                  />
                 </div>
               ) : (
                 'Insider Trade’s Activity'
@@ -225,7 +240,8 @@ export default function OnchainSignals() {
                 active={filterActivity}
                 handleActive={setFilterActivity}
               />
-            }>
+            }
+          >
             <div className="mt-8">
               <DataTable
                 className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
@@ -253,8 +269,13 @@ export default function OnchainSignals() {
             icon={<SmartMoneyActivityIcon />}
             title="Insider Trade's Top Performing Tokens"
             childHeader={
-              <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />
-            }>
+              <DateGroup
+                dataSource={DATA_DATE}
+                active={filterDate}
+                handleActive={setFilterDate}
+              />
+            }
+          >
             <div className="mt-8">
               <DataTable
                 className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
