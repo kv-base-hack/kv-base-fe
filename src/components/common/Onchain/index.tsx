@@ -9,17 +9,17 @@ import Info from '@/components/shared/icons/Info'
 import SwapDate from '@/components/shared/icons/SwapDate'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
-import { DATA_TOKEN } from '@/constant/token'
 import { useTopUserProfitQuery } from '@/query/onchain-signal/getTopUserProfit'
 import { useTokenInspectActivityQuery } from '@/query/token-explorer/getTokenInspectActivity'
 import { useTokenInspectBuySellQuery } from '@/query/token-explorer/getTokenInspectBuySell'
 import { useTokenInspectDepositWithdrawQuery } from '@/query/token-explorer/getTokenInspectDepositWithdraw'
 import { TokenInfo } from '@/types/tokenInfo'
 import { nFormatter } from '@/utils/nFormatter'
-import { useParams } from '@tanstack/react-router'
 import numeral from 'numeral'
 import { useState } from 'react'
 import { ChartCompare } from '@/components/common/Onchain/ChartCompare'
+import { useRouter } from 'next/router'
+import { ImageToken } from '../Image/ImageToken'
 
 const DATA_ACTIVITY = [
   {
@@ -64,12 +64,15 @@ const DATA_DATE = [
 ]
 
 export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
+  const router = useRouter()
+  const { token } = router.query
+
   const [pageActivity, setPageActivity] = useState(1)
   const [pageUserProfit, setPageUserProfit] = useState(1)
   const [filterActivity, setFilterActivity] = useState('all')
   const [durationWithDrawDeposit, setDurationWithDrawDeposit] = useState('24h')
   const [durationSellBuy, setDurationSellBuy] = useState('24h')
-  const params: { token: string } = useParams({ strict: false })
+
   const CHAIN = useAtomValue(chainAtom)
   //
   const topUserProfitQuery = useTopUserProfitQuery({
@@ -86,13 +89,13 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
     limit: 10,
     start: pageActivity,
     chain: CHAIN,
-    address: params?.token,
+    address: token?.toString() || '',
   })
   const dataActivity = activityQuery.data?.data.activities || []
   const totalActivity = activityQuery.data?.data?.total || 1
   //
   const tokenInspectDepositWithdraw = useTokenInspectDepositWithdrawQuery({
-    address: params?.token,
+    address: token?.toString() || '',
     duration: durationWithDrawDeposit,
     chain: CHAIN,
   })
@@ -112,7 +115,7 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
   ).toFixed(2)
   //
   const tokenInspectBuySell = useTokenInspectBuySellQuery({
-    address: params?.token,
+    address: token?.toString() || '',
     duration: durationSellBuy,
     chain: CHAIN,
   })
@@ -131,14 +134,16 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
     100
   ).toFixed(2)
 
-  const tmpLogo = DATA_TOKEN?.find((el) => el.token === dataTokenInfo?.symbol)?.image_url
   return (
     <div>
       <div className="flex my-4 items-center gap-4 self-stretch font-semibold whitespace-nowrap leading-[160%] max-md:flex-wrap">
         <div className="flex gap-2 my-auto text-xl tracking-tight">
           <div className="flex gap-2 justify-between text-gray-300">
             <div>{dataTokenInfo?.symbol}</div>
-            <img loading="lazy" src={tmpLogo} className="object-center w-6 aspect-square" />
+            <ImageToken
+              symbol={dataTokenInfo?.symbol}
+              className="object-center w-6 aspect-square"
+            />
           </div>
           <div className="grow text-gray-300">Onchain Signal</div>
         </div>
@@ -267,7 +272,10 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
                     <div className="text-2xl leading-9 text-red-400">Withdraw</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
+                      <ImageToken
+                        symbol={dataTokenInfo?.symbol}
+                        className="my-auto w-10 aspect-square"
+                      />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>{numeral(dataTokenInspectDW?.cex_out_flow || 0).format('0,0.00')}</div>
                         <div>${nFormatter(dataTokenInspectDW?.cex_out_flow_in_usdt || 0)}</div>
@@ -277,7 +285,10 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 mt-14 w-full rounded-lg border border-solid border-secondary-4 max-md:pr-5 max-md:mt-10">
                     <div className="text-2xl leading-9 text-stone-400">Deposit</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
+                      <ImageToken
+                        symbol={dataTokenInfo?.symbol}
+                        className="my-auto w-10 aspect-square"
+                      />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>{numeral(dataTokenInspectDW?.cex_in_flow || 0).format('0,0.00')}</div>
                         <div>${nFormatter(dataTokenInspectDW?.cex_in_flow_in_usdt || 0)}</div>
@@ -313,7 +324,10 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
                     <div className="text-2xl leading-9 text-red-400">Sell</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
+                      <ImageToken
+                        symbol={dataTokenInfo?.symbol}
+                        className="my-auto w-10 aspect-square"
+                      />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>
                           {numeral(dataTokenInspectBS?.out_flow_in_token || 0).format('0,0.00')}
@@ -325,7 +339,10 @@ export const Onchain = ({ dataTokenInfo }: { dataTokenInfo?: TokenInfo }) => {
                   <div className="flex flex-col items-start py-2 pr-20 pl-4 mt-14 w-full rounded-lg border border-solid border-secondary-4 max-md:pr-5 max-md:mt-10">
                     <div className="text-2xl leading-9 text-stone-400">Buy</div>
                     <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
-                      <img loading="lazy" src={tmpLogo} className="my-auto w-10 aspect-square" />
+                      <ImageToken
+                        symbol={dataTokenInfo?.symbol}
+                        className="my-auto w-10 aspect-square"
+                      />
                       <div className="flex flex-col flex-1 justify-center">
                         <div>
                           {numeral(dataTokenInspectBS?.in_flow_in_token || 0).format('0,0.00')}

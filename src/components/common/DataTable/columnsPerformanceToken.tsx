@@ -1,11 +1,11 @@
 import { TooltipCustom } from '@/components/common/Tooltip'
 import Info from '@/components/shared/icons/Info'
-import { DATA_TOKEN } from '@/constant/token'
 import { TopTokenProfit } from '@/types/topTokenProfit'
 import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
+import Link from 'next/link'
 import numeral from 'numeral'
+import { ImageToken } from '../Image/ImageToken'
 
 export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
   {
@@ -15,31 +15,20 @@ export const columnsPerformanceToken: ColumnDef<TopTokenProfit>[] = [
     cell: ({ row }) => {
       return row?.original?.address ? (
         <Link
-          to="/smartmoney-onchain/token-explorer/$token/deep"
-          params={{
-            token: row.original.address,
-          }}
+          href={`/smartmoney-onchain/token-explorer/${row.original.address}`}
           className="flex gap-3 items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={
-              row?.original?.image_url
-                ? row?.original?.image_url
-                : DATA_TOKEN?.find((item) => item.token === row?.original?.symbol)?.image_url
-            }
+          <ImageToken
+            symbol={row?.original?.symbol}
+            imgUrl={row?.original?.image_url}
             className="w-6 aspect-square fill-blue-950"
           />
           <div className="underline">{row?.original?.symbol}</div>
         </Link>
       ) : (
         <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={
-              row?.original?.image_url
-                ? row?.original?.image_url
-                : DATA_TOKEN?.find((item) => item.token === row?.original?.symbol)?.image_url
-            }
+          <ImageToken
+            symbol={row?.original?.symbol}
+            imgUrl={row?.original?.image_url}
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{row?.original?.symbol}</div>

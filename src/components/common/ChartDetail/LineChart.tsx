@@ -52,6 +52,7 @@ export function LineChart({
     <SkeletonChart />
   ) : (
     <ResponsiveContainer width="100%" height="100%">
+      {/* @ts-ignore */}
       <AreaChart
         height={400}
         data={formatData || []}

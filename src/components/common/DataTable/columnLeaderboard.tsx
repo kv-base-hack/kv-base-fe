@@ -1,9 +1,9 @@
-import { DATA_TOKEN } from '@/constant/token'
 import { Leaderboard } from '@/types/leaderboard'
 import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 import moment from 'moment'
+import { ImageToken } from '../Image/ImageToken'
+import Link from 'next/link'
 
 export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
   {
@@ -22,12 +22,7 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
     cell: ({ row }) => {
       const { user_address } = row.original
       return (
-        <Link
-          className="w-32 truncate"
-          to="/smartmoney-onchain/wallet-explorer/$groupId/deep"
-          params={{
-            groupId: '1',
-          }}>
+        <Link className="w-32 truncate" href="/smartmoney-onchain/wallet-explorer/1">
           {user_address}
         </Link>
       )
@@ -113,9 +108,8 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
       const { current_largest_position } = row.original
       return current_largest_position ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={DATA_TOKEN?.find((el) => el.token === current_largest_position.symbol)?.image_url}
+          <ImageToken
+            symbol={current_largest_position.symbol}
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{current_largest_position.symbol}</div>
@@ -131,11 +125,7 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
       const { most_token_buy } = row.original
       return most_token_buy ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={DATA_TOKEN?.find((el) => el.token === most_token_buy.symbol)?.image_url}
-            className="w-6 aspect-square fill-blue-950"
-          />
+          <ImageToken symbol={most_token_buy.symbol} className="w-6 aspect-square fill-blue-950" />
           <div>{most_token_buy.symbol}</div>
         </div>
       ) : null
@@ -149,11 +139,7 @@ export const columnsLeaderboard: ColumnDef<Leaderboard>[] = [
       const { most_token_sell } = row.original
       return most_token_sell ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={DATA_TOKEN?.find((el) => el.token === most_token_sell.symbol)?.image_url}
-            className="w-6 aspect-square fill-blue-950"
-          />
+          <ImageToken symbol={most_token_sell.symbol} className="w-6 aspect-square fill-blue-950" />
           <div>{most_token_sell.symbol}</div>
         </div>
       ) : null

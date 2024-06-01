@@ -4,9 +4,9 @@ import { ModeFilter } from './ModeFilter'
 import { ArrowUpRight } from '@/components/shared/icons/ArrowUpRight'
 import SkeletonCell from '@/components/common/Skeleton/SkeletonCell'
 import { TokenInfo } from '@/types/tokenInfo'
-import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { LineChart } from '@/components/common/ChartDetail/LineChart'
+import { ImageToken } from '../Image/ImageToken'
 
 const modes = ['1h', '1d', '1w', '1m', '1y']
 
@@ -53,9 +53,8 @@ export function WrapLineChart({
       <div className="flex items-start justify-between px-6 pt-4">
         <div>
           <div className="flex gap-3 text-sm leading-5 whitespace-nowrap">
-            <img
-              loading="lazy"
-              src={DATA_TOKEN?.find((el) => el.token === dataTokenInfo?.symbol)?.image_url}
+            <ImageToken
+              symbol={dataTokenInfo?.symbol}
               className="object-center w-6 aspect-square"
             />
             <div className="flex gap-1 my-auto">

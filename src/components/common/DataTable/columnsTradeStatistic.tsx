@@ -1,6 +1,7 @@
 import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
+import Image from 'next/image'
+import Link from 'next/link'
 import numeral from 'numeral'
 
 export type TradeStatistic = {
@@ -23,13 +24,11 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
       const { symbol } = row.original
       return row?.original?.address ? (
         <Link
-          to="/smartmoney-onchain/token-explorer/$token/deep"
-          params={{
-            token: row.original.address,
-          }}
+          href={`/smartmoney-onchain/token-explorer/${row.original.address}`}
           className="flex gap-3 items-center justify-between text-right">
-          <img
+          <Image
             loading="lazy"
+            alt="token"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
@@ -37,8 +36,9 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
         </Link>
       ) : (
         <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
-          <img
+          <Image
             loading="lazy"
+            alt="token"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />
