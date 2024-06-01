@@ -1,7 +1,8 @@
 import { TopUserProfit } from '@/types/topUserProfit'
 import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
   {
@@ -21,12 +22,7 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
     cell: ({ row }) => {
       const { smart_money } = row.original
       return (
-        <Link
-          className="underline"
-          to="/smartmoney-onchain/wallet-explorer/$groupId/deep"
-          params={{
-            groupId: '1',
-          }}>
+        <Link className="underline" href="/smartmoney-onchain/wallet-explorer/1/deep">
           {smart_money}
         </Link>
       )
@@ -41,20 +37,29 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
       console.log({ badge })
       return (
         <div className="flex gap-1 self-stretch pr-5">
-          <img
+          <Image
+            alt="badge"
             loading="lazy"
-            srcSet="/assets/images/ranking/gold.png"
+            src="/assets/images/ranking/gold.png"
             className="w-6 aspect-[0.93]"
+            width={24}
+            height={24}
           />
-          <img
+          <Image
+            alt="badge"
             loading="lazy"
-            srcSet="/assets/images/ranking/platium.png"
+            src="/assets/images/ranking/platium.png"
             className="w-6 aspect-[0.93]"
+            width={24}
+            height={24}
           />
-          <img
+          <Image
+            alt="badge"
             loading="lazy"
-            srcSet="/assets/images/ranking/fire.png"
+            src="/assets/images/ranking/fire.png"
             className="w-6 aspect-[0.93]"
+            width={24}
+            height={24}
           />
         </div>
       )
@@ -95,10 +100,13 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
       const { most_profitable_trade } = row.original
       return most_profitable_trade ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
+          <Image
+            alt="token"
             loading="lazy"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
+            width={24}
+            height={24}
           />
           <div>{most_profitable_trade}</div>
         </div>
@@ -113,10 +121,13 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
       const { current_largest_position } = row.original
       return current_largest_position ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
+          <Image
             loading="lazy"
+            alt="token"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
+            width={24}
+            height={24}
           />
           <div>{current_largest_position}</div>
         </div>
@@ -131,10 +142,13 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
       const { most_bought_token_24h } = row.original
       return most_bought_token_24h ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
+          <Image
             loading="lazy"
+            alt="token"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
+            width={24}
+            height={24}
           />
           <div>{most_bought_token_24h}</div>
         </div>
@@ -149,10 +163,13 @@ export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
       const { most_sell_token_24h } = row.original
       return most_sell_token_24h ? (
         <div className="flex gap-3 items-center justify-between text-right">
-          <img
+          <Image
             loading="lazy"
+            alt="token"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
+            width={24}
+            height={24}
           />
           <div>{most_sell_token_24h}</div>
         </div>

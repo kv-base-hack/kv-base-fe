@@ -1,10 +1,10 @@
 import { cn } from '@/lib/utils'
 import { nFormatter } from '@/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
-import { Link } from '@tanstack/react-router'
-import { DATA_TOKEN } from '@/constant/token'
 import { TrendingToken } from '@/types/find-gems/trending'
 import numeral from 'numeral'
+import Link from 'next/link'
+import { ImageToken } from '../Image/ImageToken'
 
 export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
   {
@@ -28,16 +28,9 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
     cell: ({ row }) => {
       return row?.original?.address ? (
         <Link
-          to="/smartmoney-onchain/token-explorer/$token/deep"
-          className="flex items-center gap-2"
-          params={{
-            token: row?.original?.address,
-          }}>
-          <img
-            loading="lazy"
-            src={DATA_TOKEN?.find((el) => el.token === row?.original?.symbol)?.image_url}
-            className="w-6 aspect-square fill-blue-950"
-          />
+          href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+          className="flex items-center gap-2">
+          <ImageToken symbol={row?.original?.symbol} className="w-6 aspect-square fill-blue-950" />
           <div className="flex flex-col gap-1.5 w-full items-start justify-start">
             <div className="truncate">{row?.original?.name}</div>
             <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
@@ -45,11 +38,7 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
         </Link>
       ) : (
         <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
-          <img
-            loading="lazy"
-            src={DATA_TOKEN?.find((el) => el.token === row?.original?.symbol)?.image_url}
-            className="w-6 aspect-square fill-blue-950"
-          />
+          <ImageToken symbol={row?.original?.symbol} className="w-6 aspect-square fill-blue-950" />
           <div>{row?.original?.name}</div>
           <div className="text-normal text-neutral-dark-05">{row?.original?.symbol}</div>
         </div>

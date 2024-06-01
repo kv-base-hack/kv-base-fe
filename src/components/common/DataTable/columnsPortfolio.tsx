@@ -1,5 +1,6 @@
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
+import Image from 'next/image'
+import Link from 'next/link'
 import numeral from 'numeral'
 
 export type Portfolio = {
@@ -18,14 +19,11 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
       const { symbol } = row.original
       return (
         <Link
-          disabled={!row?.original?.address}
-          to="/smartmoney-onchain/token-explorer/$token/deep"
-          params={{
-            token: row.original.address,
-          }}
+          href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
           className="flex gap-3 items-center justify-between text-right">
-          <img
+          <Image
             loading="lazy"
+            alt="token"
             src="/assets/icons/token/usdt.svg"
             className="w-6 aspect-square fill-blue-950"
           />

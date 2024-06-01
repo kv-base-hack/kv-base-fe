@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const News = () => {
   return (
     <div className="flex flex-col p-6 text-xl font-semibold tracking-tight leading-7 rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07 bg-opacity-30 border-white/10 text-neutral-01 max-md:px-5">
@@ -6,35 +8,70 @@ export const News = () => {
         trading services such as US stocks and ETFs.
       </div>
       <div className="flex gap-1 justify-center self-start p-0.5 mt-2 text-xs font-bold tracking-normal text-gray-500 whitespace-nowrap rounded border border-solid border-neutral-06">
-        <img loading="lazy" srcSet="/assets/icons/customer.png" className="w-5 aspect-square" />
+        <Image
+          alt="customer"
+          loading="lazy"
+          src="/assets/icons/customer.png"
+          className="w-5 aspect-square"
+          width={20}
+          height={20}
+        />
         <div className="grow my-auto">4 minutes ago Foresight News and 2 more media reports</div>
       </div>
       <div className="mt-8 leading-[160%] max-md:max-w-full">
         Raydium now supports OKX Web3 wallet
       </div>
       <div className="flex gap-1 justify-center self-start p-0.5 mt-2 text-xs font-bold tracking-normal text-gray-500 whitespace-nowrap rounded border border-solid border-neutral-06">
-        <img loading="lazy" srcSet="/assets/icons/customer.png" className="w-5 aspect-square" />
+        <Image
+          alt="customer"
+          loading="lazy"
+          src="/assets/icons/customer.png"
+          className="w-5 aspect-square"
+          width={20}
+          height={20}
+        />
         <div className="grow my-auto">7 minutes ago Foresight News and 2 more media reports</div>
       </div>
       <div className="mt-8 leading-[160%] max-md:max-w-full">
         Coinbase will suspend Polymath (POLY) trading on December 6
       </div>
       <div className="flex gap-1 justify-center self-start p-0.5 mt-2 text-xs font-bold tracking-normal text-gray-500 whitespace-nowrap rounded border border-solid border-neutral-06">
-        <img loading="lazy" srcSet="/assets/icons/customer.png" className="w-5 aspect-square" />
+        <Image
+          alt="customer"
+          loading="lazy"
+          src="/assets/icons/customer.png"
+          className="w-5 aspect-square"
+          width={20}
+          height={20}
+        />
         <div className="grow my-auto">4 minutes ago Foresight News and 2 more media reports</div>
       </div>
       <div className="mt-8 leading-[160%] max-md:max-w-full">
         Data: Huang Licheng’s address has purchased over 380,000 BLUR for pledge
       </div>
       <div className="flex gap-1 justify-center self-start p-0.5 mt-2 text-xs font-bold tracking-normal text-gray-500 whitespace-nowrap rounded border border-solid border-neutral-06">
-        <img loading="lazy" srcSet="/assets/icons/customer.png" className="w-5 aspect-square" />
+        <Image
+          alt="customer"
+          loading="lazy"
+          src="/assets/icons/customer.png"
+          className="w-5 aspect-square"
+          width={20}
+          height={20}
+        />
         <div className="grow my-auto">4 minutes ago Foresight News and 2 more media reports</div>
       </div>
       <div className="mt-8 leading-[160%] max-md:max-w-full">
         Data: Huang Licheng’s address has purchased over 380,000 BLUR for pledge
       </div>
       <div className="flex gap-1 justify-center self-start p-0.5 mt-2 text-xs font-bold tracking-normal text-gray-500 whitespace-nowrap rounded border border-solid border-neutral-06">
-        <img loading="lazy" srcSet="/assets/icons/customer.png" className="w-5 aspect-square" />
+        <Image
+          alt="customer"
+          loading="lazy"
+          src="/assets/icons/customer.png"
+          className="w-5 aspect-square"
+          width={20}
+          height={20}
+        />
         <div className="grow my-auto">4 minutes ago Foresight News and 2 more media reports</div>
       </div>
     </div>

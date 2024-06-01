@@ -9,6 +9,7 @@ import OpenLink from '@/components/shared/icons/OpenLink'
 import SourceCode from '@/components/shared/icons/SourceCode'
 import Whitepaper from '@/components/shared/icons/Whitepaper'
 import { TokenInfo } from '@/types/tokenInfo'
+import Image from 'next/image'
 import numeral from 'numeral'
 
 export const ContractDetail = ({
@@ -24,17 +25,25 @@ export const ContractDetail = ({
       <div className="flex gap-0 items-center justify-start mt-2 text-gray-300 whitespace-nowrap">
         <div className="flex gap-2 justify-center py-1 pl-2 pr-4 text-xs leading-4 rounded-s-lg bg-white bg-opacity-10">
           <div className="flex gap-2 justify-between">
-            <img
+            <Image
+              alt="token"
               loading="lazy"
-              srcSet="/assets/icons/token/eth.png"
+              src="/assets/icons/token/eth.png"
               className="w-5 aspect-square"
+              width={20}
+              height={20}
             />
-            <div className="grow my-auto">{`${address?.substring(0, 6)}...${address?.slice(-6)}`}</div>
+            <div className="grow my-auto">{`${address?.substring(0, 6)}...${address?.slice(
+              -6
+            )}`}</div>
           </div>
           <Copy />
           <Metamask />
-          <img
+          <Image
             loading="lazy"
+            alt="gecko"
+            width={19}
+            height={19}
             src="/assets/icons/gecko-terminal.png"
             className="self-start aspect-square w-[19px]"
           />

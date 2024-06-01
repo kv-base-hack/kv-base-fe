@@ -3,6 +3,7 @@ import { useAtom } from 'jotai'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 import { chainAtom } from '@/atom/chain'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 const renderChain = (chain: string) => {
   switch (chain) {
@@ -51,9 +52,12 @@ export const SelectChain = ({
             : 'border border-solid backdrop-blur-[50px] bg-neutral-07/50 border-white/10 rounded-[360px]'
         )}>
         <div className="flex gap-2 justify-between">
-          <img
+          <Image
             loading="lazy"
             src={renderChain(chain).icon}
+            alt={chain}
+            width={size === 'lg' ? 32 : 24}
+            height={size === 'lg' ? 32 : 24}
             className={cn('object-center aspect-square', size === 'lg' ? 'w-8' : 'w-6')}
           />
           {showName ? <div className="grow">{renderChain(chain).value}</div> : null}

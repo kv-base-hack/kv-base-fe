@@ -1,11 +1,11 @@
-import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { TopActivity } from '@/types/topActivity'
 import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 import moment from 'moment'
+import Link from 'next/link'
 import numeral from 'numeral'
+import { ImageToken } from '../Image/ImageToken'
 
 export type Activity = {
   id: string
@@ -56,21 +56,9 @@ export const columnsActivity: ColumnDef<TopActivity>[] = [
       const { symbol } = row.original
       return (
         <Link
-          disabled={!row?.original?.token_address}
-          to="/smartmoney-onchain/token-explorer/$token/deep"
-          params={{
-            token: row.original.token_address,
-          }}
+          href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
           className="flex gap-3 items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={
-              row?.original?.token_image_url
-                ? row?.original?.token_image_url
-                : DATA_TOKEN?.find((item) => item.token === symbol)?.image_url
-            }
-            className="w-6 aspect-square fill-blue-950"
-          />
+          <ImageToken symbol={symbol} className="w-6 aspect-square fill-blue-950" />
           <div className="underline">{symbol}</div>
         </Link>
       )

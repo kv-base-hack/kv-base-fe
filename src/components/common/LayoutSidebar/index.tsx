@@ -1,15 +1,19 @@
 import { SidebarMenuItem } from '@/components/common/LayoutSidebar/SidebarMenuItem'
 import FeedbackIcon from '@/components/shared/icons/sidebar/FeedbackIcon'
 import { ISidebarMenu, SIDEBAR_MENU } from '@/constant'
+import Image from 'next/image'
 
 export const LayoutSidebar = () => {
   return (
     <div className="scrollbar-hide h-screen fixed overflow-y-auto flex flex-col justify-between items-start px-6 py-8 border-r border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-r-white/10 w-[300px] 2xl:w-[330px]">
       {/* header */}
       <div className="flex gap-4 justify-between items-stretch">
-        <img
+        <Image
           loading="lazy"
-          srcSet="/assets/images/logo.svg"
+          src="/assets/images/logo.svg"
+          alt="logo"
+          width={48}
+          height={48}
           className="object-contain object-center shrink-0 w-12 aspect-square"
         />
         <div className="flex-auto my-auto text-3xl font-bold tracking-tight leading-6 text-white">

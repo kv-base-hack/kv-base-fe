@@ -1,6 +1,7 @@
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import ArrowDownIcon from '@/components/shared/icons/ArrowDownIcon'
 import LDOIcon from '@/components/shared/icons/LDOIcon'
+import Image from 'next/image'
 
 const RightGroup = () => {
   return (
@@ -26,10 +27,13 @@ export const Technical = () => {
             key={i}
             className="flex flex-col p-6 rounded-lg border border-solid bg-gray-300 bg-opacity-10 border-white/10 w-1/3">
             <div className="flex gap-4 justify-between">
-              <img
+              <Image
                 loading="lazy"
+                alt="ldo"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/722f1ba48df602c8ef003c59c6253430a70087751c8e74b194ff990d0d2ba4cc?"
                 className="my-auto w-10 aspect-square fill-blue-950"
+                width={40}
+                height={40}
               />
               <div className="flex flex-col flex-1 pr-9">
                 <div className="flex gap-1.5 justify-between text-lg tracking-tight leading-8 whitespace-nowrap text-neutral-01">

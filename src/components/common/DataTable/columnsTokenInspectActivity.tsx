@@ -1,11 +1,11 @@
-import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
 import { Activity } from '@/types/tokenInspectActivity'
 import { nFormatter } from '@/utils/nFormatter'
-import { Link } from '@tanstack/react-router'
 import { ColumnDef } from '@tanstack/react-table'
 import moment from 'moment'
+import Link from 'next/link'
 import numeral from 'numeral'
+import { ImageToken } from '../Image/ImageToken'
 
 export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
   {
@@ -34,31 +34,20 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
       const { symbol } = row.original
       return row?.original?.token_address ? (
         <Link
-          to="/smartmoney-onchain/token-explorer/$token/deep"
-          params={{
-            token: row.original.token_address,
-          }}
+          href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
           className="flex gap-3 items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={
-              row?.original?.token_image_url
-                ? row?.original?.token_image_url
-                : DATA_TOKEN?.find((item) => item.token === symbol)?.image_url
-            }
+          <ImageToken
+            symbol={symbol}
+            imgUrl={row?.original?.token_image_url}
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{symbol}</div>
         </Link>
       ) : (
         <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
-          <img
-            loading="lazy"
-            src={
-              row?.original?.token_image_url
-                ? row?.original?.token_image_url
-                : DATA_TOKEN?.find((item) => item.token === symbol)?.image_url
-            }
+          <ImageToken
+            symbol={symbol}
+            imgUrl={row?.original?.token_image_url}
             className="w-6 aspect-square fill-blue-950"
           />
           <div>{symbol}</div>

@@ -2,21 +2,24 @@
 import { chainAtom } from '@/atom/chain'
 import { useGetPriceWithTransferQuery } from '@/query/token-explorer/getPriceWithTransfer'
 import { sortByDate } from '@/utils/sortByDate'
-import { useParams } from '@tanstack/react-router'
 import * as echarts from 'echarts'
 import { useAtomValue } from 'jotai'
 import { ceil } from 'lodash'
+import { useRouter } from 'next/router'
 import numeral from 'numeral'
 import { useEffect } from 'react'
 
 export const ChartCompare = () => {
-  const params: { token: string } = useParams({ strict: false })
+  const router = useRouter()
+  const { token } = router.query
+
   const CHAIN = useAtomValue(chainAtom)
   const priceWithTransferQuery = useGetPriceWithTransferQuery({
-    address: params?.token,
+    address: token?.toString() || '',
     chain: CHAIN,
   })
-  const priceWithTransferData = priceWithTransferQuery.data?.data?.price_with_transfer || {}
+  const priceWithTransferData =
+    priceWithTransferQuery.data?.data?.price_with_transfer || {}
 
   const dates: string[] = []
   const deposits: number[] = []
@@ -31,7 +34,7 @@ export const ChartCompare = () => {
   }
 
   useEffect(() => {
-    const chartDom = document.getElementById('chart-token-explore')
+    const chartDom = window.document.getElementById('chart-token-explore')
     const myChart = echarts.init(chartDom)
     const maxDeposit = Math.floor(Math.max(...deposits))
     const maxWithdraw = Math.floor(Math.max(...withdraws))

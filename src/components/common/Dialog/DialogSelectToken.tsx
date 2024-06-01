@@ -6,8 +6,8 @@ import { ChangeEvent, useState } from 'react'
 import { useDebounce } from 'react-use'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
-import { DATA_TOKEN } from '@/constant/token'
-import { Link } from '@tanstack/react-router'
+import Link from 'next/link'
+import { ImageToken } from '../Image/ImageToken'
 
 export function DialogSelectToken() {
   const [search, setSearch] = useState('')
@@ -65,18 +65,11 @@ export function DialogSelectToken() {
             {listTokenData?.slice(0, 10)?.map((token, index) =>
               token.tokenAddress ? (
                 <Link
-                  to="/smartmoney-onchain/token-explorer/$token/deep"
-                  params={{
-                    token: token.tokenAddress,
-                  }}
+                  href={`/smartmoney-onchain/token-explorer/${token.tokenAddress}`}
                   key={index}
                   className="flex cursor-pointer justify-between p-4 mt-4 rounded-xl bg-zinc-800 max-md:flex-wrap max-md:max-w-full">
                   <div className="flex gap-4 justify-between whitespace-nowrap">
-                    <img
-                      loading="lazy"
-                      srcSet={DATA_TOKEN?.find((el) => el.token === token.symbol)?.image_url}
-                      className="my-auto w-8 aspect-square"
-                    />
+                    <ImageToken symbol={token.symbol} className="my-auto w-8 aspect-square" />
                     <div className="flex flex-col flex-1">
                       <div className="text-base font-bold tracking-normal leading-6 text-zinc-100">
                         {token.symbol}
@@ -100,11 +93,7 @@ export function DialogSelectToken() {
                   key={index}
                   className="flex cursor-not-allowed justify-between p-4 mt-4 rounded-xl bg-zinc-800 max-md:flex-wrap max-md:max-w-full">
                   <div className="flex gap-4 justify-between whitespace-nowrap">
-                    <img
-                      loading="lazy"
-                      srcSet={DATA_TOKEN?.find((el) => el.token === token.symbol)?.image_url}
-                      className="my-auto w-8 aspect-square"
-                    />
+                    <ImageToken symbol={token.symbol} className="my-auto w-8 aspect-square" />
                     <div className="flex flex-col flex-1">
                       <div className="text-base font-bold tracking-normal leading-6 text-zinc-100">
                         {token.symbol}

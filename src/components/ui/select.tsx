@@ -5,6 +5,7 @@ import * as SelectPrimitive from '@radix-ui/react-select'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 const Select = SelectPrimitive.Root
 
@@ -25,8 +26,11 @@ const SelectTrigger = React.forwardRef<
     {...props}>
     {children}
     <SelectPrimitive.Icon asChild>
-      <img
+      <Image
         loading="lazy"
+        alt="Arrow down"
+        width={16}
+        height={16}
         src="/assets/icons/arrow-down.svg"
         className="object-center justify-center items-center my-auto w-4 h-4 aspect-square"
       />
