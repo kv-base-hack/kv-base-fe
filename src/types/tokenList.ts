@@ -4,11 +4,14 @@ export interface DataTokenList {
 
 export interface TokenList {
   address?: string
-  tokenAddress?: string
-  value: number
   symbol: string
+  name: string
   usdPrice: number
+  tokenAddress: string
   chainId: string
+  imageUrl: string
+  market_cap: number
+  price_24h: number
 }
 
 export interface TokenListResponse {

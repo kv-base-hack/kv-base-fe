@@ -72,3 +72,12 @@ body, html {
 .rc-pagination-item-active {
   color: var(--Neutral-07, #1A1D1F);
 }
+.button-gradient {
+  background: linear-gradient(178deg,
+      rgba(253, 250, 255, 0.3) 7.87%,
+      rgba(255, 255, 255, 0) 98.3%),
+    linear-gradient(90deg, #c877f9 0%, #3d0099 100%);
+  box-shadow: 0px 8px 16px 0px rgba(123, 61, 187, 0.4);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}

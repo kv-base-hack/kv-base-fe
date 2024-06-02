@@ -1,6 +1,8 @@
 import { InsiderBuyResponse } from "@/types/insiderBuy";
+import { LeaderboardResponse } from "@/types/leaderboard";
 import { NewListingBuyResponse } from "@/types/new-listing-buy";
 import { TopSmartMoneyTradeUsersListProps } from "@/types/smartmoney";
+import { TokenListResponse } from "@/types/tokenList";
 import { TopTokenBuyResponse } from "@/types/top-token-buy";
 import { TopTokenProfitResponse } from "@/types/topTokenProfit";
 import { DexTradingSignalResponse } from "@/types/tradingSignal";
@@ -278,4 +280,44 @@ export const getTopSmartMoneyTradeUsersList = ({
         },
       })
   }
+}
+
+export const getLeaderboard = async ({
+  limit = 5,
+  start = 1,
+  chain,
+  sortBy,
+  token_addresses = '',
+}: {
+  limit?: number
+  start?: number
+  chain: string
+  sortBy: string
+  token_addresses: string
+}): Promise<LeaderboardResponse> => {
+  return await api.get('/v1/leaderboard', {
+    params: {
+      chain,
+      limit,
+      start,
+      sort_by: sortBy,
+      token_addresses,
+    },
+  })
+}
+export const getTokenList = async ({
+  symbol_search,
+  chain,
+}: {
+  symbol_search: string
+  chain: string
+}): Promise<TokenListResponse> => {
+  return await api.get('/v1/search', {
+    params: {
+      symbol_search,
+      chain,
+      limit: 10,
+      start: 1,
+    },
+  })
 }
