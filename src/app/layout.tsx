@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: `%s - Kaivest`,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/assets/images/logo.svg',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
