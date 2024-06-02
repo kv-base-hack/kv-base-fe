@@ -4,6 +4,7 @@ import CexWithdrawIcon from '@/components/shared/icons/dashboard/CexWithdrawIcon
 import NewListingBuyIcon from '@/components/shared/icons/dashboard/NewListingBuyIcon'
 import NewListingSellIcon from '@/components/shared/icons/dashboard/NewListingSellIcon'
 import SellingIcon from '@/components/shared/icons/dashboard/SellingIcon'
+import { IconShoppingCart } from '@/components/shared/icons/leaderboard/IconShoppingCart'
 
 export const renderMovementName = (movement: string) => {
   switch (movement) {
@@ -31,13 +32,13 @@ export const renderMovementIcon = (movement: string) => {
     case 'withdraw':
       return <CexWithdrawIcon className="w-4 h-4" />
     case 'buying':
-      return <BuyingIcon className="w-4 h-4" />
+      return <IconShoppingCart className="w-4 h-4" color="#1A1D1F" />
     case 'selling':
       return <SellingIcon className="w-4 h-4" />
     case 'new_listing_buy':
-      return <NewListingBuyIcon className="w-4 h-4 text-[#89D36F]" />
+      return <NewListingBuyIcon className="w-4 h-4 " />
     case 'new_listing_sell':
-      return <NewListingSellIcon className="w-4 h-4 text-[#DC6803]" />
+      return <NewListingSellIcon className="w-4 h-4 " />
     default:
       return null
   }

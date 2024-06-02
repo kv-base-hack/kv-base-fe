@@ -81,9 +81,9 @@ export const DialogNumberOfSmartMoney = ({
                   {address?.substring(0, 6)}..
                   {address?.substring(address?.length - 4, address?.length)}
                 </p>
-                {/* <div className="p-1 border border-white/10 rounded-full bg-[#1a1d1f80]">
+                <div className="p-1 rounded-full bg-[#D8F0FF]">
                   <IconArrowColorRightUp />
-                </div> */}
+                </div>
               </div>
             </Link>
           )

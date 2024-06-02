@@ -14,7 +14,7 @@ export default function Leaderboard() {
       <SMMoneyOverview />
       <div className="flex items-ceter gap-2">
         <LastestAiSignal />
-        <ActivitySpotlight />
+        <ActivitySpotlight limit={2} />
       </div>
 
       <div className="flex gap-2">

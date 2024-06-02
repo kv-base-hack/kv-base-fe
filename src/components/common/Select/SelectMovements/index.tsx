@@ -1,4 +1,9 @@
-import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from '@/components/ui/select'
 import CexDepositIcon from '@/components/shared/icons/dashboard/CexDepositIcon'
 import CexWithdrawIcon from '@/components/shared/icons/dashboard/CexWithdrawIcon'
 import BuyingIcon from '@/components/shared/icons/dashboard/BuyingIcon'
@@ -67,7 +72,7 @@ export const SelectMovement = ({
 }) => {
   return (
     <Select value={movement} onValueChange={(val: string) => setMovement(val)}>
-      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-white whitespace-nowrap border border-solid bg-transparent border-white/40 rounded-[360px]">
+      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 border-solid border-neutral-03 rounded-xl bg-transparent  whitespace-nowrap border">
         <div className="flex items-center gap-2 justify-between">
           {renderMovement(movement).icon}
           <div className="grow">{renderMovement(movement).value}</div>

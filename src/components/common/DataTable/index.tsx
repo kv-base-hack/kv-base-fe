@@ -117,7 +117,7 @@ export function DataTable<TData, TValue>({
               data-state={row.getIsSelected() && 'selected'}
               className={cn(
                 rowClassName,
-                isFetching ? null : 'cursor-pointer hover:bg-neutral-06/10',
+                isFetching ? null : 'cursor-pointer hover:bg-neutral-02',
               )}
             >
               {row.getVisibleCells().map((cell) => {
@@ -125,7 +125,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <TableCell
                     key={cell.id}
-                    className="px-1.5 first-of-type:pl-4 last-of-type:pr-4"
+                    className="px-1.5 first-of-type:pl-4 last-of-type:pr-4 border-t border-[#EFEFEF]"
                   >
                     {isFetching ? (
                       <div

@@ -59,12 +59,14 @@ export const SelectTradeValue = ({
 }) => {
   return (
     <Select>
-      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-white whitespace-nowrap border border-solid bg-transparent border-white/40 rounded-[360px]">
+      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-neutral-04 whitespace-nowrap border border-solid border-neutral-03 bg-transparent rounded-xl">
         <div className="flex items-center gap-2 justify-between">
           {Array.isArray(valueSelected)
             ? valueSelected?.length === 0
               ? 'All Trade Value ($)'
-              : valueSelected?.map((val: string) => <div key={val}>{renderValue(val)}</div>)
+              : valueSelected?.map((val: string) => (
+                  <div key={val}>{renderValue(val)}</div>
+                ))
             : null}
         </div>
       </SelectTrigger>
@@ -95,10 +97,14 @@ export const SelectTradeValue = ({
             }
 
             return (
-              <div key={idx} className="flex items-center justify-end gap-2 px-3">
+              <div
+                key={idx}
+                className="flex items-center justify-end gap-2 px-3"
+              >
                 <label
                   htmlFor={item?.value as string}
-                  className="text-[#6F767E] text-base not-italic font-normal leading-6 tracking-[-0.16px]">
+                  className="text-[#6F767E] text-base not-italic font-normal leading-6 tracking-[-0.16px]"
+                >
                   {item.label}
                 </label>
                 {item?.icon}
