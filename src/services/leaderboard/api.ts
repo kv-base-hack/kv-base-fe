@@ -4,6 +4,7 @@ import { NewListingBuyResponse } from "@/types/new-listing-buy";
 import { TopSmartMoneyTradeUsersListProps } from "@/types/smartmoney";
 import { TokenListResponse } from "@/types/tokenList";
 import { TopTokenBuyResponse } from "@/types/top-token-buy";
+import { TopActivityResponse } from "@/types/topActivity";
 import { TopTokenProfitResponse } from "@/types/topTokenProfit";
 import { DexTradingSignalResponse } from "@/types/tradingSignal";
 import axios from "axios";
@@ -318,6 +319,36 @@ export const getTokenList = async ({
       chain,
       limit: 10,
       start: 1,
+    },
+  })
+}
+
+export const getTopActivity = async ({
+  action = 'all',
+  limit = 10,
+  start = 1,
+  chain,
+  amount_filter,
+  token_addresses = '',
+  sort_by = '',
+}: {
+  action?: string
+  limit?: number
+  start?: number
+  chain: string
+  amount_filter: string
+  token_addresses: string
+  sort_by: string
+}): Promise<TopActivityResponse> => {
+  return await api.get('/v1/activities', {
+    params: {
+      chain,
+      action,
+      limit,
+      start,
+      amount_filter,
+      token_addresses,
+      sort_by,
     },
   })
 }

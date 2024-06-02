@@ -24,6 +24,10 @@ const MENU = [
     menu: 'Tracking',
   },
   {
+    url: '/activity',
+    menu: 'Activity',
+  },
+  {
     url: '/leaderboard',
     menu: 'Leaderboard',
   },

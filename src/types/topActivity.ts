@@ -18,6 +18,10 @@ export interface TopActivity {
   symbol: string
   token_image_url: string
   chainId: string
+  amount_filter: string
+  avg_price: number
+  price_change_24h: number
+  scan_link: string
 }
 
 export interface TopActivityResponse {

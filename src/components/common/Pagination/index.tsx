@@ -1,3 +1,5 @@
+'use client'
+
 import ArrowLeftIcon from '@/components/shared/icons/ArrowLeft'
 import ArrowRightIcon from '@/components/shared/icons/ArrowRight'
 import { cn } from '@/lib/utils'

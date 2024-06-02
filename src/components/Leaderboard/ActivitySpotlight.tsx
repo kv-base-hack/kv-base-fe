@@ -7,6 +7,7 @@ import { IconFire } from '../shared/icons/leaderboard/IconFire'
 import { IconInfoCircle } from '../shared/icons/IconInfoCircle'
 import moment from 'moment'
 import { cn } from '@/lib/utils'
+import { PaginationCustom } from '../common/Pagination'
 
 const DATA = [
   {
@@ -23,18 +24,54 @@ const DATA = [
     content:
       'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
   },
+  {
+    url: '/images/leaderboard/2.png',
+    channel: 'Channel 3',
+    signal_time: '2024-09-10T13:00:00',
+    content:
+      'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
+  },
+  {
+    url: '/images/leaderboard/2.png',
+    channel: 'Channel 4',
+    signal_time: '2024-09-10T13:00:00',
+    content:
+      'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
+  },
 ]
 
-export const ActivitySpotlight = () => {
+export const ActivitySpotlight = ({ limit }: { limit: number }) => {
   return (
     <CardCommon>
       <TitleCard title="Activity Spotlight by AI" iconFirst={<IconFire />}>
         <LinkCustom url="/" title="See all" />
       </TitleCard>
-      <div className="flex items-center gap-4">
-        {DATA.map((item, i) => (
-          <Card item={item} key={i} />
-        ))}
+      <div className="flex flex-col justify-between h-full">
+        <div className="flex items-center gap-4">
+          {DATA.slice(0, limit).map((item, i) => (
+            <Card
+              item={item}
+              key={i}
+              className={
+                i === 0
+                  ? 'bg-[#E1F1FF]'
+                  : i === 1
+                  ? 'bg-[#FFF1E1]'
+                  : i === 2
+                  ? 'bg-[#F4E7FC]'
+                  : 'bg-[#E1FFEF]'
+              }
+            />
+          ))}
+        </div>
+        <PaginationCustom
+          currentPage={1}
+          className="mt-4"
+          updatePage={undefined}
+          pageSize={2}
+          total={20}
+          setPage={undefined}
+        />
       </div>
     </CardCommon>
   )
