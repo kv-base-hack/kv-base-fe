@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-1': '#E7F177',
+        'primary-1': '#0C68E9',
         'primary-2': '#83BF6E',
         'primary-3': '#FF6A55',
         'secondary-1': '#FFBC99',
@@ -35,7 +35,12 @@ export default {
       },
       boxShadow: {
         box: '0px 1px 1px 0px rgba(255, 255, 255, 0.11) inset, 0px -2px 1px 0px rgba(0, 0, 0, 0.40) inset;',
+        'ai-signal': ' 0px 0px 14px -4px rgba(0, 0, 0, 0.05), 0px 32px 48px -8px rgba(0, 0, 0, 0.05)'
       },
+      fontSize: {
+        'xsm': ['15px', '24px']
+      }
+      
     },
   },
   plugins: [],

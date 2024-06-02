@@ -8,10 +8,9 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="bg-background w-full min-h-screen bg-[url('/assets/images/background.png')] bg-cover">
       <div className="flex items-start">
-        <LayoutSidebar />
-        <div className="ml-[300px] 2xl:ml-[330px] w-full">
+        <div className="w-full">
           <Header />
-          <main className="mt-[100px]">{children}</main>
+          <main className="mt-[100px] px-8 pb-8">{children}</main>
         </div>
       </div>
     </div>

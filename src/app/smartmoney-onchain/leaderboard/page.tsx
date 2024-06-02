@@ -16,7 +16,21 @@ import SmartMoneyRankingIcon from '@/components/shared/icons/leaderboard/SmartMo
 import SmartMoneyTopPerformingIcon from '@/components/shared/icons/dashboard/SmartMoneyTopPerformingIcon'
 import { DateGroup } from '@/components/common/DateGroup'
 import { cn } from '@/lib/utils'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
+import { CardCommon } from '@/components/common/Card/CardCommon'
+import { TitleCard } from '@/components/common/Card/TitleCard'
+import { IconRanking } from '@/components/shared/icons/leaderboard/IconRanking'
+import Info from '@/components/shared/icons/Info'
+import { SelectDuration } from '@/components/common/SelectDuration'
+import { IconActivity } from '@/components/shared/icons/leaderboard/IconActivity'
+import { IconInfo } from '@/components/shared/icons/leaderboard/IconInfo'
+import { IconBag } from '@/components/shared/icons/leaderboard/IconBag'
+import { LastestAiSignal } from '@/components/Leaderboard/LastestAiSignal'
+import { ActivitySpotlight } from '@/components/Leaderboard/ActivitySpotlight'
+import { TableInsiderBuy } from '@/components/Leaderboard/Table/TableInsiderBuy'
+import { TableNewListingBuy } from '@/components/Leaderboard/Table/TableNewListingBuy'
+import { TableTopBuy } from '@/components/Leaderboard/Table/TableTopBuy'
+import { TablePerformanceToken } from '@/components/Leaderboard/Table/TableTopPerformingTokens'
 
 const RightGroup = () => {
   return (
@@ -64,7 +78,8 @@ export default function Leaderboard() {
     limit: 10,
     chain: CHAIN,
   })
-  const dataLeaderboard = leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
+  const dataLeaderboard =
+    leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
   const totalLeaderboard = leaderboardQuery.data?.data.total || 1
   //
   const topTokenProfitQuery = useTopTokenProfitQuery({
@@ -73,8 +88,7 @@ export default function Leaderboard() {
     chain: CHAIN,
     duration: filterDate,
   })
-  const dataTopTokenProfit = topTokenProfitQuery.data?.data.top_token_profit || []
-  const totalTopTokenProfit = topTokenProfitQuery.data?.data.total || 1
+
   //
 
   const handleChangeTab = (tab: string) => () => {
@@ -82,107 +96,94 @@ export default function Leaderboard() {
   }
 
   return (
-    <div className="w-full h-full">
-      {/* header */}
-      <div className="bg-[url('/assets/images/bg-tabs.svg')] w-full bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start self-stretch px-10 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">
-        <div className="flex relative gap-5 justify-between">
-          <div
-            onClick={handleChangeTab('smart_money')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-neutral-01">
-            <div>Smart Money</div>
-            <div
-              className={cn(
-                'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'smart_money' ? 'bg-amber-200' : ''
-              )}
-            />
+    <div className="w-full h-full flex flex-col gap-2">
+      <CardCommon>
+        <TitleCard
+          iconFirst={<IconRanking />}
+          title="Smart Money Overview"
+          iconSecond={<Info />}
+        >
+          <div className="text-neutral-04 flex items-center gap-4 text-sm">
+            <p>Filter by</p>
+            <p className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent  px-4 py-2 my-auto">
+              Specific Token
+            </p>
+            <SelectDuration duration={filterDate} setDuration={setFilterDate} />
           </div>
-          <div
-            onClick={handleChangeTab('insider_trade')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-gray-500">
-            <div>Insider Trade</div>
-            <div
-              className={cn(
-                'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'insider_trade' ? 'bg-amber-200' : ''
-              )}
-            />
-          </div>
+        </TitleCard>
+        <div className="flex items-center gap-3">
+          <CardContent
+            title="Total Earning"
+            img={<IconActivity />}
+            icon={<IconInfo />}
+            className="bg-[#B5E4CA]/30"
+          >
+            <p className="text-[48px] leading-[48px] text-semantic-success-1 font-semibold">
+              +$7.28M
+            </p>
+          </CardContent>
+          <CardContent
+            title="Top Token Holding by Value"
+            img={<IconBag />}
+            icon={<IconInfo />}
+            className="bg-[#b1e5fc40]"
+          >
+            <p className="text-[48px] leading-[48px] text-semantic-success-1 font-semibold">
+              +$7.28M
+            </p>
+          </CardContent>
+          <CardContent
+            title="Top New Token Holding"
+            img={<IconBag />}
+            icon={<IconInfo />}
+            className="bg-[#F0ECFD]"
+          >
+            <p className="text-[48px] leading-[48px] text-semantic-success-1 font-semibold">
+              +$7.28M
+            </p>
+          </CardContent>
         </div>
+      </CardCommon>
+      <div className="flex items-ceter gap-2">
+        <LastestAiSignal />
+        <ActivitySpotlight />
       </div>
-      <GroupHeader
-        className="mt-4 mx-10"
-        title={
-          tab === 'smart_money'
-            ? 'Smartmoney Leaderboard'
-            : 'Insider Trade(Speculation) Leaderboard'
-        }
-        desc={
-          tab === 'smart_money'
-            ? 'Showcases ranked profiles of Smart Money based on their returns, highlights their most profitable trades, and reveals their recent market moves'
-            : 'Showcases ranked profiles of Insider Trade based on their returns, highlights their most profitable trades, and reveals their recent market moves'
-        }
-        info={
-          tab === 'smart_money'
-            ? ''
-            : 'We do not encourage people to copy trade these individuals because this Insider Trade is just speculation'
-        }>
-        <SelectChain />
-      </GroupHeader>
-      {/* table */}
-      <div className="m-10">
-        <WrapTable
-          icon={<SmartMoneyRankingIcon />}
-          title="Smart Money Ranking"
-          childHeader={<RightGroup />}>
-          <div className="mt-8">
-            <DataTable
-              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-              columns={columnsLeaderboard}
-              data={dataLeaderboard || []}
-              isFetching={leaderboardQuery.isFetching}
-              noneBorder
-              noneBgHeader
-              emptyData="No results."
-            />
-          </div>
-          <PaginationCustom
-            className="mt-8"
-            currentPage={pageLeaderboard}
-            updatePage={(page: number) => setPageLeaderboard(page)}
-            pageSize={10}
-            total={totalLeaderboard}
-            setPage={setPageLeaderboard}
-          />
-        </WrapTable>
+
+      <div className="flex gap-2">
+        <TableInsiderBuy />
+        <TableNewListingBuy />
+        <TableTopBuy />
       </div>
-      <div className="m-10">
-        <WrapTable
-          icon={<SmartMoneyTopPerformingIcon />}
-          title="Smart Money's Top Performing Tokens"
-          childHeader={
-            <DateGroup dataSource={DATA_DATE} active={filterDate} handleActive={setFilterDate} />
-          }>
-          <div className="mt-8">
-            <DataTable
-              className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
-              columns={columnsPerformanceToken}
-              data={dataTopTokenProfit || []}
-              noneBorder
-              noneBgHeader
-              isFetching={topTokenProfitQuery.isFetching}
-              emptyData="No results."
-            />
-          </div>
-          <PaginationCustom
-            className="mt-8"
-            currentPage={pageTopProfit}
-            updatePage={(page: number) => setPageTopProfit(page)}
-            pageSize={10}
-            total={totalTopTokenProfit}
-            setPage={setPageTopProfit}
-          />
-        </WrapTable>
+
+      <TablePerformanceToken />
+    </div>
+  )
+}
+
+const CardContent = ({
+  icon,
+  title,
+  img,
+  children,
+  className,
+}: {
+  icon: ReactNode
+  title: string
+  img: ReactNode
+  children: ReactNode
+  className?: string
+}) => {
+  return (
+    <div className={cn('p-4 rounded-xl w-full', className)}>
+      <div className="flex flex-col gap-4 p-4">
+        <div className="bg-neutral-07 rounded-full w-12 h-12 flex items-center justify-center p-3">
+          {img}
+        </div>
+        <div className="flex items-center gap-1">
+          <p className="text-neutral-05 text-sm font-semibold">{title}</p>
+          {icon}
+        </div>
+        {children}
       </div>
     </div>
   )

@@ -58,7 +58,9 @@ export function WrapLineChart({
               className="object-center w-6 aspect-square"
             />
             <div className="flex gap-1 my-auto">
-              <div className="grow font-bold text-gray-300">{dataTokenInfo?.name}</div>
+              <div className="grow font-bold text-gray-300">
+                {dataTokenInfo?.name}
+              </div>
               <div className="text-gray-400">{dataTokenInfo?.symbol}</div>
             </div>
           </div>
@@ -69,7 +71,9 @@ export function WrapLineChart({
               <p className="text-[28px] font-bold text-[#fefefe]">
                 {valueIndex
                   ? numeral(valueIndex).format('$0,0.[00000000]')
-                  : numeral(dataTokenInfo?.usd_price).format('$0,0.[00000000000]')}
+                  : numeral(dataTokenInfo?.usd_price).format(
+                      '$0,0.[00000000000]',
+                    )}
               </p>
             )}
             {loading ? (
@@ -79,13 +83,18 @@ export function WrapLineChart({
                 <span
                   className={cn(
                     'font-manrope text-title-2',
-                    percentChange > 0 ? 'text-semantic-success-1' : 'text-semantic-error-3'
-                  )}>
+                    percentChange > 0
+                      ? 'text-semantic-success-1'
+                      : 'text-semantic-error-3',
+                  )}
+                >
                   {percentChange.toFixed(2)}%
                 </span>
                 <ArrowUpRight
                   className={
-                    percentChange > 0 ? 'text-semantic-success-1' : 'text-semantic-error-3'
+                    percentChange > 0
+                      ? 'text-semantic-success-1'
+                      : 'text-semantic-error-3'
                   }
                 />
               </div>
@@ -93,7 +102,11 @@ export function WrapLineChart({
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <ModeFilter options={modes} value={mode} onChange={handleModeChange} />
+          <ModeFilter
+            options={modes}
+            value={mode}
+            onChange={handleModeChange}
+          />
         </div>
       </div>
       <div className="h-[400px]">

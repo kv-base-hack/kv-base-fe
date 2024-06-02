@@ -31,6 +31,7 @@ interface DataTableProps<TData, TValue> {
   emptyData: string
   contentClassName?: string
   tableClassName?: string
+  classNameHeader?: string
 }
 
 export function DataTable<TData, TValue>({
@@ -43,6 +44,7 @@ export function DataTable<TData, TValue>({
   emptyData,
   contentClassName,
   tableClassName,
+  classNameHeader,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
 
@@ -60,12 +62,13 @@ export function DataTable<TData, TValue>({
   return (
     <Table className={tableClassName}>
       <TableHeader
-        className={cn(noneBgHeader ? '' : 'bg-neutral-06')}
+        className={cn(noneBgHeader ? '' : 'bg-neutral-04', classNameHeader)}
         style={{
           backgroundColor: noneBgHeader
             ? ''
-            : 'linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 48.44%, rgba(255, 255, 255, 0.02) 100%)',
-        }}>
+            : 'hidden linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 48.44%, rgba(255, 255, 255, 0.02) 100%)',
+        }}
+      >
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
             {headerGroup.headers.map((header) => {
@@ -76,27 +79,28 @@ export function DataTable<TData, TValue>({
                   style={{ width: column.columnDef.size }}
                   key={id}
                   className={cn(
-                    'first-of-type:pl-4 last-of-type:pr-4 h-10  px-1.5',
-                    align === 'end'
-                      ? 'justify-end'
-                      : align === 'center'
-                        ? 'justify-center'
-                        : 'justify-start',
-                    noneBorder ? '' : 'border-t-[0.5px] border-b-[0.5px] border-white/20'
-                  )}>
+                    'first-of-type:pl-4 last-of-type:pr-4 h-10 px-1.5',
+                    noneBorder
+                      ? ''
+                      : 'border-t-[0.5px] border-b-[0.5px] border-white/20',
+                    contentClassName,
+                  )}
+                >
                   {!isPlaceholder && (
                     <div
                       className={cn(
-                        'flex items-center font-normal text-sm gap-1 text-neutral-04',
+                        'flex font-normal items-center text-sm gap-1 text-neutral-04',
                         align === 'end'
-                          ? 'justify-end'
+                          ? 'justify-end '
                           : align === 'center'
-                            ? 'justify-center'
-                            : 'justify-start'
+                          ? 'justify-center'
+                          : 'justify-start',
                       )}
-                      onClick={column.getToggleSortingHandler()}>
-                      {flexRender(column.columnDef.header, getContext())}
-                      {column.getCanSort() && <SortIcon />}
+                    >
+                      <div className="flex items-center gap-1.5">
+                        {flexRender(column.columnDef.header, getContext())}
+                        {column.getCanSort() && <SortIcon />}
+                      </div>
                     </div>
                   )}
                 </TableHead>
@@ -113,13 +117,16 @@ export function DataTable<TData, TValue>({
               data-state={row.getIsSelected() && 'selected'}
               className={cn(
                 rowClassName,
-                index % 2 === 0 ? 'bg-neutral-06/30' : 'bg-transparent',
-                isFetching ? null : 'cursor-pointer hover:bg-neutral-06/10'
-              )}>
+                isFetching ? null : 'cursor-pointer hover:bg-neutral-06/10',
+              )}
+            >
               {row.getVisibleCells().map((cell) => {
                 const align = (cell.column.columnDef as any).align ?? 'left'
                 return (
-                  <TableCell key={cell.id} className="px-1.5 first-of-type:pl-4 last-of-type:pr-4">
+                  <TableCell
+                    key={cell.id}
+                    className="px-1.5 first-of-type:pl-4 last-of-type:pr-4"
+                  >
                     {isFetching ? (
                       <div
                         className={cn(
@@ -127,23 +134,28 @@ export function DataTable<TData, TValue>({
                           align === 'end'
                             ? 'justify-end'
                             : align === 'center'
-                              ? 'justify-center'
-                              : 'justify-start'
-                        )}>
-                        <SkeletonCell width={69} />
+                            ? 'justify-center'
+                            : 'justify-start',
+                        )}
+                      >
+                        <SkeletonCell />
                       </div>
                     ) : (
                       <div
                         className={cn(
-                          'flex items-center w-full',
+                          'flex items-center w-full text-neutral-07 font-semibold text-sm',
                           contentClassName,
                           align === 'end'
                             ? 'justify-end'
                             : align === 'center'
-                              ? 'justify-center'
-                              : 'justify-start'
-                        )}>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                            ? 'justify-center'
+                            : 'justify-start',
+                        )}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
                       </div>
                     )}
                   </TableCell>

@@ -1,20 +1,22 @@
 export interface DataTopTokenProfit {
-  top_token_profit: TopTokenProfit[]
+  top_smart_money_token_profit: TopTokenProfit[]
   total?: number
 }
 
 export interface TopTokenProfit {
-  id: string
   address: string
-  value?: number
+  name: string
   symbol: string
-  gains: number
-  net_flow: number
-  avg_cost: number
   current_price: number
-  realized_percentage: number
+  image_url: string
+  pnl: number
+  avg_cost: number
+  price_change_24h: number
+  liquidity: number
+  market_cap: number
   avg_roi: number
-  image_url?: string
+  realized: number
+  number_of_smart_money?: number
 }
 
 export interface TopTokenProfitResponse {
