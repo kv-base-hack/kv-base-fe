@@ -41,8 +41,6 @@ export const TableTopBuy = () => {
     : dataSMTopTokenBuyQuery.data?.top_buy_by_smart_money || []
   const total = dataSMTopTokenBuyQuery.data?.total_buy || 1
 
-  console.log(data)
-
   const columns: ColumnDef<TopTokenBuy>[] = useMemo(() => {
     return [
       {
@@ -78,7 +76,7 @@ export const TableTopBuy = () => {
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-dark-03">
+                      <div className="text-normal underline">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -89,7 +87,7 @@ export const TableTopBuy = () => {
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-dark-03">
+                    <div className="text-normal underline">
                       {row?.original?.symbol}
                     </div>
                   </div>
