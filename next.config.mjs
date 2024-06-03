@@ -8,7 +8,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/smartmoney-onchain/leaderboard',
+        destination: '/smartmoney-onchain/dashboard',
         permanent: true,
       },
     ]

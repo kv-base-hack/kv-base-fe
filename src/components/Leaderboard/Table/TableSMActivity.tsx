@@ -19,6 +19,7 @@ import {
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
 import { useTopActivityQuery } from '@/query/leaderboard/getTopActivity'
+import { ActiveTab } from '@/types/tabs/TabActivityHeader'
 import { TokenList } from '@/types/tokenList'
 import { TopActivity } from '@/types/topActivity'
 import { nFormatter } from '@/utils/nFormatter'
@@ -29,9 +30,15 @@ import { useAtomValue } from 'jotai'
 import { ExternalLink } from 'lucide-react'
 import moment from 'moment'
 import Link from 'next/link'
-import { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
-export const TableSMActivity = () => {
+interface TrackingTabsProps {
+  activeTab: ActiveTab
+}
+
+export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
+  activeTab,
+}) => {
   const CHAIN = useAtomValue(chainAtom)
   const [pageActivity, setPageActivity] = useState(1)
   const [listToken, setListToken] = useState<TokenList[]>([])
@@ -252,10 +259,18 @@ export const TableSMActivity = () => {
     },
   ]
 
+  const dataSource = useMemo(() => {
+    return activityQuery.isFetching
+      ? [...(Array(10).keys() as any)]
+      : activeTab === 'Smart Money Activity'
+      ? activityQuery.data?.data.activities
+      : []
+  }, [activeTab, activityQuery.data?.data.activities, activityQuery.isFetching])
+
   return (
     <>
       <TitleCard
-        title="Smart Money Activity"
+        title={activeTab}
         iconFirst={<IconPresent />}
         iconSecond={<Info />}
       >
@@ -281,7 +296,7 @@ export const TableSMActivity = () => {
         <DataTable
           className="text-xs font-bold tracking-normal leading-4"
           columns={columns}
-          data={dataActivity}
+          data={dataSource as any}
           isFetching={activityQuery.isFetching}
           noneBorder
           noneBgHeader

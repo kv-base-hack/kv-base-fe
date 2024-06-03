@@ -11,6 +11,15 @@ import { IconInfo } from '../shared/icons/leaderboard/IconInfo'
 import { IconBag } from '../shared/icons/leaderboard/IconBag'
 import { cn } from '@/lib/utils'
 import { DialogSelectToken } from '../common/SelectTokens/DialogSelectTokens'
+import Image from 'next/image'
+
+const TOPTOKEN = [
+  'https://assets.coingecko.com/coins/images/34930/small/GMEstop_%281%29_%281%29.png?1706689237',
+  'https://assets.coingecko.com/coins/images/37853/small/KITTY.jpg?1715778802',
+  'https://assets.coingecko.com/coins/images/37822/small/AMC.png?1715661262',
+  'https://assets.coingecko.com/coins/images/21629/small/solana.jpg?1696520989',
+  'https://assets.coingecko.com/coins/images/33760/small/image.jpg?1702964227',
+]
 
 export const SMMoneyOverview = ({ className }: { className?: string }) => {
   const [filterDate, setFilterDate] = useState<string>('24h')
@@ -48,9 +57,20 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
           icon={<IconInfo />}
           className="bg-[#b1e5fc40]"
         >
-          <p className="text-[48px] leading-[48px] text-semantic-success-1 font-semibold">
-            +$7.28M
-          </p>
+          <div className="flex items-center gap-2">
+            {TOPTOKEN.map((i) => {
+              return (
+                <Image
+                  src={i}
+                  alt=""
+                  width={44}
+                  height={44}
+                  key={i}
+                  className="rounded-full"
+                />
+              )
+            })}
+          </div>
         </CardContent>
         <CardContent
           title="Top New Token Holding"
@@ -58,9 +78,20 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
           icon={<IconInfo />}
           className="bg-[#F0ECFD]"
         >
-          <p className="text-[48px] leading-[48px] text-semantic-success-1 font-semibold">
-            +$7.28M
-          </p>
+          <div className="flex items-center gap-2">
+            {TOPTOKEN.map((i) => {
+              return (
+                <Image
+                  src={i}
+                  alt=""
+                  width={44}
+                  height={44}
+                  key={i}
+                  className="rounded-full"
+                />
+              )
+            })}
+          </div>
         </CardContent>
       </div>
     </CardCommon>

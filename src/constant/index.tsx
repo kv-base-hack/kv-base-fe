@@ -39,7 +39,7 @@ export const SIDEBAR_MENU = () => {
           icon: (
             <LeafTreeLastIcon className="object-contain object-center shrink-0 w-9 aspect-[0.75]" />
           ),
-          href: '/smartmoney-onchain/leaderboard',
+          href: '/leaderboard',
           children: [],
           canNavigate: true,
         },

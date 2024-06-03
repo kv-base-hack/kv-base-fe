@@ -17,15 +17,11 @@ const MENU = [
   },
   {
     url: '/trading-signal',
-    menu: 'Tranding Signal',
+    menu: 'Trading Signal',
   },
   {
     url: '/tracking',
     menu: 'Tracking',
-  },
-  {
-    url: '/activity',
-    menu: 'Activity',
   },
   {
     url: '/leaderboard',
