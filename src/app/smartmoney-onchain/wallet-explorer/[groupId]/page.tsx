@@ -27,6 +27,9 @@ import {
 import ArrowLeftIcon from '@/components/shared/icons/ArrowLeft'
 import ArrowRightIcon from '@/components/shared/icons/ArrowRight'
 import FirstTimeBuyIcon from '@/components/shared/icons/wallet-explorer/FirstTimeBuyIcon'
+import { IconUptrend } from '@/components/shared/icons/IconUptrend'
+import { IconChart } from '@/components/shared/icons/IconChart'
+import { useQuery } from '@tanstack/react-query'
 
 const DUMMY_CHART = [
   [1700582400, 1.2820760583722837],
@@ -83,22 +86,24 @@ export default function WalletExplorerDetail({
 
   const tradeStatisticQuery = useTradeStatisticQuery({
     address: params.groupId,
-    chain: CHAIN,
+    chain: 'solana',
     token_address: '',
     duration: '24h',
   })
 
   const tradeStatistic = tradeStatisticQuery?.data?.data
 
-  const userBalanceQuery = useGetUserBalanceQuery({
-    address: params.groupId,
-    chain: CHAIN,
-  })
-  const userBalance = userBalanceQuery?.data?.data
+  const userBalanceQuery = useQuery(
+    useGetUserBalanceQuery({
+      address: params.groupId,
+      chain: 'solana',
+    }),
+  )
+  const userBalance = userBalanceQuery?.data
 
   const DATA_STATS = [
     {
-      name: 'Most Bought 24h',
+      name: 'New Listing Buy',
       icon: <BoughtIcon />,
       imgUrl: tradeStatistic?.most_buy?.imageUrl,
       title: tradeStatistic?.most_buy?.name,
@@ -113,6 +118,7 @@ export default function WalletExplorerDetail({
       pnl: tradeStatistic?.most_buy_detail?.pnl,
       chain: tradeStatistic?.most_buy?.chain,
       address: tradeStatistic?.most_buy?.tokenAddress,
+      price: tradeStatistic?.most_buy?.usdPrice,
     },
     {
       name: 'Biggest Gainer',
@@ -135,20 +141,21 @@ export default function WalletExplorerDetail({
   // get user info
   const userInfoQuery = useGetUserInfoQuery({
     address: params.groupId,
-    chain: CHAIN,
+    chain: 'solana',
   })
+
   const userInfo = userInfoQuery?.data?.data.user_info
 
   return (
     <div className="w-full h-full pt-2">
-      <div className="flex mx-10 mt-4 gap-4 justify-center self-stretch">
+      <div className="flex mt-4 gap-4 justify-center self-stretch">
         {/* left */}
-        <div className="flex flex-col w-1/2 self-stretch p-5 rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-neutral-07/50 border-white/10 max-w-1/2">
-          <div className="flex gap-2 max-md:flex-wrap">
+        <div className="flex flex-col w-2/3 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
+          <div className="flex gap-6 max-md:flex-wrap">
             <div className="flex gap-2">
               <AvatarIcon className="w-24 aspect-square" />
               <div className="flex flex-col justify-end leading-[160%]">
-                <div className="text-xl font-bold tracking-tight text-white text-opacity-90">
+                <div className="text-xl font-bold tracking-tight text-neutral-04">
                   Whale Untag
                 </div>
                 <div className="flex gap-1 pr-5 mt-2 text-base tracking-normal leading-6 text-gray-400 whitespace-nowrap">
@@ -183,33 +190,54 @@ export default function WalletExplorerDetail({
           </div>
           <div className="flex gap-5 justify-center mt-6 max-md:flex-wrap">
             <div className="flex flex-col">
-              <div className="flex gap-2 text-sm font-medium tracking-normal leading-5 text-white">
-                <TotalBalanceIcon />
+              <div className="flex gap-2 text-xl font-semibold tracking-normal leading-5 text-neutral-07">
+                {/* <TotalBalanceIcon /> */}
                 <div>Total Balance</div>
               </div>
-              <div className="mt-1 text-3xl leading-10 text-white">
+              <div className="mt-1 text-[40px] leading-[48px] font-semibold text-neutral-07">
                 {nFormatter(userBalance?.total_balance || 0)}$
               </div>
             </div>
             <div className="flex items-center justify-end flex-1 gap-5 pl-20 my-auto max-md:flex-wrap">
-              <div className="flex flex-col px-3 whitespace-nowrap">
-                <div className="text-sm leading-5 text-white">3D PnL</div>
-                <div className="mt-1 text-2xl leading-9 text-success-500">
-                  {nFormatter(userInfo?.pnl || 0)}$
+              <div className="flex items-center gap-1">
+                <div className="text-2xl text-black bg-[#B5E4CA] rounded-full w-16 h-16 flex items-center justify-center">
+                  $
+                </div>
+                <div className="flex flex-col whitespace-nowrap">
+                  <div className="text-[15px] leading-6 font-semibold text-neutral-07">
+                    3D PnL
+                  </div>
+                  <div className="mt-1 text-xl leading-9 text-success-500 font-semibold">
+                    {nFormatter(userInfo?.pnl || 0)}$
+                  </div>
                 </div>
               </div>
-              <div className="h-12 w-px bg-neutral-05" />
-              <div className="flex flex-col">
-                <div className="text-sm leading-5 text-white">3D ROI</div>
-                <div className="mt-1 text-2xl leading-9 text-success-500">
-                  {userInfo?.roi_percent.toFixed(2)}%
+              <div className="h-12 w-px bg-neutral-03" />
+              <div className="flex items-center gap-1">
+                <div className="text-2xl text-black bg-[#B1E5FC] rounded-full w-16 h-16 flex items-center justify-center">
+                  <IconUptrend />
+                </div>
+                <div className="flex flex-col">
+                  <div className="text-[15px] leading-6 font-semibold text-neutral-07">
+                    3D ROI
+                  </div>
+                  <div className="mt-1 text-xl leading-9 text-success-500 font-semibold">
+                    {userInfo?.roi_percent.toFixed(2)}%
+                  </div>
                 </div>
               </div>
-              <div className="h-12 w-px bg-neutral-05" />
-              <div className="flex flex-col">
-                <div className="text-sm leading-5 text-white">Volume 24h</div>
-                <div className="mt-1 text-2xl leading-9 text-white">
-                  {nFormatter(userInfo?.volume_24h || 0)}$
+              <div className="h-12 w-px bg-neutral-03" />
+              <div className="flex items-center gap-1">
+                <div className="text-2xl text-black bg-[#B1E5FC] rounded-full w-16 h-16 flex items-center justify-center">
+                  <IconChart />
+                </div>
+                <div className="flex flex-col">
+                  <div className="text-[15px] leading-6 font-semibold text-neutral-07">
+                    Volume 24h
+                  </div>
+                  <div className="mt-1 text-xl leading-9 text-neutral-07 font-semibold">
+                    {nFormatter(userInfo?.volume_24h || 0)}$
+                  </div>
                 </div>
               </div>
             </div>
@@ -225,8 +253,8 @@ export default function WalletExplorerDetail({
           </div>
         </div>
         {/* right */}
-        <div className="w-1/2 relative flex items-center gap-4">
-          <div className="flex w-full flex-col p-4 rounded-2xl border border-solid shadow-lg backdrop-blur-[32px] bg-stone-900 bg-opacity-50 border-white/10">
+        <div className="w-1/3 relative flex items-center gap-4">
+          <div className="flex w-full flex-col p-4 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
             <WalletInfoItemTitle
               name={DATA_STATS[0].name}
               icon={DATA_STATS[0].icon}
@@ -242,6 +270,7 @@ export default function WalletExplorerDetail({
               roi={DATA_STATS[0].roi}
               pnl={DATA_STATS[0].pnl}
               address={DATA_STATS[0].address}
+              price={DATA_STATS[0].price}
             />
             <div className="mt-4" />
             <WalletInfoItemTitle
@@ -261,51 +290,19 @@ export default function WalletExplorerDetail({
               address={DATA_STATS[1].address}
             />
           </div>
-          <div className="flex w-full opacity-10 flex-col p-4 rounded-2xl border border-solid shadow-lg backdrop-blur-[32px] bg-stone-900 bg-opacity-50 border-white/10">
-            <WalletInfoItemTitle
-              name="First Time Buy"
-              icon={<FirstTimeBuyIcon />}
-            />
-            <WalletInfoItem
-              imgUrl={DATA_STATS[0].imgUrl}
-              symbol={DATA_STATS[0].symbol}
-              chain={DATA_STATS[0].title}
-              priceChangeH24={DATA_STATS[0].priceChangeH24}
-              usdPrice={DATA_STATS[0].usdPrice}
-              avg_price={DATA_STATS[0].avg_price}
-              spent={DATA_STATS[0].volume}
-              roi={DATA_STATS[0].roi}
-              pnl={DATA_STATS[0].pnl}
-            />
-            <WalletInfoItem
-              imgUrl={DATA_STATS[1].imgUrl}
-              symbol={DATA_STATS[1].symbol}
-              chain={DATA_STATS[1].title}
-              priceChangeH24={DATA_STATS[1].priceChangeH24}
-              usdPrice={DATA_STATS[1].usdPrice}
-              avg_price={DATA_STATS[1].avg_price}
-              spent={DATA_STATS[1].volume}
-              roi={DATA_STATS[1].roi}
-              pnl={DATA_STATS[1].pnl}
-            />
-            <div className="mt-4 flex w-full items-center justify-between">
-              <ArrowLeftIcon />
-              <ArrowRightIcon />
-            </div>
-          </div>
         </div>
       </div>
       {/* table */}
-      <div className="flex w-auto mx-10 mt-10 gap-4">
-        <div className="w-1/2">
+      <div className="flex w-auto mt-4 gap-4 h-full">
+        <div className="w-2/3">
           <PortfolioComp address={params.groupId} chain={CHAIN} />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/3">
           <Statistic address={params.groupId} chain={CHAIN} />
         </div>
       </div>
       {/* table */}
-      <div className="m-10 mb-0 pb-10">
+      <div className="mt-4 mb-0 pb-10">
         <BigTradeActivity address={params.groupId} chain={CHAIN} />
       </div>
     </div>

@@ -1,11 +1,13 @@
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsBigTradeActivity } from '@/components/common/DataTable/columnsBigTradeActivity'
-import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
+
 import { ImageToken } from '@/components/common/Image/ImageToken'
+import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
+import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import Close from '@/components/shared/icons/Close'
 import { Switch } from '@/components/ui/switch'
 import { useTradeActivityQuery } from '@/query/wallet-explorer/getTradeActivity'
@@ -31,7 +33,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
     action: filterActivity,
     limit: 10,
     start: pageActivity,
-    chain,
+    chain: 'solana',
     address,
     amount_filter: tradeValue?.toString() || '',
     is_big_trade_only: showBigTradeBigger5k,
@@ -75,19 +77,14 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
       }
       childHeader={
         <div className="flex items-center gap-4 max-md:flex-wrap">
-          <div className="my-auto text-base tracking-normal leading-6 text-zinc-50">
-            Filter by
-          </div>
           <div className="flex items-center gap-2">
             <DialogSelectToken
               listToken={listToken}
               setListToken={setListToken}
             >
-              <div className="rounded-3xl h-10 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
-                <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 text-white">
-                  Specific Token
-                </div>
-              </div>
+              <button className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent text-neutral-04 px-4 py-2 my-auto">
+                Specific Token
+              </button>
             </DialogSelectToken>
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
@@ -122,7 +119,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
     >
       <div className="mt-8">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+          className="text-xs font-bold tracking-normal leading-4"
           columns={columnsBigTradeActivity}
           data={dataActivity?.slice(0, 10) || []}
           isFetching={activityQuery.isFetching}
@@ -131,8 +128,8 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
           emptyData="No results."
         />
       </div>
-      <PaginationTable
-        className="mt-8"
+      <PaginationCustom
+        className="mt-4"
         currentPage={pageActivity}
         updatePage={(page: number) => setPageActivity(page)}
         pageSize={10}

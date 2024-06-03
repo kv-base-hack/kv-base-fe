@@ -93,8 +93,8 @@ export function DataTable<TData, TValue>({
                         align === 'end'
                           ? 'justify-end '
                           : align === 'center'
-                            ? 'justify-center'
-                            : 'justify-start',
+                          ? 'justify-center'
+                          : 'justify-start',
                       )}
                     >
                       <div className="flex items-center gap-1.5">
@@ -134,8 +134,8 @@ export function DataTable<TData, TValue>({
                           align === 'end'
                             ? 'justify-end'
                             : align === 'center'
-                              ? 'justify-center'
-                              : 'justify-start',
+                            ? 'justify-center'
+                            : 'justify-start',
                         )}
                       >
                         <SkeletonCell />
@@ -148,8 +148,8 @@ export function DataTable<TData, TValue>({
                           align === 'end'
                             ? 'justify-end'
                             : align === 'center'
-                              ? 'justify-center'
-                              : 'justify-start',
+                            ? 'justify-center'
+                            : 'justify-start',
                         )}
                       >
                         {flexRender(

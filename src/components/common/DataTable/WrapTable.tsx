@@ -24,11 +24,12 @@ export const WrapTable: React.FC<WrapTableProps> = ({
   return (
     <div
       className={cn(
-        'flex flex-col justify-center self-stretch p-6 font-semibold rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-white/10 leading-[160%] max-md:px-5',
-        className
-      )}>
+        'flex flex-col justify-center self-stretch p-6 font-semibold rounded-lg border border-solid shadow-2xl bg-neutral-01 leading-[160%] max-md:px-5',
+        className,
+      )}
+    >
       <div className="flex gap-5 justify-between w-full max-md:flex-wrap max-md:max-w-full">
-        <div className="flex items-center gap-4 my-auto text-xl tracking-tight text-neutral-02">
+        <div className="flex items-center gap-4 my-auto text-xl tracking-tight text-neutral-07">
           {icon ? (
             icon
           ) : colorHeader ? (
@@ -39,7 +40,8 @@ export const WrapTable: React.FC<WrapTableProps> = ({
             {info ? (
               <TooltipCustom
                 className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
-                content={info}>
+                content={info}
+              >
                 <InfoIcon />
               </TooltipCustom>
             ) : null}
