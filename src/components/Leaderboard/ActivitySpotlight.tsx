@@ -11,28 +11,28 @@ import { PaginationCustom } from '../common/Pagination'
 
 const DATA = [
   {
-    url: '/images/leaderboard/1.png',
+    url: '/assets/icons/chain/sui.svg',
     channel: 'Channel 1',
     signal_time: '2024-09-10T13:00:00',
     content:
       'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
   },
   {
-    url: '/images/leaderboard/2.png',
+    url: '/assets/icons/chain/sui.svg',
     channel: 'Channel 2',
     signal_time: '2024-09-10T13:00:00',
     content:
       'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
   },
   {
-    url: '/images/leaderboard/2.png',
+    url: '/assets/icons/chain/ethereum.svg',
     channel: 'Channel 3',
     signal_time: '2024-09-10T13:00:00',
     content:
       'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
   },
   {
-    url: '/images/leaderboard/2.png',
+    url: '/assets/icons/chain/ethereum.svg',
     channel: 'Channel 4',
     signal_time: '2024-09-10T13:00:00',
     content:
@@ -44,7 +44,7 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
   return (
     <CardCommon>
       <TitleCard title="Activity Spotlight by AI" iconFirst={<IconFire />}>
-        <LinkCustom url="/" title="See all" />
+        <LinkCustom url="/activity" title="See all" />
       </TitleCard>
       <div className="flex flex-col justify-between h-full">
         <div className="flex items-center gap-4">
@@ -117,7 +117,9 @@ const Card = ({
         </div>
       </div>
 
-      <div className="text-neutral-07 text-xsm">{item.content}</div>
+      <div className="text-neutral-07 text-xsm line-clamp-4">
+        {item.content}
+      </div>
     </div>
   )
 }
