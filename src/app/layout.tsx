@@ -1,8 +1,7 @@
 import './globals.css'
-import '@rainbow-me/rainbowkit/styles.css'
-
 import { Sora } from 'next/font/google'
 
+import { AI } from './ai/action'
 import { Providers } from '@/components/providers'
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/toaster'
@@ -51,20 +50,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const gtmId = 'G-HKKHKHK'
+  const gtmId = 'G-HJ2P8J9GST'
   return (
     <html lang="en" className={sora.className} suppressHydrationWarning>
       <GoogleTagManager gtmId={gtmId} />
       <body className="antialiased">
         <Toaster />
-        <Providers
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <DefaultLayout>{children}</DefaultLayout>
-        </Providers>
+        <AI>
+          <Providers
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <DefaultLayout>{children}</DefaultLayout>
+          </Providers>
+        </AI>
         <Script
           src="https://terminal.jup.ag/main-v2.js"
           strategy="beforeInteractive"

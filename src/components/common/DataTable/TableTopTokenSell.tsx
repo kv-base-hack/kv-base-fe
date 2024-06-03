@@ -113,7 +113,7 @@ export const TableTopTokenSell = ({
         cell: ({ row }) => {
           const { volume } = row.original
           return (
-            <div className="w-full items-center justify-center text-center text-neutral-03">
+            <div className="w-full items-center justify-center text-center text-neutral-07">
               ${nFormatter(volume)}
             </div>
           )
@@ -163,7 +163,7 @@ export const TableTopTokenSell = ({
         ),
         cell: ({ row }) => {
           const { avg_price } = row.original
-          return <div className="text-neutral-03">{renderPrice(avg_price)}</div>
+          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
         },
         enableSorting: false,
         align: 'center',
@@ -178,7 +178,7 @@ export const TableTopTokenSell = ({
       //   cell: ({ row }) => {
       //     const { current_price } = row.original
       //     return (
-      //       <div className="text-neutral-03">{renderPrice(current_price)}</div>
+      //       <div className="text-neutral-07">{renderPrice(current_price)}</div>
       //     )
       //   },
       //   enableSorting: false,
@@ -205,7 +205,7 @@ export const TableTopTokenSell = ({
                 price_percent_change > 0
                   ? 'text-success-500'
                   : 'text-error-500',
-                price_percent_change === 0 && 'text-neutral-dark-05',
+                price_percent_change === 0 && 'text-neutral-07',
               )}
             >
               {price_percent_change > 0 ? '+' : ''}

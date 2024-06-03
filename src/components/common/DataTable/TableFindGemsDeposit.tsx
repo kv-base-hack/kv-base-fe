@@ -24,9 +24,7 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'id_deposit',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
-            #
-          </div>
+          <div className="text-neutral-04 text-sm not-italic leading-5">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -36,7 +34,7 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'symbol_deposit',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
             Token Name
           </div>
         ),
@@ -54,10 +52,10 @@ export const TableFindGemsDeposit = ({
                       symbol={row?.original?.symbol}
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div className="text-neutral-dark-03 font-bold truncate">
-                        {row?.original?.name}
+                      <div className="text-neutral-07 font-bold truncate">
+                        {row?.original?.network}
                       </div>
-                      <div className="text-normal text-neutral-dark-03">
+                      <div className="font-normal text-neutral-07">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -69,7 +67,7 @@ export const TableFindGemsDeposit = ({
                       symbol={row?.original?.symbol}
                     />
                     <div>{row?.original?.network}</div>
-                    <div className="text-normal text-neutral-dark-03">
+                    <div className="font-normal text-neutral-07">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -82,18 +80,18 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'net_flow_24h',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             CEX Netflow
           </div>
         ),
         cell: ({ row }) => {
           const { net_flow_24h } = row.original
           return net_flow_24h === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(net_flow_24h)}
             </div>
           )
@@ -102,14 +100,14 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'deposit_value',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Deposit Value
           </div>
         ),
         cell: ({ row }) => {
           const { value } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(value)}
             </div>
           )
@@ -118,7 +116,7 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'deposits',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
             # of Deposit
           </div>
         ),
@@ -126,7 +124,7 @@ export const TableFindGemsDeposit = ({
         cell: ({ row }) => {
           const { number_of_deposit } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {nFormatter(number_of_deposit)}
             </div>
           )
@@ -136,14 +134,14 @@ export const TableFindGemsDeposit = ({
         accessorKey: 'price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Price
           </div>
         ),
         cell: ({ row }) => {
           const { current_price } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {renderPrice(current_price)}
             </div>
           )
@@ -153,20 +151,20 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'price_24h',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Price (24h%)
           </div>
         ),
         cell: ({ row }) => {
           const { price_percent_change_24h } = row.original
           return price_percent_change_24h === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-dark-03 text-sm not-italic  leading-5',
+                'text-neutral-07 text-sm not-italic  leading-5',
                 price_percent_change_24h > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -182,20 +180,20 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'oi_1h',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             OI (1h%)
           </div>
         ),
         cell: ({ row }) => {
           const { oi_1h } = row.original
           return oi_1h === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-dark-03 text-sm not-italic  leading-5',
+                'text-neutral-07 text-sm not-italic  leading-5',
                 oi_1h > 0 ? 'text-success-500' : 'text-error-500',
               )}
             >
@@ -212,20 +210,20 @@ export const TableFindGemsDeposit = ({
       {
         accessorKey: 'oi_4h',
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             OI (4h%)
           </div>
         ),
         cell: ({ row }) => {
           const { oi_4h } = row.original
           return oi_4h === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-dark-03 text-sm not-italic leading-5',
+                'text-neutral-07 text-sm not-italic leading-5',
                 oi_4h > 0 ? 'text-success-500' : 'text-error-500',
               )}
             >
@@ -240,14 +238,14 @@ export const TableFindGemsDeposit = ({
         accessorKey: 'market_cap',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Marketcap
           </div>
         ),
         cell: ({ row }) => {
           const { market_cap } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(market_cap)}
             </div>
           )

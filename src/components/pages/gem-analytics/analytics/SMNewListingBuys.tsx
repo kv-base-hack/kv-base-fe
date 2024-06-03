@@ -73,7 +73,7 @@ export const GemAnalyticsSMNewListingBuy = () => {
                           item.price_change_24h > 0
                             ? 'text-success-500'
                             : 'text-error-500',
-                          item.price_change_24h === 0 && 'text-neutral-dark-03',
+                          item.price_change_24h === 0 && 'text-neutral-07',
                         )}
                       >
                         {item.price_change_24h !== 0 &&

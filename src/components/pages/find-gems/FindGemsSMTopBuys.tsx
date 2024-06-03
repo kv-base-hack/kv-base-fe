@@ -1,42 +1,43 @@
+import { chainAtom } from '@/atom/chain'
 import { CardCommon } from '@/components/common/Card/CardCommon'
 import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
+import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { LinkCustom } from '@/components/common/Link'
 import { SelectDuration } from '@/components/common/SelectDuration'
 import Info from '@/components/shared/icons/Info'
-import { IconInsider } from '@/components/shared/icons/leaderboard/IconInsider'
-import { useGetInsiderBuyQuery } from '@/query/leaderboard/getInsiderBuy'
+import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
+import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
+import SmartMoneyTopBuyIcon from '@/components/shared/icons/dashboard/SmartMoneyTopBuyIcon'
+import { cn } from '@/lib/utils'
+import { useGetTopTokenBuy } from '@/query/onchain-signal/getTopTokenBuy'
 import { nFormatter } from '@/utils/nFormatter'
 import { useQuery } from '@tanstack/react-query'
 import { ColumnDef } from '@tanstack/react-table'
+import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
-import { chainAtom } from '@/atom/chain'
-import { useAtomValue } from 'jotai'
-import { PaginationCustom } from '@/components/common/Pagination'
 
-export const TableInsiderBuy = () => {
+export const TableFindGemsSMTopBuys = () => {
   const [duration, setDuration] = useState('24h')
-  const [page, setPage] = useState(1)
-  const [perPage] = useState(5)
+  const [page] = useState(1)
+  const [perPage] = useState(3)
   const [sortBy, setSortBy] = useState('')
   const CHAIN = useAtomValue(chainAtom)
 
-  const insiderBuyQuery = useQuery({
-    ...useGetInsiderBuyQuery({
+  const smTopBuysQuery = useQuery(
+    useGetTopTokenBuy({
       limit: perPage,
       start: page,
       chain: 'solana',
       duration,
+      action: 'buying',
       sort_by: sortBy,
     }),
-  })
-
-  const dataInsiderBuy = insiderBuyQuery.isFetching
-    ? [...Array(5).keys()]
-    : insiderBuyQuery.data?.unusual_token_buy || []
-  const totalInsiderBuy = insiderBuyQuery.data?.total || 1
+  )
+  const dataSMTopBuys = smTopBuysQuery.isFetching
+    ? [...Array(3).keys()]
+    : smTopBuysQuery.data?.top_buy_by_smart_money || []
 
   const columns: ColumnDef<any>[] = useMemo(() => {
     return [
@@ -96,93 +97,96 @@ export const TableInsiderBuy = () => {
         enableSorting: false,
       },
       {
-        accessorKey: 'token_age',
-        header: () => (
-          <div
-            className="text-center text-neutral-04 w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
-            onClick={() => setSortBy('token_age')}
-            role="button"
-          >
-            Token Age
-          </div>
-        ),
-        align: 'center',
-        cell: ({ row }) => {
-          const { token_age } = row.original
-          return (
-            <div className="w-full text-center text-neutral-07">
-              {token_age}
-            </div>
-          )
-        },
-      },
-      {
-        accessorKey: 'total_spent',
+        accessorKey: 'value',
         header: () => {
           return (
-            <div role="button" onClick={() => setSortBy('total_spent')}>
-              Total Spent
+            <div role="button" onClick={() => setSortBy('value')}>
+              Value
             </div>
           )
         },
         cell: ({ row }) => {
-          const { total_spent } = row.original
-          return <div>{nFormatter(total_spent)}</div>
+          const { usdt_amount } = row.original
+          return <div>{nFormatter(usdt_amount)}</div>
         },
       },
       {
-        accessorKey: 'roi',
+        accessorKey: 'balance_change_percent',
         header: () => (
           <div
-            onClick={() => setSortBy('roi')}
-            className="whitespace-nowrap"
+            className="w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            onClick={() => setSortBy('balance_change')}
             role="button"
           >
-            ROI
+            Balance Change
           </div>
         ),
         cell: ({ row }) => {
-          const { roi } = row.original
-          return (
-            <div className="text-semantic-success-1">
-              {roi ? `${roi.toFixed(2)}%` : '-'}
+          const { balance_change_percent } = row.original
+          return balance_change_percent ? (
+            <div
+              className={cn(
+                'leading-[140%] flex items-center',
+                balance_change_percent > 0
+                  ? 'text-success-500'
+                  : 'text-error-500',
+                balance_change_percent === 0 && 'text-neutral-03',
+              )}
+            >
+              {balance_change_percent !== 0 && balance_change_percent > 0 ? (
+                <PercentUpIcon />
+              ) : (
+                <PercentDownIcon />
+              )}
+              {balance_change_percent.toFixed(2)}%
             </div>
+          ) : (
+            <div className="text-center w-full">-</div>
           )
         },
+      },
+      {
+        accessorKey: 'buyer_count',
+        header: () => (
+          <div className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+            # of SM Buy
+          </div>
+        ),
         align: 'center',
+        cell: ({ row }) => {
+          const { number_of_smart_money, address } = row.original
+          return (
+            <DialogNumberOfSmartMoney
+              number={number_of_smart_money}
+              address={address}
+              type="trade"
+              duration={duration}
+            />
+          )
+        },
+        enableSorting: false,
       },
     ]
-  }, [page, perPage])
+  }, [duration, page, perPage])
 
   return (
     <CardCommon>
       <TitleCard
-        iconFirst={<IconInsider />}
-        title="Insider Buy"
+        iconFirst={<SmartMoneyTopBuyIcon />}
+        title="SM Top Buys"
         iconSecond={<Info />}
       >
-        <div className="flex items-center gap-2">
-          <SelectDuration duration={duration} setDuration={setDuration} />
-          <LinkCustom url="/" title="Detail" />
-        </div>
+        <SelectDuration duration={duration} setDuration={setDuration} />
       </TitleCard>
       <div className="overflow-x-auto">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
           columns={columns}
-          data={dataInsiderBuy}
-          isFetching={insiderBuyQuery.isFetching}
+          data={dataSMTopBuys}
+          isFetching={smTopBuysQuery.isFetching}
           noneBorder
           noneBgHeader
           emptyData="No results."
-        />
-        <PaginationCustom
-          className="mt-2"
-          currentPage={page}
-          updatePage={(page: number) => setPage(page)}
-          pageSize={perPage}
-          total={totalInsiderBuy}
-          setPage={setPage}
         />
       </div>
     </CardCommon>

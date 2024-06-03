@@ -15,14 +15,14 @@ export const CustomInputFilter = ({
   step?: any
 }) => {
   return (
-    <div className="flex items-center py-2 px-3">
+    <div className="flex items-center bg-neutral-03 rounded-lg py-2 px-3">
       <input
         type={type}
         step={step}
         onChange={onChange}
         value={value.toString()}
         placeholder={placeholder}
-        className="flex flex-1 w-full bg-transparent border-none outline-none text-white"
+        className="flex flex-1 w-full bg-transparent border-none outline-none text-neutral-07"
         {...props}
       />
       <div className="ml-1">{icon}</div>

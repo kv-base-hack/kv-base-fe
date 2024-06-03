@@ -19,6 +19,7 @@ export interface TopCexWithdraw {
   number_of_withdraw: number
   oi_1h: number
   oi_4h: number
+  name: string
 }
 
 export interface FindGemsWithdrawResponse {

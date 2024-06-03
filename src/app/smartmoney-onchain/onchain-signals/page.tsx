@@ -1,293 +1,120 @@
 'use client'
 
-import { DataTable } from '@/components/common/DataTable'
-import { columnsActivity } from '@/components/common/DataTable/columnsActivity'
-import { columnsPerformanceToken } from '@/components/common/DataTable/columnsPerformanceToken'
+import { TablePerformanceToken } from '@/components/common/DataTable/TablePerformanceToken'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { DateGroup } from '@/components/common/DateGroup'
 import { GroupHeader } from '@/components/common/GroupHeader'
-import { PaginationCustom } from '@/components/common/Pagination'
-import { SelectChain } from '@/components/common/SelectChain'
 import { TopCoin } from '@/components/common/TopCoin'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
-import { cn } from '@/lib/utils'
-import { useTopActivityQuery } from '@/query/onchain-signal/getTopActivity'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
-import { Suspense, useState } from 'react'
+
+import { useEffect, useState } from 'react'
 import SmartMoneyTopPerformingIcon from '@/components/shared/icons/dashboard/SmartMoneyTopPerformingIcon'
-import SmartMoneyActivityIcon from '@/components/shared/icons/dashboard/SmartMoneyActivityIcon'
-import { SelectSmartMoney } from '@/components/common/SelectSmartMoney'
+import { SelectDuration } from '@/components/common/Select/SelectDuration'
 
-const DATA_DATE = [
+import { cn } from '@/lib/utils'
+import { useWindowSize } from 'react-use'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
+
+const TABLET_TAB = [
   {
-    value: '1h',
-    label: '1h',
+    name: 'CEX Withdraw/ Deposit',
+    value: 'cex_withdraw_and_deposit',
   },
   {
-    value: '4h',
-    label: '4h',
+    name: 'SM Top Buys/ Sells',
+    value: 'sm_top_buys_and_sells',
   },
   {
-    value: '24h',
-    label: '1D',
-  },
-  {
-    value: '168h',
-    label: '3D',
+    name: 'Top Performing',
+    value: 'top_performing',
   },
 ]
 
-const DATA_ACTIVITY = [
+const MOBILE_TAB = [
   {
-    value: 'all',
-    label: 'All',
+    name: 'CEX Withdraw',
+    value: 'cex_withdraw',
   },
   {
-    value: 'deposit',
-    label: 'Deposit',
+    name: 'CEX Deposit',
+    value: 'cex_deposit',
   },
   {
-    value: 'withdraw',
-    label: 'Withdraw',
+    name: 'SM Top Buys',
+    value: 'sm_top_buys',
   },
   {
-    value: 'buying',
-    label: 'Buying',
+    name: 'SM Top Sells',
+    value: 'sm_top_sells',
   },
   {
-    value: 'selling',
-    label: 'Selling',
+    name: 'Top Performing',
+    value: 'top_performing',
   },
 ]
+
 export default function OnchainSignals() {
-  const [tab, setTabs] = useState('smart_money')
   const CHAIN = useAtomValue(chainAtom)
+  const { width } = useWindowSize()
 
-  const [pageActivity, setPageActivity] = useState(1)
   const [pageTopProfit, setPageTopProfit] = useState(1)
   const [filterDate, setFilterDate] = useState('24h')
-  const [filterActivity, setFilterActivity] = useState('all')
+  const [sortBy, setSortBy] = useState('')
+  const [tab, setTab] = useState('cex_withdraw_and_deposit')
 
-  const activityQuery = useTopActivityQuery({
-    action: filterActivity,
-    limit: 10,
-    start: pageActivity,
-    chain: CHAIN,
-  })
-  const dataActivity = activityQuery.data?.data.activities || []
-  const totalActivity = activityQuery.data?.data.total || 1
+  useEffect(() => {
+    if (width <= 425) {
+      setTab('cex_withdraw')
+    } else if (width <= 834) {
+      setTab('cex_withdraw_and_deposit')
+    } else {
+      setTab('')
+    }
+  }, [width])
   //
   const topTokenProfitQuery = useTopTokenProfitQuery({
-    limit: 10,
+    limit: 5,
     start: pageTopProfit,
     chain: CHAIN,
     duration: filterDate,
+    sort_by: sortBy,
   })
-  const dataTopTokenProfit =
-    topTokenProfitQuery.data?.data.top_token_profit || []
+  const dataTopTokenProfit = topTokenProfitQuery.isFetching
+    ? [...Array(5).keys()]
+    : topTokenProfitQuery.data?.data.top_smart_money_token_profit || []
   const totalTopTokenProfit = topTokenProfitQuery.data?.data.total || 1
-  //
-  const handleChangeTab = (tab: string) => () => {
-    setTabs(tab)
-  }
 
   return (
     <div className="w-full h-full">
-      {/* header */}
-      <div className="bg-[url('/assets/images/bg-tabs.svg')] w-full bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start self-stretch px-10 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">
-        <div className="flex relative gap-5 justify-between">
-          <div
-            onClick={handleChangeTab('smart_money')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-neutral-01"
-          >
-            <div>Smart Money</div>
-            <div
-              className={cn(
-                'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'smart_money' ? 'bg-amber-200' : '',
-              )}
-            />
-          </div>
-          <div
-            onClick={handleChangeTab('insider_trade')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3 text-gray-500"
-          >
-            <div>Insider Trade</div>
-            <div
-              className={cn(
-                'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'insider_trade' ? 'bg-amber-200' : '',
-              )}
-            />
-          </div>
-        </div>
-      </div>
       <GroupHeader
-        className="mt-4 mx-10"
-        title={
-          tab === 'smart_money'
-            ? 'Smartmoney Onchain Dashboard'
-            : 'InsiderTrade Onchain Dashboard'
-        }
-        desc={
-          tab === 'smart_money'
-            ? ''
-            : 'Insider Trade is an unethical and illegal practice where individuals with access to confidential, material information use it for trading advantage. '
-        }
-        info={
-          tab === 'smart_money'
-            ? ''
-            : 'We do not encourage people to copy trade these individuals because this Insider Trade is just speculation'
-        }
-      >
-        <SelectChain />
-      </GroupHeader>
-      {/* top coin */}
-      <Suspense fallback={<div>Loading...</div>}>
-        {tab === 'smart_money' ? <TopCoin className="mx-10 mt-4" /> : null}
-      </Suspense>
+        className="mt-10 mx-10 hidden lg:block"
+        title="Smart Money Onchain Dashboard"
+      />
       {/* table */}
-      {tab === 'smart_money' ? (
-        <div className="m-10">
+      {width > 834 || (width <= 834 && tab === 'top_performing') ? (
+        <div className="m-0 lg:m-10">
           <WrapTable
             icon={<SmartMoneyTopPerformingIcon />}
-            title="Smart Money's Top Performing Tokens"
+            title="Smart Money Top Performing Tokens"
             childHeader={
-              <DateGroup
-                dataSource={DATA_DATE}
-                active={filterDate}
-                handleActive={setFilterDate}
-              />
+              <div className="flex items-center gap-2">
+                <SelectDuration
+                  duration={filterDate}
+                  setDuration={setFilterDate}
+                />
+              </div>
             }
           >
             <div className="mt-8">
-              <DataTable
-                className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
-                columns={columnsPerformanceToken}
-                data={dataTopTokenProfit || []}
-                isFetching={topTokenProfitQuery.isFetching}
-                noneBorder
-                noneBgHeader
-                emptyData="No results."
-              />
-            </div>
-            <PaginationCustom
-              className="mt-8"
-              currentPage={pageTopProfit}
-              updatePage={(page: number) => setPageTopProfit(page)}
-              pageSize={10}
-              total={totalTopTokenProfit}
-              setPage={setPageTopProfit}
-            />
-          </WrapTable>
-        </div>
-      ) : (
-        <div className="m-10">
-          <WrapTable
-            icon={<SmartMoneyTopPerformingIcon />}
-            title="Insider Trade’s Activity"
-            childHeader={
-              <DateGroup
-                dataSource={DATA_ACTIVITY}
-                active={filterActivity}
-                handleActive={setFilterActivity}
-              />
-            }
-          >
-            <div className="mt-8">
-              <DataTable
-                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                columns={columnsActivity}
-                data={dataActivity}
-                isFetching={activityQuery.isFetching}
-                noneBorder
-                noneBgHeader
-                emptyData="No results."
-              />
-            </div>
-            <PaginationCustom
-              className="mt-8"
-              currentPage={pageActivity}
-              updatePage={(page: number) => setPageActivity(page)}
-              pageSize={10}
-              total={totalActivity}
-              setPage={setPageActivity}
-            />
-          </WrapTable>
-        </div>
-      )}
-      {tab === 'smart_money' ? (
-        <div className="m-10">
-          <WrapTable
-            icon={<SmartMoneyActivityIcon />}
-            title={
-              tab === 'smart_money' ? (
-                <div className="flex items-center gap-4">
-                  <div>Smart Money’s Activity</div>
-                  <SelectSmartMoney
-                    value="All Smart Money"
-                    setValue={() => null}
-                  />
-                </div>
-              ) : (
-                'Insider Trade’s Activity'
-              )
-            }
-            childHeader={
-              <DateGroup
-                dataSource={DATA_ACTIVITY}
-                active={filterActivity}
-                handleActive={setFilterActivity}
-              />
-            }
-          >
-            <div className="mt-8">
-              <DataTable
-                className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-                columns={columnsActivity}
-                data={dataActivity}
-                isFetching={activityQuery.isFetching}
-                noneBorder
-                noneBgHeader
-                emptyData="No results."
-              />
-            </div>
-            <PaginationCustom
-              className="mt-8"
-              currentPage={pageActivity}
-              updatePage={(page: number) => setPageActivity(page)}
-              pageSize={10}
-              total={totalActivity}
-              setPage={setPageActivity}
-            />
-          </WrapTable>
-        </div>
-      ) : (
-        <div className="m-10">
-          <WrapTable
-            icon={<SmartMoneyActivityIcon />}
-            title="Insider Trade's Top Performing Tokens"
-            childHeader={
-              <DateGroup
-                dataSource={DATA_DATE}
-                active={filterDate}
-                handleActive={setFilterDate}
-              />
-            }
-          >
-            <div className="mt-8">
-              <DataTable
-                className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
-                columns={columnsPerformanceToken}
+              <TablePerformanceToken
                 data={dataTopTokenProfit}
                 isFetching={topTokenProfitQuery.isFetching}
-                noneBorder
-                noneBgHeader
-                emptyData="No results."
+                setSortBy={setSortBy}
+                duration={filterDate}
               />
             </div>
-            <PaginationCustom
+            <PaginationTable
               className="mt-8"
               currentPage={pageTopProfit}
               updatePage={(page: number) => setPageTopProfit(page)}
@@ -297,7 +124,41 @@ export default function OnchainSignals() {
             />
           </WrapTable>
         </div>
-      )}
+      ) : null}
+      <div className="hidden md:flex lg:hidden justify-start p-4 items-center text-lg font-medium tracking-tight leading-6 depth-1">
+        {TABLET_TAB.map((item, idx) => (
+          <div
+            className={cn(
+              'cursor-pointer',
+              tab === item.value
+                ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
+                : 'self-stretch my-auto',
+            )}
+            key={idx}
+            onClick={() => setTab(item.value)}
+          >
+            <div className="flex gap-2 px-4 py-1">{item.name}</div>
+          </div>
+        ))}
+      </div>
+      <div className="flex overflow-x-auto md:hidden justify-start p-4 items-center text-lg font-medium tracking-tight leading-6 depth-1">
+        {MOBILE_TAB.map((item, idx) => (
+          <div
+            className={cn(
+              'cursor-pointer whitespace-nowrap',
+              tab === item.value
+                ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
+                : 'self-stretch my-auto',
+            )}
+            key={idx}
+            onClick={() => setTab(item.value)}
+          >
+            <div className="flex gap-2 px-4 py-1">{item.name}</div>
+          </div>
+        ))}
+      </div>
+      {/* top coin */}
+      <TopCoin width={width} tab={tab} className="m-0 lg:mx-10 lg:mt-10" />
     </div>
   )
 }

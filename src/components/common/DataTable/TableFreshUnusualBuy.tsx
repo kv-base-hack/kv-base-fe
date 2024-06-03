@@ -56,7 +56,7 @@ export const TableFreshUnusualBuy = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-dark-03">
+                      <div className="text-normal underline text-neutral-07">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -67,7 +67,7 @@ export const TableFreshUnusualBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-dark-03">
+                    <div className="text-normal underline text-neutral-07">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'total_spent',
         header: () => (
           <div
-            className="w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full text-neutral-04 text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('total_spent')}
             role="button"
           >
@@ -93,7 +93,7 @@ export const TableFreshUnusualBuy = ({
         cell: ({ row }) => {
           const { total_spent } = row.original
           return (
-            <div className="w-full items-center justify-center text-center text-neutral-03">
+            <div className="w-full items-center justify-center text-center text-neutral-07">
               ${nFormatter(total_spent)}
             </div>
           )
@@ -133,7 +133,7 @@ export const TableFreshUnusualBuy = ({
         ),
         cell: ({ row }) => {
           const { avg_price } = row.original
-          return <div className="text-neutral-03">{renderPrice(avg_price)}</div>
+          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
         },
         enableSorting: false,
       },

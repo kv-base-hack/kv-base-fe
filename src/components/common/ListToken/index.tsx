@@ -90,7 +90,7 @@ export const ListToken = () => {
       limit: 10,
       start: page,
       chain: CHAIN,
-      duration: '24h'
+      duration: '24h',
     }),
     enabled: gem === 'top_cex_deposit',
   })

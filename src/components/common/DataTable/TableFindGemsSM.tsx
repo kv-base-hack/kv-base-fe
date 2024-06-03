@@ -26,9 +26,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'id',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
-            #
-          </div>
+          <div className="text-neutral-04 text-sm not-italic leading-5">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -39,7 +37,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'symbol',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
             Token Name
           </div>
         ),
@@ -58,7 +56,7 @@ export const TableFindGemsSM = ({
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
                       <div>{row?.original?.name}</div>
-                      <div className="text-normal text-neutral-dark-03">
+                      <div className="font-normal text-neutral-04">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -77,7 +75,7 @@ export const TableFindGemsSM = ({
                         {row?.original?.name}
                       </div>
                     </TooltipCustom>
-                    <div className="text-normal text-neutral-dark-05">
+                    <div className="text-normal text-neutral-07">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -91,7 +89,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'number_of_buys',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-end text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="text-neutral-04 text-end text-sm not-italic leading-5 whitespace-nowrap">
             # of SM
           </div>
         ),
@@ -100,7 +98,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { number_of_smart_money } = row.original
           return (
-            <div className="text-center text-neutral-dark-05 text-sm not-italic leading-5">
+            <div className="text-center text-neutral-07 text-sm not-italic leading-5">
               {number_of_smart_money}
             </div>
           )
@@ -110,7 +108,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'volume',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Volume
           </div>
         ),
@@ -118,7 +116,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { volume } = row.original
           return (
-            <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(volume)}
             </div>
           )
@@ -127,7 +125,7 @@ export const TableFindGemsSM = ({
       // {
       //   accessorKey: 'balance_24h_change',
       //   header: () => (
-      //     <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+      //     <div className="text-neutral-04 text-sm not-italic leading-5">
       //       24h Balance change
       //     </div>
       //   ),
@@ -139,7 +137,7 @@ export const TableFindGemsSM = ({
       //         className={cn(
       //           'text-left flex items-center justify-start leading-[140%]',
       //           balance_24h_change > 0 ? 'text-success-500' : 'text-error-500',
-      //           balance_24h_change === 0 && 'text-neutral-dark-03',
+      //           balance_24h_change === 0 && 'text-neutral-07',
       //         )}
       //       >
       //         {balance_24h_change !== 0 && balance_24h_change > 0 ? (
@@ -159,7 +157,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'avg_price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Avg Price
           </div>
         ),
@@ -167,7 +165,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { avg_price } = row.original
           return (
-            <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {renderPrice(avg_price)}
             </div>
           )
@@ -177,7 +175,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Price
           </div>
         ),
@@ -185,7 +183,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { current_price } = row.original
           return (
-            <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {renderPrice(current_price)}
             </div>
           )
@@ -195,7 +193,7 @@ export const TableFindGemsSM = ({
         accessorKey: '24h',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-sm not-italic leading-5"
+            className="text-neutral-04 text-sm not-italic leading-5"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -206,13 +204,13 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { price_percent_change_24h } = row.original
           return price_percent_change_24h === 0 ? (
-            <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-dark-05 text-sm not-italic  leading-5',
+                'text-neutral-07 text-sm not-italic  leading-5',
                 price_percent_change_24h > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -228,7 +226,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'liquidity',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-sm not-italic leading-5"
+            className="text-neutral-04 text-sm not-italic leading-5"
             onClick={() => setSort('liquidity')}
             role="button"
           >
@@ -239,7 +237,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { liquidity_usd } = row.original
           return (
-            <div className="text-neutral-dark-05">
+            <div className="text-neutral-07">
               {liquidity_usd ? nFormatter(liquidity_usd) : '-'}
             </div>
           )
@@ -249,7 +247,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'fdv',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-sm not-italic leading-5"
+            className="text-neutral-04 text-sm not-italic leading-5"
             onClick={() => setSort('fdv')}
             role="button"
           >
@@ -260,9 +258,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { fdv } = row.original
           return (
-            <div className="text-neutral-dark-05">
-              {fdv ? nFormatter(fdv) : '-'}
-            </div>
+            <div className="text-neutral-07">{fdv ? nFormatter(fdv) : '-'}</div>
           )
         },
       },
@@ -270,7 +266,7 @@ export const TableFindGemsSM = ({
         accessorKey: 'volume_24h',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-sm not-italic leading-5"
+            className="text-neutral-04 text-sm not-italic leading-5"
             onClick={() => setSort('volume_24h')}
             role="button"
           >
@@ -281,9 +277,7 @@ export const TableFindGemsSM = ({
         cell: ({ row }) => {
           const { volume_24h = 0 } = row.original
           return (
-            <div className="text-neutral-dark-05">
-              ${nFormatter(volume_24h)}
-            </div>
+            <div className="text-neutral-07">${nFormatter(volume_24h)}</div>
           )
         },
       },

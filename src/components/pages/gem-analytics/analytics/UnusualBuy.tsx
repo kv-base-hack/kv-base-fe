@@ -38,11 +38,9 @@ export const GemAnalyticsUnusualBuy = () => {
                 key={index}
                 className="flex animate-pulse items-center justify-start gap-2"
               >
-                <div className="w-3 h-3 bg-neutral-500 rounded-lg">
-                </div>
+                <div className="w-3 h-3 bg-neutral-500 rounded-lg"></div>
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-neutral-500 rounded-full">
-                  </div>
+                  <div className="w-6 h-6 bg-neutral-500 rounded-full"></div>
                   <div className="bg-neutral-500 rounded-lg w-[40px] h-5"></div>
                 </div>
                 <div className="bg-neutral-500 rounded-lg w-full h-5"></div>
@@ -77,7 +75,7 @@ export const GemAnalyticsUnusualBuy = () => {
                           item.price_change_24h > 0
                             ? 'text-success-500'
                             : 'text-error-500',
-                          item.price_change_24h === 0 && 'text-neutral-dark-03',
+                          item.price_change_24h === 0 && 'text-neutral-07',
                         )}
                       >
                         {item.price_change_24h !== 0 &&

@@ -19,6 +19,7 @@ export interface TopCexDeposit {
   number_of_deposit: number
   oi_1h: number
   oi_4h: number
+  name: string
 }
 
 export interface FindGemsDepositResponse {

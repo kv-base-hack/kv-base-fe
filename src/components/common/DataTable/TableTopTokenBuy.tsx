@@ -117,7 +117,7 @@ export const TableTopTokenBuy = ({
         ),
         cell: ({ row }) => {
           const { volume } = row.original
-          return <div className="text-neutral-03">${nFormatter(volume)}</div>
+          return <div className="text-neutral-07">${nFormatter(volume)}</div>
         },
       },
       {
@@ -164,7 +164,7 @@ export const TableTopTokenBuy = ({
         ),
         cell: ({ row }) => {
           const { avg_price } = row.original
-          return <div className="text-neutral-03">{renderPrice(avg_price)}</div>
+          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
         },
         enableSorting: false,
       },

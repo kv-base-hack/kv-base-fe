@@ -141,16 +141,16 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
               movement === 'deposit'
                 ? 'bg-[#F4E7FC]'
                 : movement === 'withdraw'
-                ? 'bg-secondary-4/10'
-                : movement === 'buying'
-                ? 'bg-[#E1F1FF]'
-                : movement === 'selling'
-                ? 'bg-[#FEE6C7]'
-                : movement === 'new_listing_buy'
-                ? 'bg-[#E1FFEF]'
-                : movement === 'new_listing_sell'
-                ? 'bg-[#DC6803]/10'
-                : '',
+                  ? 'bg-secondary-4/10'
+                  : movement === 'buying'
+                    ? 'bg-[#E1F1FF]'
+                    : movement === 'selling'
+                      ? 'bg-[#FEE6C7]'
+                      : movement === 'new_listing_buy'
+                        ? 'bg-[#E1FFEF]'
+                        : movement === 'new_listing_sell'
+                          ? 'bg-[#DC6803]/10'
+                          : '',
             )}
           >
             {renderMovementIcon(movement)}
@@ -227,7 +227,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
               price_change_24h > 0
                 ? 'text-semantic-success-1'
                 : 'text-semantic-error-1',
-              price_change_24h === 0 && 'text-neutral-dark-03',
+              price_change_24h === 0 && 'text-neutral-07',
             )}
           >
             {price_change_24h !== 0 && price_change_24h > 0 ? (

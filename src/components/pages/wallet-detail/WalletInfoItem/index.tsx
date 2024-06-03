@@ -74,7 +74,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 priceChangeH24 && priceChangeH24 > 0
                   ? 'text-success-500'
                   : 'text-error-500',
-                priceChangeH24 === 0 && 'text-neutral-dark-03',
+                priceChangeH24 === 0 && 'text-neutral-07',
               )}
             >
               {priceChangeH24 && priceChangeH24 !== 0 && priceChangeH24 > 0 ? (

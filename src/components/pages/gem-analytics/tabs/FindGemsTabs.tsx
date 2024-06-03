@@ -1,13 +1,13 @@
 import React from 'react'
 import { ActiveTab } from './types'
 import { FindGemsTabTopCexWithdraw } from './FindGemsTabTopCexWithdraw'
-import { FilterValue } from '@/components/common/Dialog/DialogFilterSpecificToken'
 import { FindGemsTabSmartHolding } from './FindGemsTabSmartHolding'
 import { FindGemsTabTopBuys } from './FindGemsTabTopBuys'
 import { FindGemsTabTopSells } from './FindGemsTabTopSells'
 import { FindGemsTabSMNewListingsBuy } from './FindGemsTabSMNewListingsBuy'
 import { FindGemsTabFreshWalletUnusual } from './FindGemsTabFreshWalletUnusual'
-import FindGemsTabDashboard from './FindGemsTabDashboard'
+import { FindGemsTabTopCexDeposit } from './FindGemsTabTopCexDeposit'
+import { FindGemsTabUnusualCex } from './FindGemsTabUnusualCex'
 
 interface FindGemsTabsProps {
   activeTab: ActiveTab
@@ -17,8 +17,6 @@ export const FindGemsTabs: React.FunctionComponent<FindGemsTabsProps> = ({
   activeTab,
 }) => {
   switch (activeTab) {
-    case 'Dashboard':
-      return <FindGemsTabDashboard />
     case 'SM Holding':
       return <FindGemsTabSmartHolding tab={activeTab} />
     case 'SM Top Buys':
@@ -29,8 +27,12 @@ export const FindGemsTabs: React.FunctionComponent<FindGemsTabsProps> = ({
       return <FindGemsTabSMNewListingsBuy tab={activeTab} />
     case 'Unusual Buying':
       return <FindGemsTabFreshWalletUnusual tab={activeTab} />
-    case 'SM CEX Withdraw':
+    case 'Top CEX Withdraw':
       return <FindGemsTabTopCexWithdraw tab={activeTab} />
+    case 'Top CEX Deposit':
+      return <FindGemsTabTopCexDeposit tab={activeTab} />
+    case 'Unusual CEX':
+      return <FindGemsTabUnusualCex tab={activeTab} />
     default:
       return <FindGemsTabSmartHolding tab={activeTab} />
   }

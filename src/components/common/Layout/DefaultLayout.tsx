@@ -1,7 +1,6 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { LayoutSidebar } from '../LayoutSidebar'
 import { Header } from '../Header'
 
 export const DefaultLayout = ({ children }: { children: ReactNode }) => {
@@ -10,7 +9,7 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
       <div className="flex items-start">
         <div className="w-full">
           <Header />
-          <main className="mt-[100px] px-8 pb-8">{children}</main>
+          <main className="mt-[114px] px-8 pb-8">{children}</main>
         </div>
       </div>
     </div>

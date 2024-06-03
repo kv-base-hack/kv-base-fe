@@ -27,9 +27,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'id',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
-            #
-          </div>
+          <div className="text-neutral-04 text-sm not-italic leading-5">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -40,7 +38,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'symbol',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
             Token Name
           </div>
         ),
@@ -58,10 +56,10 @@ export const TableFindGemsSmartMoneyHolding = ({
                       symbol={row?.original?.symbol}
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div className="truncate font-bold">
+                      <div className="truncate font-bold text-primary">
                         {row?.original?.name}
                       </div>
-                      <div className="text-normal text-neutral-dark-03">
+                      <div className="font-normal text-neutral-04">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -73,7 +71,7 @@ export const TableFindGemsSmartMoneyHolding = ({
                       symbol={row?.original?.symbol}
                     />
                     <div>{row?.original?.network}</div>
-                    <div className="text-normal text-neutral-dark-05">
+                    <div className="text-normal text-neutral-07">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -87,7 +85,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'number_of_smart_money_hold',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             # of SM
           </div>
         ),
@@ -108,7 +106,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'total_spent',
         header: () => (
           <div
-            className="text-neutral-dark-05"
+            className="text-neutral-04"
             onClick={() => setSort('total_spent')}
             role="button"
           >
@@ -125,7 +123,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'avg_price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Avg Price
           </div>
         ),
@@ -133,7 +131,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         cell: ({ row }) => {
           const { avg_price } = row.original
           return (
-            <div className="text-neutral-dark-03 whitespace-nowrap text-sm not-italic leading-5">
+            <div className="text-neutral-07 whitespace-nowrap text-sm not-italic leading-5">
               {renderPrice(avg_price)}
             </div>
           )
@@ -143,14 +141,14 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Price
           </div>
         ),
         cell: ({ row }) => {
           const { current_price } = row.original
           return (
-            <div className="text-neutral-dark-03 whitespace-nowrap text-sm not-italic leading-5">
+            <div className="text-neutral-07 whitespace-nowrap text-sm not-italic leading-5">
               {renderPrice(current_price)}
             </div>
           )
@@ -161,7 +159,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'price_24h',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-sm not-italic leading-5"
+            className="text-neutral-07 text-sm not-italic leading-5"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -172,13 +170,13 @@ export const TableFindGemsSmartMoneyHolding = ({
         cell: ({ row }) => {
           const { price_percent_change_24h } = row.original
           return price_percent_change_24h === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-dark-03 text-sm not-italic  leading-5',
+                'text-neutral-07 text-sm not-italic  leading-5',
                 price_percent_change_24h > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -194,7 +192,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'pnl',
         header: () => (
           <div
-            className="text-neutral-dark-05"
+            className="text-neutral-04"
             onClick={() => setSort('pnl')}
             role="button"
           >
@@ -221,7 +219,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'roi',
         header: () => (
           <div
-            className="text-neutral-dark-05"
+            className="text-neutral-04"
             onClick={() => setSort('roi')}
             role="button"
           >
@@ -247,7 +245,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'realized_percent',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-sm not-italic leading-5"
+            className="text-neutral-04 text-sm not-italic leading-5"
             onClick={() => setSort('realized_percent')}
             role="button"
           >
@@ -257,11 +255,11 @@ export const TableFindGemsSmartMoneyHolding = ({
         cell: ({ row }) => {
           const { realized_percent } = row.original
           return realized_percent === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {realized_percent.toFixed(2)}%
             </div>
           )

@@ -16,6 +16,9 @@ export interface TokenInfo {
   percent_change_1h: number
   percent_change_24h: number
   percent_change_7d: number
+  liquidity: number
+  pair_address: string
+  image_url: string
 }
 
 export interface TokenInfoResponse {
