@@ -1,11 +1,12 @@
 export const tabs = [
-  'Dashboard',
-  'Unusual Buying',
-  'SM New Listing Buys',
   'SM Holding',
   'SM Top Buys',
   'SM Top Sells',
-  'SM CEX Withdraw',
+  'SM New Listing Buys',
+  'Unusual Buying',
+  'Top CEX Withdraw',
+  'Top CEX Deposit',
+  'Unusual CEX'
 ] as const
 
 export type ActiveTab = (typeof tabs)[number]

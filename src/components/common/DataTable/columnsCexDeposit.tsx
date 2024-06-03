@@ -9,7 +9,9 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">#</div>
+      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
+        #
+      </div>
     ),
     cell: ({ row }) => {
       return <div>{row.index + 1}</div>
@@ -25,21 +27,28 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     ),
     cell: ({ row }) => {
       return row?.original?.address ? (
-        <Link href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}>
+        <Link
+          href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+        >
           <div className="flex gap-1.5 w-full items-center justify-start">
             <ImageToken
               symbol={row?.original?.symbol}
               className="w-6 aspect-square fill-blue-950"
             />
-            <div className="text-normal underline text-neutral-dark-03">
+            <div className="text-normal underline text-neutral-07">
               {row?.original?.symbol}
             </div>
           </div>
         </Link>
       ) : (
         <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
-          <ImageToken symbol={row?.original?.symbol} className="w-6 aspect-square fill-blue-950" />
-          <div className="text-normal underline text-neutral-dark-03">{row?.original?.symbol}</div>
+          <ImageToken
+            symbol={row?.original?.symbol}
+            className="w-6 aspect-square fill-blue-950"
+          />
+          <div className="text-normal underline text-neutral-07">
+            {row?.original?.symbol}
+          </div>
         </div>
       )
     },
@@ -54,7 +63,11 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     ),
     cell: ({ row }) => {
       const { value } = row.original
-      return <div className="w-full text-center text-neutral-dark-03">${nFormatter(value)}</div>
+      return (
+        <div className="w-full text-center text-neutral-07">
+          ${nFormatter(value)}
+        </div>
+      )
     },
     enableSorting: false,
   },
@@ -67,7 +80,11 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
     ),
     cell: ({ row }) => {
       const { net_flow } = row.original
-      return <div className="text-neutral-dark-03 text-center w-full">${nFormatter(net_flow)}</div>
+      return (
+        <div className="text-neutral-07 text-center w-full">
+          ${nFormatter(net_flow)}
+        </div>
+      )
     },
     enableSorting: false,
   },
@@ -85,8 +102,9 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
           className={cn(
             'text-right w-full',
             oi > 0 ? 'text-primary-2' : 'text-primary-3',
-            oi === 0 && 'text-neutral-dark-03'
-          )}>
+            oi === 0 && 'text-neutral-07',
+          )}
+        >
           {oi > 0 ? '+' : ''}
           {oi.toFixed(2)}%
         </div>

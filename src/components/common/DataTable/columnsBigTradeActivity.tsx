@@ -157,7 +157,7 @@ export const columnsBigTradeActivity: ColumnDef<TopActivity>[] = [
           className={cn(
             'flex items-center justify-start leading-[140%]',
             price_change_24h > 0 ? 'text-success-500' : 'text-error-500',
-            price_change_24h === 0 && 'text-neutral-dark-03',
+            price_change_24h === 0 && 'text-neutral-07',
           )}
         >
           {price_change_24h !== 0 && price_change_24h > 0 ? (

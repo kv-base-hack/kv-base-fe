@@ -15,6 +15,7 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import Close from '@/components/shared/icons/Close'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import Link from 'next/link'
+import { useQuery } from '@tanstack/react-query'
 
 export default function WalletAnalytics() {
   const CHAIN = useAtomValue(chainAtom)
@@ -24,18 +25,20 @@ export default function WalletAnalytics() {
   const [listToken, setListToken] = useState<TokenList[]>([])
   // const [duration, setDuration] = useState('24h')
   //
-  const leaderboardQuery = useLeaderboardQuery({
-    start: pageLeaderboard,
-    limit: perPageLeaderboard,
-    chain: CHAIN,
-    sortBy,
-    token_addresses:
-      listToken?.map((item) => item.tokenAddress)?.toString() || '',
-  })
-  const dataLeaderboard = leaderboardQuery.isFetching
+  const dataLeaderboardQuery = useQuery(
+    useLeaderboardQuery({
+      chain: 'solana',
+      limit: 10,
+      start: 1,
+      sortBy,
+      token_addresses: '',
+    }),
+  )
+
+  const dataLeaderboard = dataLeaderboardQuery.isFetching
     ? [...(Array(10).keys() as any)]
-    : leaderboardQuery.data?.data.leaderboard?.slice(0, 10) || []
-  const totalLeaderboard = leaderboardQuery.data?.data.total || 1
+    : dataLeaderboardQuery.data?.leaderboard?.slice(0, 10) || []
+  const totalLeaderboard = dataLeaderboardQuery.data?.total || 1
   //
 
   const handleRemoveToken = (item: TokenList) => (e: any) => {
@@ -122,7 +125,7 @@ export default function WalletAnalytics() {
                 setSortBy,
               )}
               data={dataLeaderboard}
-              isFetching={leaderboardQuery.isFetching}
+              isFetching={dataLeaderboardQuery.isFetching}
               noneBorder
               noneBgHeader
               emptyData="No results."

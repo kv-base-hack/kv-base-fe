@@ -3,8 +3,9 @@ import { CreateToolFunction } from './types'
 import { SkeletonMessageSmartMoney } from '@/components/common/Skeleton/SkeletonMessageSmartMoney'
 import { getSmartMoneyTransactions } from '@/components/ai/SmartMoneyTransactions/api'
 import { SmartMoneyTransactions } from '@/components/ai/SmartMoneyTransactions'
-import { nanoid } from '@/lib/utils'
+
 import { BotMessage } from '@/components/common'
+import { nanoid } from '@/lib/utils'
 
 const parameters = z.object({
   symbol: z

@@ -20,6 +20,7 @@ export interface TopUnusualCex {
   oi_4h: number
   action: string
   unusual_percent: number
+  name: string
 }
 
 export interface FindGemsUnusualCexResponse {

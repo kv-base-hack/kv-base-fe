@@ -8,6 +8,8 @@ export interface TopActivity {
   token_address: string
   block_timestamp: string
   block_number: number
+  avg_price: number
+  price_change_24h: number
   sender: string
   time: string
   value_in_token: number
@@ -18,9 +20,7 @@ export interface TopActivity {
   symbol: string
   token_image_url: string
   chainId: string
-  amount_filter: string
-  avg_price: number
-  price_change_24h: number
+  tx: string
   scan_link: string
 }
 

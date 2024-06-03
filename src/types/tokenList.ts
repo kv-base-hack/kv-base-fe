@@ -1,5 +1,6 @@
 export interface DataTokenList {
   tokens: TokenList[]
+  users?: WalletList[]
 }
 
 export interface TokenList {
@@ -12,6 +13,14 @@ export interface TokenList {
   imageUrl: string
   market_cap: number
   price_24h: number
+}
+
+export interface WalletList {
+  address?: string
+  balance: number
+  volume_24h: number
+  roi_percent: number
+  pnl: number
 }
 
 export interface TokenListResponse {

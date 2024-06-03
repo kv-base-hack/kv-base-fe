@@ -1,76 +1,95 @@
 'use client'
 
-import { ContractDetail } from '@/components/common/ContractDetail'
-import { GroupHeader } from '@/components/common/GroupHeader'
-import { News } from '@/components/common/News'
-import { Onchain } from '@/components/common/Onchain'
-import { SelectChain } from '@/components/common/SelectChain'
-import { Technical } from '@/components/common/Technical'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
-import { cn } from '@/lib/utils'
 import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
-import { useCallback, useState } from 'react'
-import { WrapLineChart } from '@/components/common/ChartDetail/WrapLineChart'
-import { useRouter } from 'next/router'
+
+import { useCallback, useMemo, useState } from 'react'
+import { IntegratedTerminal } from '@/components/common/Swap'
+import { useForm } from 'react-hook-form'
+
+import { cn } from '@/lib/utils'
+import CopyIcon from '@/components/shared/icons/token-explorer/CopyIcon'
+import CurrencyIcon from '@/components/shared/icons/token-explorer/CurrencyIcon'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import VolumnIcon from '@/components/shared/icons/token-explorer/VolumnIcon'
+import { TradingSignal } from '@/components/common/TabWalletExplorer/TradingSignal'
+import { ImageToken } from '@/components/common/Image/ImageToken'
+import MenuArrowDownIcon from '@/components/shared/icons/MenuArrowDown'
+import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
+import { Banner } from '@/components/common/Banner'
+import { CopyCustom } from '@/components/common/CopyCustom'
+import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
+import { Transactions } from '@/components/common/TabWalletExplorer/Transactions'
+import { TopSmartMoney } from '@/components/common/TabWalletExplorer/TopSmartMoney'
+import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/ActivityOfTopSmartMoney'
+import { IFormConfigurator, JUPITER_DEFAULT_RPC } from '@/constant'
+import { SwapMode } from '@jup-ag/react-hook'
 
 const DUMMY_CHART = [
-  [1700582400, 1.2820760583722837],
-  [1700596800, 1.293678752367937],
-  [1700611200, 1.267607134722679],
-  [1700625600, 1.2383452159168096],
-  [1700640000, 1.2713647267275487],
-  [1700654400, 1.2849299222571455],
-  [1700668800, 1.2812792112861628],
-  [1700683200, 1.285411599501722],
-  [1700697600, 1.304992187923194],
-  [1700712000, 1.3025387325266873],
-  [1700726400, 1.3101804211155927],
-  [1700740800, 1.3364311866861343],
-  [1700755200, 1.3574309481187357],
-  [1700769600, 1.3420127842033551],
-  [1700784000, 1.3613067184270784],
-  [1700798400, 1.3632495568806504],
-  [1700812800, 1.3694888962263747],
-  [1700827200, 1.3761433222446537],
-  [1700841600, 1.3878710860154058],
-  [1700856000, 1.4008211214315036],
-  [1700870400, 1.3716115965345537],
-  [1700884800, 1.366702161216628],
-  [1700899200, 1.3818821947181688],
-  [1700913600, 1.3814228210891752],
-  [1700928000, 1.3573893566747037],
-  [1700942400, 1.365540065327867],
-  [1700956800, 1.3677196547919548],
-  [1700971200, 1.3684873657780736],
-  [1700985600, 1.367661884521799],
-  [1701000000, 1.378807753589557],
-  [1701014400, 1.371757678574763],
-  [1701028800, 1.3549718023010506],
-  [1701043200, 1.3597396116316751],
-  [1701057600, 1.3689482638454455],
-  [1701072000, 1.3459421066735182],
-  [1701086400, 1.329871889398035],
-  [1701100800, 1.3196045314155003],
-  [1701115200, 1.309947025324972],
-  [1701129600, 1.2978960445684065],
-  [1701144000, 1.3226601297295046],
-  [1701158400, 1.3206287657374929],
-  [1701172800, 1.3115544795935061],
-  [1701187200, 1.3333333333333333],
+  [1700582400, 139.2820760583722837],
+  [1700596800, 139.293678752367937],
+  [1700611200, 139.267607134722679],
+  [1700625600, 139.2383452159168096],
+  [1700640000, 139.2713647267275487],
+  [1700654400, 139.2849299222571455],
+  [1700668800, 139.2812792112861628],
+  [1700683200, 139.285411599501722],
+  [1700697600, 139.304992187923194],
+  [1700712000, 139.3025387325266873],
+  [1700726400, 139.3101804211155927],
+  [1700740800, 139.3364311866861343],
+  [1700755200, 139.3574309481187357],
+  [1700769600, 139.3420127842033551],
+  [1700784000, 139.3613067184270784],
+  [1700798400, 139.3632495568806504],
+  [1700812800, 139.3694888962263747],
+  [1700827200, 139.3761433222446537],
+  [1700841600, 139.3878710860154058],
+  [1700856000, 139.4008211214315036],
+  [1700870400, 139.3716115965345537],
+  [1700884800, 139.366702161216628],
+  [1700899200, 139.3818821947181688],
+  [1700913600, 139.3814228210891752],
+  [1700928000, 139.3573893566747037],
+  [1700942400, 139.365540065327867],
+  [1700956800, 139.3677196547919548],
+  [1700971200, 139.3684873657780736],
+  [1700985600, 139.367661884521799],
+  [1701000000, 139.378807753589557],
+  [1701014400, 139.371757678574763],
+  [1701028800, 139.3549718023010506],
+  [1701043200, 139.3597396116316751],
+  [1701057600, 139.3689482638454455],
+  [1701072000, 139.3459421066735182],
+  [1701086400, 139.329871889398035],
+  [1701100800, 139.3196045314155003],
+  [1701115200, 139.309947025324972],
+  [1701129600, 139.2978960445684065],
+  [1701144000, 139.3226601297295046],
+  [1701158400, 139.3206287657374929],
+  [1701172800, 139.3115544795935061],
+  [1701187200, 139.3333333333333333],
+]
+const TABS = [
+  'Transactions',
+  'Top Smart Money',
+  'Activity of Top Smart Money',
+  'Trading Signal',
 ]
 
-export default function TokenExplorerDetail() {
-  const router = useRouter()
-  const { token } = router.query
-
+export default function TokenExplorerDetail({
+  params,
+}: {
+  params: { token: string }
+}) {
   const [mode, setMode] = useState('1d')
-  const [tab, setTabs] = useState('onchain')
+  const [tab, setTabs] = useState('Transactions')
   const CHAIN = useAtomValue(chainAtom)
 
   //
   const tokenInfoQuery = useTokenInfoQuery({
-    address: token?.toString() || '',
+    address: params.token,
     chain: CHAIN,
   })
   const dataTokenInfo = tokenInfoQuery.data?.data.info
@@ -78,80 +97,185 @@ export default function TokenExplorerDetail() {
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
   }
-
   const handleModeChange = useCallback((mode: string) => {
     setMode(mode)
   }, [])
 
   const renderContentTab = (tab: string) => {
     switch (tab) {
-      case 'onchain':
-        return <Onchain dataTokenInfo={dataTokenInfo} />
-      case 'news':
-        return <News />
-      case 'technical':
-        return <Technical />
+      case 'Transactions':
+        return <Transactions dataTokenInfo={dataTokenInfo} />
+      case 'Top Smart Money':
+        return <TopSmartMoney dataTokenInfo={dataTokenInfo} />
+      case 'Activity of Top Smart Money':
+        return <ActivityOfTopSmartMoney dataTokenInfo={dataTokenInfo} />
+      case 'Trading Signal':
+        return <TradingSignal />
     }
     return null
   }
+
+  const rpcUrl = useMemo(() => JUPITER_DEFAULT_RPC, [])
+
+  const { watch } = useForm<IFormConfigurator>({
+    defaultValues: {
+      simulateWalletPassthrough: false,
+      strictTokenList: true,
+      defaultExplorer: 'Solana Explorer',
+      formProps: {
+        fixedInputMint: false,
+        fixedOutputMint: false,
+        swapMode: SwapMode.ExactIn,
+        fixedAmount: false,
+        initialAmount: '',
+        initialInputMint: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
+        initialOutputMint: params.token,
+      },
+      useUserSlippage: true,
+    },
+  })
+
+  const watchAllFields = watch()
+
   return (
     <div className="w-full h-full pt-2">
-      <GroupHeader className="mt-4 mx-10" title="Token Explorer" desc="">
-        <SelectChain />
-      </GroupHeader>
-      <div className="mx-10 mt-4 flex items-start gap-4 mb-4">
-        <div className="w-7/12 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">
-          <WrapLineChart
-            dataTokenInfo={dataTokenInfo}
-            mode={mode}
-            sparkLineIn7D={DUMMY_CHART}
-            onModeChange={handleModeChange}
-            loading={tokenInfoQuery.isLoading}
+      <div className="m-0 lg:mx-10 mt-4 flex items-start gap-4 mb-4">
+        <div className="w-full lg:w-2/3 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">
+          <div className="border border-white/10 shadow-box backdrop-blur-lg flex flex-col items-start gap-1 lg:gap-6 self-stretch p-5 rounded-lg border-solid">
+            <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">
+              <div className="flex gap-5 justify-between whitespace-nowrap">
+                <DialogSelectToken action="navigate">
+                  <div className="flex cursor-pointer items-center gap-2 px-4 py-2 text-xl font-bold tracking-tight leading-8 text-gray-50 border border-solid backdrop-blur-[50px] bg-gray-300 bg-opacity-10 border-white border-opacity-10 rounded-[360px]">
+                    <div className="flex gap-2">
+                      <ImageToken
+                        className="w-8 h-8 rounded-full"
+                        symbol={dataTokenInfo?.symbol}
+                      />
+                      <div>{dataTokenInfo?.symbol}</div>
+                    </div>
+                    <MenuArrowDownIcon />
+                  </div>
+                </DialogSelectToken>
+                <div className="flex flex-col justify-center my-auto text-sm tracking-normal leading-5">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1 justify-center px-2">
+                      <div className="font-medium text-stone-300">Token:</div>
+                      <div className="text-success-500">{`${params.token?.substring(
+                        0,
+                        6,
+                      )}...${params.token?.slice(-6)}`}</div>
+                    </div>
+                    <CopyCustom
+                      value={params.token}
+                      icon={<CopyIcon className="cursor-pointer" />}
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 px-px mt-1">
+                    <div className="flex items-center gap-1 justify-center px-2">
+                      <div className="font-medium text-stone-300">Pair:</div>
+                      <div className="text-success-500">{`${dataTokenInfo?.pair_address?.substring(
+                        0,
+                        6,
+                      )}...${dataTokenInfo?.pair_address?.slice(-6)}`}</div>
+                    </div>
+                    <CopyCustom
+                      value={dataTokenInfo?.pair_address || ''}
+                      icon={<CopyIcon className="cursor-pointer" />}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-5 justify-between px-5 max-md:flex-wrap">
+                <div className="flex flex-col items-center justify-center whitespace-nowrap">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                    <CurrencyIcon />
+                    <div>Marketcap</div>
+                  </div>
+                  <div className="mt-1 text-base font-medium leading-6 text-neutral-100">
+                    {nFormatter(dataTokenInfo?.market_cap || 0)}
+                  </div>
+                </div>
+                <div className="shrink-0 w-px h-12 rounded-sm bg-white bg-opacity-10" />
+                <div className="flex flex-col justify-center">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                    <VolumnIcon />
+                    <div className="whitespace-nowrap">Volume 24h</div>
+                  </div>
+                  <div className="self-center mt-1 text-base font-medium leading-6 text-gray-50">
+                    {nFormatter(dataTokenInfo?.volume_24h || 0)}
+                  </div>
+                </div>
+                <div className="shrink-0 w-px h-12 rounded-sm bg-white bg-opacity-10" />
+                <div className="flex flex-col items-center justify-center whitespace-nowrap">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                    <CurrencyIcon />
+                    <div>Liquidity</div>
+                  </div>
+                  <div className="mt-1 text-base font-medium leading-6 text-gray-50">
+                    {nFormatter(dataTokenInfo?.liquidity || 0)}
+                  </div>
+                </div>
+                <div className="shrink-0 w-px h-12 rounded-sm bg-white bg-opacity-10" />
+                <div className="flex flex-col items-center justify-center whitespace-nowrap">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                    <CurrencyIcon />
+                    <div>FDV</div>
+                  </div>
+                  <div className="mt-1 text-base font-medium leading-6 text-neutral-100">
+                    {nFormatter(dataTokenInfo?.fully_diluted_valuation || 0)}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full mt-4 lg:mt-0">
+              <WrapLineChart
+                dataTokenInfo={dataTokenInfo}
+                mode={mode}
+                sparkLineIn7D={DUMMY_CHART}
+                onModeChange={handleModeChange}
+                loading={tokenInfoQuery.isLoading}
+                address={params.token}
+              />
+            </div>
+          </div>
+          <div className="border border-white/10 shadow-box backdrop-blur-lg flex flex-col items-start gap-6 self-stretch p-5 rounded-lg border-solid mt-4">
+            <div className="flex gap-4 justify-start items-center self-stretch py-2 text-lg font-medium tracking-tight leading-6 text-center text-neutral-400 max-md:flex-wrap">
+              {TABS.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={handleChangeTab(item)}
+                    className={cn(
+                      'cursor-pointer self-stretch px-3 py-2',
+                      item === tab
+                        ? 'justify-center text-white whitespace-nowrap tab-explorer border border-solid border-white/10'
+                        : 'my-auto',
+                    )}
+                  >
+                    {item}
+                  </div>
+                )
+              })}
+            </div>
+            <div className="lg:hidden">
+              <Banner />
+            </div>
+            {renderContentTab(tab)}
+          </div>
+        </div>
+        <div className="w-1/3 hidden lg:block">
+          <IntegratedTerminal
+            rpcUrl={rpcUrl}
+            formProps={watchAllFields.formProps}
+            simulateWalletPassthrough={watchAllFields.simulateWalletPassthrough}
+            strictTokenList={watchAllFields.strictTokenList}
+            defaultExplorer={watchAllFields.defaultExplorer}
           />
-        </div>
-        <div className="flex flex-col justify-start self-stretch p-6 rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10 w-5/12">
-          <ContractDetail dataTokenInfo={dataTokenInfo} address={token?.toString() || ''} />
-        </div>
-      </div>
-      <div className="mx-10 bg-[url('/assets/images/bg-tabs.svg')] w-auto bg-no-repeat bg-cover flex overflow-hidden relative flex-col justify-center items-start px-5 text-base font-semibold tracking-normal leading-6 whitespace-nowrap min-h-[55px] max-md:px-5">
-        <div className="flex relative gap-5 justify-between">
-          <div
-            onClick={handleChangeTab('onchain')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3">
-            <div className={cn(tab === 'onchain' ? 'text-neutral-01' : 'text-neutral-04')}>
-              Onchain
-            </div>
-            <div
-              className={cn(
-                'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'onchain' ? 'bg-amber-200' : ''
-              )}
-            />
-          </div>
-          <div
-            onClick={handleChangeTab('news')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3">
-            <div className={cn(tab === 'news' ? 'text-neutral-01' : 'text-neutral-04')}>News</div>
-            <div
-              className={cn('shrink-0 mt-4 h-1 rounded-sm', tab === 'news' ? 'bg-amber-200' : '')}
-            />
-          </div>
-          <div
-            onClick={handleChangeTab('technical')}
-            className="cursor-pointer flex flex-col flex-1 justify-between pt-3">
-            <div className={cn(tab === 'technical' ? 'text-neutral-01' : 'text-neutral-04')}>
-              Technical
-            </div>
-            <div
-              className={cn(
-                'shrink-0 mt-4 h-1 rounded-sm',
-                tab === 'technical' ? 'bg-amber-200' : ''
-              )}
-            />
+          <div className="hidden lg:block mt-4">
+            <Banner />
           </div>
         </div>
       </div>
-      <div className="m-10 mt-4">{renderContentTab(tab)}</div>
     </div>
   )
 }

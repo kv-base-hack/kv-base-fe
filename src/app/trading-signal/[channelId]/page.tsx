@@ -212,7 +212,7 @@ export default function TradingSignalDetail({
                   <span className="text-neutral-04">
                     {dataChannelDetail?.total7DaysSignals}
                   </span>{' '}
-                  <span className="text-neutral-03">
+                  <span className="text-neutral-07">
                     Signal in the last 7 days
                   </span>
                 </div>

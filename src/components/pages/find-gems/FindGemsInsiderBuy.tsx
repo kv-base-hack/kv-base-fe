@@ -16,10 +16,10 @@ import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { PaginationCustom } from '@/components/common/Pagination'
 
-export const TableInsiderBuy = () => {
+export const TableFindGemsInsiderBuy = () => {
   const [duration, setDuration] = useState('24h')
-  const [page, setPage] = useState(1)
-  const [perPage] = useState(5)
+  const [page] = useState(1)
+  const [perPage] = useState(3)
   const [sortBy, setSortBy] = useState('')
   const CHAIN = useAtomValue(chainAtom)
 
@@ -34,9 +34,8 @@ export const TableInsiderBuy = () => {
   })
 
   const dataInsiderBuy = insiderBuyQuery.isFetching
-    ? [...Array(5).keys()]
+    ? [...Array(3).keys()]
     : insiderBuyQuery.data?.unusual_token_buy || []
-  const totalInsiderBuy = insiderBuyQuery.data?.total || 1
 
   const columns: ColumnDef<any>[] = useMemo(() => {
     return [
@@ -117,17 +116,17 @@ export const TableInsiderBuy = () => {
         },
       },
       {
-        accessorKey: 'total_spent',
+        accessorKey: 'value',
         header: () => {
           return (
-            <div role="button" onClick={() => setSortBy('total_spent')}>
-              Total Spent
+            <div role="button" onClick={() => setSortBy('value')}>
+              Value
             </div>
           )
         },
         cell: ({ row }) => {
-          const { total_spent } = row.original
-          return <div>{nFormatter(total_spent)}</div>
+          const { usdt_value } = row.original
+          return <div>{nFormatter(usdt_value)}</div>
         },
       },
       {
@@ -161,10 +160,7 @@ export const TableInsiderBuy = () => {
         title="Insider Buy"
         iconSecond={<Info />}
       >
-        <div className="flex items-center gap-2">
-          <SelectDuration duration={duration} setDuration={setDuration} />
-          <LinkCustom url="/" title="Detail" />
-        </div>
+        <SelectDuration duration={duration} setDuration={setDuration} />
       </TitleCard>
       <div className="overflow-x-auto">
         <DataTable
@@ -175,14 +171,6 @@ export const TableInsiderBuy = () => {
           noneBorder
           noneBgHeader
           emptyData="No results."
-        />
-        <PaginationCustom
-          className="mt-2"
-          currentPage={page}
-          updatePage={(page: number) => setPage(page)}
-          pageSize={perPage}
-          total={totalInsiderBuy}
-          setPage={setPage}
         />
       </div>
     </CardCommon>

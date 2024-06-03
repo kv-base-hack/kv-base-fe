@@ -8,13 +8,19 @@ export const useTopActivityQuery = ({
   limit,
   start,
   chain,
+  amount_filter,
+  token_addresses,
+  sort_by,
 }: {
   action: string
   limit: number
   start: number
   chain: string
+  amount_filter: string
+  token_addresses: string
+  sort_by: string
 }) =>
   useQuery({
-    queryKey: [GET_TOP_ACTIVITY, { action, limit, start, chain }],
-    queryFn: () => getTopActivity({ action, limit, start, chain }),
+    queryKey: [GET_TOP_ACTIVITY, { action, limit, start, chain, amount_filter, token_addresses, sort_by }],
+    queryFn: () => getTopActivity({ action, limit, start, chain, amount_filter, token_addresses, sort_by }),
   })
