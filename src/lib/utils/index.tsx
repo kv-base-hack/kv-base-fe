@@ -4,7 +4,6 @@ import { ChatCompletionStream } from 'openai/lib/ChatCompletionStream'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { customAlphabet } from 'nanoid'
-import { ofetch } from 'ofetch'
 
 export const nanoid = customAlphabet(
   '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',

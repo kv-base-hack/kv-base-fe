@@ -40,11 +40,7 @@ export const TopSmartMoney = ({
           Top Smart Money trading
         </div>
         <div className="flex items-center gap-2">
-          <ImageToken
-            className="w-8 h-8"
-            imgUrl={dataTokenInfo?.image_url}
-            symbol={dataTokenInfo?.symbol}
-          />
+          <ImageToken className="w-8 h-8" symbol={dataTokenInfo?.symbol} />
           <div className="text-purple-300">{dataTokenInfo?.symbol}</div>
           <TooltipCustom
             className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"

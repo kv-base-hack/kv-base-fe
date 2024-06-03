@@ -1,6 +1,18 @@
-function Close({ width = 24, height = 24 }) {
+function Close({
+  width = 24,
+  height = 24,
+  className,
+  onclick,
+}: {
+  width?: number
+  height?: number
+  className?: string
+  onclick?: (e: any) => void
+}) {
   return (
     <svg
+      onClick={onclick}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}

@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
 
 type GroupHeaderProps = {
+  icon?: ReactNode
   title: string
   desc?: ReactNode | string
   info?: string
@@ -11,6 +12,7 @@ type GroupHeaderProps = {
 }
 
 export const GroupHeader: React.FC<GroupHeaderProps> = ({
+  icon,
   title,
   desc,
   info,
@@ -19,8 +21,11 @@ export const GroupHeader: React.FC<GroupHeaderProps> = ({
 }) => {
   return (
     <div className={cn('flex flex-col self-stretch', className)}>
-      <div className="flex gap-4 justify-start pr-20 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-        <div className="text-4xl leading-[60px] text-neutral-01 max-md:max-w-full">{title}</div>
+      <div className="flex items-center gap-4 justify-start pr-20 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        {icon}
+        <div className="font-inter text-[40px] leading-[48px] tracking-[-0.8px] font-semibold text-neutral-01 max-md:max-w-full">
+          {title}
+        </div>
         {children}
       </div>
       {desc ? (

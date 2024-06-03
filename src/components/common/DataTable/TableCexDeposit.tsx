@@ -49,7 +49,7 @@ export const TableCexDeposit = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-dark-03">
+                      <div className="text-normal underline text-neutral-07">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -60,7 +60,7 @@ export const TableCexDeposit = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-dark-03">
+                    <div className="text-normal underline text-neutral-07">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export const TableCexDeposit = ({
         cell: ({ row }) => {
           const { value } = row.original
           return (
-            <div className="w-full text-center text-neutral-dark-03">
+            <div className="w-full text-center text-neutral-07">
               ${nFormatter(value)}
             </div>
           )
@@ -98,7 +98,7 @@ export const TableCexDeposit = ({
         cell: ({ row }) => {
           const { net_flow } = row.original
           return (
-            <div className="text-neutral-dark-03 text-center w-full">
+            <div className="text-neutral-07 text-center w-full">
               ${nFormatter(net_flow)}
             </div>
           )
@@ -119,7 +119,7 @@ export const TableCexDeposit = ({
             <div
               className={cn(
                 oi > 0 ? 'text-success-500' : 'text-error-500',
-                oi === 0 && 'text-neutral-dark-03',
+                oi === 0 && 'text-neutral-07',
               )}
             >
               {oi > 0 ? '+' : ''}

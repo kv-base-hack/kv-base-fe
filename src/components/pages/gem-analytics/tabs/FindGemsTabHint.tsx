@@ -9,8 +9,6 @@ export const FindGemsTabHint: React.FC<FindGemsTabHintProps> = ({
   activeTab,
 }) => {
   switch (activeTab) {
-    case 'Dashboard':
-      return ''
     case 'Unusual Buying':
       return `Here is a list of tokens with Unusual buying actions identified by Boltrade's AI`
     case 'SM New Listing Buys':
@@ -21,7 +19,7 @@ export const FindGemsTabHint: React.FC<FindGemsTabHintProps> = ({
       return 'List the top purchases made by smart money'
     case 'SM Top Sells':
       return 'List the top sales made by smart money'
-    case 'SM CEX Withdraw':
+    case 'Top CEX Withdraw':
       return 'List tokens with the highest net withdrawals from centralized exchanges to wallet.'
     default:
       return ''

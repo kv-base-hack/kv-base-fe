@@ -212,7 +212,7 @@ export const TablePerformanceToken = () => {
                 price_change_24h > 0
                   ? 'text-semantic-success-1'
                   : 'text-semantic-error-1',
-                price_change_24h === 0 && 'text-neutral-dark-05',
+                price_change_24h === 0 && 'text-neutral-07',
               )}
             >
               {price_change_24h !== 0 && price_change_24h > 0 ? (
@@ -249,7 +249,7 @@ export const TablePerformanceToken = () => {
         accessorKey: 'number_of_buys',
         header: () => (
           <div
-            className="text-neutral-dark-05 text-end text-sm not-italic leading-5"
+            className="text-neutral-07 text-end text-sm not-italic leading-5"
             onClick={() => setSortBy('number_of_smart_money')}
             role="button"
           >

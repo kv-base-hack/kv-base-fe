@@ -26,9 +26,7 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'id_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
-            #
-          </div>
+          <div className="text-neutral-04 text-sm not-italic leading-5">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -39,7 +37,7 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'symbol_holding',
         enableSorting: false,
         header: () => (
-          <div className="w-full text-neutral-dark-05 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="w-full text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
             Token Name
           </div>
         ),
@@ -57,10 +55,10 @@ export const TableFindGemsWithdraw = ({
                       symbol={row?.original?.symbol}
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div className="truncate font-bold text-neutral-dark-03">
-                        {row?.original?.name}
+                      <div className="truncate font-bold text-primary text-neutral-07">
+                        {row?.original?.network}
                       </div>
-                      <div className="text-normal text-neutral-dark-03">
+                      <div className="font-normal text-neutral-04">
                         {row?.original?.symbol}
                       </div>
                     </div>
@@ -72,7 +70,7 @@ export const TableFindGemsWithdraw = ({
                       symbol={row?.original?.symbol}
                     />
                     <div>{row?.original?.network}</div>
-                    <div className="text-normal text-neutral-dark-03">
+                    <div className="font-normal text-neutral-04">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -86,7 +84,7 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'net_flow_24h_holding',
         header: () => (
           <div
-            className="whitespace-nowrap text-neutral-dark-05 text-sm not-italic leading-5"
+            className="whitespace-nowrap text-neutral-04 text-sm not-italic leading-5"
             onClick={() => setSort('net_flow')}
             role="button"
           >
@@ -96,11 +94,11 @@ export const TableFindGemsWithdraw = ({
         cell: ({ row }) => {
           const { net_flow_24h } = row.original
           return net_flow_24h === 0 ? (
-            <div className=" text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className=" text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
-            <div className=" text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className=" text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(net_flow_24h)}
             </div>
           )
@@ -111,14 +109,14 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'withdraw_value_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Withdraw Value
           </div>
         ),
         cell: ({ row }) => {
           const { value } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(value)}
             </div>
           )
@@ -129,14 +127,14 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'withdrawals_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             # of Withdrawals
           </div>
         ),
         cell: ({ row }) => {
           const { number_of_withdraw } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {nFormatter(number_of_withdraw)}
             </div>
           )
@@ -147,14 +145,14 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'price_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Price
           </div>
         ),
         cell: ({ row }) => {
           const { current_price } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               {renderPrice(current_price)}
             </div>
           )
@@ -165,7 +163,7 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'price_24h_holding',
         header: () => (
           <div
-            className="text-neutral-dark-05 whitespace-nowrap text-sm not-italic leading-5"
+            className="text-neutral-04 whitespace-nowrap text-sm not-italic leading-5"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -195,7 +193,7 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'oi_1h_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             OI (1h%)
           </div>
         ),
@@ -221,20 +219,20 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'oi_4h_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             OI (4h%)
           </div>
         ),
         cell: ({ row }) => {
           const { oi_4h } = row.original
           return oi_4h === 0 ? (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-dark-03 text-sm not-italic leading-5',
+                'text-neutral-07 text-sm not-italic leading-5',
                 oi_4h > 0 ? 'text-success-500' : 'text-error-500',
               )}
             >
@@ -249,14 +247,14 @@ export const TableFindGemsWithdraw = ({
         accessorKey: 'market_cap_holding',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-dark-05 text-sm not-italic leading-5">
+          <div className="text-neutral-04 text-sm not-italic leading-5">
             Marketcap
           </div>
         ),
         cell: ({ row }) => {
           const { market_cap } = row.original
           return (
-            <div className="text-neutral-dark-03 text-sm not-italic leading-5">
+            <div className="text-neutral-07 text-sm not-italic leading-5">
               ${nFormatter(market_cap)}
             </div>
           )

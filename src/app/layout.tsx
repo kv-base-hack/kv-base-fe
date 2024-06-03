@@ -1,8 +1,6 @@
 import './globals.css'
-import '@rainbow-me/rainbowkit/styles.css'
 
-import { Sora } from 'next/font/google'
-
+import { AI } from './ai/action'
 import { Providers } from '@/components/providers'
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/toaster'
@@ -11,17 +9,17 @@ import Script from 'next/script'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const meta = {
-  title: 'Kaivest',
+  title: 'Boltrade',
   description: 'Your personal AI investment assistant.',
 }
 export const metadata: Metadata = {
   ...meta,
   title: {
-    default: 'Kaivest',
-    template: `%s - Kaivest`,
+    default: 'Boltrade',
+    template: `%s - Boltrade`,
   },
   icons: {
-    icon: '/assets/images/logo.svg',
+    icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
@@ -44,27 +42,27 @@ export const viewport = {
   ],
 }
 
-const sora = Sora({ subsets: ['latin'] })
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const gtmId = 'G-HKKHKHK'
+  const gtmId = 'G-HJ2P8J9GST'
   return (
-    <html lang="en" className={sora.className} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <GoogleTagManager gtmId={gtmId} />
       <body className="antialiased">
         <Toaster />
-        <Providers
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <DefaultLayout>{children}</DefaultLayout>
-        </Providers>
+        <AI>
+          <Providers
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <DefaultLayout>{children}</DefaultLayout>
+          </Providers>
+        </AI>
         <Script
           src="https://terminal.jup.ag/main-v2.js"
           strategy="beforeInteractive"

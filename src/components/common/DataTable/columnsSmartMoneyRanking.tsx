@@ -1,190 +1,194 @@
-import { TopUserProfit } from '@/types/topUserProfit'
-import { nFormatter } from '@/utils/nFormatter'
+import CopyIcon from '@/components/shared/icons/token-explorer/CopyIcon'
+import { SmartMoneyForToken } from '@/types/smartMoneyForToken'
+import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
-import Image from 'next/image'
+import moment from 'moment'
+import numeral from 'numeral'
+import { ReactNode } from 'react'
 import Link from 'next/link'
+import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
+import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
+import { cn } from '@/lib/utils'
 
-export const columnsSmartMoneyRanking: ColumnDef<TopUserProfit>[] = [
-  {
-    accessorKey: 'id',
-    header: () => '#',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { id } = row.original
-      return <div>{id}</div>
+export const columnsSmartMoneyRanking = (
+  page: number,
+  perPage: number,
+  tokenNode: ReactNode,
+) => {
+  const columns: ColumnDef<SmartMoneyForToken>[] = [
+    {
+      accessorKey: 'id',
+      header: () => '#',
+      enableSorting: false,
+      cell: ({ row }) => {
+        return <div>{row.index + 1 + (page - 1) * perPage}</div>
+      },
+      size: 50,
     },
-    size: 50,
-  },
-  {
-    accessorKey: 'smart_money',
-    header: () => 'Smart Money',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { smart_money } = row.original
-      return (
-        <Link className="underline" href="/smartmoney-onchain/wallet-explorer/1/deep">
-          {smart_money}
-        </Link>
-      )
+    {
+      accessorKey: 'smart_money',
+      header: 'Smart Money',
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { user_address } = row.original
+        return (
+          <div className="flex items-center truncate w-32 gap-2">
+            <Link
+              className="underline"
+              href={`/smartmoney-onchain/wallet-explorer/${
+                user_address || '1'
+              }`}
+            >
+              {user_address}
+            </Link>
+            <CopyIcon />
+          </div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'badge',
-    header: () => 'Badge',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { badge } = row.original
-      console.log({ badge })
-      return (
-        <div className="flex gap-1 self-stretch pr-5">
-          <Image
-            alt="badge"
-            loading="lazy"
-            src="/assets/images/ranking/gold.png"
-            className="w-6 aspect-[0.93]"
-            width={24}
-            height={24}
-          />
-          <Image
-            alt="badge"
-            loading="lazy"
-            src="/assets/images/ranking/platium.png"
-            className="w-6 aspect-[0.93]"
-            width={24}
-            height={24}
-          />
-          <Image
-            alt="badge"
-            loading="lazy"
-            src="/assets/images/ranking/fire.png"
-            className="w-6 aspect-[0.93]"
-            width={24}
-            height={24}
-          />
-        </div>
-      )
+    {
+      accessorKey: 'roi_3d',
+      header: () => {
+        return (
+          <span>
+            <span>ROI 3D of</span>
+            {tokenNode}
+          </span>
+        )
+      },
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { roi_3d_token = 0 } = row.original
+        return (
+          <div
+            className={roi_3d_token < 0 ? 'text-error-500' : 'text-success-500'}
+          >
+            {(roi_3d_token < 0.001 && roi_3d_token > 0) ||
+            (roi_3d_token > -0.001 && roi_3d_token < 0)
+              ? numeral(roi_3d_token).format('0,0.[0000]%')
+              : `${roi_3d_token?.toFixed(2)}%`}
+          </div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'roi',
-    header: () => 'ROI',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { roi } = row.original
-      return <div className="text-primary-2">{roi ? `${roi}%` : '-'}</div>
+    {
+      accessorKey: 'pnl_3d',
+      header: () => {
+        return (
+          <span>
+            <span>PnL 3D of</span>
+            {tokenNode}
+          </span>
+        )
+      },
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { pnl_3d_token } = row.original
+        return (
+          <div
+            className={pnl_3d_token < 0 ? 'text-error-500' : 'text-success-500'}
+          >
+            {pnl_3d_token ? `$${nFormatter(pnl_3d_token)}` : '-'}
+          </div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'net_profit',
-    header: () => 'Net Profit',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { net_profit } = row.original
-      return <div className="text-primary-2">{net_profit ? `$${nFormatter(net_profit)}` : '-'}</div>
+    {
+      accessorKey: 'total_roi',
+      header: () => 'Total ROI',
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { roi } = row.original
+        return roi ? (
+          <div
+            className={cn(
+              'flex items-center justify-start leading-[140%]',
+              roi > 0 ? 'text-success-500' : 'text-error-500',
+              roi === 0 && 'text-neutral-dark-03',
+            )}
+          >
+            {roi !== 0 && roi > 0 ? <PercentUpIcon /> : <PercentDownIcon />}
+            {roi.toFixed(2)}%
+          </div>
+        ) : (
+          <div className="text-left w-full">-</div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'total_balance',
-    header: () => 'Total Balance',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { total_balance } = row.original
-      return <div>{total_balance ? `$${nFormatter(total_balance)}` : '-'}</div>
+    {
+      accessorKey: 'total_pnl',
+      header: () => 'Total PnL',
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { pnl } = row.original
+        return (
+          <div className={pnl < 0 ? 'text-error-500' : 'text-success-500'}>
+            {pnl ? `$${nFormatter(pnl)}` : '-'}
+          </div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'most_profitable_trade',
-    header: () => 'Most Profitable Trade',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { most_profitable_trade } = row.original
-      return most_profitable_trade ? (
-        <div className="flex gap-3 items-center justify-between text-right">
-          <Image
-            alt="token"
-            loading="lazy"
-            src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
-            width={24}
-            height={24}
-          />
-          <div>{most_profitable_trade}</div>
-        </div>
-      ) : null
+    {
+      accessorKey: 'total_balance',
+      header: () => 'Total Balance',
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { total_balance } = row.original
+        return <div>{total_balance ? `${nFormatter(total_balance)}` : '-'}</div>
+      },
     },
-  },
-  {
-    accessorKey: 'current_largest_position',
-    header: () => 'Current Largest Position',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { current_largest_position } = row.original
-      return current_largest_position ? (
-        <div className="flex gap-3 items-center justify-between text-right">
-          <Image
-            loading="lazy"
-            alt="token"
-            src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
-            width={24}
-            height={24}
-          />
-          <div>{current_largest_position}</div>
-        </div>
-      ) : null
+    {
+      accessorKey: 'balance_of',
+      header: () => <span>Balance of {tokenNode}</span>,
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { balance_of_token } = row.original
+        return (
+          <div>
+            {balance_of_token ? `${nFormatter(balance_of_token)}` : '-'}
+          </div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'most_bought_token_24h',
-    header: () => 'Most Bought Token (24h)',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { most_bought_token_24h } = row.original
-      return most_bought_token_24h ? (
-        <div className="flex gap-3 items-center justify-between text-right">
-          <Image
-            loading="lazy"
-            alt="token"
-            src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
-            width={24}
-            height={24}
-          />
-          <div>{most_bought_token_24h}</div>
-        </div>
-      ) : null
+    {
+      accessorKey: '24h_balance_change',
+      header: () => <span>24h Balance change of {tokenNode}</span>,
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { balance_change_24h } = row.original
+        return balance_change_24h ? (
+          <div
+            className={cn(
+              'flex items-center justify-start leading-[140%]',
+              balance_change_24h > 0 ? 'text-success-500' : 'text-error-500',
+              balance_change_24h === 0 && 'text-neutral-dark-03',
+            )}
+          >
+            {balance_change_24h !== 0 && balance_change_24h > 0 ? (
+              <PercentUpIcon />
+            ) : (
+              <PercentDownIcon />
+            )}
+            {balance_change_24h.toFixed(2)}%
+          </div>
+        ) : (
+          <div className="text-left w-full">-</div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'most_sell_token_24h',
-    header: () => 'Most Sell Token (24h)',
-    enableSorting: false,
-    cell: ({ row }) => {
-      const { most_sell_token_24h } = row.original
-      return most_sell_token_24h ? (
-        <div className="flex gap-3 items-center justify-between text-right">
-          <Image
-            loading="lazy"
-            alt="token"
-            src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
-            width={24}
-            height={24}
-          />
-          <div>{most_sell_token_24h}</div>
-        </div>
-      ) : null
+    {
+      accessorKey: 'number_of_token_trade',
+      enableSorting: false,
+      header: () => <span># of trade {tokenNode}</span>,
+      cell: ({ row }) => {
+        const { number_of_token_trade } = row.original
+        return (
+          <div className="w-full text-center text-neutral-04">
+            {number_of_token_trade}
+          </div>
+        )
+      },
     },
-  },
-  {
-    accessorKey: 'largest_trade',
-    enableSorting: false,
-    header: () => <div className="flex w-full justify-end text-right">Largest Trade</div>,
-    cell: ({ row }) => {
-      const { largest_trade } = row.original
-      return (
-        <div className="flex text-right w-full justify-end text-neutral-04">{largest_trade}</div>
-      )
-    },
-  },
-]
+  ]
+  return columns
+}

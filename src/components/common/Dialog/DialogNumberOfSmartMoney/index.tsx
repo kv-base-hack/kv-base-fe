@@ -137,7 +137,7 @@ export const DialogNumberOfSmartMoney = ({
       <Dialog>
         <DialogTrigger>
           <div
-            className="text-neutral-dark-03 whitespace-nowrap text-sm not-italic leading-5 underline"
+            className="text-neutral-07 whitespace-nowrap text-sm not-italic leading-5 underline"
             onClick={() => setVisible(true)}
           >
             {nFormatter(number)}
