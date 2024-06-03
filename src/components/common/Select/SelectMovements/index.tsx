@@ -73,7 +73,7 @@ export const SelectMovement = ({
   return (
     <Select value={movement} onValueChange={(val: string) => setMovement(val)}>
       <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 border-solid border-neutral-03 rounded-xl bg-transparent  whitespace-nowrap border">
-        <div className="flex items-center gap-2 justify-between">
+        <div className="flex items-center gap-2 justify-between text-neutral-04">
           {renderMovement(movement).icon}
           <div className="grow">{renderMovement(movement).value}</div>
         </div>

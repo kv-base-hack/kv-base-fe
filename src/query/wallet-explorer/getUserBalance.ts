@@ -11,8 +11,10 @@ export const useGetUserBalanceQuery = ({
   address?: string
   addresses?: string
   chain?: string
-}) =>
-  useQuery({
-    queryKey: [GET_USER_BALANCE, { address, addresses, chain }],
-    queryFn: () => getUserBalance({ address, addresses, chain }),
-  })
+}) => ({
+  queryKey: [GET_USER_BALANCE, { address, addresses, chain }],
+  queryFn: async () => {
+    const data = await getUserBalance({ address, addresses, chain })
+    return data.data
+  },
+})

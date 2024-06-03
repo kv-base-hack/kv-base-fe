@@ -81,16 +81,16 @@ export const columnsBigTradeActivity: ColumnDef<TopActivity>[] = [
             movement === 'deposit'
               ? 'bg-secondary-1/10 text-secondary-1'
               : movement === 'withdraw'
-                ? 'bg-secondary-4/10 text-secondary-4'
-                : movement === 'buying'
-                  ? 'bg-success-500/10 text-success-500'
-                  : movement === 'selling'
-                    ? 'bg-error-500/10 text-error-500'
-                    : movement === 'new_listing_buy'
-                      ? 'bg-[#89D36F]/10 text-[#89D36F]'
-                      : movement === 'new_listing_sell'
-                        ? 'bg-[#DC6803]/10 text-[#DC6803]'
-                        : 'bg-success-500/10 text-success-500',
+              ? 'bg-secondary-4/10 text-secondary-4'
+              : movement === 'buying'
+              ? 'bg-success-500/10 text-success-500'
+              : movement === 'selling'
+              ? 'bg-error-500/10 text-error-500'
+              : movement === 'new_listing_buy'
+              ? 'bg-[#89D36F]/10 text-[#89D36F]'
+              : movement === 'new_listing_sell'
+              ? 'bg-[#DC6803]/10 text-[#DC6803]'
+              : 'bg-success-500/10 text-success-500',
           )}
         >
           {renderMovementIcon(movement)}
@@ -182,7 +182,7 @@ export const columnsBigTradeActivity: ColumnDef<TopActivity>[] = [
       const { scan_link } = row.original
       return (
         <a href={scan_link} target="_blank">
-          <ExternalLink className="w-4 h-4 text-neutral-03" />
+          <ExternalLink className="w-4 h-4 text-neutral-07" />
         </a>
       )
     },

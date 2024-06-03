@@ -4,10 +4,12 @@ import {
   Portfolio,
   columnsPortfolio,
 } from '@/components/common/DataTable/columnsPortfolio'
+import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { usePortfolioQuery } from '@/query/wallet-explorer/getPortfolio'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
+import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
 type PortfolioProps = {
@@ -18,13 +20,15 @@ type PortfolioProps = {
 export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   // get data portfolio
   const portfolioQuery = usePortfolioQuery(address)
-  const portfolio = (portfolioQuery.data as Portfolio[]) || []
+  const portfolio = (portfolioQuery.data as any) || []
   // get user balance
-  const userBalanceQuery = useGetUserBalanceQuery({
-    address,
-    chain,
-  })
-  const userBalance = userBalanceQuery?.data?.data
+  const userBalanceQuery = useQuery(
+    useGetUserBalanceQuery({
+      address,
+      chain: 'solana',
+    }),
+  )
+  const userBalance = userBalanceQuery?.data
 
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
@@ -47,11 +51,15 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
     : getVisibleItems() || []
 
   return (
-    <WrapTable className="justify-start" icon={<AssetsIcon />} title="Assets">
-      <div className="mt-8">
+    <WrapTable
+      className="justify-start h-full"
+      icon={<AssetsIcon />}
+      title="Assets"
+    >
+      <div className="mt-4 flex flex-col justify-between h-full">
         {portfolio ? (
           <DataTable
-            className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+            className="text-xs font-bold tracking-normal leading-4 text-neutral-07"
             columns={columnsPortfolio}
             data={dataSource}
             noneBorder
@@ -60,8 +68,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
             isFetching={userBalanceQuery.isFetching}
           />
         ) : null}
-        <PaginationTable
-          className="mt-8"
+        <PaginationCustom
           currentPage={currentPage}
           updatePage={(page: number) => handlePageChange(page)}
           pageSize={itemsPerPage}
