@@ -1,4 +1,5 @@
 import './globals.css'
+import { Sora } from 'next/font/google'
 
 import { AI } from './ai/action'
 import { Providers } from '@/components/providers'
@@ -9,17 +10,17 @@ import Script from 'next/script'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const meta = {
-  title: 'Boltrade',
+  title: 'Kaivest',
   description: 'Your personal AI investment assistant.',
 }
 export const metadata: Metadata = {
   ...meta,
   title: {
-    default: 'Boltrade',
-    template: `%s - Boltrade`,
+    default: 'Kaivest',
+    template: `%s - Kaivest`,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/assets/images/logo.svg',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
@@ -42,6 +43,8 @@ export const viewport = {
   ],
 }
 
+const sora = Sora({ subsets: ['latin'] })
+
 export default function RootLayout({
   children,
 }: {
@@ -49,7 +52,7 @@ export default function RootLayout({
 }) {
   const gtmId = 'G-HJ2P8J9GST'
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={sora.className} suppressHydrationWarning>
       <GoogleTagManager gtmId={gtmId} />
       <body className="antialiased">
         <Toaster />
