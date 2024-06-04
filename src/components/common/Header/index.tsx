@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ButtonConnectWallet } from '../ConnectWallet'
+import { ConnectButton } from '@suiet/wallet-kit'
+import { ConnectSuiWalletButton } from '../ConnectWalletButton'
 
 const MENU = [
   {
@@ -82,7 +84,7 @@ export const Header = () => {
           <div className="flex gap-4 justify-between items-stretch">
             <SelectChain size="lg" showName={false} />
           </div>
-          {/* <ButtonConnectWallet /> */}
+          <ConnectSuiWalletButton />
         </div>
       </div>
     </div>

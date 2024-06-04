@@ -9,11 +9,14 @@ TimeAgo.addDefaultLocale(en)
 
 import { TooltipProvider } from '@/components/ui/tooltip'
 
-import { QueryClient, QueryClientProvider, keepPreviousData } from '@tanstack/react-query'
+import {
+  QueryClient,
+  QueryClientProvider,
+  keepPreviousData,
+} from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import dynamic from 'next/dynamic'
-import { WagmiProvider } from 'wagmi'
-import { configWallet } from '@/constant/config-wallet'
+import { WalletProvider } from '@suiet/wallet-kit'
 
 function makeQueryClient() {
   return new QueryClient({
@@ -44,9 +47,11 @@ function getQueryClient() {
 }
 
 const ReactQueryDevtoolsProduction = dynamic(() =>
-  import('@tanstack/react-query-devtools/build/modern/production.js').then((d) => ({
-    default: d.ReactQueryDevtools,
-  }))
+  import('@tanstack/react-query-devtools/build/modern/production.js').then(
+    (d) => ({
+      default: d.ReactQueryDevtools,
+    }),
+  ),
 )
 
 export function Providers({ children, ...props }: ThemeProviderProps) {
@@ -59,7 +64,9 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider {...props}>
       <QueryClientProvider client={queryClient}>
-        <TooltipProvider>{children}</TooltipProvider>
+        <WalletProvider>
+          <TooltipProvider>{children}</TooltipProvider>
+        </WalletProvider>
         <ReactQueryDevtools initialIsOpen={false} />
         {showDevtools && (
           <React.Suspense fallback={null}>
