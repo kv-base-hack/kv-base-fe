@@ -1,4 +1,5 @@
 import './globals.css'
+import '@suiet/wallet-kit/style.css'
 import { Sora } from 'next/font/google'
 
 import { AI } from './ai/action'
