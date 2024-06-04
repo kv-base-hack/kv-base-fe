@@ -10,17 +10,17 @@ export const DialogAiAnalysis = ({ item }: { item: DexTradingSignalInfo }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="p-px hover:bg-gradient-to-r from-[#9945FF] to-[#14F195] bg-white/10 rounded-[20px] w-full transition-all duration-300 ease-in-out">
-          <button className="py-2 w-full border border-transparent rounded-[20px] backdrop-blur-[32px] text-base bg-[#1e1e1e]">
+        <button className="py-2 w-full border border-transparent font-semibold rounded-[48px] backdrop-blur-[32px] text-base text-neutral-07 bg-[#D8F0FF]">
+          <div className=" hover:scale-110 transition-all duration-300">
             AI Analysis
-          </button>
-        </div>
+          </div>
+        </button>
       </DialogTrigger>
       <DialogContent className="max-h-[70%] max-w-[1000px] overflow-auto top-[450px]">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-1">
             <IconAiAnalysis />
-            <p className="text-neutral-200 text-xl font-medium">
+            <p className="text-neutral-07 text-xl font-medium">
               AI Analysis of
             </p>
             <ImageToken

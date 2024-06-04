@@ -27,11 +27,7 @@ export const DialogUsers = ({
       {
         accessorKey: 'id',
         cell: ({ row }) => {
-          return (
-            <div className="text-base text-neutral-400 font-semibold">
-              {row.index + 1}
-            </div>
-          )
+          return <div className="text-base font-semibold">{row.index + 1}</div>
         },
         size: 50,
       },
@@ -41,7 +37,7 @@ export const DialogUsers = ({
           const address = row.original.useraddress
           return (
             <Link href={`/smartmoney-onchain/wallet-explorer/${address}`}>
-              <div className="text-base text-neutral-300 font-semibold flex items-center gap-3">
+              <div className="text-base font-semibold flex items-center gap-3">
                 <p className="hover:underline">
                   {address?.substring(0, 6)}..
                   {address?.substring(address?.length - 4, address?.length)}
@@ -107,12 +103,12 @@ export const DialogUsers = ({
         </div>
       </DialogTrigger>
       <DialogContent className="max-w-[617px] !p-0 !rounded-xl !border-none">
-        <div className="flex flex-col gap-4 p-4 bg-[#1e1e1e80] rounded-xl">
+        <div className="flex flex-col gap-4 p-4 bg-neutral-01 rounded-xl">
           <div className="relative">
-            <p className="text-neutral-02 text-xl font-medium text-center">
+            <p className="text-neutral-07 text-xl font-medium text-center">
               List of Wallet
             </p>
-            <DialogClose className="absolute top-0.5 right-0">
+            <DialogClose className="absolute top-0.5 right-0 text-neutral-07">
               <Close />
             </DialogClose>
           </div>

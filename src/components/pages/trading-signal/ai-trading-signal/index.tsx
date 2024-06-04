@@ -1,6 +1,9 @@
+import { CardCommon } from '@/components/common/Card/CardCommon'
 import { DialogAiAnalysis } from '@/components/common/Dialog/DialogAiAnalysis'
 import { DialogUsers } from '@/components/common/Dialog/DialogListUsers'
+
 import { ImageToken } from '@/components/common/Image/ImageToken'
+import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import Skeleton from '@/components/common/Skeleton/Skeleton'
 import SkeletonCell from '@/components/common/Skeleton/SkeletonCell'
@@ -71,20 +74,20 @@ export const AiTradingSignal = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <p className="text-neutral-02 text-[32px] leading-[48px] font-normal">
+    <CardCommon>
+      <p className="text-neutral-07 text-[32px] leading-[48px] font-normal">
         Trading Signal By AI
       </p>
-      <div className="flex overflow-y-auto gap-4 self-stretch py-2 font-medium tracking-tight leading-8 text-center text-neutral-03 max-md:flex-wrap max-md:pr-5">
+      <div className="flex overflow-y-auto gap-4 self-stretch py-2 font-medium tracking-tight leading-8 text-center max-md:flex-wrap max-md:pr-5">
         {tabsSignal.map((item, index) => (
           <div
             key={index}
             onClick={() => handleActiveTab(item)}
             className={cn(
-              'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 rounded-[20px] !text-xl not-italic font-medium leading-8',
+              'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 rounded-lg !text-xl not-italic font-medium leading-8 border border-solid hover:bg-neutral-03 hover:text-neutral-07',
               activeTab === item.tab
-                ? 'tab-find-gems text-white border border-solid border-white/10'
-                : 'bg-neutral-09/70 text-neutral-400 border border-solid border-transparent',
+                ? 'tab-find-gems text-neutral-07 bg-neutral-03 border-[#FEFEFE]'
+                : 'text-neutral-04 border-transparent',
             )}
           >
             {item.tab}
@@ -101,7 +104,7 @@ export const AiTradingSignal = () => {
           />
         ))}
       </div>
-      <PaginationTable
+      <PaginationCustom
         className={cn(
           'mt-4',
           dataDexTradingSignalQuery.isFetching ? 'hidden' : 'visible',
@@ -112,7 +115,7 @@ export const AiTradingSignal = () => {
         total={total}
         setPage={setPage}
       />
-    </div>
+    </CardCommon>
   )
 }
 
@@ -137,7 +140,7 @@ const Card = ({
   }
 
   return (
-    <div className="p-6 flex flex-col gap-4 bg-[#1e1e1e80] backdrop-blur-[32px] border border-white/10 rounded-2xl w-full">
+    <div className="p-6 flex flex-col gap-4 bg-transparent border border-[#EFEFEF] shadow-chat-ai rounded-2xl w-full">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2">
           {loading ? (
@@ -163,7 +166,7 @@ const Card = ({
                     target="_blank"
                     className="flex items-center gap-1 font-bold text-xl text-neutral-400 hover:underline"
                   >
-                    <p className="text-neutral-200">{item.symbol}</p>
+                    <p className="text-neutral-07">{item.symbol}</p>
                     <p className="w-[200px] truncate">{item.name}</p>
                   </a>
                 </Link>
@@ -177,7 +180,7 @@ const Card = ({
                   <div>
                     <IconClockCounter />
                   </div>
-                  <p className="text-base text-neutral-400 text-medium">
+                  <p className="text-base text-neutral-04 text-medium">
                     Created {moment(item.signal_time).fromNow()}
                   </p>
                 </div>
@@ -199,7 +202,7 @@ const Card = ({
           {loading ? (
             <Skeleton />
           ) : (
-            <p className="text-xl font-normal text-[#6F767E]">Entry</p>
+            <p className="text-xl font-normal text-neutral-04">Entry</p>
           )}
           {loading ? (
             <Skeleton />
@@ -213,7 +216,7 @@ const Card = ({
           {loading ? (
             <Skeleton />
           ) : (
-            <p className="text-xl font-normal text-[#6F767E]">Target</p>
+            <p className="text-xl font-normal text-neutral-04">Target</p>
           )}
           {loading ? (
             <Skeleton />
@@ -227,7 +230,7 @@ const Card = ({
           {loading ? (
             <Skeleton />
           ) : (
-            <p className="text-xl font-normal text-[#6F767E]"># of Wallet</p>
+            <p className="text-xl font-normal text-neutral-04"># of Wallet</p>
           )}
           {loading ? (
             <Skeleton />
@@ -241,12 +244,12 @@ const Card = ({
           {loading ? (
             <Skeleton />
           ) : (
-            <p className="text-xl font-normal text-[#6F767E]">Ai Score</p>
+            <p className="text-xl font-normal text-neutral-04">Ai Score</p>
           )}
           {loading ? (
             <Skeleton />
           ) : (
-            <p className="text-neutral-200 text-xl font-medium">
+            <p className="text-neutral-04 text-xl font-medium">
               {item.ai_score}/100
             </p>
           )}
