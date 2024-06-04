@@ -41,7 +41,7 @@ export const ActivityOfTopSmartMoney = ({
     <div className="w-full">
       <div className="flex items-center justify-between mb-4 font-medium w-full">
         <div className="flex items-center gap-2">
-          <div className="text-[#F4F4F4] text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
+          <div className="text-neutral-07 text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
             Activity of Top Smart Money trading
           </div>
           <div className="flex items-center gap-2">

@@ -6,7 +6,6 @@ import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 
 import { useCallback, useMemo, useState } from 'react'
 import { IntegratedTerminal } from '@/components/common/Swap'
-import { useForm } from 'react-hook-form'
 
 import { cn } from '@/lib/utils'
 import CopyIcon from '@/components/shared/icons/token-explorer/CopyIcon'
@@ -17,14 +16,13 @@ import { TradingSignal } from '@/components/common/TabWalletExplorer/TradingSign
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import MenuArrowDownIcon from '@/components/shared/icons/MenuArrowDown'
 import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
-import { Banner } from '@/components/common/Banner'
 import { CopyCustom } from '@/components/common/CopyCustom'
 import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
 import { Transactions } from '@/components/common/TabWalletExplorer/Transactions'
 import { TopSmartMoney } from '@/components/common/TabWalletExplorer/TopSmartMoney'
 import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/ActivityOfTopSmartMoney'
-import { IFormConfigurator, JUPITER_DEFAULT_RPC } from '@/constant'
-import { SwapMode } from '@jup-ag/react-hook'
+import { CardCommon } from '@/components/common/Card/CardCommon'
+import { LineChart } from '@/components/common/ChartDetail/LineChart'
 
 const DUMMY_CHART = [
   [1700582400, 139.2820760583722837],
@@ -115,167 +113,142 @@ export default function TokenExplorerDetail({
     return null
   }
 
-  const rpcUrl = useMemo(() => JUPITER_DEFAULT_RPC, [])
-
-  const { watch } = useForm<IFormConfigurator>({
-    defaultValues: {
-      simulateWalletPassthrough: false,
-      strictTokenList: true,
-      defaultExplorer: 'Solana Explorer',
-      formProps: {
-        fixedInputMint: false,
-        fixedOutputMint: false,
-        swapMode: SwapMode.ExactIn,
-        fixedAmount: false,
-        initialAmount: '',
-        initialInputMint: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
-        initialOutputMint: params.token,
-      },
-      useUserSlippage: true,
-    },
-  })
-
-  const watchAllFields = watch()
-
   return (
     <div className="w-full h-full pt-2">
-      <div className="m-0 lg:mx-10 mt-4 flex items-start gap-4 mb-4">
-        <div className="w-full lg:w-2/3 h-full shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10">
-          <div className="border border-white/10 shadow-box backdrop-blur-lg flex flex-col items-start gap-1 lg:gap-6 self-stretch p-5 rounded-lg border-solid">
+      <div className="m-0 flex items-start gap-2">
+        {/* swap left */}
+        <div className="w-full lg:w-1/3 h-[600px]">
+          <IntegratedTerminal />
+        </div>
+        {/* content right */}
+        <div className="w-full lg:w-2/3 h-full">
+          {/* overview */}
+          <CardCommon>
             <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">
               <div className="flex gap-5 justify-between whitespace-nowrap">
                 <DialogSelectToken action="navigate">
-                  <div className="flex cursor-pointer items-center gap-2 px-4 py-2 text-xl font-bold tracking-tight leading-8 text-gray-50 border border-solid backdrop-blur-[50px] bg-gray-300 bg-opacity-10 border-white border-opacity-10 rounded-[360px]">
+                  <div className="flex cursor-pointer items-center gap-2 px-4 py-2 text-xl font-bold tracking-tight leading-8 text-neutral-07 border border-solid backdrop-blur-[50px] bg-gray-300 bg-opacity-10 border-white border-opacity-10 rounded-[360px]">
                     <div className="flex gap-2">
                       <ImageToken
                         className="w-8 h-8 rounded-full"
                         symbol={dataTokenInfo?.symbol}
                       />
-                      <div>{dataTokenInfo?.symbol}</div>
+                      <div className="text-neutral-07">
+                        {dataTokenInfo?.symbol}
+                      </div>
                     </div>
                     <MenuArrowDownIcon />
                   </div>
                 </DialogSelectToken>
-                <div className="flex flex-col justify-center my-auto text-sm tracking-normal leading-5">
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-1 justify-center px-2">
-                      <div className="font-medium text-stone-300">Token:</div>
-                      <div className="text-success-500">{`${params.token?.substring(
+                <div className="flex items-center gap-2 justify-center my-auto text-sm tracking-normal leading-5">
+                  <div className="flex items-center gap-2 px-px">
+                    <div className="flex gap-1 justify-center px-px">
+                      <div className="font-medium text-neutral-04">Token:</div>
+                      <div className="text-brand">{`${params.token?.substring(
                         0,
-                        6,
-                      )}...${params.token?.slice(-6)}`}</div>
+                        4,
+                      )}...${params.token?.slice(-3)}`}</div>
                     </div>
                     <CopyCustom
                       value={params.token}
-                      icon={<CopyIcon className="cursor-pointer" />}
+                      icon={
+                        <CopyIcon className="cursor-pointer text-neutral-04" />
+                      }
                     />
                   </div>
-                  <div className="flex items-center gap-2 px-px mt-1">
-                    <div className="flex items-center gap-1 justify-center px-2">
-                      <div className="font-medium text-stone-300">Pair:</div>
-                      <div className="text-success-500">{`${dataTokenInfo?.pair_address?.substring(
+                  <div className="flex items-center gap-2 px-px">
+                    <div className="flex items-center gap-1 justify-center px-px">
+                      <div className="font-medium text-neutral-04">Pair:</div>
+                      <div className="text-brand">{`${dataTokenInfo?.pair_address?.substring(
                         0,
-                        6,
-                      )}...${dataTokenInfo?.pair_address?.slice(-6)}`}</div>
+                        4,
+                      )}...${dataTokenInfo?.pair_address?.slice(-3)}`}</div>
                     </div>
                     <CopyCustom
                       value={dataTokenInfo?.pair_address || ''}
-                      icon={<CopyIcon className="cursor-pointer" />}
+                      icon={
+                        <CopyIcon className="cursor-pointer text-neutral-04" />
+                      }
                     />
                   </div>
                 </div>
               </div>
               <div className="flex gap-5 justify-between px-5 max-md:flex-wrap">
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
                     <CurrencyIcon />
                     <div>Marketcap</div>
                   </div>
-                  <div className="mt-1 text-base font-medium leading-6 text-neutral-100">
+                  <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
                     {nFormatter(dataTokenInfo?.market_cap || 0)}
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-12 rounded-sm bg-white bg-opacity-10" />
+                <div className="shrink-0 w-px h-12 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col justify-center">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
                     <VolumnIcon />
                     <div className="whitespace-nowrap">Volume 24h</div>
                   </div>
-                  <div className="self-center mt-1 text-base font-medium leading-6 text-gray-50">
+                  <div className="self-center mt-1 text-base font-medium leading-6 text-neutral-07">
                     {nFormatter(dataTokenInfo?.volume_24h || 0)}
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-12 rounded-sm bg-white bg-opacity-10" />
+                <div className="shrink-0 w-px h-12 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
                     <CurrencyIcon />
                     <div>Liquidity</div>
                   </div>
-                  <div className="mt-1 text-base font-medium leading-6 text-gray-50">
+                  <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
                     {nFormatter(dataTokenInfo?.liquidity || 0)}
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-12 rounded-sm bg-white bg-opacity-10" />
+                <div className="shrink-0 w-px h-12 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-stone-300">
+                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
                     <CurrencyIcon />
                     <div>FDV</div>
                   </div>
-                  <div className="mt-1 text-base font-medium leading-6 text-neutral-100">
+                  <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
                     {nFormatter(dataTokenInfo?.fully_diluted_valuation || 0)}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-full mt-4 lg:mt-0">
-              <WrapLineChart
-                dataTokenInfo={dataTokenInfo}
-                mode={mode}
-                sparkLineIn7D={DUMMY_CHART}
-                onModeChange={handleModeChange}
-                loading={tokenInfoQuery.isLoading}
-                address={params.token}
-              />
-            </div>
-          </div>
-          <div className="border border-white/10 shadow-box backdrop-blur-lg flex flex-col items-start gap-6 self-stretch p-5 rounded-lg border-solid mt-4">
-            <div className="flex gap-4 justify-start items-center self-stretch py-2 text-lg font-medium tracking-tight leading-6 text-center text-neutral-400 max-md:flex-wrap">
-              {TABS.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    onClick={handleChangeTab(item)}
-                    className={cn(
-                      'cursor-pointer self-stretch px-3 py-2',
-                      item === tab
-                        ? 'justify-center text-white whitespace-nowrap tab-explorer border border-solid border-white/10'
-                        : 'my-auto',
-                    )}
-                  >
-                    {item}
-                  </div>
-                )
-              })}
-            </div>
-            <div className="lg:hidden">
-              <Banner />
-            </div>
-            {renderContentTab(tab)}
-          </div>
-        </div>
-        <div className="w-1/3 hidden lg:block">
-          <IntegratedTerminal
-            rpcUrl={rpcUrl}
-            formProps={watchAllFields.formProps}
-            simulateWalletPassthrough={watchAllFields.simulateWalletPassthrough}
-            strictTokenList={watchAllFields.strictTokenList}
-            defaultExplorer={watchAllFields.defaultExplorer}
-          />
-          <div className="hidden lg:block mt-4">
-            <Banner />
-          </div>
+          </CardCommon>
+          {/* chart */}
+          <CardCommon className="w-full h-[480px] lg:my-2 bg-neutral-01 rounded-2xl">
+            <LineChart
+              dataTokenInfo={null}
+              sparkLineIn7D={DUMMY_CHART}
+              loading={false}
+              setValueIndex={() => null}
+              showDate={false}
+            />
+          </CardCommon>
         </div>
       </div>
+      <CardCommon>
+        <div className="flex gap-2 justify-start items-center self-stretch py-2 text-lg font-medium tracking-tight leading-6 text-center text-neutral-400 max-md:flex-wrap">
+          {TABS.map((item, index) => {
+            return (
+              <div
+                key={index}
+                onClick={handleChangeTab(item)}
+                className={cn(
+                  'cursor-pointer self-stretch px-3 py-2',
+                  item === tab
+                    ? 'justify-center text-neutral-07 whitespace-nowrap rounded-lg border border-solid border-white/10 bg-neutral-03'
+                    : 'my-auto',
+                )}
+              >
+                {item}
+              </div>
+            )
+          })}
+        </div>
+        {renderContentTab(tab)}
+      </CardCommon>
     </div>
   )
 }

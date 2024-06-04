@@ -96,7 +96,7 @@ export const SearchComp = () => {
         }
       })
     }
-  }, [listTokenQuery])
+  }, [listTokenQuery?.data?.data?.tokens])
 
   useEffect(() => {
     const data = localStorage.getItem('recently_searched')

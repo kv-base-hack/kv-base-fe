@@ -53,6 +53,16 @@ export default function RootLayout({
   const gtmId = 'G-HJ2P8J9GST'
   return (
     <html lang="en" className={sora.className} suppressHydrationWarning>
+      <head>
+        <script
+          defer={true}
+          src="https://cdn.flowx.finance/swap-widget/0.0.15/main.js"
+        ></script>
+        <link
+          href="https://cdn.flowx.finance/swap-widget/0.0.15/main.css"
+          rel="stylesheet"
+        />
+      </head>
       <GoogleTagManager gtmId={gtmId} />
       <body className="antialiased">
         <Toaster />

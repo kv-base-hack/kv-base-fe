@@ -36,7 +36,7 @@ export const TopSmartMoney = ({
   return (
     <div>
       <div className="flex items-center mb-4 gap-2 font-medium">
-        <div className="text-[#F4F4F4] text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
+        <div className="text-neutral-07 text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
           Top Smart Money trading
         </div>
         <div className="flex items-center gap-2">

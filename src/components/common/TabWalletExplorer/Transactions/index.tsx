@@ -41,8 +41,8 @@ export const Transactions = ({
     <div>
       <div className="flex items-center justify-between mb-4 font-medium">
         <div className="flex items-center gap-2">
-          <div className="text-[#F4F4F4] text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
-            Smart Money Transactions of 
+          <div className="text-neutral-07 text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
+            Smart Money Transactions of
           </div>
           <div className="flex items-center gap-2">
             <ImageToken
