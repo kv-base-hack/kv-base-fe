@@ -23,6 +23,7 @@ const config: Config = {
         'gradient-btn': 'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
       },
       colors: {
+        brand: '#0C68E9',
         'primary-1': '#E7F177',
         'primary-2': '#83BF6E',
         'primary-3': '#FF6A55',
