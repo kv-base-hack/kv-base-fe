@@ -16,7 +16,7 @@ export const DialogAiAnalysis = ({ item }: { item: DexTradingSignalInfo }) => {
           </div>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-h-[70%] max-w-[1000px] overflow-auto top-[450px]">
+      <DialogContent className="max-h-[70%] max-w-[1000px] overflow-auto top-[450px] bg-neutral-01">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-1">
             <IconAiAnalysis />
@@ -28,15 +28,15 @@ export const DialogAiAnalysis = ({ item }: { item: DexTradingSignalInfo }) => {
               symbol={item?.symbol}
               className="w-[32px] h-[32px]"
             />
-            <div className="font-bold text-xl text-neutral-400 flex items-center gap-1">
-              <p className="text-neutral-200">{item?.symbol}</p>{' '}
+            <div className="font-bold text-xl text-neutral-04 flex items-center gap-1">
+              <p className="text-neutral-07">{item?.symbol}</p>{' '}
               <p>{item.name}</p>
             </div>
           </div>
 
           <div>
             <MemoizedReactMarkdown
-              className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+              className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 text-neutral-07"
               remarkPlugins={[remarkGfm, remarkMath]}
               components={{
                 p({ children }) {
