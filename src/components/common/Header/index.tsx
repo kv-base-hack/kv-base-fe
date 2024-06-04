@@ -28,7 +28,7 @@ const MENU = [
     menu: 'Leaderboard',
   },
   {
-    url: '/Kaichat',
+    url: '/kaichat',
     menu: 'Kaichat',
   },
 ]
@@ -38,7 +38,7 @@ export const Header = () => {
 
   return (
     <div className="px-8 py-4 w-full z-[9999] fixed">
-      <div className="w-full flex  items-center justify-between px-3 py-4 shadow-2xl bg-neutral-07 max-md:flex-wrap max-md:px-5 rounded-[48px]">
+      <div className="w-full flex  items-center justify-between p-3 shadow-2xl bg-neutral-07 max-md:flex-wrap max-md:px-5 rounded-[48px]">
         <Link href="/" className="flex items-center gap-1">
           <Image
             loading="lazy"
