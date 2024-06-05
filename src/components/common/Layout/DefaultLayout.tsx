@@ -5,7 +5,7 @@ import { Header } from '../Header'
 
 export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="bg-background w-full min-h-screen bg-[url('/assets/images/background.png')] bg-cover">
+    <div className="bg-background w-full min-h-screen bg-[url('/assets/images/background.webp')] bg-cover">
       <div className="flex items-start">
         <div className="w-full">
           <Header />
