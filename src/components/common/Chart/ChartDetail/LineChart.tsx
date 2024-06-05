@@ -64,7 +64,7 @@ export function LineChart({
     <>
       {/* @ts-ignore */}
       <AreaChart
-        width={1330}
+        width={1300}
         height={250}
         data={formatData}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}

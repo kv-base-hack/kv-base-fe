@@ -151,7 +151,7 @@ export default function WalletExplorerDetail({
     <div className="w-full h-full pt-2">
       <div className="flex mt-4 gap-4 justify-center self-stretch">
         {/* left */}
-        <div className="flex flex-col w-2/3 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
+        <div className="flex flex-col w-2/3 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] overflow-hidden">
           <div className="flex gap-6 max-md:flex-wrap">
             <div className="flex gap-2">
               {userInfoQuery.isFetching ? (
@@ -273,7 +273,7 @@ export default function WalletExplorerDetail({
               </div>
             </div>
           </div>
-          <div className="h-full w-full">
+          <div className="h-full w-full pr-5 overflow-hidden">
             <LineChart
               dataTokenInfo={null}
               sparkLineIn7D={DUMMY_CHART}
