@@ -23,13 +23,13 @@ export const GroupHeader: React.FC<GroupHeaderProps> = ({
     <div className={cn('flex flex-col self-stretch', className)}>
       <div className="flex items-center gap-4 justify-start pr-20 max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
         {icon}
-        <div className="font-inter text-[40px] leading-[48px] tracking-[-0.8px] font-semibold text-neutral-01 max-md:max-w-full">
+        <div className="font-inter text-[40px] leading-[48px] tracking-[-0.8px] font-semibold text-neutral-07 max-md:max-w-full">
           {title}
         </div>
         {children}
       </div>
       {desc ? (
-        <div className="mt-4 w-full text-base tracking-normal leading-6 text-neutral-01 max-md:max-w-full">
+        <div className="mt-4 w-full text-base tracking-normal leading-6 text-neutral-04 max-md:max-w-full">
           {desc}
         </div>
       ) : null}

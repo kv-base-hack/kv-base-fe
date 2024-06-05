@@ -44,7 +44,7 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
   return (
     <CardCommon>
       <TitleCard title="Activity Spotlight by AI" iconFirst={<IconFire />}>
-        <LinkCustom url="/activity" title="See all" />
+        <LinkCustom url="/tracking" title="See all" />
       </TitleCard>
       <div className="flex flex-col justify-between h-full">
         <div className="flex items-center gap-4">

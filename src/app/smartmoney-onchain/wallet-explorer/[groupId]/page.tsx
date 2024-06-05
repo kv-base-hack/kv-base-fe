@@ -26,27 +26,28 @@ import {
 import { IconUptrend } from '@/components/shared/icons/IconUptrend'
 import { IconChart } from '@/components/shared/icons/IconChart'
 import { useQuery } from '@tanstack/react-query'
+import Skeleton from '@/components/common/Skeleton'
 
 const DUMMY_CHART = [
-  [1700582400, 1.2820760583722837],
+  [1700582400, 3.2820760583722837],
   [1700596800, 1.293678752367937],
-  [1700611200, 1.267607134722679],
+  [1700611200, 2.267607134722679],
   [1700625600, 1.2383452159168096],
   [1700640000, 1.2713647267275487],
-  [1700654400, 1.2849299222571455],
+  [1700654400, 6.2849299222571455],
   [1700668800, 1.2812792112861628],
   [1700683200, 1.285411599501722],
-  [1700697600, 1.304992187923194],
+  [1700697600, 7.304992187923194],
   [1700712000, 1.3025387325266873],
   [1700726400, 1.3101804211155927],
   [1700740800, 1.3364311866861343],
   [1700755200, 1.3574309481187357],
-  [1700769600, 1.3420127842033551],
+  [1700769600, 9.3420127842033551],
   [1700784000, 1.3613067184270784],
-  [1700798400, 1.3632495568806504],
+  [1700798400, 1.8632495568806504],
   [1700812800, 1.3694888962263747],
-  [1700827200, 1.3761433222446537],
-  [1700841600, 1.3878710860154058],
+  [1700827200, 1.6761433222446537],
+  [1700841600, 1.878710860154058],
   [1700856000, 1.4008211214315036],
   [1700870400, 1.3716115965345537],
   [1700884800, 1.366702161216628],
@@ -65,12 +66,12 @@ const DUMMY_CHART = [
   [1701072000, 1.3459421066735182],
   [1701086400, 1.329871889398035],
   [1701100800, 1.3196045314155003],
-  [1701115200, 1.309947025324972],
-  [1701129600, 1.2978960445684065],
-  [1701144000, 1.3226601297295046],
-  [1701158400, 1.3206287657374929],
-  [1701172800, 1.3115544795935061],
-  [1701187200, 1.3333333333333333],
+  [1701115200, 5.309947025324972],
+  [1701129600, 8.2978960445684065],
+  [1701144000, 2.3226601297295046],
+  [1701158400, 3.3206287657374929],
+  [1701172800, 10.3115544795935061],
+  [1701187200, 3.3333333333333333],
 ]
 
 export default function WalletExplorerDetail({
@@ -153,7 +154,13 @@ export default function WalletExplorerDetail({
         <div className="flex flex-col w-2/3 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
           <div className="flex gap-6 max-md:flex-wrap">
             <div className="flex gap-2">
-              <AvatarIcon className="w-24 aspect-square" />
+              {userInfoQuery.isFetching ? (
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <Skeleton />
+                </div>
+              ) : (
+                <AvatarIcon className="w-24 aspect-square" />
+              )}
               <div className="flex flex-col justify-end leading-[160%]">
                 <div className="text-xl font-bold tracking-tight text-neutral-04">
                   Whale Untag
@@ -195,7 +202,13 @@ export default function WalletExplorerDetail({
                 <div>Total Balance</div>
               </div>
               <div className="mt-1 text-[40px] leading-[48px] font-semibold text-neutral-07">
-                {nFormatter(userBalance?.total_balance || 0)}$
+                {userBalanceQuery.isFetching ? (
+                  <div className="w-40 h-4 rounded-2xl overflow-hidden">
+                    <Skeleton />
+                  </div>
+                ) : (
+                  <>{nFormatter(userBalance?.total_balance || 0)}$</>
+                )}
               </div>
             </div>
             <div className="flex items-center justify-end flex-1 gap-5 pl-20 my-auto max-md:flex-wrap">
@@ -208,7 +221,13 @@ export default function WalletExplorerDetail({
                     3D PnL
                   </div>
                   <div className="mt-1 text-xl leading-9 text-success-500 font-semibold">
-                    {nFormatter(userInfo?.pnl || 0)}$
+                    {userInfoQuery.isFetching ? (
+                      <div className="w-12 h-4 rounded-2xl overflow-hidden">
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      <>{nFormatter(userInfo?.pnl || 0)}$</>
+                    )}
                   </div>
                 </div>
               </div>
@@ -222,7 +241,13 @@ export default function WalletExplorerDetail({
                     3D ROI
                   </div>
                   <div className="mt-1 text-xl leading-9 text-success-500 font-semibold">
-                    {userInfo?.roi_percent.toFixed(2)}%
+                    {userInfoQuery.isFetching ? (
+                      <div className="w-12 h-4 rounded-2xl overflow-hidden">
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      <>{userInfo?.roi_percent.toFixed(2)}%</>
+                    )}
                   </div>
                 </div>
               </div>
@@ -236,13 +261,19 @@ export default function WalletExplorerDetail({
                     Volume 24h
                   </div>
                   <div className="mt-1 text-xl leading-9 text-neutral-07 font-semibold">
-                    {nFormatter(userInfo?.volume_24h || 0)}$
+                    {userInfoQuery.isFetching ? (
+                      <div className="w-12 h-4 rounded-2xl overflow-hidden">
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      <> {nFormatter(userInfo?.volume_24h || 0)}$</>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="h-full">
+          <div className="h-full w-full">
             <LineChart
               dataTokenInfo={null}
               sparkLineIn7D={DUMMY_CHART}

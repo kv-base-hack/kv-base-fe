@@ -12,6 +12,7 @@ import {
 import SkeletonChart from '@/components/common/Skeleton/SkeletonChart'
 import { CustomDotActive } from '@/components/shared/icons/CustomDotActive'
 import { TokenInfo } from '@/types/tokenInfo'
+import Skeleton from '../../Skeleton'
 
 export function LineChart({
   sparkLineIn7D,
@@ -56,46 +57,18 @@ export function LineChart({
   const space = (maxPrice - minPrice) / 5
 
   return loading ? (
-    <SkeletonChart />
+    <div className="overflow-hidden mt-4">
+      <SkeletonChart />
+    </div>
   ) : (
-    <ResponsiveContainer width="100%" height="100%">
+    <>
       {/* @ts-ignore */}
-
       <AreaChart
-        height={400}
-        data={formatData || []}
-        margin={{
-          top: 0,
-          left: 16,
-          right: 16,
-          bottom: 24,
-        }}
-        onMouseLeave={() => {
-          setValueIndex(undefined)
-        }}
+        width={1330}
+        height={250}
+        data={formatData}
+        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
       >
-        <Tooltip
-          wrapperStyle={{
-            backgroundColor: 'transparent',
-          }}
-          contentStyle={{
-            backgroundColor: 'transparent',
-          }}
-          cursor={{
-            stroke: '#ffffff1a',
-            strokeWidth: 1,
-            strokeDasharray: '5 5',
-          }}
-          position={{ y: 0 }}
-          content={
-            <CustomTooltip
-              payload={[dataTokenInfo?.usd_price]}
-              label={dataTokenInfo?.symbol}
-              active
-              setValueIndex={setValueIndex}
-            />
-          }
-        />
         {showDate ? (
           <XAxis
             dataKey="date"
@@ -131,7 +104,7 @@ export function LineChart({
           </linearGradient>
         </defs>
       </AreaChart>
-    </ResponsiveContainer>
+    </>
   )
 }
 
