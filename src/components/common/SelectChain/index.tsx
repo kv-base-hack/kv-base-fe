@@ -75,9 +75,9 @@ export const SelectChain = ({
         </div>
       </SelectTrigger>
       <SelectContent className="border-none bg-neutral-07 z-[9999]">
-        <SelectItem value="solana">Solana</SelectItem>
-        <SelectItem value="ethereum">Ethereum</SelectItem>
         <SelectItem value="sui">Sui</SelectItem>
+        <SelectItem value="ethereum">Ethereum</SelectItem>
+        <SelectItem value="solana">Solana</SelectItem>
       </SelectContent>
     </Select>
   )
