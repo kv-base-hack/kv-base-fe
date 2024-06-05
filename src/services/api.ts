@@ -52,8 +52,8 @@ const chatApi = axios.create({
   baseURL: 'https://api-chat.kaivest.net',
 })
 
-const solanaApi = axios.create({
-  baseURL: 'https://api-solana.kaivest.net',
+const suiApi = axios.create({
+  baseURL: 'https://api-balance.kaivest.net',
 })
 
 const userApi = axios.create({
@@ -1284,7 +1284,7 @@ export const getUserBalance = async ({
   address?: string
   chain?: string
 }): Promise<UserBalanceResponse> => {
-  return await solanaApi.get(`/balance`, {
+  return await suiApi.get(`/v1/balance`, {
     params: {
       addresses,
       address,

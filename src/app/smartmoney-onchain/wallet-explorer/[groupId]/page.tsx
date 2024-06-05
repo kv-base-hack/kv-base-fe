@@ -8,7 +8,6 @@ import { useTradeStatisticQuery } from '@/query/wallet-explorer/getTradeStatisti
 import { LineChart } from '@/components/common/Chart/ChartDetail/LineChart'
 import CopyIcon from '@/components/shared/icons/wallet-explorer/CopyIcon'
 import LastDateIcon from '@/components/shared/icons/wallet-explorer/LastDateIcon'
-import TotalBalanceIcon from '@/components/shared/icons/wallet-explorer/TotalBalanceIcon'
 import BoughtIcon from '@/components/shared/icons/wallet-explorer/BoughtIcon'
 import BigestGainerIcon from '@/components/shared/icons/wallet-explorer/BigestGainerIcon'
 import { CopyCustom } from '@/components/common/CopyCustom'
@@ -24,9 +23,6 @@ import {
   WalletInfoItem,
   WalletInfoItemTitle,
 } from '@/components/pages/wallet-detail/WalletInfoItem'
-import ArrowLeftIcon from '@/components/shared/icons/ArrowLeft'
-import ArrowRightIcon from '@/components/shared/icons/ArrowRight'
-import FirstTimeBuyIcon from '@/components/shared/icons/wallet-explorer/FirstTimeBuyIcon'
 import { IconUptrend } from '@/components/shared/icons/IconUptrend'
 import { IconChart } from '@/components/shared/icons/IconChart'
 import { useQuery } from '@tanstack/react-query'
@@ -84,14 +80,16 @@ export default function WalletExplorerDetail({
 }) {
   const CHAIN = useAtomValue(chainAtom)
 
-  const tradeStatisticQuery = useTradeStatisticQuery({
-    address: params.groupId,
-    chain: CHAIN,
-    token_address: '',
-    duration: '24h',
-  })
+  const tradeStatisticQuery = useQuery(
+    useTradeStatisticQuery({
+      address: params.groupId,
+      chain: CHAIN,
+      token_address: '',
+      duration: '24h',
+    }),
+  )
 
-  const tradeStatistic = tradeStatisticQuery?.data?.data
+  const tradeStatistic = tradeStatisticQuery?.data
 
   const userBalanceQuery = useQuery(
     useGetUserBalanceQuery({
@@ -139,12 +137,14 @@ export default function WalletExplorerDetail({
   ]
 
   // get user info
-  const userInfoQuery = useGetUserInfoQuery({
-    address: params.groupId,
-    chain: CHAIN,
-  })
+  const userInfoQuery = useQuery(
+    useGetUserInfoQuery({
+      address: params.groupId,
+      chain: CHAIN,
+    }),
+  )
 
-  const userInfo = userInfoQuery?.data?.data.user_info
+  const userInfo = userInfoQuery?.data?.user_info
 
   return (
     <div className="w-full h-full pt-2">
@@ -165,7 +165,7 @@ export default function WalletExplorerDetail({
                   )}...${params.groupId?.slice(-6)}`}</div>
                   <CopyCustom value={params.groupId} icon={<CopyIcon />} />
                   <a
-                    href={`https://solscan.io/account/${params.groupId}`}
+                    href={`https://suiscan.xyz/mainnet/account/${params.groupId}`}
                     target="_blank"
                   >
                     <ExternalLinkIcon />
@@ -246,7 +246,7 @@ export default function WalletExplorerDetail({
             <LineChart
               dataTokenInfo={null}
               sparkLineIn7D={DUMMY_CHART}
-              loading={false}
+              loading={userBalanceQuery.isFetching}
               setValueIndex={() => null}
               showDate={false}
             />

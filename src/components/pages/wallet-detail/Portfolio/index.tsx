@@ -5,7 +5,6 @@ import {
   columnsPortfolio,
 } from '@/components/common/DataTable/columnsPortfolio'
 import { PaginationCustom } from '@/components/common/Pagination'
-import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { usePortfolioQuery } from '@/query/wallet-explorer/getPortfolio'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
@@ -24,7 +23,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   // get user balance
   const userBalanceQuery = useQuery(
     useGetUserBalanceQuery({
-      address,
+      address: address,
       chain,
     }),
   )

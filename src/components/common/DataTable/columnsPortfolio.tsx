@@ -2,9 +2,8 @@ import { cn } from '@/lib/utils'
 import { nFormatter } from '@/utils/nFormatter'
 import { renderPrice } from '@/utils/renderPrice'
 import { ColumnDef } from '@tanstack/react-table'
-import Image from 'next/image'
 import Link from 'next/link'
-import numeral from 'numeral'
+import { ImageToken } from '../Image/ImageToken'
 
 export type Portfolio = {
   id: string
@@ -30,14 +29,7 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
           href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
           className="flex gap-3 items-center justify-between text-right"
         >
-          <Image
-            loading="lazy"
-            alt="token"
-            src={image_url}
-            className="w-6 aspect-square fill-blue-950 rounded-full"
-            width={24}
-            height={24}
-          />
+          <ImageToken imgUrl={image_url} symbol={symbol} />
           <div>{symbol}</div>
         </Link>
       )
@@ -69,7 +61,7 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
           )}
         >
           {price_24h_change > 0 ? '+' : ''}
-          {price_24h_change.toFixed(2)}%
+          {price_24h_change?.toFixed(2)}%
         </div>
       )
     },

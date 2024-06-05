@@ -10,7 +10,10 @@ export const useGetUserInfoQuery = ({
   address: string
   chain: string
 }) =>
-  useQuery({
-    queryKey: [GET_USER_INFO, { address, chain }],
-    queryFn: () => getUserInfo({ address, chain }),
-  })
+({
+  queryKey: [GET_USER_INFO, { address, chain }],
+  queryFn: async () => {
+    const data = await getUserInfo({ address, chain })
+    return data.data
+  },
+})

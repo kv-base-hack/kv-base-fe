@@ -13,11 +13,15 @@ export const useTradeStatisticQuery = ({
   chain: string
   duration: string
   token_address: string
-}) =>
-  useQuery({
-    queryKey: [
-      GET_TRADE_STATISTIC,
-      { address, chain, duration, token_address },
-    ],
-    queryFn: () => tradeStatistic({ address, chain, duration, token_address }),
-  })
+}) => ({
+  queryKey: [GET_TRADE_STATISTIC, { address, chain, duration, token_address }],
+  queryFn: async () => {
+    const data = await tradeStatistic({
+      address,
+      chain,
+      duration,
+      token_address,
+    })
+    return data.data
+  },
+})

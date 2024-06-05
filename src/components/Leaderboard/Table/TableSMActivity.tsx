@@ -58,9 +58,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       sort_by: sortBy,
     }),
   )
-  const dataActivity = activityQuery.isFetching
-    ? [...(Array(10).keys() as any)]
-    : activityQuery.data?.data.activities || []
+
   const totalActivity = activityQuery.data?.data.total || 1
 
   const handleRemoveToken = (item: TokenList) => (e: any) => {
@@ -141,16 +139,16 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
               movement === 'deposit'
                 ? 'bg-[#F4E7FC]'
                 : movement === 'withdraw'
-                  ? 'bg-secondary-4/10'
-                  : movement === 'buying'
-                    ? 'bg-[#E1F1FF]'
-                    : movement === 'selling'
-                      ? 'bg-[#FEE6C7]'
-                      : movement === 'new_listing_buy'
-                        ? 'bg-[#E1FFEF]'
-                        : movement === 'new_listing_sell'
-                          ? 'bg-[#DC6803]/10'
-                          : '',
+                ? 'bg-secondary-4/10'
+                : movement === 'buying'
+                ? 'bg-[#E1F1FF]'
+                : movement === 'selling'
+                ? 'bg-[#FEE6C7]'
+                : movement === 'new_listing_buy'
+                ? 'bg-[#E1FFEF]'
+                : movement === 'new_listing_sell'
+                ? 'bg-[#DC6803]/10'
+                : '',
             )}
           >
             {renderMovementIcon(movement)}
@@ -263,9 +261,11 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
     return activityQuery.isFetching
       ? [...(Array(10).keys() as any)]
       : activeTab === 'Smart Money Activity'
-        ? activityQuery.data?.data.activities
-        : []
+      ? activityQuery.data?.data.activities
+      : []
   }, [activeTab, activityQuery.data?.data.activities, activityQuery.isFetching])
+
+  console.log(dataSource)
 
   return (
     <>

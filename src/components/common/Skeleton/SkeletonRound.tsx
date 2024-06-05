@@ -21,8 +21,8 @@ const SkeletonRound = ({
     width={width}
     height={height}
     viewBox={`0 0 ${width} ${height}`}
-    backgroundColor="rgba(255,255,255, 0.05)"
-    foregroundColor="rgba(255,255,255, 0.1)"
+    backgroundColor="#f3f3f3"
+    foregroundColor="#ecebeb"
     {...props}
   >
     <circle cx={cx} cy={cy} r={r} />
