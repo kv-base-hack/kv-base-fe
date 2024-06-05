@@ -51,7 +51,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       action: filterActivity,
       limit: 10,
       start: pageActivity,
-      chain: 'solana',
+      chain: CHAIN,
       amount_filter: tradeValue?.toString() || '',
       token_addresses:
         listToken?.map((item) => item.tokenAddress)?.toString() || '',
@@ -263,8 +263,8 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
     return activityQuery.isFetching
       ? [...(Array(10).keys() as any)]
       : activeTab === 'Smart Money Activity'
-      ? activityQuery.data?.data.activities
-      : []
+        ? activityQuery.data?.data.activities
+        : []
   }, [activeTab, activityQuery.data?.data.activities, activityQuery.isFetching])
 
   return (

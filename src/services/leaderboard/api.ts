@@ -10,23 +10,23 @@ import { DexTradingSignalResponse } from "@/types/tradingSignal";
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://api.boltrade.ai/onchain',
+  baseURL: 'https://api.kaivest.net/onchain',
 })
 
 const signalApi = axios.create({
-  baseURL: 'https://api-signals.boltrade.ai',
+  baseURL: 'https://api-signals.kaivest.net',
 })
 
 const chatApi = axios.create({
-  baseURL: 'https://api-chat.boltrade.ai',
+  baseURL: 'https://api-chat.kaivest.net',
 })
 
 const solanaApi = axios.create({
-  baseURL: 'https://api-solana.boltrade.ai',
+  baseURL: 'https://api-solana.kaivest.net',
 })
 
 const userApi = axios.create({
-  baseURL: 'https://api.boltrade.ai/user-onchain',
+  baseURL: 'https://api.kaivest.net/user-onchain',
 })
 
 const api_1 = axios.create({

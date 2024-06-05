@@ -27,7 +27,7 @@ export const TableInsiderBuy = () => {
     ...useGetInsiderBuyQuery({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       duration,
       sort_by: sortBy,
     }),

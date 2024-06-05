@@ -27,7 +27,7 @@ export default function WalletAnalytics() {
   //
   const dataLeaderboardQuery = useQuery(
     useLeaderboardQuery({
-      chain: 'solana',
+      chain: CHAIN,
       limit: 10,
       start: 1,
       sortBy,

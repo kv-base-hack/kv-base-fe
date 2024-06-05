@@ -47,7 +47,7 @@ export function DialogSelectToken({
   const listTokenQuery = useQuery(
     useGetListTokensQuery({
       symbol_search: debounceSearch,
-      chain: 'solana',
+      chain: CHAIN,
       enabled,
     }),
   )

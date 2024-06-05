@@ -40,8 +40,8 @@ export const Header = () => {
 
   return (
     <div className="px-8 py-4 w-full z-[9999] fixed">
-      <div className="w-full flex  items-center justify-between p-3 shadow-2xl bg-neutral-07 max-md:flex-wrap max-md:px-5 rounded-[48px]">
-        <Link href="/" className="flex items-center gap-1">
+      <div className="w-full flex items-center justify-between p-3 shadow-2xl bg-neutral-07 max-md:flex-wrap max-md:px-5 rounded-[48px]">
+        <Link href="/" className="flex items-center">
           <Image
             loading="lazy"
             src="/assets/images/logo.svg"
@@ -55,7 +55,7 @@ export const Header = () => {
           </p>
         </Link>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 whitespace-nowrap">
           {MENU.map((i) => {
             const isActive = pathname.includes(i.url)
             return (
@@ -104,7 +104,7 @@ const MenuItem = ({
     <Link
       href={url}
       className={cn(
-        'text-sm font-semibold px-4 py-2 rounded-[48px] hover:bg-[#6f767e66] hover:text-neutral-01 transition-all duration-200 ease-in-out',
+        'text-sm font-semibold px-3 py-2 rounded-[48px] hover:bg-[#6f767e66] hover:text-neutral-01 transition-all duration-200 ease-in-out',
         isActive ? 'bg-[#6f767e66] text-neutral-01' : 'text-neutral-04',
       )}
     >

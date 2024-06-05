@@ -1,9 +1,10 @@
+import { chainAtom } from '@/atom/chain'
 import { gemDurationAtom } from '@/atom/gemDuration'
 import { gemFilterAtom } from '@/atom/gemFilter'
 import { TableFindGemsSmartMoneyHolding } from '@/components/common/DataTable/TableFindGemsSmartmoneyHolding'
 import { useFindGemsSmartMoneyHoldingQuery } from '@/query/find-gems/getFindGemsSmartMoneyHolding'
 import { useQuery } from '@tanstack/react-query'
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import React, { useState } from 'react'
 
 interface FindGemsTabSmartHoldingProps {
@@ -13,6 +14,8 @@ interface FindGemsTabSmartHoldingProps {
 export const FindGemsTabSmartHolding: React.FC<
   FindGemsTabSmartHoldingProps
 > = ({ tab }) => {
+  const CHAIN = useAtomValue(chainAtom)
+
   const [page, setPage] = useState(1)
   const [perPage] = useState(10)
   const [sort, setSort] = useState('')
@@ -24,7 +27,7 @@ export const FindGemsTabSmartHolding: React.FC<
     useFindGemsSmartMoneyHoldingQuery({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,
       market_cap_min: filter.minMarketcap,

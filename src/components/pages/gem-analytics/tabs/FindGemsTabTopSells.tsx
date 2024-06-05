@@ -1,9 +1,10 @@
+import { chainAtom } from '@/atom/chain'
 import { gemDurationAtom } from '@/atom/gemDuration'
 import { gemFilterAtom } from '@/atom/gemFilter'
 import { TableFindGemsSM } from '@/components/common/DataTable/TableFindGemsSM'
 import { useGetTopTokenSell } from '@/query/onchain-signal/getTopTokenSell'
 import { useQuery } from '@tanstack/react-query'
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import React, { useState } from 'react'
 
 interface FindGemsTabTopSellsProps {
@@ -13,10 +14,11 @@ interface FindGemsTabTopSellsProps {
 export const FindGemsTabTopSells: React.FC<FindGemsTabTopSellsProps> = ({
   tab,
 }) => {
+  const CHAIN = useAtomValue(chainAtom)
   const [page, setPage] = useState(1)
   const [perPage] = useState(10)
   const [sort, setSort] = useState('')
-  
+
   const [duration] = useAtom(gemDurationAtom)
   const [filter] = useAtom(gemFilterAtom)
 
@@ -25,7 +27,7 @@ export const FindGemsTabTopSells: React.FC<FindGemsTabTopSellsProps> = ({
     useGetTopTokenSell({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       duration,
       action: 'selling',
       price_change_24h_min: filter.min24hVolumn,

@@ -1,3 +1,4 @@
+import { chainAtom } from '@/atom/chain'
 import { CardCommon } from '@/components/common/Card/CardCommon'
 import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
@@ -16,10 +17,12 @@ import { TopTokenBuy } from '@/types/top-token-buy'
 import { nFormatter } from '@/utils/nFormatter'
 import { useQuery } from '@tanstack/react-query'
 import { ColumnDef } from '@tanstack/react-table'
+import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 
 export const TableTopBuy = () => {
+  const CHAIN = useAtomValue(chainAtom)
   const [duration, setDuration] = useState('24h')
   const [page, setPage] = useState(1)
   const [perPage] = useState(5)
@@ -30,7 +33,7 @@ export const TableTopBuy = () => {
       limit: perPage,
       start: page,
       duration,
-      chain: 'solana',
+      chain: CHAIN,
       action: 'buying',
       sort_by: sortBy,
     }),

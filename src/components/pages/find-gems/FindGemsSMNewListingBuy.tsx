@@ -25,7 +25,7 @@ export const TableFindGemsSMNewListingBuy = () => {
     ...useSMNewListingBuyQuery({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       duration,
       sort_by: sortBy,
     }),
