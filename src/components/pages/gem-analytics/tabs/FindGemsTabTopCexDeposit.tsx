@@ -1,9 +1,10 @@
+import { chainAtom } from '@/atom/chain'
 import { gemDurationAtom } from '@/atom/gemDuration'
 import { gemFilterAtom } from '@/atom/gemFilter'
 import { TableFindGemsDeposit } from '@/components/common/DataTable/TableFindGemsDeposit'
 import { useFindGemsDepositQuery } from '@/query/find-gems/getFindGemsDeposit'
 import { useQuery } from '@tanstack/react-query'
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import React, { useState } from 'react'
 
 interface FindGemsTabTopCexDepositProps {
@@ -13,6 +14,7 @@ interface FindGemsTabTopCexDepositProps {
 export const FindGemsTabTopCexDeposit: React.FC<
   FindGemsTabTopCexDepositProps
 > = ({ tab }) => {
+  const CHAIN = useAtomValue(chainAtom)
   const [page, setPage] = useState(1)
   const [perPage] = useState(10)
   const [duration] = useAtom(gemDurationAtom)
@@ -22,7 +24,7 @@ export const FindGemsTabTopCexDeposit: React.FC<
     useFindGemsDepositQuery({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       duration,
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,

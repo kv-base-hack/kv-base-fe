@@ -29,7 +29,7 @@ export const TableFindGemsSMTopBuys = () => {
     useGetTopTokenBuy({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       duration,
       action: 'buying',
       sort_by: sortBy,

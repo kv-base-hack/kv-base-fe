@@ -26,7 +26,7 @@ export default function LeaderboardPage() {
 
   const dataLeaderboardQuery = useQuery(
     useLeaderboardQuery({
-      chain: 'solana',
+      chain: CHAIN,
       limit: 10,
       start: page,
       sortBy,

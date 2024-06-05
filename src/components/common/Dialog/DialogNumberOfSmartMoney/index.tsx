@@ -18,6 +18,8 @@ import { useGetTopSmartMoneyTradeQuery } from '@/query/top-smart-money/getTopSma
 import Close from '@/components/shared/icons/Close'
 import { PaginationTable } from '../../Pagination/PaginationTable'
 import Link from 'next/link'
+import { useAtomValue } from 'jotai'
+import { chainAtom } from '@/atom/chain'
 
 interface ListWalletProps {
   user_address: string
@@ -36,13 +38,14 @@ export const DialogNumberOfSmartMoney = ({
   type: string
   duration: string
 }) => {
+  const CHAIN = useAtomValue(chainAtom)
   const [start, setStart] = useState(1)
   const [limit, setLimit] = useState(5)
   const [visible, setVisible] = useState(false)
 
   const topSmartMoneyTradeQuery = useQuery(
     useGetTopSmartMoneyTradeQuery({
-      chain: 'solana',
+      chain: CHAIN,
       limit,
       start,
       address,

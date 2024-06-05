@@ -86,7 +86,7 @@ export default function WalletExplorerDetail({
 
   const tradeStatisticQuery = useTradeStatisticQuery({
     address: params.groupId,
-    chain: 'solana',
+    chain: CHAIN,
     token_address: '',
     duration: '24h',
   })
@@ -96,7 +96,7 @@ export default function WalletExplorerDetail({
   const userBalanceQuery = useQuery(
     useGetUserBalanceQuery({
       address: params.groupId,
-      chain: 'solana',
+      chain: CHAIN,
     }),
   )
   const userBalance = userBalanceQuery?.data
@@ -141,7 +141,7 @@ export default function WalletExplorerDetail({
   // get user info
   const userInfoQuery = useGetUserInfoQuery({
     address: params.groupId,
-    chain: 'solana',
+    chain: CHAIN,
   })
 
   const userInfo = userInfoQuery?.data?.data.user_info

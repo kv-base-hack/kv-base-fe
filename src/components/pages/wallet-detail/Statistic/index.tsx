@@ -24,7 +24,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
 
   const tradeStatisticTokensQuery = useTradeStatisticTokensQuery({
     address,
-    chain: 'solana',
+    chain,
     duration: filterDate,
     token_address:
       listToken?.map((item) => item.tokenAddress)?.toString() || '',

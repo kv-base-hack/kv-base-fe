@@ -38,7 +38,7 @@ export const TablePerformanceToken = () => {
     ...useGetTopTokenProfitQuery({
       limit: 5,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       duration: duration,
       sort_by: sortBy,
     }),

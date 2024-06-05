@@ -33,7 +33,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
     action: filterActivity,
     limit: 10,
     start: pageActivity,
-    chain: 'solana',
+    chain,
     address,
     amount_filter: tradeValue?.toString() || '',
     is_big_trade_only: showBigTradeBigger5k,

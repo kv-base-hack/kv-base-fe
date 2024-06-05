@@ -10,7 +10,7 @@ export const getActivityOfTopSmartMoneyTrading = async (
   const limit = perPage
   const start = (page - 1) * perPage + 1
   const resp = await ofetch(
-    `https://api-onchain.boltrade.ai/v1/token/activity_smart_money_of_token?chain=solana&limit=${limit}&start=${start}&address=${address}`,
+    `https://api-onchain.kaivest.net/v1/token/activity_smart_money_of_token?chain=solana&limit=${limit}&start=${start}&address=${address}`,
   )
 
   return resp

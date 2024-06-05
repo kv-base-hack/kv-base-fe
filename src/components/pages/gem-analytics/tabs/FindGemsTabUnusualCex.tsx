@@ -1,9 +1,10 @@
+import { chainAtom } from '@/atom/chain'
 import { gemDurationAtom } from '@/atom/gemDuration'
 import { gemFilterAtom } from '@/atom/gemFilter'
 import { TableFindGemsUnusualCex } from '@/components/common/DataTable/TableFindGemsUnusualCex'
 import { useFindGemsUnusualCexQuery } from '@/query/find-gems/getFindGemsUnusualCex'
 import { useQuery } from '@tanstack/react-query'
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import React, { useState } from 'react'
 
 interface FindGemsTabUnusualCexProps {
@@ -13,6 +14,7 @@ interface FindGemsTabUnusualCexProps {
 export const FindGemsTabUnusualCex: React.FC<FindGemsTabUnusualCexProps> = ({
   tab,
 }) => {
+  const CHAIN = useAtomValue(chainAtom)
   const [page, setPage] = useState(1)
   const [perPage] = useState(10)
   const [sort, setSort] = useState('')
@@ -24,7 +26,7 @@ export const FindGemsTabUnusualCex: React.FC<FindGemsTabUnusualCexProps> = ({
     useFindGemsUnusualCexQuery({
       limit: perPage,
       start: page,
-      chain: 'solana',
+      chain: CHAIN,
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,
       market_cap_min: filter.minMarketcap,
@@ -36,7 +38,7 @@ export const FindGemsTabUnusualCex: React.FC<FindGemsTabUnusualCexProps> = ({
       cex_net_flow_min: filter.minCexNetflow,
       cex_net_flow_max: filter.maxCexNetflow,
       sort_by: sort,
-      duration
+      duration,
     }),
   )
   const dataFindGemsUnusualCex = findGemsUnusualCexQuery.isFetching

@@ -25,7 +25,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   const userBalanceQuery = useQuery(
     useGetUserBalanceQuery({
       address,
-      chain: 'solana',
+      chain,
     }),
   )
   const userBalance = userBalanceQuery?.data
