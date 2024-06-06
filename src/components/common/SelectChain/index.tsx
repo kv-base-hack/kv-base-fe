@@ -51,7 +51,7 @@ export const SelectChain = ({
     <Select value={chain} onValueChange={(val: string) => setChain(val)}>
       <SelectTrigger
         className={cn(
-          'flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap',
+          'flex w-full cursor-pointer gap-2 px-4 py-3 my-auto text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap',
           size === 'lg'
             ? 'bg-transparent border-none outline-none focus:ring-0 focus:ring-offset-0 p-0'
             : 'border border-solid backdrop-blur-[50px] bg-neutral-07/50 border-white/10 rounded-[360px]',
@@ -65,7 +65,7 @@ export const SelectChain = ({
             width={size === 'lg' ? 32 : 24}
             height={size === 'lg' ? 32 : 24}
             className={cn(
-              'object-center aspect-square rounded-full',
+              'object-center aspect-square rounded-full flex-1 w-full',
               size === 'lg' ? 'w-8' : 'w-6',
             )}
           />

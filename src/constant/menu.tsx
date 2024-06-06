@@ -1,32 +1,26 @@
 export const MENU = [
   {
-    title: 'Gem Analytics',
-    href: '/gem-analytics',
-    canNavigate: true,
-    children: [],
+    url: '/smartmoney-onchain/dashboard',
+    menu: 'Dashboard',
   },
   {
-    title: 'Tracking',
-    href: '/tracking',
-    canNavigate: true,
-    children: [],
+    url: '/find-gems',
+    menu: 'Find Gems',
   },
   {
-    title: 'Wallet Analytics',
-    href: '/wallet-analytics',
-    canNavigate: true,
-    children: [],
+    url: '/trading-signal',
+    menu: 'Trading Signal',
   },
   {
-    title: 'AI Signal',
-    href: '/trading-signal',
-    canNavigate: true,
-    children: [],
+    url: '/tracking',
+    menu: 'Tracking',
   },
   {
-    title: 'Bol AI',
-    href: '/ai',
-    canNavigate: true,
-    children: [],
+    url: '/leaderboard',
+    menu: 'Leaderboard',
+  },
+  {
+    url: '/kaichat',
+    menu: 'Kaichat',
   },
 ]

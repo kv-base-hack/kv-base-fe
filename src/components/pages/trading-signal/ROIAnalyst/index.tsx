@@ -6,8 +6,6 @@ export const ROIAlanyst = ({ id }: { id: string }) => {
   const [perPage] = useState(10)
   const dataSignalQuery: any = useGetRoiAnalystQuery({ id, page, perPage })
 
-  console.log({ dataSignalQuery })
-
   return (
     <div className="w-full text-center">
       <div className="">Coming Soon</div>

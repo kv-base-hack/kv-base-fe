@@ -265,8 +265,6 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       : []
   }, [activeTab, activityQuery.data?.data.activities, activityQuery.isFetching])
 
-  console.log(dataSource)
-
   return (
     <>
       <TitleCard

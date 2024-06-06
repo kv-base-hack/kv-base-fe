@@ -1,41 +1,20 @@
 import { SelectChain } from '@/components/common/SelectChain'
-import SearchIcon from '@/components/shared/icons/SearchIcon'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ButtonConnectWallet } from '../ConnectWallet'
-import { ConnectButton } from '@suiet/wallet-kit'
 import { ConnectSuiWalletButton } from '../ConnectWalletButton'
+import { SearchComp } from '../Search'
+import MenuIcon from '@/components/shared/icons/onchain/MenuIcon'
+import { MENU } from '@/constant/menu'
 
-const MENU = [
-  {
-    url: '/smartmoney-onchain/dashboard',
-    menu: 'Dashboard',
-  },
-  {
-    url: '/find-gems',
-    menu: 'Find Gems',
-  },
-  {
-    url: '/trading-signal',
-    menu: 'Trading Signal',
-  },
-  {
-    url: '/tracking',
-    menu: 'Tracking',
-  },
-  {
-    url: '/leaderboard',
-    menu: 'Leaderboard',
-  },
-  {
-    url: '/kaichat',
-    menu: 'Kaichat',
-  },
-]
-
-export const Header = () => {
+export const Header = ({
+  navbarOpen,
+  setNavbarOpen,
+}: {
+  navbarOpen: boolean
+  setNavbarOpen: (value: boolean) => void
+}) => {
   const pathname = usePathname()
 
   return (
@@ -50,12 +29,12 @@ export const Header = () => {
             height={47}
             alt="logo"
           />
-          <p className="text-[32px] leading-10 font-semibold font-sora">
+          <p className="text-[32px] leading-10 font-semibold font-sora hidden lg:block">
             Kaivest
           </p>
         </Link>
 
-        <div className="flex items-center gap-1 whitespace-nowrap">
+        <div className="items-center gap-1 whitespace-nowrap hidden xl:flex">
           {MENU.map((i) => {
             const isActive = pathname.includes(i.url)
             return (
@@ -69,22 +48,21 @@ export const Header = () => {
           })}
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="flex gap-0 justify-between items-stretch text-base leading-6 whitespace-nowrap">
-            <div className="flex flex-col justify-center py-2 text-base font-semibold tracking-normal leading-6 text-neutral-04 rounded-xl border border-solid shadow-lg backdrop-blur-lg bg-white/5 bg-opacity-10 border-white/10 min-w-[380px]">
-              <div className="flex gap-3 px-5">
-                <SearchIcon />
-                <input
-                  className="flex flex-1 bg-transparent w-full border-none outline-none text-neutral-01"
-                  placeholder="Search wallets, tokens or contract ..."
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-4 justify-between items-stretch">
+        <div className="flex items-center justify-end gap-4">
+          <SearchComp />
+          <div className="flex gap-4 justify-between items-stretch shrink-0">
             <SelectChain size="lg" showName={false} />
           </div>
           <ConnectSuiWalletButton />
+          <div className="bg-[#0080FF] flex items-center justify-center !rounded-full ">
+            <div
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className="flex xl:hidden overflow-visible w-8 h-8 lg:h-10 lg:w-10 justify-center rounded-full items-center"
+              role="button"
+            >
+              <MenuIcon />
+            </div>
+          </div>
         </div>
       </div>
     </div>

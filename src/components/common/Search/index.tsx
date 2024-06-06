@@ -3,22 +3,17 @@
 import { chainAtom } from '@/atom/chain'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import MagicIcon from '@/components/shared/icons/MagicIcon'
-import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
-import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import SearchIcon from '@/components/shared/icons/SearchIcon'
 import ViewWalletIcon from '@/components/shared/icons/ViewWallet'
-import WalletIcon from '@/components/shared/icons/WalletIcon'
 import TopTrendingIcon from '@/components/shared/icons/kaichat/TopTrendingIcon'
 import LastDateIcon from '@/components/shared/icons/wallet-explorer/LastDateIcon'
 import { cn } from '@/lib/utils'
-import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { useTokenListQuery } from '@/query/token-explorer/getListToken'
 import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 import { TokenList } from '@/types/tokenList'
 import { TrendingToken } from '@/types/trendingToken'
 import { useAtomValue } from 'jotai'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
@@ -82,19 +77,21 @@ export const SearchComp = () => {
       listTokenQuery?.data?.data?.tokens &&
       listTokenQuery?.data?.data?.tokens?.length > 0
     ) {
-      listTokenQuery.data.data.tokens.forEach((token: TokenList) => {
-        const tokenExist = tokenData.find(
-          (item: TrendingToken) => item.symbol === token.symbol,
-        )
-        if (!tokenExist) {
-          tokenData.unshift(token)
-          if (tokenData.length > 3) {
-            tokenData.pop()
+      ;[...listTokenQuery.data.data.tokens]
+        .reverse()
+        .forEach((token: TokenList) => {
+          const tokenExist = tokenData.find(
+            (item: TrendingToken) => item.symbol === token.symbol,
+          )
+          if (!tokenExist) {
+            tokenData.unshift(token)
+            if (tokenData.length > 3) {
+              tokenData.pop()
+            }
+            setDataRecently(tokenData)
+            localStorage.setItem('recently_searched', JSON.stringify(tokenData))
           }
-          setDataRecently(tokenData)
-          localStorage.setItem('recently_searched', JSON.stringify(tokenData))
-        }
-      })
+        })
     }
   }, [listTokenQuery?.data?.data?.tokens])
 
@@ -128,17 +125,17 @@ export const SearchComp = () => {
   return (
     <div
       ref={ref}
-      className="flex lg:max-w-[600px] w-full relative wrap-box rounded-[20px] wrap-box"
+      className="flex justify-end w-[400px] max-w-[400px] lg:max-w-[200px] relative wrap-box rounded-full wrap-box"
     >
       <div
         className={cn(
-          'flex flex-1 justify-start items-center my-auto rounded-[20px]',
+          'flex justify-start items-center my-auto rounded-full p-px',
           focusing
-            ? 'p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]'
+            ? ' bg-gradient-to-r from-[#0080FF] to-white shadow-lg backdrop-blur-[2px]'
             : '',
         )}
       >
-        <div className="flex flex-1 gap-2 justify-start items-center p-2 xl:p-3 my-auto text-base font-medium leading-6 text-neutral-02 rounded-[20px] border border-white/20 bg-neutral-07">
+        <div className="flex gap-2 justify-end items-center p-2 my-auto text-base font-medium leading-6 text-neutral-02 rounded-full border border-white/20 bg-neutral-07">
           <SearchIcon onClick={() => setOpenSearch(true)} />
           <input
             value={search}
@@ -146,8 +143,8 @@ export const SearchComp = () => {
               setSearch(e.target.value)
             }
             onFocus={focusInputSearch}
-            placeholder="Search wallets, tokens or ask Bol AI any question ..."
-            className="flex w-full lg:hidden xl:flex bg-transparent outline-none"
+            placeholder="Search..."
+            className="flex w-full bg-transparent outline-none"
           />
         </div>
       </div>
@@ -162,14 +159,6 @@ export const SearchComp = () => {
                   </div>
                   <div className="my-auto">Token</div>
                   <div className="my-auto">Wallet</div>
-                  <div className="flex flex-col justify-center px-5 py-2 text-white rounded-3xl border border-solid shadow-lg backdrop-blur-[2px] bg-[linear-gradient(80deg,#9945FF_0%,#14F195_100%)] border-violet-200 border-opacity-10">
-                    <Link href="/ai" className="flex gap-2 justify-center">
-                      <div className="flex gap-2 justify-center pr-1.5">
-                        <div>Ask BOL AI</div>
-                        <MagicIcon />
-                      </div>
-                    </Link>
-                  </div>
                 </div>
 
                 <div className="mt-4 text-base leading-6 text-zinc-400 max-md:max-w-full">
@@ -319,7 +308,7 @@ export const SearchComp = () => {
                     <div className="flex items-center flex-1 gap-2 py-px pr-20 max-md:flex-wrap">
                       <ImageToken
                         symbol={item.symbol}
-                        imgUrl={item.thumb}
+                        imgUrl={item.imageUrl}
                         className="self-center w-5 h-5 aspect-square"
                       />
                       <div className="flex gap-1">

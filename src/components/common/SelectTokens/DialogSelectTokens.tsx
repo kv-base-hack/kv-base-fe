@@ -173,7 +173,7 @@ export function DialogSelectToken({
                     tokens?.find(
                       (item) => item.tokenAddress === token.tokenAddress,
                     ) &&
-                      'z-0 bg-gradient-to-b from-[#9945FF] to-[#14F195] rounded-xl',
+                      'z-0 bg-gradient-to-b from-[#0080FF] to-[#14F195] rounded-xl',
                   )}
                 >
                   <div

@@ -15,6 +15,7 @@ export interface TrendingToken {
   priceChangeH24: number
   liquidity: number
   fdv: number
+  imageUrl: string
 }
 
 export interface TrendingTokenData {
