@@ -8,6 +8,7 @@ import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import Close from '@/components/shared/icons/Close'
 import { IconPresent } from '@/components/shared/icons/IconPresent'
 import Info from '@/components/shared/icons/Info'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
@@ -139,7 +140,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
               movement === 'deposit'
                 ? 'bg-[#F4E7FC]'
                 : movement === 'withdraw'
-                ? 'bg-secondary-4/10'
+                ? 'bg-secondary-4'
                 : movement === 'buying'
                 ? 'bg-[#E1F1FF]'
                 : movement === 'selling'
@@ -274,11 +275,25 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       >
         <div className="flex items-center gap-4 text-neutral-04">
           <p className="text-neutral-04 text-sm font-semibold">Filter by</p>
-          <DialogSelectToken>
+          <DialogSelectToken listToken={listToken} setListToken={setListToken}>
             <button className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent  px-4 py-2 my-auto">
               Specific Token
             </button>
           </DialogSelectToken>
+          {listToken?.length > 0 ? (
+            <div className="flex items-center gap-2">
+              {listToken.map((item) => (
+                <div
+                  className="bg-neutral-01 cursor-pointer rounded-xl flex items-center justify-center px-4 gap-1 h-full py-2 text-sm tracking-normal leading-5 text-neutral-07 border border-neutral-03"
+                  key={item.tokenAddress}
+                >
+                  <ImageToken imgUrl={item?.imageUrl} symbol={item?.symbol} />
+                  <div>{item.symbol}</div>
+                  <Close onclick={handleRemoveToken(item)} />
+                </div>
+              ))}
+            </div>
+          ) : null}
           <SelectTradeValue
             valueSelected={tradeValue}
             setValueSelected={setTradeValue}
