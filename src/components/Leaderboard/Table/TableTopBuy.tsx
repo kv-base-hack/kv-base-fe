@@ -114,6 +114,7 @@ export const TableTopBuy = () => {
           const { volume } = row.original
           return <div>{nFormatter(volume)}</div>
         },
+        align: 'center',
       },
       {
         accessorKey: 'balance_change_percent',
@@ -149,6 +150,7 @@ export const TableTopBuy = () => {
             <div className="text-center w-full">-</div>
           )
         },
+        align: 'center',
       },
       {
         accessorKey: 'number_of_sm_money',
@@ -169,6 +171,7 @@ export const TableTopBuy = () => {
             />
           )
         },
+        align: 'center',
       },
     ]
   }, [duration, page, perPage])
@@ -178,14 +181,14 @@ export const TableTopBuy = () => {
       <TitleCard
         iconFirst={<IconShoppingCart />}
         title="SM Top Buy"
-        iconSecond={<Info />}
+        content="Top purchases made by Smartmoney ranked by Volume Buy."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
           <LinkCustom url="/" title="Detail" />
         </div>
       </TitleCard>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto h-full flex flex-col justify-between">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
           columns={columns}

@@ -6,7 +6,7 @@ const SkeletonCell = (props: any, width?: number, height?: number) => (
     width={width ? width : 69}
     height={height ? height : 12}
     viewBox="0 0 69 12"
-    backgroundColor="#f3f3f3"
+    backgroundColor="#D6D9DC"
     foregroundColor="#ecebeb"
     {...props}
   >

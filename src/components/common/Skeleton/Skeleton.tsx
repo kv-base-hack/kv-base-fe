@@ -18,7 +18,7 @@ const Skeleton = ({
     width={width}
     height={height}
     viewBox={`0 0 ${width} ${height}`}
-    backgroundColor="#f3f3f3"
+    backgroundColor="#D6D9DC"
     foregroundColor="#ecebeb"
     {...props}
   >

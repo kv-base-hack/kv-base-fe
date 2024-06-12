@@ -11,11 +11,11 @@ const Skeleton = ({
 }) => (
   <div className={cn('overflow-hidden', className)}>
     <ContentLoader
-      speed={2}
+      speed={1}
       width={200}
       height={200}
       viewBox="0 0 200 200"
-      backgroundColor="#f3f3f3"
+      backgroundColor="#D6D9DC"
       foregroundColor="#ecebeb"
       {...props}
     >

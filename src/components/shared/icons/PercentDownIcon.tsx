@@ -1,4 +1,4 @@
-function PercentDownIcon() {
+function PercentDownIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +6,7 @@ function PercentDownIcon() {
       height="18"
       fill="none"
       viewBox="0 0 19 18"
+      className={className}
     >
       <path
         fill="#FF3B30"

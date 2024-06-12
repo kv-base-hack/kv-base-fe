@@ -143,12 +143,6 @@ export const TablePerformanceToken = () => {
             role="button"
           >
             <div className="text-center">Realized %</div>
-            <TooltipCustom
-              className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
-              content="The percentage of tokens sold after purchase."
-            >
-              <Info />
-            </TooltipCustom>
           </div>
         ),
         cell: ({ row }) => {
@@ -163,12 +157,9 @@ export const TablePerformanceToken = () => {
       {
         accessorKey: 'avg_cost',
         header: () => (
-          <div className="flex items-center gap-2 whitespace-nowrap">
+          <div className="flex items-center gap-2 ">
             <div>Avg Price</div>
-            <TooltipCustom
-              className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
-              content="The average purchase price of the token by Smart Money."
-            >
+            <TooltipCustom content="Average entry price at which smart money bought the token.">
               <Info />
             </TooltipCustom>
           </div>
@@ -249,11 +240,14 @@ export const TablePerformanceToken = () => {
         accessorKey: 'number_of_buys',
         header: () => (
           <div
-            className="text-neutral-07 text-end text-sm not-italic leading-5"
+            className="text-neutral-07  text-sm not-italic leading-5 flex items-center"
             onClick={() => setSortBy('number_of_smart_money')}
             role="button"
           >
-            # of SM
+            <div> # of SM</div>
+            <TooltipCustom content="Number of smart money entities that bought the token.">
+              <Info />
+            </TooltipCustom>
           </div>
         ),
         align: 'center',
@@ -276,7 +270,7 @@ export const TablePerformanceToken = () => {
       <TitleCard
         iconFirst={<IconCoins />}
         title="Smart Money Top Performing Tokens"
-        iconSecond={<Info />}
+        content="Top tokens bought by Smartmoney ranked by PnL earned."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />

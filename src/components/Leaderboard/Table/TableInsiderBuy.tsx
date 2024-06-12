@@ -15,6 +15,7 @@ import { useMemo, useState } from 'react'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { PaginationCustom } from '@/components/common/Pagination'
+import { UnusualBuy } from '@/types/unusualBuy'
 
 export const TableInsiderBuy = () => {
   const [duration, setDuration] = useState('24h')
@@ -34,11 +35,11 @@ export const TableInsiderBuy = () => {
   })
 
   const dataInsiderBuy = insiderBuyQuery.isFetching
-    ? [...Array(5).keys()]
+    ? [...(Array(5).keys() as any)]
     : insiderBuyQuery.data?.unusual_token_buy || []
   const totalInsiderBuy = insiderBuyQuery.data?.total || 1
 
-  const columns: ColumnDef<any>[] = useMemo(() => {
+  const columns: ColumnDef<UnusualBuy>[] = useMemo(() => {
     return [
       {
         accessorKey: 'id',
@@ -125,6 +126,7 @@ export const TableInsiderBuy = () => {
             </div>
           )
         },
+        align: 'center',
         cell: ({ row }) => {
           const { total_spent } = row.original
           return <div>{nFormatter(total_spent)}</div>
@@ -159,14 +161,14 @@ export const TableInsiderBuy = () => {
       <TitleCard
         iconFirst={<IconInsider />}
         title="Insider Buy"
-        iconSecond={<Info />}
+        content="List of tokens with unusual buying actions identified by Boltrade's AI. Unusual Buys may indicate insider trading and should be monitored closely."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
           <LinkCustom url="/" title="Detail" />
         </div>
       </TitleCard>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto flex flex-col h-full justify-between">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
           columns={columns}

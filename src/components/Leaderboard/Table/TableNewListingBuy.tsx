@@ -111,6 +111,7 @@ export const TableNewListingBuy = () => {
           const { token_age } = row.original
           return <>{token_age}</>
         },
+        align: 'center',
       },
       {
         accessorKey: 'total_spent',
@@ -123,8 +124,9 @@ export const TableNewListingBuy = () => {
         },
         cell: ({ row }) => {
           const { total_spent } = row.original
-          return <div>{nFormatter(total_spent)}</div>
+          return <>{nFormatter(total_spent)}</>
         },
+        align: 'center',
       },
       {
         accessorKey: 'roi',
@@ -137,6 +139,7 @@ export const TableNewListingBuy = () => {
             ROI
           </div>
         ),
+        align: 'center',
         cell: ({ row }) => {
           const { roi } = row.original
           return (
@@ -154,14 +157,14 @@ export const TableNewListingBuy = () => {
       <TitleCard
         iconFirst={<IconTarget />}
         title="SM New Listing Buy"
-        iconSecond={<Info />}
+        content="List of tokens created less than 14 days ago, bought by Smartmoney, ranked by default according to PnL."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
           <LinkCustom url="/" title="Detail" />
         </div>
       </TitleCard>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto flex flex-col justify-between h-full">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
           columns={columns}

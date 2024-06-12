@@ -37,16 +37,19 @@ export const getDexTradingSignal = async ({
   start,
   limit,
   type,
+  chain,
 }: {
   start: number
   limit: number
   type?: string
+  chain: string
 }): Promise<DexTradingSignalResponse> => {
   return await signalApi.get(`/dex-signals`, {
     params: {
       page: start,
       perPage: limit,
       type,
+      chain
     },
   })
 }
@@ -350,5 +353,13 @@ export const getTopActivity = async ({
       token_addresses,
       sort_by,
     },
+  })
+}
+
+export const getTotalEarning = ({ chain }: { chain?: string }) => {
+  return api.get('/v1/sm/overview', {
+    params: {
+      chain,
+    }
   })
 }

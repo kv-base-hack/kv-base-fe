@@ -7,7 +7,7 @@ const SkeletonChart = (props: any) => (
     width={1500}
     height={300}
     viewBox="0 0 1500 300"
-    backgroundColor="#f3f3f3"
+    backgroundColor="#D6D9DC"
     foregroundColor="#ecebeb"
     {...props}
   >

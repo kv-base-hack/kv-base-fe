@@ -15,6 +15,7 @@ import { useMemo, useState } from 'react'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { PaginationCustom } from '@/components/common/Pagination'
+import { UnusualBuy } from '@/types/unusualBuy'
 
 export const TableFindGemsInsiderBuy = () => {
   const [duration, setDuration] = useState('24h')
@@ -34,10 +35,10 @@ export const TableFindGemsInsiderBuy = () => {
   })
 
   const dataInsiderBuy = insiderBuyQuery.isFetching
-    ? [...Array(3).keys()]
+    ? [...(Array(3).keys() as any)]
     : insiderBuyQuery.data?.unusual_token_buy || []
 
-  const columns: ColumnDef<any>[] = useMemo(() => {
+  const columns: ColumnDef<UnusualBuy>[] = useMemo(() => {
     return [
       {
         accessorKey: 'id',
