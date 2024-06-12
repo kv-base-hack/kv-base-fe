@@ -6,6 +6,7 @@ import { SmartMoneyTransactions } from '@/components/ai/SmartMoneyTransactions'
 
 import { BotMessage } from '@/components/common'
 import { nanoid } from '@/lib/utils'
+import { CHAIN_X } from '@/constant/chain'
 
 const parameters = z.object({
   symbol: z
@@ -28,7 +29,12 @@ export const createSmartMoneyTransactionsTool: CreateToolFunction = (
 
       const toolCallId = nanoid()
       try {
-        const initData = await getSmartMoneyTransactions(address, 1, 10)
+        const initData = await getSmartMoneyTransactions(
+          address,
+          1,
+          10,
+          CHAIN_X,
+        )
         aiState.done({
           chatId: aiState.get().chatId,
           messages: [

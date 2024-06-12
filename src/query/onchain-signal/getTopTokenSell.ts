@@ -1,3 +1,4 @@
+import { CHAIN_X } from '@/constant/chain'
 import { getTopTokenSell } from '@/services/api'
 
 const GET_TOP_TOKEN_SELL = 'GET_TOP_TOKEN_SELL'
@@ -25,7 +26,7 @@ export const useGetTopTokenSell = ({
   limit = 10,
   duration = '24h',
   start = 1,
-  chain = 'solana',
+  chain = CHAIN_X,
   action = 'selling',
   price_change_24h_min = 0,
   price_change_24h_max = 0,

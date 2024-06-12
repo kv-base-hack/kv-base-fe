@@ -42,7 +42,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
       </TitleCard>
       <div className="flex items-center gap-3">
         <CardContent
-          title="Total Earning"
+          title="3D Total Earning"
           img={<IconActivity />}
           icon={<IconInfo />}
           className="bg-[#B5E4CA]/30"

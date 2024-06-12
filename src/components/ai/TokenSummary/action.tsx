@@ -5,9 +5,13 @@ import { streamText } from 'ai'
 import { createStreamableValue } from 'ai/rsc'
 import { ofetch } from 'ofetch'
 
-export const runAnalysis = async (symbol: string, address: string) => {
+export const runAnalysis = async (
+  symbol: string,
+  address: string,
+  chain: string,
+) => {
   const data = await ofetch(
-    `https://user-api-onchain.kaivest.net/v1/token/smart_money_token_summary?chain=solana&address=${address}`,
+    `https://user-api-onchain.kaivest.net/v1/token/smart_money_token_summary?chain=${chain}&address=${address}`,
   )
 
   const stream = createStreamableValue()

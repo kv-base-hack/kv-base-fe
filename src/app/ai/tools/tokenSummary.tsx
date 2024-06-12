@@ -5,6 +5,7 @@ import { SkeletonTokenInfo } from '@/components/common/Skeleton/TokenInfo/Skelet
 import { getTokenList } from '@/services/api'
 import { TokenSummary } from '@/components/ai/TokenSummary'
 import { BotMessage } from '@/components/common'
+import { CHAIN_X } from '@/constant/chain'
 
 const parameters = z.object({
   symbol: z
@@ -25,7 +26,7 @@ export const createSmartMoneyAnalystTool = (
       const toolCallId = nanoid()
       try {
         const resp = await getTokenList({
-          chain: 'solana',
+          chain: CHAIN_X,
           symbol_search: symbol,
         })
 

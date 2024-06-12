@@ -1,3 +1,4 @@
+import { CHAIN_X } from '@/constant/chain'
 import { getFindGemsDeposit } from '@/services/api'
 
 const GET_FIND_GEMS_DEPOSIT = 'GET_FIND_GEMS_DEPOSIT'
@@ -20,7 +21,7 @@ interface FindGemsDeposit {
 }
 
 export const useFindGemsDepositQuery = ({
-  chain = 'solana',
+  chain = CHAIN_X,
   limit = 10,
   start = 1,
   price_change_24h_min = 0,

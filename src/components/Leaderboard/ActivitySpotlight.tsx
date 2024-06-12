@@ -11,14 +11,14 @@ import { PaginationCustom } from '../common/Pagination'
 
 const DATA = [
   {
-    url: '/assets/icons/chain/sui.svg',
+    url: '/assets/icons/chain/ethereum.svg',
     channel: 'Channel 1',
     signal_time: '2024-09-10T13:00:00',
     content:
       'Smart money DCAKaxn5PKKNj229 has bought $100000 of SUI at $0.9. His avg price is $0.6 and  $50000 PnL with ROI +50%.',
   },
   {
-    url: '/assets/icons/chain/sui.svg',
+    url: '/assets/icons/chain/ethereum.svg',
     channel: 'Channel 2',
     signal_time: '2024-09-10T13:00:00',
     content:
@@ -56,10 +56,10 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
                 i === 0
                   ? 'bg-[#E1F1FF]'
                   : i === 1
-                  ? 'bg-[#FFF1E1]'
-                  : i === 2
-                  ? 'bg-[#F4E7FC]'
-                  : 'bg-[#E1FFEF]'
+                    ? 'bg-[#FFF1E1]'
+                    : i === 2
+                      ? 'bg-[#F4E7FC]'
+                      : 'bg-[#E1FFEF]'
               }
             />
           ))}

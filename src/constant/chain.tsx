@@ -1,1 +1,1 @@
-export const CHAIN = 'solana'
+export const CHAIN_X = 'ethereum'
