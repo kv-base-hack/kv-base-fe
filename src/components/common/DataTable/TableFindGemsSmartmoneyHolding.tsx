@@ -10,6 +10,7 @@ import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TooltipTable } from '../Tooltip/TooltipTable'
 
 export const TableFindGemsSmartMoneyHolding = ({
   tab,
@@ -85,8 +86,11 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'number_of_smart_money_hold',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
-            # of SM
+          <div className="flex items-center gap-0.5">
+            <div className="text-neutral-04 text-sm not-italic leading-5">
+              # of SM
+            </div>
+            <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
         cell: ({ row }) => {

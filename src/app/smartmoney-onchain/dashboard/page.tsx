@@ -18,9 +18,9 @@ export default function Leaderboard() {
       </div>
 
       <div className="flex gap-2">
-        <TableInsiderBuy />
-        <TableNewListingBuy />
-        <TableTopBuy />
+        <TableInsiderBuy limit={5} />
+        <TableNewListingBuy limit={5} />
+        <TableTopBuy limit={5} />
       </div>
 
       <TablePerformanceToken />

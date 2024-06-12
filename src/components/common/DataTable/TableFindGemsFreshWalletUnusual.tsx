@@ -9,6 +9,7 @@ import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import numeral from 'numeral'
 import { UnusualBuy } from '@/types/unusualBuy'
+import { TooltipTable } from '../Tooltip/TooltipTable'
 
 export const TableFindGemsFreshWalletUnusual = ({
   tab,
@@ -257,8 +258,11 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: 'buyer_count',
         header: () => (
-          <div className="text-center text-neutral-04 w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
-            # of Wallet
+          <div className="flex items-center gap-0.5">
+            <div className="text-neutral-04 text-sm not-italic leading-5">
+              # of SM
+            </div>
+            <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
         align: 'center',

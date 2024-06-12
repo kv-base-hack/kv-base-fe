@@ -9,6 +9,7 @@ import { TableFindGemsProps } from '@/types'
 import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
+import { TooltipTable } from '../Tooltip/TooltipTable'
 
 export const TableFindGemsSM = ({
   tab,
@@ -89,8 +90,11 @@ export const TableFindGemsSM = ({
         accessorKey: 'number_of_buys',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-end text-sm not-italic leading-5 whitespace-nowrap">
-            # of SM
+          <div className="flex items-center gap-0.5">
+            <div className="text-neutral-04 text-end text-sm not-italic leading-5 whitespace-nowrap">
+              # of SM
+            </div>
+            <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
         size: 50,

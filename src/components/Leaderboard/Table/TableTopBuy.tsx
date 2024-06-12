@@ -21,11 +21,19 @@ import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 
-export const TableTopBuy = () => {
+export const TableTopBuy = ({
+  limit,
+  pagination = true,
+  detail = true,
+}: {
+  limit: number
+  pagination?: boolean
+  detail?: boolean
+}) => {
   const CHAIN = useAtomValue(chainAtom)
   const [duration, setDuration] = useState('24h')
   const [page, setPage] = useState(1)
-  const [perPage] = useState(5)
+  const [perPage] = useState(limit)
   const [sortBy, setSortBy] = useState('')
 
   const dataSMTopTokenBuyQuery = useQuery(
@@ -40,7 +48,7 @@ export const TableTopBuy = () => {
   )
 
   const data = dataSMTopTokenBuyQuery.isFetching
-    ? [...(Array(5).keys() as any)]
+    ? [...(Array(limit).keys() as any)]
     : dataSMTopTokenBuyQuery.data?.top_buy_by_smart_money || []
   const total = dataSMTopTokenBuyQuery.data?.total_buy || 1
 
@@ -185,7 +193,7 @@ export const TableTopBuy = () => {
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
-          <LinkCustom url="/" title="Detail" />
+          {detail && <LinkCustom url="/" title="Detail" />}
         </div>
       </TitleCard>
       <div className="overflow-x-auto h-full flex flex-col justify-between">
@@ -198,14 +206,16 @@ export const TableTopBuy = () => {
           noneBgHeader
           emptyData="No results."
         />
-        <PaginationCustom
-          className="mt-2"
-          currentPage={page}
-          updatePage={(page: number) => setPage(page)}
-          pageSize={perPage}
-          total={total}
-          setPage={setPage}
-        />
+        {pagination && (
+          <PaginationCustom
+            className="mt-2"
+            currentPage={page}
+            updatePage={(page: number) => setPage(page)}
+            pageSize={perPage}
+            total={total}
+            setPage={setPage}
+          />
+        )}
       </div>
     </CardCommon>
   )

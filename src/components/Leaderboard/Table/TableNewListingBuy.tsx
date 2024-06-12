@@ -17,10 +17,18 @@ import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 
-export const TableNewListingBuy = () => {
+export const TableNewListingBuy = ({
+  limit,
+  pagination = true,
+  detail = true,
+}: {
+  limit: number
+  pagination?: boolean
+  detail?: boolean
+}) => {
   const [duration, setDuration] = useState('24h')
   const [page, setPage] = useState(1)
-  const [perPage] = useState(5)
+  const [perPage] = useState(limit)
   const [sortBy, setSortBy] = useState('')
   const CHAIN = useAtomValue(chainAtom)
 
@@ -35,7 +43,7 @@ export const TableNewListingBuy = () => {
   })
 
   const dataSMNewListingBuy = smNewListingBuyQuery.isFetching
-    ? [...Array(5).keys()]
+    ? [...Array(limit).keys()]
     : smNewListingBuyQuery.data?.smart_money_new_listing_buy || []
   const totalSMNewListingBuy = smNewListingBuyQuery.data?.total || 1
 
@@ -161,7 +169,7 @@ export const TableNewListingBuy = () => {
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
-          <LinkCustom url="/" title="Detail" />
+          {detail && <LinkCustom url="/" title="Detail" />}
         </div>
       </TitleCard>
       <div className="overflow-x-auto flex flex-col justify-between h-full">
@@ -174,14 +182,16 @@ export const TableNewListingBuy = () => {
           noneBgHeader
           emptyData="No results."
         />
-        <PaginationCustom
-          className="mt-2"
-          currentPage={page}
-          updatePage={(page: number) => setPage(page)}
-          pageSize={perPage}
-          total={totalSMNewListingBuy}
-          setPage={setPage}
-        />
+        {pagination && (
+          <PaginationCustom
+            className="mt-2"
+            currentPage={page}
+            updatePage={(page: number) => setPage(page)}
+            pageSize={perPage}
+            total={totalSMNewListingBuy}
+            setPage={setPage}
+          />
+        )}
       </div>
     </CardCommon>
   )
