@@ -36,6 +36,11 @@ const nextConfig = {
         hostname: 'assets.geckoterminal.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'coin-images.coingecko.com',
+        pathname: '**',
+      },
     ],
   },
 }

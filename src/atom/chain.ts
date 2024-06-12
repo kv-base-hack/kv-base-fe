@@ -1,3 +1,3 @@
 import { atom } from 'jotai'
 
-export const chainAtom = atom('sui')
+export const chainAtom = atom('ethereum')

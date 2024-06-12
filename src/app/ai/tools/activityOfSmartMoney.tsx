@@ -6,6 +6,7 @@ import { ActivityOfTopSmartMoneyTrading } from '@/components/ai/ActivityOfTopSma
 import { getActivityOfTopSmartMoneyTrading } from '@/components/ai/ActivityOfTopSmartMoneyTrading/api'
 import { nanoid } from '@/lib/utils'
 import { BotMessage } from '@/components/common'
+import { CHAIN_X } from '@/constant/chain'
 
 const parameters = z.object({
   symbol: z
@@ -27,7 +28,12 @@ export const createActivityOfTopSmartMoneyTradingTool: CreateToolFunction = (
       yield <SkeletonMessageSmartMoney />
 
       try {
-        const initData = await getActivityOfTopSmartMoneyTrading(address, 1, 10)
+        const initData = await getActivityOfTopSmartMoneyTrading(
+          address,
+          1,
+          10,
+          CHAIN_X,
+        )
         const toolCallId = nanoid()
 
         aiState.done({

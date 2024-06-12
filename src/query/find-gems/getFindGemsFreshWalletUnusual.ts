@@ -1,3 +1,4 @@
+import { CHAIN_X } from '@/constant/chain'
 import { getFindGemsFreshWalletUnusual } from '@/services/api'
 
 const GET_FIND_GEMS_UNUSUAL_CEX = 'GET_FIND_GEMS_UNUSUAL_CEX'
@@ -21,7 +22,7 @@ interface FindGemsUnusualCex {
 }
 
 export const useFindGemsFreshWalletUnusualQuery = ({
-  chain = 'solana',
+  chain = CHAIN_X,
   limit = 10,
   start = 1,
   price_change_24h_min = 0,

@@ -7,6 +7,7 @@ import { TechnicalAnalysis } from '@/components/ai/TechnicalAnalysis'
 import { getTokenList } from '@/services/api'
 import { BotMessage } from '@/components/common'
 import { nanoid } from '@/lib/utils'
+import { CHAIN_X } from '@/constant/chain'
 
 const parameters = z.object({
   symbol: z
@@ -29,7 +30,7 @@ export const createTechnicalAnalysisTool: CreateToolFunction = (aiState) => {
       yield <SkeletonMessageSmartMoney />
 
       const searchResp = await getTokenList({
-        chain: 'solana',
+        chain: CHAIN_X,
         symbol_search: symbol,
       })
 

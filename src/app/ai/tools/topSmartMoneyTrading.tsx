@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid'
 import { getTopSmartMoneyTrading } from '@/components/ai/TopSmartMoneyTrading/api'
 import { TopSmartMoneyTrading } from '@/components/ai/TopSmartMoneyTrading'
 import { BotMessage } from '@/components/common'
+import { CHAIN_X } from '@/constant/chain'
 
 const parameters = z.object({
   symbol: z
@@ -25,7 +26,7 @@ export const createTopSmartMoneyTradingTool: CreateToolFunction = (aiState) => {
       const toolCallId = nanoid()
 
       try {
-        const initData = await getTopSmartMoneyTrading(address, 1, 10)
+        const initData = await getTopSmartMoneyTrading(address, 1, 10, CHAIN_X)
         aiState.done({
           chatId: aiState.get().chatId,
           messages: [

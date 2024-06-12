@@ -18,6 +18,7 @@ import { nanoid } from '@/lib/utils'
 import { TokenInfo } from '@/components/common/Message/TokenInfo'
 import { useGetSmartMoneyTokenSummaryQuery } from '@/query/getSmartMoneyTokenSummary'
 import { SkeletonText } from '@/components/common/Skeleton/SkeletonText'
+import { CHAIN_X } from '@/constant/chain'
 
 interface TokenListProps {
   symbol: string
@@ -46,7 +47,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
   const onClickToken = async (token: TokenList) => {
     setAnalysis(null)
     setSelectedToken(token)
-    const x = await runAnalysis(token.symbol, token.tokenAddress)
+    const x = await runAnalysis(token.symbol, token.tokenAddress, CHAIN_X)
     setAnalysis(x)
   }
 
