@@ -27,6 +27,7 @@ import { IconUptrend } from '@/components/shared/icons/IconUptrend'
 import { IconChart } from '@/components/shared/icons/IconChart'
 import { useQuery } from '@tanstack/react-query'
 import Skeleton from '@/components/common/Skeleton'
+import { cn } from '@/lib/utils'
 
 const DUMMY_CHART = [
   [1700582400, 3.2820760583722837],
@@ -148,8 +149,8 @@ export default function WalletExplorerDetail({
   const userInfo = userInfoQuery?.data?.user_info
 
   return (
-    <div className="w-full h-full pt-2">
-      <div className="flex mt-4 gap-4 justify-center self-stretch">
+    <div className="w-full h-full">
+      <div className="flex gap-4 justify-center self-stretch">
         {/* left */}
         <div className="flex flex-col w-2/3 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] overflow-hidden">
           <div className="flex gap-6 max-md:flex-wrap">
@@ -220,7 +221,14 @@ export default function WalletExplorerDetail({
                   <div className="text-[15px] leading-6 font-semibold text-neutral-07">
                     3D PnL
                   </div>
-                  <div className="mt-1 text-xl leading-9 text-success-500 font-semibold">
+                  <div
+                    className={cn(
+                      'mt-1 text-xl leading-9  font-semibold',
+                      (userInfo?.pnl as number) > 0
+                        ? 'text-success-500'
+                        : 'text-error-500',
+                    )}
+                  >
                     {userInfoQuery.isFetching ? (
                       <div className="w-12 h-4 rounded-2xl overflow-hidden">
                         <Skeleton />
@@ -240,13 +248,20 @@ export default function WalletExplorerDetail({
                   <div className="text-[15px] leading-6 font-semibold text-neutral-07">
                     3D ROI
                   </div>
-                  <div className="mt-1 text-xl leading-9 text-success-500 font-semibold">
+                  <div
+                    className={cn(
+                      'mt-1 text-xl leading-9 font-semibold',
+                      (userInfo?.roi_percent as number) > 0
+                        ? 'text-success-500'
+                        : 'text-error-500',
+                    )}
+                  >
                     {userInfoQuery.isFetching ? (
                       <div className="w-12 h-4 rounded-2xl overflow-hidden">
                         <Skeleton />
                       </div>
                     ) : (
-                      <>{userInfo?.roi_percent.toFixed(2)}%</>
+                      <>{userInfo?.roi_percent?.toFixed(2)}%</>
                     )}
                   </div>
                 </div>
@@ -285,7 +300,7 @@ export default function WalletExplorerDetail({
         </div>
         {/* right */}
         <div className="w-1/3 relative flex items-center gap-4">
-          <div className="flex w-full flex-col p-4 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
+          <div className="flex w-full h-full flex-col p-4 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
             <WalletInfoItemTitle
               name={DATA_STATS[0].name}
               icon={DATA_STATS[0].icon}
@@ -302,6 +317,7 @@ export default function WalletExplorerDetail({
               pnl={DATA_STATS[0].pnl}
               address={DATA_STATS[0].address}
               price={DATA_STATS[0].price}
+              loading={tradeStatisticQuery.isFetching}
             />
             <div className="mt-4" />
             <WalletInfoItemTitle
@@ -319,6 +335,7 @@ export default function WalletExplorerDetail({
               roi={DATA_STATS[1].roi}
               pnl={DATA_STATS[1].pnl}
               address={DATA_STATS[1].address}
+              loading={tradeStatisticQuery.isFetching}
             />
           </div>
         </div>

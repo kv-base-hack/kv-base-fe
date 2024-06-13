@@ -105,7 +105,7 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => {
         return (
           <div
-            className="text-neutral-04"
+            className="text-neutral-04 whitespace-nowrap"
             role="button"
             onClick={() => setSort('total_spent')}
           >

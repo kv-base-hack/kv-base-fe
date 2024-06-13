@@ -4,14 +4,10 @@ import { ReactNode, useState } from 'react'
 import { CardCommon } from '../common/Card/CardCommon'
 import { TitleCard } from '../common/Card/TitleCard'
 import { IconRanking } from '../shared/icons/leaderboard/IconRanking'
-import Info from '../shared/icons/Info'
-import { SelectDuration } from '../common/SelectDuration'
 import { IconActivity } from '../shared/icons/leaderboard/IconActivity'
 import { IconInfo } from '../shared/icons/leaderboard/IconInfo'
 import { IconBag } from '../shared/icons/leaderboard/IconBag'
 import { cn } from '@/lib/utils'
-import { DialogSelectToken } from '../common/SelectTokens/DialogSelectTokens'
-import Image from 'next/image'
 import { useQuery } from '@tanstack/react-query'
 import { useGetTotalEarning } from '@/query/leaderboard/getTotalEarning'
 import { useAtomValue } from 'jotai'
@@ -30,14 +26,6 @@ import Link from 'next/link'
 import { ImageToken } from '../common/Image/ImageToken'
 import { CardInfo } from './CardInfoToken'
 import { TooltipCustom } from '../common/Tooltip'
-
-const TOPTOKEN = [
-  'https://assets.coingecko.com/coins/images/34930/small/GMEstop_%281%29_%281%29.png?1706689237',
-  'https://assets.coingecko.com/coins/images/37853/small/KITTY.jpg?1715778802',
-  'https://assets.coingecko.com/coins/images/37822/small/AMC.png?1715661262',
-  'https://assets.coingecko.com/coins/images/21629/small/solana.jpg?1696520989',
-  'https://assets.coingecko.com/coins/images/33760/small/image.jpg?1702964227',
-]
 
 export const SMMoneyOverview = ({ className }: { className?: string }) => {
   const [filterDate, setFilterDate] = useState<string>('24h')

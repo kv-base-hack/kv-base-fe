@@ -30,7 +30,7 @@ export const TooltipCustom: React.FC<TooltipCustomProps> = ({
           side={side}
           className={cn(
             className,
-            'shadow-box bg-neutral-01 text-neutral-07 max-w-[240px]',
+            'shadow-box bg-neutral-01 text-neutral-07 max-w-[240px] border border-neutral-07/10 rounded-lg',
           )}
         >
           {content}

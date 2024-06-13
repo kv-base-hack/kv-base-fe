@@ -57,7 +57,7 @@ export const CardAISignal = ({
   return (
     <div
       className="p-6 flex flex-col gap-4 bg-transparent border border-[#EFEFEF] border-solid rounded-2xl w-full backdrop-blur-lg shadow-ai-signal"
-      style={{ zIndex: 5 - index }}
+      style={{ zIndex: 10 - index }}
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2">

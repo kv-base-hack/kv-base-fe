@@ -1238,16 +1238,19 @@ export const getDexTradingSignal = async ({
   start,
   limit,
   type,
+  addresses
 }: {
   start: number
   limit: number
   type?: string
+  addresses?: string
 }): Promise<DexTradingSignalResponse> => {
   return await signalApi.get(`/dex-signals`, {
     params: {
       page: start,
       perPage: limit,
       type,
+      addresses
     },
   })
 }
