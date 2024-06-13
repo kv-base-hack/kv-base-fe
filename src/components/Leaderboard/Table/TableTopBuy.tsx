@@ -1,3 +1,4 @@
+import { categoryAtom } from '@/atom/category'
 import { chainAtom } from '@/atom/chain'
 import { CardCommon } from '@/components/common/Card/CardCommon'
 import { TitleCard } from '@/components/common/Card/TitleCard'
@@ -17,7 +18,7 @@ import { TopTokenBuy } from '@/types/top-token-buy'
 import { nFormatter } from '@/utils/nFormatter'
 import { useQuery } from '@tanstack/react-query'
 import { ColumnDef } from '@tanstack/react-table'
-import { useAtomValue } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 
@@ -35,6 +36,7 @@ export const TableTopBuy = ({
   const [page, setPage] = useState(1)
   const [perPage] = useState(limit)
   const [sortBy, setSortBy] = useState('')
+  const [, setActiveTab] = useAtom(categoryAtom)
 
   const dataSMTopTokenBuyQuery = useQuery(
     useGetTopTokenBuy({
@@ -113,7 +115,11 @@ export const TableTopBuy = ({
         accessorKey: 'total_spent',
         header: () => {
           return (
-            <div role="button" onClick={() => setSortBy('total_spent')}>
+            <div
+              className="whitespace-nowrap"
+              role="button"
+              onClick={() => setSortBy('total_spent')}
+            >
               Total Spent
             </div>
           )
@@ -193,7 +199,13 @@ export const TableTopBuy = ({
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
-          {detail && <LinkCustom url="/" title="Detail" />}
+          {detail && (
+            <LinkCustom
+              url="/find-gems"
+              title="Detail"
+              onClick={() => setActiveTab('SM Top Buys')}
+            />
+          )}
         </div>
       </TitleCard>
       <div className="overflow-x-auto h-full flex flex-col justify-between">

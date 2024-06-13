@@ -11,11 +11,13 @@ type TooltipCustomProps = {
   children: React.ReactNode
   content: string
   className?: string
+  side?: any
 }
 export const TooltipCustom: React.FC<TooltipCustomProps> = ({
   children,
   content,
   className,
+  side,
 }) => {
   return (
     <TooltipProvider>
@@ -25,6 +27,7 @@ export const TooltipCustom: React.FC<TooltipCustomProps> = ({
         </TooltipTrigger>
         <TooltipContent
           datatype="bottom"
+          side={side}
           className={cn(
             className,
             'shadow-box bg-neutral-01 text-neutral-07 max-w-[240px]',

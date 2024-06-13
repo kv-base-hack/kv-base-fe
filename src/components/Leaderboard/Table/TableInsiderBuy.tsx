@@ -13,9 +13,10 @@ import { ColumnDef } from '@tanstack/react-table'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { chainAtom } from '@/atom/chain'
-import { useAtomValue } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { UnusualBuy } from '@/types/unusualBuy'
+import { categoryAtom } from '@/atom/category'
 
 export const TableInsiderBuy = ({
   limit,
@@ -31,6 +32,8 @@ export const TableInsiderBuy = ({
   const [perPage] = useState(limit)
   const [sortBy, setSortBy] = useState('')
   const CHAIN = useAtomValue(chainAtom)
+
+  const [, setActiveTab] = useAtom(categoryAtom)
 
   const insiderBuyQuery = useQuery({
     ...useGetInsiderBuyQuery({
@@ -173,7 +176,13 @@ export const TableInsiderBuy = ({
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />
-          {detail && <LinkCustom url="/" title="Detail" />}
+          {detail && (
+            <LinkCustom
+              url="/find-gems"
+              title="Detail"
+              onClick={() => setActiveTab('Unusual Buying')}
+            />
+          )}
         </div>
       </TitleCard>
       <div className="overflow-x-auto flex flex-col h-full justify-between">
