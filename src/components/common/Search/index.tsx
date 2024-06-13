@@ -2,7 +2,6 @@
 
 import { chainAtom } from '@/atom/chain'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import MagicIcon from '@/components/shared/icons/MagicIcon'
 import SearchIcon from '@/components/shared/icons/SearchIcon'
 import ViewWalletIcon from '@/components/shared/icons/ViewWallet'
 import TopTrendingIcon from '@/components/shared/icons/kaichat/TopTrendingIcon'
@@ -14,7 +13,6 @@ import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 import { TokenList } from '@/types/tokenList'
 import { TrendingToken } from '@/types/trendingToken'
 import { useAtomValue } from 'jotai'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
@@ -60,10 +58,14 @@ export const SearchComp = () => {
   const listTokenData = listTokenQuery.data?.data?.tokens || []
   const listWalletData = listTokenQuery.data?.data?.users || []
 
-  const handleSaveLocal = (token: TrendingToken) => (e: any) => {
+  const navigateTokenDetail = (token: TrendingToken) => (e: any) => {
     e.preventDefault()
     e.stopPropagation()
-    router.push(`/smartmoney-onchain/token-explorer/${token.address}`)
+    router.push(
+      `/smartmoney-onchain/token-explorer/${
+        token?.address || token?.tokenAddress
+      }`,
+    )
     setOpenSearch(false)
   }
 
@@ -230,7 +232,7 @@ export const SearchComp = () => {
                 {dataToken.map((token, index: number) => (
                   <div
                     key={index}
-                    onClick={handleSaveLocal(token)}
+                    onClick={navigateTokenDetail(token)}
                     className="z-50 flex cursor-pointer !w-24 flex-col justify-center p-3 rounded-xl bg-zinc-700"
                   >
                     <ImageToken
@@ -302,7 +304,8 @@ export const SearchComp = () => {
                 {dataRecently?.map((item: TrendingToken, index: number) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 pr-9 mt-3 whitespace-nowrap leading-[140%] max-md:flex-wrap max-md:pr-5"
+                    onClick={navigateTokenDetail(item)}
+                    className="flex hover:underline cursor-pointer items-center gap-3 pr-9 mt-3 whitespace-nowrap leading-[140%] max-md:flex-wrap max-md:pr-5"
                   >
                     <LastDateIcon />
                     <div className="flex items-center flex-1 gap-2 py-px pr-20 max-md:flex-wrap">

@@ -8,6 +8,7 @@ export interface TrendingToken {
   total_volume: string
   price_change_percentage_24h: number
   address: string
+  tokenAddress: string
   chain_id: string
   priceChangeH1: number
   priceChangeH2: number
