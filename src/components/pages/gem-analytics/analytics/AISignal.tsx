@@ -3,15 +3,18 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import AISignalIcon from '@/components/shared/icons/gem-analytics/AISignalIcon'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { useGetDexTradingSignalQuery } from '@/query/trading-signal/getDexTradingSignal'
+import { useQuery } from '@tanstack/react-query'
 import moment from 'moment'
 import Link from 'next/link'
 
 export const GemAnalyticsAISignal = () => {
   //
-  const dataDexTradingSignalQuery = useGetDexTradingSignalQuery({
-    limit: 3,
-    start: 1,
-  })
+  const dataDexTradingSignalQuery = useQuery(
+    useGetDexTradingSignalQuery({
+      limit: 3,
+      start: 1,
+    }),
+  )
 
   const dataDexTradingSignal = dataDexTradingSignalQuery?.data?.data?.data || []
 
