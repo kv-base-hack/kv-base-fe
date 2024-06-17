@@ -173,7 +173,7 @@ export default function WalletExplorerDetail({
                   )}...${params.groupId?.slice(-6)}`}</div>
                   <CopyCustom value={params.groupId} icon={<CopyIcon />} />
                   <a
-                    href={`https://suiscan.xyz/mainnet/account/${params.groupId}`}
+                    href={`https://etherscan.io/address/${params.groupId}`}
                     target="_blank"
                   >
                     <ExternalLinkIcon />

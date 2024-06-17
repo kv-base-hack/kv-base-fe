@@ -18,7 +18,7 @@ export const TitleCard = ({
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-1">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 lg:gap-2">
           {iconFirst}
           <p className="text-neutral-07 font-semibold text-lg">{title}</p>
         </div>
