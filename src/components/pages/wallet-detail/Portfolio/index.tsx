@@ -4,6 +4,7 @@ import { columnsPortfolio } from '@/components/common/DataTable/columnsPortfolio
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
+import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
 type PortfolioProps = {
@@ -16,13 +17,15 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage] = useState(8)
   // get user balance
-  const userBalanceQuery = useGetUserBalanceQuery({
-    address,
-    chain,
-    page: currentPage,
-    perPage: itemsPerPage,
-  })
-  const userBalance = userBalanceQuery?.data?.data
+  const userBalanceQuery = useQuery(
+    useGetUserBalanceQuery({
+      address,
+      chain,
+      page: currentPage,
+      perPage: itemsPerPage,
+    }),
+  )
+  const userBalance = userBalanceQuery?.data
 
   const totalPages = userBalance?.tokens?.length || 0
 
