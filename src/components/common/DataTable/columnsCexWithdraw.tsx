@@ -9,9 +9,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-        #
-      </div>
+      <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
     ),
     cell: ({ row }) => {
       return <div>{row.index + 1}</div>
@@ -21,7 +19,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'symbol',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
         Symbol
       </div>
     ),
@@ -57,7 +55,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'withdraw_value',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
         Withdraw Value
       </div>
     ),
@@ -74,7 +72,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'cex_netflow',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
         CEX Netflow
       </div>
     ),

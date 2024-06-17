@@ -17,7 +17,7 @@ export default function Leaderboard() {
         <ActivitySpotlight limit={2} />
       </div>
 
-      <div className="flex gap-2">
+      <div className="grid grid-cols-3 gap-2">
         <TableInsiderBuy limit={5} />
         <TableNewListingBuy limit={5} />
         <TableTopBuy limit={5} />

@@ -53,6 +53,7 @@ export const FindGemsTabTopCexDeposit: React.FC<
       total={totalFindGemDeposit}
       isFetching={findGemsDepositQuery.isFetching}
       setSort={() => {}}
+      chain={CHAIN}
     />
   )
 }

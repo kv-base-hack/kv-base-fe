@@ -22,6 +22,7 @@ export const TableFindGemsUnusualCex = ({
   total,
   isFetching,
   setSort,
+  chain,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<TopUnusualCex>[] = useMemo(() => {
     return [
@@ -50,7 +51,7 @@ export const TableFindGemsUnusualCex = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                     className="flex items-center gap-2"
                   >
                     <ImageToken
@@ -104,8 +105,8 @@ export const TableFindGemsUnusualCex = ({
                   action === 'deposit'
                     ? 'text-secondary-1 bg-secondary-1/10'
                     : action === 'withdraw'
-                      ? 'text-secondary-4 bg-secondary-4/10'
-                      : '',
+                    ? 'text-secondary-4 bg-secondary-4/10'
+                    : '',
                 )}
               >
                 {action === 'deposit' ? (
@@ -273,7 +274,7 @@ export const TableFindGemsUnusualCex = ({
         align: 'end',
       },
     ]
-  }, [page, perPage, setSort])
+  }, [chain, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

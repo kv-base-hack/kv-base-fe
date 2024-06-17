@@ -100,7 +100,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
         return (
           <Link
             className="underline max-w-32 truncate"
-            href={`/smartmoney-onchain/wallet-explorer/${sender}`}
+            href={`/smartmoney-onchain/wallet-explorer/${sender}?chain=${CHAIN}`}
           >
             {sender}
           </Link>

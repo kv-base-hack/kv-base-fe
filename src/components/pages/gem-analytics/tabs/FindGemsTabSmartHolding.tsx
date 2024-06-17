@@ -57,6 +57,7 @@ export const FindGemsTabSmartHolding: React.FC<
       total={totalFindGemTrending}
       isFetching={findGemsTrendingQuery.isFetching}
       setSort={setSort}
+      chain={CHAIN}
     />
   )
 }

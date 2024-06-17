@@ -18,6 +18,7 @@ export const TableFindGemsDeposit = ({
   data,
   total,
   isFetching,
+  chain,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<TopCexDeposit>[] = useMemo(() => {
     return [
@@ -44,7 +45,7 @@ export const TableFindGemsDeposit = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                     className="flex items-center gap-2"
                   >
                     <ImageToken
@@ -253,7 +254,7 @@ export const TableFindGemsDeposit = ({
         align: 'end',
       },
     ]
-  }, [page, perPage])
+  }, [chain, page, perPage])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

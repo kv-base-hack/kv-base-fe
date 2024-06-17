@@ -65,6 +65,7 @@ export interface TableFindGemsProps {
   total: number
   isFetching: boolean
   setSort: (v: string) => void
+  chain: string
 }
 
 export interface TopSmartMoneyTradeUsersListProps {

@@ -112,6 +112,7 @@ export default function OnchainSignals() {
                 isFetching={topTokenProfitQuery.isFetching}
                 setSortBy={setSortBy}
                 duration={filterDate}
+                chain={CHAIN}
               />
             </div>
             <PaginationTable

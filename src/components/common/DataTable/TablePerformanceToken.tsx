@@ -20,6 +20,7 @@ interface TablePerformanceTokenProps {
   isFetching: boolean
   setSortBy: (value: string) => void
   duration: string
+  chain: string
 }
 
 export const TablePerformanceToken = ({
@@ -27,6 +28,7 @@ export const TablePerformanceToken = ({
   isFetching,
   setSortBy,
   duration,
+  chain,
 }: TablePerformanceTokenProps) => {
   const columns: ColumnDef<TopTokenProfit>[] = useMemo(() => {
     return [
@@ -40,7 +42,7 @@ export const TablePerformanceToken = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row.original.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row.original.address}?chain=${chain}`}
                     className="flex gap-3 items-center justify-between text-right"
                   >
                     <ImageToken
@@ -205,7 +207,7 @@ export const TablePerformanceToken = ({
         accessorKey: 'liquidity',
         header: () => (
           <div
-            className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('liquidity')}
             role="button"
           >
@@ -243,7 +245,7 @@ export const TablePerformanceToken = ({
         },
       },
     ]
-  }, [duration, setSortBy])
+  }, [chain, duration, setSortBy])
   return (
     <DataTable
       className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"

@@ -20,6 +20,7 @@ export const TableFindGemsSM = ({
   total,
   isFetching,
   setSort,
+  chain,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<TopTokenBuy>[] = useMemo(() => {
     return [
@@ -48,7 +49,7 @@ export const TableFindGemsSM = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                     className="flex items-center gap-2"
                   >
                     <ImageToken
@@ -286,7 +287,7 @@ export const TableFindGemsSM = ({
         },
       },
     ]
-  }, [page, perPage, setSort])
+  }, [chain, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

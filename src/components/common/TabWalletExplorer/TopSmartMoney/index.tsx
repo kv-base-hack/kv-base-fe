@@ -33,6 +33,8 @@ export const TopSmartMoney = ({
   const totalTopSmartMoneyForToken =
     topSmartMoneyForTokenQuery.data?.data.total || 1
   //
+  console.log(dataTokenInfo)
+
   return (
     <div>
       <div className="flex items-center mb-4 gap-2 font-medium">
@@ -40,7 +42,11 @@ export const TopSmartMoney = ({
           Top Smart Money trading
         </div>
         <div className="flex items-center gap-2">
-          <ImageToken className="w-8 h-8" symbol={dataTokenInfo?.symbol} />
+          <ImageToken
+            className="w-8 h-8"
+            symbol={dataTokenInfo?.symbol}
+            imgUrl={dataTokenInfo?.image_url}
+          />
           <div className="text-purple-300">{dataTokenInfo?.symbol}</div>
           <TooltipCustom
             className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
@@ -55,7 +61,12 @@ export const TopSmartMoney = ({
         columns={columnsSmartMoneyRanking(
           pageTopSmartMoneyForToken,
           perPageTopSmartMoneyForToken,
-          <ImageToken className="w-4 h-4" symbol={dataTokenInfo?.symbol} />,
+          <ImageToken
+            className="w-4 h-4"
+            symbol={dataTokenInfo?.symbol}
+            imgUrl={dataTokenInfo?.image_url}
+          />,
+          CHAIN,
         )}
         data={dataTopSmartMoneyProfiting || []}
         isFetching={topSmartMoneyForTokenQuery.isFetching}

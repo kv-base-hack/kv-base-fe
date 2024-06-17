@@ -59,9 +59,7 @@ export const TableTopBuy = ({
       {
         accessorKey: 'id',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-            #
-          </div>
+          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -72,7 +70,7 @@ export const TableTopBuy = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Tokens
           </div>
         ),
@@ -82,7 +80,7 @@ export const TableTopBuy = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${CHAIN}`}
                   >
                     <div className="flex gap-1.5 w-full items-center justify-start">
                       <ImageToken
@@ -134,7 +132,7 @@ export const TableTopBuy = ({
         accessorKey: 'balance_change_percent',
         header: () => (
           <div
-            className="w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('balance_change')}
             role="button"
           >
@@ -188,7 +186,7 @@ export const TableTopBuy = ({
         align: 'center',
       },
     ]
-  }, [duration, page, perPage])
+  }, [CHAIN, duration, page, perPage])
 
   return (
     <CardCommon>

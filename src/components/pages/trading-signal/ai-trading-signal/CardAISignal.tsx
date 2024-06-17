@@ -1,3 +1,4 @@
+import { chainAtom } from '@/atom/chain'
 import { DialogUsers } from '@/components/common/Dialog/DialogListUsers'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Skeleton from '@/components/common/Skeleton'
@@ -6,10 +7,13 @@ import { IconBarChart } from '@/components/shared/icons/IconBarChart'
 import { IconClockCounter } from '@/components/shared/icons/IconClockCounter'
 import { IconScale } from '@/components/shared/icons/IconScale'
 import { IconTargetGradient } from '@/components/shared/icons/IconTargetGradient'
+import { cn } from '@/lib/utils'
 import { AITradingSignalInfo } from '@/types/tradingSignal'
 import { renderPrice } from '@/utils/renderPrice'
+import { useAtomValue } from 'jotai'
 import moment from 'moment'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export const CardAISignal = ({
   item,
@@ -20,6 +24,9 @@ export const CardAISignal = ({
   loading: boolean
   index: number
 }) => {
+  const pathName = usePathname()
+  const CHAIN = useAtomValue(chainAtom)
+
   const renderIcon = (type: string) => {
     switch (type) {
       case 'new_listing_buy':
@@ -76,7 +83,7 @@ export const CardAISignal = ({
                 <Skeleton className="w-[140px] h-[14px] rounded-lg" />
               ) : (
                 <Link
-                  href={`/smartmoney-onchain/token-explorer/${item.address}`}
+                  href={`/smartmoney-onchain/token-explorer/${item.address}?chain=${CHAIN}`}
                   passHref
                   legacyBehavior
                 >
@@ -84,8 +91,24 @@ export const CardAISignal = ({
                     target="_blank"
                     className="flex items-center gap-1 font-bold text-xl  hover:underline"
                   >
-                    <p className="text-[#1A1D1F]">{item.symbol}</p>
-                    <p className="w-[150px] text-[#6F767E] truncate">
+                    <p
+                      className={cn(
+                        'text-[#1A1D1F] ',
+                        pathName === '/smartmoney-onchain/dashboard'
+                          ? 'max-w-20 truncate'
+                          : '',
+                      )}
+                    >
+                      {item.symbol}
+                    </p>
+                    <p
+                      className={cn(
+                        ' text-[#6F767E] ',
+                        pathName === '/smartmoney-onchain/dashboard'
+                          ? 'max-w-20 truncate'
+                          : '',
+                      )}
+                    >
                       {item.name}
                     </p>
                   </a>
@@ -96,11 +119,11 @@ export const CardAISignal = ({
               {loading ? (
                 <Skeleton className="w-[140px] h-[14px] rounded-lg" />
               ) : (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                   <div>
                     <IconClockCounter />
                   </div>
-                  <p className="text-base text-neutral-04 text-medium">
+                  <p className="text-sm text-neutral-04 font-medium whitespace-nowrap">
                     Created {moment(item.signal_time).fromNow()}
                   </p>
                 </div>

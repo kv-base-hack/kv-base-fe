@@ -41,6 +41,11 @@ const nextConfig = {
         hostname: 'coin-images.coingecko.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.alchemyapi.io',
+        pathname: '**',
+      },
     ],
   },
 }

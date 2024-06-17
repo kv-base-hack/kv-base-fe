@@ -1,11 +1,10 @@
 'use client'
 
 import ArrowLeftIcon from '@/components/shared/icons/ArrowLeft'
-import ArrowRightIcon from '@/components/shared/icons//ArrowRight'
+import ArrowRightIcon from '@/components/shared/icons/ArrowRight'
+import { cn } from '@/lib/utils'
 import Pagination from 'rc-pagination'
 import { ChangeEvent, useMemo, useState } from 'react'
-import { ArrowDupRight, ArrowDupLeft } from '@/components/shared/icons/ArrowDup'
-import { cn } from '@/lib/utils'
 
 export const PaginationTable = ({
   currentPage,
@@ -19,7 +18,7 @@ export const PaginationTable = ({
   updatePage: any
   pageSize: number
   total: number
-  setPage: (n: number) => void
+  setPage: any
   className?: string
 }) => {
   const [inputValue, setInputValue] = useState(currentPage)
@@ -59,17 +58,9 @@ export const PaginationTable = ({
       case 'page':
         return current
       case 'prev':
-        return (
-          <div className="w-6 h-6 flex justify-center items-center">
-            <ArrowLeftIcon className="w-4 h-4 cursor-pointer" />
-          </div>
-        )
+        return <ArrowLeftIcon className="cursor-pointer" />
       case 'next':
-        return (
-          <div className="w-6 h-6 flex justify-center items-center">
-            <ArrowRightIcon className="w-4 h-4 cursor-pointer" />
-          </div>
-        )
+        return <ArrowRightIcon className="cursor-pointer" />
       default:
         return null
     }
@@ -78,12 +69,12 @@ export const PaginationTable = ({
   return (
     <div
       className={cn(
-        'flex md:flex-row justify-center items-center gap-2 mb-10 md:mb-0',
+        'flex flex-col md:flex-row justify-center items-center gap-2 mb-10 md:mb-0',
         className,
       )}
     >
       <div className="flex items-center gap-2">
-        <ArrowDupLeft onClick={handleJumpDownPage} />
+        <ArrowLeftIcon onClick={handleJumpDownPage} />
         <Pagination
           pageSize={pageSize}
           current={currentPage}
@@ -92,17 +83,17 @@ export const PaginationTable = ({
           itemRender={renderPaginationItem}
           className="flex items-center gap-2"
         />
-        <ArrowDupRight onClick={handleJumpUpPage} />
+        <ArrowRightIcon onClick={handleJumpUpPage} />
       </div>
       <div className="flex gap-2 items-center text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="w-16 h-6 bg-transparent rounded-2xl text-center font-normal text-neutral-dark-1 border border-neutral-dark-8"
+          className="w-16 h-6 bg-transparent rounded-2xl text-center font-normal text-neutral-07 border border-neutral-dark-08"
           onBlur={handleBlur}
           onChange={handleToPage}
         />
-        <span className="text-neutral-dark-4">of</span>
-        <span className="font-bold text-[#D6D9DC]">{totalPage}</span>
+        <span className="text-neutral-07">of</span>
+        <span className="font-bold text-[#6F767E]">{totalPage}</span>
       </div>
     </div>
   )

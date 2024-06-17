@@ -72,7 +72,7 @@ export const ActivityOfTopSmartMoney = ({
       </div>
       <DataTable
         className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50 w-full"
-        columns={columnsActivitySmartMoneyOfToken}
+        columns={columnsActivitySmartMoneyOfToken(CHAIN)}
         data={dataActivity || []}
         isFetching={activityQuery.isFetching}
         noneBorder

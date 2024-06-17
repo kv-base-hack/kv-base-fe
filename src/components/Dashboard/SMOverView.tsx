@@ -112,7 +112,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                       <Tooltip>
                         <TooltipTrigger>
                           <Link
-                            href={`/smartmoney-onchain/token-explorer/${token?.address}`}
+                            href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
                           >
                             <ImageToken
                               imgUrl={token?.image_url}
@@ -163,7 +163,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                         <TooltipTrigger>
                           <Link
                             key={index}
-                            href={`/smartmoney-onchain/token-explorer/${token?.address}`}
+                            href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
                           >
                             <ImageToken
                               imgUrl={token?.image_url}

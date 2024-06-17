@@ -65,7 +65,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
         <div className="flex items-center gap-4">
           <div>Trade Activity</div>
           <div className="flex items-center gap-4">
-            <span className="text-sm not-italic font-normal leading-5 tracking-[-0.14px]">
+            <span className="font-normal leading-5 tracking-[-0.14px]">
               {`Only show big trade(>$5K)`}
             </span>
             <Switch

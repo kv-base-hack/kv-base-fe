@@ -21,9 +21,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'id',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-            #
-          </div>
+          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -34,7 +32,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Tokens
           </div>
         ),
@@ -76,7 +74,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'withdraw_value',
         header: () => (
-          <div className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Withdraw Value
           </div>
         ),
@@ -93,7 +91,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'cex_netflow',
         header: () => (
-          <div className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             CEX Netflow
           </div>
         ),

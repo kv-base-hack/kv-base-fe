@@ -43,9 +43,7 @@ export const TableFindGemsInsiderBuy = () => {
       {
         accessorKey: 'id',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-            #
-          </div>
+          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -56,7 +54,7 @@ export const TableFindGemsInsiderBuy = () => {
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Tokens
           </div>
         ),
@@ -99,7 +97,7 @@ export const TableFindGemsInsiderBuy = () => {
         accessorKey: 'token_age',
         header: () => (
           <div
-            className="text-center text-neutral-04 w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="text-center text-neutral-04 w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('token_age')}
             role="button"
           >

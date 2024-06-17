@@ -56,6 +56,7 @@ export const FindGemsTabUnusualCex: React.FC<FindGemsTabUnusualCexProps> = ({
       total={totalFindGemUnusualCex}
       isFetching={findGemsUnusualCexQuery.isFetching}
       setSort={setSort}
+      chain={CHAIN}
     />
   )
 }

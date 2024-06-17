@@ -71,7 +71,7 @@ export const GemAnalyticsUnusualBuy = () => {
                     {item.price_change_24h ? (
                       <div
                         className={cn(
-                          'flex items-center justify-end text-end text-sm not-italic font-normal leading-[140%]',
+                          'flex items-center justify-end text-end font-normal leading-[140%]',
                           item.price_change_24h > 0
                             ? 'text-success-500'
                             : 'text-error-500',

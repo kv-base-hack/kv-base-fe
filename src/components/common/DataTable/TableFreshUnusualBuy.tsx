@@ -26,9 +26,7 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'id',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-            #
-          </div>
+          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -39,7 +37,7 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Tokens
           </div>
         ),
@@ -82,7 +80,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'total_spent',
         header: () => (
           <div
-            className="w-full text-neutral-04 text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full text-neutral-04 font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('total_spent')}
             role="button"
           >
@@ -103,7 +101,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'pnl',
         header: () => (
           <div
-            className="w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('pnl')}
             role="button"
           >
@@ -127,7 +125,7 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'avg_price',
         header: () => (
-          <div className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Avg Price
           </div>
         ),
@@ -141,7 +139,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'price',
         header: () => (
           <div
-            className="w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('price_change')}
             role="button"
           >
@@ -169,7 +167,7 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'buyer_count',
         header: () => (
-          <div className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             # of Wallet
           </div>
         ),

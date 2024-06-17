@@ -24,6 +24,8 @@ export const columnsPortfolio: ColumnDef<Portfolio>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { symbol, image_url } = row.original
+
+      console.log(row)
       return (
         <Link
           href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}

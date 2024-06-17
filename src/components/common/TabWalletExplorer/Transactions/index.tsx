@@ -72,7 +72,7 @@ export const Transactions = ({
       </div>
       <DataTable
         className="text-xs mt-4 font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-        columns={columnsSmartMoneyTransaction}
+        columns={columnsSmartMoneyTransaction(CHAIN)}
         data={dataSmartMoneyTransaction || []}
         isFetching={smartMoneyTransactionQuery.isFetching}
         noneBorder

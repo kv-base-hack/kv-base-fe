@@ -73,7 +73,9 @@ export default function LeaderboardPage() {
         return (
           <Link
             className="w-32 truncate"
-            href={`/smartmoney-onchain/wallet-explorer/${user_address || '1'}`}
+            href={`/smartmoney-onchain/wallet-explorer/${
+              user_address || '1'
+            }?chain=${CHAIN}`}
           >
             {user_address}
           </Link>
@@ -147,7 +149,7 @@ export default function LeaderboardPage() {
         return most_profit_token?.symbol ? (
           most_profit_token?.tokenAddress ? (
             <Link
-              href={`/smartmoney-onchain/token-explorer/${most_profit_token?.tokenAddress}`}
+              href={`/smartmoney-onchain/token-explorer/${most_profit_token?.tokenAddress}?chain=${CHAIN}`}
               className="flex gap-3 items-center justify-between text-right"
             >
               <ImageToken
@@ -179,7 +181,7 @@ export default function LeaderboardPage() {
         return current_largest_position ? (
           current_largest_position?.tokenAddress ? (
             <Link
-              href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}`}
+              href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}?chain=${CHAIN}`}
               className="flex gap-3 items-center justify-between text-right"
             >
               <ImageToken
@@ -209,7 +211,7 @@ export default function LeaderboardPage() {
         return most_token_buy ? (
           most_token_buy?.tokenAddress ? (
             <Link
-              href={`/smartmoney-onchain/token-explorer/${most_token_buy?.tokenAddress}`}
+              href={`/smartmoney-onchain/token-explorer/${most_token_buy?.tokenAddress}?chain=${CHAIN}`}
               className="flex gap-3 items-center justify-between text-right"
             >
               <ImageToken
@@ -239,7 +241,7 @@ export default function LeaderboardPage() {
         return most_token_sell ? (
           most_token_sell?.tokenAddress ? (
             <Link
-              href={`/smartmoney-onchain/token-explorer/${most_token_sell?.tokenAddress}`}
+              href={`/smartmoney-onchain/token-explorer/${most_token_sell?.tokenAddress}?chain=${CHAIN}`}
               className="flex gap-3 items-center justify-between text-right"
             >
               <ImageToken

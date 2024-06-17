@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
                   style={{ width: column.columnDef.size }}
                   key={id}
                   className={cn(
-                    'first-of-type:pl-4 last-of-type:pr-4 h-10 px-1.5',
+                    'h-10 px-1.5',
                     noneBorder
                       ? ''
                       : 'border-t-[0.5px] border-b-[0.5px] border-white/20',
@@ -89,7 +89,7 @@ export function DataTable<TData, TValue>({
                   {!isPlaceholder && (
                     <div
                       className={cn(
-                        'flex font-normal items-center text-sm gap-1 text-neutral-04',
+                        'flex font-normal items-center text-xs gap-1 text-neutral-04 whitespace-nowrap',
                         align === 'end'
                           ? 'justify-end '
                           : align === 'center'
@@ -125,7 +125,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <TableCell
                     key={cell.id}
-                    className="px-1.5 first-of-type:pl-4 last-of-type:pr-4 border-t border-[#EFEFEF]"
+                    className="border-t border-[#EFEFEF]"
                   >
                     {isFetching ? (
                       <div

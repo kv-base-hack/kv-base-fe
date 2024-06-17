@@ -20,6 +20,7 @@ export const TableFindGemsFreshWalletUnusual = ({
   total,
   isFetching,
   setSort,
+  chain,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<UnusualBuy>[] = useMemo(() => {
     return [
@@ -50,7 +51,7 @@ export const TableFindGemsFreshWalletUnusual = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                   >
                     <div className="flex gap-1.5 w-full items-center justify-start">
                       <ImageToken
@@ -82,7 +83,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'total_spent',
         header: () => (
           <div
-            className="w-full text-neutral-04 text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full text-neutral-04 font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSort('total_spent')}
             role="button"
           >
@@ -154,7 +155,7 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: 'avg_price',
         header: () => (
-          <div className="text-center text-neutral-04 w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="text-center text-neutral-04 w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Avg Price
           </div>
         ),
@@ -187,7 +188,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'price',
         header: () => (
           <div
-            className="w-full text-neutral-04 text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full text-neutral-04 font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -273,7 +274,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         enableSorting: false,
       },
     ]
-  }, [page, perPage, setSort])
+  }, [chain, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

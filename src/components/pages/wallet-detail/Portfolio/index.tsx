@@ -1,11 +1,12 @@
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsPortfolio } from '@/components/common/DataTable/columnsPortfolio'
+import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
 import { useQuery } from '@tanstack/react-query'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 type PortfolioProps = {
   address: string
@@ -33,15 +34,15 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
     setCurrentPage(pageNumber)
   }
 
-  const getVisibleItems = () => {
+  const getVisibleItems = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
     return userBalance?.tokens?.slice(startIndex, endIndex)
-  }
+  }, [currentPage, itemsPerPage, userBalance?.tokens])
 
   const dataSource = userBalanceQuery?.isFetching
-    ? [...(Array(6).keys() as any)]
-    : getVisibleItems() || []
+    ? [...(Array(8).keys() as any)]
+    : getVisibleItems || []
 
   return (
     <WrapTable
@@ -59,7 +60,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
           emptyData="No results."
           isFetching={userBalanceQuery.isFetching}
         />
-        <PaginationTable
+        <PaginationCustom
           className="mt-4"
           currentPage={currentPage}
           updatePage={(page: number) => handlePageChange(page)}

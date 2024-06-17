@@ -67,7 +67,7 @@ const ToastCustom = ({
               <ToastDescription asChild>
                 <div
                   className={cn(
-                    'text-neutral-dark-1 text-sm not-italic font-normal leading-[22px] font-poppins',
+                    'text-neutral-dark-1 font-normal leading-[22px] font-poppins',
                     icon ? 'ml-[34px]' : 'ml-0',
                   )}
                 >

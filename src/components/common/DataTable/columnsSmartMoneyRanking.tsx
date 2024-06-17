@@ -14,6 +14,7 @@ export const columnsSmartMoneyRanking = (
   page: number,
   perPage: number,
   tokenNode: ReactNode,
+  chain: string,
 ) => {
   const columns: ColumnDef<SmartMoneyForToken>[] = [
     {
@@ -37,7 +38,7 @@ export const columnsSmartMoneyRanking = (
               className="underline"
               href={`/smartmoney-onchain/wallet-explorer/${
                 user_address || '1'
-              }`}
+              }?chain=${chain}`}
             >
               {user_address}
             </Link>

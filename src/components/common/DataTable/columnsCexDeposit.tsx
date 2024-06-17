@@ -9,9 +9,7 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-        #
-      </div>
+      <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
     ),
     cell: ({ row }) => {
       return <div>{row.index + 1}</div>
@@ -21,7 +19,7 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
   {
     accessorKey: 'symbol',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
         Symbol
       </div>
     ),
@@ -57,7 +55,7 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
   {
     accessorKey: 'deposit_value',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
         Deposit Value
       </div>
     ),
@@ -74,7 +72,7 @@ export const columnsCexDeposit: ColumnDef<TopCexIn>[] = [
   {
     accessorKey: 'cex_netflow',
     header: () => (
-      <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
         CEX Netflow
       </div>
     ),

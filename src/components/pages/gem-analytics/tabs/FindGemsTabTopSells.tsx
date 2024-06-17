@@ -58,6 +58,7 @@ export const FindGemsTabTopSells: React.FC<FindGemsTabTopSellsProps> = ({
       total={totalFindGemsSell}
       isFetching={topTokenSellQuery.isFetching}
       setSort={setSort}
+      chain={CHAIN}
     />
   )
 }

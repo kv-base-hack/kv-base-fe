@@ -56,6 +56,7 @@ export const FindGemsTabTopCexWithdraw: React.FC<
       total={totalFindGemWithdraw}
       isFetching={findGemsWithdrawQuery.isFetching}
       setSort={setSort}
+      chain={CHAIN}
     />
   )
 }

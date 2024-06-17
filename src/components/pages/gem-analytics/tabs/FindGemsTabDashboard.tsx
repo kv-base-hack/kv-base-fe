@@ -142,6 +142,7 @@ export default function FindGemsTabDashboard() {
                 isFetching={topTokenProfitQuery.isFetching}
                 setSortBy={setSortBy}
                 duration={filterDate}
+                chain={CHAIN}
               />
             </div>
             <PaginationTable

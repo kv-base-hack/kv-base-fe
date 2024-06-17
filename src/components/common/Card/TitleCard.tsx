@@ -20,7 +20,9 @@ export const TitleCard = ({
       <div className="flex items-center gap-1">
         <div className="flex items-center gap-1 lg:gap-2">
           {iconFirst}
-          <p className="text-neutral-07 font-semibold text-lg">{title}</p>
+          <p className="text-neutral-07 font-semibold text-lg font-inter">
+            {title}
+          </p>
         </div>
         {content && (
           <TooltipCustom content={content as string} side="bottom">

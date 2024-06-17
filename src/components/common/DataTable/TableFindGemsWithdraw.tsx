@@ -19,6 +19,7 @@ export const TableFindGemsWithdraw = ({
   total,
   isFetching,
   setSort,
+  chain,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<TopCexWithdraw>[] = useMemo(() => {
     return [
@@ -47,7 +48,7 @@ export const TableFindGemsWithdraw = ({
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                     className="flex items-center gap-2"
                   >
                     <ImageToken
@@ -262,7 +263,7 @@ export const TableFindGemsWithdraw = ({
         align: 'end',
       },
     ]
-  }, [page, perPage, setSort])
+  }, [chain, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

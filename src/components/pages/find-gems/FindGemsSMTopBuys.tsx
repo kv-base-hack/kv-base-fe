@@ -44,9 +44,7 @@ export const TableFindGemsSMTopBuys = () => {
       {
         accessorKey: 'id',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px]">
-            #
-          </div>
+          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -57,7 +55,7 @@ export const TableFindGemsSMTopBuys = () => {
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             Tokens
           </div>
         ),
@@ -114,7 +112,7 @@ export const TableFindGemsSMTopBuys = () => {
         accessorKey: 'balance_change_percent',
         header: () => (
           <div
-            className="w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('balance_change')}
             role="button"
           >
@@ -148,7 +146,7 @@ export const TableFindGemsSMTopBuys = () => {
       {
         accessorKey: 'buyer_count',
         header: () => (
-          <div className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
             # of SM Buy
           </div>
         ),

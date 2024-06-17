@@ -61,7 +61,7 @@ export const TablePerformanceToken = () => {
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row.original.address}`}
+                    href={`/smartmoney-onchain/token-explorer/${row.original.address}?chain=${CHAIN}`}
                     className="flex gap-3 items-center justify-between text-right"
                   >
                     <ImageToken
@@ -149,7 +149,7 @@ export const TablePerformanceToken = () => {
           const { realized } = row.original
           return (
             <div className="flex w-full justify-start">
-              {realized.toFixed(2)}%
+              {numeral(realized).format('0,0.[00]')}%
             </div>
           )
         },
@@ -223,7 +223,7 @@ export const TablePerformanceToken = () => {
         accessorKey: 'liquidity',
         header: () => (
           <div
-            className="text-center w-full text-sm not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
             onClick={() => setSortBy('liquidity')}
             role="button"
           >
@@ -264,7 +264,7 @@ export const TablePerformanceToken = () => {
         },
       },
     ]
-  }, [duration, setSortBy])
+  }, [CHAIN, duration])
   return (
     <CardCommon>
       <TitleCard

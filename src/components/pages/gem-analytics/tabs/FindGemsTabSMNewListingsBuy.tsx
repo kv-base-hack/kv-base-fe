@@ -57,6 +57,7 @@ export const FindGemsTabSMNewListingsBuy: React.FC<
       total={totalFindGemUnusualCex}
       isFetching={findGemsUnusualCexQuery.isFetching}
       setSort={setSort}
+      chain={CHAIN}
     />
   )
 }
