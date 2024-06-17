@@ -9,24 +9,29 @@ export const useTradeStatisticTokensQuery = ({
   duration,
   token_address,
   sort_by,
+  page = 1,
+  perPage = 10,
 }: {
   address: string
   chain: string
   duration: string
   token_address: string
   sort_by: string
-}) =>
-  useQuery({
-    queryKey: [
-      GET_TRADE_STATISTIC_TOKENS,
-      { address, chain, duration, token_address, sort_by },
-    ],
-    queryFn: () =>
-      tradeStatisticTokens({
-        address,
-        chain,
-        duration,
-        token_address,
-        sort_by,
-      }),
-  })
+  page?: number
+  perPage?: number
+}) => ({
+  queryKey: [
+    GET_TRADE_STATISTIC_TOKENS,
+    { address, chain, duration, token_address, sort_by, page, perPage },
+  ],
+  queryFn: async () => {
+    const data = await tradeStatisticTokens({
+      address,
+      chain,
+      duration,
+      token_address,
+      sort_by,
+    })
+    return data.data
+  },
+})

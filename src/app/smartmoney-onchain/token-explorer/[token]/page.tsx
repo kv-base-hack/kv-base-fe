@@ -15,7 +15,6 @@ import VolumnIcon from '@/components/shared/icons/token-explorer/VolumnIcon'
 import { TradingSignal } from '@/components/common/TabWalletExplorer/TradingSignal'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import MenuArrowDownIcon from '@/components/shared/icons/MenuArrowDown'
-import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
 import { CopyCustom } from '@/components/common/CopyCustom'
 import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
 import { Transactions } from '@/components/common/TabWalletExplorer/Transactions'
@@ -23,6 +22,7 @@ import { TopSmartMoney } from '@/components/common/TabWalletExplorer/TopSmartMon
 import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/ActivityOfTopSmartMoney'
 import { CardCommon } from '@/components/common/Card/CardCommon'
 import { LineChart } from '@/components/common/ChartDetail/LineChart'
+import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
 
 const DUMMY_CHART = [
   [1700582400, 139.2820760583722837],
@@ -115,13 +115,13 @@ export default function TokenExplorerDetail({
 
   return (
     <div className="w-full h-full pt-2">
-      <div className="m-0 flex items-start gap-2">
+      <div className="m-0 flex flex-col-reverse xl:flex-row items-start gap-2">
         {/* swap left */}
-        <div className="w-full lg:w-1/3 h-[600px]">
+        <div className="w-full xl:w-1/3 h-[600px]">
           <IntegratedTerminal />
         </div>
         {/* content right */}
-        <div className="w-full lg:w-2/3 h-full">
+        <div className="w-full xl:w-2/3 h-full">
           {/* overview */}
           <CardCommon>
             <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">
@@ -140,7 +140,7 @@ export default function TokenExplorerDetail({
                     <MenuArrowDownIcon />
                   </div>
                 </DialogSelectToken>
-                <div className="flex items-center gap-2 justify-center my-auto text-sm tracking-normal leading-5">
+                <div className="flex flex-col items-start gap-2 justify-center my-auto text-sm tracking-normal leading-5">
                   <div className="flex items-center gap-2 px-px">
                     <div className="flex gap-1 justify-center px-px">
                       <div className="font-medium text-neutral-04">Token:</div>
@@ -217,15 +217,16 @@ export default function TokenExplorerDetail({
             </div>
           </CardCommon>
           {/* chart */}
-          <CardCommon className="w-full h-[480px] lg:my-2 bg-neutral-01 rounded-2xl">
-            <LineChart
-              dataTokenInfo={null}
+          <div className="w-full h-[480px] p-0 lg:mt-2">
+            <WrapLineChart
+              dataTokenInfo={dataTokenInfo}
+              mode={mode}
               sparkLineIn7D={DUMMY_CHART}
-              loading={false}
-              setValueIndex={() => null}
-              showDate={false}
+              onModeChange={handleModeChange}
+              loading={tokenInfoQuery.isLoading}
+              address={params.token}
             />
-          </CardCommon>
+          </div>
         </div>
       </div>
       <CardCommon>
