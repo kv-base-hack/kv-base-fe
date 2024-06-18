@@ -26,6 +26,7 @@ import Link from 'next/link'
 import { ImageToken } from '../common/Image/ImageToken'
 import { CardInfo } from './CardInfoToken'
 import { TooltipCustom } from '../common/Tooltip'
+import { divide } from 'lodash'
 
 export const SMMoneyOverview = ({ className }: { className?: string }) => {
   const [filterDate, setFilterDate] = useState<string>('24h')
@@ -100,47 +101,53 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
           className="bg-[#b1e5fc40]"
         >
           <div className="flex items-center gap-1">
-            {dataFindGemsTrending.map((token, index) => {
-              return (
-                <div key={index}>
-                  {findGemsTrendingQuery.isFetching ? (
-                    <div className="w-11 h-11 rounded-full overflow-hidden">
-                      <Skeleton />
-                    </div>
-                  ) : (
-                    <TooltipProvider delayDuration={200}>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Link
-                            href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
-                          >
-                            <ImageToken
-                              imgUrl={token?.image_url}
+            {dataFindGemsTrending?.length > 0 ? (
+              dataFindGemsTrending.map((token, index) => {
+                return (
+                  <div key={index}>
+                    {findGemsTrendingQuery.isFetching ? (
+                      <div className="w-11 h-11 rounded-full overflow-hidden">
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      <TooltipProvider delayDuration={200}>
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <Link
+                              href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
+                            >
+                              <ImageToken
+                                imgUrl={token?.image_url}
+                                symbol={token.symbol}
+                                className="w-11 h-11"
+                              />
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent className="!p-0 !border-none">
+                            <CardInfo
+                              image_url={token.image_url}
                               symbol={token.symbol}
-                              className="w-11 h-11"
+                              current_price={token.current_price}
+                              price_change_24h={token.price_percent_change_24h}
+                              pnl={token.pnl}
+                              roi={token.roi}
+                              realized_percent={token.realized_percent}
+                              avg_price={token.avg_price}
+                              fdv={token.fdv}
+                              liquidity={token.liquidity}
                             />
-                          </Link>
-                        </TooltipTrigger>
-                        <TooltipContent className="!p-0 !border-none">
-                          <CardInfo
-                            image_url={token.image_url}
-                            symbol={token.symbol}
-                            current_price={token.current_price}
-                            price_change_24h={token.price_percent_change_24h}
-                            pnl={token.pnl}
-                            roi={token.roi}
-                            realized_percent={token.realized_percent}
-                            avg_price={token.avg_price}
-                            fdv={token.fdv}
-                            liquidity={token.liquidity}
-                          />
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  )}
-                </div>
-              )
-            })}
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    )}
+                  </div>
+                )
+              })
+            ) : (
+              <div className="h-[50.5px] text-neutral-07 text-lg">
+                No result
+              </div>
+            )}
           </div>
         </CardContent>
         <CardContent
@@ -150,48 +157,54 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
           className="bg-[#F0ECFD]"
         >
           <div className="flex items-center gap-1">
-            {dataSMNewListingBuy.map((token, index) => {
-              return (
-                <div key={index}>
-                  {smNewListingBuyQuery.isFetching ? (
-                    <div className="w-11 h-11 rounded-full overflow-hidden">
-                      <Skeleton />
-                    </div>
-                  ) : (
-                    <TooltipProvider delayDuration={200}>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Link
-                            key={index}
-                            href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
-                          >
-                            <ImageToken
-                              imgUrl={token?.image_url}
+            {dataSMNewListingBuy.length > 0 ? (
+              dataSMNewListingBuy.map((token, index) => {
+                return (
+                  <div key={index}>
+                    {smNewListingBuyQuery.isFetching ? (
+                      <div className="w-11 h-11 rounded-full overflow-hidden">
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      <TooltipProvider delayDuration={200}>
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <Link
+                              key={index}
+                              href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
+                            >
+                              <ImageToken
+                                imgUrl={token?.image_url}
+                                symbol={token.symbol}
+                                className="w-11 h-11"
+                              />
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent className="!p-0 !border-none">
+                            <CardInfo
+                              image_url={token.image_url}
                               symbol={token.symbol}
-                              className="w-11 h-11"
+                              current_price={token.current_price}
+                              price_change_24h={token.price_change_24h}
+                              pnl={token.pnl}
+                              roi={token.roi}
+                              realized_percent={token.realized_percent}
+                              avg_price={token.avg_price}
+                              fdv={token.fdv}
+                              liquidity={token.liquidity}
                             />
-                          </Link>
-                        </TooltipTrigger>
-                        <TooltipContent className="!p-0 !border-none">
-                          <CardInfo
-                            image_url={token.image_url}
-                            symbol={token.symbol}
-                            current_price={token.current_price}
-                            price_change_24h={token.price_change_24h}
-                            pnl={token.pnl}
-                            roi={token.roi}
-                            realized_percent={token.realized_percent}
-                            avg_price={token.avg_price}
-                            fdv={token.fdv}
-                            liquidity={token.liquidity}
-                          />
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  )}
-                </div>
-              )
-            })}
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    )}
+                  </div>
+                )
+              })
+            ) : (
+              <div className="h-[50.5px] text-neutral-07 text-lg">
+                No result
+              </div>
+            )}
           </div>
         </CardContent>
       </div>

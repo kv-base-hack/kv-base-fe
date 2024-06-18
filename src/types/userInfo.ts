@@ -8,6 +8,7 @@ export interface UserInfo {
   address: string
   volume_24h: number
   last_activity: string
+  scan_link: string
 }
 
 export interface UserInfoResponse {

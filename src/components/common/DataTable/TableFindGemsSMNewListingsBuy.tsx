@@ -10,6 +10,7 @@ import { renderPrice } from '@/lib/utils/renderPrice'
 import { NewListingBuy } from '@/types/newListingBuy'
 import numeral from 'numeral'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
 
 export const TableFindGemsSMNewListingsBuy = ({
   tab,
@@ -284,8 +285,15 @@ export const TableFindGemsSMNewListingsBuy = ({
         ),
         align: 'center',
         cell: ({ row }) => {
-          const { number_of_smart_money } = row.original
-          return <div className="text-neutral-07">{number_of_smart_money}</div>
+          const { number_of_smart_money, address } = row.original
+          return (
+            <DialogNumberOfSmartMoney
+              number={number_of_smart_money}
+              address={address}
+              type="new_listing_buy"
+              duration="24h"
+            />
+          )
         },
         enableSorting: false,
       },

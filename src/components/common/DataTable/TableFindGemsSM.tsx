@@ -10,6 +10,7 @@ import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
 
 export const TableFindGemsSM = ({
   tab,
@@ -101,11 +102,14 @@ export const TableFindGemsSM = ({
         size: 50,
         align: 'center',
         cell: ({ row }) => {
-          const { number_of_smart_money } = row.original
+          const { number_of_smart_money, address } = row.original
           return (
-            <div className="text-center text-neutral-07 text-sm not-italic leading-5">
-              {number_of_smart_money}
-            </div>
+            <DialogNumberOfSmartMoney
+              number={number_of_smart_money}
+              address={address}
+              type="trade"
+              duration="24h"
+            />
           )
         },
       },

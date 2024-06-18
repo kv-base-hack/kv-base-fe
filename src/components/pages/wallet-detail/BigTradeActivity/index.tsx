@@ -1,3 +1,4 @@
+import { chainAtom } from '@/atom/chain'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsBigTradeActivity } from '@/components/common/DataTable/columnsBigTradeActivity'
@@ -12,6 +13,7 @@ import Close from '@/components/shared/icons/Close'
 import { Switch } from '@/components/ui/switch'
 import { useTradeActivityQuery } from '@/query/wallet-explorer/getTradeActivity'
 import { TokenList } from '@/types/tokenList'
+import { useAtomValue } from 'jotai'
 import { useState } from 'react'
 
 type BigTradeActivityProps = {
@@ -28,6 +30,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
   const [listToken, setListToken] = useState<TokenList[]>([])
   const [tradeValue, setTradeValue] = useState<unknown>([])
   const [showBigTradeBigger5k, setShowBigTradeBigger5k] = useState(false)
+
   // get data Big Trade Activity
   const activityQuery = useTradeActivityQuery({
     action: filterActivity,
@@ -120,7 +123,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
       <div className="mt-8">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4"
-          columns={columnsBigTradeActivity}
+          columns={columnsBigTradeActivity(chain)}
           data={dataActivity?.slice(0, 10) || []}
           isFetching={activityQuery.isFetching}
           noneBorder

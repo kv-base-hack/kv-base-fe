@@ -115,7 +115,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
         const { symbol } = row.original
         return (
           <Link
-            href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
+            href={`/smartmoney-onchain/token-explorer/${row.original.token_address}?chain=${CHAIN}`}
             className="flex gap-3 items-center justify-between text-right"
           >
             <ImageToken

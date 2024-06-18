@@ -1,4 +1,5 @@
 'use client'
+
 import { categoryAtom } from '@/atom/category'
 import { TableInsiderBuy } from '@/components/Leaderboard/Table/TableInsiderBuy'
 import { TableNewListingBuy } from '@/components/Leaderboard/Table/TableNewListingBuy'

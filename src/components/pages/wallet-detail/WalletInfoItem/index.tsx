@@ -1,3 +1,4 @@
+import { chainAtom } from '@/atom/chain'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Skeleton from '@/components/common/Skeleton'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
@@ -6,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { renderPrice } from '@/utils/renderPrice'
+import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import numeral from 'numeral'
 
@@ -29,7 +31,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 type WalletInfoItemProps = {
   imgUrl?: string
   symbol?: string
-  chain?: string
+  name?: string
   priceChangeH24?: number
   usdPrice?: number
   avg_price?: number
@@ -44,7 +46,7 @@ type WalletInfoItemProps = {
 export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   imgUrl,
   symbol,
-  chain,
+  name,
   priceChangeH24,
   usdPrice,
   avg_price,
@@ -55,6 +57,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   price,
   loading,
 }) => {
+  const CHAIN = useAtomValue(chainAtom)
+
   return (
     <div className="flex flex-col self-stretch mt-4">
       <div className="flex flex-col gap-2 mt-2 w-full p-3 border border-solid rounded-xl border-[#EFEFEF]">
@@ -69,7 +73,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
               <Skeleton className="h-4 w-[120px] rounded-full overflow-hidden" />
             ) : (
               <Link
-                href={`/smartmoney-onchain/token-explorer/${address}`}
+                href={`/smartmoney-onchain/token-explorer/${address}?chain=${CHAIN}`}
                 className="hover:underline"
               >
                 <div className="flex gap-1 pr-5">
@@ -77,7 +81,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                     {symbol}
                   </div>
                   <div className="text-sm font-semibold tracking-normal leading-6 text-[#A7ACB0]">
-                    {chain}
+                    {name}
                   </div>
                 </div>
               </Link>

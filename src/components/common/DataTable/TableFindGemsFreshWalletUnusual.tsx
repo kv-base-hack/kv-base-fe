@@ -10,6 +10,7 @@ import { renderPrice } from '@/lib/utils/renderPrice'
 import numeral from 'numeral'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
 
 export const TableFindGemsFreshWalletUnusual = ({
   tab,
@@ -268,8 +269,15 @@ export const TableFindGemsFreshWalletUnusual = ({
         ),
         align: 'center',
         cell: ({ row }) => {
-          const { number_of_users } = row.original
-          return <div className="text-neutral-07">{number_of_users}</div>
+          const { number_of_users, address } = row.original
+          return (
+            <DialogNumberOfSmartMoney
+              number={number_of_users}
+              address={address}
+              type="unusual_buy"
+              duration="24h"
+            />
+          )
         },
         enableSorting: false,
       },

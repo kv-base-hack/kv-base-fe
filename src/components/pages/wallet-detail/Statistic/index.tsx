@@ -1,3 +1,4 @@
+import { chainAtom } from '@/atom/chain'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
@@ -13,6 +14,7 @@ import { TokenStat } from '@/types/tradeStatisticTokens'
 import { nFormatter } from '@/utils/nFormatter'
 import { useQuery } from '@tanstack/react-query'
 import { ColumnDef } from '@tanstack/react-table'
+import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import numeral from 'numeral'
 import { useMemo, useState } from 'react'
@@ -29,6 +31,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage] = useState(8)
+  const CHAIN = useAtomValue(chainAtom)
 
   const tradeStatisticTokensQuery = useQuery(
     useTradeStatisticTokensQuery({
@@ -78,7 +81,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
           const { tokenAddress, imageUrl, symbol } = row.original
           return tokenAddress ? (
             <Link
-              href={`/smartmoney-onchain/token-explorer/${tokenAddress}`}
+              href={`/smartmoney-onchain/token-explorer/${tokenAddress}?chain=${CHAIN}`}
               className="flex gap-1 items-center justify-between text-right"
             >
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
@@ -192,7 +195,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         align: 'end',
       },
     ]
-  }, [])
+  }, [CHAIN])
 
   return (
     <WrapTable

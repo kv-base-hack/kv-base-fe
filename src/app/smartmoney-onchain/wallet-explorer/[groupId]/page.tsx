@@ -166,19 +166,20 @@ export default function WalletExplorerDetail({
                 <div className="text-xl font-bold tracking-tight text-neutral-04">
                   Whale Untag
                 </div>
-                <div className="flex gap-1 pr-5 mt-2 text-base tracking-normal leading-6 text-gray-400 whitespace-nowrap">
-                  <div>{`${params.groupId?.substring(
-                    0,
-                    6,
-                  )}...${params.groupId?.slice(-6)}`}</div>
-                  <CopyCustom value={params.groupId} icon={<CopyIcon />} />
-                  <a
-                    href={`https://etherscan.io/address/${params.groupId}`}
-                    target="_blank"
-                  >
-                    <ExternalLinkIcon />
-                  </a>
-                </div>
+                {userInfoQuery.isFetching ? (
+                  <Skeleton className="w-[200px] h-[30px] rounded-full overflow-hidden" />
+                ) : (
+                  <div className="flex gap-1 pr-5 mt-2 text-base tracking-normal leading-6 text-gray-400 whitespace-nowrap">
+                    <div>{`${params.groupId?.substring(
+                      0,
+                      6,
+                    )}...${params.groupId?.slice(-6)}`}</div>
+                    <CopyCustom value={params.groupId} icon={<CopyIcon />} />
+                    <a href={userInfo?.scan_link} target="_blank">
+                      <ExternalLinkIcon />
+                    </a>
+                  </div>
+                )}
                 <div className="flex gap-2 mt-1 text-base tracking-normal text-zinc-300">
                   <div className="flex gap-1 items-center">
                     <LastDateIcon />
@@ -308,7 +309,7 @@ export default function WalletExplorerDetail({
             <WalletInfoItem
               imgUrl={DATA_STATS[0].imgUrl}
               symbol={DATA_STATS[0].symbol}
-              chain={DATA_STATS[0].title}
+              name={DATA_STATS[0].title}
               priceChangeH24={DATA_STATS[0].priceChangeH24}
               usdPrice={DATA_STATS[0].usdPrice}
               avg_price={DATA_STATS[0].avg_price}
@@ -327,7 +328,7 @@ export default function WalletExplorerDetail({
             <WalletInfoItem
               imgUrl={DATA_STATS[1].imgUrl}
               symbol={DATA_STATS[1].symbol}
-              chain={DATA_STATS[1].title}
+              name={DATA_STATS[1].title}
               priceChangeH24={DATA_STATS[1].priceChangeH24}
               usdPrice={DATA_STATS[1].usdPrice}
               avg_price={DATA_STATS[1].avg_price}
