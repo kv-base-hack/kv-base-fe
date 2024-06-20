@@ -12,9 +12,7 @@ import {
   useActions,
   useUIState,
 } from 'ai/rsc'
-import { Button } from '@/components/ui/button'
-import { AI } from '@/app/ai/action'
-import { nanoid } from '@/lib/utils'
+import { AI } from '@/app/kaichat/action'
 import { TokenInfo } from '@/components/common/Message/TokenInfo'
 import { useGetSmartMoneyTokenSummaryQuery } from '@/query/getSmartMoneyTokenSummary'
 import { SkeletonText } from '@/components/common/Skeleton/SkeletonText'
