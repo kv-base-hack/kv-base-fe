@@ -65,7 +65,7 @@ export function LineChart({
       {/* @ts-ignore */}
       <AreaChart
         width={1300}
-        height={250}
+        height={300}
         data={formatData}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
       >
@@ -96,6 +96,7 @@ export function LineChart({
           fillOpacity={0.4}
           fill="url(#price)"
           activeDot={<CustomDotActive />}
+          type="monotone"
         />
         <defs>
           <linearGradient id="price" x1="0" y1="0" x2="0" y2="1">

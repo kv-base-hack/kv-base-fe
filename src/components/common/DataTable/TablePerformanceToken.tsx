@@ -224,7 +224,7 @@ export const TablePerformanceToken = ({
         accessorKey: 'number_of_buys',
         header: () => (
           <div
-            className="text-neutral-07 text-end text-sm not-italic leading-5"
+            className="flex items-center"
             onClick={() => setSortBy('number_of_smart_money')}
             role="button"
           >

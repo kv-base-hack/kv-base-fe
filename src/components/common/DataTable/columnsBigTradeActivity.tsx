@@ -14,6 +14,7 @@ import {
   renderMovementIcon,
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
+import { TagMovement } from '../Tags/Movement'
 
 export type Activity = {
   id: string
@@ -78,29 +79,7 @@ export const columnsBigTradeActivity = (chain: string) => {
       enableSorting: false,
       cell: ({ row }) => {
         const { movement } = row.original
-        return (
-          <div
-            className={cn(
-              'flex items-center gap-2.5 justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap rounded-md bg-opacity-10',
-              movement === 'deposit'
-                ? 'bg-secondary-1/10 text-secondary-1'
-                : movement === 'withdraw'
-                ? 'bg-secondary-4/10 text-secondary-4'
-                : movement === 'buying'
-                ? 'bg-success-500/10 text-success-500'
-                : movement === 'selling'
-                ? 'bg-error-500/10 text-error-500'
-                : movement === 'new_listing_buy'
-                ? 'bg-[#89D36F]/10 text-[#89D36F]'
-                : movement === 'new_listing_sell'
-                ? 'bg-[#DC6803]/10 text-[#DC6803]'
-                : 'bg-success-500/10 text-success-500',
-            )}
-          >
-            {renderMovementIcon(movement)}
-            {renderMovementName(movement)}
-          </div>
-        )
+        return <TagMovement movement={movement} />
       },
     },
     {

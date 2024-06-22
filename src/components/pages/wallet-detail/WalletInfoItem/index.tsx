@@ -1,6 +1,8 @@
 import { chainAtom } from '@/atom/chain'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Skeleton from '@/components/common/Skeleton'
+import { ChevronDown } from '@/components/shared/icons/ChevronDown'
+import { ChevronUp } from '@/components/shared/icons/ChevronUp'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import { cn } from '@/lib/utils'
@@ -60,7 +62,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   const CHAIN = useAtomValue(chainAtom)
 
   return (
-    <div className="flex flex-col self-stretch mt-2">
+    <div className="flex flex-col self-stretch mt-2 w-full">
       <div className="flex flex-col gap-2 mt-2 w-full p-3 border border-solid rounded-xl border-[#EFEFEF]">
         <div className="flex gap-2.5 whitespace-nowrap">
           {loading ? (
@@ -76,11 +78,11 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 href={`/smartmoney-onchain/token-explorer/${address}?chain=${CHAIN}`}
                 className="hover:underline"
               >
-                <div className="flex gap-1 pr-5">
-                  <div className="text-base font-medium tracking-tight leading-6 text-neutral-07">
+                <div className="flex gap-1 pr-5 overflow-hidden">
+                  <div className="text-base font-medium tracking-tight leading-6 text-neutral-07 max-w-[100px] truncate">
                     {symbol}
                   </div>
-                  <div className="text-sm font-semibold tracking-normal leading-6 text-[#A7ACB0]">
+                  <div className="text-sm font-semibold tracking-normal leading-6 text-[#A7ACB0] max-w-[100px] truncate">
                     {name}
                   </div>
                 </div>
@@ -104,11 +106,11 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                     )}
                   >
                     {priceChangeH24 && priceChangeH24 > 0 ? (
-                      <PercentUpIcon />
+                      <ChevronUp />
                     ) : priceChangeH24 === 0 ? (
                       ''
                     ) : (
-                      <PercentDownIcon />
+                      <ChevronDown />
                     )}
                     {priceChangeH24}%
                   </div>
@@ -167,8 +169,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (roi as number) > 0
                   ? 'text-emerald-400'
                   : (roi as number) < 0
-                    ? 'text-error-500'
-                    : 'text-neutral-07',
+                  ? 'text-error-500'
+                  : 'text-neutral-07',
               )}
             >
               {loading ? (
@@ -194,8 +196,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (pnl as number) > 0
                   ? 'text-emerald-400'
                   : (pnl as number) < 0
-                    ? 'text-error-500'
-                    : 'text-neutral-07',
+                  ? 'text-error-500'
+                  : 'text-neutral-07',
               )}
             >
               {loading ? (

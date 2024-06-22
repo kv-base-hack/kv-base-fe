@@ -29,12 +29,12 @@ export const FirstTimeBuy = ({
 
   const getVisibleItems = () => {
     const startIndex = start
-    const endIndex = startIndex + 2
+    const endIndex = startIndex + 3
     return tradeStatisticTokens?.slice(startIndex, endIndex)
   }
 
   const totalToken = tradeStatisticTokens?.length || 1
-  const totalPage = Math.ceil(totalToken / 2)
+  const totalPage = Math.ceil(totalToken / 3)
 
   const nextPage = () => {
     if (page < totalPage) {
@@ -55,7 +55,7 @@ export const FirstTimeBuy = ({
     : getVisibleItems()
 
   return (
-    <div className="flex w-full flex-col h-full">
+    <div className="flex flex-col h-full">
       <div className="flex items-center justify-between h-full">
         <WalletInfoItemTitle
           name="First Time Buy"
@@ -64,22 +64,23 @@ export const FirstTimeBuy = ({
         <SelectDuration duration={duration} setDuration={setDuration} />
       </div>
       {(dataFirstTimeBuy?.length as number) > 0 ? (
-        <div className="flex flex-col items-start h-full justify-between">
+        <div className="grid grid-cols-3 gap-2">
           {dataFirstTimeBuy?.map((token, i) => {
             return (
-              <WalletInfoItem
-                key={i}
-                imgUrl={token.imageUrl}
-                symbol={token.symbol}
-                name={token.name}
-                usdPrice={token.usdPrice}
-                avg_price={token.avg_price}
-                spent={token.volume}
-                roi={token.roi}
-                pnl={token.pnl}
-                address={token.tokenAddress}
-                loading={tradeStatisticTokensQuery.isFetching}
-              />
+              <div key={i} className="col-span-1">
+                <WalletInfoItem
+                  imgUrl={token.imageUrl}
+                  symbol={token.symbol}
+                  name={token.name}
+                  usdPrice={token.usdPrice}
+                  avg_price={token.avg_price}
+                  spent={token.volume}
+                  roi={token.roi}
+                  pnl={token.pnl}
+                  address={token.tokenAddress}
+                  loading={tradeStatisticTokensQuery.isFetching}
+                />
+              </div>
             )
           })}
         </div>

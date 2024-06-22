@@ -1,11 +1,11 @@
 import { chainAtom } from '@/atom/chain'
+import { TokenFilter } from '@/components/common/Card/TokenFilter'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectDuration } from '@/components/common/SelectDuration'
-import Close from '@/components/shared/icons/Close'
+import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import TradeStatisticIcon from '@/components/shared/icons/wallet-explorer/TradeStatisticIcon'
 import { useTradeStatisticTokensQuery } from '@/query/wallet-explorer/getTradeStatisticTokens'
 import { TokenList } from '@/types/tokenList'
@@ -215,19 +215,11 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
                 {listToken.map((item) => (
-                  <div
-                    className="rounded-3xl h-9 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]"
-                    key={item.tokenAddress}
-                  >
-                    <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-4 gap-1 h-full text-sm tracking-normal leading-5 text-white">
-                      <ImageToken
-                        imgUrl={item?.imageUrl}
-                        symbol={item?.symbol}
-                      />
-                      <div>{item.symbol}</div>
-                      <Close onclick={handleRemoveToken(item)} />
-                    </div>
-                  </div>
+                  <TokenFilter
+                    token={item}
+                    onClick={handleRemoveToken(item)}
+                    key={item.address}
+                  />
                 ))}
               </div>
             ) : null}

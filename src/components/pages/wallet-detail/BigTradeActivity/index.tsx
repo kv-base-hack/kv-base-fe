@@ -1,4 +1,5 @@
 import { chainAtom } from '@/atom/chain'
+import { TokenFilter } from '@/components/common/Card/TokenFilter'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsBigTradeActivity } from '@/components/common/DataTable/columnsBigTradeActivity'
@@ -92,19 +93,11 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
                 {listToken.map((item) => (
-                  <div
-                    className="rounded-3xl h-9 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]"
-                    key={item.tokenAddress}
-                  >
-                    <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-4 gap-1 h-full text-sm tracking-normal leading-5 text-white">
-                      <ImageToken
-                        imgUrl={item?.imageUrl}
-                        symbol={item?.symbol}
-                      />
-                      <div>{item.symbol}</div>
-                      <Close onclick={handleRemoveToken(item)} />
-                    </div>
-                  </div>
+                  <TokenFilter
+                    token={item}
+                    key={item.address}
+                    onClick={handleRemoveToken(item)}
+                  />
                 ))}
               </div>
             ) : null}

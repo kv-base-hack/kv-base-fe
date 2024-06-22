@@ -1,4 +1,10 @@
-function PortfolioSpeedIcon({ className, onClick }: { className?: string; onClick?: () => void }) {
+function PortfolioSpeedIcon({
+  className,
+  onClick,
+}: {
+  className?: string
+  onClick?: () => void
+}) {
   return (
     <svg
       className={className}
@@ -7,14 +13,15 @@ function PortfolioSpeedIcon({ className, onClick }: { className?: string; onClic
       height="32"
       viewBox="0 0 32 32"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g id="speedometer-02">
         <path
           id="Icon"
           d="M29.3337 16.0003C29.3337 23.3641 23.3641 29.3337 16.0003 29.3337C8.63653 29.3337 2.66699 23.3641 2.66699 16.0003M29.3337 16.0003C29.3337 8.63653 23.3641 2.66699 16.0003 2.66699M29.3337 16.0003H26.0003M2.66699 16.0003C2.66699 8.63653 8.63653 2.66699 16.0003 2.66699M2.66699 16.0003H6.00033M16.0003 2.66699V6.00033M25.4382 6.66699L18.0002 14.0003M25.4382 25.4382L25.1664 25.1664C24.244 24.244 23.7827 23.7827 23.2445 23.4529C22.7673 23.1605 22.2471 22.945 21.7029 22.8144C21.0891 22.667 20.4368 22.667 19.1323 22.667L12.8683 22.667C11.5638 22.667 10.9115 22.6671 10.2978 22.8144C9.75356 22.9451 9.23333 23.1606 8.75614 23.453C8.21792 23.7828 7.75672 24.244 6.83432 25.1664L6.5625 25.4382M6.5625 6.66699L8.87777 8.98226M18.667 16.0003C18.667 17.4731 17.4731 18.667 16.0003 18.667C14.5276 18.667 13.3337 17.4731 13.3337 16.0003C13.3337 14.5276 14.5276 13.3337 16.0003 13.3337C17.4731 13.3337 18.667 14.5276 18.667 16.0003Z"
           stroke="#B5E4CA"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
