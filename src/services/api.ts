@@ -1282,16 +1282,19 @@ export const getUserBalance = async ({
   addresses,
   address,
   chain,
+  duration,
 }: {
   addresses?: string
   address?: string
-  chain?: string
+    chain?: string
+  duration?: string
 }): Promise<UserBalanceResponse> => {
   return await suiApi.get(`/v1/balance`, {
     params: {
       addresses,
       address,
       chain,
+      duration
     },
   })
 }
@@ -1422,6 +1425,30 @@ export const getSmartMoneyTokenSummary = (chain: string, address: string) => {
     params: {
       chain,
       address,
+    },
+  })
+}
+
+export const userTradeFirstTimeBuy = async ({
+  address,
+  chain,
+  duration,
+  token_address,
+  sort_by,
+}: {
+  address: string
+  chain: string
+  duration: string
+  token_address: string
+  sort_by: string
+}): Promise<TradeStatisticTokensResponse> => {
+  return await userApi.get('v1/user/user_trade_first_time_buy', {
+    params: {
+      address,
+      chain,
+      duration,
+      token_address,
+      sort_by,
     },
   })
 }
