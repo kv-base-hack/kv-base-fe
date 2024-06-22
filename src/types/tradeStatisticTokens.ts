@@ -1,5 +1,6 @@
 export interface TradeStatisticTokens {
   token_stats: TokenStat[]
+  first_time_buy: TokenStat[]
 }
 
 export interface TokenStat {
@@ -29,6 +30,8 @@ export interface TokenStat {
   avg_roi: number
   realized_percent: number
   volume: number
+  avg_price: number
+  roi: number
 }
 
 export interface TradeStatisticTokensResponse {

@@ -73,7 +73,6 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
       <div className="flex items-center gap-3">
         <CardContent
           title="3D Total Earning"
-          img={<IconActivity />}
           content="Total earnings of the top 500 Smartmoney in the last 3 days."
           className="bg-[#B5E4CA]/30"
         >
@@ -96,7 +95,6 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
         </CardContent>
         <CardContent
           title="Top Token Holding by Value"
-          img={<IconBag />}
           content="Top 5 tokens held by Smartmoney ranked by Value Buy in the last 1 day."
           className="bg-[#b1e5fc40]"
         >
@@ -152,7 +150,6 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
         </CardContent>
         <CardContent
           title="Top New Token Holding"
-          img={<IconBag />}
           content="Top 5 newly launched tokens bought by Smartmoney ranked by Value Buy in the last 1 day."
           className="bg-[#F0ECFD]"
         >
@@ -221,16 +218,18 @@ const CardContent = ({
 }: {
   content: string
   title: string
-  img: ReactNode
+  img?: ReactNode
   children: ReactNode
   className?: string
 }) => {
   return (
     <div className={cn('p-4 rounded-xl w-full', className)}>
       <div className="flex flex-col gap-4 p-4">
-        <div className="bg-neutral-07 rounded-full w-12 h-12 flex items-center justify-center p-3">
-          {img}
-        </div>
+        {img ? (
+          <div className="bg-neutral-07 rounded-full w-12 h-12 flex items-center justify-center p-3">
+            {img}
+          </div>
+        ) : null}
         <div>
           <div className="flex items-center gap-1">
             <p className="text-neutral-05 text-sm font-semibold">{title}</p>

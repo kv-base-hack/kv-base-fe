@@ -8,7 +8,7 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <div className="bg-background w-full min-h-screen bg-[url('/assets/images/background.webp')] bg-cover bg-center bg-fixed">
+    <div className="bg-background w-full min-h-screen">
       <div className="flex items-start">
         <div className="w-full">
           <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />

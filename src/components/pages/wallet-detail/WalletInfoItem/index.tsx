@@ -22,7 +22,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 }) => {
   return (
     <div className="flex gap-3 items-center justify-start text-xl font-semibold leading-6 text-neutral-07">
-      <div className="w-6 h-6">{icon}</div>
+      {icon}
       <div>{name}</div>
     </div>
   )
@@ -60,7 +60,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   const CHAIN = useAtomValue(chainAtom)
 
   return (
-    <div className="flex flex-col self-stretch mt-4">
+    <div className="flex flex-col self-stretch mt-2">
       <div className="flex flex-col gap-2 mt-2 w-full p-3 border border-solid rounded-xl border-[#EFEFEF]">
         <div className="flex gap-2.5 whitespace-nowrap">
           {loading ? (
@@ -167,8 +167,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (roi as number) > 0
                   ? 'text-emerald-400'
                   : (roi as number) < 0
-                  ? 'text-error-500'
-                  : 'text-neutral-07',
+                    ? 'text-error-500'
+                    : 'text-neutral-07',
               )}
             >
               {loading ? (
@@ -194,8 +194,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (pnl as number) > 0
                   ? 'text-emerald-400'
                   : (pnl as number) < 0
-                  ? 'text-error-500'
-                  : 'text-neutral-07',
+                    ? 'text-error-500'
+                    : 'text-neutral-07',
               )}
             >
               {loading ? (
