@@ -27,6 +27,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
       chain,
       page: currentPage,
       perPage: itemsPerPage,
+      duration: '24h',
     }),
   )
   const userBalance = userBalanceQuery?.data
