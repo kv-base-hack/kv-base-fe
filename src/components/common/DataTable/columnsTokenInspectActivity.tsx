@@ -6,6 +6,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import numeral from 'numeral'
 import { ImageToken } from '../Image/ImageToken'
+import { TagMovement } from '../Tags/Movement'
 
 export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
   {
@@ -14,7 +15,11 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { time } = row.original
-      return <div className="text-neutral-04">{moment(time).format('MMM DD, hh:mm')}</div>
+      return (
+        <div className="text-neutral-04">
+          {moment(time).format('MMM DD, hh:mm')}
+        </div>
+      )
     },
   },
   {
@@ -35,7 +40,8 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
       return row?.original?.token_address ? (
         <Link
           href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
-          className="flex gap-3 items-center justify-between text-right">
+          className="flex gap-3 items-center justify-between text-right"
+        >
           <ImageToken
             symbol={symbol}
             imgUrl={row?.original?.token_image_url}
@@ -61,23 +67,7 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { movement } = row.original
-      return (
-        <div
-          className={cn(
-            'uppercase justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap rounded-md bg-opacity-10',
-            movement === 'deposit'
-              ? 'bg-secondary-1/10 text-secondary-1'
-              : movement === 'withdraw'
-                ? 'bg-secondary-4/10 text-secondary-4'
-                : movement === 'buying'
-                  ? 'bg-primary-2/10 text-primary-2'
-                  : movement === 'selling'
-                    ? 'bg-primary-3/10 text-primary-3'
-                    : 'bg-primary-2/10 text-primary-2'
-          )}>
-          {movement}
-        </div>
-      )
+      return <TagMovement movement={movement} />
     },
   },
   {

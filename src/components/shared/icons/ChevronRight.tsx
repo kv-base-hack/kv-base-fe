@@ -11,8 +11,8 @@ export const ChevronRight = () => {
         d="M6 12L10 8L6 4"
         stroke="#0C68E9"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )

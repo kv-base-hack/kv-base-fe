@@ -8,6 +8,7 @@ import { PaginationCustom } from '@/components/common/Pagination'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import { TagMovement } from '@/components/common/Tags/Movement'
 import Close from '@/components/shared/icons/Close'
 import { IconPresent } from '@/components/shared/icons/IconPresent'
 import Info from '@/components/shared/icons/Info'
@@ -133,29 +134,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       enableSorting: false,
       cell: ({ row }) => {
         const { movement } = row.original
-        return (
-          <div
-            className={cn(
-              'flex items-center gap-2.5 justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap text-neutral-07 rounded-md',
-              movement === 'deposit'
-                ? 'bg-[#F4E7FC]'
-                : movement === 'withdraw'
-                ? 'bg-secondary-4'
-                : movement === 'buying'
-                ? 'bg-[#E1F1FF]'
-                : movement === 'selling'
-                ? 'bg-[#FEE6C7]'
-                : movement === 'new_listing_buy'
-                ? 'bg-[#E1FFEF]'
-                : movement === 'new_listing_sell'
-                ? 'bg-[#DC6803]/10'
-                : '',
-            )}
-          >
-            {renderMovementIcon(movement)}
-            {renderMovementName(movement)}
-          </div>
-        )
+        return <TagMovement movement={movement} />
       },
     },
     {

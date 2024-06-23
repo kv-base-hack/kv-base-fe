@@ -55,7 +55,7 @@ export const FirstTimeBuy = ({
     : getVisibleItems()
 
   return (
-    <div className="flex w-full flex-col h-full">
+    <div className="flex flex-col h-full">
       <div className="flex items-center justify-between h-full">
         <WalletInfoItemTitle
           name="First Time Buy"
@@ -67,19 +67,20 @@ export const FirstTimeBuy = ({
         <div className="grid grid-cols-3 gap-2 h-full w-full">
           {dataFirstTimeBuy?.map((token, i) => {
             return (
-              <WalletInfoItem
-                key={i}
-                imgUrl={token.imageUrl}
-                symbol={token.symbol}
-                name={token.name}
-                usdPrice={token.usdPrice}
-                avg_price={token.avg_price}
-                spent={token.volume}
-                roi={token.roi}
-                pnl={token.pnl}
-                address={token.tokenAddress}
-                loading={tradeStatisticTokensQuery.isFetching}
-              />
+              <div key={i} className="col-span-1">
+                <WalletInfoItem
+                  imgUrl={token.imageUrl}
+                  symbol={token.symbol}
+                  name={token.name}
+                  usdPrice={token.usdPrice}
+                  avg_price={token.avg_price}
+                  spent={token.volume}
+                  roi={token.roi}
+                  pnl={token.pnl}
+                  address={token.tokenAddress}
+                  loading={tradeStatisticTokensQuery.isFetching}
+                />
+              </div>
             )
           })}
         </div>
