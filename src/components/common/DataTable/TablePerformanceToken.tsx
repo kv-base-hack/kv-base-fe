@@ -146,7 +146,7 @@ export const TablePerformanceToken = ({
               className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
               content="The average purchase price of the token by Smart Money."
             >
-              <Info />
+              <Info className="w-5 h-5" />
             </TooltipCustom>
           </div>
         ),

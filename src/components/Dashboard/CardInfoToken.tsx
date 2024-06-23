@@ -65,7 +65,9 @@ export const CardInfo = ({
         <div className="flex flex-col gap-2 w-1/2">
           {/* PnL */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-normal">PnL</p>
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-normal">
+              PnL
+            </p>
             <p
               className={cn(
                 'text-[15px] leading-6 font-medium',
@@ -78,7 +80,7 @@ export const CardInfo = ({
           </div>
           {/* Avg ROI */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-normal">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-normal">
               Avg ROI
             </p>
             <p
@@ -93,7 +95,7 @@ export const CardInfo = ({
           </div>
           {/* Realized */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
               Realized %
             </p>
             <p className="text-[15px] leading-6 font-medium">
@@ -104,7 +106,7 @@ export const CardInfo = ({
         <div className="flex flex-col gap-2 w-1/2">
           {/* Avg Price */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
               Avg Price
             </p>
             <p className="text-[15px] leading-6 font-medium">
@@ -114,7 +116,9 @@ export const CardInfo = ({
 
           {/* FDV */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">FDV</p>
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
+              FDV
+            </p>
             <p className="text-[15px] leading-6 font-medium">
               {fdv ? nFormatter(fdv) : '-'}
             </p>
@@ -122,7 +126,7 @@ export const CardInfo = ({
 
           {/* liquidity */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
               Liquidity
             </p>
             <p className="text-[15px] leading-6 font-medium">

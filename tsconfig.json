@@ -33,8 +33,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
+    "index.d.ts",
     "./dist/types/**/*.ts"
-  ],
+, "src/components/common/Headroom/index.js"  ],
   "exclude": [
     "node_modules"
   ]

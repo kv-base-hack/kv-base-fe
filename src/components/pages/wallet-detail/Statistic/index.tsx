@@ -29,7 +29,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
   const [sort, setSort] = useState('')
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(8)
+  const [itemsPerPage] = useState(5)
   const CHAIN = useAtomValue(chainAtom)
 
   const tradeStatisticTokensQuery = useQuery(
@@ -68,7 +68,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
   }
 
   const dataSource = tradeStatisticTokensQuery?.isFetching
-    ? [...(Array(8).keys() as any)]
+    ? [...(Array(5).keys() as any)]
     : getVisibleItems() || []
 
   const columns: ColumnDef<TokenStat>[] = useMemo(() => {

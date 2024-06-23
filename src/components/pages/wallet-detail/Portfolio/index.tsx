@@ -18,7 +18,7 @@ type PortfolioProps = {
 export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(8)
+  const [itemsPerPage] = useState(5)
   const CHAIN = useAtomValue(chainAtom)
   // get user balance
   const userBalanceQuery = useQuery(
@@ -45,7 +45,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   }, [currentPage, itemsPerPage, userBalance?.tokens])
 
   const dataSource = userBalanceQuery?.isFetching
-    ? [...(Array(8).keys() as any)]
+    ? [...(Array(5).keys() as any)]
     : getVisibleItems || []
 
   return (
