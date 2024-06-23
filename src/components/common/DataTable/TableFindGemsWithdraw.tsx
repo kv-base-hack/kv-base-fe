@@ -9,6 +9,7 @@ import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { TableFindGemsProps } from '@/types'
 import { renderPrice } from '@/lib/utils/renderPrice'
+import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
 
 export const TableFindGemsWithdraw = ({
   tab,
@@ -47,23 +48,11 @@ export const TableFindGemsWithdraw = ({
             <div className="w-full">
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
-                  <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
-                    className="flex items-center gap-2"
-                  >
-                    <ImageToken
-                      imgUrl={row?.original?.image_url}
-                      symbol={row?.original?.symbol}
-                    />
-                    <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div className="truncate font-bold text-primary text-neutral-07">
-                        {row?.original?.name}
-                      </div>
-                      <div className="font-normal text-neutral-04">
-                        {row?.original?.symbol}
-                      </div>
-                    </div>
-                  </Link>
+                  <TooltipTokenInfo
+                    token={row?.original}
+                    chain={chain}
+                    nameToken={true}
+                  />
                 ) : (
                   <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
                     <ImageToken

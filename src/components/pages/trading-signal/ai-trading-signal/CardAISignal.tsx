@@ -106,7 +106,7 @@ export const CardAISignal = ({
                         ' text-[#6F767E] ',
                         pathName === '/smartmoney-onchain/dashboard'
                           ? 'max-w-20 truncate'
-                          : '',
+                          : 'max-w-[160px] truncate',
                       )}
                     >
                       {item.name}

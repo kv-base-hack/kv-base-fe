@@ -84,7 +84,7 @@ export const PaginationTable = ({
           total={total}
           onChange={updatePage}
           itemRender={renderPaginationItem}
-          className="flex items-center gap-2"
+          className="flex items-center"
           showSizeChanger={true}
         />
       </div>

@@ -11,6 +11,7 @@ import { NewListingBuy } from '@/types/newListingBuy'
 import numeral from 'numeral'
 import { TooltipTable } from '../Tooltip/TooltipTable'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
 
 export const TableFindGemsSMNewListingsBuy = ({
   tab,
@@ -54,15 +55,7 @@ export const TableFindGemsSMNewListingsBuy = ({
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
-                      <ImageToken
-                        imgUrl={row?.original?.image_url}
-                        symbol={row?.original?.symbol}
-                      />
-                      <div className="text-normal underline text-neutral-07">
-                        {row?.original?.symbol}
-                      </div>
-                    </div>
+                    <TooltipTokenInfo token={row?.original} chain={chain} />
                   </Link>
                 ) : (
                   <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">

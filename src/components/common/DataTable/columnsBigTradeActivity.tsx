@@ -15,6 +15,7 @@ import {
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
 import { TagMovement } from '../Tags/Movement'
+import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
 
 export type Activity = {
   id: string
@@ -58,19 +59,8 @@ export const columnsBigTradeActivity = (chain: string) => {
       header: () => 'Tokens',
       enableSorting: false,
       cell: ({ row }) => {
-        const { symbol, token_address } = row.original
-        return (
-          <Link
-            href={`/smartmoney-onchain/token-explorer/${token_address}$chain=${chain}`}
-            className="flex gap-3 items-center justify-between text-right"
-          >
-            <ImageToken
-              imgUrl={row?.original?.token_image_url}
-              symbol={symbol}
-            />
-            <div className="underline">{symbol}</div>
-          </Link>
-        )
+        console.log(row.original)
+        return <TooltipTokenInfo chain={chain} token={row.original} />
       },
     },
     {

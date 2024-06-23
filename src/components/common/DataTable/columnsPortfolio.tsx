@@ -4,6 +4,7 @@ import { renderPrice } from '@/utils/renderPrice'
 import { ColumnDef } from '@tanstack/react-table'
 import Link from 'next/link'
 import { ImageToken } from '../Image/ImageToken'
+import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
 
 export type Portfolio = {
   id: string
@@ -24,16 +25,7 @@ export const columnsPortfolio = (chain: string) => {
       header: () => 'Token',
       enableSorting: false,
       cell: ({ row }) => {
-        const { symbol, image_url, address } = row.original
-        return (
-          <Link
-            href={`/smartmoney-onchain/token-explorer/${address}?chain=${chain}`}
-            className="flex gap-3 items-center justify-between text-right"
-          >
-            <ImageToken imgUrl={image_url} symbol={symbol} />
-            <div>{symbol}</div>
-          </Link>
-        )
+        return <TooltipTokenInfo token={row.original} chain={chain} />
       },
     },
     {

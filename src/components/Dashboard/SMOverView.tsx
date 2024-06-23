@@ -27,6 +27,7 @@ import { ImageToken } from '../common/Image/ImageToken'
 import { CardInfo } from './CardInfoToken'
 import { TooltipCustom } from '../common/Tooltip'
 import { divide } from 'lodash'
+import { TooltipTokenInfo } from '../common/Tooltip/TooltipTokenInfo'
 
 export const SMMoneyOverview = ({ className }: { className?: string }) => {
   const [filterDate, setFilterDate] = useState<string>('24h')
@@ -108,35 +109,12 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                         <Skeleton />
                       </div>
                     ) : (
-                      <TooltipProvider delayDuration={200}>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Link
-                              href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
-                            >
-                              <ImageToken
-                                imgUrl={token?.image_url}
-                                symbol={token.symbol}
-                                className="w-11 h-11"
-                              />
-                            </Link>
-                          </TooltipTrigger>
-                          <TooltipContent className="!p-0 !border-none">
-                            <CardInfo
-                              image_url={token.image_url}
-                              symbol={token.symbol}
-                              current_price={token.current_price}
-                              price_change_24h={token.price_percent_change_24h}
-                              pnl={token.pnl}
-                              roi={token.roi}
-                              realized_percent={token.realized_percent}
-                              avg_price={token.avg_price}
-                              fdv={token.fdv}
-                              liquidity={token.liquidity}
-                            />
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+                      <TooltipTokenInfo
+                        token={token}
+                        chain={CHAIN}
+                        className="w-11 h-11"
+                        isSymbol={false}
+                      />
                     )}
                   </div>
                 )
@@ -163,36 +141,12 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                         <Skeleton />
                       </div>
                     ) : (
-                      <TooltipProvider delayDuration={200}>
-                        <Tooltip>
-                          <TooltipTrigger>
-                            <Link
-                              key={index}
-                              href={`/smartmoney-onchain/token-explorer/${token?.address}?chain=${CHAIN}`}
-                            >
-                              <ImageToken
-                                imgUrl={token?.image_url}
-                                symbol={token.symbol}
-                                className="w-11 h-11"
-                              />
-                            </Link>
-                          </TooltipTrigger>
-                          <TooltipContent className="!p-0 !border-none">
-                            <CardInfo
-                              image_url={token.image_url}
-                              symbol={token.symbol}
-                              current_price={token.current_price}
-                              price_change_24h={token.price_change_24h}
-                              pnl={token.pnl}
-                              roi={token.roi}
-                              realized_percent={token.realized_percent}
-                              avg_price={token.avg_price}
-                              fdv={token.fdv}
-                              liquidity={token.liquidity}
-                            />
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+                      <TooltipTokenInfo
+                        token={token}
+                        chain={CHAIN}
+                        className="w-11 h-11"
+                        isSymbol={false}
+                      />
                     )}
                   </div>
                 )

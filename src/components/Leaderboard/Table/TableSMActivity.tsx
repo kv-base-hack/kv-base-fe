@@ -9,6 +9,7 @@ import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import { TagMovement } from '@/components/common/Tags/Movement'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import Close from '@/components/shared/icons/Close'
 import { IconPresent } from '@/components/shared/icons/IconPresent'
 import Info from '@/components/shared/icons/Info'
@@ -113,19 +114,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       header: () => 'Tokens',
       enableSorting: false,
       cell: ({ row }) => {
-        const { symbol } = row.original
-        return (
-          <Link
-            href={`/smartmoney-onchain/token-explorer/${row.original.token_address}?chain=${CHAIN}`}
-            className="flex gap-3 items-center justify-between text-right"
-          >
-            <ImageToken
-              imgUrl={row?.original?.token_image_url}
-              symbol={symbol}
-            />
-            <div className="underline">{symbol}</div>
-          </Link>
-        )
+        return <TooltipTokenInfo token={row.original} chain={CHAIN} />
       },
     },
     {

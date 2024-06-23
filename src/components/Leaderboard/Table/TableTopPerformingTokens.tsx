@@ -27,6 +27,7 @@ import { chainAtom } from '@/atom/chain'
 import { useQuery } from '@tanstack/react-query'
 import { useGetTopTokenProfitQuery } from '@/query/leaderboard/getTopTokenProfit'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 
 export const TablePerformanceToken = () => {
   const [page, setPage] = useState(1)
@@ -64,11 +65,7 @@ export const TablePerformanceToken = () => {
                     href={`/smartmoney-onchain/token-explorer/${row.original.address}?chain=${CHAIN}`}
                     className="flex gap-3 items-center justify-between text-right"
                   >
-                    <ImageToken
-                      imgUrl={row?.original?.image_url}
-                      symbol={row?.original?.symbol}
-                    />
-                    <div className="underline">{row?.original?.symbol}</div>
+                    <TooltipTokenInfo token={row.original} chain={CHAIN} />
                   </Link>
                 ) : (
                   <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">

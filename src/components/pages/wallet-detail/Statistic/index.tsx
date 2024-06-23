@@ -6,6 +6,7 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import TradeStatisticIcon from '@/components/shared/icons/wallet-explorer/TradeStatisticIcon'
 import { useTradeStatisticTokensQuery } from '@/query/wallet-explorer/getTradeStatisticTokens'
 import { TokenList } from '@/types/tokenList'
@@ -78,14 +79,9 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         header: () => 'Tokens',
         cell: ({ row }) => {
           const { tokenAddress, imageUrl, symbol } = row.original
+
           return tokenAddress ? (
-            <Link
-              href={`/smartmoney-onchain/token-explorer/${tokenAddress}?chain=${CHAIN}`}
-              className="flex gap-1 items-center justify-between text-right"
-            >
-              <ImageToken imgUrl={imageUrl} symbol={symbol} />
-              <div className="">{symbol}</div>
-            </Link>
+            <TooltipTokenInfo token={row.original} chain={CHAIN} />
           ) : (
             <div className="flex gap-1 cursor-not-allowed items-center justify-between text-right">
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
