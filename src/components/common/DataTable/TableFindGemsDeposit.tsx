@@ -53,8 +53,8 @@ export const TableFindGemsDeposit = ({
                       symbol={row?.original?.symbol}
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div className="text-neutral-07 font-bold truncate">
-                        {row?.original?.network}
+                      <div className="text-neutral-07 font-bold truncate max-w-[120px]">
+                        {row?.original?.name}
                       </div>
                       <div className="font-normal text-neutral-07">
                         {row?.original?.symbol}
@@ -67,7 +67,9 @@ export const TableFindGemsDeposit = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div>{row?.original?.network}</div>
+                    <div className="truncate max-w-[120px]">
+                      {row?.original?.name}
+                    </div>
                     <div className="font-normal text-neutral-07">
                       {row?.original?.symbol}
                     </div>
@@ -97,6 +99,7 @@ export const TableFindGemsDeposit = ({
             </div>
           )
         },
+        align: 'center',
       },
       {
         accessorKey: 'deposit_value',
@@ -113,6 +116,7 @@ export const TableFindGemsDeposit = ({
             </div>
           )
         },
+        align: 'center',
       },
       {
         accessorKey: 'deposits',
@@ -130,6 +134,7 @@ export const TableFindGemsDeposit = ({
             </div>
           )
         },
+        align: 'center',
       },
       {
         accessorKey: 'price',

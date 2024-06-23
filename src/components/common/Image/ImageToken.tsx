@@ -21,6 +21,7 @@ export const ImageToken = ({
         alt={`${symbol} icon`}
         width={24}
         height={24}
+        unoptimized
       />
     )
   }

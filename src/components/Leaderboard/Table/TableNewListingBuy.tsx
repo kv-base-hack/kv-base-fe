@@ -5,7 +5,7 @@ import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { LinkCustom } from '@/components/common/Link'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
 import Info from '@/components/shared/icons/Info'
 import { IconTarget } from '@/components/shared/icons/leaderboard/IconTarget'
@@ -189,7 +189,7 @@ export const TableNewListingBuy = ({
           emptyData="No results."
         />
         {pagination && (
-          <PaginationCustom
+          <PaginationTable
             className="mt-2"
             currentPage={page}
             updatePage={(page: number) => setPage(page)}

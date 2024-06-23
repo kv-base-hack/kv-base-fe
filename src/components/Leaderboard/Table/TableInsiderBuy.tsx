@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { chainAtom } from '@/atom/chain'
 import { useAtom, useAtomValue } from 'jotai'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { categoryAtom } from '@/atom/category'
 
@@ -195,7 +195,7 @@ export const TableInsiderBuy = ({
         />
 
         {pagination && (
-          <PaginationCustom
+          <PaginationTable
             className="mt-2"
             currentPage={page}
             updatePage={(page: number) => setPage(page)}

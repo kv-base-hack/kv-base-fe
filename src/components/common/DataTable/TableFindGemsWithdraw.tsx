@@ -57,7 +57,7 @@ export const TableFindGemsWithdraw = ({
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
                       <div className="truncate font-bold text-primary text-neutral-07">
-                        {row?.original?.network}
+                        {row?.original?.name}
                       </div>
                       <div className="font-normal text-neutral-04">
                         {row?.original?.symbol}
@@ -70,7 +70,7 @@ export const TableFindGemsWithdraw = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div>{row?.original?.network}</div>
+                    <div>{row?.original?.name}</div>
                     <div className="font-normal text-neutral-04">
                       {row?.original?.symbol}
                     </div>

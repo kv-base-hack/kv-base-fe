@@ -5,7 +5,6 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsBigTradeActivity } from '@/components/common/DataTable/columnsBigTradeActivity'
 
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
@@ -124,7 +123,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
           emptyData="No results."
         />
       </div>
-      <PaginationCustom
+      <PaginationTable
         className="mt-4"
         currentPage={pageActivity}
         updatePage={(page: number) => setPageActivity(page)}

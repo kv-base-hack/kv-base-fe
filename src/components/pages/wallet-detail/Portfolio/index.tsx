@@ -2,7 +2,6 @@ import { chainAtom } from '@/atom/chain'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsPortfolio } from '@/components/common/DataTable/columnsPortfolio'
-import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
@@ -64,7 +63,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
           emptyData="No results."
           isFetching={userBalanceQuery.isFetching}
         />
-        <PaginationCustom
+        <PaginationTable
           className="mt-4"
           currentPage={currentPage}
           updatePage={(page: number) => handlePageChange(page)}

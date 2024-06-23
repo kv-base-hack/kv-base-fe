@@ -3,7 +3,7 @@ import { TokenFilter } from '@/components/common/Card/TokenFilter'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import TradeStatisticIcon from '@/components/shared/icons/wallet-explorer/TradeStatisticIcon'
@@ -240,7 +240,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
           emptyData="No results."
           isFetching={tradeStatisticTokensQuery?.isFetching}
         />
-        <PaginationCustom
+        <PaginationTable
           className="mt-4"
           currentPage={currentPage}
           updatePage={(page: number) => handlePageChange(page)}

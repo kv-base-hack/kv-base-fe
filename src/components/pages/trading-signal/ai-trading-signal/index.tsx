@@ -1,6 +1,6 @@
 import { CardCommon } from '@/components/common/Card/CardCommon'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { cn } from '@/lib/utils'
 import { useGetDexTradingSignalQuery } from '@/query/trading-signal/getDexTradingSignal'
 import { useState } from 'react'
@@ -128,7 +128,7 @@ export const AiTradingSignal = () => {
           />
         ))}
       </div>
-      <PaginationCustom
+      <PaginationTable
         className={cn(
           'mt-4',
           dataDexTradingSignalQuery.isFetching ? 'hidden' : 'visible',

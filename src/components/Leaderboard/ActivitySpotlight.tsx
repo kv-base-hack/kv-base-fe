@@ -7,7 +7,7 @@ import { IconFire } from '../shared/icons/leaderboard/IconFire'
 import { IconInfoCircle } from '../shared/icons/IconInfoCircle'
 import moment from 'moment'
 import { cn } from '@/lib/utils'
-import { PaginationCustom } from '../common/Pagination'
+import { PaginationTable } from '../common/Pagination/PaginationTable'
 
 const DATA = [
   {
@@ -56,15 +56,15 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
                 i === 0
                   ? 'bg-[#E1F1FF]'
                   : i === 1
-                    ? 'bg-[#FFF1E1]'
-                    : i === 2
-                      ? 'bg-[#F4E7FC]'
-                      : 'bg-[#E1FFEF]'
+                  ? 'bg-[#FFF1E1]'
+                  : i === 2
+                  ? 'bg-[#F4E7FC]'
+                  : 'bg-[#E1FFEF]'
               }
             />
           ))}
         </div>
-        <PaginationCustom
+        <PaginationTable
           currentPage={1}
           className="mt-4"
           updatePage={undefined}

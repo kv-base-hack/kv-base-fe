@@ -17,9 +17,9 @@ import { useGetTopSmartMoneyTradeQuery } from '@/query/leaderboard/getTopSmartMo
 import { IconArrowColorRightUp } from '@/components/shared/icons/IconArrowColorRightUp'
 import { nFormatter } from '@/utils/nFormatter'
 import { DataTable } from '../DataTable'
-import { PaginationCustom } from '../Pagination'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
+import { PaginationTable } from '../Pagination/PaginationTable'
 
 interface ListWalletProps {
   user_address: string
@@ -167,7 +167,7 @@ export const DialogNumberOfSmartMoney = ({
               isFetching={topSmartMoneyTradeQuery.isFetching}
             />
 
-            <PaginationCustom
+            <PaginationTable
               currentPage={start}
               updatePage={(page: number) => setStart(page)}
               pageSize={limit}

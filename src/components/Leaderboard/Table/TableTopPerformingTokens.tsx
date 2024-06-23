@@ -26,7 +26,7 @@ import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 import { useQuery } from '@tanstack/react-query'
 import { useGetTopTokenProfitQuery } from '@/query/leaderboard/getTopTokenProfit'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 
 export const TablePerformanceToken = () => {
   const [page, setPage] = useState(1)
@@ -285,8 +285,7 @@ export const TablePerformanceToken = () => {
         noneBgHeader
         emptyData="No results."
       />
-      <PaginationCustom
-        className="mt-2"
+      <PaginationTable
         currentPage={page}
         updatePage={(page: number) => setPage(page)}
         pageSize={10}

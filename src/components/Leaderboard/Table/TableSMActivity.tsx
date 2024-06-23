@@ -4,7 +4,7 @@ import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
@@ -294,7 +294,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
           noneBgHeader
           emptyData="No results."
         />
-        <PaginationCustom
+        <PaginationTable
           className="mt-8"
           currentPage={pageActivity}
           updatePage={(page: number) => setPageActivity(page)}

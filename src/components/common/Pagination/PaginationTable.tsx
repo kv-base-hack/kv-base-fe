@@ -53,7 +53,11 @@ export const PaginationTable = ({
     } else return
   }
 
-  const renderPaginationItem = (current: any, type: string) => {
+  const renderPaginationItem = (
+    current: any,
+    type: string,
+    originalElement: any,
+  ) => {
     switch (type) {
       case 'page':
         return current
@@ -62,7 +66,7 @@ export const PaginationTable = ({
       case 'next':
         return <ArrowRightIcon className="cursor-pointer" />
       default:
-        return null
+        return originalElement
     }
   }
 
@@ -74,7 +78,6 @@ export const PaginationTable = ({
       )}
     >
       <div className="flex items-center gap-2">
-        <ArrowLeftIcon onClick={handleJumpDownPage} />
         <Pagination
           pageSize={pageSize}
           current={currentPage}
@@ -82,18 +85,18 @@ export const PaginationTable = ({
           onChange={updatePage}
           itemRender={renderPaginationItem}
           className="flex items-center gap-2"
+          showSizeChanger={true}
         />
-        <ArrowRightIcon onClick={handleJumpUpPage} />
       </div>
       <div className="flex gap-2 items-center text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="w-16 h-6 bg-transparent rounded-2xl text-center font-normal text-neutral-07 border border-neutral-dark-08"
+          className="max-w-6 bg-white rounded-lg text-center font-normal text-neutral-07 border border-[#EFEFEF] px-2 py-1"
           onBlur={handleBlur}
           onChange={handleToPage}
         />
-        <span className="text-neutral-07">of</span>
-        <span className="font-bold text-[#6F767E]">{totalPage}</span>
+        <span className="text-[#6F767E]">of</span>
+        <span className="text-[#6F767E]">{totalPage} page</span>
       </div>
     </div>
   )

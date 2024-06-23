@@ -15,7 +15,7 @@ import Link from 'next/link'
 import { nFormatter } from '@/utils/nFormatter'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import moment from 'moment'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 
 export default function LeaderboardPage() {
   const CHAIN = useAtomValue(chainAtom)
@@ -298,7 +298,7 @@ export default function LeaderboardPage() {
           emptyData="No results."
         />
       </div>
-      <PaginationCustom
+      <PaginationTable
         className="mt-2"
         currentPage={page}
         updatePage={(page: number) => setPage(page)}

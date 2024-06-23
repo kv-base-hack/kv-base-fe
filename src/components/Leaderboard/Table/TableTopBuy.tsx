@@ -6,7 +6,7 @@ import { DataTable } from '@/components/common/DataTable'
 import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { LinkCustom } from '@/components/common/Link'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
 import Info from '@/components/shared/icons/Info'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
@@ -217,7 +217,7 @@ export const TableTopBuy = ({
           emptyData="No results."
         />
         {pagination && (
-          <PaginationCustom
+          <PaginationTable
             className="mt-2"
             currentPage={page}
             updatePage={(page: number) => setPage(page)}

@@ -59,8 +59,8 @@ export const TableFindGemsUnusualCex = ({
                       symbol={row?.original?.symbol}
                     />
                     <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div className="truncate font-bold text-primary">
-                        {row?.original?.network}
+                      <div className="truncate font-bold text-primary max-w-[120px]">
+                        {row?.original?.name}
                       </div>
                       <div className="font-normal text-neutral-04">
                         {row?.original?.symbol}
@@ -73,7 +73,9 @@ export const TableFindGemsUnusualCex = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div>{row?.original?.network}</div>
+                    <div className="max-w-[120px] truncate">
+                      {row?.original?.name}
+                    </div>
                     <div className="text-normal text-neutral-07">
                       {row?.original?.symbol}
                     </div>
@@ -101,11 +103,11 @@ export const TableFindGemsUnusualCex = ({
             <div className="w-full flex justify-center">
               <div
                 className={cn(
-                  'flex rounded-md justify-center items-center gap-2.5 px-2 py-0.5 text-center text-xs not-italic leading-4 tracking-[-0.12px]',
+                  'flex rounded-md text-neutral-07 justify-center items-center gap-2.5 px-2 py-0.5 text-center text-xs not-italic leading-4 tracking-[-0.12px]',
                   action === 'deposit'
-                    ? 'text-secondary-1 bg-secondary-1/10'
+                    ? ' bg-secondary-1'
                     : action === 'withdraw'
-                    ? 'text-secondary-4 bg-secondary-4/10'
+                    ? ' bg-secondary-4'
                     : '',
                 )}
               >
