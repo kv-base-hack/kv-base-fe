@@ -38,14 +38,14 @@ export const FirstTimeBuy = ({
 
   const nextPage = () => {
     if (page < totalPage) {
-      setStart(start + 2)
+      setStart(start + 3)
       setPage(page + 1)
     }
   }
 
   const prevPage = () => {
     if (page > 1) {
-      setStart(start - 2)
+      setStart(start - 3)
       setPage(page - 1)
     }
   }
@@ -64,7 +64,7 @@ export const FirstTimeBuy = ({
         <SelectDuration duration={duration} setDuration={setDuration} />
       </div>
       {(dataFirstTimeBuy?.length as number) > 0 ? (
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2 h-full w-full">
           {dataFirstTimeBuy?.map((token, i) => {
             return (
               <div key={i} className="col-span-1">

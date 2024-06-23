@@ -6,7 +6,7 @@ import { ActiveTab } from './tabs/types'
 import { FindGemsTabHeader } from './tabs/FindGemsTabHeader'
 
 export const FindGemsPage = () => {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('SM Holding')
+  const [activeTab, setActiveTab] = useState<ActiveTab>('SM New Listing Buys')
 
   const handleActiveTab = (value: ActiveTab) => {
     setActiveTab(value)

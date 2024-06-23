@@ -18,7 +18,7 @@ export const Header = ({
   const pathname = usePathname()
 
   return (
-    <div className="px-8 py-4 w-full z-[9999] fixed">
+    <div className="px-8 py-4 w-full">
       <div className="w-full flex items-center justify-between p-3 shadow-2xl bg-header max-md:flex-wrap max-md:px-5 rounded-[48px]">
         <Link href="/" className="flex items-center">
           <Image
