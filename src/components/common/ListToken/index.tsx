@@ -13,8 +13,8 @@ import { useFindGemsUnusualCexQuery } from '@/query/find-gems/getFindGemsUnusual
 import { useFindGemsSmartMoneyHoldingQuery } from '@/query/find-gems/getFindGemsSmartMoneyHolding'
 import { useGetTopTokenBuy } from '@/query/top-tokens/getTopTokenBuy'
 import { useGetTopTokenSell } from '@/query/top-tokens/getTopTokenSell'
-import { PaginationCustom } from '../Pagination'
 import { useQuery } from '@tanstack/react-query'
+import { PaginationTable } from '../Pagination/PaginationTable'
 
 const renderPercentPrice = (percent: number) => {
   if (!percent) return null
@@ -67,7 +67,7 @@ const RenderDataGem = ({
           </div>
         )
       })}
-      <PaginationCustom
+      <PaginationTable
         className="mt-8"
         currentPage={page}
         updatePage={(page: number) => setPage(page)}

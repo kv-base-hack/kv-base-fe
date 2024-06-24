@@ -12,7 +12,7 @@ import remarkMath from 'remark-math'
 
 export function UserMessage({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-start p-6 text-xs xl:text-base font-normal text-neutral-01 rounded-[20px] bg-[#D6D9DC]/5">
+    <div className="flex flex-start p-6 text-xs xl:text-base font-normal text-neutral-07 rounded-[20px] bg-[#D6D9DC]/5">
       {children}
     </div>
   )
@@ -29,7 +29,7 @@ export function BotMessage({
   return (
     <div
       className={cn(
-        'group relative flex flex-col items-start justify-start text-xs xl:text-base p-6 bg-[#1a1d1f] rounded-[20px]',
+        'group relative flex flex-col items-start justify-start text-xs xl:text-base p-6 bg-neutral-01 text-neutral-07 rounded-[20px]',
         className,
       )}
     >

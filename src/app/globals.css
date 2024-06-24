@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
+body,
+html {
   font-family: 'Sora';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: var(--Neutral-01, #FCFCFC);
+  color: var(--Neutral-01, #fcfcfc);
 }
 
 #connect-button {
@@ -18,7 +19,7 @@ body, html {
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  
+
   -moz-animation: scroll-text-animation 15s linear infinite;
   -webkit-animation: scroll-text-animation 15s linear infinite;
   animation: scroll-text-animation 15s linear infinite;
@@ -26,14 +27,22 @@ body, html {
 
 /* for Firefox */
 @-moz-keyframes scroll-text-animation {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
 }
 
 /* for Chrome */
 @-webkit-keyframes scroll-text-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
 }
 
 @keyframes scroll-text-animation {
@@ -51,33 +60,48 @@ body, html {
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .rc-pagination-item {
-  color: var(--Neutral-04, #6F767E);
+  color: var(--Neutral-04, #6f767e);
   cursor: pointer;
   font-family: 'Sora';
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: -0.13px;
+  padding: 6px 8px;
 }
 
 .rc-pagination-item-active {
-  color: var(--Neutral-07, #1A1D1F);
+  color: var(--Neutral-07, #1a1d1f);
+  background: var(--UI-On-Surface-LV3, #e7e9eb);
+  border-radius: 8px;
+  border: 1px solid var(--UI-Stroke, #efefef);
 }
 .button-gradient {
-  background: linear-gradient(178deg,
+  background: linear-gradient(
+      178deg,
       rgba(253, 250, 255, 0.3) 7.87%,
-      rgba(255, 255, 255, 0) 98.3%),
-    linear-gradient(90deg, #0080FF 100%, blue 20%);
+      rgba(255, 255, 255, 0) 98.3%
+    ),
+    linear-gradient(90deg, #0080ff 100%, blue 20%);
   box-shadow: 0px 8px 16px 0px rgba(123, 61, 187, 0.4);
   backdrop-filter: blur(2px);
   cursor: pointer;
+}
+
+.rc-pagination-jump-next button:after,
+.rc-pagination-jump-prev button:after {
+  display: block;
+  content: '...';
+  color: var(--Neutral-07, #1a1d1f);
 }

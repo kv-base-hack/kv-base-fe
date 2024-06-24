@@ -4,10 +4,12 @@ import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import { TagMovement } from '@/components/common/Tags/Movement'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import Close from '@/components/shared/icons/Close'
 import { IconPresent } from '@/components/shared/icons/IconPresent'
 import Info from '@/components/shared/icons/Info'
@@ -112,19 +114,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       header: () => 'Tokens',
       enableSorting: false,
       cell: ({ row }) => {
-        const { symbol } = row.original
-        return (
-          <Link
-            href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
-            className="flex gap-3 items-center justify-between text-right"
-          >
-            <ImageToken
-              imgUrl={row?.original?.token_image_url}
-              symbol={symbol}
-            />
-            <div className="underline">{symbol}</div>
-          </Link>
-        )
+        return <TooltipTokenInfo token={row.original} chain={CHAIN} />
       },
     },
     {
@@ -133,29 +123,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
       enableSorting: false,
       cell: ({ row }) => {
         const { movement } = row.original
-        return (
-          <div
-            className={cn(
-              'flex items-center gap-2.5 justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap text-neutral-07 rounded-md',
-              movement === 'deposit'
-                ? 'bg-[#F4E7FC]'
-                : movement === 'withdraw'
-                ? 'bg-secondary-4'
-                : movement === 'buying'
-                ? 'bg-[#E1F1FF]'
-                : movement === 'selling'
-                ? 'bg-[#FEE6C7]'
-                : movement === 'new_listing_buy'
-                ? 'bg-[#E1FFEF]'
-                : movement === 'new_listing_sell'
-                ? 'bg-[#DC6803]/10'
-                : '',
-            )}
-          >
-            {renderMovementIcon(movement)}
-            {renderMovementName(movement)}
-          </div>
-        )
+        return <TagMovement movement={movement} />
       },
     },
     {
@@ -315,7 +283,7 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
           noneBgHeader
           emptyData="No results."
         />
-        <PaginationCustom
+        <PaginationTable
           className="mt-8"
           currentPage={pageActivity}
           updatePage={(page: number) => setPageActivity(page)}

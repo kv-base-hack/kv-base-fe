@@ -33,7 +33,6 @@ export const TopSmartMoney = ({
   const totalTopSmartMoneyForToken =
     topSmartMoneyForTokenQuery.data?.data.total || 1
   //
-  console.log(dataTokenInfo)
 
   return (
     <div>

@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { UnusualBuy } from '@/types/unusualBuy'
 
 export const TableFindGemsInsiderBuy = () => {

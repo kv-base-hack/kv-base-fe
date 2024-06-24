@@ -1,7 +1,7 @@
 'use client'
 
 import { ArticleItem } from '@/components/common/ArticleItem'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import ArrowDown from '@/components/shared/icons/ArowDown'
 import CheckIcon from '@/components/shared/icons/CheckIcon'
 import PlusIcon from '@/components/shared/icons/PlusIcon'
@@ -39,7 +39,8 @@ export default function Articles() {
                 {dataTopic?.map((topic: string, index: number) => (
                   <div
                     key={index}
-                    className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]">
+                    className="flex items-center gap-1 justify-between px-3 py-1 bg-gray-800 rounded-[100px]"
+                  >
                     <div className="grow">{topic}</div>
                     <PlusIcon />
                   </div>
@@ -83,7 +84,7 @@ export default function Articles() {
             <ArticleItem key={index} article={article} />
           ))}
         </div>
-        <PaginationCustom
+        <PaginationTable
           className="my-4"
           currentPage={page}
           updatePage={() => null}

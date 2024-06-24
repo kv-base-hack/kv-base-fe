@@ -18,10 +18,10 @@ export const ActivityTabHeader: React.FC<ActivityTabHeaderProps> = ({
           key={index}
           onClick={() => handleActiveTab(item)}
           className={cn(
-            'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 rounded-lg text-xsm not-italic font-medium leading-8',
+            'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 rounded-lg text-[15px] not-italic font-semibold leading-8',
             activeTab === item
-              ? 'bg-neutral-03 text-neutral-07'
-              : 'bg-transparent text-neutral04',
+              ? 'bg-neutral-03 text-neutral-07 border border-solid rounded-lg'
+              : 'text-neutral-04 border border-solid border-transparent',
           )}
         >
           {item}

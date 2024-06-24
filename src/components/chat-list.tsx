@@ -19,9 +19,9 @@ export function ChatList({ messages }: { messages: any[] }) {
   }
 
   return (
-    <div className="relative p-4 flex flex-col gap-2.5 md:gap-10">
+    <div className="relative p-4 flex flex-col">
       {messages.map((message, index) => (
-        <div key={index} ref={refDiv}>
+        <div key={index} ref={refDiv} className="text-neutral-07">
           {message.display}
         </div>
       ))}

@@ -14,9 +14,10 @@ import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { chainAtom } from '@/atom/chain'
 import { useAtom, useAtomValue } from 'jotai'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { categoryAtom } from '@/atom/category'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 
 export const TableInsiderBuy = ({
   limit,
@@ -78,15 +79,7 @@ export const TableInsiderBuy = ({
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${CHAIN}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
-                      <ImageToken
-                        imgUrl={row?.original?.image_url}
-                        symbol={row?.original?.symbol}
-                      />
-                      <div className="text-normal underline">
-                        {row?.original?.symbol}
-                      </div>
-                    </div>
+                    <TooltipTokenInfo token={row.original} chain={CHAIN} />
                   </Link>
                 ) : (
                   <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
@@ -195,7 +188,7 @@ export const TableInsiderBuy = ({
         />
 
         {pagination && (
-          <PaginationCustom
+          <PaginationTable
             className="mt-2"
             currentPage={page}
             updatePage={(page: number) => setPage(page)}

@@ -1,11 +1,12 @@
+import { chainAtom } from '@/atom/chain'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsPortfolio } from '@/components/common/DataTable/columnsPortfolio'
-import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
 import { useQuery } from '@tanstack/react-query'
+import { useAtomValue } from 'jotai'
 import { useMemo, useState } from 'react'
 
 type PortfolioProps = {
@@ -16,7 +17,8 @@ type PortfolioProps = {
 export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(8)
+  const [itemsPerPage] = useState(5)
+  const CHAIN = useAtomValue(chainAtom)
   // get user balance
   const userBalanceQuery = useQuery(
     useGetUserBalanceQuery({
@@ -24,6 +26,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
       chain,
       page: currentPage,
       perPage: itemsPerPage,
+      duration: '24h',
     }),
   )
   const userBalance = userBalanceQuery?.data
@@ -41,7 +44,7 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
   }, [currentPage, itemsPerPage, userBalance?.tokens])
 
   const dataSource = userBalanceQuery?.isFetching
-    ? [...(Array(8).keys() as any)]
+    ? [...(Array(5).keys() as any)]
     : getVisibleItems || []
 
   return (
@@ -53,14 +56,14 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
       <div className="mt-4 h-full flex flex-col justify-between">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
-          columns={columnsPortfolio}
+          columns={columnsPortfolio(CHAIN)}
           data={dataSource}
           noneBorder
           noneBgHeader
           emptyData="No results."
           isFetching={userBalanceQuery.isFetching}
         />
-        <PaginationCustom
+        <PaginationTable
           className="mt-4"
           currentPage={currentPage}
           updatePage={(page: number) => handlePageChange(page)}

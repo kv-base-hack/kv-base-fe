@@ -1,0 +1,94 @@
+import FirstTimeBuyIcon from '@/components/shared/icons/wallet-explorer/FirstTimeBuyIcon'
+import { WalletInfoItem, WalletInfoItemTitle } from '../WalletInfoItem'
+import { useQuery } from '@tanstack/react-query'
+import { useState } from 'react'
+import { useTradeFirstTimeQuery } from '@/query/wallet-explorer/getUserTradeFirstTime'
+import { SelectDuration } from '@/components/common/SelectDuration'
+
+export const FirstTimeBuy = ({
+  address,
+  chain,
+}: {
+  address: string
+  chain: string
+}) => {
+  const [start, setStart] = useState(0)
+  const [page, setPage] = useState(1)
+  const [duration, setDuration] = useState('72h')
+
+  const tradeStatisticTokensQuery = useQuery(
+    useTradeFirstTimeQuery({
+      address,
+      chain,
+      duration,
+      token_address: '',
+      sort_by: '',
+    }),
+  )
+  const tradeStatisticTokens = tradeStatisticTokensQuery?.data?.first_time_buy
+
+  const getVisibleItems = () => {
+    const startIndex = start
+    const endIndex = startIndex + 3
+    return tradeStatisticTokens?.slice(startIndex, endIndex)
+  }
+
+  const totalToken = tradeStatisticTokens?.length || 1
+  const totalPage = Math.ceil(totalToken / 3)
+
+  const nextPage = () => {
+    if (page < totalPage) {
+      setStart(start + 3)
+      setPage(page + 1)
+    }
+  }
+
+  const prevPage = () => {
+    if (page > 1) {
+      setStart(start - 3)
+      setPage(page - 1)
+    }
+  }
+
+  const dataFirstTimeBuy = tradeStatisticTokensQuery.isFetching
+    ? [...(Array(3).keys() as any)]
+    : getVisibleItems()
+
+  return (
+    <div className="flex flex-col h-full">
+      <div className="flex items-center justify-between h-full">
+        <WalletInfoItemTitle
+          name="First Time Buy"
+          icon={<FirstTimeBuyIcon />}
+        />
+        <SelectDuration duration={duration} setDuration={setDuration} />
+      </div>
+      {(dataFirstTimeBuy?.length as number) > 0 ? (
+        <div className="grid grid-cols-3 gap-2 h-full w-full">
+          {dataFirstTimeBuy?.map((token, i) => {
+            return (
+              <div key={i} className="col-span-1">
+                <WalletInfoItem
+                  imgUrl={token.imageUrl}
+                  symbol={token.symbol}
+                  name={token.name}
+                  usdPrice={token.usdPrice}
+                  avg_price={token.avg_price}
+                  spent={token.volume}
+                  roi={token.roi}
+                  pnl={token.pnl}
+                  address={token.tokenAddress}
+                  loading={tradeStatisticTokensQuery.isFetching}
+                />
+              </div>
+            )
+          })}
+        </div>
+      ) : (
+        <div className="flex items-center justify-center h-full font-semibold text-sm text-neutral-03">
+          No results
+        </div>
+      )}
+    </div>
+  )
+}

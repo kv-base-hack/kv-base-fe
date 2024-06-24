@@ -38,14 +38,15 @@ async function submitUserMessage(content: string) {
   let textNode: undefined | React.ReactNode
 
   console.log(...aiState.get().messages)
-  const result = await streamUI({
-    model: openai('gpt-3.5-turbo'),
-    initial: (
-      <div className="flex items-start">
-        <DotLoading />
-      </div>
-    ),
-    system: `\
+  try {
+    const result = await streamUI({
+      model: openai('gpt-3.5-turbo'),
+      initial: (
+        <div className="flex items-start">
+          <DotLoading />
+        </div>
+      ),
+      system: `\
     You are a crypto trading assistant. Your goal is to help users understand the market and make informed decisions by providing them with relevant information and analysis. You can engage in discussions with users about crypto market trends, news, and strategies to facilitate better decision-making within the UI.
     When a user sends a message, analyze the content to determine which function to call based on the following guidelines:
     1. If the user asks for information or smart money analysis of a specific token, call the \`smart_money_analyst\` function to display the token information and provide a smart money data analysis.
@@ -62,54 +63,62 @@ async function submitUserMessage(content: string) {
     If the user attempts to perform a task that is not possible or beyond the scope of your capabilities, politely inform them that you are unable to fulfill that request.
     In addition to the specific functions mentioned above, you can engage in general conversation with users and perform calculations when necessary to assist them further.
     `,
-    messages: [
-      ...aiState.get().messages.map((message: any) => {
-        return {
-          role: message.role,
-          content: message.content,
-          name: message.name,
+      messages: [
+        ...aiState.get().messages.map((message: any) => {
+          return {
+            role: message.role,
+            content: message.content,
+            name: message.name,
+          }
+        }),
+      ],
+      text: ({ content, done, delta }) => {
+        if (!textStream) {
+          textStream = createStreamableValue('')
+          textNode = <BotMessage content={textStream.value} />
         }
-      }),
-    ],
-    text: ({ content, done, delta }) => {
-      if (!textStream) {
-        textStream = createStreamableValue('')
-        textNode = <BotMessage content={textStream.value} />
-      }
 
-      if (done) {
-        textStream.done()
-        aiState.done({
-          ...aiState.get(),
-          messages: [
-            ...aiState.get().messages,
-            {
-              id: nanoid(),
-              role: 'assistant',
-              content,
-            },
-          ],
-        })
-      } else {
-        textStream.update(delta)
-      }
+        if (done) {
+          textStream.done()
+          aiState.done({
+            ...aiState.get(),
+            messages: [
+              ...aiState.get().messages,
+              {
+                id: nanoid(),
+                role: 'assistant',
+                content,
+              },
+            ],
+          })
+        } else {
+          textStream.update(delta)
+        }
 
-      return textNode
-    },
-    tools: {
-      smartMoneyAnalyst: createSmartMoneyAnalystTool(aiState),
-      marketNews: createMarketNewsTool(aiState),
-      technicalAnalysis: createTechnicalAnalysisTool(aiState),
-      smartMoneyTransactions: createSmartMoneyTransactionsTool(aiState),
-      topSmartMoneyTrading: createTopSmartMoneyTradingTool(aiState),
-      activityOfSmartMoneyTrading:
-        createActivityOfTopSmartMoneyTradingTool(aiState),
-    },
-  })
+        return textNode
+      },
+      tools: {
+        smartMoneyAnalyst: createSmartMoneyAnalystTool(aiState),
+        marketNews: createMarketNewsTool(aiState),
+        technicalAnalysis: createTechnicalAnalysisTool(aiState),
+        smartMoneyTransactions: createSmartMoneyTransactionsTool(aiState),
+        topSmartMoneyTrading: createTopSmartMoneyTradingTool(aiState),
+        activityOfSmartMoneyTrading:
+          createActivityOfTopSmartMoneyTradingTool(aiState),
+      },
+    })
 
-  return {
-    id: nanoid(),
-    display: result.value,
+    return {
+      id: nanoid(),
+      display: result.value,
+    }
+  } catch {
+    return {
+      id: nanoid(),
+      display: (
+        <BotMessage content="Sorry, Something went wrong, please try again." />
+      ),
+    }
   }
 }
 

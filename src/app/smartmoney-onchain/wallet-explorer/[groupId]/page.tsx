@@ -28,6 +28,9 @@ import { IconChart } from '@/components/shared/icons/IconChart'
 import { useQuery } from '@tanstack/react-query'
 import Skeleton from '@/components/common/Skeleton'
 import { cn } from '@/lib/utils'
+import { SelectDuration } from '@/components/common/SelectDuration'
+import { useState } from 'react'
+import { FirstTimeBuy } from '@/components/pages/wallet-detail/FirstTimeBuy'
 
 const DUMMY_CHART = [
   [1700582400, 3.2820760583722837],
@@ -81,6 +84,7 @@ export default function WalletExplorerDetail({
   params: { groupId: string }
 }) {
   const CHAIN = useAtomValue(chainAtom)
+  const [duration, setDuration] = useState('24h')
 
   const tradeStatisticQuery = useQuery(
     useTradeStatisticQuery({
@@ -97,13 +101,14 @@ export default function WalletExplorerDetail({
     useGetUserBalanceQuery({
       address: params.groupId,
       chain: CHAIN,
+      duration,
     }),
   )
   const userBalance = userBalanceQuery?.data
 
   const DATA_STATS = [
     {
-      name: 'New Listing Buy',
+      name: 'Most Bought 24h',
       icon: <BoughtIcon />,
       imgUrl: tradeStatistic?.most_buy?.imageUrl,
       title: tradeStatistic?.most_buy?.name,
@@ -121,20 +126,22 @@ export default function WalletExplorerDetail({
       price: tradeStatistic?.most_buy?.usdPrice,
     },
     {
-      name: 'Biggest Gainer',
-      icon: <BigestGainerIcon />,
+      name: 'Most Profitable Token',
+      icon: <BoughtIcon />,
       imgUrl: tradeStatistic?.most_profit?.imageUrl,
       title: tradeStatistic?.most_profit?.name,
       priceChangeH24: tradeStatistic?.most_profit?.priceChangeH24,
       symbol: tradeStatistic?.most_profit?.symbol,
       token_address: tradeStatistic?.most_profit_detail?.token_address,
       avg_price: tradeStatistic?.most_profit_detail?.avg_price,
+      value_in_usdt: tradeStatistic?.most_profit_detail?.value_in_usdt,
       usdPrice: tradeStatistic?.most_profit?.usdPrice,
       volume: tradeStatistic?.most_profit_detail?.volume,
       roi: tradeStatistic?.most_profit_detail?.roi,
       pnl: tradeStatistic?.most_profit_detail?.pnl,
       chain: tradeStatistic?.most_profit?.chain,
       address: tradeStatistic?.most_profit?.tokenAddress,
+      price: tradeStatistic?.most_profit?.usdPrice,
     },
   ]
 
@@ -150,10 +157,10 @@ export default function WalletExplorerDetail({
 
   return (
     <div className="w-full h-full">
-      <div className="flex gap-4 justify-center self-stretch">
+      <div className="flex gap-2 justify-center self-stretch">
         {/* left */}
-        <div className="flex flex-col w-2/3 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] overflow-hidden">
-          <div className="flex gap-6 max-md:flex-wrap">
+        <div className="flex flex-col w-1/2 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] overflow-hidden">
+          <div className="flex items-start justify-between max-md:flex-wrap">
             <div className="flex gap-2">
               {userInfoQuery.isFetching ? (
                 <div className="w-24 h-24 rounded-full overflow-hidden">
@@ -166,19 +173,20 @@ export default function WalletExplorerDetail({
                 <div className="text-xl font-bold tracking-tight text-neutral-04">
                   Whale Untag
                 </div>
-                <div className="flex gap-1 pr-5 mt-2 text-base tracking-normal leading-6 text-gray-400 whitespace-nowrap">
-                  <div>{`${params.groupId?.substring(
-                    0,
-                    6,
-                  )}...${params.groupId?.slice(-6)}`}</div>
-                  <CopyCustom value={params.groupId} icon={<CopyIcon />} />
-                  <a
-                    href={`https://etherscan.io/address/${params.groupId}`}
-                    target="_blank"
-                  >
-                    <ExternalLinkIcon />
-                  </a>
-                </div>
+                {userInfoQuery.isFetching ? (
+                  <Skeleton className="w-[200px] h-[30px] rounded-full overflow-hidden" />
+                ) : (
+                  <div className="flex gap-1 pr-5 mt-2 text-base tracking-normal leading-6 text-gray-400 whitespace-nowrap">
+                    <div>{`${params.groupId?.substring(
+                      0,
+                      6,
+                    )}...${params.groupId?.slice(-6)}`}</div>
+                    <CopyCustom value={params.groupId} icon={<CopyIcon />} />
+                    <a href={userInfo?.scan_link} target="_blank">
+                      <ExternalLinkIcon />
+                    </a>
+                  </div>
+                )}
                 <div className="flex gap-2 mt-1 text-base tracking-normal text-zinc-300">
                   <div className="flex gap-1 items-center">
                     <LastDateIcon />
@@ -195,14 +203,16 @@ export default function WalletExplorerDetail({
                 </div>
               </div>
             </div>
+            <div>
+              <SelectDuration duration={duration} setDuration={setDuration} />
+            </div>
           </div>
-          <div className="flex gap-5 justify-center mt-6 max-md:flex-wrap">
+          <div className="flex justify-center mt-6 max-md:flex-wrap">
             <div className="flex flex-col">
-              <div className="flex gap-2 text-xl font-semibold tracking-normal leading-5 text-neutral-07">
-                {/* <TotalBalanceIcon /> */}
-                <div>Total Balance</div>
+              <div className="flex gap-2 whitespace-nowrap text-xl font-semibold tracking-normal leading-5 text-neutral-07">
+                Total Balance
               </div>
-              <div className="mt-1 text-[40px] leading-[48px] font-semibold text-neutral-07">
+              <div className="mt-1 text-[32px] leading-[48px] font-semibold text-neutral-07">
                 {userBalanceQuery.isFetching ? (
                   <div className="w-40 h-4 rounded-2xl overflow-hidden">
                     <Skeleton />
@@ -212,14 +222,14 @@ export default function WalletExplorerDetail({
                 )}
               </div>
             </div>
-            <div className="flex items-center justify-end flex-1 gap-5 pl-20 my-auto max-md:flex-wrap">
+            <div className="flex items-center justify-end flex-1 gap-5 my-auto max-md:flex-wrap">
               <div className="flex items-center gap-1">
                 <div className="text-2xl text-black bg-[#B5E4CA] rounded-full w-16 h-16 flex items-center justify-center">
                   $
                 </div>
                 <div className="flex flex-col whitespace-nowrap">
                   <div className="text-[15px] leading-6 font-semibold text-neutral-07">
-                    3D PnL
+                    PnL
                   </div>
                   <div
                     className={cn(
@@ -246,7 +256,7 @@ export default function WalletExplorerDetail({
                 </div>
                 <div className="flex flex-col">
                   <div className="text-[15px] leading-6 font-semibold text-neutral-07">
-                    3D ROI
+                    ROI
                   </div>
                   <div
                     className={cn(
@@ -273,7 +283,7 @@ export default function WalletExplorerDetail({
                 </div>
                 <div className="flex flex-col">
                   <div className="text-[15px] leading-6 font-semibold text-neutral-07">
-                    Volume 24h
+                    Volume
                   </div>
                   <div className="mt-1 text-xl leading-9 text-neutral-07 font-semibold">
                     {userInfoQuery.isFetching ? (
@@ -299,58 +309,64 @@ export default function WalletExplorerDetail({
           </div>
         </div>
         {/* right */}
-        <div className="w-1/3 relative flex items-center gap-4">
-          <div className="flex w-full h-full flex-col p-4 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF]">
-            <WalletInfoItemTitle
-              name={DATA_STATS[0].name}
-              icon={DATA_STATS[0].icon}
-            />
-            <WalletInfoItem
-              imgUrl={DATA_STATS[0].imgUrl}
-              symbol={DATA_STATS[0].symbol}
-              chain={DATA_STATS[0].title}
-              priceChangeH24={DATA_STATS[0].priceChangeH24}
-              usdPrice={DATA_STATS[0].usdPrice}
-              avg_price={DATA_STATS[0].avg_price}
-              spent={DATA_STATS[0].volume}
-              roi={DATA_STATS[0].roi}
-              pnl={DATA_STATS[0].pnl}
-              address={DATA_STATS[0].address}
-              price={DATA_STATS[0].price}
-              loading={tradeStatisticQuery.isFetching}
-            />
-            <div className="mt-4" />
-            <WalletInfoItemTitle
-              name={DATA_STATS[1].name}
-              icon={DATA_STATS[1].icon}
-            />
-            <WalletInfoItem
-              imgUrl={DATA_STATS[1].imgUrl}
-              symbol={DATA_STATS[1].symbol}
-              chain={DATA_STATS[1].title}
-              priceChangeH24={DATA_STATS[1].priceChangeH24}
-              usdPrice={DATA_STATS[1].usdPrice}
-              avg_price={DATA_STATS[1].avg_price}
-              spent={DATA_STATS[1].volume}
-              roi={DATA_STATS[1].roi}
-              pnl={DATA_STATS[1].pnl}
-              address={DATA_STATS[1].address}
-              loading={tradeStatisticQuery.isFetching}
-            />
+        <div className="w-1/2 relative flex flex-col items-center gap-2">
+          <div className="flex gap-2 w-full">
+            <div className="p-4 w-full rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] h-full">
+              <WalletInfoItemTitle
+                name={DATA_STATS[0].name}
+                icon={<div className="w-4 h-4 bg-secondary-3 rounded-[4px]" />}
+              />
+              <WalletInfoItem
+                imgUrl={DATA_STATS[0].imgUrl}
+                symbol={DATA_STATS[0].symbol}
+                name={DATA_STATS[0].title}
+                priceChangeH24={DATA_STATS[0].priceChangeH24}
+                usdPrice={DATA_STATS[0].usdPrice}
+                avg_price={DATA_STATS[0].avg_price}
+                spent={DATA_STATS[0].volume}
+                roi={DATA_STATS[0].roi}
+                pnl={DATA_STATS[0].pnl}
+                address={DATA_STATS[0].address}
+                price={DATA_STATS[0].price}
+                loading={tradeStatisticQuery.isFetching}
+              />
+            </div>
+            <div className="p-4 w-full rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] h-full">
+              <WalletInfoItemTitle
+                name={DATA_STATS[1].name}
+                icon={<div className="w-4 h-4 bg-secondary-3 rounded-[4px]" />}
+              />
+              <WalletInfoItem
+                imgUrl={DATA_STATS[1].imgUrl}
+                symbol={DATA_STATS[1].symbol}
+                name={DATA_STATS[1].title}
+                priceChangeH24={DATA_STATS[1].priceChangeH24}
+                usdPrice={DATA_STATS[1].usdPrice}
+                avg_price={DATA_STATS[1].avg_price}
+                spent={DATA_STATS[1].volume}
+                roi={DATA_STATS[1].roi}
+                pnl={DATA_STATS[1].pnl}
+                address={DATA_STATS[1].address}
+                loading={tradeStatisticQuery.isFetching}
+              />
+            </div>
+          </div>
+          <div className="p-4 w-full rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] h-full">
+            <FirstTimeBuy address={params.groupId} chain={CHAIN} />
           </div>
         </div>
       </div>
       {/* table */}
-      <div className="flex w-auto mt-4 gap-4 h-full">
-        <div className="w-2/3">
+      <div className="flex w-auto mt-2 gap-2 h-full">
+        <div className="w-1/2">
           <PortfolioComp address={params.groupId} chain={CHAIN} />
         </div>
-        <div className="w-1/3">
+        <div className="w-1/2">
           <Statistic address={params.groupId} chain={CHAIN} />
         </div>
       </div>
       {/* table */}
-      <div className="mt-4 mb-0 pb-10">
+      <div className="mt-2 mb-0 pb-10">
         <BigTradeActivity address={params.groupId} chain={CHAIN} />
       </div>
     </div>

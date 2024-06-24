@@ -5,8 +5,9 @@ import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { LinkCustom } from '@/components/common/Link'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import Info from '@/components/shared/icons/Info'
 import { IconTarget } from '@/components/shared/icons/leaderboard/IconTarget'
 import { useGetInsiderBuyQuery } from '@/query/leaderboard/getInsiderBuy'
@@ -77,15 +78,7 @@ export const TableNewListingBuy = ({
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${CHAIN}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
-                      <ImageToken
-                        imgUrl={row?.original?.image_url}
-                        symbol={row?.original?.symbol}
-                      />
-                      <div className="text-normal underline">
-                        {row?.original?.symbol}
-                      </div>
-                    </div>
+                    <TooltipTokenInfo token={row?.original} chain={CHAIN} />
                   </Link>
                 ) : (
                   <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
@@ -189,7 +182,7 @@ export const TableNewListingBuy = ({
           emptyData="No results."
         />
         {pagination && (
-          <PaginationCustom
+          <PaginationTable
             className="mt-2"
             currentPage={page}
             updatePage={(page: number) => setPage(page)}

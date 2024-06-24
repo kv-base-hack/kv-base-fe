@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ConnectSuiWalletButton } from '../ConnectWalletButton'
+// import { ConnectSuiWalletButton } from '../ConnectWalletButton'
 import { SearchComp } from '../Search'
 import MenuIcon from '@/components/shared/icons/onchain/MenuIcon'
 import { MENU } from '@/constant/menu'
@@ -18,8 +18,8 @@ export const Header = ({
   const pathname = usePathname()
 
   return (
-    <div className="px-8 py-4 w-full z-[9999] fixed">
-      <div className="w-full flex items-center justify-between p-3 shadow-2xl bg-neutral-07 max-md:flex-wrap max-md:px-5 rounded-[48px]">
+    <div className="px-8 py-4 w-full">
+      <div className="w-full flex items-center justify-between p-3 shadow-2xl bg-header max-md:flex-wrap max-md:px-5 rounded-[48px]">
         <Link href="/" className="flex items-center">
           <Image
             loading="lazy"
@@ -53,7 +53,7 @@ export const Header = ({
           <div className="flex gap-4 justify-between items-stretch shrink-0">
             <SelectChain size="lg" showName={false} />
           </div>
-          <ConnectSuiWalletButton />
+          {/* <ConnectSuiWalletButton /> */}
           <div className="bg-[#0080FF] flex items-center justify-center !rounded-full ">
             <div
               onClick={() => setNavbarOpen(!navbarOpen)}

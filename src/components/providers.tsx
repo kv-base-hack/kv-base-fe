@@ -16,7 +16,6 @@ import {
 } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import dynamic from 'next/dynamic'
-import { WalletProvider } from '@suiet/wallet-kit'
 
 function makeQueryClient() {
   return new QueryClient({
@@ -63,9 +62,7 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider {...props}>
       <QueryClientProvider client={queryClient}>
-        <WalletProvider>
-          <TooltipProvider>{children}</TooltipProvider>
-        </WalletProvider>
+        <TooltipProvider>{children}</TooltipProvider>
         <ReactQueryDevtools initialIsOpen={false} />
         {showDevtools && (
           <React.Suspense fallback={null}>

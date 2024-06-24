@@ -114,10 +114,10 @@ export default function TokenExplorerDetail({
   }
 
   return (
-    <div className="w-full h-full pt-2">
+    <div className="w-full h-full flex flex-col gap-2 pt-2">
       <div className="m-0 flex flex-col-reverse xl:flex-row items-start gap-2">
         {/* swap left */}
-        <div className="w-full xl:w-1/3 h-[600px]">
+        <div className="w-full xl:w-1/3 h-full">
           <IntegratedTerminal />
         </div>
         {/* content right */}

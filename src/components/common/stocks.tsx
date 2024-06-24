@@ -2,7 +2,7 @@
 
 import { useActions, useUIState } from 'ai/rsc'
 
-import type { AI } from '../../app/ai/action'
+import type { AI } from '../../app/kaichat/action'
 
 export function Stocks({ stocks }: { stocks: any[] }) {
   const [, setMessages] = useUIState<typeof AI>()

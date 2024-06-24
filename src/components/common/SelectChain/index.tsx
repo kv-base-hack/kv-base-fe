@@ -29,6 +29,12 @@ const renderChain = (chain: string) => {
         icon: '/assets/icons/chain/sui.svg',
       }
     }
+    case 'base': {
+      return {
+        value: 'Base',
+        icon: '/assets/icons/chain/base.svg',
+      }
+    }
     default: {
       return {
         value: 'Solana',

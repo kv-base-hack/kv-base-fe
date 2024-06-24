@@ -1,8 +1,7 @@
 import './globals.css'
-import '@suiet/wallet-kit/style.css'
 import { Sora } from 'next/font/google'
 
-import { AI } from './ai/action'
+import { AI } from './kaichat/action'
 import { Providers } from '@/components/providers'
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/toaster'

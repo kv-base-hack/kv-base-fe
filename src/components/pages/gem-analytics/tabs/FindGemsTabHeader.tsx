@@ -33,7 +33,7 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
                 key={index}
                 onClick={() => handleActiveTab(item)}
                 className={cn(
-                  'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 !text-[15px] not-italic font-medium',
+                  'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 !text-[15px] not-italic font-semibold',
                   activeTab === item
                     ? 'bg-neutral-03 text-neutral-07 border border-solid rounded-lg'
                     : 'text-neutral-04 border border-solid border-transparent',

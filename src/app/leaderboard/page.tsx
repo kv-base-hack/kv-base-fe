@@ -15,7 +15,8 @@ import Link from 'next/link'
 import { nFormatter } from '@/utils/nFormatter'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import moment from 'moment'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 
 export default function LeaderboardPage() {
   const CHAIN = useAtomValue(chainAtom)
@@ -148,16 +149,7 @@ export default function LeaderboardPage() {
         const { most_profit_token } = row.original
         return most_profit_token?.symbol ? (
           most_profit_token?.tokenAddress ? (
-            <Link
-              href={`/smartmoney-onchain/token-explorer/${most_profit_token?.tokenAddress}?chain=${CHAIN}`}
-              className="flex gap-3 items-center justify-between text-right"
-            >
-              <ImageToken
-                imgUrl={most_profit_token?.imageUrl}
-                symbol={most_profit_token?.symbol}
-              />
-              <div>{most_profit_token.symbol}</div>
-            </Link>
+            <TooltipTokenInfo token={most_profit_token} chain={CHAIN} />
           ) : (
             <div className="flex gap-3 items-center justify-between text-right">
               <ImageToken
@@ -178,18 +170,10 @@ export default function LeaderboardPage() {
       enableSorting: false,
       cell: ({ row }) => {
         const { current_largest_position } = row.original
+
         return current_largest_position ? (
           current_largest_position?.tokenAddress ? (
-            <Link
-              href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}?chain=${CHAIN}`}
-              className="flex gap-3 items-center justify-between text-right"
-            >
-              <ImageToken
-                imgUrl={current_largest_position?.imageUrl}
-                symbol={current_largest_position?.symbol}
-              />
-              <div>{current_largest_position.symbol}</div>
-            </Link>
+            <TooltipTokenInfo token={current_largest_position} chain={CHAIN} />
           ) : (
             <div className="flex gap-3 items-center justify-between text-right">
               <ImageToken
@@ -210,16 +194,7 @@ export default function LeaderboardPage() {
         const { most_token_buy } = row.original
         return most_token_buy ? (
           most_token_buy?.tokenAddress ? (
-            <Link
-              href={`/smartmoney-onchain/token-explorer/${most_token_buy?.tokenAddress}?chain=${CHAIN}`}
-              className="flex gap-3 items-center justify-between text-right"
-            >
-              <ImageToken
-                imgUrl={most_token_buy?.imageUrl}
-                symbol={most_token_buy?.symbol}
-              />
-              <div>{most_token_buy.symbol}</div>
-            </Link>
+            <TooltipTokenInfo token={most_token_buy} chain={CHAIN} />
           ) : (
             <div className="flex gap-3 items-center justify-between text-right">
               <ImageToken
@@ -240,16 +215,7 @@ export default function LeaderboardPage() {
         const { most_token_sell } = row.original
         return most_token_sell ? (
           most_token_sell?.tokenAddress ? (
-            <Link
-              href={`/smartmoney-onchain/token-explorer/${most_token_sell?.tokenAddress}?chain=${CHAIN}`}
-              className="flex gap-3 items-center justify-between text-right"
-            >
-              <ImageToken
-                imgUrl={most_token_sell?.imageUrl}
-                symbol={most_token_sell?.symbol}
-              />
-              <div>{most_token_sell.symbol}</div>
-            </Link>
+            <TooltipTokenInfo token={most_token_sell} chain={CHAIN} />
           ) : (
             <div className="flex gap-3 items-center justify-between text-right">
               <ImageToken
@@ -298,7 +264,7 @@ export default function LeaderboardPage() {
           emptyData="No results."
         />
       </div>
-      <PaginationCustom
+      <PaginationTable
         className="mt-2"
         currentPage={page}
         updatePage={(page: number) => setPage(page)}

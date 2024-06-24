@@ -26,7 +26,8 @@ import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 import { useQuery } from '@tanstack/react-query'
 import { useGetTopTokenProfitQuery } from '@/query/leaderboard/getTopTokenProfit'
-import { PaginationCustom } from '@/components/common/Pagination'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 
 export const TablePerformanceToken = () => {
   const [page, setPage] = useState(1)
@@ -64,11 +65,7 @@ export const TablePerformanceToken = () => {
                     href={`/smartmoney-onchain/token-explorer/${row.original.address}?chain=${CHAIN}`}
                     className="flex gap-3 items-center justify-between text-right"
                   >
-                    <ImageToken
-                      imgUrl={row?.original?.image_url}
-                      symbol={row?.original?.symbol}
-                    />
-                    <div className="underline">{row?.original?.symbol}</div>
+                    <TooltipTokenInfo token={row.original} chain={CHAIN} />
                   </Link>
                 ) : (
                   <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
@@ -240,7 +237,7 @@ export const TablePerformanceToken = () => {
         accessorKey: 'number_of_buys',
         header: () => (
           <div
-            className="text-neutral-07  text-sm not-italic leading-5 flex items-center"
+            className="flex items-center"
             onClick={() => setSortBy('number_of_smart_money')}
             role="button"
           >
@@ -285,8 +282,7 @@ export const TablePerformanceToken = () => {
         noneBgHeader
         emptyData="No results."
       />
-      <PaginationCustom
-        className="mt-2"
+      <PaginationTable
         currentPage={page}
         updatePage={(page: number) => setPage(page)}
         pageSize={10}

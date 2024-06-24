@@ -47,16 +47,18 @@ export const CardInfo = ({
         <div
           className={cn(
             'text-2xl font-normal flex items-center gap-1',
-            price_change_24h !== 0 && price_change_24h > 0
+            price_change_24h > 0
               ? 'text-success-500'
-              : 'text-error-500',
+              : price_change_24h < 0
+              ? 'text-error-500'
+              : 'text-neutral-01',
           )}
         >
-          {price_change_24h !== 0 && price_change_24h > 0 ? (
+          {price_change_24h > 0 ? (
             <PercentUpIcon className="w-6 h-6 mb-1" />
-          ) : (
+          ) : price_change_24h < 0 ? (
             <PercentDownIcon className="w-6 h-6 mb-1" />
-          )}
+          ) : null}
           {price_change_24h !== 0 && price_change_24h > 0 ? '+' : ''}
           {price_change_24h}%
         </div>
@@ -65,67 +67,83 @@ export const CardInfo = ({
         <div className="flex flex-col gap-2 w-1/2">
           {/* PnL */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-normal">PnL</p>
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-normal">
+              PnL
+            </p>
             <p
               className={cn(
                 'text-[15px] leading-6 font-medium',
-                pnl > 0 ? 'text-success-500' : 'text-error-500',
+                pnl > 0
+                  ? 'text-success-500'
+                  : pnl < 0
+                  ? 'text-error-500'
+                  : 'text-neutral-01',
               )}
             >
               {pnl > 0 ? '+' : ''}
-              {nFormatter(pnl)}
+              {pnl ? nFormatter(pnl) : '-'}
             </p>
           </div>
           {/* Avg ROI */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-normal">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-normal">
               Avg ROI
             </p>
             <p
               className={cn(
                 'text-[15px] leading-6 font-medium',
-                roi > 0 ? 'text-success-500' : 'text-error-500',
+                roi > 0
+                  ? 'text-success-500'
+                  : roi < 0
+                  ? 'text-error-500'
+                  : 'text-neutral-01',
               )}
             >
               {roi > 0 ? '+' : ''}
-              {numeral(roi).format('0,0.[00]')}%
+              {roi ? <>{numeral(roi).format('0,0.[00]')}%</> : '-'}
             </p>
           </div>
           {/* Realized */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
               Realized %
             </p>
-            <p className="text-[15px] leading-6 font-medium">
-              {numeral(realized_percent).format('0,0.[00]')}%
+            <p className="text-[15px] leading-6 font-medium text-neutral-01">
+              {realized_percent ? (
+                <>{numeral(realized_percent).format('0,0.[00]')}%</>
+              ) : (
+                '-'
+              )}
             </p>
           </div>
         </div>
         <div className="flex flex-col gap-2 w-1/2">
           {/* Avg Price */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
               Avg Price
             </p>
-            <p className="text-[15px] leading-6 font-medium">
+            <p className="text-[15px] leading-6 font-medium text-neutral-01">
               {renderPrice(avg_price)}
             </p>
           </div>
 
           {/* FDV */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">FDV</p>
-            <p className="text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
+              FDV
+            </p>
+            <p className="text-[15px] leading-6 font-medium text-neutral-01">
               {fdv ? nFormatter(fdv) : '-'}
             </p>
           </div>
 
           {/* liquidity */}
           <div className="flex items-center justify-between">
-            <p className="text-white text-[15px] leading-6 font-medium">
+            <p className="text-[#A7ACB0] text-[15px] leading-6 font-medium">
               Liquidity
             </p>
-            <p className="text-[15px] leading-6 font-medium">
+            <p className="text-[15px] leading-6 font-medium text-neutral-01">
               {liquidity ? nFormatter(liquidity) : '-'}
             </p>
           </div>

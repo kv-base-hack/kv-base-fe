@@ -1,9 +1,10 @@
+import { chainAtom } from '@/atom/chain'
+import { TokenFilter } from '@/components/common/Card/TokenFilter'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { columnsBigTradeActivity } from '@/components/common/DataTable/columnsBigTradeActivity'
 
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
@@ -12,6 +13,7 @@ import Close from '@/components/shared/icons/Close'
 import { Switch } from '@/components/ui/switch'
 import { useTradeActivityQuery } from '@/query/wallet-explorer/getTradeActivity'
 import { TokenList } from '@/types/tokenList'
+import { useAtomValue } from 'jotai'
 import { useState } from 'react'
 
 type BigTradeActivityProps = {
@@ -28,6 +30,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
   const [listToken, setListToken] = useState<TokenList[]>([])
   const [tradeValue, setTradeValue] = useState<unknown>([])
   const [showBigTradeBigger5k, setShowBigTradeBigger5k] = useState(false)
+
   // get data Big Trade Activity
   const activityQuery = useTradeActivityQuery({
     action: filterActivity,
@@ -89,19 +92,11 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
                 {listToken.map((item) => (
-                  <div
-                    className="rounded-3xl h-9 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]"
-                    key={item.tokenAddress}
-                  >
-                    <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-4 gap-1 h-full text-sm tracking-normal leading-5 text-white">
-                      <ImageToken
-                        imgUrl={item?.imageUrl}
-                        symbol={item?.symbol}
-                      />
-                      <div>{item.symbol}</div>
-                      <Close onclick={handleRemoveToken(item)} />
-                    </div>
-                  </div>
+                  <TokenFilter
+                    token={item}
+                    key={item.address}
+                    onClick={handleRemoveToken(item)}
+                  />
                 ))}
               </div>
             ) : null}
@@ -120,7 +115,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
       <div className="mt-8">
         <DataTable
           className="text-xs font-bold tracking-normal leading-4"
-          columns={columnsBigTradeActivity}
+          columns={columnsBigTradeActivity(chain)}
           data={dataActivity?.slice(0, 10) || []}
           isFetching={activityQuery.isFetching}
           noneBorder
@@ -128,7 +123,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
           emptyData="No results."
         />
       </div>
-      <PaginationCustom
+      <PaginationTable
         className="mt-4"
         currentPage={pageActivity}
         updatePage={(page: number) => setPageActivity(page)}

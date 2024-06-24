@@ -10,6 +10,8 @@ import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
 
 export const TableFindGemsSM = ({
   tab,
@@ -48,21 +50,11 @@ export const TableFindGemsSM = ({
             <div className="w-full">
               <div className="flex items-center justify-start w-full">
                 {row?.original?.address ? (
-                  <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
-                    className="flex items-center gap-2"
-                  >
-                    <ImageToken
-                      imgUrl={row?.original?.image_url}
-                      symbol={row?.original?.symbol}
-                    />
-                    <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                      <div>{row?.original?.name}</div>
-                      <div className="font-normal text-neutral-04">
-                        {row?.original?.symbol}
-                      </div>
-                    </div>
-                  </Link>
+                  <TooltipTokenInfo
+                    token={row?.original}
+                    chain={chain}
+                    nameToken={true}
+                  />
                 ) : (
                   <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
                     <ImageToken
@@ -101,11 +93,14 @@ export const TableFindGemsSM = ({
         size: 50,
         align: 'center',
         cell: ({ row }) => {
-          const { number_of_smart_money } = row.original
+          const { number_of_smart_money, address } = row.original
           return (
-            <div className="text-center text-neutral-07 text-sm not-italic leading-5">
-              {number_of_smart_money}
-            </div>
+            <DialogNumberOfSmartMoney
+              number={number_of_smart_money}
+              address={address}
+              type="trade"
+              duration="24h"
+            />
           )
         },
       },

@@ -1,11 +1,15 @@
+import { chainAtom } from '@/atom/chain'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Skeleton from '@/components/common/Skeleton'
+import { ChevronDown } from '@/components/shared/icons/ChevronDown'
+import { ChevronUp } from '@/components/shared/icons/ChevronUp'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import { cn } from '@/lib/utils'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { renderPrice } from '@/utils/renderPrice'
+import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import numeral from 'numeral'
 
@@ -20,7 +24,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 }) => {
   return (
     <div className="flex gap-3 items-center justify-start text-xl font-semibold leading-6 text-neutral-07">
-      <div className="w-6 h-6">{icon}</div>
+      {icon}
       <div>{name}</div>
     </div>
   )
@@ -29,7 +33,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 type WalletInfoItemProps = {
   imgUrl?: string
   symbol?: string
-  chain?: string
+  name?: string
   priceChangeH24?: number
   usdPrice?: number
   avg_price?: number
@@ -44,7 +48,7 @@ type WalletInfoItemProps = {
 export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   imgUrl,
   symbol,
-  chain,
+  name,
   priceChangeH24,
   usdPrice,
   avg_price,
@@ -55,8 +59,10 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   price,
   loading,
 }) => {
+  const CHAIN = useAtomValue(chainAtom)
+
   return (
-    <div className="flex flex-col self-stretch mt-4">
+    <div className="flex flex-col self-stretch mt-2 w-full">
       <div className="flex flex-col gap-2 mt-2 w-full p-3 border border-solid rounded-xl border-[#EFEFEF]">
         <div className="flex gap-2.5 whitespace-nowrap">
           {loading ? (
@@ -69,15 +75,15 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
               <Skeleton className="h-4 w-[120px] rounded-full overflow-hidden" />
             ) : (
               <Link
-                href={`/smartmoney-onchain/token-explorer/${address}`}
+                href={`/smartmoney-onchain/token-explorer/${address}?chain=${CHAIN}`}
                 className="hover:underline"
               >
-                <div className="flex gap-1 pr-5">
-                  <div className="text-base font-medium tracking-tight leading-6 text-neutral-07">
+                <div className="flex gap-1 pr-5 overflow-hidden">
+                  <div className="text-base font-medium tracking-tight leading-6 text-neutral-07 max-w-[100px] truncate">
                     {symbol}
                   </div>
-                  <div className="text-sm font-semibold tracking-normal leading-6 text-[#A7ACB0]">
-                    {chain}
+                  <div className="text-sm font-semibold tracking-normal leading-6 text-[#A7ACB0] max-w-[100px] truncate">
+                    {name}
                   </div>
                 </div>
               </Link>
@@ -100,11 +106,11 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                     )}
                   >
                     {priceChangeH24 && priceChangeH24 > 0 ? (
-                      <PercentUpIcon />
+                      <ChevronUp />
                     ) : priceChangeH24 === 0 ? (
                       ''
                     ) : (
-                      <PercentDownIcon />
+                      <ChevronDown />
                     )}
                     {priceChangeH24}%
                   </div>

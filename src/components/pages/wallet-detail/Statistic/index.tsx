@@ -1,11 +1,12 @@
+import { chainAtom } from '@/atom/chain'
+import { TokenFilter } from '@/components/common/Card/TokenFilter'
 import { DataTable } from '@/components/common/DataTable'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { PaginationCustom } from '@/components/common/Pagination'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
-import { SelectDuration } from '@/components/common/Select/SelectDuration'
-import Close from '@/components/shared/icons/Close'
+import { SelectDuration } from '@/components/common/SelectDuration'
+import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import TradeStatisticIcon from '@/components/shared/icons/wallet-explorer/TradeStatisticIcon'
 import { useTradeStatisticTokensQuery } from '@/query/wallet-explorer/getTradeStatisticTokens'
 import { TokenList } from '@/types/tokenList'
@@ -13,6 +14,7 @@ import { TokenStat } from '@/types/tradeStatisticTokens'
 import { nFormatter } from '@/utils/nFormatter'
 import { useQuery } from '@tanstack/react-query'
 import { ColumnDef } from '@tanstack/react-table'
+import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import numeral from 'numeral'
 import { useMemo, useState } from 'react'
@@ -28,7 +30,8 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
   const [sort, setSort] = useState('')
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(8)
+  const [itemsPerPage] = useState(5)
+  const CHAIN = useAtomValue(chainAtom)
 
   const tradeStatisticTokensQuery = useQuery(
     useTradeStatisticTokensQuery({
@@ -66,7 +69,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
   }
 
   const dataSource = tradeStatisticTokensQuery?.isFetching
-    ? [...(Array(8).keys() as any)]
+    ? [...(Array(5).keys() as any)]
     : getVisibleItems() || []
 
   const columns: ColumnDef<TokenStat>[] = useMemo(() => {
@@ -76,14 +79,9 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         header: () => 'Tokens',
         cell: ({ row }) => {
           const { tokenAddress, imageUrl, symbol } = row.original
+
           return tokenAddress ? (
-            <Link
-              href={`/smartmoney-onchain/token-explorer/${tokenAddress}`}
-              className="flex gap-1 items-center justify-between text-right"
-            >
-              <ImageToken imgUrl={imageUrl} symbol={symbol} />
-              <div className="">{symbol}</div>
-            </Link>
+            <TooltipTokenInfo token={row.original} chain={CHAIN} />
           ) : (
             <div className="flex gap-1 cursor-not-allowed items-center justify-between text-right">
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
@@ -192,13 +190,41 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         align: 'end',
       },
     ]
-  }, [])
+  }, [CHAIN])
 
   return (
     <WrapTable
-      className="justify-start"
+      className="justify-start h-full"
       icon={<TradeStatisticIcon />}
       title={<div className="whitespace-nowrap">Trades Statistics</div>}
+      childHeader={
+        <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <DialogSelectToken
+              listToken={listToken}
+              setListToken={setListToken}
+            >
+              <button className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent text-neutral-04 px-4 py-2 my-auto">
+                Specific Token
+              </button>
+            </DialogSelectToken>
+            {listToken?.length > 0 ? (
+              <div className="flex items-center gap-2">
+                {listToken.map((item) => (
+                  <TokenFilter
+                    token={item}
+                    onClick={handleRemoveToken(item)}
+                    key={item.address}
+                  />
+                ))}
+              </div>
+            ) : null}
+          </div>
+          <div>
+            <SelectDuration duration={filterDate} setDuration={setFilterDate} />
+          </div>
+        </div>
+      }
     >
       <div className="mt-4 h-full flex flex-col justify-between">
         <DataTable
@@ -210,7 +236,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
           emptyData="No results."
           isFetching={tradeStatisticTokensQuery?.isFetching}
         />
-        <PaginationCustom
+        <PaginationTable
           className="mt-4"
           currentPage={currentPage}
           updatePage={(page: number) => handlePageChange(page)}

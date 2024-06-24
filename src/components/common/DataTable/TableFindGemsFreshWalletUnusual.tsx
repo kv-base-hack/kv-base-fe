@@ -10,6 +10,8 @@ import { renderPrice } from '@/lib/utils/renderPrice'
 import numeral from 'numeral'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
 
 export const TableFindGemsFreshWalletUnusual = ({
   tab,
@@ -53,15 +55,7 @@ export const TableFindGemsFreshWalletUnusual = ({
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
-                      <ImageToken
-                        imgUrl={row?.original?.image_url}
-                        symbol={row?.original?.symbol}
-                      />
-                      <div className="text-normal underline text-neutral-07">
-                        {row?.original?.symbol}
-                      </div>
-                    </div>
+                    <TooltipTokenInfo token={row?.original} chain={chain} />
                   </Link>
                 ) : (
                   <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
@@ -268,8 +262,15 @@ export const TableFindGemsFreshWalletUnusual = ({
         ),
         align: 'center',
         cell: ({ row }) => {
-          const { number_of_users } = row.original
-          return <div className="text-neutral-07">{number_of_users}</div>
+          const { number_of_users, address } = row.original
+          return (
+            <DialogNumberOfSmartMoney
+              number={number_of_users}
+              address={address}
+              type="unusual_buy"
+              duration="24h"
+            />
+          )
         },
         enableSorting: false,
       },
