@@ -3,10 +3,10 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-// import { ConnectSuiWalletButton } from '../ConnectWalletButton'
 import { SearchComp } from '../Search'
 import MenuIcon from '@/components/shared/icons/onchain/MenuIcon'
 import { MENU } from '@/constant/menu'
+import { ButtonConnectWallet } from '../ConnectWallet'
 
 export const Header = ({
   navbarOpen,
@@ -53,7 +53,7 @@ export const Header = ({
           <div className="flex gap-4 justify-between items-stretch shrink-0">
             <SelectChain size="lg" showName={false} />
           </div>
-          {/* <ConnectSuiWalletButton /> */}
+          <ButtonConnectWallet />
           <div className="bg-[#0080FF] flex items-center justify-center !rounded-full ">
             <div
               onClick={() => setNavbarOpen(!navbarOpen)}

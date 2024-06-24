@@ -17,6 +17,23 @@ import {
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import dynamic from 'next/dynamic'
 
+import { WagmiProvider, createConfig, http } from 'wagmi'
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import { getDefaultConfig } from '@rainbow-me/rainbowkit'
+import { mainnet, base } from 'wagmi/chains'
+
+const id = '2e7dc518c252e86b1423572af2179822'
+
+const config = getDefaultConfig({
+  appName: 'Kaivest App',
+  projectId: id,
+  chains: [mainnet, base],
+  transports: {
+    [mainnet.id]: http(),
+    [base.id]: http(),
+  },
+})
+
 function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
@@ -61,15 +78,19 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
   const queryClient = getQueryClient()
   return (
     <NextThemesProvider {...props}>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>{children}</TooltipProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-        {showDevtools && (
-          <React.Suspense fallback={null}>
-            <ReactQueryDevtoolsProduction />
-          </React.Suspense>
-        )}
-      </QueryClientProvider>
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          <RainbowKitProvider modalSize="compact">
+            <TooltipProvider>{children}</TooltipProvider>
+            <ReactQueryDevtools initialIsOpen={false} />
+            {showDevtools && (
+              <React.Suspense fallback={null}>
+                <ReactQueryDevtoolsProduction />
+              </React.Suspense>
+            )}
+          </RainbowKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
     </NextThemesProvider>
   )
 }

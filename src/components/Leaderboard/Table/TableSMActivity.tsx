@@ -1,5 +1,4 @@
 import { chainAtom } from '@/atom/chain'
-import { CardCommon } from '@/components/common/Card/CardCommon'
 import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
@@ -17,12 +16,7 @@ import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import { cn } from '@/lib/utils'
-import {
-  renderMovementIcon,
-  renderMovementName,
-} from '@/lib/utils/renderIconMovement'
 import { useTopActivityQuery } from '@/query/leaderboard/getTopActivity'
-import { ActiveTab } from '@/types/tabs/TabActivityHeader'
 import { TokenList } from '@/types/tokenList'
 import { TopActivity } from '@/types/topActivity'
 import { nFormatter } from '@/utils/nFormatter'
@@ -35,13 +29,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 
-interface TrackingTabsProps {
-  activeTab: ActiveTab
-}
-
-export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
-  activeTab,
-}) => {
+export const TableSMActivity = () => {
   const CHAIN = useAtomValue(chainAtom)
   const [pageActivity, setPageActivity] = useState(1)
   const [listToken, setListToken] = useState<TokenList[]>([])
@@ -229,15 +217,13 @@ export const TableSMActivity: React.FunctionComponent<TrackingTabsProps> = ({
   const dataSource = useMemo(() => {
     return activityQuery.isFetching
       ? [...(Array(10).keys() as any)]
-      : activeTab === 'Smart Money Activity'
-      ? activityQuery.data?.data.activities
-      : []
-  }, [activeTab, activityQuery.data?.data.activities, activityQuery.isFetching])
+      : activityQuery.data?.data.activities
+  }, [activityQuery.data?.data.activities, activityQuery.isFetching])
 
   return (
     <>
       <TitleCard
-        title={activeTab}
+        title="Smart Money Activity"
         iconFirst={<IconPresent />}
         iconSecond={<Info />}
       >
