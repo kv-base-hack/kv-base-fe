@@ -1,6 +1,6 @@
 import './globals.css'
-import '@suiet/wallet-kit/style.css'
 import { Sora } from 'next/font/google'
+import '@rainbow-me/rainbowkit/styles.css'
 
 import { AI } from './kaichat/action'
 import { Providers } from '@/components/providers'
