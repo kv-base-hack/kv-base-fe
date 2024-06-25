@@ -9,6 +9,8 @@ import {
 import { chainAtom } from '@/atom/chain'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useCallback } from 'react'
 
 const renderChain = (chain: string) => {
   switch (chain) {
@@ -52,9 +54,28 @@ export const SelectChain = ({
   size?: 'md' | 'lg'
 }) => {
   const [chain, setChain] = useAtom(chainAtom)
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
+
+  const handleChangeChain = (v: string) => {
+    setChain(v)
+    router.push(pathname + '?' + createQueryString('chain', v))
+    console.log('xxx')
+  }
 
   return (
-    <Select value={chain} onValueChange={(val: string) => setChain(val)}>
+    <Select value={chain} onValueChange={handleChangeChain}>
       <SelectTrigger
         className={cn(
           'flex w-full cursor-pointer gap-2 px-4 py-3 my-auto text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap',
