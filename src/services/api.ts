@@ -1238,19 +1238,22 @@ export const getDexTradingSignal = async ({
   start,
   limit,
   type,
-  addresses
+  addresses,
+  chain,
 }: {
   start: number
   limit: number
   type?: string
   addresses?: string
+  chain?: string
 }): Promise<DexTradingSignalResponse> => {
   return await signalApi.get(`/dex-signals`, {
     params: {
       page: start,
       perPage: limit,
       type,
-      addresses
+      addresses,
+      chain
     },
   })
 }
@@ -1286,7 +1289,7 @@ export const getUserBalance = async ({
 }: {
   addresses?: string
   address?: string
-    chain?: string
+  chain?: string
   duration?: string
 }): Promise<UserBalanceResponse> => {
   return await suiApi.get(`/v1/balance`, {

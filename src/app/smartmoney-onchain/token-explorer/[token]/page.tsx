@@ -21,7 +21,6 @@ import { Transactions } from '@/components/common/TabWalletExplorer/Transactions
 import { TopSmartMoney } from '@/components/common/TabWalletExplorer/TopSmartMoney'
 import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/ActivityOfTopSmartMoney'
 import { CardCommon } from '@/components/common/Card/CardCommon'
-import { LineChart } from '@/components/common/ChartDetail/LineChart'
 import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
 import { formatPriceNumber } from '@/utils/formatPriceNumber'
 import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
@@ -132,7 +131,7 @@ export default function TokenExplorerDetail({
           <IntegratedTerminal />
         </div>
         {/* content right */}
-        <div className="w-full xl:w-2/3 h-full">
+        <div className="w-full xl:w-2/3 h-full overflow-hidden">
           {/* overview */}
           <CardCommon>
             <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">

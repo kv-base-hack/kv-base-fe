@@ -5,8 +5,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SearchComp } from '../Search'
 import MenuIcon from '@/components/shared/icons/onchain/MenuIcon'
-import { MENU } from '@/constant/menu'
 import { ButtonConnectWallet } from '../ConnectWallet'
+import { useAtomValue } from 'jotai'
+import { chainAtom } from '@/atom/chain'
 
 export const Header = ({
   navbarOpen,
@@ -16,6 +17,34 @@ export const Header = ({
   setNavbarOpen: (value: boolean) => void
 }) => {
   const pathname = usePathname()
+  const CHAIN = useAtomValue(chainAtom)
+
+  const MENU = [
+    {
+      url: '/smartmoney-onchain/dashboard',
+      menu: 'Dashboard',
+    },
+    {
+      url: '/find-gems',
+      menu: 'Find Gems',
+    },
+    {
+      url: `/trading-signal?chain=${CHAIN}`,
+      menu: 'Trading Signal',
+    },
+    {
+      url: '/tracking',
+      menu: 'Tracking',
+    },
+    {
+      url: '/leaderboard',
+      menu: 'Leaderboard',
+    },
+    {
+      url: '/kaichat',
+      menu: 'Kaichat',
+    },
+  ]
 
   return (
     <div className="px-8 py-4 w-full">
@@ -36,7 +65,7 @@ export const Header = ({
 
         <div className="items-center gap-1 whitespace-nowrap hidden xl:flex">
           {MENU.map((i) => {
-            const isActive = pathname.includes(i.url)
+            const isActive = pathname.includes(i.url?.split('?')[0])
             return (
               <MenuItem
                 key={i.url}

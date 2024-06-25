@@ -3,7 +3,6 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { useMemo, useState } from 'react'
-import { useTokenExplorerTradingSignalQuery } from '@/query/token-explorer/getTradingSignal'
 import EmptyTableIcon from '@/components/shared/icons/EmptyTableIcon'
 import { useParams } from 'next/navigation'
 import { PaginationTable } from '../../Pagination/PaginationTable'
@@ -13,18 +12,23 @@ import { renderPrice } from '@/lib/utils/renderPrice'
 import { DialogUsers } from '../../Dialog/DialogListUsers'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { DexTradingSignalInfo } from '@/types/trading-signal/dexTradingSignal'
+import { useQuery } from '@tanstack/react-query'
+import { useGetDexTradingSignalQuery } from '@/query/trading-signal/getDexTradingSignal'
 
 export const TradingSignal = () => {
   const [pageActivity, setPageActivity] = useState(1)
   const params = useParams<{ token: string }>()
+  const CHAIN = useAtomValue(chainAtom)
+  //
 
-  //
-  //
-  const activityQuery = useTokenExplorerTradingSignalQuery({
-    perPage: 10,
-    page: pageActivity,
-    address: params?.token,
-  })
+  const activityQuery = useQuery(
+    useGetDexTradingSignalQuery({
+      limit: 10,
+      start: pageActivity,
+      addresses: params?.token,
+      chain: CHAIN,
+    }),
+  )
 
   const dataTradingSignal = activityQuery.isFetching
     ? [...(Array(10).keys() as any)]

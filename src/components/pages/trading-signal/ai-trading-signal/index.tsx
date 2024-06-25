@@ -9,6 +9,8 @@ import Close from '@/components/shared/icons/Close'
 import { TokenList } from '@/types/tokenList'
 import { useQuery } from '@tanstack/react-query'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import { useAtomValue } from 'jotai'
+import { chainAtom } from '@/atom/chain'
 
 interface TabProps {
   tab: string
@@ -39,6 +41,7 @@ export const AiTradingSignal = () => {
   const [activeTab, setActiveTab] = useState<string>('All Strategy')
   const [type, setType] = useState<string>()
   const [listToken, setListToken] = useState<TokenList[]>([])
+  const CHAIN = useAtomValue(chainAtom)
 
   const dataDexTradingSignalQuery = useQuery(
     useGetDexTradingSignalQuery({
@@ -46,6 +49,7 @@ export const AiTradingSignal = () => {
       start: page,
       type,
       addresses: listToken?.map((item) => item.tokenAddress)?.toString() || '',
+      chain: CHAIN,
     }),
   )
 

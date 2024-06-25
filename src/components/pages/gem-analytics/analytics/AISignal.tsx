@@ -1,9 +1,11 @@
+import { chainAtom } from '@/atom/chain'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import AISignalIcon from '@/components/shared/icons/gem-analytics/AISignalIcon'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { useGetDexTradingSignalQuery } from '@/query/trading-signal/getDexTradingSignal'
 import { useQuery } from '@tanstack/react-query'
+import { useAtomValue } from 'jotai'
 import moment from 'moment'
 import Link from 'next/link'
 
@@ -17,6 +19,7 @@ export const GemAnalyticsAISignal = () => {
   )
 
   const dataDexTradingSignal = dataDexTradingSignalQuery?.data?.data?.data || []
+  const CHAIN = useAtomValue(chainAtom)
 
   return (
     <WrapTable
@@ -28,7 +31,7 @@ export const GemAnalyticsAISignal = () => {
       }
       childHeader={
         <Link
-          href={'/trading-signal'}
+          href={`/trading-signal?chain=${CHAIN}`}
           className="text-base not-italic font-medium leading-6  bg-gradient-to-r from-[#9945FF] to-[#14F195] inline-block text-transparent bg-clip-text"
         >
           See more

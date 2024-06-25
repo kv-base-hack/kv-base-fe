@@ -1,7 +1,7 @@
+import { chainAtom } from '@/atom/chain'
 import Close from '@/components/shared/icons/Close'
-import ShadowPremiumIcon from '@/components/shared/icons/ShadowPremium'
-import { MENU } from '@/constant/menu'
 import { cn } from '@/lib/utils'
+import { useAtomValue } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -14,6 +14,34 @@ const MenuOverlay = ({
   setNavbarOpen: (open: boolean) => void
 }) => {
   const pathname = usePathname()
+  const CHAIN = useAtomValue(chainAtom)
+
+  const MENU = [
+    {
+      url: '/smartmoney-onchain/dashboard',
+      menu: 'Dashboard',
+    },
+    {
+      url: '/find-gems',
+      menu: 'Find Gems',
+    },
+    {
+      url: `/trading-signal?chain=${CHAIN}`,
+      menu: 'Trading Signal',
+    },
+    {
+      url: '/tracking',
+      menu: 'Tracking',
+    },
+    {
+      url: '/leaderboard',
+      menu: 'Leaderboard',
+    },
+    {
+      url: '/kaichat',
+      menu: 'Kaichat',
+    },
+  ]
   return (
     <nav
       className={`fixed overflow-y-auto !z-[9999] flex top-0 left-0 w-screen shadow-lg h-screen backdrop-blur-[20px] bg-neutral-07/50  text-white transform delay-100 transition-all duration-300 ${
@@ -47,7 +75,7 @@ const MenuOverlay = ({
         <div className="flex justify-center items-center px-4 py-2 mt-4 text-base font-medium leading-6 text-center text-white rounded-2xl max-md:px-5 max-md:max-w-full">
           <div className="flex flex-col gap-2 items-center max-w-full w-[165px]">
             {MENU.map((item) => {
-              const isActive = pathname.includes(item.url)
+              const isActive = pathname.includes(item.url?.split('?')[0])
               return (
                 <Link
                   className={cn(
