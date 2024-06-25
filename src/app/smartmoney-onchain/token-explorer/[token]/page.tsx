@@ -23,6 +23,8 @@ import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/A
 import { CardCommon } from '@/components/common/Card/CardCommon'
 import { LineChart } from '@/components/common/ChartDetail/LineChart'
 import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
+import { formatPriceNumber } from '@/utils/formatPriceNumber'
+import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
 
 const DUMMY_CHART = [
   [1700582400, 139.2820760583722837],
@@ -113,6 +115,15 @@ export default function TokenExplorerDetail({
     return null
   }
 
+  if (!dataTokenInfo) return null
+
+  const percentBuy =
+    (dataTokenInfo?.buy_volume * 100) /
+    (dataTokenInfo?.buy_volume + dataTokenInfo?.sell_volume)
+  const percentSell =
+    (dataTokenInfo?.sell_volume * 100) /
+    (dataTokenInfo?.buy_volume + dataTokenInfo?.sell_volume)
+
   return (
     <div className="w-full h-full flex flex-col gap-2 pt-2">
       <div className="m-0 flex flex-col-reverse xl:flex-row items-start gap-2">
@@ -140,7 +151,7 @@ export default function TokenExplorerDetail({
                     <MenuArrowDownIcon />
                   </div>
                 </DialogSelectToken>
-                <div className="flex flex-col items-start gap-2 justify-center my-auto text-sm tracking-normal leading-5">
+                {/* <div className="flex flex-col items-start gap-2 justify-center my-auto text-sm tracking-normal leading-5">
                   <div className="flex items-center gap-2 px-px">
                     <div className="flex gap-1 justify-center px-px">
                       <div className="font-medium text-neutral-04">Token:</div>
@@ -171,46 +182,76 @@ export default function TokenExplorerDetail({
                       }
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="flex gap-5 justify-between px-5 max-md:flex-wrap">
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
                   <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
-                    <CurrencyIcon />
-                    <div>Marketcap</div>
+                    <div>AVG SM Entry</div>
                   </div>
                   <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                    {nFormatter(dataTokenInfo?.market_cap || 0)}
+                    {formatPriceNumber(
+                      dataTokenInfo?.avg_price_smart_money || 0,
+                    )}
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-12 rounded-sm bg-neutral-03" />
+                <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
-                    <VolumnIcon />
-                    <div className="whitespace-nowrap">Volume 24h</div>
+                    <div className="whitespace-nowrap"># SM Hold</div>
                   </div>
                   <div className="self-center mt-1 text-base font-medium leading-6 text-neutral-07">
-                    {nFormatter(dataTokenInfo?.volume_24h || 0)}
+                    <DialogNumberOfSmartMoney
+                      number={dataTokenInfo?.number_of_smart_money_hold || 0}
+                      address={dataTokenInfo?.token_address || ''}
+                      type="find-gems-sm-holding"
+                      duration={'24h'}
+                    />
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-12 rounded-sm bg-neutral-03" />
+                <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
                   <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
-                    <CurrencyIcon />
-                    <div>Liquidity</div>
+                    <div># Unusual Buy</div>
                   </div>
                   <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                    {nFormatter(dataTokenInfo?.liquidity || 0)}
+                    <DialogNumberOfSmartMoney
+                      number={dataTokenInfo?.number_of_unusual_buy || 0}
+                      address={dataTokenInfo?.token_address || ''}
+                      type="unusual_buy"
+                      duration={'24h'}
+                    />
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-12 rounded-sm bg-neutral-03" />
+                <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
-                    <CurrencyIcon />
-                    <div>FDV</div>
+                  <div className="flex gap-1 justify-center mt-2">
+                    <div className="flex flex-col flex-1 py-px">
+                      <div className="flex items-center gap-1 justify-center text-xs tracking-normal leading-5 text-right text-neutral-04">
+                        <div>SM BUY VOL</div>
+                      </div>
+                      <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
+                        {nFormatter(dataTokenInfo?.buy_volume || 0)}
+                      </div>
+                    </div>
+                    <div className="flex flex-col flex-1 items-end py-px pl-20">
+                      <div className="flex items-center gap-1 justify-center text-xs tracking-normal leading-5 text-right text-neutral-04">
+                        <div>SM SELL VOL</div>
+                      </div>
+                      <div className="self-end mt-1 text-base font-medium leading-6 text-neutral-07">
+                        {nFormatter(dataTokenInfo?.sell_volume || 0)}
+                      </div>
+                    </div>
                   </div>
-                  <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                    {nFormatter(dataTokenInfo?.fully_diluted_valuation || 0)}
+                  <div className="flex gap-0.5 py-0.5 w-full">
+                    <div
+                      style={{ width: percentBuy + '%' }}
+                      className="shrink-0 h-1 bg-lime-300 rounded-[100px]"
+                    />
+                    <div
+                      style={{ width: percentSell + '%' }}
+                      className="shrink-0 h-1 bg-rose-500 rounded-[100px]"
+                    />
                   </div>
                 </div>
               </div>

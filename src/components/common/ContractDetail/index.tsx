@@ -33,9 +33,10 @@ export const ContractDetail = ({
               width={20}
               height={20}
             />
-            <div className="grow my-auto">{`${address?.substring(0, 6)}...${address?.slice(
-              -6
-            )}`}</div>
+            <div className="grow my-auto">{`${address?.substring(
+              0,
+              6,
+            )}...${address?.slice(-6)}`}</div>
           </div>
           <Copy />
           <Metamask />
@@ -81,12 +82,15 @@ export const ContractDetail = ({
           <OpenLink />
         </div>
       </div>
-      <div className="self-start mt-4 text-sm leading-5 text-gray-300">Tags</div>
+      <div className="self-start mt-4 text-sm leading-5 text-gray-300">
+        Tags
+      </div>
       <div className="flex flex-wrap gap-1 self-start py-0.5 mt-2 text-xs font-semibold leading-5 text-gray-300 whitespace-nowrap">
-        {dataTokenInfo?.tags?.map((tag, index) => (
+        {dataTokenInfo?.tags?.map((tag: string, index: number) => (
           <div
             key={index}
-            className="justify-center px-2 py-0.5 bg-white bg-opacity-10 rounded-[40px]">
+            className="justify-center px-2 py-0.5 bg-white bg-opacity-10 rounded-[40px]"
+          >
             {tag}
           </div>
         ))}
@@ -142,7 +146,9 @@ export const ContractDetail = ({
           <Info />
         </div>
         <div className="text-right text-white">
-          {numeral(dataTokenInfo?.fully_diluted_valuation).format('$0,0.[00000000]')}
+          {numeral(dataTokenInfo?.fully_diluted_valuation).format(
+            '$0,0.[00000000]',
+          )}
         </div>
       </div>
     </>

@@ -15,7 +15,7 @@ const theme = {
   error: '#FF537B',
   text: '#1C1A1F',
   subtext: '#33383F',
-  fontFamily: 'Sora',
+  fontFamily: 'Roboto',
 }
 export const IntegratedTerminal = () => {
   return (
