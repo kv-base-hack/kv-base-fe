@@ -20,12 +20,12 @@ export const Banner = () => {
           <div className="flex flex-col w-1/2 relative overflow-hidden">
             <div className="flex flex-col pr-4 justify-center self-stretch my-auto text-base max-md:mt-9 max-md:max-w-full">
               <div className="tracking-normal leading-6 text-center text-violet-100 max-md:max-w-full">
-                Hi BOL AI, please help me summarize recent major events and
+                Hi KAI AI, please help me summarize recent major events and
                 market perspectives of this token
               </div>
               <div className="flex cursor-pointer flex-col justify-center self-center px-4 py-2 mt-4 max-w-full font-medium text-white rounded-3xl border border-solid shadow-lg backdrop-blur-[2px] bg-[linear-gradient(80deg,#9945FF_0%,#14F195_100%)] border-violet-200 border-opacity-10 leading-[150%] w-[219px]">
                 <Link href="/ai" className="flex gap-2 justify-center">
-                  <div className="whitespace-nowrap">BOL AI Analyst Token</div>
+                  <div className="whitespace-nowrap">KAI AI Analyst Token</div>
                   <MagicIcon />
                 </Link>
               </div>

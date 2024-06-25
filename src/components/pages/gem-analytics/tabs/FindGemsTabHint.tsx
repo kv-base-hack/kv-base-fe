@@ -10,7 +10,7 @@ export const FindGemsTabHint: React.FC<FindGemsTabHintProps> = ({
 }) => {
   switch (activeTab) {
     case 'Unusual Buying':
-      return `Here is a list of tokens with Unusual buying actions identified by Boltrade's AI`
+      return `Here is a list of tokens with Unusual buying actions identified by Kaivest's AI`
     case 'SM New Listing Buys':
       return 'Here is a list of tokens buys by smart money with token age <14 days'
     case 'SM Holding':
