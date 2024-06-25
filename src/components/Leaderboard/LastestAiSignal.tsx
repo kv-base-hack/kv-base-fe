@@ -26,7 +26,7 @@ export const LastestAiSignal = () => {
   return (
     <CardCommon>
       <TitleCard iconFirst={<IconFire />} title="Lastest AI Trading Signal">
-        <LinkCustom url={`/trading-signal?chain=${CHAIN}`} title="See all" />
+        <LinkCustom url="/tranding-signal" title="See all" />
       </TitleCard>
       <div className="flex items-center gap-2">
         {dataAITradingSignal.map((item, i) => {
