@@ -82,7 +82,6 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider modalSize="compact">
             <TooltipProvider>{children}</TooltipProvider>
-
             <ReactQueryDevtools initialIsOpen={false} />
             {showDevtools && (
               <React.Suspense fallback={null}>

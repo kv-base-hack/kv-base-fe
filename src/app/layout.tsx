@@ -7,7 +7,6 @@ import { Providers } from '@/components/providers'
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/toaster'
 import { DefaultLayout } from '@/components/common/Layout/DefaultLayout'
-import Script from 'next/script'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const meta = {
@@ -53,19 +52,9 @@ export default function RootLayout({
 }) {
   const gtmId = 'G-HJ2P8J9GST'
   return (
-    <html lang="en" className={sora.className} suppressHydrationWarning>
-      <head>
-        <script
-          defer={true}
-          src="https://cdn.flowx.finance/swap-widget/0.0.15/main.js"
-        ></script>
-        <link
-          href="https://cdn.flowx.finance/swap-widget/0.0.15/main.css"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <GoogleTagManager gtmId={gtmId} />
-      <body className="antialiased">
+      <body className={sora.className}>
         <Toaster />
         <AI>
           <Providers
@@ -77,10 +66,6 @@ export default function RootLayout({
             <DefaultLayout>{children}</DefaultLayout>
           </Providers>
         </AI>
-        <Script
-          src="https://terminal.jup.ag/main-v2.js"
-          strategy="beforeInteractive"
-        />
         <GoogleAnalytics gaId={gtmId} />
       </body>
     </html>

@@ -70,7 +70,7 @@ export const SearchComp = () => {
   }
 
   useEffect(() => {
-    const data = localStorage.getItem('recently_searched')
+    const data = localStorage?.getItem('recently_searched')
     let tokenData: any = []
     if (data) {
       tokenData = JSON.parse(data)

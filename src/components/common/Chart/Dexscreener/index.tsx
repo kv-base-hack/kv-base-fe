@@ -10,7 +10,7 @@ export const TradingDexscreener = ({ address }: { address: string }) => {
           src={`https://dexscreener.com/${CHAIN_X}/${address}?embed=1&theme=ligh&trades=0&info=0&full`}
         ></iframe>
       </div>
-      <div className="absolute left-0 right-0 h-[38px] z-1 -bottom-[60px] bg-neutral-07"></div>
+      <div className="absolute left-0 right-0 h-[38px] z-1 -bottom-[110px] rounded-b-[20px] bg-neutral-07"></div>
     </div>
   )
 }

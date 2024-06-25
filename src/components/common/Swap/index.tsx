@@ -1,35 +1,32 @@
-import { useEffect, useRef } from 'react'
+import { Widget } from '@kyberswap/widgets'
 
+const theme = {
+  // Check out the theme examples below
+  primary: '#FBFBFB',
+  secondary: '#D6D9DC',
+  dialog: '#FBFBFB',
+  borderRadius: '20px',
+  buttonRadius: '24px',
+  stroke: '#FCFCFC',
+  interactive: '#D6D9DC',
+  accent: '#6F767E',
+  success: '#189470',
+  warning: '#FF9901',
+  error: '#FF537B',
+  text: '#1C1A1F',
+  subtext: '#33383F',
+  fontFamily: 'Roboto',
+}
 export const IntegratedTerminal = () => {
-  const ref = useRef(null)
-
-  useEffect(() => {
-    if (!ref.current) return
-    // const config = {
-    //   defaultSwapPair: {
-    //     dataPay: {
-    //       type: '0x6dae8ca14311574fdfe555524ea48558e3d1360d1607d1c7f98af867e3b7976c::flx::FLX',
-    //       symbol: 'FLX',
-    //       iconUrl:
-    //         'https://ipfs.io/ipfs/bafkreig53olo3ewrkph3hfrhjuwvuj53pmbntl2cwxd4zlyfnj5eznoxcu',
-    //       decimals: 8,
-    //       name: 'FlowX Token',
-    //     },
-    //     dataReceive: {
-    //       decimals: 9,
-    //       iconUrl:
-    //         'https://assets.coingecko.com/coins/images/26375/small/sui_asset.jpeg',
-    //       name: 'Sui',
-    //       symbol: 'SUI',
-    //       type: '0x2::sui::SUI',
-    //     },
-    //   },
-    // }
-    const root = window.FlowXInitial(ref.current)
-    return () => {
-      root.unmount()
-    }
-  }, [])
-
-  return <div ref={ref} />
+  return (
+    <Widget
+      client="kaivest"
+      width={480}
+      theme={theme as any}
+      tokenList={[]}
+      enableRoute
+      enableDexes="kyberswap-elastic,uniswapv3,uniswap"
+      title={<div className="font-bold">Kaivest</div>}
+    />
+  )
 }

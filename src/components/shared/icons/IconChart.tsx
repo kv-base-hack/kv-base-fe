@@ -10,7 +10,7 @@ export const IconChart = () => {
       <path
         d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
         stroke="black"
-        stroke-width="2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
