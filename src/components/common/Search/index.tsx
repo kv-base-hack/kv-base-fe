@@ -271,7 +271,7 @@ export const SearchComp = () => {
                   width={24}
                   height={26}
                 />
-                <div>Popular Bol AI question</div>
+                <div>Popular KAI AI question</div>
               </div>
               <div className="flex gap-3 mt-3 tracking-normal text-white max-md:flex-wrap">
                 <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />

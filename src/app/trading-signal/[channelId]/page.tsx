@@ -90,11 +90,11 @@ export default function TradingSignalDetail({
     <div className="flex flex-col self-stretch p-10 max-md:px-5">
       <div className="flex items-center gap-0 text-xl tracking-tight leading-8 max-md:flex-wrap max-md:max-w-full">
         <Link href="/trading-signal" className="text-gray-400">
-          Boltrade Trading Signal
+          Kaivest Trading Signal
         </Link>
         <ArrowRightIcon />
         <div className="flex-auto text-gray-200 max-md:max-w-full">
-          BOL AI Signal
+          KAI AI Signal
         </div>
       </div>
       <div className="h-px my-4 bg-white/10 w-full"></div>
@@ -115,8 +115,8 @@ export default function TradingSignalDetail({
               Introduction
             </div>
             <div className="mt-4 text-base tracking-normal leading-6 text-zinc-50 max-md:max-w-full">
-              Boltrade AI signal delves into comprehensive market trend
-              analysis, evaluation, and prediction based on a series of critical
+              Kaivest AI signal delves into comprehensive market trend analysis,
+              evaluation, and prediction based on a series of critical
               indicators. It incorporates multi-source data from on-chain
               information, technical analysis, and sentiment analysis.
             </div>
