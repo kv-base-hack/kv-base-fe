@@ -12,7 +12,7 @@ export function WrapLineChart({
   address: string
 }) {
   return (
-    <div className="rounded-lg h-[580px] flex flex-col gap-4">
+    <div className="rounded-lg h-[570px] flex flex-col gap-4">
       <TradingDexscreener address={address} />
     </div>
   )

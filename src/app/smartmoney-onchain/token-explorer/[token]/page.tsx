@@ -269,7 +269,7 @@ export default function TokenExplorerDetail({
           </div>
         </div>
       </div>
-      <CardCommon>
+      <CardCommon className="z-50">
         <div className="flex gap-2 justify-start items-center self-stretch py-2 text-lg font-medium tracking-tight leading-6 text-center text-neutral-400 max-md:flex-wrap">
           {TABS.map((item, index) => {
             return (

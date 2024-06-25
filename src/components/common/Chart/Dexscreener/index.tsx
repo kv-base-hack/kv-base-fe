@@ -3,14 +3,14 @@ import './style.css'
 
 export const TradingDexscreener = ({ address }: { address: string }) => {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '420px' }}>
+    <div style={{ position: 'relative', width: '100%', height: '410px' }}>
       <div id="dexscreener-embed">
         <iframe
           allowFullScreen
           src={`https://dexscreener.com/${CHAIN_X}/${address}?embed=1&theme=ligh&trades=0&info=0&full`}
         ></iframe>
       </div>
-      <div className="absolute left-0 right-0 h-[38px] z-1 -bottom-[110px] rounded-b-[20px] bg-neutral-07"></div>
+      <div className="absolute left-0 right-0 h-[38px] z-1 -bottom-[105px] rounded-b-[20px] bg-neutral-07"></div>
     </div>
   )
 }
