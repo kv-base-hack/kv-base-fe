@@ -25,7 +25,11 @@ export const createSmartMoneyTransactionsTool: CreateToolFunction = (
       address,
       symbol,
     }: z.infer<typeof parameters>) {
-      yield <SkeletonMessageSmartMoney />
+      yield (
+        <div className="mt-4 px-6">
+          <SkeletonMessageSmartMoney />
+        </div>
+      )
 
       const toolCallId = nanoid()
       try {
@@ -66,7 +70,11 @@ export const createSmartMoneyTransactionsTool: CreateToolFunction = (
           ],
         })
 
-        return <SmartMoneyTransactions data={initData} />
+        return (
+          <div className="px-6">
+            <SmartMoneyTransactions data={initData} />
+          </div>
+        )
       } catch (e) {
         aiState.done({
           chatId: aiState.get().chatId,

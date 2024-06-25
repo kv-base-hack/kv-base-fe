@@ -116,7 +116,7 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
         enableSorting: false,
         cell: ({ row }) => {
           return (
-            <div className="text-[#D6D9DC] text-xs font-bold">
+            <div className="text-xs font-bold">
               {renderPrice(row.original.price)}
             </div>
           )
@@ -126,8 +126,8 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
   }, [])
 
   return (
-    <div className="p-6 font-semibold rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 bg-opacity-50 border-white/10 leading-[160%] max-md:px-5">
-      <div className="border border-white/10 rounded-[20px] bg-gradient-btn w-fit py-2 px-4">
+    <div className="p-6 font-semibold rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-01 bg-opacity-50 border-white/10 leading-[160%] max-md:px-5 mt-4">
+      <div className="border border-white/10 rounded-[20px] bg-[#EFEFEF] w-fit py-2 px-4">
         <div className="flex items-center gap-2">
           <p className="grow font-medium relative mt-1">SM Transaction</p>
           <InfoIcon />

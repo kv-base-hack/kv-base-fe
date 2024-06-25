@@ -79,7 +79,10 @@ export default function Home() {
       <div className="w-full">
         <div className="flex flex-col p-6 bg-neutral-01  rounded-2xl">
           {messages.length ? (
-            <div style={{ height: `${chatHeight}px` }}>
+            <div
+              style={{ height: `${chatHeight}px` }}
+              className="overflow-auto"
+            >
               <ChatList messages={messages} />
             </div>
           ) : (

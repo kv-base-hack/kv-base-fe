@@ -15,13 +15,14 @@ interface TokenItemProps {
 }
 
 export const TokenItem: React.FC<TokenItemProps> = ({ token, onClick }) => {
+  console.log(token)
   return (
     <div
       onClick={onClick}
-      className="flex max-w-[172px] flex-col p-4 rounded-2xl bg-white/5 border border-solid shadow-chat-ai backdrop-blur-[32px] border-white/10 cursor-pointer group"
+      className="flex max-w-[172px] flex-col p-4 rounded-2xl bg-white/5 border border-solid shadow-chat-ai backdrop-blur-[32px] border-neutral-03 cursor-pointer group"
       role="button"
     >
-      <div className="flex items-center gap-3 text-sm leading-5 text-gray-300">
+      <div className="flex items-center gap-3 text-sm leading-5 text-neutral-07">
         <ImageToken
           imgUrl={token?.imageUrl}
           symbol={token?.symbol}
@@ -33,7 +34,7 @@ export const TokenItem: React.FC<TokenItemProps> = ({ token, onClick }) => {
         </div>
       </div>
       <div className="flex gap-1 justify-start items-center mt-1">
-        <div className="text-lg font-bold tracking-tight leading-8 text-white">
+        <div className="text-base font-bold tracking-tight leading-8 text-neutral-04">
           {renderPrice(token.usdPrice)}
         </div>
         <div

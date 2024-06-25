@@ -17,6 +17,7 @@ import { TokenInfo } from '@/components/common/Message/TokenInfo'
 import { useGetSmartMoneyTokenSummaryQuery } from '@/query/getSmartMoneyTokenSummary'
 import { SkeletonText } from '@/components/common/Skeleton/SkeletonText'
 import { CHAIN_X } from '@/constant/chain'
+import { ImageToken } from '@/components/common/Image/ImageToken'
 
 interface TokenListProps {
   symbol: string
@@ -86,8 +87,8 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
   }
 
   return (
-    <>
-      <h2 className="text-neutral-100 font-semibold text-base">
+    <div className="px-6">
+      <h2 className="text-neutral-07 font-semibold text-base">
         Please choose token you want to Analyze
       </h2>
       <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6 gap-2 mt-4 w-[80%] xl:w-[100%]">
@@ -118,7 +119,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
             {analysis ? <BotMessage content={analysis} /> : <SkeletonText />}
           </div>
 
-          <div className="suggestion-question mt-8 flex flex-col gap-2 items-start">
+          <div className="suggestion-question flex flex-col gap-2 items-start">
             <h2 className="text-[#FFBC99] text-xl font-normal">
               Suggest question
             </h2>
@@ -132,12 +133,13 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
               className="btn_suggest_question"
             >
               <p>Smart Money Transactions of</p>
-              <img
-                src={selectedToken.imageUrl}
-                alt={selectedToken.name}
+              <ImageToken
+                imgUrl={selectedToken.imageUrl}
+                symbol={selectedToken.symbol}
                 className="w-6 h-6 rounded-full ml-2"
               />
-              <p className="text-sm text-neutral-02">{selectedToken.symbol}</p>
+
+              <p className="text-sm text-neutral-07">{selectedToken.symbol}</p>
             </button>
             <button
               onClick={() =>
@@ -149,12 +151,12 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
               className="btn_suggest_question"
             >
               Top Smart Money trading
-              <img
-                src={selectedToken.imageUrl}
-                alt={selectedToken.name}
+              <ImageToken
+                imgUrl={selectedToken.imageUrl}
+                symbol={selectedToken.symbol}
                 className="w-6 h-6 rounded-full ml-2"
               />
-              <p className="text-sm text-neutral-02">{selectedToken.symbol}</p>
+              <p className="text-sm text-neutral-07">{selectedToken.symbol}</p>
             </button>
             <button
               onClick={() =>
@@ -166,16 +168,16 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
               className="btn_suggest_question"
             >
               Activity of Top Smart Money trading
-              <img
-                src={selectedToken.imageUrl}
-                alt={selectedToken.name}
+              <ImageToken
+                imgUrl={selectedToken.imageUrl}
+                symbol={selectedToken.symbol}
                 className="w-6 h-6 rounded-full ml-2"
               />
-              <p className="text-sm text-neutral-02">{selectedToken.symbol}</p>
+              <p className="text-sm text-neutral-07">{selectedToken.symbol}</p>
             </button>
           </div>
         </div>
       ) : null}
-    </>
+    </div>
   )
 }

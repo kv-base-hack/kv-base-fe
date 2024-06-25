@@ -11,7 +11,7 @@ export const getSmartMoneyTransactions = async (
   const limit = perPage
   const start = (page - 1) * perPage + 1
   const resp = await ofetch(
-    `https://api-onchain.kaivest.net/v1/token/smart_money_tx?chain=${chain}&limit=${limit}&start=${start}&address=${address}`,
+    `https://api.kaivest.net/user-onchain/v1/token/smart_money_tx?chain=${chain}&limit=${limit}&start=${start}&address=${address}`,
   )
 
   return resp

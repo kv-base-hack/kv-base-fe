@@ -25,7 +25,11 @@ export const createActivityOfTopSmartMoneyTradingTool: CreateToolFunction = (
       address,
       symbol,
     }: z.infer<typeof parameters>) {
-      yield <SkeletonMessageSmartMoney />
+      yield (
+        <div className="mt-4 px-6">
+          <SkeletonMessageSmartMoney />
+        </div>
+      )
 
       try {
         const initData = await getActivityOfTopSmartMoneyTrading(
@@ -67,7 +71,11 @@ export const createActivityOfTopSmartMoneyTradingTool: CreateToolFunction = (
           ],
         })
 
-        return <ActivityOfTopSmartMoneyTrading data={initData} />
+        return (
+          <div className="mt-4 px-6">
+            <ActivityOfTopSmartMoneyTrading data={initData} />
+          </div>
+        )
       } catch (e) {
         return <BotMessage content={`Something wrent wrong, Plese try again`} />
       }

@@ -5,24 +5,24 @@ import { cn } from '@/lib/utils'
 
 const exampleMessages = [
   {
-    heading: 'Make a analysis of SOL today',
-    message: 'Make a analysis of SOL today',
+    heading: 'Make a analysis of ETH today',
+    message: 'Make a analysis of ETH today',
   },
   {
     heading: 'What is going market today',
     message: 'What is going market today',
   },
   {
-    heading: 'Technical analyst of SOL',
-    message: 'Technical analyst of SOL',
+    heading: 'Technical analyst of ETH',
+    message: 'Technical analyst of ETH',
   },
   {
     heading: 'What token Smart Money is buying now',
     message: 'What token Smart Money is buying now',
   },
   {
-    heading: 'Token summary of SOL',
-    message: 'Token summary of SOL',
+    heading: 'Token summary of ETH',
+    message: 'Token summary of ETH',
   },
   {
     heading: 'What is the unsual activity on market now',

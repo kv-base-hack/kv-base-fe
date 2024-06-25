@@ -91,6 +91,11 @@ export interface TokenInfoProps {
   realized: number
   loading?: boolean
   address?: string
+  pair?: string
+  marketcap?: number,
+  volume?: number,
+  liquidity?: number,
+  tokenAge?: string,
 }
 
 export interface SmartMoneyTransaction {
