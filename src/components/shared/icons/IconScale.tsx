@@ -23,7 +23,7 @@ export const IconScale = () => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#9945FF" />
-          <stop offset="1" stop-color="#14F195" />
+          <stop offset="1" stopColor="#14F195" />
         </linearGradient>
       </defs>
     </svg>

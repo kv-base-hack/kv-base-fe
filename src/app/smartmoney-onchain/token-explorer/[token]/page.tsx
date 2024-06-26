@@ -127,11 +127,11 @@ export default function TokenExplorerDetail({
     <div className="w-full h-full flex flex-col gap-2 pt-2">
       <div className="m-0 flex flex-col-reverse xl:flex-row items-start gap-2">
         {/* swap left */}
-        <div className="w-full xl:w-1/3 h-full">
+        <div className="">
           <IntegratedTerminal />
         </div>
         {/* content right */}
-        <div className="w-full xl:w-2/3 h-full overflow-hidden">
+        <div className="w-full h-full overflow-hidden">
           {/* overview */}
           <CardCommon>
             <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">
@@ -141,6 +141,7 @@ export default function TokenExplorerDetail({
                     <div className="flex gap-2">
                       <ImageToken
                         className="w-8 h-8 rounded-full"
+                        imgUrl={dataTokenInfo?.image_url}
                         symbol={dataTokenInfo?.symbol}
                       />
                       <div className="text-neutral-07">

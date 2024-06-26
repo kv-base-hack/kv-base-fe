@@ -21,7 +21,7 @@ export const IntegratedTerminal = () => {
   return (
     <Widget
       client="kaivest"
-      width={480}
+      width={425}
       theme={theme as any}
       tokenList={[]}
       enableRoute

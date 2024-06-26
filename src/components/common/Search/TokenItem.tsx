@@ -15,7 +15,6 @@ interface TokenItemProps {
 }
 
 export const TokenItem: React.FC<TokenItemProps> = ({ token, onClick }) => {
-  console.log(token)
   return (
     <div
       onClick={onClick}

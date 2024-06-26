@@ -59,7 +59,6 @@ export const columnsBigTradeActivity = (chain: string) => {
       header: () => 'Tokens',
       enableSorting: false,
       cell: ({ row }) => {
-        console.log(row.original)
         return <TooltipTokenInfo chain={chain} token={row.original} />
       },
     },

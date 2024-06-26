@@ -72,6 +72,7 @@ export const FirstTimeBuy = ({
                   imgUrl={token.imageUrl}
                   symbol={token.symbol}
                   name={token.name}
+                  priceChangeH24={token.priceChangeH24}
                   usdPrice={token.usdPrice}
                   avg_price={token.avg_price}
                   spent={token.volume}

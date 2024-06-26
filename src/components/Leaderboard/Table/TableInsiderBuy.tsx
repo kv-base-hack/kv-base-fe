@@ -163,7 +163,7 @@ export const TableInsiderBuy = ({
       <TitleCard
         iconFirst={<IconInsider />}
         title="Insider Buy"
-        content="List of tokens with unusual buying actions identified by Kaivest's AI. Unusual Buys may indicate insider trading and should be monitored closely."
+        content="List of tokens with insider buying actions identified by Kaivest's AI. Insider Buys may indicate insider trading and should be monitored closely."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />

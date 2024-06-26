@@ -93,7 +93,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
             ) : (
               <div className="flex items-center gap-1">
                 <div className="text-neutral-07 text-sm font-semibold">
-                  {renderPrice(price as number)}
+                  {formatPriceNumber(usdPrice)}
                 </div>
                 <div className="flex gap-2 pr-5 text-sm tracking-normal leading-6">
                   <div
@@ -113,9 +113,6 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                       <ChevronDown />
                     )}
                     {priceChangeH24}%
-                  </div>
-                  <div className="text-neutral-50">
-                    {formatPriceNumber(usdPrice)}
                   </div>
                 </div>
               </div>
@@ -169,8 +166,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (roi as number) > 0
                   ? 'text-emerald-400'
                   : (roi as number) < 0
-                  ? 'text-error-500'
-                  : 'text-neutral-07',
+                    ? 'text-error-500'
+                    : 'text-neutral-07',
               )}
             >
               {loading ? (
@@ -196,8 +193,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (pnl as number) > 0
                   ? 'text-emerald-400'
                   : (pnl as number) < 0
-                  ? 'text-error-500'
-                  : 'text-neutral-07',
+                    ? 'text-error-500'
+                    : 'text-neutral-07',
               )}
             >
               {loading ? (
