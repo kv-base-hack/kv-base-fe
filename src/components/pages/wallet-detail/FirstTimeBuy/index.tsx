@@ -54,8 +54,6 @@ export const FirstTimeBuy = ({
     ? [...(Array(3).keys() as any)]
     : getVisibleItems()
 
-  console.log({ dataFirstTimeBuy })
-
   return (
     <div className="flex flex-col h-full">
       <div className="flex items-center justify-between h-full">
