@@ -255,7 +255,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         header: () => (
           <div className="flex items-center gap-0.5">
             <div className="text-neutral-04 text-sm not-italic leading-5">
-              # of SM
+              # of Wallet
             </div>
             <TooltipTable type="numberOfSMBuy" />
           </div>

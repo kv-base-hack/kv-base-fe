@@ -54,6 +54,8 @@ export const FirstTimeBuy = ({
     ? [...(Array(3).keys() as any)]
     : getVisibleItems()
 
+  console.log({ dataFirstTimeBuy })
+
   return (
     <div className="flex flex-col h-full">
       <div className="flex items-center justify-between h-full">
@@ -72,6 +74,7 @@ export const FirstTimeBuy = ({
                   imgUrl={token.imageUrl}
                   symbol={token.symbol}
                   name={token.name}
+                  priceChangeH24={token.priceChangeH24}
                   usdPrice={token.usdPrice}
                   avg_price={token.avg_price}
                   spent={token.volume}

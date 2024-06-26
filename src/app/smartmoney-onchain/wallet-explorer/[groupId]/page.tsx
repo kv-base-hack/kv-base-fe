@@ -91,7 +91,7 @@ export default function WalletExplorerDetail({
       address: params.groupId,
       chain: CHAIN,
       token_address: '',
-      duration: '24h',
+      duration,
     }),
   )
 
@@ -150,6 +150,7 @@ export default function WalletExplorerDetail({
     useGetUserInfoQuery({
       address: params.groupId,
       chain: CHAIN,
+      duration,
     }),
   )
 

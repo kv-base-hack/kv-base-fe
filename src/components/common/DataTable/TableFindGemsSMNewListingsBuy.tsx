@@ -271,7 +271,7 @@ export const TableFindGemsSMNewListingsBuy = ({
         header: () => (
           <div className="flex items-center gap-0.5">
             <div className="text-neutral-04 text-sm not-italic leading-5">
-              # of SM
+              # of SM Buy
             </div>
             <TooltipTable type="numberOfSMBuy" />
           </div>

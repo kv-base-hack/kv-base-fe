@@ -1269,14 +1269,17 @@ export const getChanelDetail = async ({
 export const getUserInfo = async ({
   address,
   chain,
+  duration
 }: {
   address: string
-  chain: string
+    chain: string
+  duration?: string
 }): Promise<UserInfoResponse> => {
   return await userApi.get('/v1/user/info', {
     params: {
       chain,
       address,
+      duration
     },
   })
 }
