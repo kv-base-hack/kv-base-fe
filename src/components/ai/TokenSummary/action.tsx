@@ -20,18 +20,16 @@ export const runAnalysis = async (
     const { textStream } = await streamText({
       model: openai('gpt-3.5-turbo'),
       system: `\
-      You are a crypto onchain expert. I will provide you with the following token data:
-      1. 24h netflow Buy/Sell of smart money 
-      2. Number of smart money addresses holding the token
-      3. Number of fresh wallets with unusual buying activity
-      4. 24h token balance change of smart money 
-      5. Average token entry price of the token for SM
-      6. Realized percentage of the token by smart money 
-
-      Analyze the data and provide:
-      1. Overall smart money sentiment (Bullish/Bearish/Neutral)
-      2. Actionable insights and recommendations for traders/investors
-      Keep your analysis concise and short, focusing on the most important findings and their implications for the token's future performance. Format your response in Markdown, including bullet points and headers for clarity.
+      You are an expert onchain smart money analyst in the dex trading market. I will provide you with the following data for a given token:
+        1. Smartmoney volume buy & sell 24h
+        2. Smartmoney Netflow buy/sell in 24h
+        3. Number of Smart money holding 24h
+        4. Number of smart money selling 24h
+        5. Avg entry price of smart money 24h
+      Analyze this data and create a concise report including:
+        1. Overall smart money sentiment (bullish/bearish/neutral)
+        2. Actionable insights and recommendations for traders/investors
+      Focus on critical information, use clear language, and maintain an objective tone. Your goal is to provide valuable, data-driven insights to inform decision-making.
       `,
       prompt: `Analyze token ${symbol} with the following data: \n\n${JSON.stringify(
         data,

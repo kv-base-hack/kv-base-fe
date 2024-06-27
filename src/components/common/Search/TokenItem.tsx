@@ -18,7 +18,7 @@ export const TokenItem: React.FC<TokenItemProps> = ({ token, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="flex max-w-[172px] flex-col p-4 rounded-2xl bg-white/5 border border-solid shadow-chat-ai backdrop-blur-[32px] border-neutral-03 cursor-pointer group"
+      className="flex max-w-[172px] flex-col p-4 rounded-2xl bg-neutral-01 border border-solid shadow-chat-ai backdrop-blur-[32px] border-neutral-03 cursor-pointer group"
       role="button"
     >
       <div className="flex items-center gap-3 text-sm leading-5 text-neutral-07">

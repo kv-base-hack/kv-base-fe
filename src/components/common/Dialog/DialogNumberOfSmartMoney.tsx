@@ -139,44 +139,51 @@ export const DialogNumberOfSmartMoney = ({
   }, [limit, start])
   return (
     <>
-      <Dialog>
-        <DialogTrigger>
-          <div
-            className="whitespace-nowrap text-sm not-italic leading-5 underline"
-            onClick={() => setVisible(true)}
-          >
-            {nFormatter(number)}
-          </div>
-        </DialogTrigger>
-        <DialogContent className="max-w-[617px] !p-0 !rounded-xl !border-none">
-          <div className="flex flex-col gap-4 p-4 bg-neutral-01 rounded-xl">
-            <div className="relative">
-              <p className="text-neutral-07 text-xl font-medium text-center">
-                List of Wallet
-              </p>
-              <DialogClose className="absolute top-0.5 right-0">
-                <Close />
-              </DialogClose>
+      {number > 0 ? (
+        <Dialog>
+          <DialogTrigger>
+            <div
+              className="whitespace-nowrap text-sm not-italic leading-5 underline"
+              onClick={() => setVisible(true)}
+            >
+              {nFormatter(number)}
             </div>
+          </DialogTrigger>
+          <DialogContent className="max-w-[617px] !p-0 !rounded-xl !border-none">
+            <div className="flex flex-col gap-4 p-4 bg-neutral-01 rounded-xl">
+              <div className="relative">
+                <p className="text-neutral-07 text-xl font-medium text-center">
+                  List of Wallet
+                </p>
+                <DialogClose className="absolute top-0.5 right-0">
+                  <Close />
+                </DialogClose>
+              </div>
 
-            <DataTable
-              data={listUsers}
-              columns={columns}
-              emptyData="No result!!!"
-              classNameHeader="hidden"
-              isFetching={topSmartMoneyTradeQuery.isFetching}
-            />
+              <DataTable
+                data={listUsers}
+                columns={columns}
+                emptyData="No result!!!"
+                classNameHeader="hidden"
+                isFetching={topSmartMoneyTradeQuery.isFetching}
+              />
 
-            <PaginationTable
-              currentPage={start}
-              updatePage={(page: number) => setStart(page)}
-              pageSize={limit}
-              total={total}
-              setPage={setStart}
-            />
-          </div>
-        </DialogContent>
-      </Dialog>
+              <PaginationTable
+                currentPage={start}
+                updatePage={(page: number) => setStart(page)}
+                pageSize={limit}
+                total={total}
+                setPage={setStart}
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
+      ) : (
+        <div className="whitespace-nowrap text-sm not-italic leading-5">
+          {' '}
+          {nFormatter(number)}
+        </div>
+      )}
     </>
   )
 }

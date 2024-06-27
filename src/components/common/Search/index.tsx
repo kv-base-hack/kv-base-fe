@@ -151,7 +151,7 @@ export const SearchComp = () => {
         </div>
       </div>
       {openSearch ? (
-        <div className="absolute top-[60px] max-h-[500px] overflow-y-auto w-screen -right-1/2 md:w-full lg:min-w-[500px] md:right-0">
+        <div className="absolute top-[60px] max-h-[500px] overflow-y-auto w-screen -right-1/2 md:w-full lg:min-w-[400px] md:right-0 no-scrollbar scroll-smooth ">
           {search ? (
             <div className="">
               <div className="flex flex-col justify-center p-4 rounded-2xl border border-white/10 border-solid bg-stone-900 w-full">

@@ -5,28 +5,28 @@ import { cn } from '@/lib/utils'
 
 const exampleMessages = [
   {
-    heading: 'Make a analysis of ETH today',
-    message: 'Make a analysis of ETH today',
+    heading: 'Onchain analyst of ETH',
+    message: 'Onchain analyst of ETH',
   },
   {
-    heading: 'What is going market today',
-    message: 'What is going market today',
+    heading: 'News Analysic of market today',
+    message: 'News Analysic of market today',
   },
   {
-    heading: 'Technical analyst of ETH',
-    message: 'Technical analyst of ETH',
+    heading: 'Technical analyst of ERTH in 1h timeframe',
+    message: 'Technical analyst of ERTH in 1h timeframe',
   },
   {
-    heading: 'What token Smart Money is buying now',
-    message: 'What token Smart Money is buying now',
+    heading: 'Whitepaper Analysis of LDO',
+    message: 'Whitepaper Analysis of LDO',
   },
   {
-    heading: 'Token summary of ETH',
-    message: 'Token summary of ETH',
+    heading: 'What tokens I should buy now?',
+    message: 'What tokens I should buy now?',
   },
   {
-    heading: 'What is the unsual activity on market now',
-    message: 'What is the unsual activity on market now',
+    heading: 'Analyze wallet 0xb0ba33566bd1ddd1f0e9',
+    message: 'Analyze wallet 0xb0ba33566bd1ddd1f0e9',
   },
 ]
 
@@ -44,7 +44,7 @@ const messageColor = [
     message: 'Technical Analysis',
   },
   {
-    heading: 'Whitepaper Analysis',
+    heading: 'Whitepaper Analysis (Coming soon)',
     message: 'Whitepaper Analysis',
   },
 ]
@@ -55,7 +55,7 @@ export function EmptyScreen({
   submitMessage: (message: string) => void
 }) {
   return (
-    <div className="flex flex-col gap-6 h-full">
+    <div className="flex flex-col gap-6 h-full p-4 overflow-auto">
       <div className="flex flex-col gap-4 px-4 md:px-8 md:gap-8 pb-5">
         <div className="flex flex-col gap-[30px]">
           <h2 className="text-neutral-07 text-[32px] md:text-[48px] font-bold leading-[48px]">
@@ -64,7 +64,7 @@ export function EmptyScreen({
               your personal AI investment assistant
             </p>
           </h2>
-          <p className="text-neutral-04 font-medium text-xl md:text-xl ">
+          <p className="text-neutral-07 font-medium text-xl md:text-xl ">
             Need suggestions about hot coins, market trends, trading strategies,
             technical analysis, smartmoney onchain analysis? I&apos;m here to
             help!
@@ -74,9 +74,8 @@ export function EmptyScreen({
           {messageColor.map((message, index) => (
             <Button
               key={index}
-              variant="link"
               className={cn(
-                'h-auto p-3 border-none rounded-[20px] text-neutral-07 text-lg font-bold flex items-center gap-4',
+                'h-auto p-3 border border-[#EFEFEF] rounded-[20px] text-neutral-07 text-lg font-bold flex items-center gap-4 relative',
                 index === 0
                   ? 'bg-[#FFF6EB]'
                   : index === 1
@@ -84,6 +83,9 @@ export function EmptyScreen({
                   : index === 2
                   ? 'bg-[#F5EDFA]'
                   : 'bg-[#c8dcf7]',
+                message.message === 'Whitepaper Analysis'
+                  ? ''
+                  : 'hover:underline',
               )}
               // onClick={async () => {
               //   submitMessage(message.message)
@@ -120,6 +122,14 @@ export function EmptyScreen({
               <div className="line-clamp-2 md:line-clamp-1 text-left w-full">
                 {message.heading}
               </div>
+              <div
+                className={cn(
+                  'w-full h-full absolute bg-[#EEE]/60 rounded-[20px] z-10 cursor-not-allowed',
+                  message.message === 'Whitepaper Analysis'
+                    ? 'visible'
+                    : 'hidden',
+                )}
+              ></div>
             </Button>
           ))}
         </div>

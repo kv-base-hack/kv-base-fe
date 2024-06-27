@@ -53,12 +53,8 @@ export const ChatHistory = ({
 
   return (
     <div className="h-full flex flex-col min-w-[300px] max-w-[340px] py-4 gap-3 border border-white/10 bg-neutral-01 rounded-2xl justify-between">
-      <div className="flex items-center justify-start gap-3 border-b border-[#EFEFEF] px-4 pb-4">
-        <SearchIcon />
-        <input
-          className="flex w-full bg-transparent outline-none text-neutral-07"
-          placeholder="Search chat"
-        />
+      <div className="border-b border-[#EFEFEF] px-4 pb-4 text-neutral-07 font-semibold text-[15px] leading-6">
+        Chat History
       </div>
 
       <div className="flex flex-col items-start gap-2 px-4 h-full">

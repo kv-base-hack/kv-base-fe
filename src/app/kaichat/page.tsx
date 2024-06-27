@@ -15,8 +15,6 @@ import {
 } from '@/components/ui/tooltip'
 import { Textarea } from '@/components/ui/textarea'
 import { FooterText } from '@/components/footer'
-import { IconSend } from '@/components/shared/icons/IconSend'
-import { ListToken } from '@/components/common/ListToken'
 import { ChatHistory } from '@/components/common/ChatHistory'
 import { useAtom } from 'jotai'
 import { heightHeaderAtom } from '@/atom/header'
@@ -81,7 +79,7 @@ export default function Home() {
           {messages.length ? (
             <div
               style={{ height: `${chatHeight}px` }}
-              className="overflow-auto"
+              className="overflow-auto scroll-smooth no-scrollbar"
             >
               <ChatList messages={messages} />
             </div>

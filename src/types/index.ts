@@ -84,11 +84,11 @@ export interface TokenInfoProps {
   usdPrice: number
   price_24h: number
   market_cap?: number
-  value_buy: number
+  volume_buy: number
   avg_entry: number
   imgUrl: string
   number_sm_hold: number
-  realized: number
+  realized?: number
   loading?: boolean
   address?: string
   pair?: string
@@ -96,6 +96,8 @@ export interface TokenInfoProps {
   volume?: number,
   liquidity?: number,
   tokenAge?: string,
+  unusual_buy?: number
+  volume_sell: number
 }
 
 export interface SmartMoneyTransaction {

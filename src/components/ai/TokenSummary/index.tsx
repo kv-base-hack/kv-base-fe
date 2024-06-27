@@ -14,10 +14,11 @@ import {
 } from 'ai/rsc'
 import { AI } from '@/app/kaichat/action'
 import { TokenInfo } from '@/components/common/Message/TokenInfo'
-import { useGetSmartMoneyTokenSummaryQuery } from '@/query/getSmartMoneyTokenSummary'
 import { SkeletonText } from '@/components/common/Skeleton/SkeletonText'
 import { CHAIN_X } from '@/constant/chain'
-import { ImageToken } from '@/components/common/Image/ImageToken'
+import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
+import { useAtomValue } from 'jotai'
+import { chainAtom } from '@/atom/chain'
 
 interface TokenListProps {
   symbol: string
@@ -31,13 +32,14 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
     null,
   )
   const [analysis, setAnalysis] = React.useState<StreamableValue | null>(null)
+  const CHAIN = useAtomValue(chainAtom)
 
-  const smTokenSummaryQuery = useGetSmartMoneyTokenSummaryQuery(
-    selectedToken!?.chainId,
-    selectedToken!?.tokenAddress,
-  )
+  const smTokenSummaryQuery = useTokenInfoQuery({
+    chain: selectedToken!?.chainId,
+    address: selectedToken!?.tokenAddress,
+  })
 
-  const smTokenSummary = smTokenSummaryQuery.data?.data?.summary
+  const smTokenSummary = smTokenSummaryQuery.data?.data?.info
 
   if (!tokens.length) {
     return <BotMessage content={`No token found with symbol ${symbol}`} />
@@ -46,7 +48,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
   const onClickToken = async (token: TokenList) => {
     setAnalysis(null)
     setSelectedToken(token)
-    const x = await runAnalysis(token.symbol, token.tokenAddress, CHAIN_X)
+    const x = await runAnalysis(token.symbol, token.tokenAddress, CHAIN)
     setAnalysis(x)
   }
 
@@ -108,73 +110,16 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
             symbol={selectedToken.symbol}
             usdPrice={selectedToken.usdPrice}
             price_24h={selectedToken.price_24h}
-            value_buy={0}
-            avg_entry={smTokenSummary?.avg_entry_price}
-            number_sm_hold={smTokenSummary?.number_of_smart_money_hold}
-            realized={smTokenSummary?.realized_percent}
+            volume_buy={smTokenSummary?.buy_volume || 0}
+            volume_sell={smTokenSummary?.sell_volume || 0}
+            avg_entry={smTokenSummary?.avg_price_smart_money || 0}
+            number_sm_hold={smTokenSummary?.number_of_smart_money_hold || 0}
+            unusual_buy={smTokenSummary?.number_of_unusual_buy}
             loading={smTokenSummaryQuery.isFetching}
             address={selectedToken.tokenAddress}
           />
           <div>
             {analysis ? <BotMessage content={analysis} /> : <SkeletonText />}
-          </div>
-
-          <div className="suggestion-question flex flex-col gap-2 items-start">
-            <h2 className="text-[#FFBC99] text-xl font-normal">
-              Suggest question
-            </h2>
-            <button
-              onClick={() =>
-                onSmartMoneyTransactionsClick(
-                  selectedToken.symbol,
-                  selectedToken.tokenAddress,
-                )
-              }
-              className="btn_suggest_question"
-            >
-              <p>Smart Money Transactions of</p>
-              <ImageToken
-                imgUrl={selectedToken.imageUrl}
-                symbol={selectedToken.symbol}
-                className="w-6 h-6 rounded-full ml-2"
-              />
-
-              <p className="text-sm text-neutral-07">{selectedToken.symbol}</p>
-            </button>
-            <button
-              onClick={() =>
-                onTopSmartMoneyTradingClick(
-                  selectedToken.symbol,
-                  selectedToken.tokenAddress,
-                )
-              }
-              className="btn_suggest_question"
-            >
-              Top Smart Money trading
-              <ImageToken
-                imgUrl={selectedToken.imageUrl}
-                symbol={selectedToken.symbol}
-                className="w-6 h-6 rounded-full ml-2"
-              />
-              <p className="text-sm text-neutral-07">{selectedToken.symbol}</p>
-            </button>
-            <button
-              onClick={() =>
-                onActivityTopSmartMoneyTradingClick(
-                  selectedToken.symbol,
-                  selectedToken.tokenAddress,
-                )
-              }
-              className="btn_suggest_question"
-            >
-              Activity of Top Smart Money trading
-              <ImageToken
-                imgUrl={selectedToken.imageUrl}
-                symbol={selectedToken.symbol}
-                className="w-6 h-6 rounded-full ml-2"
-              />
-              <p className="text-sm text-neutral-07">{selectedToken.symbol}</p>
-            </button>
           </div>
         </div>
       ) : null}
