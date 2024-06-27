@@ -801,9 +801,11 @@ export const getTokenExplorerTradingSignal = async ({
 export const getTokenList = async ({
   symbol_search,
   chain,
+  limit = 10,
 }: {
   symbol_search: string
   chain: string
+  limit?: number
 }): Promise<TokenListResponse> => {
   return await api.get('/v1/search', {
     params: {

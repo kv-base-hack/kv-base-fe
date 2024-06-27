@@ -1,7 +1,9 @@
+'use client'
 /* eslint-disable @next/next/no-img-element */
 import { DATA_TOKEN } from '@/constant/token'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
+import ImageNext from 'next/image'
+import { useEffect, useState } from 'react'
 
 export const ImageToken = ({
   imgUrl,
@@ -12,9 +14,22 @@ export const ImageToken = ({
   symbol?: string
   className?: string
 }) => {
+  const [tmpSrc, setTmpSrc] = useState<string | null>(null)
+  useEffect(() => {
+    if (!imgUrl) {
+      const src = DATA_TOKEN?.find((el) => el.token === symbol)?.image_url
+      if (src) {
+        const img = new Image()
+        img.onload = () => setTmpSrc(src)
+        img.onerror = () => setTmpSrc(null)
+        img.src = src
+      }
+    }
+  }, [imgUrl, symbol])
+
   if (imgUrl) {
     return (
-      <Image
+      <ImageNext
         loading="lazy"
         src={imgUrl}
         className={cn('my-auto aspect-square rounded-full', className)}
@@ -34,8 +49,8 @@ export const ImageToken = ({
         )}
       />
     )
-  const src = DATA_TOKEN?.find((el) => el.token === symbol)?.image_url
-  if (!src) {
+  // const src = imgUrl
+  if (!tmpSrc) {
     return (
       <div
         className={cn(
@@ -50,9 +65,9 @@ export const ImageToken = ({
     )
   }
   return (
-    <Image
+    <ImageNext
       loading="lazy"
-      src={src}
+      src={tmpSrc}
       className={cn('my-auto aspect-square rounded-full shrink-0', className)}
       alt={`${symbol} icon`}
       width={24}

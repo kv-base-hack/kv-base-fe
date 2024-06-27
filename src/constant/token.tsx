@@ -15,7 +15,8 @@ export const DATA_TOKEN = [
     coin: 'Tether',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/binance-coin-bnb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/binance-coin-bnb.png',
     token: 'BNB',
     coin: 'Binance Coin',
   },
@@ -40,7 +41,8 @@ export const DATA_TOKEN = [
     coin: 'Cardano',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avalanche-avax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avalanche-avax.png',
     token: 'AVAX',
     coin: 'Avalanche',
   },
@@ -55,7 +57,8 @@ export const DATA_TOKEN = [
     coin: 'TRON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chainlink-link.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chainlink-link.png',
     token: 'LINK',
     coin: 'Chainlink',
   },
@@ -70,7 +73,8 @@ export const DATA_TOKEN = [
     coin: 'Polygon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-bitcoin-wbtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-bitcoin-wbtc.png',
     token: 'WBTC',
     coin: 'Wrapped Bitcoin',
   },
@@ -85,12 +89,14 @@ export const DATA_TOKEN = [
     coin: 'Uniswap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/internet-computer-icp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/internet-computer-icp.png',
     token: 'ICP',
     coin: 'Internet Computer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shiba-inu-shib.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shiba-inu-shib.png',
     token: 'SHIB',
     coin: 'SHIBA INU',
   },
@@ -100,7 +106,8 @@ export const DATA_TOKEN = [
     coin: 'Dai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-cash-bch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-cash-bch.png',
     token: 'BCH',
     coin: 'Bitcoin Cash',
   },
@@ -110,7 +117,8 @@ export const DATA_TOKEN = [
     coin: 'Litecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/immutable-x-imx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/immutable-x-imx.png',
     token: 'IMX',
     coin: 'Immutable X',
   },
@@ -125,12 +133,14 @@ export const DATA_TOKEN = [
     coin: 'Cosmos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unus-sed-leo-leo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unus-sed-leo-leo.png',
     token: 'LEO',
     coin: 'Unus Sed Leo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethereum-classic-etc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethereum-classic-etc.png',
     token: 'ETC',
     coin: 'Ethereum Classic',
   },
@@ -145,12 +155,14 @@ export const DATA_TOKEN = [
     coin: 'Bittensor',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hedera-hashgraph-hbar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hedera-hashgraph-hbar.png',
     token: 'HBAR',
     coin: 'Hedera Hashgraph',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/near-protocol-near.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/near-protocol-near.png',
     token: 'NEAR',
     coin: 'NEAR Protocol',
   },
@@ -170,12 +182,14 @@ export const DATA_TOKEN = [
     coin: 'Optimism',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/first-digital-usd-fdusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/first-digital-usd-fdusd.png',
     token: 'FDUSD',
     coin: 'First Digital USD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stellar-lumens-xlm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stellar-lumens-xlm.png',
     token: 'XLM',
     coin: 'Stellar Lumens',
   },
@@ -195,12 +209,14 @@ export const DATA_TOKEN = [
     coin: 'OKB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lido-dao-token-ldo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lido-dao-token-ldo.png',
     token: 'LDO',
     coin: 'Lido DAO Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/render-token-rndr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/render-token-rndr.png',
     token: 'RNDR',
     coin: 'Render Token',
   },
@@ -220,7 +236,8 @@ export const DATA_TOKEN = [
     coin: 'Mantle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-beacon-eth-wbeth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-beacon-eth-wbeth.png',
     token: 'WBETH',
     coin: 'Wrapped Beacon ETH',
   },
@@ -250,7 +267,8 @@ export const DATA_TOKEN = [
     coin: 'Maker',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thorchain-rune.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thorchain-rune.png',
     token: 'RUNE',
     coin: 'THORChain',
   },
@@ -260,7 +278,8 @@ export const DATA_TOKEN = [
     coin: 'Beam',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beam-onbeam-beam.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beam-onbeam-beam.png',
     token: 'BEAM',
     coin: 'BEAM (onbeam)',
   },
@@ -280,7 +299,8 @@ export const DATA_TOKEN = [
     coin: 'Flow',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-sv-bsv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-sv-bsv.png',
     token: 'BSV',
     coin: 'Bitcoin SV',
   },
@@ -290,12 +310,14 @@ export const DATA_TOKEN = [
     coin: 'Aave',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitget-token-bgb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitget-token-bgb.png',
     token: 'BGB',
     coin: 'Bitget Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starknet-token-strk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starknet-token-strk.png',
     token: 'STRK',
     coin: 'Starknet Token',
   },
@@ -345,7 +367,8 @@ export const DATA_TOKEN = [
     coin: 'Fantom',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-sandbox-sand.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-sandbox-sand.png',
     token: 'SAND',
     coin: 'The Sandbox',
   },
@@ -365,7 +388,8 @@ export const DATA_TOKEN = [
     coin: 'Chiliz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/axie-infinity-axs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/axie-infinity-axs.png',
     token: 'AXS',
     coin: 'Axie Infinity',
   },
@@ -385,7 +409,8 @@ export const DATA_TOKEN = [
     coin: 'ApeCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bittorrent-new-btt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bittorrent-new-btt.png',
     token: 'BTT',
     coin: 'BitTorrent New',
   },
@@ -395,7 +420,8 @@ export const DATA_TOKEN = [
     coin: 'Cheelee',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kucoin-token-kcs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kucoin-token-kcs.png',
     token: 'KCS',
     coin: 'KuCoin Token',
   },
@@ -405,22 +431,26 @@ export const DATA_TOKEN = [
     coin: 'SATS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/decentraland-mana.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/decentraland-mana.png',
     token: 'MANA',
     coin: 'Decentraland',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/akash-network-akt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/akash-network-akt.png',
     token: 'AKT',
     coin: 'Akash Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/woo-network-woo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/woo-network-woo.png',
     token: 'WOO',
     coin: 'WOO Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/singularitynet-agix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/singularitynet-agix.png',
     token: 'AGIX',
     coin: 'SingularityNET',
   },
@@ -495,7 +525,8 @@ export const DATA_TOKEN = [
     coin: 'Axelar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pyth-network-pyth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pyth-network-pyth.png',
     token: 'PYTH',
     coin: 'Pyth Network',
   },
@@ -510,7 +541,8 @@ export const DATA_TOKEN = [
     coin: 'Klaytn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oasis-network-rose.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oasis-network-rose.png',
     token: 'ROSE',
     coin: 'Oasis Network',
   },
@@ -520,17 +552,20 @@ export const DATA_TOKEN = [
     coin: 'Osmosis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pancakeswap-cake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pancakeswap-cake.png',
     token: 'CAKE',
     coin: 'PancakeSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/manta-network-manta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/manta-network-manta.png',
     token: 'MANTA',
     coin: 'Manta Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/decentralized-usd-usdd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/decentralized-usd-usdd.png',
     token: 'USDD',
     coin: 'Decentralized USD',
   },
@@ -545,27 +580,32 @@ export const DATA_TOKEN = [
     coin: 'Bonk',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/terra-classic-lunc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/terra-classic-lunc.png',
     token: 'LUNC',
     coin: 'Terra Classic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/marinade-staked-sol-msol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/marinade-staked-sol-msol.png',
     token: 'MSOL',
     coin: 'Marinade Staked SOL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/curve-dao-token-crv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/curve-dao-token-crv.png',
     token: 'CRV',
     coin: 'Curve DAO Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/frax-share-fxs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/frax-share-fxs.png',
     token: 'FXS',
     coin: 'Frax Share',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jupiter-space-station-jup.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jupiter-space-station-jup.png',
     token: 'JUP',
     coin: 'Jupiter Space Station',
   },
@@ -575,7 +615,8 @@ export const DATA_TOKEN = [
     coin: 'Frax',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethereum-name-service-ens.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethereum-name-service-ens.png',
     token: 'ENS',
     coin: 'Ethereum Name Service',
   },
@@ -585,7 +626,8 @@ export const DATA_TOKEN = [
     coin: 'Pendle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jasmycoin-jasmy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jasmycoin-jasmy.png',
     token: 'JASMY',
     coin: 'JasmyCoin',
   },
@@ -600,7 +642,8 @@ export const DATA_TOKEN = [
     coin: 'Nexo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coinbase-wrapped-staked-eth-cbeth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coinbase-wrapped-staked-eth-cbeth.png',
     token: 'CBETH',
     coin: 'Coinbase Wrapped Staked ETH',
   },
@@ -610,7 +653,8 @@ export const DATA_TOKEN = [
     coin: 'FTX Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xdc-network-xdc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xdc-network-xdc.png',
     token: 'XDC',
     coin: 'XDC Network',
   },
@@ -625,7 +669,8 @@ export const DATA_TOKEN = [
     coin: 'Core DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rocket-pool-rpl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rocket-pool-rpl.png',
     token: 'RPL',
     coin: 'Rocket Pool',
   },
@@ -645,7 +690,8 @@ export const DATA_TOKEN = [
     coin: 'Altlayer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trust-wallet-token-twt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trust-wallet-token-twt.png',
     token: 'TWT',
     coin: 'Trust Wallet Token',
   },
@@ -655,12 +701,14 @@ export const DATA_TOKEN = [
     coin: 'Compound',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zetachain-zeta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zetachain-zeta.png',
     token: 'ZETA',
     coin: 'ZetaChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nervos-network-ckb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nervos-network-ckb.png',
     token: 'CKB',
     coin: 'Nervos Network',
   },
@@ -670,7 +718,8 @@ export const DATA_TOKEN = [
     coin: 'Pepe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tether-gold-xaut.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tether-gold-xaut.png',
     token: 'XAUT',
     coin: 'Tether Gold',
   },
@@ -680,12 +729,14 @@ export const DATA_TOKEN = [
     coin: 'Fasttoken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metisdao-metis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metisdao-metis.png',
     token: 'METIS',
     coin: 'MetisDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/enjin-coin-enj.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/enjin-coin-enj.png',
     token: 'ENJ',
     coin: 'Enjin Coin',
   },
@@ -700,17 +751,20 @@ export const DATA_TOKEN = [
     coin: 'nOS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gatechain-token-gt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gatechain-token-gt.png',
     token: 'GT',
     coin: 'Gatechain Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/superfarm-super.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/superfarm-super.png',
     token: 'SUPER',
     coin: 'SuperFarm',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rollbit-coin-rlb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rollbit-coin-rlb.png',
     token: 'RLB',
     coin: 'Rollbit Coin',
   },
@@ -745,12 +799,14 @@ export const DATA_TOKEN = [
     coin: 'Celo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mask-network-mask.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mask-network-mask.png',
     token: 'MASK',
     coin: 'Mask Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/convex-finance-cvx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/convex-finance-cvx.png',
     token: 'CVX',
     coin: 'Convex Finance',
   },
@@ -760,7 +816,8 @@ export const DATA_TOKEN = [
     coin: 'aelf',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skale-network-skl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skale-network-skl.png',
     token: 'SKL',
     coin: 'SKALE Network',
   },
@@ -795,7 +852,8 @@ export const DATA_TOKEN = [
     coin: 'Zilliqa',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ocean-protocol-ocean.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ocean-protocol-ocean.png',
     token: 'OCEAN',
     coin: 'Ocean Protocol',
   },
@@ -810,12 +868,14 @@ export const DATA_TOKEN = [
     coin: 'PAX Gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-gold-btg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-gold-btg.png',
     token: 'BTG',
     coin: 'Bitcoin Gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/origintrail-trac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/origintrail-trac.png',
     token: 'TRAC',
     coin: 'OriginTrail',
   },
@@ -835,7 +895,8 @@ export const DATA_TOKEN = [
     coin: 'Kusama',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/basic-attention-token-bat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/basic-attention-token-bat.png',
     token: 'BAT',
     coin: 'Basic Attention Token',
   },
@@ -845,7 +906,8 @@ export const DATA_TOKEN = [
     coin: 'Xai Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sushiswap-sushi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sushiswap-sushi.png',
     token: 'SUSHI',
     coin: 'SushiSwap',
   },
@@ -875,7 +937,8 @@ export const DATA_TOKEN = [
     coin: 'Dash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aleph-zero-azero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aleph-zero-azero.png',
     token: 'AZERO',
     coin: 'Aleph Zero',
   },
@@ -890,7 +953,8 @@ export const DATA_TOKEN = [
     coin: 'Chia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vethor-token-vtho.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vethor-token-vtho.png',
     token: 'VTHO',
     coin: 'VeThor Token',
   },
@@ -900,12 +964,14 @@ export const DATA_TOKEN = [
     coin: 'Qtum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pocket-network-pokt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pocket-network-pokt.png',
     token: 'POKT',
     coin: 'Pocket Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/floki-inu-floki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/floki-inu-floki.png',
     token: 'FLOKI',
     coin: 'Floki Inu',
   },
@@ -915,12 +981,14 @@ export const DATA_TOKEN = [
     coin: 'API3',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aioz-network-aioz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aioz-network-aioz.png',
     token: 'AIOZ',
     coin: 'AIOZ Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/echelon-prime-prime.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/echelon-prime-prime.png',
     token: 'PRIME',
     coin: 'Echelon Prime',
   },
@@ -935,12 +1003,14 @@ export const DATA_TOKEN = [
     coin: 'MAGIC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/decentralized-social-deso.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/decentralized-social-deso.png',
     token: 'DESO',
     coin: 'Decentralized Social',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/theta-fuel-tfuel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/theta-fuel-tfuel.png',
     token: 'TFUEL',
     coin: 'Theta Fuel',
   },
@@ -950,7 +1020,8 @@ export const DATA_TOKEN = [
     coin: 'Aragon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ssv-network-ssv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ssv-network-ssv.png',
     token: 'SSV',
     coin: 'SSV Network',
   },
@@ -965,7 +1036,8 @@ export const DATA_TOKEN = [
     coin: 'Ravencoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethpow-iou-ethw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethpow-iou-ethw.png',
     token: 'ETHW',
     coin: 'ETHPoW (IOU)',
   },
@@ -1000,12 +1072,14 @@ export const DATA_TOKEN = [
     coin: 'Flux',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/paypal-usd-pyusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/paypal-usd-pyusd.png',
     token: 'PYUSD',
     coin: 'PayPal USD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/helium-mobile-mobile.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/helium-mobile-mobile.png',
     token: 'MOBILE',
     coin: 'Helium Mobile',
   },
@@ -1020,7 +1094,8 @@ export const DATA_TOKEN = [
     coin: 'Tellor',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/band-protocol-band.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/band-protocol-band.png',
     token: 'BAND',
     coin: 'Band Protocol',
   },
@@ -1035,12 +1110,14 @@ export const DATA_TOKEN = [
     coin: 'Kadena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/electroneum-etn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/electroneum-etn.png',
     token: 'ETN',
     coin: 'Electroneum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/terra-classic-usd-ustc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/terra-classic-usd-ustc.png',
     token: 'USTC',
     coin: 'Terra Classic USD',
   },
@@ -1050,7 +1127,8 @@ export const DATA_TOKEN = [
     coin: 'MX Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ribbon-finance-rbn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ribbon-finance-rbn.png',
     token: 'RBN',
     coin: 'Ribbon Finance',
   },
@@ -1060,7 +1138,8 @@ export const DATA_TOKEN = [
     coin: 'Audius',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yearn-finance-yfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yearn-finance-yfi.png',
     token: 'YFI',
     coin: 'yearn.finance',
   },
@@ -1150,7 +1229,8 @@ export const DATA_TOKEN = [
     coin: 'Ontology',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/open-campus-edu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/open-campus-edu.png',
     token: 'EDU',
     coin: 'Open Campus',
   },
@@ -1160,7 +1240,8 @@ export const DATA_TOKEN = [
     coin: 'Fusionist',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/heroes-of-mavia-mavia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/heroes-of-mavia-mavia.png',
     token: 'MAVIA',
     coin: 'Heroes of Mavia',
   },
@@ -1170,12 +1251,14 @@ export const DATA_TOKEN = [
     coin: 'LUKSO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/braintrust-btrst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/braintrust-btrst.png',
     token: 'BTRST',
     coin: 'Braintrust',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pax-dollar-usdp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pax-dollar-usdp.png',
     token: 'USDP',
     coin: 'Pax Dollar',
   },
@@ -1185,7 +1268,8 @@ export const DATA_TOKEN = [
     coin: 'Solar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/art-de-finance-adf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/art-de-finance-adf.png',
     token: 'ADF',
     coin: 'Art de Finance',
   },
@@ -1195,7 +1279,8 @@ export const DATA_TOKEN = [
     coin: 'WAX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sleepless-ai-ai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sleepless-ai-ai.png',
     token: 'AI',
     coin: 'Sleepless AI',
   },
@@ -1215,7 +1300,8 @@ export const DATA_TOKEN = [
     coin: 'JOE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/seedify-fund-sfund.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/seedify-fund-sfund.png',
     token: 'SFUND',
     coin: 'Seedify.fund',
   },
@@ -1225,7 +1311,8 @@ export const DATA_TOKEN = [
     coin: 'WeBuy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/prometeus-prom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/prometeus-prom.png',
     token: 'PROM',
     coin: 'Prometeus',
   },
@@ -1250,7 +1337,8 @@ export const DATA_TOKEN = [
     coin: 'Amp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pandora-pandora.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pandora-pandora.png',
     token: 'PANDORA',
     coin: 'Pandora',
   },
@@ -1270,17 +1358,20 @@ export const DATA_TOKEN = [
     coin: 'Tribe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonriver-movr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonriver-movr.png',
     token: 'MOVR',
     coin: 'Moonriver',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gains-network-gns.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gains-network-gns.png',
     token: 'GNS',
     coin: 'Gains Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rsk-infrastructure-framework-rif.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rsk-infrastructure-framework-rif.png',
     token: 'RIF',
     coin: 'RSK Infrastructure Framework',
   },
@@ -1290,7 +1381,8 @@ export const DATA_TOKEN = [
     coin: 'Numeraire',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alchemy-pay-ach.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alchemy-pay-ach.png',
     token: 'ACH',
     coin: 'Alchemy Pay',
   },
@@ -1305,27 +1397,32 @@ export const DATA_TOKEN = [
     coin: 'Covalent',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/celer-network-celr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/celer-network-celr.png',
     token: 'CELR',
     coin: 'Celer Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/agoras-token-agrs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/agoras-token-agrs.png',
     token: 'AGRS',
     coin: 'Agoras Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/culture-ticket-chain-ctc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/culture-ticket-chain-ctc.png',
     token: 'CTC',
     coin: 'Creditcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/big-time-bigtime.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/big-time-bigtime.png',
     token: 'BIGTIME',
     coin: 'Big Time',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vulcan-forged-pyr-pyr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vulcan-forged-pyr-pyr.png',
     token: 'PYR',
     coin: 'Vulcan Forged PYR',
   },
@@ -1336,7 +1433,8 @@ export const DATA_TOKEN = [
     coin: 'Bounce Finance Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/power-ledger-powr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/power-ledger-powr.png',
     token: 'POWR',
     coin: 'Power Ledger',
   },
@@ -1346,7 +1444,8 @@ export const DATA_TOKEN = [
     coin: 'GuildFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swissborg-chsb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swissborg-chsb.png',
     token: 'CHSB',
     coin: 'SwissBorg',
   },
@@ -1371,17 +1470,20 @@ export const DATA_TOKEN = [
     coin: 'MANTRA DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/huobi-token-ht.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/huobi-token-ht.png',
     token: 'HT',
     coin: 'Huobi Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyberconnect-cyber.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyberconnect-cyber.png',
     token: 'CYBER',
     coin: 'CyberConnect',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-doge-cion-babydoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-doge-cion-babydoge.png',
     token: 'BABYDOGE',
     coin: 'Baby Doge Coin',
   },
@@ -1396,7 +1498,8 @@ export const DATA_TOKEN = [
     coin: 'USDJ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/0x0-ai-ai-smart-contract-0x0.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/0x0-ai-ai-smart-contract-0x0.png',
     token: '0X0',
     coin: '0x0.ai: AI Smart Contract',
   },
@@ -1416,17 +1519,20 @@ export const DATA_TOKEN = [
     coin: 'Hive',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yield-guild-games-ygg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yield-guild-games-ygg.png',
     token: 'YGG',
     coin: 'Yield Guild Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hivemapper-honey.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hivemapper-honey.png',
     token: 'HONEY',
     coin: 'Hivemapper',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/radiant-capital-rdnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/radiant-capital-rdnt.png',
     token: 'RDNT',
     coin: 'Radiant Capital',
   },
@@ -1436,7 +1542,8 @@ export const DATA_TOKEN = [
     coin: 'Stratis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reserve-rights-rsr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reserve-rights-rsr.png',
     token: 'RSR',
     coin: 'Reserve Rights',
   },
@@ -1462,17 +1569,20 @@ export const DATA_TOKEN = [
     coin: 'Alethea Artificial Liquid Intelligence Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polymesh-polyx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polymesh-polyx.png',
     token: 'POLYX',
     coin: 'Polymesh',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vvs-finance-vvs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vvs-finance-vvs.png',
     token: 'VVS',
     coin: 'VVS Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smooth-love-potion-slp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smooth-love-potion-slp.png',
     token: 'SLP',
     coin: 'Smooth Love Potion',
   },
@@ -1492,7 +1602,8 @@ export const DATA_TOKEN = [
     coin: 'BORA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/constitutiondao-people.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/constitutiondao-people.png',
     token: 'PEOPLE',
     coin: 'ConstitutionDAO',
   },
@@ -1507,7 +1618,8 @@ export const DATA_TOKEN = [
     coin: 'Tectum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gemini-dollar-gusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gemini-dollar-gusd.png',
     token: 'GUSD',
     coin: 'Gemini Dollar',
   },
@@ -1548,7 +1660,8 @@ export const DATA_TOKEN = [
     coin: 'Dent',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trias-token-new-trias.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trias-token-new-trias.png',
     token: 'TRIAS',
     coin: 'Trias Token (new)',
   },
@@ -1558,7 +1671,8 @@ export const DATA_TOKEN = [
     coin: 'Hashflow',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hooked-protocol-hook.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hooked-protocol-hook.png',
     token: 'HOOK',
     coin: 'Hooked Protocol',
   },
@@ -1568,12 +1682,14 @@ export const DATA_TOKEN = [
     coin: 'Telos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nakamoto-games-naka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nakamoto-games-naka.png',
     token: 'NAKA',
     coin: 'Nakamoto Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bone-shibaswap-bone.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bone-shibaswap-bone.png',
     token: 'BONE',
     coin: 'Bone ShibaSwap',
   },
@@ -1583,17 +1699,20 @@ export const DATA_TOKEN = [
     coin: 'CUDOS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/paid-network-paid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/paid-network-paid.png',
     token: 'PAID',
     coin: 'PAID Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stargate-finance-stg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stargate-finance-stg.png',
     token: 'STG',
     coin: 'Stargate Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stasis-eurs-eurs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stasis-eurs-eurs.png',
     token: 'EURS',
     coin: 'STASIS EURS',
   },
@@ -1608,7 +1727,8 @@ export const DATA_TOKEN = [
     coin: 'PepeFork',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/guild-of-guardians-gog.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/guild-of-guardians-gog.png',
     token: 'GOG',
     coin: 'Guild of Guardians',
   },
@@ -1623,7 +1743,8 @@ export const DATA_TOKEN = [
     coin: 'Everipedia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apex-protocol-apex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apex-protocol-apex.png',
     token: 'APEX',
     coin: 'ApeX Protocol',
   },
@@ -1643,7 +1764,8 @@ export const DATA_TOKEN = [
     coin: 'ChainGPT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ontology-gas-ong.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ontology-gas-ong.png',
     token: 'ONG',
     coin: 'Ontology Gas',
   },
@@ -1653,7 +1775,8 @@ export const DATA_TOKEN = [
     coin: 'dKargo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/loom-network-loom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/loom-network-loom.png',
     token: 'LOOM',
     coin: 'Loom Network',
   },
@@ -1688,17 +1811,20 @@ export const DATA_TOKEN = [
     coin: 'Telcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bakerytoken-bake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bakerytoken-bake.png',
     token: 'BAKE',
     coin: 'BakeryToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/victoria-vr-vr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/victoria-vr-vr.png',
     token: 'VR',
     coin: 'Victoria VR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kyber-network-crystal-v2-knc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kyber-network-crystal-v2-knc.png',
     token: 'KNC',
     coin: 'Kyber Network Crystal v2',
   },
@@ -1708,7 +1834,8 @@ export const DATA_TOKEN = [
     coin: 'Ergo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dusk-network-dusk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dusk-network-dusk.png',
     token: 'DUSK',
     coin: 'Dusk Network',
   },
@@ -1718,12 +1845,14 @@ export const DATA_TOKEN = [
     coin: 'Orchid',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oraichain-token-orai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oraichain-token-orai.png',
     token: 'ORAI',
     coin: 'Oraichain Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ator-protocol-ator.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ator-protocol-ator.png',
     token: 'ATOR',
     coin: 'ATOR Protocol',
   },
@@ -1738,7 +1867,8 @@ export const DATA_TOKEN = [
     coin: 'Aurora',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pundi-x-new-pundix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pundi-x-new-pundix.png',
     token: 'PUNDIX',
     coin: 'Pundi X (New)',
   },
@@ -1764,7 +1894,8 @@ export const DATA_TOKEN = [
     coin: 'MiL.k',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/adventure-gold-agld.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/adventure-gold-agld.png',
     token: 'AGLD',
     coin: 'Adventure Gold',
   },
@@ -1784,7 +1915,8 @@ export const DATA_TOKEN = [
     coin: 'Civic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/request-network-req.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/request-network-req.png',
     token: 'REQ',
     coin: 'Request Network',
   },
@@ -1799,7 +1931,8 @@ export const DATA_TOKEN = [
     coin: 'MVL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/terra-virtua-kolect-tvk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/terra-virtua-kolect-tvk.png',
     token: 'TVK',
     coin: 'Terra Virtua Kolect',
   },
@@ -1814,7 +1947,8 @@ export const DATA_TOKEN = [
     coin: 'SmarDex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polygon-ecosystem-token-pol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polygon-ecosystem-token-pol.png',
     token: 'POL',
     coin: 'Polygon Ecosystem Token',
   },
@@ -1839,7 +1973,8 @@ export const DATA_TOKEN = [
     coin: 'Shentu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/omg-network-omg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/omg-network-omg.png',
     token: 'OMG',
     coin: 'OMG Network',
   },
@@ -1849,7 +1984,8 @@ export const DATA_TOKEN = [
     coin: 'BinaryX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/project-galaxy-gal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/project-galaxy-gal.png',
     token: 'GAL',
     coin: 'Project Galaxy',
   },
@@ -1859,7 +1995,8 @@ export const DATA_TOKEN = [
     coin: 'Coq Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/star-atlas-dao-polis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/star-atlas-dao-polis.png',
     token: 'POLIS',
     coin: 'Star Atlas DAO',
   },
@@ -1879,27 +2016,32 @@ export const DATA_TOKEN = [
     coin: 'NKN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/myneighboralice-alice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/myneighboralice-alice.png',
     token: 'ALICE',
     coin: 'MyNeighborAlice',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wilder-world-wild.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wilder-world-wild.png',
     token: 'WILD',
     coin: 'Wilder World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tokamak-network-ton.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tokamak-network-ton.png',
     token: 'TON',
     coin: 'Tokamak Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/origin-protocol-ogn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/origin-protocol-ogn.png',
     token: 'OGN',
     coin: 'Origin Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/acala-token-aca.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/acala-token-aca.png',
     token: 'ACA',
     coin: 'Acala Token',
   },
@@ -1909,7 +2051,8 @@ export const DATA_TOKEN = [
     coin: 'tomiNet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xyo-network-xyo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xyo-network-xyo.png',
     token: 'XYO',
     coin: 'XYO Network',
   },
@@ -1919,12 +2062,14 @@ export const DATA_TOKEN = [
     coin: 'Evimeria',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metar-genesis-mrs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metar-genesis-mrs.png',
     token: 'MRS',
     coin: 'Metars Genesis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trac-ordinals-trac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trac-ordinals-trac.png',
     token: 'TRAC',
     coin: 'TRAC (Ordinals)',
   },
@@ -1944,7 +2089,8 @@ export const DATA_TOKEN = [
     coin: 'MediBloc',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dora-factory-dora.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dora-factory-dora.png',
     token: 'DORA',
     coin: 'Dora Factory',
   },
@@ -1954,7 +2100,8 @@ export const DATA_TOKEN = [
     coin: 'WazirX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/perpetual-protocol-perp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/perpetual-protocol-perp.png',
     token: 'PERP',
     coin: 'Perpetual Protocol',
   },
@@ -1964,7 +2111,8 @@ export const DATA_TOKEN = [
     coin: 'PLANET',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/superrare-rare.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/superrare-rare.png',
     token: 'RARE',
     coin: 'SuperRare',
   },
@@ -1974,12 +2122,14 @@ export const DATA_TOKEN = [
     coin: 'MOBOX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/access-protocol-acs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/access-protocol-acs.png',
     token: 'ACS',
     coin: 'Access Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polkastarter-pols.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polkastarter-pols.png',
     token: 'POLS',
     coin: 'Polkastarter',
   },
@@ -1994,12 +2144,14 @@ export const DATA_TOKEN = [
     coin: 'Multibit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/binance-usd-busd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/binance-usd-busd.png',
     token: 'BUSD',
     coin: 'Binance USD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/phala-network-pha.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/phala-network-pha.png',
     token: 'PHA',
     coin: 'Phala Network',
   },
@@ -2014,7 +2166,8 @@ export const DATA_TOKEN = [
     coin: 'DEXTools',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/world-mobile-token-wmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/world-mobile-token-wmt.png',
     token: 'WMT',
     coin: 'World Mobile Token',
   },
@@ -2024,17 +2177,20 @@ export const DATA_TOKEN = [
     coin: 'XPLA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aleph-im-aleph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aleph-im-aleph.png',
     token: 'ALEPH',
     coin: 'Aleph.im',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/highstreet-high.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/highstreet-high.png',
     token: 'HIGH',
     coin: 'Highstreet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/looksrare-looks.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/looksrare-looks.png',
     token: 'LOOKS',
     coin: 'LooksRare',
   },
@@ -2044,22 +2200,26 @@ export const DATA_TOKEN = [
     coin: 'MovieBloc',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spell-token-spell.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spell-token-spell.png',
     token: 'SPELL',
     coin: 'Spell Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/uquid-coin-uqc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/uquid-coin-uqc.png',
     token: 'UQC',
     coin: 'Uquid Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/everscale-ever.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/everscale-ever.png',
     token: 'EVER',
     coin: 'Everscale',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/energy-web-token-ewt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/energy-web-token-ewt.png',
     token: 'EWT',
     coin: 'Energy Web Token',
   },
@@ -2069,7 +2229,8 @@ export const DATA_TOKEN = [
     coin: 'Elastos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arpa-chain-arpa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arpa-chain-arpa.png',
     token: 'ARPA',
     coin: 'ARPA Chain',
   },
@@ -2079,12 +2240,14 @@ export const DATA_TOKEN = [
     coin: 'Ultra',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/map-protocol-map.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/map-protocol-map.png',
     token: 'MAP',
     coin: 'MAP Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-nxm-wnxm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-nxm-wnxm.png',
     token: 'WNXM',
     coin: 'Wrapped NXM',
   },
@@ -2099,32 +2262,38 @@ export const DATA_TOKEN = [
     coin: 'FunFair',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogelon-mars-elon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogelon-mars-elon.png',
     token: 'ELON',
     coin: 'Dogelon Mars',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gods-unchained-gods.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gods-unchained-gods.png',
     token: 'GODS',
     coin: 'Gods Unchained',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/toko-token-tko.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/toko-token-tko.png',
     token: 'TKO',
     coin: 'Toko Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hifi-finance-hifi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hifi-finance-hifi.png',
     token: 'HIFI',
     coin: 'Hifi Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/phoenix-global-phb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/phoenix-global-phb.png',
     token: 'PHB',
     coin: 'Phoenix Global',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepe-2-0-pepe2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepe-2-0-pepe2.png',
     token: 'PEPE2',
     coin: 'Pepe 2.0',
   },
@@ -2134,7 +2303,8 @@ export const DATA_TOKEN = [
     coin: 'Bazaars',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quarkchain-qkc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quarkchain-qkc.png',
     token: 'QKC',
     coin: 'QuarkChain',
   },
@@ -2149,7 +2319,8 @@ export const DATA_TOKEN = [
     coin: 'DeFiChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/badger-dao-badger.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/badger-dao-badger.png',
     token: 'BADGER',
     coin: 'Badger DAO',
   },
@@ -2164,7 +2335,8 @@ export const DATA_TOKEN = [
     coin: 'AVINOC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/star-atlas-atlas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/star-atlas-atlas.png',
     token: 'ATLAS',
     coin: 'Star Atlas',
   },
@@ -2174,7 +2346,8 @@ export const DATA_TOKEN = [
     coin: 'Viction',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-root-network-root.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-root-network-root.png',
     token: 'ROOT',
     coin: 'The Root Network',
   },
@@ -2194,7 +2367,8 @@ export const DATA_TOKEN = [
     coin: 'cheqd',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/anchored-coins-aeur-aeur.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/anchored-coins-aeur-aeur.png',
     token: 'AEUR',
     coin: 'Anchored Coins AEUR',
   },
@@ -2204,7 +2378,8 @@ export const DATA_TOKEN = [
     coin: 'Dynex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/persistence-xprt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/persistence-xprt.png',
     token: 'XPRT',
     coin: 'Persistence',
   },
@@ -2214,12 +2389,14 @@ export const DATA_TOKEN = [
     coin: 'Forta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tokenlon-network-token-lon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tokenlon-network-token-lon.png',
     token: 'LON',
     coin: 'Tokenlon Network Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mines-of-dalarnia-dar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mines-of-dalarnia-dar.png',
     token: 'DAR',
     coin: 'Mines of Dalarnia',
   },
@@ -2234,17 +2411,20 @@ export const DATA_TOKEN = [
     coin: 'Streamr',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tomochain-tomo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tomochain-tomo.png',
     token: 'TOMO',
     coin: 'TomoChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/banana-gun-banana.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/banana-gun-banana.png',
     token: 'BANANA',
     coin: 'Banana Gun',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cobak-token-cbk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cobak-token-cbk.png',
     token: 'CBK',
     coin: 'Cobak Token',
   },
@@ -2254,7 +2434,8 @@ export const DATA_TOKEN = [
     coin: 'Verasity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rocketx-exchange-rvf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rocketx-exchange-rvf.png',
     token: 'RVF',
     coin: 'RocketX exchange',
   },
@@ -2264,17 +2445,20 @@ export const DATA_TOKEN = [
     coin: 'Kin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mobilecoin-mob.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mobilecoin-mob.png',
     token: 'MOB',
     coin: 'MobileCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sologenic-solo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sologenic-solo.png',
     token: 'SOLO',
     coin: 'Sologenic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alien-worlds-tlm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alien-worlds-tlm.png',
     token: 'TLM',
     coin: 'Alien Worlds',
   },
@@ -2289,7 +2473,8 @@ export const DATA_TOKEN = [
     coin: 'Snek',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vertex-protocol-vrtx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vertex-protocol-vrtx.png',
     token: 'VRTX',
     coin: 'Vertex Protocol',
   },
@@ -2299,27 +2484,32 @@ export const DATA_TOKEN = [
     coin: 'Aergo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xcad-network-xcad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xcad-network-xcad.png',
     token: 'XCAD',
     coin: 'XCAD Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shrapnel-shrap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shrapnel-shrap.png',
     token: 'SHRAP',
     coin: 'Shrapnel',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/niza-global-niza.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/niza-global-niza.png',
     token: 'NIZA',
     coin: 'Niza Global',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/definder-capital-dfc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/definder-capital-dfc.png',
     token: 'DFC',
     coin: 'DeFinder Capital',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/constellation-dag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/constellation-dag.png',
     token: 'DAG',
     coin: 'Constellation',
   },
@@ -2349,17 +2539,20 @@ export const DATA_TOKEN = [
     coin: 'Alchemix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sweat-economy-sweat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sweat-economy-sweat.png',
     token: 'SWEAT',
     coin: 'Sweat Economy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sidus-heroes-sidus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sidus-heroes-sidus.png',
     token: 'SIDUS',
     coin: 'SIDUS HEROES',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/router-protocol-route.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/router-protocol-route.png',
     token: 'ROUTE',
     coin: 'Router Protocol',
   },
@@ -2374,7 +2567,8 @@ export const DATA_TOKEN = [
     coin: 'ZTX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beta-finance-beta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beta-finance-beta.png',
     token: 'BETA',
     coin: 'Beta Finance',
   },
@@ -2389,27 +2583,32 @@ export const DATA_TOKEN = [
     coin: 'FUNToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shido-inu-shido.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shido-inu-shido.png',
     token: 'SHIDO',
     coin: 'Shido Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ampleforth-governance-token-forth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ampleforth-governance-token-forth.png',
     token: 'FORTH',
     coin: 'Ampleforth Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clore-ai-clore.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clore-ai-clore.png',
     token: 'CLORE',
     coin: 'Clore.ai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meter-governance-mtrg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meter-governance-mtrg.png',
     token: 'MTRG',
     coin: 'Meter Governance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stronghold-token-shx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stronghold-token-shx.png',
     token: 'SHX',
     coin: 'Stronghold Token',
   },
@@ -2419,27 +2618,32 @@ export const DATA_TOKEN = [
     coin: 'DEAPcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solidus-ai-tech-aitech.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solidus-ai-tech-aitech.png',
     token: 'AITECH',
     coin: 'Solidus Ai Tech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/automata-network-ata.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/automata-network-ata.png',
     token: 'ATA',
     coin: 'Automata',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/frontier-front.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/frontier-front.png',
     token: 'FRONT',
     coin: 'Frontier',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/assemble-protocol-asm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/assemble-protocol-asm.png',
     token: 'ASM',
     coin: 'Assemble Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/linear-finance-lina.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/linear-finance-lina.png',
     token: 'LINA',
     coin: 'Linear Finance',
   },
@@ -2454,7 +2658,8 @@ export const DATA_TOKEN = [
     coin: 'Staika',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/concordium-ccd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/concordium-ccd.png',
     token: 'CCD',
     coin: 'Concordium',
   },
@@ -2474,7 +2679,8 @@ export const DATA_TOKEN = [
     coin: 'Bitgert',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kyve-network-kyve.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kyve-network-kyve.png',
     token: 'KYVE',
     coin: 'KYVE Network',
   },
@@ -2494,7 +2700,8 @@ export const DATA_TOKEN = [
     coin: 'Carry',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/radio-caca-raca.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/radio-caca-raca.png',
     token: 'RACA',
     coin: 'Radio Caca',
   },
@@ -2509,17 +2716,20 @@ export const DATA_TOKEN = [
     coin: 'Strike',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/abbc-coin-abbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/abbc-coin-abbc.png',
     token: 'ABBC',
     coin: 'ABBC Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/morpheus-network-mnw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/morpheus-network-mnw.png',
     token: 'MNW',
     coin: 'Morpheus.Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/orion-protocol-orn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/orion-protocol-orn.png',
     token: 'ORN',
     coin: 'Orion Protocol',
   },
@@ -2529,7 +2739,8 @@ export const DATA_TOKEN = [
     coin: 'sUSD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aavegotchi-ghst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aavegotchi-ghst.png',
     token: 'GHST',
     coin: 'Aavegotchi',
   },
@@ -2539,7 +2750,8 @@ export const DATA_TOKEN = [
     coin: 'Flamingo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nft-worlds-wrld.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nft-worlds-wrld.png',
     token: 'WRLD',
     coin: 'NFT Worlds',
   },
@@ -2554,7 +2766,8 @@ export const DATA_TOKEN = [
     coin: 'Metaplex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vega-protocol-vega.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vega-protocol-vega.png',
     token: 'VEGA',
     coin: 'Vega Protocol',
   },
@@ -2564,12 +2777,14 @@ export const DATA_TOKEN = [
     coin: 'Abelian',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cornucopias-copi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cornucopias-copi.png',
     token: 'COPI',
     coin: 'Cornucopias',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/steem-dollars-sbd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/steem-dollars-sbd.png',
     token: 'SBD',
     coin: 'Steem Dollars',
   },
@@ -2579,17 +2794,20 @@ export const DATA_TOKEN = [
     coin: 'IDEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/helium-iot-iot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/helium-iot-iot.png',
     token: 'IOT',
     coin: 'Helium IOT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/euro-coin-euroc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/euro-coin-euroc.png',
     token: 'EUROC',
     coin: 'Euro Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/games-for-a-living-gfal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/games-for-a-living-gfal.png',
     token: 'GFAL',
     coin: 'Games for a living',
   },
@@ -2599,7 +2817,8 @@ export const DATA_TOKEN = [
     coin: 'Chainge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clearpool-cpool.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clearpool-cpool.png',
     token: 'CPOOL',
     coin: 'Clearpool',
   },
@@ -2614,12 +2833,14 @@ export const DATA_TOKEN = [
     coin: 'IRISnet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clash-of-lilliput-col.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clash-of-lilliput-col.png',
     token: 'COL',
     coin: 'Clash of Lilliput',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dego-finance-dego.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dego-finance-dego.png',
     token: 'DEGO',
     coin: 'Dego Finance',
   },
@@ -2630,7 +2851,8 @@ export const DATA_TOKEN = [
     coin: 'Crypto Asset Governance Alliance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saitachain-coin-stc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saitachain-coin-stc.png',
     token: 'STC',
     coin: 'SaitaChain Coin',
   },
@@ -2640,7 +2862,8 @@ export const DATA_TOKEN = [
     coin: 'Statter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wirex-token-wxt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wirex-token-wxt.png',
     token: 'WXT',
     coin: 'Wirex Token',
   },
@@ -2650,7 +2873,8 @@ export const DATA_TOKEN = [
     coin: 'Bytecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/milady-meme-coin-ladys.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/milady-meme-coin-ladys.png',
     token: 'LADYS',
     coin: 'Milady Meme Coin',
   },
@@ -2660,12 +2884,14 @@ export const DATA_TOKEN = [
     coin: 'Propy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thunder-token-tt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thunder-token-tt.png',
     token: 'TT',
     coin: 'ThunderCore',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethernity-chain-ern.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethernity-chain-ern.png',
     token: 'ERN',
     coin: 'Ethernity Chain',
   },
@@ -2675,7 +2901,8 @@ export const DATA_TOKEN = [
     coin: 'Decimal',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clover-finance-clv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clover-finance-clv.png',
     token: 'CLV',
     coin: 'Clover Finance',
   },
@@ -2690,7 +2917,8 @@ export const DATA_TOKEN = [
     coin: 'Wen',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dione-protocol-dione.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dione-protocol-dione.png',
     token: 'DIONE',
     coin: 'Dione Protocol',
   },
@@ -2700,7 +2928,8 @@ export const DATA_TOKEN = [
     coin: 'UniBot',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bella-protocol-bel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bella-protocol-bel.png',
     token: 'BEL',
     coin: 'Bella Protocol',
   },
@@ -2710,12 +2939,14 @@ export const DATA_TOKEN = [
     coin: 'Litentry',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cere-network-cere.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cere-network-cere.png',
     token: 'CERE',
     coin: 'Cere Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/firmachain-token-fct2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/firmachain-token-fct2.png',
     token: 'FCT2',
     coin: 'FirmaChain Token',
   },
@@ -2725,7 +2956,8 @@ export const DATA_TOKEN = [
     coin: 'PlatON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/groestlcoin-grs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/groestlcoin-grs.png',
     token: 'GRS',
     coin: 'Groestlcoin',
   },
@@ -2735,7 +2967,8 @@ export const DATA_TOKEN = [
     coin: 'Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/measurable-data-token-mdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/measurable-data-token-mdt.png',
     token: 'MDT',
     coin: 'Measurable Data Token',
   },
@@ -2755,12 +2988,14 @@ export const DATA_TOKEN = [
     coin: 'Wanchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zebec-protocol-zbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zebec-protocol-zbc.png',
     token: 'ZBC',
     coin: 'Zebec Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kira-network-kex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kira-network-kex.png',
     token: 'KEX',
     coin: 'Kira Network',
   },
@@ -2770,12 +3005,14 @@ export const DATA_TOKEN = [
     coin: 'SOMESING',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/league-of-kingdoms-arena-loka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/league-of-kingdoms-arena-loka.png',
     token: 'LOKA',
     coin: 'League of Kingdoms Arena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unifi-protocol-dao-unfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unifi-protocol-dao-unfi.png',
     token: 'UNFI',
     coin: 'Unifi Protocol DAO',
   },
@@ -2801,7 +3038,8 @@ export const DATA_TOKEN = [
     coin: 'Enzyme',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hello-labs-hello.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hello-labs-hello.png',
     token: 'HELLO',
     coin: 'HELLO Labs',
   },
@@ -2821,7 +3059,8 @@ export const DATA_TOKEN = [
     coin: 'Tenset',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bunnytoken-bunny.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bunnytoken-bunny.png',
     token: 'BUNNY',
     coin: 'BunnyToken',
   },
@@ -2831,7 +3070,8 @@ export const DATA_TOKEN = [
     coin: 'Komodo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/singularitydao-sdao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/singularitydao-sdao.png',
     token: 'SDAO',
     coin: 'SingularityDAO',
   },
@@ -2841,7 +3081,8 @@ export const DATA_TOKEN = [
     coin: 'Bonfida',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/boba-network-boba.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/boba-network-boba.png',
     token: 'BOBA',
     coin: 'Boba Network',
   },
@@ -2851,12 +3092,14 @@ export const DATA_TOKEN = [
     coin: 'Reef',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/keep-network-keep.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/keep-network-keep.png',
     token: 'KEEP',
     coin: 'Keep Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lto-network-lto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lto-network-lto.png',
     token: 'LTO',
     coin: 'LTO Network',
   },
@@ -2871,7 +3114,8 @@ export const DATA_TOKEN = [
     coin: 'CEEK VR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wagmi-game-wagmigames.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wagmi-game-wagmigames.png',
     token: 'WAGMIGAMES',
     coin: 'WAGMI Game',
   },
@@ -2886,17 +3130,20 @@ export const DATA_TOKEN = [
     coin: 'xMoney',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alpha-quark-token-aqt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alpha-quark-token-aqt.png',
     token: 'AQT',
     coin: 'Alpha Quark Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/celo-dollar-cusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/celo-dollar-cusd.png',
     token: 'CUSD',
     coin: 'Celo Dollar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tether-eurt-eurt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tether-eurt-eurt.png',
     token: 'EURT',
     coin: 'Tether EURt',
   },
@@ -2906,7 +3153,8 @@ export const DATA_TOKEN = [
     coin: 'Moss Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sentinel-protocol-upp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sentinel-protocol-upp.png',
     token: 'UPP',
     coin: 'Sentinel Protocol',
   },
@@ -2921,7 +3169,8 @@ export const DATA_TOKEN = [
     coin: 'SelfKey',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/locus-chain-locus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/locus-chain-locus.png',
     token: 'LOCUS',
     coin: 'Locus Chain',
   },
@@ -2931,7 +3180,8 @@ export const DATA_TOKEN = [
     coin: 'ArchLoot',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wing-finance-wing.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wing-finance-wing.png',
     token: 'WING',
     coin: 'Wing Finance',
   },
@@ -2946,17 +3196,20 @@ export const DATA_TOKEN = [
     coin: 'Mintlayer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nuco-cloud-ncdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nuco-cloud-ncdt.png',
     token: 'NCDT',
     coin: 'Nuco.cloud',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quickswap-new-quick.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quickswap-new-quick.png',
     token: 'QUICK',
     coin: 'Quickswap [New]',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kimchi-finance-kimchi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kimchi-finance-kimchi.png',
     token: 'KIMCHI',
     coin: 'KIMCHI.finance',
   },
@@ -2966,7 +3219,8 @@ export const DATA_TOKEN = [
     coin: 'RabbitX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/richquack-com-quack.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/richquack-com-quack.png',
     token: 'QUACK',
     coin: 'RichQUACK.com',
   },
@@ -2986,7 +3240,8 @@ export const DATA_TOKEN = [
     coin: 'Neopin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gameswift-gswift.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gameswift-gswift.png',
     token: 'GSWIFT',
     coin: 'GameSwift',
   },
@@ -2996,7 +3251,8 @@ export const DATA_TOKEN = [
     coin: 'Opulous',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bloktopia-blok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bloktopia-blok.png',
     token: 'BLOK',
     coin: 'Bloktopia',
   },
@@ -3031,7 +3287,8 @@ export const DATA_TOKEN = [
     coin: 'TokenFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitmart-token-bmx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitmart-token-bmx.png',
     token: 'BMX',
     coin: 'BitMart Token',
   },
@@ -3051,17 +3308,20 @@ export const DATA_TOKEN = [
     coin: 'ALTAVA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hacken-token-hai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hacken-token-hai.png',
     token: 'HAI',
     coin: 'Hacken Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pirate-chain-arrr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pirate-chain-arrr.png',
     token: 'ARRR',
     coin: 'Pirate Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/omax-coin-omax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/omax-coin-omax.png',
     token: 'OMAX',
     coin: 'Omax Coin',
   },
@@ -3071,12 +3331,14 @@ export const DATA_TOKEN = [
     coin: 'GamerCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/samoyedcoin-samo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/samoyedcoin-samo.png',
     token: 'SAMO',
     coin: 'Samoyedcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ampleforth-ampl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ampleforth-ampl.png',
     token: 'AMPL',
     coin: 'Ampleforth',
   },
@@ -3101,12 +3363,14 @@ export const DATA_TOKEN = [
     coin: 'Neurai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tranchess-chess.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tranchess-chess.png',
     token: 'CHESS',
     coin: 'Tranchess',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/orbit-chain-orc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/orbit-chain-orc.png',
     token: 'ORC',
     coin: 'Orbit Chain',
   },
@@ -3121,12 +3385,14 @@ export const DATA_TOKEN = [
     coin: 'Keep3rV1',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/burger-swap-burger.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/burger-swap-burger.png',
     token: 'BURGER',
     coin: 'Burger Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vectorspace-ai-vxv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vectorspace-ai-vxv.png',
     token: 'VXV',
     coin: 'Vectorspace AI',
   },
@@ -3136,17 +3402,20 @@ export const DATA_TOKEN = [
     coin: 'AirDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/farm-coin-farm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/farm-coin-farm.png',
     token: 'FARM',
     coin: 'Harvest Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shapeshift-fox-token-fox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shapeshift-fox-token-fox.png',
     token: 'FOX',
     coin: 'Shapeshift FOX Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-killer-leash.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-killer-leash.png',
     token: 'LEASH',
     coin: 'Doge Killer',
   },
@@ -3161,7 +3430,8 @@ export const DATA_TOKEN = [
     coin: 'AXEL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/katana-inu-kata.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/katana-inu-kata.png',
     token: 'KATA',
     coin: 'Katana Inu',
   },
@@ -3171,22 +3441,26 @@ export const DATA_TOKEN = [
     coin: 'Klever',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/splintershards-sps.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/splintershards-sps.png',
     token: 'SPS',
     coin: 'Splintershards',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/travala-com-ava.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/travala-com-ava.png',
     token: 'AVA',
     coin: 'Travala.com',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cetus-protocol-cetus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cetus-protocol-cetus.png',
     token: 'CETUS',
     coin: 'Cetus Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rei-network-rei.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rei-network-rei.png',
     token: 'REI',
     coin: 'REI Network',
   },
@@ -3196,7 +3470,8 @@ export const DATA_TOKEN = [
     coin: 'Dock',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/voyager-token-vgx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/voyager-token-vgx.png',
     token: 'VGX',
     coin: 'Voyager Token',
   },
@@ -3206,27 +3481,32 @@ export const DATA_TOKEN = [
     coin: 'Kwenta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fc-barcelona-fan-token-bar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fc-barcelona-fan-token-bar.png',
     token: 'BAR',
     coin: 'FC Barcelona Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cream-finance-cream.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cream-finance-cream.png',
     token: 'CREAM',
     coin: 'Cream Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/openfabric-ai-ofn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/openfabric-ai-ofn.png',
     token: 'OFN',
     coin: 'Openfabric AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alpaca-finance-alpaca.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alpaca-finance-alpaca.png',
     token: 'ALPACA',
     coin: 'Alpaca Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/paris-saint-germain-fan-token-psg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/paris-saint-germain-fan-token-psg.png',
     token: 'PSG',
     coin: 'Paris Saint-Germain Fan Token',
   },
@@ -3236,22 +3516,26 @@ export const DATA_TOKEN = [
     coin: 'NuNet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ambire-adex-adx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ambire-adex-adx.png',
     token: 'ADX',
     coin: 'Ambire AdEx',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/district0x-dnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/district0x-dnt.png',
     token: 'DNT',
     coin: 'district0x',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polytrade-trade.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polytrade-trade.png',
     token: 'TRADE',
     coin: 'Polytrade',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saitama-v2-saitama.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saitama-v2-saitama.png',
     token: 'SAITAMA',
     coin: 'Saitama v2',
   },
@@ -3272,37 +3556,44 @@ export const DATA_TOKEN = [
     coin: 'NULS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stader-labs-sd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stader-labs-sd.png',
     token: 'SD',
     coin: 'Stader Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kardiachain-kai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kardiachain-kai.png',
     token: 'KAI',
     coin: 'KardiaChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ufo-gaming-ufo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ufo-gaming-ufo.png',
     token: 'UFO',
     coin: 'UFO Gaming',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/castello-coin-cast.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/castello-coin-cast.png',
     token: 'CAST',
     coin: 'Castello Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starlink-starl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starlink-starl.png',
     token: 'STARL',
     coin: 'Starlink',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/barnbridge-bond.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/barnbridge-bond.png',
     token: 'BOND',
     coin: 'BarnBridge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deeper-network-dpr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deeper-network-dpr.png',
     token: 'DPR',
     coin: 'Deeper Network',
   },
@@ -3327,22 +3618,26 @@ export const DATA_TOKEN = [
     coin: 'Petals',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/propchain-propc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/propchain-propc.png',
     token: 'PROPC',
     coin: 'Propchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beefy-finance-bifi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beefy-finance-bifi.png',
     token: 'BIFI',
     coin: 'Beefy Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dfi-money-yfii.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dfi-money-yfii.png',
     token: 'YFII',
     coin: 'DFI.Money',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/boson-protocol-boson.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/boson-protocol-boson.png',
     token: 'BOSON',
     coin: 'Boson Protocol',
   },
@@ -3352,37 +3647,44 @@ export const DATA_TOKEN = [
     coin: 'Proton',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kava-lend-hard.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kava-lend-hard.png',
     token: 'HARD',
     coin: 'Kava Lend',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dragonchain-drgn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dragonchain-drgn.png',
     token: 'DRGN',
     coin: 'Dragonchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kishu-inu-kishu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kishu-inu-kishu.png',
     token: 'KISHU',
     coin: 'Kishu Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shiden-network-sdn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shiden-network-sdn.png',
     token: 'SDN',
     coin: 'Shiden Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/numbers-protocol-num.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/numbers-protocol-num.png',
     token: 'NUM',
     coin: 'Numbers Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/silly-dragon-silly.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/silly-dragon-silly.png',
     token: 'SILLY',
     coin: 'Silly Dragon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/milc-platform-mlt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/milc-platform-mlt.png',
     token: 'MLT',
     coin: 'MILC Platform',
   },
@@ -3392,7 +3694,8 @@ export const DATA_TOKEN = [
     coin: 'WhiteCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/optimus-ai-optimus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/optimus-ai-optimus.png',
     token: 'OPTIMUS',
     coin: 'Optimus AI',
   },
@@ -3402,32 +3705,38 @@ export const DATA_TOKEN = [
     coin: 'Stafi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crust-network-cru.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crust-network-cru.png',
     token: 'CRU',
     coin: 'Crust Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/santos-fc-fan-token-santos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/santos-fc-fan-token-santos.png',
     token: 'SANTOS',
     coin: 'Santos FC Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cellframe-cell.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cellframe-cell.png',
     token: 'CELL',
     coin: 'Cellframe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defi-kingdoms-jewel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defi-kingdoms-jewel.png',
     token: 'JEWEL',
     coin: 'DeFi Kingdoms',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/akropolis-akro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/akropolis-akro.png',
     token: 'AKRO',
     coin: 'Akropolis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alpine-f1-team-fan-token-alpine.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alpine-f1-team-fan-token-alpine.png',
     token: 'ALPINE',
     coin: 'Alpine F1 Team Fan Token',
   },
@@ -3442,12 +3751,14 @@ export const DATA_TOKEN = [
     coin: 'Vite',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/allianceblock-nexera-nxra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/allianceblock-nexera-nxra.png',
     token: 'NXRA',
     coin: 'AllianceBlock Nexera',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/decentral-games-dg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/decentral-games-dg.png',
     token: 'DG',
     coin: 'Decentral Games',
   },
@@ -3457,7 +3768,8 @@ export const DATA_TOKEN = [
     coin: 'Veritise',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fio-protocol-fio.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fio-protocol-fio.png',
     token: 'FIO',
     coin: 'FIO Protocol',
   },
@@ -3472,12 +3784,14 @@ export const DATA_TOKEN = [
     coin: 'Volt Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tokenpocket-tpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tokenpocket-tpt.png',
     token: 'TPT',
     coin: 'TokenPocket',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/across-protocol-acx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/across-protocol-acx.png',
     token: 'ACX',
     coin: 'Across Protocol',
   },
@@ -3492,27 +3806,32 @@ export const DATA_TOKEN = [
     coin: 'Firo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/og-fan-token-og.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/og-fan-token-og.png',
     token: 'OG',
     coin: 'OG Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/s-s-lazio-fan-token-lazio.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/s-s-lazio-fan-token-lazio.png',
     token: 'LAZIO',
     coin: 'S.S. Lazio Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/onomy-protocol-nom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/onomy-protocol-nom.png',
     token: 'NOM',
     coin: 'Onomy Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/machine-xchange-coin-mxc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/machine-xchange-coin-mxc.png',
     token: 'MXC',
     coin: 'Machine Xchange Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mangoman-intelligent-mmit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mangoman-intelligent-mmit.png',
     token: 'MMIT',
     coin: 'MangoMan Intelligent',
   },
@@ -3522,32 +3841,38 @@ export const DATA_TOKEN = [
     coin: 'HOPR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/symbiosis-finance-sis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/symbiosis-finance-sis.png',
     token: 'SIS',
     coin: 'Symbiosis Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/manchester-city-fan-token-city.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/manchester-city-fan-token-city.png',
     token: 'CITY',
     coin: 'Manchester City Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deepbrain-chain-dbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deepbrain-chain-dbc.png',
     token: 'DBC',
     coin: 'DeepBrain Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gamezone-gzone.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gamezone-gzone.png',
     token: 'GZONE',
     coin: 'GameZone',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dejitaru-tsuka-tsuka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dejitaru-tsuka-tsuka.png',
     token: 'TSUKA',
     coin: 'Dejitaru Tsuka',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fc-porto-fan-token-porto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fc-porto-fan-token-porto.png',
     token: 'PORTO',
     coin: 'FC Porto Fan Token',
   },
@@ -3557,17 +3882,20 @@ export const DATA_TOKEN = [
     coin: 'ONBUFF',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/circuits-of-value-coval.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/circuits-of-value-coval.png',
     token: 'COVAL',
     coin: 'Circuits of Value',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/image-generation-ai-imgnai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/image-generation-ai-imgnai.png',
     token: 'IMGNAI',
     coin: 'Image Generation AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/carbon-browser-csix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/carbon-browser-csix.png',
     token: 'CSIX',
     coin: 'Carbon browser',
   },
@@ -3582,7 +3910,8 @@ export const DATA_TOKEN = [
     coin: 'Lingose',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trustswap-swap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trustswap-swap.png',
     token: 'SWAP',
     coin: 'TrustSwap',
   },
@@ -3592,7 +3921,8 @@ export const DATA_TOKEN = [
     coin: 'YooShi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jesus-coin-jesus-toys-jesus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jesus-coin-jesus-toys-jesus.png',
     token: 'JESUS',
     coin: 'Jesus Coin (jesus.toys)',
   },
@@ -3602,7 +3932,8 @@ export const DATA_TOKEN = [
     coin: 'Adshares',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/creo-engine-creo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/creo-engine-creo.png',
     token: 'CREO',
     coin: 'Creo Engine',
   },
@@ -3632,7 +3963,8 @@ export const DATA_TOKEN = [
     coin: 'Dogechain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metacade-mcade.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metacade-mcade.png',
     token: 'MCADE',
     coin: 'Metacade',
   },
@@ -3657,7 +3989,8 @@ export const DATA_TOKEN = [
     coin: 'UNS Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galatasaray-fan-token-gal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galatasaray-fan-token-gal.png',
     token: 'GAL',
     coin: 'Galatasaray Fan Token',
   },
@@ -3672,12 +4005,14 @@ export const DATA_TOKEN = [
     coin: 'Qredo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magic-square-sqr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magic-square-sqr.png',
     token: 'SQR',
     coin: 'Magic Square',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/klayswap-protocol-ksp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/klayswap-protocol-ksp.png',
     token: 'KSP',
     coin: 'KLAYswap Protocol',
   },
@@ -3687,17 +4022,20 @@ export const DATA_TOKEN = [
     coin: 'UniLend',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/centrality-cennz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/centrality-cennz.png',
     token: 'CENNZ',
     coin: 'Centrality',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/octo-gaming-otk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/octo-gaming-otk.png',
     token: 'OTK',
     coin: 'Octo Gaming',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bubblefong-bbf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bubblefong-bbf.png',
     token: 'BBF',
     coin: 'Bubblefong',
   },
@@ -3717,7 +4055,8 @@ export const DATA_TOKEN = [
     coin: 'Ellipsis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/land-of-conquest-slg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/land-of-conquest-slg.png',
     token: 'SLG',
     coin: 'Land Of Conquest',
   },
@@ -3748,7 +4087,8 @@ export const DATA_TOKEN = [
     coin: 'Nodle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ferrum-network-frm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ferrum-network-frm.png',
     token: 'FRM',
     coin: 'Ferrum Network',
   },
@@ -3768,7 +4108,8 @@ export const DATA_TOKEN = [
     coin: 'RMRK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gt-protocol-gtai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gt-protocol-gtai.png',
     token: 'GTAI',
     coin: 'GT Protocol',
   },
@@ -3788,12 +4129,14 @@ export const DATA_TOKEN = [
     coin: 'Kryll',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/taboo-token-taboo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/taboo-token-taboo.png',
     token: 'TABOO',
     coin: 'TABOO TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/carrieverse-cvtx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/carrieverse-cvtx.png',
     token: 'CVTX',
     coin: 'Carrieverse',
   },
@@ -3803,7 +4146,8 @@ export const DATA_TOKEN = [
     coin: 'Coinweb',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/graphlinq-protocol-glq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/graphlinq-protocol-glq.png',
     token: 'GLQ',
     coin: 'Graphlinq Protocol',
   },
@@ -3813,7 +4157,8 @@ export const DATA_TOKEN = [
     coin: 'Prosper',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/student-coin-stc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/student-coin-stc.png',
     token: 'STC',
     coin: 'Student Coin',
   },
@@ -3833,7 +4178,8 @@ export const DATA_TOKEN = [
     coin: 'Scallop',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/step-app-fitfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/step-app-fitfi.png',
     token: 'FITFI',
     coin: 'Step App',
   },
@@ -3858,12 +4204,14 @@ export const DATA_TOKEN = [
     coin: 'Joystream',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/phantasma-soul.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/phantasma-soul.png',
     token: 'SOUL',
     coin: 'Phantasma',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monkeyleague-mbs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monkeyleague-mbs.png',
     token: 'MBS',
     coin: 'MonkeyLeague',
   },
@@ -3873,12 +4221,14 @@ export const DATA_TOKEN = [
     coin: 'BEAM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dimitra-token-dmtr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dimitra-token-dmtr.png',
     token: 'DMTR',
     coin: 'Dimitra Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polkafoundry-pkf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polkafoundry-pkf.png',
     token: 'PKF',
     coin: 'PolkaFoundry',
   },
@@ -3893,7 +4243,8 @@ export const DATA_TOKEN = [
     coin: 'Fusion',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quantum-resistant-ledger-qrl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quantum-resistant-ledger-qrl.png',
     token: 'QRL',
     coin: 'Quantum Resistant Ledger',
   },
@@ -3903,7 +4254,8 @@ export const DATA_TOKEN = [
     coin: 'Kleros',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/senate-dao-senate.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/senate-dao-senate.png',
     token: 'SENATE',
     coin: 'SENATE DAO',
   },
@@ -3913,12 +4265,14 @@ export const DATA_TOKEN = [
     coin: 'Metahero',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/robonomics-network-xrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/robonomics-network-xrt.png',
     token: 'XRT',
     coin: 'Robonomics.network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kilt-protocol-kilt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kilt-protocol-kilt.png',
     token: 'KILT',
     coin: 'KILT Protocol',
   },
@@ -3948,17 +4302,20 @@ export const DATA_TOKEN = [
     coin: 'DeversiFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gains-associates-gains.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gains-associates-gains.png',
     token: 'GAINS',
     coin: 'Gains Associates',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/r-cryptocurrency-moons.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/r-cryptocurrency-moons.png',
     token: 'MOON',
     coin: 'r/CryptoCurrency Moons',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/matrix-ai-network-man.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/matrix-ai-network-man.png',
     token: 'MAN',
     coin: 'Matrix AI Network',
   },
@@ -3978,7 +4335,8 @@ export const DATA_TOKEN = [
     coin: 'Nimiq',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/inverse-finance-inv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/inverse-finance-inv.png',
     token: 'INV',
     coin: 'Inverse Finance',
   },
@@ -4013,7 +4371,8 @@ export const DATA_TOKEN = [
     coin: 'SHPING',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fulcrom-finance-ful.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fulcrom-finance-ful.png',
     token: 'FUL',
     coin: 'Fulcrom Finance',
   },
@@ -4028,12 +4387,14 @@ export const DATA_TOKEN = [
     coin: 'MainnetZ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/r-fortnitebr-bricks-brick.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/r-fortnitebr-bricks-brick.png',
     token: 'BRICK',
     coin: 'r/FortNiteBR Bricks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fuse-network-fuse.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fuse-network-fuse.png',
     token: 'FUSE',
     coin: 'Fuse Network',
   },
@@ -4043,7 +4404,8 @@ export const DATA_TOKEN = [
     coin: 'FNCY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chrono-tech-time.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chrono-tech-time.png',
     token: 'TIME',
     coin: 'Chrono.tech',
   },
@@ -4053,7 +4415,8 @@ export const DATA_TOKEN = [
     coin: 'Observer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-diamond-bcd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-diamond-bcd.png',
     token: 'BCD',
     coin: 'Bitcoin Diamond',
   },
@@ -4073,7 +4436,8 @@ export const DATA_TOKEN = [
     coin: 'YIELD App',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/juventus-fan-token-juv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/juventus-fan-token-juv.png',
     token: 'JUV',
     coin: 'Juventus Fan Token',
   },
@@ -4104,7 +4468,8 @@ export const DATA_TOKEN = [
     coin: 'Decimated',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/inter-milan-fan-token-inter.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/inter-milan-fan-token-inter.png',
     token: 'INTER',
     coin: 'Inter Milan Fan Token',
   },
@@ -4134,7 +4499,8 @@ export const DATA_TOKEN = [
     coin: 'Solve.Care',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wall-street-memes-wsm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wall-street-memes-wsm.png',
     token: 'WSM',
     coin: 'Wall Street Memes',
   },
@@ -4144,12 +4510,14 @@ export const DATA_TOKEN = [
     coin: 'PowerPool',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/prometheum-prodigy-pmpy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/prometheum-prodigy-pmpy.png',
     token: 'PMPY',
     coin: 'Prometheum Prodigy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/step-finance-step.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/step-finance-step.png',
     token: 'STEP',
     coin: 'Step Finance',
   },
@@ -4169,7 +4537,8 @@ export const DATA_TOKEN = [
     coin: 'Veloce',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arsenal-fan-token-afc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arsenal-fan-token-afc.png',
     token: 'AFC',
     coin: 'Arsenal Fan Token',
   },
@@ -4189,32 +4558,38 @@ export const DATA_TOKEN = [
     coin: 'ELYSIA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/epik-token-epik.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/epik-token-epik.png',
     token: 'EPIK',
     coin: 'EPIK Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/carbon-protocol-swth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/carbon-protocol-swth.png',
     token: 'SWTH',
     coin: 'Carbon Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/origin-dollar-ousd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/origin-dollar-ousd.png',
     token: 'OUSD',
     coin: 'Origin Dollar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cosplay-token-cot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cosplay-token-cot.png',
     token: 'COT',
     coin: 'Cosplay Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pkt-network-pkt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pkt-network-pkt.png',
     token: 'PKT',
     coin: 'PKT Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/battle-world-bwo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/battle-world-bwo.png',
     token: 'BWO',
     coin: 'Battle World',
   },
@@ -4229,7 +4604,8 @@ export const DATA_TOKEN = [
     coin: 'DREP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/purefi-protocol-ufi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/purefi-protocol-ufi.png',
     token: 'UFI',
     coin: 'PureFi Protocol',
   },
@@ -4249,7 +4625,8 @@ export const DATA_TOKEN = [
     coin: 'OAX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/izumi-finance-izi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/izumi-finance-izi.png',
     token: 'IZI',
     coin: 'Izumi Finance',
   },
@@ -4259,7 +4636,8 @@ export const DATA_TOKEN = [
     coin: 'Serum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hourglass-wait.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hourglass-wait.png',
     token: 'WAIT',
     coin: 'Hourglass',
   },
@@ -4269,17 +4647,20 @@ export const DATA_TOKEN = [
     coin: 'OHO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swftcoin-swftc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swftcoin-swftc.png',
     token: 'SWFTC',
     coin: 'SwftCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/multichain-multi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/multichain-multi.png',
     token: 'MULTI',
     coin: 'Multichain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kleva-protocol-kleva.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kleva-protocol-kleva.png',
     token: 'KLEVA',
     coin: 'KLEVA Protocol',
   },
@@ -4290,7 +4671,8 @@ export const DATA_TOKEN = [
     coin: 'Wombat Web 3 Gaming Platform',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tottenham-hotspur-fan-token-spurs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tottenham-hotspur-fan-token-spurs.png',
     token: 'SPURS',
     coin: 'Tottenham Hotspur Fan Token',
   },
@@ -4305,7 +4687,8 @@ export const DATA_TOKEN = [
     coin: 'Fei USD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/newscrypto-nwc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/newscrypto-nwc.png',
     token: 'NWC',
     coin: 'Newscrypto',
   },
@@ -4320,7 +4703,8 @@ export const DATA_TOKEN = [
     coin: 'WeWay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dust-protocol-dust.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dust-protocol-dust.png',
     token: 'DUST',
     coin: 'DUST Protocol',
   },
@@ -4335,7 +4719,8 @@ export const DATA_TOKEN = [
     coin: 'ZKSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blockchain-brawlers-brwl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blockchain-brawlers-brwl.png',
     token: 'BRWL',
     coin: 'Blockchain Brawlers',
   },
@@ -4345,7 +4730,8 @@ export const DATA_TOKEN = [
     coin: 'BitShares',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blocksquare-token-bst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blocksquare-token-bst.png',
     token: 'BST',
     coin: 'Blocksquare Token',
   },
@@ -4355,7 +4741,8 @@ export const DATA_TOKEN = [
     coin: 'OVR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iskra-token-isk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iskra-token-isk.png',
     token: 'ISK',
     coin: 'ISKRA Token',
   },
@@ -4370,12 +4757,14 @@ export const DATA_TOKEN = [
     coin: 'Vita Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcicoin-bitci.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcicoin-bitci.png',
     token: 'BITCI',
     coin: 'Bitcicoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gari-network-gari.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gari-network-gari.png',
     token: 'GARI',
     coin: 'Gari Network',
   },
@@ -4395,22 +4784,26 @@ export const DATA_TOKEN = [
     coin: 'Lossless',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bad-idea-ai-bad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bad-idea-ai-bad.png',
     token: 'BAD',
     coin: 'Bad Idea AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/project-with-wiken.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/project-with-wiken.png',
     token: 'WIKEN',
     coin: 'Project WITH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xdefi-wallet-xdefi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xdefi-wallet-xdefi.png',
     token: 'XDEFI',
     coin: 'XDEFI Wallet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/green-satoshi-token-sol-gst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/green-satoshi-token-sol-gst.png',
     token: 'GST',
     coin: 'Green Satoshi Token (SOL)',
   },
@@ -4425,7 +4818,8 @@ export const DATA_TOKEN = [
     coin: 'Everdome',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptex-finance-ctx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptex-finance-ctx.png',
     token: 'CTX',
     coin: 'Cryptex Finance',
   },
@@ -4440,7 +4834,8 @@ export const DATA_TOKEN = [
     coin: 'ROA CORE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/outer-ring-mmo-gq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/outer-ring-mmo-gq.png',
     token: 'GQ',
     coin: 'Outer Ring MMO',
   },
@@ -4450,7 +4845,8 @@ export const DATA_TOKEN = [
     coin: 'Validity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/diamond-launch-coin-dlc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/diamond-launch-coin-dlc.png',
     token: 'DLC',
     coin: 'Diamond Launch Coin',
   },
@@ -4475,7 +4871,8 @@ export const DATA_TOKEN = [
     coin: 'Hydra',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/joys-digital-joys.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/joys-digital-joys.png',
     token: 'JOYS',
     coin: 'Joys Digital',
   },
@@ -4490,12 +4887,14 @@ export const DATA_TOKEN = [
     coin: 'Divi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swarm-markets-smt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swarm-markets-smt.png',
     token: 'SMT',
     coin: 'Swarm Markets',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/celo-euro-ceur.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/celo-euro-ceur.png',
     token: 'CEUR',
     coin: 'Celo Euro',
   },
@@ -4515,17 +4914,20 @@ export const DATA_TOKEN = [
     coin: 'EML Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/superwalk-grnd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/superwalk-grnd.png',
     token: 'GRND',
     coin: 'SuperWalk',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brn-metaverse-brn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brn-metaverse-brn.png',
     token: 'BRN',
     coin: 'BRN Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nest-protocol-nest.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nest-protocol-nest.png',
     token: 'NEST',
     coin: 'NEST Protocol',
   },
@@ -4540,7 +4942,8 @@ export const DATA_TOKEN = [
     coin: 'Peercoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trabzonspor-fan-token-tra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trabzonspor-fan-token-tra.png',
     token: 'TRA',
     coin: 'Trabzonspor Fan Token',
   },
@@ -4550,7 +4953,8 @@ export const DATA_TOKEN = [
     coin: 'Only1',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/somnium-space-cubes-cube.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/somnium-space-cubes-cube.png',
     token: 'CUBE',
     coin: 'Somnium Space Cubes',
   },
@@ -4575,7 +4979,8 @@ export const DATA_TOKEN = [
     coin: 'Minted',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/staked-wemix-stwemix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/staked-wemix-stwemix.png',
     token: 'STWEMIX',
     coin: 'Staked WEMIX',
   },
@@ -4585,7 +4990,8 @@ export const DATA_TOKEN = [
     coin: 'Humanode',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hoge-finance-hoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hoge-finance-hoge.png',
     token: 'HOGE',
     coin: 'Hoge Finance',
   },
@@ -4595,22 +5001,26 @@ export const DATA_TOKEN = [
     coin: 'UpOnly',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/big-data-protocol-bdp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/big-data-protocol-bdp.png',
     token: 'BDP',
     coin: 'Big Data Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xend-finance-xend.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xend-finance-xend.png',
     token: 'XEND',
     coin: 'Xend Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ooki-protocol-ooki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ooki-protocol-ooki.png',
     token: 'OOKI',
     coin: 'Ooki Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unix-gaming-unix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unix-gaming-unix.png',
     token: 'UNIX',
     coin: 'UniX Gaming',
   },
@@ -4625,22 +5035,26 @@ export const DATA_TOKEN = [
     coin: 'Pawswap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dvision-network-dvi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dvision-network-dvi.png',
     token: 'DVI',
     coin: 'Dvision Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/efinity-token-efi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/efinity-token-efi.png',
     token: 'EFI',
     coin: 'Efinity Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/comtech-gold-cgo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/comtech-gold-cgo.png',
     token: 'CGO',
     coin: 'Comtech Gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitrue-coin-btr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitrue-coin-btr.png',
     token: 'BTR',
     coin: 'Bitrue Coin',
   },
@@ -4660,12 +5074,14 @@ export const DATA_TOKEN = [
     coin: 'Polkadex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/propbase-props.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/propbase-props.png',
     token: 'PROPS',
     coin: 'Propbase',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/akita-inu-akita.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/akita-inu-akita.png',
     token: 'AKITA',
     coin: 'Akita Inu',
   },
@@ -4680,22 +5096,26 @@ export const DATA_TOKEN = [
     coin: 'GMCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/squidgrow-squidgrow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/squidgrow-squidgrow.png',
     token: 'SQUIDGROW',
     coin: 'SquidGrow',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digitalbits-xdb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digitalbits-xdb.png',
     token: 'XDB',
     coin: 'DigitalBits',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rai-finance-sofi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rai-finance-sofi.png',
     token: 'SOFI',
     coin: 'RAI Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shyft-network-shft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shyft-network-shft.png',
     token: 'SHFT',
     coin: 'Shyft Network',
   },
@@ -4705,12 +5125,14 @@ export const DATA_TOKEN = [
     coin: 'OpenOcean',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/amis-token-amis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/amis-token-amis.png',
     token: 'AMIS',
     coin: 'Amis Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flamengo-fan-token-mengo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flamengo-fan-token-mengo.png',
     token: 'MENGO',
     coin: 'Flamengo Fan Token',
   },
@@ -4720,7 +5142,8 @@ export const DATA_TOKEN = [
     coin: 'Torum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spookyswap-boo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spookyswap-boo.png',
     token: 'BOO',
     coin: 'SpookySwap',
   },
@@ -4740,7 +5163,8 @@ export const DATA_TOKEN = [
     coin: 'Bware',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/real-smurf-cat-eth-smurfcat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/real-smurf-cat-eth-smurfcat.png',
     token: 'SMURFCAT',
     coin: 'Real Smurf Cat (ETH)',
   },
@@ -4750,12 +5174,14 @@ export const DATA_TOKEN = [
     coin: 'Galaxia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/origin-dollar-governance-ogv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/origin-dollar-governance-ogv.png',
     token: 'OGV',
     coin: 'Origin Dollar Governance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/label-foundation-lbl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/label-foundation-lbl.png',
     token: 'LBL',
     coin: 'LABEL Foundation',
   },
@@ -4766,7 +5192,8 @@ export const DATA_TOKEN = [
     coin: 'Portugal National Team Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bepro-network-bepro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bepro-network-bepro.png',
     token: 'BEPRO',
     coin: 'BEPRO Network',
   },
@@ -4781,7 +5208,8 @@ export const DATA_TOKEN = [
     coin: 'Ferro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/litlab-games-litt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/litlab-games-litt.png',
     token: 'LITT',
     coin: 'LitLab Games',
   },
@@ -4796,7 +5224,8 @@ export const DATA_TOKEN = [
     coin: 'Sinverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/catgirl-catgirl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/catgirl-catgirl.png',
     token: 'CATGIRL',
     coin: 'Catgirl',
   },
@@ -4811,7 +5240,8 @@ export const DATA_TOKEN = [
     coin: 'MongCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leisuremeta-lm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leisuremeta-lm.png',
     token: 'LM',
     coin: 'LeisureMeta',
   },
@@ -4836,12 +5266,14 @@ export const DATA_TOKEN = [
     coin: 'Cypherium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/islamic-coin-islm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/islamic-coin-islm.png',
     token: 'ISLM',
     coin: 'Islamic Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/buying-com-buy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/buying-com-buy.png',
     token: 'BUY',
     coin: 'Buying.com',
   },
@@ -4851,12 +5283,14 @@ export const DATA_TOKEN = [
     coin: 'Tamadoge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gensokishi-metaverse-mv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gensokishi-metaverse-mv.png',
     token: 'MV',
     coin: 'GensoKishi Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/volumint-vmint.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/volumint-vmint.png',
     token: 'VMINT',
     coin: 'Volumint',
   },
@@ -4876,12 +5310,14 @@ export const DATA_TOKEN = [
     coin: 'Wicrypt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rangers-protocol-rpg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rangers-protocol-rpg.png',
     token: 'RPG',
     coin: 'Rangers Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/darwinia-network-ring.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/darwinia-network-ring.png',
     token: 'RING',
     coin: 'Darwinia Network',
   },
@@ -4906,12 +5342,14 @@ export const DATA_TOKEN = [
     coin: 'IMPT.io',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xels-coin-xels.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xels-coin-xels.png',
     token: 'XELS',
     coin: 'XELS Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thetan-arena-thg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thetan-arena-thg.png',
     token: 'THG',
     coin: 'Thetan Arena',
   },
@@ -4926,7 +5364,8 @@ export const DATA_TOKEN = [
     coin: 'Azit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/breederdao-breed.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/breederdao-breed.png',
     token: 'BREED',
     coin: 'BreederDAO',
   },
@@ -4946,17 +5385,20 @@ export const DATA_TOKEN = [
     coin: 'LootBot',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spheroid-universe-sph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spheroid-universe-sph.png',
     token: 'SPH',
     coin: 'Spheroid Universe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tornado-cash-torn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tornado-cash-torn.png',
     token: 'TORN',
     coin: 'Tornado Cash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quadrantprotocol-equad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quadrantprotocol-equad.png',
     token: 'EQUAD',
     coin: 'QuadrantProtocol',
   },
@@ -4966,7 +5408,8 @@ export const DATA_TOKEN = [
     coin: 'Govi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/umbrella-network-umb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/umbrella-network-umb.png',
     token: 'UMB',
     coin: 'Umbrella Network',
   },
@@ -4976,22 +5419,26 @@ export const DATA_TOKEN = [
     coin: 'Era Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grove-coin-grv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grove-coin-grv.png',
     token: 'GRV',
     coin: 'Grove Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gamestarter-game.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gamestarter-game.png',
     token: 'GAME',
     coin: 'Gamestarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dappradar-radar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dappradar-radar.png',
     token: 'RADAR',
     coin: 'DappRadar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/permission-coin-ask.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/permission-coin-ask.png',
     token: 'ASK',
     coin: 'Permission Coin',
   },
@@ -5006,7 +5453,8 @@ export const DATA_TOKEN = [
     coin: 'MultiVAC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-2-btc2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-2-btc2.png',
     token: 'BTC2',
     coin: 'Bitcoin 2',
   },
@@ -5016,42 +5464,50 @@ export const DATA_TOKEN = [
     coin: 'Muse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unification-fund.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unification-fund.png',
     token: 'FUND',
     coin: 'Unification',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blocto-token-blt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blocto-token-blt.png',
     token: 'BLT',
     coin: 'Blocto Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ambire-wallet-wallet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ambire-wallet-wallet.png',
     token: 'WALLET',
     coin: 'Ambire Wallet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kunci-coin-kunci.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kunci-coin-kunci.png',
     token: 'KUNCI',
     coin: 'Kunci Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dark-frontiers-dark.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dark-frontiers-dark.png',
     token: 'DARK',
     coin: 'Dark Frontiers',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/landshare-land.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/landshare-land.png',
     token: 'LAND',
     coin: 'LandShare',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/newyork-exchange-nye.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/newyork-exchange-nye.png',
     token: 'NYE',
     coin: 'NewYork Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dora-factory-old-dora.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dora-factory-old-dora.png',
     token: 'DORA',
     coin: 'Dora Factory (old)',
   },
@@ -5071,12 +5527,14 @@ export const DATA_TOKEN = [
     coin: 'Particl',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mint-club-mint.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mint-club-mint.png',
     token: 'MINT',
     coin: 'Mint Club',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/calamari-network-kma.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/calamari-network-kma.png',
     token: 'KMA',
     coin: 'Calamari Network',
   },
@@ -5096,17 +5554,20 @@ export const DATA_TOKEN = [
     coin: 'Minu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/adappter-token-adp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/adappter-token-adp.png',
     token: 'ADP',
     coin: 'Adappter Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cleo-tech-cleo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cleo-tech-cleo.png',
     token: 'CLEO',
     coin: 'Cleo Tech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nvirworld-nvir.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nvirworld-nvir.png',
     token: 'NVIR',
     coin: 'NvirWorld',
   },
@@ -5116,27 +5577,32 @@ export const DATA_TOKEN = [
     coin: 'Bend DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/strips-finance-strp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/strips-finance-strp.png',
     token: 'STRP',
     coin: 'Strips Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/civilization-civ.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/civilization-civ.png',
     token: 'CIV',
     coin: 'Civilization',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hosky-token-hosky.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hosky-token-hosky.png',
     token: 'HOSKY',
     coin: 'Hosky Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ritestream-rite.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ritestream-rite.png',
     token: 'RITE',
     coin: 'ritestream',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/atlas-navi-navi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/atlas-navi-navi.png',
     token: 'NAVI',
     coin: 'Atlas Navi',
   },
@@ -5146,17 +5612,20 @@ export const DATA_TOKEN = [
     coin: 'GoChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/idavoll-network-idv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/idavoll-network-idv.png',
     token: 'IDV',
     coin: 'Idavoll Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/electra-protocol-xep.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/electra-protocol-xep.png',
     token: 'XEP',
     coin: 'Electra Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stobox-token-stbu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stobox-token-stbu.png',
     token: 'STBU',
     coin: 'Stobox Token',
   },
@@ -5166,7 +5635,8 @@ export const DATA_TOKEN = [
     coin: 'Sylo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/klimadao-klima.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/klimadao-klima.png',
     token: 'KLIMA',
     coin: 'KlimaDAO',
   },
@@ -5181,7 +5651,8 @@ export const DATA_TOKEN = [
     coin: 'ChainX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magiccraft-mcrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magiccraft-mcrt.png',
     token: 'MCRT',
     coin: 'MagicCraft',
   },
@@ -5191,7 +5662,8 @@ export const DATA_TOKEN = [
     coin: 'Exeedme',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sakai-vault-sakai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sakai-vault-sakai.png',
     token: 'SAKAI',
     coin: 'Sakai Vault',
   },
@@ -5211,22 +5683,26 @@ export const DATA_TOKEN = [
     coin: 'Sensorium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/roco-finance-roco.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/roco-finance-roco.png',
     token: 'ROCO',
     coin: 'ROCO FINANCE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/realio-network-rio.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/realio-network-rio.png',
     token: 'RIO',
     coin: 'Realio Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hypr-network-hypr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hypr-network-hypr.png',
     token: 'HYPR',
     coin: 'Hypr Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lovely-inu-lovely.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lovely-inu-lovely.png',
     token: 'LOVELY',
     coin: 'Lovely Inu',
   },
@@ -5236,7 +5712,8 @@ export const DATA_TOKEN = [
     coin: 'BOSAGORA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spacefalcon-fcon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spacefalcon-fcon.png',
     token: 'FCON',
     coin: 'SpaceFalcon',
   },
@@ -5246,17 +5723,20 @@ export const DATA_TOKEN = [
     coin: 'AmonD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/napoli-fan-token-nap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/napoli-fan-token-nap.png',
     token: 'NAP',
     coin: 'Napoli Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rekt-coin-rekt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rekt-coin-rekt.png',
     token: 'REKT',
     coin: 'REKT Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rai-reflex-index-rai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rai-reflex-index-rai.png',
     token: 'RAI',
     coin: 'Rai Reflex Index',
   },
@@ -5276,7 +5756,8 @@ export const DATA_TOKEN = [
     coin: 'Vai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dsla-protocol-dsla.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dsla-protocol-dsla.png',
     token: 'DSLA',
     coin: 'DSLA Protocol',
   },
@@ -5286,7 +5767,8 @@ export const DATA_TOKEN = [
     coin: 'Geeq',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digital-fitness-defit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digital-fitness-defit.png',
     token: 'DEFIT',
     coin: 'Digital Fitness',
   },
@@ -5312,12 +5794,14 @@ export const DATA_TOKEN = [
     coin: 'Cryowar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/medieval-empires-mee.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/medieval-empires-mee.png',
     token: 'MEE',
     coin: 'Medieval Empires',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/virtue-poker-vpp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/virtue-poker-vpp.png',
     token: 'VPP',
     coin: 'Virtue Poker',
   },
@@ -5327,17 +5811,20 @@ export const DATA_TOKEN = [
     coin: 'Throne',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flare-finance-exfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flare-finance-exfi.png',
     token: 'EXFI',
     coin: 'Flare Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/horizon-protocol-hzn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/horizon-protocol-hzn.png',
     token: 'HZN',
     coin: 'Horizon Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polkabridge-pbr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polkabridge-pbr.png',
     token: 'PBR',
     coin: 'PolkaBridge',
   },
@@ -5352,12 +5839,14 @@ export const DATA_TOKEN = [
     coin: 'LUCA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/axis-token-axis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/axis-token-axis.png',
     token: 'AXIS',
     coin: 'AXIS Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/as-roma-fan-token-asr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/as-roma-fan-token-asr.png',
     token: 'ASR',
     coin: 'AS Roma Fan Token',
   },
@@ -5367,7 +5856,8 @@ export const DATA_TOKEN = [
     coin: 'HyperCash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/anchor-protocol-anc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/anchor-protocol-anc.png',
     token: 'ANC',
     coin: 'Anchor Protocol',
   },
@@ -5402,7 +5892,8 @@ export const DATA_TOKEN = [
     coin: 'WeSendit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/integritee-network-teer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/integritee-network-teer.png',
     token: 'TEER',
     coin: 'Integritee Network',
   },
@@ -5412,7 +5903,8 @@ export const DATA_TOKEN = [
     coin: 'Mettalex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-bonk-babybonk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-bonk-babybonk.png',
     token: 'BABYBONK',
     coin: 'Baby Bonk',
   },
@@ -5427,12 +5919,14 @@ export const DATA_TOKEN = [
     coin: 'MetaBeat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wom-protocol-wom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wom-protocol-wom.png',
     token: 'WOM',
     coin: 'WOM Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/giantmammoth-gmmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/giantmammoth-gmmt.png',
     token: 'GMMT',
     coin: 'GiantMammoth',
   },
@@ -5452,12 +5946,14 @@ export const DATA_TOKEN = [
     coin: 'Hamster',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/script-network-scpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/script-network-scpt.png',
     token: 'SCPT',
     coin: 'Script Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/launchblock-com-lbp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/launchblock-com-lbp.png',
     token: 'LBP',
     coin: 'LaunchBlock.com',
   },
@@ -5467,7 +5963,8 @@ export const DATA_TOKEN = [
     coin: 'Dotmoovs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaverse-network-pioneer-neer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaverse-network-pioneer-neer.png',
     token: 'NEER',
     coin: 'Metaverse.Network Pioneer',
   },
@@ -5477,17 +5974,20 @@ export const DATA_TOKEN = [
     coin: 'WeFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cirus-foundation-cirus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cirus-foundation-cirus.png',
     token: 'CIRUS',
     coin: 'Cirus Foundation',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iq-protocol-iqt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iq-protocol-iqt.png',
     token: 'IQT',
     coin: 'IQ Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/minati-coin-mntc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/minati-coin-mntc.png',
     token: 'MNTC',
     coin: 'Minati Coin',
   },
@@ -5502,12 +6002,14 @@ export const DATA_TOKEN = [
     coin: 'v.systems',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cumrocket-cummies.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cumrocket-cummies.png',
     token: 'CUMMIES',
     coin: 'CumRocket',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/renewable-energy-ret.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/renewable-energy-ret.png',
     token: 'RET',
     coin: 'Renewable Energy',
   },
@@ -5517,7 +6019,8 @@ export const DATA_TOKEN = [
     coin: 'DOGAMÍ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arbitracoin-atc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arbitracoin-atc.png',
     token: 'ATC',
     coin: 'Arbitracoin',
   },
@@ -5527,42 +6030,50 @@ export const DATA_TOKEN = [
     coin: 'Interlay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/virtual-versions-vv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/virtual-versions-vv.png',
     token: 'VV',
     coin: 'Virtual Versions',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/drawshop-kingdom-reverse-joy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/drawshop-kingdom-reverse-joy.png',
     token: 'JOY',
     coin: 'Drawshop Kingdom Reverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypterium-crpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypterium-crpt.png',
     token: 'CRPT',
     coin: 'Crypterium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/juggernaut-jgn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/juggernaut-jgn.png',
     token: 'JGN',
     coin: 'Juggernaut',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clintex-cti-cti.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clintex-cti-cti.png',
     token: 'CTI',
     coin: 'ClinTex CTi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/my-crypto-heroes-mchc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/my-crypto-heroes-mchc.png',
     token: 'MCHC',
     coin: 'My Crypto Heroes',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mysterium-myst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mysterium-myst.png',
     token: 'MYST',
     coin: 'Mysterium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/morpheus-labs-mitx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/morpheus-labs-mitx.png',
     token: 'MITX',
     coin: 'Morpheus Labs',
   },
@@ -5572,12 +6083,14 @@ export const DATA_TOKEN = [
     coin: 'Aurox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoshi-island-stc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoshi-island-stc.png',
     token: 'STC',
     coin: 'Satoshi Island',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/x-world-games-xwg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/x-world-games-xwg.png',
     token: 'XWG',
     coin: 'X World Games',
   },
@@ -5587,22 +6100,26 @@ export const DATA_TOKEN = [
     coin: 'Ignis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dafi-protocol-dafi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dafi-protocol-dafi.png',
     token: 'DAFI',
     coin: 'DAFI Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rainbow-token-rbw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rainbow-token-rbw.png',
     token: 'RBW',
     coin: 'Rainbow Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/s-c-corinthians-fan-token-sccp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/s-c-corinthians-fan-token-sccp.png',
     token: 'SCCP',
     coin: 'S.C. Corinthians Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/streamcoin-strm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/streamcoin-strm.png',
     token: 'STRM',
     coin: 'StreamCoin',
   },
@@ -5612,7 +6129,8 @@ export const DATA_TOKEN = [
     coin: 'RealFevr',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/everton-fan-token-efc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/everton-fan-token-efc.png',
     token: 'EFC',
     coin: 'Everton Fan Token',
   },
@@ -5627,7 +6145,8 @@ export const DATA_TOKEN = [
     coin: 'ACENT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wecan-group-wecan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wecan-group-wecan.png',
     token: 'WECAN',
     coin: 'Wecan Group',
   },
@@ -5647,22 +6166,26 @@ export const DATA_TOKEN = [
     coin: 'MahaDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sharetoken-shr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sharetoken-shr.png',
     token: 'SHR',
     coin: 'ShareToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/boomstarter-bc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/boomstarter-bc.png',
     token: 'BC',
     coin: 'Boomstarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/carbon-credit-cct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/carbon-credit-cct.png',
     token: 'CCT',
     coin: 'Carbon Credit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skey-network-skey.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skey-network-skey.png',
     token: 'SKEY',
     coin: 'Skey Network',
   },
@@ -5672,12 +6195,14 @@ export const DATA_TOKEN = [
     coin: 'MARS4',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polkamarkets-polk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polkamarkets-polk.png',
     token: 'POLK',
     coin: 'Polkamarkets',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dxchain-token-dx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dxchain-token-dx.png',
     token: 'DX',
     coin: 'DxChain Token',
   },
@@ -5687,12 +6212,14 @@ export const DATA_TOKEN = [
     coin: 'iMe Lab',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ubxs-token-ubxs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ubxs-token-ubxs.png',
     token: 'UBXS',
     coin: 'UBXS Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dfyn-network-dfyn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dfyn-network-dfyn.png',
     token: 'DFYN',
     coin: 'Dfyn Network',
   },
@@ -5718,12 +6245,14 @@ export const DATA_TOKEN = [
     coin: 'CropBytes',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/visiongame-vision.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/visiongame-vision.png',
     token: 'VISION',
     coin: 'VisionGame',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gorilla-gorilla.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gorilla-gorilla.png',
     token: 'GORILLA',
     coin: 'Gorilla',
   },
@@ -5743,17 +6272,20 @@ export const DATA_TOKEN = [
     coin: 'Xaya',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chainguardians-cgg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chainguardians-cgg.png',
     token: 'CGG',
     coin: 'ChainGuardians',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/witch-token-witch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/witch-token-witch.png',
     token: 'WITCH',
     coin: 'Witch Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cantina-royale-crt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cantina-royale-crt.png',
     token: 'CRT',
     coin: 'Cantina Royale',
   },
@@ -5763,17 +6295,20 @@ export const DATA_TOKEN = [
     coin: 'EarthCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quantstamp-qsp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quantstamp-qsp.png',
     token: 'QSP',
     coin: 'Quantstamp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shill-token-shill.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shill-token-shill.png',
     token: 'SHILL',
     coin: 'SHILL Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kommunitas-kom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kommunitas-kom.png',
     token: 'KOM',
     coin: 'Kommunitas',
   },
@@ -5783,7 +6318,8 @@ export const DATA_TOKEN = [
     coin: 'Walken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bsc-station-bscs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bsc-station-bscs.png',
     token: 'BSCS',
     coin: 'BSC Station',
   },
@@ -5803,27 +6339,32 @@ export const DATA_TOKEN = [
     coin: 'NFTb',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/heroes-chained-hec.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/heroes-chained-hec.png',
     token: 'HEC',
     coin: 'Heroes Chained',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/venus-reward-token-vrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/venus-reward-token-vrt.png',
     token: 'VRT',
     coin: 'Venus Reward Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/prime-numbers-prnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/prime-numbers-prnt.png',
     token: 'PRNT',
     coin: 'Prime Numbers',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bridge-oracle-brg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bridge-oracle-brg.png',
     token: 'BRG',
     coin: 'Bridge Oracle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kromatika-krom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kromatika-krom.png',
     token: 'KROM',
     coin: 'Kromatika',
   },
@@ -5843,7 +6384,8 @@ export const DATA_TOKEN = [
     coin: 'Crypton',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/seascape-crowns-cws.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/seascape-crowns-cws.png',
     token: 'CWS',
     coin: 'Seascape Crowns',
   },
@@ -5858,7 +6400,8 @@ export const DATA_TOKEN = [
     coin: 'Vabble',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cashtree-token-ctt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cashtree-token-ctt.png',
     token: 'CTT',
     coin: 'Cashtree Token',
   },
@@ -5868,7 +6411,8 @@ export const DATA_TOKEN = [
     coin: 'DRIFE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/suncontract-snc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/suncontract-snc.png',
     token: 'SNC',
     coin: 'SunContract',
   },
@@ -5893,7 +6437,8 @@ export const DATA_TOKEN = [
     coin: 'Bitspawn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/inflation-hedging-coin-ihc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/inflation-hedging-coin-ihc.png',
     token: 'IHC',
     coin: 'Inflation Hedging Coin',
   },
@@ -5928,7 +6473,8 @@ export const DATA_TOKEN = [
     coin: 'Uno Re',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/freedom-coin-free.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/freedom-coin-free.png',
     token: 'FREE',
     coin: 'FREEdom Coin',
   },
@@ -5938,12 +6484,14 @@ export const DATA_TOKEN = [
     coin: 'OpenDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tomtomcoin-toms.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tomtomcoin-toms.png',
     token: 'TOMS',
     coin: 'TomTomCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brazil-national-fan-token-bft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brazil-national-fan-token-bft.png',
     token: 'BFT',
     coin: 'Brazil National Fan Token',
   },
@@ -5953,7 +6501,8 @@ export const DATA_TOKEN = [
     coin: 'Ariva',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monsta-infinite-moni.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monsta-infinite-moni.png',
     token: 'MONI',
     coin: 'Monsta Infinite',
   },
@@ -5968,7 +6517,8 @@ export const DATA_TOKEN = [
     coin: 'O3 Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/isiklar-coin-isikc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/isiklar-coin-isikc.png',
     token: 'ISIKC',
     coin: 'Isiklar Coin',
   },
@@ -5978,12 +6528,14 @@ export const DATA_TOKEN = [
     coin: 'Dypius v2',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polkacity-polc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polkacity-polc.png',
     token: 'POLC',
     coin: 'Polkacity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vempire-ddao-vemp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vempire-ddao-vemp.png',
     token: 'VEMP',
     coin: 'vEmpire DDAO',
   },
@@ -5993,12 +6545,14 @@ export const DATA_TOKEN = [
     coin: 'K21',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polylastic-polx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polylastic-polx.png',
     token: 'POLX',
     coin: 'Polylastic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/damex-token-damex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/damex-token-damex.png',
     token: 'DAMEX',
     coin: 'Damex Token',
   },
@@ -6008,7 +6562,8 @@ export const DATA_TOKEN = [
     coin: 'Unbound',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bird-money-bird.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bird-money-bird.png',
     token: 'BIRD',
     coin: 'Bird.Money',
   },
@@ -6018,32 +6573,38 @@ export const DATA_TOKEN = [
     coin: 'Fabwelt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leeds-united-fan-token-lufc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leeds-united-fan-token-lufc.png',
     token: 'LUFC',
     coin: 'Leeds United Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ego-paysenger-ego.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ego-paysenger-ego.png',
     token: 'EGO',
     coin: 'EGO Paysenger',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neighbourhoods-nht.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neighbourhoods-nht.png',
     token: 'NHT',
     coin: 'Neighbourhoods',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shiba-saga-shia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shiba-saga-shia.png',
     token: 'SHIA',
     coin: 'Shiba Saga',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lbry-credits-lbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lbry-credits-lbc.png',
     token: 'LBC',
     coin: 'LBRY Credits',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nervenetwork-nvt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nervenetwork-nvt.png',
     token: 'NVT',
     coin: 'NerveNetwork',
   },
@@ -6053,7 +6614,8 @@ export const DATA_TOKEN = [
     coin: 'TenUp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astroswap-astro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astroswap-astro.png',
     token: 'ASTRO',
     coin: 'AstroSwap',
   },
@@ -6068,12 +6630,14 @@ export const DATA_TOKEN = [
     coin: 'Karat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reflexer-ungovernance-token-flx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reflexer-ungovernance-token-flx.png',
     token: 'FLX',
     coin: 'Reflexer Ungovernance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rebel-bots-rbls.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rebel-bots-rbls.png',
     token: 'RBLS',
     coin: 'Rebel Bots',
   },
@@ -6083,12 +6647,14 @@ export const DATA_TOKEN = [
     coin: 'Lympo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pstake-finance-pstake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pstake-finance-pstake.png',
     token: 'PSTAKE',
     coin: 'pSTAKE Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safe-haven-sha.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safe-haven-sha.png',
     token: 'SHA',
     coin: 'Safe Haven',
   },
@@ -6103,27 +6669,32 @@ export const DATA_TOKEN = [
     coin: 'FIBOS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fringe-finance-frin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fringe-finance-frin.png',
     token: 'FRIN',
     coin: 'Fringe Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deri-protocol-deri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deri-protocol-deri.png',
     token: 'DERI',
     coin: 'Deri Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tifi-token-tifi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tifi-token-tifi.png',
     token: 'TIFI',
     coin: 'TiFi Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hipenguins-hipenguins.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hipenguins-hipenguins.png',
     token: 'HIPENGUINS',
     coin: 'hiPENGUINS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saffron-finance-sfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saffron-finance-sfi.png',
     token: 'SFI',
     coin: 'saffron.finance',
   },
@@ -6133,12 +6704,14 @@ export const DATA_TOKEN = [
     coin: 'Kalmar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/all-art-protocol-aart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/all-art-protocol-aart.png',
     token: 'AART',
     coin: 'ALL.ART protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neutrino-usd-usdn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neutrino-usd-usdn.png',
     token: 'USDN',
     coin: 'Neutrino USD',
   },
@@ -6148,7 +6721,8 @@ export const DATA_TOKEN = [
     coin: 'Klaydice',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xhashtag-dao-xtag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xhashtag-dao-xtag.png',
     token: 'XTAG',
     coin: 'xHashtag DAO',
   },
@@ -6163,22 +6737,26 @@ export const DATA_TOKEN = [
     coin: 'Idena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goztepe-s-k-fan-token-goz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goztepe-s-k-fan-token-goz.png',
     token: 'GOZ',
     coin: 'Göztepe S.K. Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/insurace-insur.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/insurace-insur.png',
     token: 'INSUR',
     coin: 'InsurAce',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/harrypotterobamapacman8inu-xrp8.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/harrypotterobamapacman8inu-xrp8.png',
     token: 'XRP8',
     coin: 'HarryPotterObamaPacMan8Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/konomi-network-kono.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/konomi-network-kono.png',
     token: 'KONO',
     coin: 'Konomi Network',
   },
@@ -6189,7 +6767,8 @@ export const DATA_TOKEN = [
     coin: 'mStable Governance Token: Meta (MTA)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/razor-network-razor.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/razor-network-razor.png',
     token: 'RAZOR',
     coin: 'Razor Network',
   },
@@ -6199,12 +6778,14 @@ export const DATA_TOKEN = [
     coin: 'Ertha',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/openleverage-ole.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/openleverage-ole.png',
     token: 'OLE',
     coin: 'OpenLeverage',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fenerbahce-token-fb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fenerbahce-token-fb.png',
     token: 'FB',
     coin: 'Fenerbahçe Token',
   },
@@ -6214,12 +6795,14 @@ export const DATA_TOKEN = [
     coin: 'Edgeware',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bbs-network-bbs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bbs-network-bbs.png',
     token: 'BBS',
     coin: 'BBS Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pickle-finance-pickle.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pickle-finance-pickle.png',
     token: 'PICKLE',
     coin: 'Pickle Finance',
   },
@@ -6229,7 +6812,8 @@ export const DATA_TOKEN = [
     coin: 'Soil',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spain-national-fan-token-snft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spain-national-fan-token-snft.png',
     token: 'SNFT',
     coin: 'Spain National Fan Token',
   },
@@ -6239,7 +6823,8 @@ export const DATA_TOKEN = [
     coin: 'Oggy Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/atari-token-atri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/atari-token-atri.png',
     token: 'ATRI',
     coin: 'Atari Token',
   },
@@ -6249,27 +6834,32 @@ export const DATA_TOKEN = [
     coin: 'Tap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/convergence-conv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/convergence-conv.png',
     token: 'CONV',
     coin: 'Convergence',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/top-network-top.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/top-network-top.png',
     token: 'TOP',
     coin: 'TOP Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/valencia-cf-fan-token-vcf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/valencia-cf-fan-token-vcf.png',
     token: 'VCF',
     coin: 'Valencia CF Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trava-finance-trava.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trava-finance-trava.png',
     token: 'TRAVA',
     coin: 'TRAVA.FINANCE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nanobyte-token-nbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nanobyte-token-nbt.png',
     token: 'NBT',
     coin: 'NanoByte Token',
   },
@@ -6279,17 +6869,20 @@ export const DATA_TOKEN = [
     coin: 'Mirror Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/my-defi-pet-dpet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/my-defi-pet-dpet.png',
     token: 'DPET',
     coin: 'My DeFi Pet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wombat-exchange-wom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wombat-exchange-wom.png',
     token: 'WOM',
     coin: 'Wombat Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spiritswap-spirit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spiritswap-spirit.png',
     token: 'SPIRIT',
     coin: 'SpiritSwap',
   },
@@ -6304,7 +6897,8 @@ export const DATA_TOKEN = [
     coin: 'Evadore',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hodooi-com-hod.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hodooi-com-hod.png',
     token: 'HOD',
     coin: 'HoDooi.com',
   },
@@ -6314,7 +6908,8 @@ export const DATA_TOKEN = [
     coin: 'IguVerse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/suterusu-suter.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/suterusu-suter.png',
     token: 'SUTER',
     coin: 'suterusu',
   },
@@ -6329,7 +6924,8 @@ export const DATA_TOKEN = [
     coin: 'Arcona',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aki-network-aki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aki-network-aki.png',
     token: 'AKI',
     coin: 'Aki Network',
   },
@@ -6339,12 +6935,14 @@ export const DATA_TOKEN = [
     coin: 'OneLedger',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/velaspad-vlxpad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/velaspad-vlxpad.png',
     token: 'VLXPAD',
     coin: 'VelasPad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wall-street-games-wsg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wall-street-games-wsg.png',
     token: 'WSG',
     coin: 'Wall Street Games',
   },
@@ -6365,17 +6963,20 @@ export const DATA_TOKEN = [
     coin: 'Aston Martin Cognizant Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nft-art-finance-nftart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nft-art-finance-nftart.png',
     token: 'NFTART',
     coin: 'NFT Art Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-unfettered-souls.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-unfettered-souls.png',
     token: 'SOULS',
     coin: 'The Unfettered',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blockchain-monster-hunt-bcmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blockchain-monster-hunt-bcmc.png',
     token: 'BCMC',
     coin: 'Blockchain Monster Hunt',
   },
@@ -6401,7 +7002,8 @@ export const DATA_TOKEN = [
     coin: 'AntiMatter Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polychain-monsters-pmon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polychain-monsters-pmon.png',
     token: 'PMON',
     coin: 'Polychain Monsters',
   },
@@ -6416,7 +7018,8 @@ export const DATA_TOKEN = [
     coin: 'Populous',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/self-crypto-self.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/self-crypto-self.png',
     token: 'SELF',
     coin: 'SELF Crypto',
   },
@@ -6426,17 +7029,20 @@ export const DATA_TOKEN = [
     coin: 'TenX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unilayer-layer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unilayer-layer.png',
     token: 'LAYER',
     coin: 'UniLayer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mongolnft-mnft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mongolnft-mnft.png',
     token: 'MNFT',
     coin: 'MongolNFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gocrypto-token-goc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gocrypto-token-goc.png',
     token: 'GOC',
     coin: 'GoCrypto Token',
   },
@@ -6446,7 +7052,8 @@ export const DATA_TOKEN = [
     coin: 'DOGGY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hidoodles-hidoodles.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hidoodles-hidoodles.png',
     token: 'HIDOODLES',
     coin: 'hiDOODLES',
   },
@@ -6456,7 +7063,8 @@ export const DATA_TOKEN = [
     coin: 'MurAll',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alvey-chain-walv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alvey-chain-walv.png',
     token: 'WALV',
     coin: 'Alvey Chain',
   },
@@ -6466,32 +7074,38 @@ export const DATA_TOKEN = [
     coin: 'TOWER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/plastiks-plastik.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/plastiks-plastik.png',
     token: 'PLASTIK',
     coin: 'Plastiks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/contracoin-ctcn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/contracoin-ctcn.png',
     token: 'CTCN',
     coin: 'CONTRACOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nord-finance-nord.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nord-finance-nord.png',
     token: 'NORD',
     coin: 'Nord Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/okratech-token-ort.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/okratech-token-ort.png',
     token: 'ORT',
     coin: 'Okratech Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/super-zero-protocol-sero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/super-zero-protocol-sero.png',
     token: 'SERO',
     coin: 'Super Zero Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thorstarter-xrune.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thorstarter-xrune.png',
     token: 'XRUNE',
     coin: 'Thorstarter',
   },
@@ -6501,7 +7115,8 @@ export const DATA_TOKEN = [
     coin: 'ShopNEXT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skeb-coin-skeb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skeb-coin-skeb.png',
     token: 'SKEB',
     coin: 'Skeb Coin',
   },
@@ -6521,12 +7136,14 @@ export const DATA_TOKEN = [
     coin: 'ADAPad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/king-shiba-kingshib.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/king-shiba-kingshib.png',
     token: 'KINGSHIB',
     coin: 'King Shiba',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/catheon-gaming-catheon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/catheon-gaming-catheon.png',
     token: 'CATHEON',
     coin: 'Catheon Gaming',
   },
@@ -6536,7 +7153,8 @@ export const DATA_TOKEN = [
     coin: 'Oddz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spores-network-spo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spores-network-spo.png',
     token: 'SPO',
     coin: 'Spores Network',
   },
@@ -6546,7 +7164,8 @@ export const DATA_TOKEN = [
     coin: 'aiRight',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/callisto-network-clo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/callisto-network-clo.png',
     token: 'CLO',
     coin: 'Callisto Network',
   },
@@ -6561,7 +7180,8 @@ export const DATA_TOKEN = [
     coin: 'MandoX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/city-tycoon-games-ctg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/city-tycoon-games-ctg.png',
     token: 'CTG',
     coin: 'City Tycoon Games',
   },
@@ -6571,7 +7191,8 @@ export const DATA_TOKEN = [
     coin: 'ETHPad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mogul-productions-stars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mogul-productions-stars.png',
     token: 'STARS',
     coin: 'Mogul Productions',
   },
@@ -6597,12 +7218,14 @@ export const DATA_TOKEN = [
     coin: 'KubeCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/choise-com-cho.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/choise-com-cho.png',
     token: 'CHO',
     coin: 'Choise.com',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/etherland-eland.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/etherland-eland.png',
     token: 'ELAND',
     coin: 'Etherland',
   },
@@ -6612,17 +7235,20 @@ export const DATA_TOKEN = [
     coin: 'Hiblocks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dreams-quest-dreams.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dreams-quest-dreams.png',
     token: 'DREAMS',
     coin: 'Dreams Quest',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/peri-finance-peri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/peri-finance-peri.png',
     token: 'PERI',
     coin: 'PERI Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sparkpoint-srk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sparkpoint-srk.png',
     token: 'SRK',
     coin: 'SparkPoint',
   },
@@ -6657,7 +7283,8 @@ export const DATA_TOKEN = [
     coin: 'Eldarune',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sao-paulo-fc-fan-token-spfc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sao-paulo-fc-fan-token-spfc.png',
     token: 'SPFC',
     coin: 'Sao Paulo FC Fan Token',
   },
@@ -6677,7 +7304,8 @@ export const DATA_TOKEN = [
     coin: 'All in',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reapchain-reap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reapchain-reap.png',
     token: 'REAP',
     coin: 'ReapChain',
   },
@@ -6692,22 +7320,26 @@ export const DATA_TOKEN = [
     coin: 'JobCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ideaology-idea.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ideaology-idea.png',
     token: 'IDEA',
     coin: 'Ideaology',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genaro-network-gnx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genaro-network-gnx.png',
     token: 'GNX',
     coin: 'Genaro Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xrp-healthcare-xrph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xrp-healthcare-xrph.png',
     token: 'XRPH',
     coin: 'XRP Healthcare',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fedoracoin-tips.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fedoracoin-tips.png',
     token: 'TIPS',
     coin: 'FedoraCoin',
   },
@@ -6717,7 +7349,8 @@ export const DATA_TOKEN = [
     coin: 'ZeroSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dingocoin-dingo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dingocoin-dingo.png',
     token: 'DINGO',
     coin: 'Dingocoin',
   },
@@ -6727,12 +7360,14 @@ export const DATA_TOKEN = [
     coin: 'Maro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kaizen-finance-kzen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kaizen-finance-kzen.png',
     token: 'KZEN',
     coin: 'Kaizen Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unistake-unistake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unistake-unistake.png',
     token: 'UNISTAKE',
     coin: 'Unistake',
   },
@@ -6747,7 +7382,8 @@ export const DATA_TOKEN = [
     coin: 'Nabox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pac-protocol-pac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pac-protocol-pac.png',
     token: 'PAC',
     coin: 'PAC Protocol',
   },
@@ -6767,7 +7403,8 @@ export const DATA_TOKEN = [
     coin: 'Chronicle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ubix-network-ubx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ubix-network-ubx.png',
     token: 'UBX',
     coin: 'UBIX.Network',
   },
@@ -6777,22 +7414,26 @@ export const DATA_TOKEN = [
     coin: 'MAPS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/position-exchange-posi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/position-exchange-posi.png',
     token: 'POSI',
     coin: 'Position Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waltonchain-wtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waltonchain-wtc.png',
     token: 'WTC',
     coin: 'Waltonchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neutrino-token-nsbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neutrino-token-nsbt.png',
     token: 'NSBT',
     coin: 'Neutrino Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solrise-finance-slrs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solrise-finance-slrs.png',
     token: 'SLRS',
     coin: 'Solrise Finance',
   },
@@ -6807,12 +7448,14 @@ export const DATA_TOKEN = [
     coin: 'April',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/geojam-token-jam.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/geojam-token-jam.png',
     token: 'JAM',
     coin: 'Geojam Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crust-shadow-csm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crust-shadow-csm.png',
     token: 'CSM',
     coin: 'Crust Shadow',
   },
@@ -6823,17 +7466,20 @@ export const DATA_TOKEN = [
     coin: 'İstanbul Başakşehir Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/woonkly-power-woop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/woonkly-power-woop.png',
     token: 'WOOP',
     coin: 'Woonkly Power',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/databroker-dtx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/databroker-dtx.png',
     token: 'DTX',
     coin: 'Databroker',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/regent-coin-regent.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/regent-coin-regent.png',
     token: 'REGENT',
     coin: 'REGENT COIN',
   },
@@ -6843,7 +7489,8 @@ export const DATA_TOKEN = [
     coin: 'WELL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metamonkeyai-mmai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metamonkeyai-mmai.png',
     token: 'MMAI',
     coin: 'MetamonkeyAi',
   },
@@ -6858,7 +7505,8 @@ export const DATA_TOKEN = [
     coin: 'The Mars',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meta-apes-peel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meta-apes-peel.png',
     token: 'PEEL',
     coin: 'Meta Apes',
   },
@@ -6868,32 +7516,38 @@ export const DATA_TOKEN = [
     coin: 'Olyseum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/billion-happiness-bhc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/billion-happiness-bhc.png',
     token: 'BHC',
     coin: 'Billion Happiness',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safeblast-blast.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safeblast-blast.png',
     token: 'BLAST',
     coin: 'SafeBlast',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kryptomon-kmon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kryptomon-kmon.png',
     token: 'KMON',
     coin: 'Kryptomon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/internet-of-energy-network-ioen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/internet-of-energy-network-ioen.png',
     token: 'IOEN',
     coin: 'Internet of Energy Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/forest-knight-knight.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/forest-knight-knight.png',
     token: 'KNIGHT',
     coin: 'Forest Knight',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dappstore-dappx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dappstore-dappx.png',
     token: 'DAPPX',
     coin: 'dAppstore',
   },
@@ -6903,7 +7557,8 @@ export const DATA_TOKEN = [
     coin: 'Kattana',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/qatar-2022-token-fwc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/qatar-2022-token-fwc.png',
     token: 'FWC',
     coin: 'QATAR 2022 TOKEN',
   },
@@ -6913,12 +7568,14 @@ export const DATA_TOKEN = [
     coin: 'Mithril',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unmarshal-marsh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unmarshal-marsh.png',
     token: 'MARSH',
     coin: 'UnMarshal',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pulsepad-plspad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pulsepad-plspad.png',
     token: 'PLSPAD',
     coin: 'PulsePad',
   },
@@ -6928,7 +7585,8 @@ export const DATA_TOKEN = [
     coin: 'Ycash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apollo-currency-apl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apollo-currency-apl.png',
     token: 'APL',
     coin: 'Apollo Currency',
   },
@@ -6943,17 +7601,20 @@ export const DATA_TOKEN = [
     coin: 'Nafter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rainmaker-games-rain.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rainmaker-games-rain.png',
     token: 'RAIN',
     coin: 'Rainmaker Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beamswap-glint.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beamswap-glint.png',
     token: 'GLINT',
     coin: 'BeamSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/breezecoin-brze.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/breezecoin-brze.png',
     token: 'BRZE',
     coin: 'Breezecoin_E',
   },
@@ -6963,7 +7624,8 @@ export const DATA_TOKEN = [
     coin: 'AgeOfGods',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spartan-protocol-sparta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spartan-protocol-sparta.png',
     token: 'SPARTA',
     coin: 'Spartan Protocol',
   },
@@ -6973,7 +7635,8 @@ export const DATA_TOKEN = [
     coin: 'Vexanium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/project-txa-txa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/project-txa-txa.png',
     token: 'TXA',
     coin: 'Project TXA',
   },
@@ -6998,27 +7661,32 @@ export const DATA_TOKEN = [
     coin: 'KOK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/loopring-neo-lrn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/loopring-neo-lrn.png',
     token: 'LRN',
     coin: 'Loopring [NEO]',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/qrkita-token-qrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/qrkita-token-qrt.png',
     token: 'QRT',
     coin: 'Qrkita Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nfty-network-nfty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nfty-network-nfty.png',
     token: 'NFTY',
     coin: 'NFTY Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tranche-finance-slice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tranche-finance-slice.png',
     token: 'SLICE',
     coin: 'Tranche Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metrix-coin-mrx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metrix-coin-mrx.png',
     token: 'MRX',
     coin: 'Metrix Coin',
   },
@@ -7043,27 +7711,32 @@ export const DATA_TOKEN = [
     coin: 'Bitswift',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monsterra-mstr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monsterra-mstr.png',
     token: 'MSTR',
     coin: 'Monsterra',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/artwallet-1art.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/artwallet-1art.png',
     token: '1ART',
     coin: 'ArtWallet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/labs-group-labs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/labs-group-labs.png',
     token: 'LABS',
     coin: 'LABS Group',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avocado-dao-token-avg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avocado-dao-token-avg.png',
     token: 'AVG',
     coin: 'Avocado DAO Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bonuscloud-bxc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bonuscloud-bxc.png',
     token: 'BXC',
     coin: 'BonusCloud',
   },
@@ -7078,7 +7751,8 @@ export const DATA_TOKEN = [
     coin: 'Playermon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waykichain-wicc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waykichain-wicc.png',
     token: 'WICC',
     coin: 'WaykiChain',
   },
@@ -7093,17 +7767,20 @@ export const DATA_TOKEN = [
     coin: 'LOCGame',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meme-alliance-mma.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meme-alliance-mma.png',
     token: 'MMA',
     coin: 'Meme Alliance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/acquire-fi-acq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/acquire-fi-acq.png',
     token: 'ACQ',
     coin: 'Acquire.Fi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaverse-face-mefa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaverse-face-mefa.png',
     token: 'MEFA',
     coin: 'METAVERSE FACE',
   },
@@ -7113,12 +7790,14 @@ export const DATA_TOKEN = [
     coin: 'Strong',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vnx-gold-vnxau.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vnx-gold-vnxau.png',
     token: 'VNXAU',
     coin: 'VNX Gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defina-finance-fina.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defina-finance-fina.png',
     token: 'FINA',
     coin: 'Defina Finance',
   },
@@ -7138,7 +7817,8 @@ export const DATA_TOKEN = [
     coin: 'RIZON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/platypus-finance-ptp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/platypus-finance-ptp.png',
     token: 'PTP',
     coin: 'Platypus Finance',
   },
@@ -7148,12 +7828,14 @@ export const DATA_TOKEN = [
     coin: 'ELMOERC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shopping-io-shop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shopping-io-shop.png',
     token: 'SHOP',
     coin: 'Shopping.io',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/earn-network-earn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/earn-network-earn.png',
     token: 'EARN',
     coin: 'Earn Network',
   },
@@ -7173,7 +7855,8 @@ export const DATA_TOKEN = [
     coin: 'XY Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptoblades-skill.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptoblades-skill.png',
     token: 'SKILL',
     coin: 'CryptoBlades',
   },
@@ -7183,7 +7866,8 @@ export const DATA_TOKEN = [
     coin: 'Opium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fxdx-exchange-fxdx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fxdx-exchange-fxdx.png',
     token: 'FXDX',
     coin: 'FXDX Exchange',
   },
@@ -7193,7 +7877,8 @@ export const DATA_TOKEN = [
     coin: 'Kalao',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meme-ai-memeai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meme-ai-memeai.png',
     token: 'MEMEAI',
     coin: 'Meme Ai',
   },
@@ -7213,27 +7898,32 @@ export const DATA_TOKEN = [
     coin: 'Catman',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hot-cross-hotcross.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hot-cross-hotcross.png',
     token: 'HOTCROSS',
     coin: 'Hot Cross',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/optionroom-room.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/optionroom-room.png',
     token: 'ROOM',
     coin: 'OptionRoom',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chain-of-legends-cleg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chain-of-legends-cleg.png',
     token: 'CLEG',
     coin: 'Chain of Legends',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptozoon-zoon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptozoon-zoon.png',
     token: 'ZOON',
     coin: 'CryptoZoon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cz-the-goat-czgoat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cz-the-goat-czgoat.png',
     token: 'CZGOAT',
     coin: 'CZ THE GOAT',
   },
@@ -7248,12 +7938,14 @@ export const DATA_TOKEN = [
     coin: 'AtromG8',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/islamicoin-islami.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/islamicoin-islami.png',
     token: 'ISLAMI',
     coin: 'ISLAMICOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyberfi-token-cfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyberfi-token-cfi.png',
     token: 'CFI',
     coin: 'CyberFi Token',
   },
@@ -7263,17 +7955,20 @@ export const DATA_TOKEN = [
     coin: 'DIGG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alanyaspor-fan-token-ala.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alanyaspor-fan-token-ala.png',
     token: 'ALA',
     coin: 'Alanyaspor Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/loser-coin-lowb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/loser-coin-lowb.png',
     token: 'LOWB',
     coin: 'Loser Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wave-edu-coin-wec.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wave-edu-coin-wec.png',
     token: 'WEC',
     coin: 'wave edu coin',
   },
@@ -7288,12 +7983,14 @@ export const DATA_TOKEN = [
     coin: 'Burency',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/voxel-x-network-vxl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/voxel-x-network-vxl.png',
     token: 'VXL',
     coin: 'Voxel X Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/benft-solutions-beai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/benft-solutions-beai.png',
     token: 'BEAI',
     coin: 'BeNFT Solutions',
   },
@@ -7318,12 +8015,14 @@ export const DATA_TOKEN = [
     coin: 'Veil',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/furucombo-combo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/furucombo-combo.png',
     token: 'COMBO',
     coin: 'Furucombo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kripto-koin-kripto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kripto-koin-kripto.png',
     token: 'KRIPTO',
     coin: 'Kripto koin',
   },
@@ -7333,7 +8032,8 @@ export const DATA_TOKEN = [
     coin: 'Florin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xcad-network-play-play.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xcad-network-play-play.png',
     token: 'PLAY',
     coin: 'XCAD Network Play',
   },
@@ -7348,7 +8048,8 @@ export const DATA_TOKEN = [
     coin: 'Salad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mintme-com-coin-mintme.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mintme-com-coin-mintme.png',
     token: 'MINTME',
     coin: 'MintMe.com Coin',
   },
@@ -7358,7 +8059,8 @@ export const DATA_TOKEN = [
     coin: 'HanChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/truefeedback-tfbx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/truefeedback-tfbx.png',
     token: 'TFBX',
     coin: 'TrueFeedBack',
   },
@@ -7368,7 +8070,8 @@ export const DATA_TOKEN = [
     coin: 'Wizardia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waves-enterprise-west.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waves-enterprise-west.png',
     token: 'WEST',
     coin: 'Waves Enterprise',
   },
@@ -7383,7 +8086,8 @@ export const DATA_TOKEN = [
     coin: 'Zelwin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dexa-coin-dexa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dexa-coin-dexa.png',
     token: 'DEXA',
     coin: 'DEXA COIN',
   },
@@ -7393,7 +8097,8 @@ export const DATA_TOKEN = [
     coin: 'OpenBlox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/high-performance-blockchain-hpb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/high-performance-blockchain-hpb.png',
     token: 'HPB',
     coin: 'High Performance Blockchain',
   },
@@ -7403,7 +8108,8 @@ export const DATA_TOKEN = [
     coin: 'Binamon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/planetwatch-planets.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/planetwatch-planets.png',
     token: 'PLANETS',
     coin: 'PlanetWatch',
   },
@@ -7418,7 +8124,8 @@ export const DATA_TOKEN = [
     coin: 'Coldstack',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/new-bitshares-nbs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/new-bitshares-nbs.png',
     token: 'NBS',
     coin: 'New BitShares',
   },
@@ -7438,12 +8145,14 @@ export const DATA_TOKEN = [
     coin: 'AME Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kaby-arena-kaby.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kaby-arena-kaby.png',
     token: 'KABY',
     coin: 'Kaby Arena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hiazuki-hiazuki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hiazuki-hiazuki.png',
     token: 'HIAZUKI',
     coin: 'hiAZUKI',
   },
@@ -7458,12 +8167,14 @@ export const DATA_TOKEN = [
     coin: 'Zyberswap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hyperchainx-hyper.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hyperchainx-hyper.png',
     token: 'HYPER',
     coin: 'HyperChainX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hicoolcats-hicoolcats.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hicoolcats-hicoolcats.png',
     token: 'HICOOLCATS',
     coin: 'hiCOOLCATS',
   },
@@ -7488,7 +8199,8 @@ export const DATA_TOKEN = [
     coin: 'Binemon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swingby-swingby.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swingby-swingby.png',
     token: 'SWINGBY',
     coin: 'Swingby',
   },
@@ -7498,7 +8210,8 @@ export const DATA_TOKEN = [
     coin: 'Hedget',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/titanswap-titan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/titanswap-titan.png',
     token: 'TITAN',
     coin: 'TitanSwap',
   },
@@ -7508,12 +8221,14 @@ export const DATA_TOKEN = [
     coin: 'The QWAN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rainbow-token-rainbow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rainbow-token-rainbow.png',
     token: 'RAINBOW',
     coin: 'Rainbow Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/plant-vs-undead-pvu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/plant-vs-undead-pvu.png',
     token: 'PVU',
     coin: 'Plant Vs Undead',
   },
@@ -7523,7 +8238,8 @@ export const DATA_TOKEN = [
     coin: 'Massnet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/troneuroperewardcoin-terc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/troneuroperewardcoin-terc.png',
     token: 'TERC',
     coin: 'TronEuropeRewardCoin',
   },
@@ -7538,7 +8254,8 @@ export const DATA_TOKEN = [
     coin: 'IOI Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hipunks-hipunks.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hipunks-hipunks.png',
     token: 'HIPUNKS',
     coin: 'hiPunks',
   },
@@ -7553,17 +8270,20 @@ export const DATA_TOKEN = [
     coin: 'Refereum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yfdai-finance-yfdai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yfdai-finance-yfdai.png',
     token: 'YFDAI',
     coin: 'YFDAI.FINANCE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brokoli-network-brkl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brokoli-network-brkl.png',
     token: 'BRKL',
     coin: 'Brokoli Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/legend-of-fantasy-war-lfw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/legend-of-fantasy-war-lfw.png',
     token: 'LFW',
     coin: 'Legend of Fantasy War',
   },
@@ -7618,7 +8338,8 @@ export const DATA_TOKEN = [
     coin: 'hiFLUF',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/3space-art-pace.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/3space-art-pace.png',
     token: 'PACE',
     coin: '3space Art',
   },
@@ -7643,17 +8364,20 @@ export const DATA_TOKEN = [
     coin: 'STEP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hifidenza-hifidenza.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hifidenza-hifidenza.png',
     token: 'HIFIDENZA',
     coin: 'hiFIDENZA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/float-protocol-bank.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/float-protocol-bank.png',
     token: 'BANK',
     coin: 'Float Protocol (Bank)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hisquiggle-hisquiggle.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hisquiggle-hisquiggle.png',
     token: 'HISQUIGGLE',
     coin: 'hiSQUIGGLE',
   },
@@ -7663,7 +8387,8 @@ export const DATA_TOKEN = [
     coin: 'HTMLCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wonderman-nation-wndr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wonderman-nation-wndr.png',
     token: 'WNDR',
     coin: 'Wonderman Nation',
   },
@@ -7673,12 +8398,14 @@ export const DATA_TOKEN = [
     coin: 'Swerve',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bridge-mutual-bmi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bridge-mutual-bmi.png',
     token: 'BMI',
     coin: 'Bridge Mutual',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/synchrobitcoin-snb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/synchrobitcoin-snb.png',
     token: 'SNB',
     coin: 'SynchroBitcoin',
   },
@@ -7693,7 +8420,8 @@ export const DATA_TOKEN = [
     coin: 'Shirtum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/disbalancer-ddos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/disbalancer-ddos.png',
     token: 'DDOS',
     coin: 'disBalancer',
   },
@@ -7703,27 +8431,32 @@ export const DATA_TOKEN = [
     coin: 'BlackHat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/life-crypto-life.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/life-crypto-life.png',
     token: 'LIFE',
     coin: 'Life Crypto',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/himoonbirds-hibirds.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/himoonbirds-hibirds.png',
     token: 'HIBIRDS',
     coin: 'hiMOONBIRDS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kingdom-game-4-0-kdg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kingdom-game-4-0-kdg.png',
     token: 'KDG',
     coin: 'Kingdom Game 4.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xp-network-xpnet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xp-network-xpnet.png',
     token: 'XPNET',
     coin: 'XP NETWORK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/himfers-himfers.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/himfers-himfers.png',
     token: 'HIMFERS',
     coin: 'hiMFERS',
   },
@@ -7743,7 +8476,8 @@ export const DATA_TOKEN = [
     coin: 'OctoFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hero-blaze-three-kingdoms-mudol2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hero-blaze-three-kingdoms-mudol2.png',
     token: 'MUDOL2',
     coin: 'Hero Blaze: Three Kingdoms',
   },
@@ -7753,17 +8487,20 @@ export const DATA_TOKEN = [
     coin: 'Busy DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaverser-mtvt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaverser-mtvt.png',
     token: 'MTVT',
     coin: 'Metaverser',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oin-finance-oin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oin-finance-oin.png',
     token: 'OIN',
     coin: 'OIN Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/himeebits-himeebits.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/himeebits-himeebits.png',
     token: 'HIMEEBITS',
     coin: 'hiMEEBITS',
   },
@@ -7778,7 +8515,8 @@ export const DATA_TOKEN = [
     coin: 'Polkalokr',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/my-master-war-mat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/my-master-war-mat.png',
     token: 'MAT',
     coin: 'My Master War',
   },
@@ -7788,7 +8526,8 @@ export const DATA_TOKEN = [
     coin: 'Propel',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leverj-gluon-l2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leverj-gluon-l2.png',
     token: 'L2',
     coin: 'Leverj Gluon',
   },
@@ -7798,12 +8537,14 @@ export const DATA_TOKEN = [
     coin: 'SnowSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/terran-coin-trr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/terran-coin-trr.png',
     token: 'TRR',
     coin: 'Terran Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/centric-swap-cns.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/centric-swap-cns.png',
     token: 'CNS',
     coin: 'Centric Swap',
   },
@@ -7813,7 +8554,8 @@ export const DATA_TOKEN = [
     coin: 'Swop',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ravencoin-classic-rvc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ravencoin-classic-rvc.png',
     token: 'RVC',
     coin: 'Ravencoin Classic',
   },
@@ -7839,12 +8581,14 @@ export const DATA_TOKEN = [
     coin: 'Peruvian National Football Team Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sportcash-one-sconex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sportcash-one-sconex.png',
     token: 'SCONEX',
     coin: 'Sportcash One',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/standard-protocol-stnd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/standard-protocol-stnd.png',
     token: 'STND',
     coin: 'Standard Protocol',
   },
@@ -7864,7 +8608,8 @@ export const DATA_TOKEN = [
     coin: 'Traxx',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tidal-finance-tidal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tidal-finance-tidal.png',
     token: 'TIDAL',
     coin: 'Tidal Finance',
   },
@@ -7884,17 +8629,20 @@ export const DATA_TOKEN = [
     coin: 'Smart Advertising Transaction Token (SaTT)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hunter-token-hntr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hunter-token-hntr.png',
     token: 'HNTR',
     coin: 'Hunter Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shib-original-vision-sov.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shib-original-vision-sov.png',
     token: 'SOV',
     coin: 'Shib Original Vision',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/acorn-protocol-acn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/acorn-protocol-acn.png',
     token: 'ACN',
     coin: 'Acorn Protocol',
   },
@@ -7909,7 +8657,8 @@ export const DATA_TOKEN = [
     coin: 'Coreto',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cook-protocol-cook.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cook-protocol-cook.png',
     token: 'COOK',
     coin: 'Cook Protocol',
   },
@@ -7924,12 +8673,14 @@ export const DATA_TOKEN = [
     coin: 'Triall',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/darwinia-commitment-token-kton.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/darwinia-commitment-token-kton.png',
     token: 'KTON',
     coin: 'Darwinia Commitment Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saketoken-sake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saketoken-sake.png',
     token: 'SAKE',
     coin: 'SakeToken',
   },
@@ -7939,17 +8690,20 @@ export const DATA_TOKEN = [
     coin: 'EVRYNET',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/infinity-angel-ing.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/infinity-angel-ing.png',
     token: 'ING',
     coin: 'Infinity Angel',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cropperfinance-crp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cropperfinance-crp.png',
     token: 'CRP',
     coin: 'CropperFinance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/phoenixdao-phnx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/phoenixdao-phnx.png',
     token: 'PHNX',
     coin: 'PhoenixDAO',
   },
@@ -7979,12 +8733,14 @@ export const DATA_TOKEN = [
     coin: 'Tokes',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/refinable-fine.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/refinable-fine.png',
     token: 'FINE',
     coin: 'Refinable',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xeno-token-xno.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xeno-token-xno.png',
     token: 'XNO',
     coin: 'Xeno Token',
   },
@@ -7994,27 +8750,32 @@ export const DATA_TOKEN = [
     coin: 'Sator',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/higazers-higazers.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/higazers-higazers.png',
     token: 'HIGAZERS',
     coin: 'hiGAZERS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/seigniorage-shares-share.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/seigniorage-shares-share.png',
     token: 'SHARE',
     coin: 'Seigniorage Shares',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hiclonex-hiclonex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hiclonex-hiclonex.png',
     token: 'HICLONEX',
     coin: 'hiCLONEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rush-coin-rush.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rush-coin-rush.png',
     token: 'RUSH',
     coin: 'RUSH COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metasoccer-msu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metasoccer-msu.png',
     token: 'MSU',
     coin: 'MetaSoccer',
   },
@@ -8024,7 +8785,8 @@ export const DATA_TOKEN = [
     coin: 'Bholdus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nerve-finance-nrv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nerve-finance-nrv.png',
     token: 'NRV',
     coin: 'Nerve Finance',
   },
@@ -8044,7 +8806,8 @@ export const DATA_TOKEN = [
     coin: 'NextDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ares-protocol-ares.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ares-protocol-ares.png',
     token: 'ARES',
     coin: 'Ares Protocol',
   },
@@ -8059,12 +8822,14 @@ export const DATA_TOKEN = [
     coin: 'GoWithMi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-hustle-husl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-hustle-husl.png',
     token: 'HUSL',
     coin: 'The Hustle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tripcandy-candy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tripcandy-candy.png',
     token: 'CANDY',
     coin: 'TripCandy',
   },
@@ -8079,7 +8844,8 @@ export const DATA_TOKEN = [
     coin: 'Pawtocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/atlas-protocol-atp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/atlas-protocol-atp.png',
     token: 'ATP',
     coin: 'Atlas Protocol',
   },
@@ -8094,22 +8860,26 @@ export const DATA_TOKEN = [
     coin: 'Papi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galaxy-fight-club-gcoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galaxy-fight-club-gcoin.png',
     token: 'GCOIN',
     coin: 'Galaxy Fight Club',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hirenga-hirenga.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hirenga-hirenga.png',
     token: 'HIRENGA',
     coin: 'hiRENGA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smartcash-smart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smartcash-smart.png',
     token: 'SMART',
     coin: 'SmartCash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-crypto-prophecies-tcp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-crypto-prophecies-tcp.png',
     token: 'TCP',
     coin: 'The Crypto Prophecies',
   },
@@ -8119,7 +8889,8 @@ export const DATA_TOKEN = [
     coin: 'Sakura',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaverse-vr-mevr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaverse-vr-mevr.png',
     token: 'MEVR',
     coin: 'Metaverse VR',
   },
@@ -8129,7 +8900,8 @@ export const DATA_TOKEN = [
     coin: 'Playcent',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ubd-network-ubdn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ubd-network-ubdn.png',
     token: 'UBDN',
     coin: 'UBD Network',
   },
@@ -8149,7 +8921,8 @@ export const DATA_TOKEN = [
     coin: 'EasyFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/raze-network-raze.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/raze-network-raze.png',
     token: 'RAZE',
     coin: 'Raze Network',
   },
@@ -8164,17 +8937,20 @@ export const DATA_TOKEN = [
     coin: 'hiODBS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mochi-market-moma.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mochi-market-moma.png',
     token: 'MOMA',
     coin: 'Mochi Market',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dawn-protocol-dawn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dawn-protocol-dawn.png',
     token: 'DAWN',
     coin: 'Dawn Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stem-cell-coin-scc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stem-cell-coin-scc.png',
     token: 'SCC',
     coin: 'STEM CELL COIN',
   },
@@ -8189,7 +8965,8 @@ export const DATA_TOKEN = [
     coin: 'WagyuSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hisand33-hisand33.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hisand33-hisand33.png',
     token: 'HISAND33',
     coin: 'hiSAND33',
   },
@@ -8199,7 +8976,8 @@ export const DATA_TOKEN = [
     coin: 'Argon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apron-network-apn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apron-network-apn.png',
     token: 'APN',
     coin: 'Apron Network',
   },
@@ -8209,7 +8987,8 @@ export const DATA_TOKEN = [
     coin: 'hiOD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/orion-money-orion.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/orion-money-orion.png',
     token: 'ORION',
     coin: 'Orion Money',
   },
@@ -8219,7 +8998,8 @@ export const DATA_TOKEN = [
     coin: 'APYSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/governor-dao-gdao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/governor-dao-gdao.png',
     token: 'GDAO',
     coin: 'Governor DAO',
   },
@@ -8229,17 +9009,20 @@ export const DATA_TOKEN = [
     coin: 'Polinate',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apeswap-banana.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apeswap-banana.png',
     token: 'BANANA',
     coin: 'ApeSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/earthfund-1earth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/earthfund-1earth.png',
     token: '1EARTH',
     coin: 'EarthFund',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/orao-network-orao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/orao-network-orao.png',
     token: 'ORAO',
     coin: 'ORAO Network',
   },
@@ -8259,7 +9042,8 @@ export const DATA_TOKEN = [
     coin: 'Fruits',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hivalhalla-hivalhalla.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hivalhalla-hivalhalla.png',
     token: 'HIVALHALLA',
     coin: 'hiVALHALLA',
   },
@@ -8269,22 +9053,26 @@ export const DATA_TOKEN = [
     coin: 'DeFiner',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-crypto-alliance-call.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-crypto-alliance-call.png',
     token: 'CALL',
     coin: 'Global Crypto Alliance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genesis-shards-gs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genesis-shards-gs.png',
     token: 'GS',
     coin: 'Genesis Shards',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/etha-lend-etha.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/etha-lend-etha.png',
     token: 'ETHA',
     coin: 'ETHA Lend',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaversex-metax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaversex-metax.png',
     token: 'METAX',
     coin: 'MetaverseX',
   },
@@ -8299,7 +9087,8 @@ export const DATA_TOKEN = [
     coin: 'Misbloc',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aluna-social-aln.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aluna-social-aln.png',
     token: 'AlN',
     coin: 'Aluna.Social',
   },
@@ -8309,17 +9098,20 @@ export const DATA_TOKEN = [
     coin: 'Vodra',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/axis-defi-axis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/axis-defi-axis.png',
     token: 'AXIS',
     coin: 'Axis DeFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptotycoon-ctt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptotycoon-ctt.png',
     token: 'CTT',
     coin: 'CryptoTycoon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mrweb-finance-ama.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mrweb-finance-ama.png',
     token: 'AMA',
     coin: 'Mrweb Finance',
   },
@@ -8329,17 +9121,20 @@ export const DATA_TOKEN = [
     coin: 'Sypool',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/creaticles-cre8.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/creaticles-cre8.png',
     token: 'CRE8',
     coin: 'Creaticles',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/drops-ownership-power-dop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/drops-ownership-power-dop.png',
     token: 'DOP',
     coin: 'Drops Ownership Power',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beatzcoin-btzc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beatzcoin-btzc.png',
     token: 'BTZC',
     coin: 'BeatzCoin',
   },
@@ -8354,12 +9149,14 @@ export const DATA_TOKEN = [
     coin: 'Aryacoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/synthetify-sny.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/synthetify-sny.png',
     token: 'SNY',
     coin: 'Synthetify',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xceltoken-plus-xlab.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xceltoken-plus-xlab.png',
     token: 'XLAB',
     coin: 'XcelToken Plus',
   },
@@ -8380,7 +9177,8 @@ export const DATA_TOKEN = [
     coin: 'Verso',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hollygold-hgold.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hollygold-hgold.png',
     token: 'HGOLD',
     coin: 'HollyGold',
   },
@@ -8390,7 +9188,8 @@ export const DATA_TOKEN = [
     coin: 'Castweet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/formation-fi-form.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/formation-fi-form.png',
     token: 'FORM',
     coin: 'Formation Fi',
   },
@@ -8400,22 +9199,26 @@ export const DATA_TOKEN = [
     coin: 'Penta Network Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sugarbounce-tip.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sugarbounce-tip.png',
     token: 'TIP',
     coin: 'SugarBounce',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sentinel-chain-senc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sentinel-chain-senc.png',
     token: 'SENC',
     coin: 'Sentinel Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptotanks-tank.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptotanks-tank.png',
     token: 'TANK',
     coin: 'CryptoTanks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/berry-data-bry.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/berry-data-bry.png',
     token: 'BRY',
     coin: 'Berry Data',
   },
@@ -8425,7 +9228,8 @@ export const DATA_TOKEN = [
     coin: 'Jetcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yield-protocol-yield.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yield-protocol-yield.png',
     token: 'YIELD',
     coin: 'Yield Protocol',
   },
@@ -8435,12 +9239,14 @@ export const DATA_TOKEN = [
     coin: 'BitBall',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spume-protocol-spume.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spume-protocol-spume.png',
     token: 'SPUME',
     coin: 'Spume Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/platincoin-plc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/platincoin-plc.png',
     token: 'PLC',
     coin: 'PlatinCoin',
   },
@@ -8455,7 +9261,8 @@ export const DATA_TOKEN = [
     coin: 'EveryCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fracton-protocol-hibakc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fracton-protocol-hibakc.png',
     token: 'HIBAKC',
     coin: 'Fracton Protocol',
   },
@@ -8470,7 +9277,8 @@ export const DATA_TOKEN = [
     coin: 'SeChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gourmet-galaxy-gum.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gourmet-galaxy-gum.png',
     token: 'GUM',
     coin: 'Gourmet Galaxy',
   },
@@ -8480,12 +9288,14 @@ export const DATA_TOKEN = [
     coin: 'Hero',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moneyswap-mswap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moneyswap-mswap.png',
     token: 'MSWAP',
     coin: 'MoneySwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tradestars-tsx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tradestars-tsx.png',
     token: 'TSX',
     coin: 'TradeStars',
   },
@@ -8510,12 +9320,14 @@ export const DATA_TOKEN = [
     coin: 'UpBots',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lithosphere-litho.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lithosphere-litho.png',
     token: 'LITHO',
     coin: 'Lithosphere',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/workquest-token-wqt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/workquest-token-wqt.png',
     token: 'WQT',
     coin: 'WorkQuest Token',
   },
@@ -8525,7 +9337,8 @@ export const DATA_TOKEN = [
     coin: 'Beyondfi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nsure-network-nsure.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nsure-network-nsure.png',
     token: 'NSURE',
     coin: 'Nsure.Network',
   },
@@ -8545,7 +9358,8 @@ export const DATA_TOKEN = [
     coin: 'S4FE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/supreme-finance-hype.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/supreme-finance-hype.png',
     token: 'HYPE',
     coin: 'Supreme Finance',
   },
@@ -8565,7 +9379,8 @@ export const DATA_TOKEN = [
     coin: 'Lucretius',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nurifootball-nrfb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nurifootball-nrfb.png',
     token: 'NRFB',
     coin: 'NuriFootBall',
   },
@@ -8575,7 +9390,8 @@ export const DATA_TOKEN = [
     coin: 'Elysium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polkarare-prare.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polkarare-prare.png',
     token: 'PRARE',
     coin: 'POLKARARE',
   },
@@ -8585,12 +9401,14 @@ export const DATA_TOKEN = [
     coin: 'SKY Play',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quickswap-quick.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quickswap-quick.png',
     token: 'QUICK',
     coin: 'QuickSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitball-treasure-btrs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitball-treasure-btrs.png',
     token: 'BTRS',
     coin: 'Bitball Treasure',
   },
@@ -8600,32 +9418,38 @@ export const DATA_TOKEN = [
     coin: 'Rage Fan',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/acute-angle-cloud-aac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/acute-angle-cloud-aac.png',
     token: 'AAC',
     coin: 'Acute Angle Cloud',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bluesale-finance-bls.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bluesale-finance-bls.png',
     token: 'BLS',
     coin: 'BlueSale Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/uptrennd-oneup.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/uptrennd-oneup.png',
     token: 'ONEUP',
     coin: 'Uptrennd',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galaxy-blitz-mit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galaxy-blitz-mit.png',
     token: 'MIT',
     coin: 'Galaxy Blitz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goose-finance-egg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goose-finance-egg.png',
     token: 'EGG',
     coin: 'Goose Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alphr-finance-alphr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alphr-finance-alphr.png',
     token: 'ALPHR',
     coin: 'Alphr finance',
   },
@@ -8635,7 +9459,8 @@ export const DATA_TOKEN = [
     coin: 'Era Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unicorn-token-uni.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unicorn-token-uni.png',
     token: 'UNI',
     coin: 'Unicorn Token',
   },
@@ -8645,17 +9470,20 @@ export const DATA_TOKEN = [
     coin: 'YouSUI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/knit-finance-kft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/knit-finance-kft.png',
     token: 'KFT',
     coin: 'Knit Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/archer-dao-governance-token-arch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/archer-dao-governance-token-arch.png',
     token: 'ARCH',
     coin: 'Archer DAO Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beer-money-beer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beer-money-beer.png',
     token: 'BEER',
     coin: 'Beer Money',
   },
@@ -8665,12 +9493,14 @@ export const DATA_TOKEN = [
     coin: 'Smoothy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gem-exchange-and-trading-gxt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gem-exchange-and-trading-gxt.png',
     token: 'GXT',
     coin: 'Gem Exchange and Trading',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/step-hero-hero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/step-hero-hero.png',
     token: 'HERO',
     coin: 'Step Hero',
   },
@@ -8680,7 +9510,8 @@ export const DATA_TOKEN = [
     coin: 'Warena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/connectome-cntm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/connectome-cntm.png',
     token: 'CNTM',
     coin: 'Connectome',
   },
@@ -8695,12 +9526,14 @@ export const DATA_TOKEN = [
     coin: 'beFITTER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skyrim-finance-skyrim.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skyrim-finance-skyrim.png',
     token: 'SKYRIM',
     coin: 'Skyrim Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-sports-cspn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-sports-cspn.png',
     token: 'CSPN',
     coin: 'Crypto Sports',
   },
@@ -8725,7 +9558,8 @@ export const DATA_TOKEN = [
     coin: 'Luna Rush',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptopay-cpay.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptopay-cpay.png',
     token: 'CPAY',
     coin: 'Cryptopay',
   },
@@ -8735,12 +9569,14 @@ export const DATA_TOKEN = [
     coin: 'HXAcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/knight-war---the-holy-trio-kws.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/knight-war---the-holy-trio-kws.png',
     token: 'KWS',
     coin: 'Knight War - The Holy Trio',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neonomad-finance-nni.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neonomad-finance-nni.png',
     token: 'NNI',
     coin: 'NeoNomad Finance',
   },
@@ -8760,7 +9596,8 @@ export const DATA_TOKEN = [
     coin: 'BonFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genesis-worlds-genesis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genesis-worlds-genesis.png',
     token: 'GENESIS',
     coin: 'Genesis Worlds',
   },
@@ -8770,17 +9607,20 @@ export const DATA_TOKEN = [
     coin: 'CareCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-scrypt-btcs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-scrypt-btcs.png',
     token: 'BTCS',
     coin: 'Bitcoin Scrypt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/finance-blocks-fbx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/finance-blocks-fbx.png',
     token: 'FBX',
     coin: 'Finance Blocks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fota-fight-of-the-ages-fota.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fota-fight-of-the-ages-fota.png',
     token: 'FOTA',
     coin: 'FOTA - Fight Of The Ages',
   },
@@ -8820,7 +9660,8 @@ export const DATA_TOKEN = [
     coin: 'Aeron',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/martexcoin-mxt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/martexcoin-mxt.png',
     token: 'MXT',
     coin: 'MarteXcoin',
   },
@@ -8840,7 +9681,8 @@ export const DATA_TOKEN = [
     coin: 'HaloDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digital-reserve-currency-drc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digital-reserve-currency-drc.png',
     token: 'DRC',
     coin: 'Digital Reserve Currency',
   },
@@ -8850,7 +9692,8 @@ export const DATA_TOKEN = [
     coin: 'CyberFM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/korean-won-krw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/korean-won-krw.png',
     token: 'KRW',
     coin: 'Korean Won',
   },
@@ -8860,12 +9703,14 @@ export const DATA_TOKEN = [
     coin: 'US Dollar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/2ped-metaverse-2ped.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/2ped-metaverse-2ped.png',
     token: '2PED',
     coin: '2PED Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/turkish-lira-try.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/turkish-lira-try.png',
     token: 'TRY',
     coin: 'Turkish Lira',
   },
@@ -8885,32 +9730,38 @@ export const DATA_TOKEN = [
     coin: 'AITS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nada-protocol-token-nada.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nada-protocol-token-nada.png',
     token: 'NADA',
     coin: 'NADA Protocol Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coon-token-coon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coon-token-coon.png',
     token: 'COON',
     coin: 'COON Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-coindesk-20-index-cd20.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-coindesk-20-index-cd20.png',
     token: 'CD20',
     coin: 'The CoinDesk 20 Index',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-layer-network-sln.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-layer-network-sln.png',
     token: 'SLN',
     coin: 'Smart Layer Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beacon-eth-beth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beacon-eth-beth.png',
     token: 'BETH',
     coin: 'Beacon ETH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nia-ground-niat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nia-ground-niat.png',
     token: 'NIAT',
     coin: 'NIA Ground',
   },
@@ -8920,7 +9771,8 @@ export const DATA_TOKEN = [
     coin: 'GBP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/massive-protocol-mav.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/massive-protocol-mav.png',
     token: 'MAV',
     coin: 'Massive Protocol',
   },
@@ -8935,12 +9787,14 @@ export const DATA_TOKEN = [
     coin: 'Zeebu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rats-ordinals-rats.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rats-ordinals-rats.png',
     token: 'RATS',
     coin: 'rats (Ordinals)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sats-ordinals-sats.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sats-ordinals-sats.png',
     token: 'SATS',
     coin: 'SATS (Ordinals)',
   },
@@ -8950,12 +9804,14 @@ export const DATA_TOKEN = [
     coin: 'EchoLink',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoshis-vision-sats.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoshis-vision-sats.png',
     token: 'SATS',
     coin: 'Satoshis Vision',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/acgn-protocol-aimeme.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/acgn-protocol-aimeme.png',
     token: 'AIMEME',
     coin: 'ACGN Protocol',
   },
@@ -8965,12 +9821,14 @@ export const DATA_TOKEN = [
     coin: 'BOB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lido-steth-steth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lido-steth-steth.png',
     token: 'STETH',
     coin: 'Lido stETH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polar-bear-pbu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polar-bear-pbu.png',
     token: 'PBU',
     coin: 'Polar beaR',
   },
@@ -8985,12 +9843,14 @@ export const DATA_TOKEN = [
     coin: 'Troll',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brazilian-real-brl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brazilian-real-brl.png',
     token: 'BRL',
     coin: 'Brazilian Real',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kyber-network-knc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kyber-network-knc.png',
     token: 'KNCL',
     coin: 'Kyber Network',
   },
@@ -9000,12 +9860,14 @@ export const DATA_TOKEN = [
     coin: 'ZKFair',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/navx-token-navx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/navx-token-navx.png',
     token: 'NAVX',
     coin: 'NAVX Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/legends-of-elumia-elu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/legends-of-elumia-elu.png',
     token: 'ELU',
     coin: 'Legends of Elumia',
   },
@@ -9015,12 +9877,14 @@ export const DATA_TOKEN = [
     coin: 'UPPP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vana-token-vana.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vana-token-vana.png',
     token: 'VANA',
     coin: 'VANA TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vanar-chain-vanry.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vanar-chain-vanry.png',
     token: 'VANRY',
     coin: 'Vanar Chain',
   },
@@ -9035,12 +9899,14 @@ export const DATA_TOKEN = [
     coin: 'Orca',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/serenity-shield-sersh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/serenity-shield-sersh.png',
     token: 'SERSH',
     coin: 'Serenity Shield',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dmail-network-dmail.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dmail-network-dmail.png',
     token: 'DMAIL',
     coin: 'Dmail Network',
   },
@@ -9055,7 +9921,8 @@ export const DATA_TOKEN = [
     coin: 'Dao Glass',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-cats-1cat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-cats-1cat.png',
     token: '1CAT',
     coin: 'Bitcoin Cats',
   },
@@ -9065,12 +9932,14 @@ export const DATA_TOKEN = [
     coin: 'LayerAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sols-spl20-sols.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sols-spl20-sols.png',
     token: 'SOLS',
     coin: 'sols (spl20)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/matr1x-fire-fire.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/matr1x-fire-fire.png',
     token: 'FIRE',
     coin: 'Matr1x Fire',
   },
@@ -9085,12 +9954,14 @@ export const DATA_TOKEN = [
     coin: 'QUBIC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/develocity-deve.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/develocity-deve.png',
     token: 'DEVE',
     coin: 'Develocity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aerodrome-finance-aero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aerodrome-finance-aero.png',
     token: 'AERO',
     coin: 'Aerodrome Finance',
   },
@@ -9105,37 +9976,44 @@ export const DATA_TOKEN = [
     coin: 'Avalox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wstusdt-wstusdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wstusdt-wstusdt.png',
     token: 'WSTUSDT',
     coin: 'wstUSDT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chainflip-flip.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chainflip-flip.png',
     token: 'FLIP',
     coin: 'Chainflip',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitscrunch-bcut.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitscrunch-bcut.png',
     token: 'BCUT',
     coin: 'bitsCrunch',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xt-com-token-xt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xt-com-token-xt.png',
     token: 'XT',
     coin: 'XT.com Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/velodrome-finance-velo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/velodrome-finance-velo.png',
     token: 'VELO',
     coin: 'Velodrome Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/subquery-network-sqt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/subquery-network-sqt.png',
     token: 'SQT',
     coin: 'SubQuery Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memetoon-memetoon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memetoon-memetoon.png',
     token: 'MEMETOON',
     coin: 'MEMETOON',
   },
@@ -9150,12 +10028,14 @@ export const DATA_TOKEN = [
     coin: 'Work X',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mice-(ordinals)-mice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mice-(ordinals)-mice.png',
     token: 'MICE',
     coin: 'Mice (Ordinals)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/whales-market-whales.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/whales-market-whales.png',
     token: 'WHALES',
     coin: 'Whales Market',
   },
@@ -9175,7 +10055,8 @@ export const DATA_TOKEN = [
     coin: 'MMSS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoshivm-savm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoshivm-savm.png',
     token: 'SAVM',
     coin: 'SatoshiVM',
   },
@@ -9185,12 +10066,14 @@ export const DATA_TOKEN = [
     coin: 'COMBO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zuzalu-inu-zuzalu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zuzalu-inu-zuzalu.png',
     token: 'ZUZALU',
     coin: 'Zuzalu Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-erc-20-grok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-erc-20-grok.png',
     token: 'GROK',
     coin: 'Grok (ERC-20)',
   },
@@ -9200,7 +10083,8 @@ export const DATA_TOKEN = [
     coin: 'IPVERSE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/refundcoin-rfd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/refundcoin-rfd.png',
     token: 'RFD',
     coin: 'RefundCoin',
   },
@@ -9210,7 +10094,8 @@ export const DATA_TOKEN = [
     coin: 'ULTIMA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/whitebit-coin-wbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/whitebit-coin-wbt.png',
     token: 'WBT',
     coin: 'WhiteBIT Coin',
   },
@@ -9220,12 +10105,14 @@ export const DATA_TOKEN = [
     coin: 'Oris',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/analysoor-zero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/analysoor-zero.png',
     token: 'ZERO',
     coin: 'Analysoor',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/codexchain-cdx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/codexchain-cdx.png',
     token: 'CDX',
     coin: 'CodeXchain',
   },
@@ -9250,37 +10137,44 @@ export const DATA_TOKEN = [
     coin: 'AVAV',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xpet-tech-xpet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xpet-tech-xpet.png',
     token: 'XPET',
     coin: 'xPET tech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pigcoin-pigcoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pigcoin-pigcoin.png',
     token: 'PIGCOIN',
     coin: 'Pigcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xen-crypto-xen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xen-crypto-xen.png',
     token: 'XEN',
     coin: 'XEN Crypto',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trillioner-tlc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trillioner-tlc.png',
     token: 'TLC',
     coin: 'Trillioner',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/joseon-mun-jsm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/joseon-mun-jsm.png',
     token: 'JSM',
     coin: 'Joseon Mun',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/connext-network-next.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/connext-network-next.png',
     token: 'NEXT',
     coin: 'Connext Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/microvisionchain-space.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/microvisionchain-space.png',
     token: 'SPACE',
     coin: 'MicroVisionChain',
   },
@@ -9290,32 +10184,38 @@ export const DATA_TOKEN = [
     coin: 'TENET',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/capitalrock-cr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/capitalrock-cr.png',
     token: 'CR',
     coin: 'Capitalrock',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/artyfact-metaverse-arty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/artyfact-metaverse-arty.png',
     token: 'ARTY',
     coin: 'Artyfact Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/synesis-one-sns.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/synesis-one-sns.png',
     token: 'SNS',
     coin: 'Synesis One',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/australian-dollar-aud.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/australian-dollar-aud.png',
     token: 'AUD',
     coin: 'Australian Dollar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-edenrich-bitbedr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-edenrich-bitbedr.png',
     token: 'BITBEDR',
     coin: 'Bitcoin EDenRich',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swiss-franc-chf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swiss-franc-chf.png',
     token: 'CHF',
     coin: 'Swiss Franc',
   },
@@ -9325,7 +10225,8 @@ export const DATA_TOKEN = [
     coin: 'Oobit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/collective-finance-cgld.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/collective-finance-cgld.png',
     token: 'CGLD',
     coin: 'Collective Finance',
   },
@@ -9335,27 +10236,32 @@ export const DATA_TOKEN = [
     coin: 'Metababy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/less-fees-and-gas-lfg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/less-fees-and-gas-lfg.png',
     token: 'LFG',
     coin: 'Less Fees and Gas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rwa-finance-rwas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rwa-finance-rwas.png',
     token: 'RWAS',
     coin: 'RWA Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lybra-finance-lbr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lybra-finance-lbr.png',
     token: 'LBR',
     coin: 'Lybra Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vidt-datalink-vidt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vidt-datalink-vidt.png',
     token: 'VIDT',
     coin: 'VIDT Datalink',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/capitalrock-crk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/capitalrock-crk.png',
     token: 'CRK',
     coin: 'CapitalRock',
   },
@@ -9370,7 +10276,8 @@ export const DATA_TOKEN = [
     coin: 'Shib2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avive-world-avive.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avive-world-avive.png',
     token: 'AVIVE',
     coin: 'Avive World',
   },
@@ -9380,7 +10287,8 @@ export const DATA_TOKEN = [
     coin: 'ligo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/btcs-ordinals-btcs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/btcs-ordinals-btcs.png',
     token: 'BTCS',
     coin: 'BTCs (Ordinals)',
   },
@@ -9391,22 +10299,26 @@ export const DATA_TOKEN = [
     coin: 'Pioneering Decentralized UTXO-Based NFT Social Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/structure-finance-stf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/structure-finance-stf.png',
     token: 'STF',
     coin: 'Structure finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/andromeda-andr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/andromeda-andr.png',
     token: 'ANDR',
     coin: 'Andromeda',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gala-music-music.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gala-music-music.png',
     token: 'MUSIC',
     coin: 'Gala Music',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pundi-x-purse-purse.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pundi-x-purse-purse.png',
     token: 'PURSE',
     coin: 'Pundi X PURSE',
   },
@@ -9426,7 +10338,8 @@ export const DATA_TOKEN = [
     coin: 'cLFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethscriptions-eths.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethscriptions-eths.png',
     token: 'ETHS',
     coin: 'Ethscriptions',
   },
@@ -9452,7 +10365,8 @@ export const DATA_TOKEN = [
     coin: 'SMILEY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flappymoonbird-fmb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flappymoonbird-fmb.png',
     token: 'FMB',
     coin: 'Flappymoonbird',
   },
@@ -9487,7 +10401,8 @@ export const DATA_TOKEN = [
     coin: 'MetaMUI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aisi-ordinals-aisi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aisi-ordinals-aisi.png',
     token: 'AISI',
     coin: 'AISI (Ordinals)',
   },
@@ -9508,17 +10423,20 @@ export const DATA_TOKEN = [
     coin: 'Kimbo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blazestake-staked-sol-bsol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blazestake-staked-sol-bsol.png',
     token: 'BSOL',
     coin: 'BlazeStake Staked SOL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thetanuts-finance-nuts.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thetanuts-finance-nuts.png',
     token: 'NUTS',
     coin: 'Thetanuts Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fimarkcoin-fmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fimarkcoin-fmc.png',
     token: 'FMC',
     coin: 'FimarkCoin',
   },
@@ -9528,12 +10446,14 @@ export const DATA_TOKEN = [
     coin: 'SXIO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/imeta-coin-imeta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/imeta-coin-imeta.png',
     token: 'IMETA',
     coin: 'IMETA coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ark-rivals-arkn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ark-rivals-arkn.png',
     token: 'ARKN',
     coin: 'Ark Rivals',
   },
@@ -9543,12 +10463,14 @@ export const DATA_TOKEN = [
     coin: 'GOLCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/port3-network-port3.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/port3-network-port3.png',
     token: 'PORT3',
     coin: 'Port3 Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xt-stablecoin-xtusd-xtusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xt-stablecoin-xtusd-xtusd.png',
     token: 'XTUSD',
     coin: 'XT Stablecoin XTUSD',
   },
@@ -9563,7 +10485,8 @@ export const DATA_TOKEN = [
     coin: 'KCAL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astra-protocol-astra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astra-protocol-astra.png',
     token: 'ASTRA',
     coin: 'ASTRA Protocol',
   },
@@ -9573,7 +10496,8 @@ export const DATA_TOKEN = [
     coin: 'PONKE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zephyr-protocol-zeph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zephyr-protocol-zeph.png',
     token: 'ZEPH',
     coin: 'Zephyr Protocol',
   },
@@ -9583,7 +10507,8 @@ export const DATA_TOKEN = [
     coin: 'AINN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/popsicle-finance-ice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/popsicle-finance-ice.png',
     token: 'ICE',
     coin: 'Popsicle Finance',
   },
@@ -9598,7 +10523,8 @@ export const DATA_TOKEN = [
     coin: 'Pyrin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bit-of-mind-bom-bom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bit-of-mind-bom-bom.png',
     token: 'BOM',
     coin: 'Bit of Mind (BOM)',
   },
@@ -9613,7 +10539,8 @@ export const DATA_TOKEN = [
     coin: 'Doran',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aquarius-loan-ars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aquarius-loan-ars.png',
     token: 'ARS',
     coin: 'Aquarius Loan',
   },
@@ -9628,12 +10555,14 @@ export const DATA_TOKEN = [
     coin: 'Viacoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/go-fu*k-yourself.-gfy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/go-fu*k-yourself.-gfy.png',
     token: 'GFY',
     coin: 'go fu*k yourself.',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fud-the-pug-fud.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fud-the-pug-fud.png',
     token: 'FUD',
     coin: 'Fud the Pug',
   },
@@ -9643,27 +10572,32 @@ export const DATA_TOKEN = [
     coin: 'Bork',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/roup-(ordinals)-roup.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/roup-(ordinals)-roup.png',
     token: 'ROUP',
     coin: 'roup (Ordinals)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metacraft-token-polygon-mctp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metacraft-token-polygon-mctp.png',
     token: 'MCTP',
     coin: 'Metacraft Token (Polygon)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/anita-max-wynn-wynn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/anita-max-wynn-wynn.png',
     token: 'WYNN',
     coin: 'Anita Max Wynn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ami-world-gami.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ami-world-gami.png',
     token: 'GAMI',
     coin: 'AMI World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rdex-(ordinals)-rdex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rdex-(ordinals)-rdex.png',
     token: 'RDEX',
     coin: 'RDEX (Ordinals)',
   },
@@ -9678,7 +10612,8 @@ export const DATA_TOKEN = [
     coin: 'UNICE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/phantom-of-the-kill-oshi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/phantom-of-the-kill-oshi.png',
     token: 'OSHI',
     coin: 'Phantom of the Kill',
   },
@@ -9713,32 +10648,38 @@ export const DATA_TOKEN = [
     coin: 'Sui (IOU)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/welshcorgicoin-welsh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/welshcorgicoin-welsh.png',
     token: 'WELSH',
     coin: 'Welshcorgicoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polish-zloty-pln.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polish-zloty-pln.png',
     token: 'PLN',
     coin: 'Polish zloty',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/windfall-token-wft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/windfall-token-wft.png',
     token: 'WFT',
     coin: 'Windfall Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/camly-coin-camly.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/camly-coin-camly.png',
     token: 'CAMLY',
     coin: 'Camly Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mud-guild-game-mgg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mud-guild-game-mgg.png',
     token: 'MGG',
     coin: 'MUD Guild Game',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vaporwallet-vpr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vaporwallet-vpr.png',
     token: 'VPR',
     coin: 'VaporWallet',
   },
@@ -9753,7 +10694,8 @@ export const DATA_TOKEN = [
     coin: 'LandX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/party-token-party.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/party-token-party.png',
     token: 'PARTY',
     coin: 'Party Token',
   },
@@ -9763,12 +10705,14 @@ export const DATA_TOKEN = [
     coin: 'MEMETOON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/peapods-finance-peas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/peapods-finance-peas.png',
     token: 'PEAS',
     coin: 'Peapods Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/virtucraft-vtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/virtucraft-vtc.png',
     token: 'VTC',
     coin: 'Virtucraft',
   },
@@ -9778,7 +10722,8 @@ export const DATA_TOKEN = [
     coin: 'Franklin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gearbox-protocol-gear.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gearbox-protocol-gear.png',
     token: 'GEAR',
     coin: 'Gearbox Protocol',
   },
@@ -9788,17 +10733,20 @@ export const DATA_TOKEN = [
     coin: 'CPCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bull-btc-club-bbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bull-btc-club-bbc.png',
     token: 'BBC',
     coin: 'Bull BTC Club',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitstable-bssb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitstable-bssb.png',
     token: 'BSSB',
     coin: 'BitStable',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mockjup-mockjup.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mockjup-mockjup.png',
     token: 'MOCKJUP',
     coin: 'mockJUP',
   },
@@ -9808,7 +10756,8 @@ export const DATA_TOKEN = [
     coin: 'Wojak',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pablo-defi-pablo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pablo-defi-pablo.png',
     token: 'PABLO',
     coin: 'Pablo DeFi',
   },
@@ -9818,12 +10767,14 @@ export const DATA_TOKEN = [
     coin: 'Rebase GG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepe-community-pepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepe-community-pepe.png',
     token: 'PEPE',
     coin: 'Pepe Community',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hippo-wallet-token-hpo-hpo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hippo-wallet-token-hpo-hpo.png',
     token: 'HPO',
     coin: 'Hippo Wallet Token (HPO)',
   },
@@ -9838,17 +10789,20 @@ export const DATA_TOKEN = [
     coin: 'PMXX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepe-mining-company-ppmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepe-mining-company-ppmc.png',
     token: 'PPMC',
     coin: 'Pepe Mining Company',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/titan-token-ttt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/titan-token-ttt.png',
     token: 'TTT',
     coin: 'Titan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnsx-ordinals-bnsx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnsx-ordinals-bnsx.png',
     token: 'BNSX',
     coin: 'BNSx (Ordinals)',
   },
@@ -9869,12 +10823,14 @@ export const DATA_TOKEN = [
     coin: 'Vector',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/karate-combat-karate.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/karate-combat-karate.png',
     token: 'KARATE',
     coin: 'Karate Combat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaelfland-melt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaelfland-melt.png',
     token: 'MELT',
     coin: 'MetaElfLand',
   },
@@ -9884,7 +10840,8 @@ export const DATA_TOKEN = [
     coin: 'Lends',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/morpheus-labs-mind.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/morpheus-labs-mind.png',
     token: 'MIND',
     coin: 'Morpheus Labs',
   },
@@ -9894,22 +10851,26 @@ export const DATA_TOKEN = [
     coin: 'DexNet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ougon-zakura-ft-ozft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ougon-zakura-ft-ozft.png',
     token: 'OZFT',
     coin: 'OUGON ZAKURA FT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-blockchain-smart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-blockchain-smart.png',
     token: 'SMART',
     coin: 'Smart Blockchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/canadian-dollar-cad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/canadian-dollar-cad.png',
     token: 'CAD',
     coin: 'Canadian Dollar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/csas-(ordinals)-csas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/csas-(ordinals)-csas.png',
     token: 'CSAS',
     coin: 'csas (Ordinals)',
   },
@@ -9919,12 +10880,14 @@ export const DATA_TOKEN = [
     coin: 'KStarNFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unipaycoin-upc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unipaycoin-upc.png',
     token: 'UPC',
     coin: 'Unipaycoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/autonolas-olas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/autonolas-olas.png',
     token: 'OLAS',
     coin: 'Autonolas',
   },
@@ -9934,7 +10897,8 @@ export const DATA_TOKEN = [
     coin: 'Metacoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ps-platform-ps.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ps-platform-ps.png',
     token: 'PS',
     coin: 'PS Platform',
   },
@@ -9949,17 +10913,20 @@ export const DATA_TOKEN = [
     coin: 'Omni',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/playa3ull-games-3ull.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/playa3ull-games-3ull.png',
     token: '3ULL',
     coin: 'PLAYA3ULL GAMES',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/asterix-labs-astx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/asterix-labs-astx.png',
     token: 'ASTX',
     coin: 'Asterix Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astropepex-apx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astropepex-apx.png',
     token: 'APX',
     coin: 'AstroPepeX',
   },
@@ -9989,42 +10956,50 @@ export const DATA_TOKEN = [
     coin: 'Tiny SPL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mantle-inu-minu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mantle-inu-minu.png',
     token: 'MINU',
     coin: 'Mantle Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/niko-token-nko.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/niko-token-nko.png',
     token: 'NKO',
     coin: 'Niko Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/animal-concerts-anml.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/animal-concerts-anml.png',
     token: 'ANML',
     coin: 'Animal Concerts',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/a-hunters-dream-caw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/a-hunters-dream-caw.png',
     token: 'CAW',
     coin: 'A Hunters Dream',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shibwifhatcoin-shibwif.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shibwifhatcoin-shibwif.png',
     token: 'SHIBWIF',
     coin: 'Shibwifhatcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/palantium-pala.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/palantium-pala.png',
     token: 'PALA',
     coin: 'Palantium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/caduceus-protocol-cad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/caduceus-protocol-cad.png',
     token: 'CAD',
     coin: 'Caduceus Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lumishare-lumi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lumishare-lumi.png',
     token: 'LUMI',
     coin: 'LumiShare',
   },
@@ -10034,12 +11009,14 @@ export const DATA_TOKEN = [
     coin: 'SOGE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tlifecoin-tlife.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tlifecoin-tlife.png',
     token: 'TLIFE',
     coin: 'TLifeCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alien-milady-fumo-fumo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alien-milady-fumo-fumo.png',
     token: 'FUMO',
     coin: 'Alien Milady Fumo',
   },
@@ -10059,32 +11036,38 @@ export const DATA_TOKEN = [
     coin: 'Ta-da',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/forward-protocol-forward.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/forward-protocol-forward.png',
     token: 'FORWARD',
     coin: 'Forward Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/inscribe-inscribe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/inscribe-inscribe.png',
     token: 'INSCRIBE',
     coin: 'Inscribe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/epik-protocol-aiepk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/epik-protocol-aiepk.png',
     token: 'AIEPK',
     coin: 'EpiK Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/king-of-legends-kol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/king-of-legends-kol.png',
     token: 'KOL',
     coin: 'King of Legends',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/getkicks-kicks.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/getkicks-kicks.png',
     token: 'KICKS',
     coin: 'GetKicks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hype-meme-token-hmtt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hype-meme-token-hmtt.png',
     token: 'HMTT',
     coin: 'Hype Meme Token',
   },
@@ -10104,17 +11087,20 @@ export const DATA_TOKEN = [
     coin: 'WiBX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-reward-token-srt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-reward-token-srt.png',
     token: 'SRT',
     coin: 'Smart Reward Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apes-go-bananas-agb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apes-go-bananas-agb.png',
     token: 'AGB',
     coin: 'Apes Go Bananas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vela-token-vela.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vela-token-vela.png',
     token: 'VELA',
     coin: 'Vela Token',
   },
@@ -10134,12 +11120,14 @@ export const DATA_TOKEN = [
     coin: 'DeFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/taproot-exchange-taproot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/taproot-exchange-taproot.png',
     token: 'TAPROOT',
     coin: 'Taproot Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/camelot-token-grail.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/camelot-token-grail.png',
     token: 'GRAIL',
     coin: 'Camelot Token',
   },
@@ -10154,12 +11142,14 @@ export const DATA_TOKEN = [
     coin: 'Eggdog',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mcoin-chain-mcoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mcoin-chain-mcoin.png',
     token: 'MCOIN',
     coin: 'MCOIN Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/superpower-squad-squad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/superpower-squad-squad.png',
     token: 'SQUAD',
     coin: 'Superpower Squad',
   },
@@ -10169,7 +11159,8 @@ export const DATA_TOKEN = [
     coin: 'LFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vision-of-blockchain-vob.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vision-of-blockchain-vob.png',
     token: 'VOB',
     coin: 'VISION OF BLOCKCHAIN',
   },
@@ -10179,22 +11170,26 @@ export const DATA_TOKEN = [
     coin: 'Tipcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nelore-coin-nlc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nelore-coin-nlc.png',
     token: 'NLC',
     coin: 'Nelore Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reality-metaverse-rmv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reality-metaverse-rmv.png',
     token: 'RMV',
     coin: 'Reality Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digiverse-digi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digiverse-digi.png',
     token: 'DIGI',
     coin: 'Digiverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coda-coin-coda.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coda-coin-coda.png',
     token: 'CODA',
     coin: 'CODA Coin',
   },
@@ -10224,7 +11219,8 @@ export const DATA_TOKEN = [
     coin: 'FansTime',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/love-hate-inu-lhinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/love-hate-inu-lhinu.png',
     token: 'LHINU',
     coin: 'Love Hate Inu',
   },
@@ -10234,7 +11230,8 @@ export const DATA_TOKEN = [
     coin: 'Saber',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/seed-photo-seed.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/seed-photo-seed.png',
     token: 'SEED',
     coin: 'Seed.Photo',
   },
@@ -10249,17 +11246,20 @@ export const DATA_TOKEN = [
     coin: 'VMPX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/boringdao-boring.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/boringdao-boring.png',
     token: 'BORING',
     coin: 'BoringDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/libra-incentix-lixx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/libra-incentix-lixx.png',
     token: 'LIXX',
     coin: 'Libra Incentix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neo-credit-nrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neo-credit-nrt.png',
     token: 'NRT',
     coin: 'NEO CREDIT',
   },
@@ -10275,12 +11275,14 @@ export const DATA_TOKEN = [
     coin: 'CIAS the inscription of Celestia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oort-digital-oort.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oort-digital-oort.png',
     token: 'OORT',
     coin: 'Oort Digital',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pop-social-ppt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pop-social-ppt.png',
     token: 'PPT',
     coin: 'Pop Social',
   },
@@ -10295,22 +11297,26 @@ export const DATA_TOKEN = [
     coin: 'OctaCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vyvo-smart-chain-vsc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vyvo-smart-chain-vsc.png',
     token: 'VSC',
     coin: 'Vyvo Smart Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/poolz-finance-poolx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/poolz-finance-poolx.png',
     token: 'POOLX',
     coin: 'Poolz Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/404aliens-404a.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/404aliens-404a.png',
     token: '404A',
     coin: '404Aliens',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/octopus-network-oct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/octopus-network-oct.png',
     token: 'OCT',
     coin: 'Octopus Network',
   },
@@ -10330,7 +11336,8 @@ export const DATA_TOKEN = [
     coin: 'Ethlas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tomochain-viction.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tomochain-viction.png',
     token: 'VICTION',
     coin: 'TomoChain',
   },
@@ -10350,27 +11357,32 @@ export const DATA_TOKEN = [
     coin: 'EURC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vulcan-forged-lava-lava.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vulcan-forged-lava-lava.png',
     token: 'LAVA',
     coin: 'Vulcan Forged LAVA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iron-fish-iron.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iron-fish-iron.png',
     token: 'IRON',
     coin: 'Iron Fish',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dovi-ordinals-dovi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dovi-ordinals-dovi.png',
     token: 'DOVI',
     coin: 'Dovi(Ordinals)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cakepie-xyz-ckp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cakepie-xyz-ckp.png',
     token: 'CKP',
     coin: 'Cakepie XYZ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nothing-nothing.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nothing-nothing.png',
     token: 'NOTHING',
     coin: 'NOTHING',
   },
@@ -10385,12 +11397,14 @@ export const DATA_TOKEN = [
     coin: 'Alkimi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dork-lord-dorkl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dork-lord-dorkl.png',
     token: 'DORKL',
     coin: 'ᗪOᖇK ᒪOᖇᗪ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bit-store-store.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bit-store-store.png',
     token: 'STORE',
     coin: 'Bit.Store',
   },
@@ -10405,17 +11419,20 @@ export const DATA_TOKEN = [
     coin: 'Medifakt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gym-network-gymnet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gym-network-gymnet.png',
     token: 'GYMNET',
     coin: 'Gym Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoshi-nakamoto-token-snmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoshi-nakamoto-token-snmt.png',
     token: 'SNMT',
     coin: 'SATOSHI NAKAMOTO TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/realworldx-rwx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/realworldx-rwx.png',
     token: 'RWX',
     coin: 'RealWorldX',
   },
@@ -10425,12 +11442,14 @@ export const DATA_TOKEN = [
     coin: 'Paycoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kryptonite-seilor.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kryptonite-seilor.png',
     token: 'SEILOR',
     coin: 'Kryptonite',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/foncoin-foncoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/foncoin-foncoin.png',
     token: 'FONCOIN',
     coin: 'FONCOIN',
   },
@@ -10440,7 +11459,8 @@ export const DATA_TOKEN = [
     coin: 'Friend3',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/historydao-hao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/historydao-hao.png',
     token: 'HAO',
     coin: 'HistoryDAO',
   },
@@ -10450,7 +11470,8 @@ export const DATA_TOKEN = [
     coin: 'Mar3 AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avacus-sowaka-swk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avacus-sowaka-swk.png',
     token: 'SWK',
     coin: 'Avacus Sowaka',
   },
@@ -10465,7 +11486,8 @@ export const DATA_TOKEN = [
     coin: 'DO2 Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/datamall-chain-dmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/datamall-chain-dmc.png',
     token: 'DMC',
     coin: 'Datamall Chain',
   },
@@ -10480,12 +11502,14 @@ export const DATA_TOKEN = [
     coin: 'Pi Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jetton-game-jetton.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jetton-game-jetton.png',
     token: 'JETTON',
     coin: 'JetTon Game',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meta-merge-mana-mmm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meta-merge-mana-mmm.png',
     token: 'MMM',
     coin: 'Meta Merge Mana',
   },
@@ -10495,7 +11519,8 @@ export const DATA_TOKEN = [
     coin: 'MELD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/creta-world-creta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/creta-world-creta.png',
     token: 'CRETA',
     coin: 'Creta World',
   },
@@ -10505,12 +11530,14 @@ export const DATA_TOKEN = [
     coin: 'sudoswap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shiba-ai-shibai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shiba-ai-shibai.png',
     token: 'SHIBAI',
     coin: 'SHIBA AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/enjinstarter-ejs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/enjinstarter-ejs.png',
     token: 'EJS',
     coin: 'Enjinstarter',
   },
@@ -10520,7 +11547,8 @@ export const DATA_TOKEN = [
     coin: 'MixMob',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wall-street-baby-wsb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wall-street-baby-wsb.png',
     token: 'WSB',
     coin: 'WALL STREET BABY',
   },
@@ -10530,12 +11558,14 @@ export const DATA_TOKEN = [
     coin: 'Mog Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/froge-vip-froge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/froge-vip-froge.png',
     token: 'FROGE',
     coin: 'froge.vip',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/plastichero-pth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/plastichero-pth.png',
     token: 'PTH',
     coin: 'Plastichero',
   },
@@ -10550,7 +11580,8 @@ export const DATA_TOKEN = [
     coin: 'Sonorus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/a3s-protocol-aa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/a3s-protocol-aa.png',
     token: 'AA',
     coin: 'A3S Protocol',
   },
@@ -10560,7 +11591,8 @@ export const DATA_TOKEN = [
     coin: 'Zetrix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aeternus-atrno.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aeternus-atrno.png',
     token: 'ATRNO',
     coin: 'AETERNUS',
   },
@@ -10570,12 +11602,14 @@ export const DATA_TOKEN = [
     coin: 'AI Surf',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/donald-trump-trump2024.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/donald-trump-trump2024.png',
     token: 'TRUMP2024',
     coin: 'Donald Trump',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/anon-erc-20-anon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/anon-erc-20-anon.png',
     token: 'ANON',
     coin: 'Anon (ERC-20)',
   },
@@ -10590,42 +11624,50 @@ export const DATA_TOKEN = [
     coin: 'ARCS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/airdrop-world-awt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/airdrop-world-awt.png',
     token: 'AWT',
     coin: 'Airdrop World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/print-protocol-print.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/print-protocol-print.png',
     token: 'PRINT',
     coin: 'Print Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/altered-state-token-asto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/altered-state-token-asto.png',
     token: 'ASTO',
     coin: 'Altered State Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-axelar-waxl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-axelar-waxl.png',
     token: 'WAXL',
     coin: 'Wrapped Axelar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/atomarc-atomarc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/atomarc-atomarc.png',
     token: 'ATOMARC',
     coin: 'ATOMARC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/il-capo-of-crypto-capo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/il-capo-of-crypto-capo.png',
     token: 'CAPO',
     coin: 'IL CAPO OF CRYPTO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-grok-bsc-babygrok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-grok-bsc-babygrok.png',
     token: 'BABYGROK',
     coin: 'Baby Grok (BSC)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/humans-ai-heart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/humans-ai-heart.png',
     token: 'HEART',
     coin: 'Humans.ai',
   },
@@ -10635,7 +11677,8 @@ export const DATA_TOKEN = [
     coin: 'Mythos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mcontent-mcontent.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mcontent-mcontent.png',
     token: 'MCONTENT',
     coin: 'MContent',
   },
@@ -10650,12 +11693,14 @@ export const DATA_TOKEN = [
     coin: 'Joe Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/good-games-guild-ggg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/good-games-guild-ggg.png',
     token: 'GGG',
     coin: 'Good Games Guild',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-society-ais.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-society-ais.png',
     token: 'AIS',
     coin: 'AI.Society',
   },
@@ -10665,7 +11710,8 @@ export const DATA_TOKEN = [
     coin: 'GoSleep',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swisscheese-swch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swisscheese-swch.png',
     token: 'SWCH',
     coin: 'SwissCheese',
   },
@@ -10675,12 +11721,14 @@ export const DATA_TOKEN = [
     coin: 'Devomon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ozone-chain-ozone.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ozone-chain-ozone.png',
     token: 'OZONE',
     coin: 'Ozone Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coupon-assets-token-ca.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coupon-assets-token-ca.png',
     token: 'CA',
     coin: 'coupon assets token',
   },
@@ -10695,17 +11743,20 @@ export const DATA_TOKEN = [
     coin: 'OceanFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bullieverse-bull.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bullieverse-bull.png',
     token: 'BULL',
     coin: 'Bullieverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spodermen-sol-spoody.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spodermen-sol-spoody.png',
     token: 'SPOODY',
     coin: 'Spodermen (SOL)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/landwolf-avax-wolf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/landwolf-avax-wolf.png',
     token: 'WOLF',
     coin: 'LANDWOLF (Avax)',
   },
@@ -10720,12 +11771,14 @@ export const DATA_TOKEN = [
     coin: 'SOUNI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/areon-network-area.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/areon-network-area.png',
     token: 'AREA',
     coin: 'Areon Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/houdini-swap-lock.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/houdini-swap-lock.png',
     token: 'LOCK',
     coin: 'Houdini Swap',
   },
@@ -10745,17 +11798,20 @@ export const DATA_TOKEN = [
     coin: 'PawZone',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepecoin-cryptocurrency-pepecoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepecoin-cryptocurrency-pepecoin.png',
     token: 'PEPECOIN',
     coin: 'PepeCoin Cryptocurrency',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/parallelchain-xpll.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/parallelchain-xpll.png',
     token: 'XPLL',
     coin: 'ParallelChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/drunk-robots-metal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/drunk-robots-metal.png',
     token: 'METAL',
     coin: 'Drunk Robots',
   },
@@ -10765,22 +11821,26 @@ export const DATA_TOKEN = [
     coin: '4-CHAN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/celestial-celt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/celestial-celt.png',
     token: 'CELT',
     coin: 'Celestial',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rankerdao-ranker.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rankerdao-ranker.png',
     token: 'RANKER',
     coin: 'RankerDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avalaunch-xava.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avalaunch-xava.png',
     token: 'XAVA',
     coin: 'Avalaunch',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cfc-project-token-cfc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cfc-project-token-cfc.png',
     token: 'CFC',
     coin: 'CFC PROJECT Token',
   },
@@ -10795,12 +11855,14 @@ export const DATA_TOKEN = [
     coin: 'NEWU',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bluesparrow-token-bluesparrow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bluesparrow-token-bluesparrow.png',
     token: 'BLUESPARROW',
     coin: 'BlueSparrow Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/peace-coin-pce.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/peace-coin-pce.png',
     token: 'PCE',
     coin: 'PEACE COIN',
   },
@@ -10815,17 +11877,20 @@ export const DATA_TOKEN = [
     coin: 'AIGC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/atoplus-atoplus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/atoplus-atoplus.png',
     token: 'ATOPLUS',
     coin: 'ATOPLUS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ozone-chain-ozo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ozone-chain-ozo.png',
     token: 'OZO',
     coin: 'Ozone Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nostr-assets-protocol-nostr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nostr-assets-protocol-nostr.png',
     token: 'NOSTR',
     coin: 'Nostr Assets Protocol',
   },
@@ -10840,27 +11905,32 @@ export const DATA_TOKEN = [
     coin: 'SOSO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cheelee-attention-token-lee.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cheelee-attention-token-lee.png',
     token: 'LEE',
     coin: 'CHEELEE Attention Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defactor-factr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defactor-factr.png',
     token: 'FACTR',
     coin: 'Defactor',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaworld-mwcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaworld-mwcc.png',
     token: 'MWCC',
     coin: 'Metaworld',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mars-drc-20-mars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mars-drc-20-mars.png',
     token: 'MARS',
     coin: 'MARS (DRC-20)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gamemeteorcoin-gmto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gamemeteorcoin-gmto.png',
     token: 'GMTO',
     coin: 'GameMeteorCoin',
   },
@@ -10880,12 +11950,14 @@ export const DATA_TOKEN = [
     coin: 'Winnerz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/assangedao-justice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/assangedao-justice.png',
     token: 'JUSTICE',
     coin: 'AssangeDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smell-token-sml.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smell-token-sml.png',
     token: 'SML',
     coin: 'Smell Token',
   },
@@ -10900,7 +11972,8 @@ export const DATA_TOKEN = [
     coin: 'TAKI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neversol-never.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neversol-never.png',
     token: 'NEVER',
     coin: 'neversol',
   },
@@ -10910,12 +11983,14 @@ export const DATA_TOKEN = [
     coin: 'TRICK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vara-network-vara.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vara-network-vara.png',
     token: 'VARA',
     coin: 'Vara Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fairerc20-ferc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fairerc20-ferc.png',
     token: 'FERC',
     coin: 'FairERC20',
   },
@@ -10925,12 +12000,14 @@ export const DATA_TOKEN = [
     coin: 'Thrupenny',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/frutti-dino-fdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/frutti-dino-fdt.png',
     token: 'FDT',
     coin: 'Frutti Dino',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/game-tournament-trophy-gtt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/game-tournament-trophy-gtt.png',
     token: 'GTT',
     coin: 'Game Tournament Trophy',
   },
@@ -10950,7 +12027,8 @@ export const DATA_TOKEN = [
     coin: 'ARC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vitruveo-dex-vtro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vitruveo-dex-vtro.png',
     token: 'VTRO',
     coin: 'Vitruveo DEX',
   },
@@ -10960,12 +12038,14 @@ export const DATA_TOKEN = [
     coin: 'Synth AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unigraph-protocol-grph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unigraph-protocol-grph.png',
     token: 'GRPH',
     coin: 'Unigraph Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hypercomic-hyco.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hypercomic-hyco.png',
     token: 'HYCO',
     coin: 'HYPERCOMIC',
   },
@@ -10975,7 +12055,8 @@ export const DATA_TOKEN = [
     coin: 'ASCT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/panther-protocol-zkp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/panther-protocol-zkp.png',
     token: 'ZKP',
     coin: 'Panther Protocol',
   },
@@ -10985,17 +12066,20 @@ export const DATA_TOKEN = [
     coin: 'Orbofi AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kongscription-kong.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kongscription-kong.png',
     token: 'KONG',
     coin: 'Kongscription',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shade-protocol-shd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shade-protocol-shd.png',
     token: 'SHD',
     coin: 'Shade Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/billiverse-bvt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/billiverse-bvt.png',
     token: 'BVT',
     coin: 'BILLIVERSE',
   },
@@ -11010,37 +12094,44 @@ export const DATA_TOKEN = [
     coin: 'FUNCH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ozone-metaverse-ozone.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ozone-metaverse-ozone.png',
     token: 'OZONE',
     coin: 'Ozone metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metastrike-mts.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metastrike-mts.png',
     token: 'MTS',
     coin: 'Metastrike',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-2-0-doge2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-2-0-doge2.png',
     token: 'DOGE2',
     coin: 'Doge 2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quark-arc-20-quark.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quark-arc-20-quark.png',
     token: 'QUARK',
     coin: 'Quark (ARC-20)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/agro-global-agro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/agro-global-agro.png',
     token: 'AGRO',
     coin: 'Agro Global',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/miner-arena-minar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/miner-arena-minar.png',
     token: 'MINAR',
     coin: 'Miner Arena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-elon-babyelon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-elon-babyelon.png',
     token: 'BABYELON',
     coin: 'Baby Elon',
   },
@@ -11055,7 +12146,8 @@ export const DATA_TOKEN = [
     coin: 'BTCUP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magical-blocks-mblk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magical-blocks-mblk.png',
     token: 'MBLK',
     coin: 'Magical Blocks',
   },
@@ -11080,7 +12172,8 @@ export const DATA_TOKEN = [
     coin: 'RepubliK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-minima-wminima.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-minima-wminima.png',
     token: 'WMINIMA',
     coin: 'Wrapped Minima',
   },
@@ -11095,7 +12188,8 @@ export const DATA_TOKEN = [
     coin: 'Artrade',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-meta-coin-amc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-meta-coin-amc.png',
     token: 'AMC',
     coin: 'AI Meta Coin',
   },
@@ -11120,17 +12214,20 @@ export const DATA_TOKEN = [
     coin: 'EarnTV',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bid-protocol-bidp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bid-protocol-bidp.png',
     token: 'BIDP',
     coin: 'BID Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/index-cooperative-index.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/index-cooperative-index.png',
     token: 'INDEX',
     coin: 'Index Cooperative',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bobo-coin-bobo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bobo-coin-bobo.png',
     token: 'BOBO',
     coin: 'Bobo Coin',
   },
@@ -11140,27 +12237,32 @@ export const DATA_TOKEN = [
     coin: 'SOLAV',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metavault-trade-mvx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metavault-trade-mvx.png',
     token: 'MVX',
     coin: 'Metavault Trade',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/invitoken-invi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/invitoken-invi.png',
     token: 'INVI',
     coin: 'Invitoken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hiseals-hiseals.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hiseals-hiseals.png',
     token: 'HISEALS',
     coin: 'hiSEALS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/candy-pocket-candy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/candy-pocket-candy.png',
     token: 'CANDY',
     coin: 'Candy Pocket',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meme-brc-20-memebrc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meme-brc-20-memebrc.png',
     token: 'MEMEBRC',
     coin: 'MEME (BRC-20)',
   },
@@ -11205,12 +12307,14 @@ export const DATA_TOKEN = [
     coin: 'MOMOJI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/btcdown-btcdown.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/btcdown-btcdown.png',
     token: 'BTCDOWN',
     coin: 'BTCDOWN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethereum2-ethereum2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethereum2-ethereum2.png',
     token: 'ETHEREUM2',
     coin: 'ETHEREUM2',
   },
@@ -11230,12 +12334,14 @@ export const DATA_TOKEN = [
     coin: 'JobAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/euler-finance-eul.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/euler-finance-eul.png',
     token: 'EUL',
     coin: 'Euler Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meta-plus-token-mts.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meta-plus-token-mts.png',
     token: 'MTS',
     coin: 'Meta Plus Token',
   },
@@ -11245,7 +12351,8 @@ export const DATA_TOKEN = [
     coin: 'Rambox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/omega-network-omn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/omega-network-omn.png',
     token: 'OMN',
     coin: 'Omega Network',
   },
@@ -11255,7 +12362,8 @@ export const DATA_TOKEN = [
     coin: '1Sol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/merit-circle-mc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/merit-circle-mc.png',
     token: 'MC',
     coin: 'Merit Circle',
   },
@@ -11265,17 +12373,20 @@ export const DATA_TOKEN = [
     coin: 'LinkEye',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ciri-coin-ciri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ciri-coin-ciri.png',
     token: 'CIRI',
     coin: 'CIRI Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crystal-diamond-cld.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crystal-diamond-cld.png',
     token: 'CLD',
     coin: 'Crystal Diamond',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/foxfunnies-fxn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/foxfunnies-fxn.png',
     token: 'FXN',
     coin: 'FoxFunnies',
   },
@@ -11290,7 +12401,8 @@ export const DATA_TOKEN = [
     coin: 'CHAB8',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zombie-inu-zinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zombie-inu-zinu.png',
     token: 'ZINU',
     coin: 'Zombie Inu',
   },
@@ -11305,7 +12417,8 @@ export const DATA_TOKEN = [
     coin: 'FitBurn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/x-travel-space-xts.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/x-travel-space-xts.png',
     token: 'XTS',
     coin: 'X-Travel Space',
   },
@@ -11315,22 +12428,26 @@ export const DATA_TOKEN = [
     coin: 'Luffy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ben-coin-v2-ben.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ben-coin-v2-ben.png',
     token: 'BEN',
     coin: 'BEN Coin(V2)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/melos-studio-melos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/melos-studio-melos.png',
     token: 'MELOS',
     coin: 'Melos Studio',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/financie-token-fnct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/financie-token-fnct.png',
     token: 'FNCT',
     coin: 'Financie Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-game-finance-smart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-game-finance-smart.png',
     token: 'SMART',
     coin: 'Smart Game Finance',
   },
@@ -11340,12 +12457,14 @@ export const DATA_TOKEN = [
     coin: 'GemHUB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dog-wif-nunchucks-ninja.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dog-wif-nunchucks-ninja.png',
     token: 'NINJA',
     coin: 'Dog Wif Nunchucks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/raise-entertainment-tickets-rets.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/raise-entertainment-tickets-rets.png',
     token: 'RETS',
     coin: 'Raise Entertainment Tickets',
   },
@@ -11370,47 +12489,56 @@ export const DATA_TOKEN = [
     coin: 'APF Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nerd-token-nerd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nerd-token-nerd.png',
     token: 'NERD',
     coin: 'Nerd Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grapecoin-grape.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grapecoin-grape.png',
     token: 'GRAPE',
     coin: 'GrapeCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitstarters-bits.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitstarters-bits.png',
     token: 'BITS',
     coin: 'BitStarters',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-gladiator-shards-cgl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-gladiator-shards-cgl.png',
     token: 'CGL',
     coin: 'Crypto Gladiator Shards',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/w3gamez-network-w3g.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/w3gamez-network-w3g.png',
     token: 'W3G',
     coin: 'W3Gamez Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethernity-cloud-ecld.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethernity-cloud-ecld.png',
     token: 'ECLD',
     coin: 'Ethernity CLOUD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/btc-softnote-btcsn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/btc-softnote-btcsn.png',
     token: 'BTCSN',
     coin: 'BTC Softnote',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metavisa-protocol-mesa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metavisa-protocol-mesa.png',
     token: 'MESA',
     coin: 'Metavisa Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyb3rgam3r420-gamer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyb3rgam3r420-gamer.png',
     token: 'GAMER',
     coin: 'cyb3rgam3r420',
   },
@@ -11420,7 +12548,8 @@ export const DATA_TOKEN = [
     coin: 'X-FILE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xrpaynet-xrpaynet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xrpaynet-xrpaynet.png',
     token: 'XRPAYNET',
     coin: 'XRPayNet',
   },
@@ -11440,17 +12569,20 @@ export const DATA_TOKEN = [
     coin: 'RealLink',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/source-token-srcx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/source-token-srcx.png',
     token: 'SRCX',
     coin: 'Source Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethereumfair-ethf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethereumfair-ethf.png',
     token: 'ETHF',
     coin: 'EthereumFair',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jumbo-exchange-jumbo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jumbo-exchange-jumbo.png',
     token: 'JUMBO',
     coin: 'Jumbo Exchange',
   },
@@ -11460,7 +12592,8 @@ export const DATA_TOKEN = [
     coin: 'PowBlocks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tap-fantasy-tap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tap-fantasy-tap.png',
     token: 'TAP',
     coin: 'TAP FANTASY',
   },
@@ -11475,7 +12608,8 @@ export const DATA_TOKEN = [
     coin: 'Sacabam',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepebrc-pepebrc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepebrc-pepebrc.png',
     token: 'PEPEBRC',
     coin: 'PEPEBRC',
   },
@@ -11485,12 +12619,14 @@ export const DATA_TOKEN = [
     coin: 'Reach',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/firestarter-flame.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/firestarter-flame.png',
     token: 'FLAME',
     coin: 'FireStarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/romanian-leu-ron.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/romanian-leu-ron.png',
     token: 'RON',
     coin: 'Romanian leu',
   },
@@ -11510,7 +12646,8 @@ export const DATA_TOKEN = [
     coin: 'Socrates',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/titan-x-titanx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/titan-x-titanx.png',
     token: 'TITANX',
     coin: 'TITAN X',
   },
@@ -11525,12 +12662,14 @@ export const DATA_TOKEN = [
     coin: 'Ecomi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/turbos-finance-turbos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/turbos-finance-turbos.png',
     token: 'TURBOS',
     coin: 'Turbos Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saitarealty-srlty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saitarealty-srlty.png',
     token: 'SRLTY',
     coin: 'SaitaRealty',
   },
@@ -11540,22 +12679,26 @@ export const DATA_TOKEN = [
     coin: 'C-CASH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lucky-coin-lkc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lucky-coin-lkc.png',
     token: 'LKC',
     coin: 'Lucky Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/renq-finance-renq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/renq-finance-renq.png',
     token: 'RENQ',
     coin: 'Renq Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/degenreborn-degen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/degenreborn-degen.png',
     token: 'DEGEN',
     coin: 'DegenReborn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/woofwork-io-woof.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/woofwork-io-woof.png',
     token: 'WOOF',
     coin: 'WoofWork.io',
   },
@@ -11565,7 +12708,8 @@ export const DATA_TOKEN = [
     coin: 'Hydranet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/soul-society-hon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/soul-society-hon.png',
     token: 'HON',
     coin: 'Soul Society',
   },
@@ -11590,12 +12734,14 @@ export const DATA_TOKEN = [
     coin: 'EthXY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crossfi-mineplex-crfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crossfi-mineplex-crfi.png',
     token: 'CRFI',
     coin: 'CrossFi (MinePlex)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/logistic-fundamental-lf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/logistic-fundamental-lf.png',
     token: 'LF',
     coin: 'Logistic Fundamental',
   },
@@ -11605,12 +12751,14 @@ export const DATA_TOKEN = [
     coin: 'KonPay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/six-network-six.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/six-network-six.png',
     token: 'SIX',
     coin: 'Six Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/whitecoin-xwc2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/whitecoin-xwc2.png',
     token: 'XWC2',
     coin: 'Whitecoin',
   },
@@ -11625,7 +12773,8 @@ export const DATA_TOKEN = [
     coin: 'Credefi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shibadoge-shibdoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shibadoge-shibdoge.png',
     token: 'SHIBDOGE',
     coin: 'ShibaDoge',
   },
@@ -11635,7 +12784,8 @@ export const DATA_TOKEN = [
     coin: 'Human',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/web3games-com-wgt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/web3games-com-wgt.png',
     token: 'WGT',
     coin: 'Web3Games.com',
   },
@@ -11645,12 +12795,14 @@ export const DATA_TOKEN = [
     coin: 'Pacman',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/operation-phoenix-$ophx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/operation-phoenix-$ophx.png',
     token: '$OPHX',
     coin: 'Operation Phoenix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/russian-rouble-rub.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/russian-rouble-rub.png',
     token: 'RUB',
     coin: 'Russian Rouble',
   },
@@ -11660,7 +12812,8 @@ export const DATA_TOKEN = [
     coin: 'Virtual X',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trestle-trestle.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trestle-trestle.png',
     token: 'TRESTLE',
     coin: 'TRESTLE',
   },
@@ -11675,12 +12828,14 @@ export const DATA_TOKEN = [
     coin: '5MC Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fracton-protocol-ft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fracton-protocol-ft.png',
     token: 'FT',
     coin: 'Fracton Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aura-network-aura.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aura-network-aura.png',
     token: 'AURA',
     coin: 'Aura Network',
   },
@@ -11700,12 +12855,14 @@ export const DATA_TOKEN = [
     coin: 'WYscale',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kusunoki-samurai-kusunoki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kusunoki-samurai-kusunoki.png',
     token: 'KUSUNOKI',
     coin: 'Kusunoki Samurai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chimpzee-chmpz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chimpzee-chmpz.png',
     token: 'CHMPZ',
     coin: 'Chimpzee',
   },
@@ -11715,7 +12872,8 @@ export const DATA_TOKEN = [
     coin: 'Agoric',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dova-protocol-dova.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dova-protocol-dova.png',
     token: 'DOVA',
     coin: 'Dova Protocol',
   },
@@ -11725,12 +12883,14 @@ export const DATA_TOKEN = [
     coin: 'AMBBi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rada-foundation-rada.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rada-foundation-rada.png',
     token: 'RADA',
     coin: 'RADA Foundation',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/silk-spider-tanks-silk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/silk-spider-tanks-silk.png',
     token: 'SILK',
     coin: 'SILK Spider Tanks',
   },
@@ -11740,22 +12900,26 @@ export const DATA_TOKEN = [
     coin: 'Pastel',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gptplus-gptplus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gptplus-gptplus.png',
     token: 'GPTPLUS',
     coin: 'GPTPlus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/soulsaver-soul.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/soulsaver-soul.png',
     token: 'SOUL',
     coin: 'Soulsaver',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/simpsons-ai-sai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/simpsons-ai-sai.png',
     token: 'SAI',
     coin: 'Simpsons AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lemochain-lemo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lemochain-lemo.png',
     token: 'LEMO',
     coin: 'LemoChain',
   },
@@ -11770,12 +12934,14 @@ export const DATA_TOKEN = [
     coin: 'UvToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kingdomverse-king.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kingdomverse-king.png',
     token: 'KING',
     coin: 'Kingdomverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tarality-taral.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tarality-taral.png',
     token: 'TARAL',
     coin: 'Tarality',
   },
@@ -11785,7 +12951,8 @@ export const DATA_TOKEN = [
     coin: 'ZoidPay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oggy-inu-oggyeth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oggy-inu-oggyeth.png',
     token: 'OGGYETH',
     coin: 'Oggy inu',
   },
@@ -11795,12 +12962,14 @@ export const DATA_TOKEN = [
     coin: 'BEFE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metal-blockchain-metal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metal-blockchain-metal.png',
     token: 'METAL',
     coin: 'Metal Blockchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitkub-coin-kub.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitkub-coin-kub.png',
     token: 'KUB',
     coin: 'Bitkub Coin',
   },
@@ -11816,7 +12985,8 @@ export const DATA_TOKEN = [
     coin: 'Creative Energy Join International',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meta-x-dao-xdao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meta-x-dao-xdao.png',
     token: 'XDAO',
     coin: 'Meta X DAO',
   },
@@ -11831,12 +13001,14 @@ export const DATA_TOKEN = [
     coin: 'ClearDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/icon-x-world-icnx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/icon-x-world-icnx.png',
     token: 'ICNX',
     coin: 'Icon.X World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/qanplatform-qanx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/qanplatform-qanx.png',
     token: 'QANX',
     coin: 'QANplatform',
   },
@@ -11851,12 +13023,14 @@ export const DATA_TOKEN = [
     coin: 'MOOxMOO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memevengers-mmvg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memevengers-mmvg.png',
     token: 'MMVG',
     coin: 'MEMEVENGERS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kunji-finance-knj.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kunji-finance-knj.png',
     token: 'KNJ',
     coin: 'Kunji Finance',
   },
@@ -11871,12 +13045,14 @@ export const DATA_TOKEN = [
     coin: 'NexusMind',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/darkshield-games-studio-dks.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/darkshield-games-studio-dks.png',
     token: 'DKS',
     coin: 'DarkShield Games Studio',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/all-crypto-mechanics-acm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/all-crypto-mechanics-acm.png',
     token: '$ACM',
     coin: 'All Crypto Mechanics',
   },
@@ -11886,7 +13062,8 @@ export const DATA_TOKEN = [
     coin: 'Plxyer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bico-mata-token-bmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bico-mata-token-bmt.png',
     token: 'BMT',
     coin: 'Bico Mata Token',
   },
@@ -11901,7 +13078,8 @@ export const DATA_TOKEN = [
     coin: 'INERY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethdown-ethdown.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethdown-ethdown.png',
     token: 'ETHDOWN',
     coin: 'ETHDOWN',
   },
@@ -11931,7 +13109,8 @@ export const DATA_TOKEN = [
     coin: 'MetaMecha',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mudi-coin-mudi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mudi-coin-mudi.png',
     token: 'MUDI',
     coin: 'MUDI COIN',
   },
@@ -11941,7 +13120,8 @@ export const DATA_TOKEN = [
     coin: 'MetaQ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-epiko-epiko.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-epiko-epiko.png',
     token: 'EPIKO',
     coin: 'The Epiko',
   },
@@ -11956,7 +13136,8 @@ export const DATA_TOKEN = [
     coin: 'Dypius',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ugold-inc-ugold.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ugold-inc-ugold.png',
     token: 'UGOLD',
     coin: 'UGOLD Inc.',
   },
@@ -11966,7 +13147,8 @@ export const DATA_TOKEN = [
     coin: 'xx network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rake-coin-rake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rake-coin-rake.png',
     token: 'RAKE',
     coin: 'Rake Coin',
   },
@@ -11986,7 +13168,8 @@ export const DATA_TOKEN = [
     coin: 'EVAIS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/prisma-finance-prisma.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/prisma-finance-prisma.png',
     token: 'PRISMA',
     coin: 'Prisma Finance',
   },
@@ -11996,32 +13179,38 @@ export const DATA_TOKEN = [
     coin: 'POPKON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blast-coin-blast.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blast-coin-blast.png',
     token: 'BLAST',
     coin: 'Blast Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/krest-network-krest.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/krest-network-krest.png',
     token: 'KREST',
     coin: 'Krest Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/limoverse-limo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/limoverse-limo.png',
     token: 'LIMO',
     coin: 'Limoverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/battlefly-gfly.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/battlefly-gfly.png',
     token: 'GFLY',
     coin: 'BattleFly',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fibonacci-fibo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fibonacci-fibo.png',
     token: 'FIBO',
     coin: 'Fibonacci',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/space-misfits-smcw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/space-misfits-smcw.png',
     token: 'SMCW',
     coin: 'Space Misfits',
   },
@@ -12041,7 +13230,8 @@ export const DATA_TOKEN = [
     coin: 'Uniplay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/babypepefi-babypepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/babypepefi-babypepe.png',
     token: 'BABYPEPE',
     coin: 'BabyPepeFi',
   },
@@ -12061,12 +13251,14 @@ export const DATA_TOKEN = [
     coin: 'dogi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/black-whale-xxx-xxx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/black-whale-xxx-xxx.png',
     token: 'XXX',
     coin: 'Black Whale (xXx)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ferret-ai-ferret.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ferret-ai-ferret.png',
     token: 'FERRET',
     coin: 'FERRET AI',
   },
@@ -12091,17 +13283,20 @@ export const DATA_TOKEN = [
     coin: 'Realy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chumbi-valley-chmb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chumbi-valley-chmb.png',
     token: 'CHMB',
     coin: 'Chumbi Valley',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/toka-token-toka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/toka-token-toka.png',
     token: 'TOKA',
     coin: 'Toka Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cappasity-capp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cappasity-capp.png',
     token: 'CAPP',
     coin: 'Cappasity',
   },
@@ -12111,7 +13306,8 @@ export const DATA_TOKEN = [
     coin: 'Konnect',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonft-coin-mtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonft-coin-mtc.png',
     token: 'MTC',
     coin: 'Moonft Coin',
   },
@@ -12126,7 +13322,8 @@ export const DATA_TOKEN = [
     coin: 'XOX Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bloxies-coin-bxc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bloxies-coin-bxc.png',
     token: 'BXC',
     coin: 'Bloxies Coin',
   },
@@ -12136,7 +13333,8 @@ export const DATA_TOKEN = [
     coin: 'LSDx',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ecoterra-ecoterra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ecoterra-ecoterra.png',
     token: 'ECOTERRA',
     coin: 'ecoterra',
   },
@@ -12146,12 +13344,14 @@ export const DATA_TOKEN = [
     coin: 'Ben',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/athena-s-capital-athenas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/athena-s-capital-athenas.png',
     token: 'ATHENAS',
     coin: "Athena's Capital",
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/janus-interactive-jan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/janus-interactive-jan.png',
     token: 'JAN',
     coin: 'Janus Interactive',
   },
@@ -12161,12 +13361,14 @@ export const DATA_TOKEN = [
     coin: 'Web3War',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xstar-coin-xstar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xstar-coin-xstar.png',
     token: 'XSTAR',
     coin: 'XSTAR Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chihuahua-huahua.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chihuahua-huahua.png',
     token: 'HUAHUA',
     coin: 'Chihuahua',
   },
@@ -12176,7 +13378,8 @@ export const DATA_TOKEN = [
     coin: 'Picasso',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lucky-bird-bird.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lucky-bird-bird.png',
     token: 'BIRD',
     coin: 'Lucky Bird',
   },
@@ -12186,17 +13389,20 @@ export const DATA_TOKEN = [
     coin: 'FEG Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starus-coin-stuc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starus-coin-stuc.png',
     token: 'STUC',
     coin: 'STARUS COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/storx-network-srx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/storx-network-srx.png',
     token: 'SRX',
     coin: 'StorX Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/msquare-global-msq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/msquare-global-msq.png',
     token: 'MSQ',
     coin: 'MSQUARE GLOBAL',
   },
@@ -12206,22 +13412,26 @@ export const DATA_TOKEN = [
     coin: 'nals',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hinoki-protocol-hnk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hinoki-protocol-hnk.png',
     token: 'HNK',
     coin: 'Hinoki Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jellyfish-mobile-jfish.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jellyfish-mobile-jfish.png',
     token: 'JFISH',
     coin: 'Jellyfish Mobile',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-unbound-un.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-unbound-un.png',
     token: 'UN',
     coin: 'The Unbound',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/surfboard-surfboard.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/surfboard-surfboard.png',
     token: 'SURFBOARD',
     coin: 'SurfBoard',
   },
@@ -12231,17 +13441,20 @@ export const DATA_TOKEN = [
     coin: 'jpg.store',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hifriends-hifriends.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hifriends-hifriends.png',
     token: 'HIFRIENDS',
     coin: 'hiFRIENDS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ovalpixel-opaig.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ovalpixel-opaig.png',
     token: 'OPAIG',
     coin: 'OvalPixel',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sophiaverse-soph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sophiaverse-soph.png',
     token: 'SOPH',
     coin: 'SophiaVerse',
   },
@@ -12251,12 +13464,14 @@ export const DATA_TOKEN = [
     coin: 'Dagcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/septillion-spt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/septillion-spt.png',
     token: 'SPT',
     coin: 'Septillion',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/scotty-beam-scotty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/scotty-beam-scotty.png',
     token: 'SCOTTY',
     coin: 'Scotty Beam',
   },
@@ -12266,12 +13481,14 @@ export const DATA_TOKEN = [
     coin: 'ISSP.io',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dark-queen-duck-dqd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dark-queen-duck-dqd.png',
     token: 'DQD',
     coin: 'Dark Queen Duck',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hibeanz-hibeanz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hibeanz-hibeanz.png',
     token: 'HIBEANZ',
     coin: 'hiBEANZ',
   },
@@ -12281,12 +13498,14 @@ export const DATA_TOKEN = [
     coin: 'Fame MMA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nuson-chain-nsc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nuson-chain-nsc.png',
     token: 'NSC',
     coin: 'Nuson Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/marvellex-ventures-mlxv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/marvellex-ventures-mlxv.png',
     token: 'MLXV',
     coin: 'MARVELLEX VENTURES',
   },
@@ -12296,37 +13515,44 @@ export const DATA_TOKEN = [
     coin: 'Paladeum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alfa-coin-alfa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alfa-coin-alfa.png',
     token: 'ALFA',
     coin: 'ALFA COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/discoverfeed-dmcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/discoverfeed-dmcc.png',
     token: 'DMCC',
     coin: 'DiscoverFeed',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/japanese-yen-jpy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/japanese-yen-jpy.png',
     token: 'JPY',
     coin: 'Japanese Yen',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/globiance-exchange-token-gbex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/globiance-exchange-token-gbex.png',
     token: 'GBEX',
     coin: 'Globiance Exchange Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-real-world-therealworld.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-real-world-therealworld.png',
     token: 'THEREALWORLD',
     coin: 'The Real World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ukrainian-hryvnia-uah.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ukrainian-hryvnia-uah.png',
     token: 'UAH',
     coin: 'Ukrainian Hryvnia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gold-fever-ngl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gold-fever-ngl.png',
     token: 'NGL',
     coin: 'Gold Fever',
   },
@@ -12351,7 +13577,8 @@ export const DATA_TOKEN = [
     coin: 'WAM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-ceo-grokceo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-ceo-grokceo.png',
     token: 'GROKCEO',
     coin: 'GROK CEO',
   },
@@ -12361,7 +13588,8 @@ export const DATA_TOKEN = [
     coin: 'LORDS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rowan-token-rwn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rowan-token-rwn.png',
     token: 'RWN',
     coin: 'Rowan Token',
   },
@@ -12371,7 +13599,8 @@ export const DATA_TOKEN = [
     coin: 'GM Wagmi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/infinimos-infi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/infinimos-infi.png',
     token: 'INFI',
     coin: 'Infinimos',
   },
@@ -12386,12 +13615,14 @@ export const DATA_TOKEN = [
     coin: 'Eco',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hibiki-run-hut.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hibiki-run-hut.png',
     token: 'HUT',
     coin: 'Hibiki Run',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/changex-change.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/changex-change.png',
     token: 'CHANGE',
     coin: 'ChangeX',
   },
@@ -12416,12 +13647,14 @@ export const DATA_TOKEN = [
     coin: 'NetZero',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mind-matrix-aimx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mind-matrix-aimx.png',
     token: 'AIMX',
     coin: 'Mind Matrix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/infiblue-world-monie.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/infiblue-world-monie.png',
     token: 'MONIE',
     coin: 'Infiblue World',
   },
@@ -12431,12 +13664,14 @@ export const DATA_TOKEN = [
     coin: 'Chappyz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/liferestart-efil.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/liferestart-efil.png',
     token: 'EFIL',
     coin: 'LifeRestart',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/faith-tribe-ftrb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/faith-tribe-ftrb.png',
     token: 'FTRB',
     coin: 'Faith Tribe',
   },
@@ -12456,17 +13691,20 @@ export const DATA_TOKEN = [
     coin: 'AlienForm',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starkmeta-smeta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starkmeta-smeta.png',
     token: 'SMETA',
     coin: 'StarkMeta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fore-protocol-fore.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fore-protocol-fore.png',
     token: 'FORE',
     coin: 'FORE Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/liquid-staked-eth-lseth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/liquid-staked-eth-lseth.png',
     token: 'LSETH',
     coin: 'Liquid Staked ETH',
   },
@@ -12481,27 +13719,32 @@ export const DATA_TOKEN = [
     coin: 'Mochi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coinnavigator-cng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coinnavigator-cng.png',
     token: 'CNG',
     coin: 'CoinNavigator',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jinko-ai-jinko.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jinko-ai-jinko.png',
     token: 'JINKO',
     coin: 'Jinko AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mrhb-defi-mrhb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mrhb-defi-mrhb.png',
     token: 'MRHB',
     coin: 'MRHB DeFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/white-whale-whale.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/white-whale-whale.png',
     token: 'WHALE',
     coin: 'White Whale',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/okratech-token-ortb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/okratech-token-ortb.png',
     token: 'ORTB',
     coin: 'Okratech Token',
   },
@@ -12516,7 +13759,8 @@ export const DATA_TOKEN = [
     coin: 'LUXY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/open-exchange-token-ox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/open-exchange-token-ox.png',
     token: 'OX',
     coin: 'Open Exchange Token',
   },
@@ -12536,7 +13780,8 @@ export const DATA_TOKEN = [
     coin: 'Karlsen',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tsubasa-governance-token-tsugt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tsubasa-governance-token-tsugt.png',
     token: 'TSUGT',
     coin: 'TSUBASA Governance Token',
   },
@@ -12546,27 +13791,32 @@ export const DATA_TOKEN = [
     coin: 'FaceDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bum-vanilla-project-bum.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bum-vanilla-project-bum.png',
     token: 'BUM',
     coin: 'BUM (Vanilla Project)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metafluence-meto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metafluence-meto.png',
     token: 'METO',
     coin: 'Metafluence',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/advanced-united-continent-auc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/advanced-united-continent-auc.png',
     token: 'AUC',
     coin: 'Advanced United Continent',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aiakita-aiakita.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aiakita-aiakita.png',
     token: 'AIAKITA',
     coin: 'AiAkita',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/donablock-dobo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/donablock-dobo.png',
     token: 'DOBO',
     coin: 'Donablock',
   },
@@ -12591,7 +13841,8 @@ export const DATA_TOKEN = [
     coin: 'MinePlex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/orca-inu-orcainu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/orca-inu-orcainu.png',
     token: 'ORCAINU',
     coin: 'ORCA INU',
   },
@@ -12601,22 +13852,26 @@ export const DATA_TOKEN = [
     coin: 'Kyrrex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blackpearl-token-bplc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blackpearl-token-bplc.png',
     token: 'BPLC',
     coin: 'BlackPearl Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/legion-network-lgx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/legion-network-lgx.png',
     token: 'LGX',
     coin: 'Legion Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-shiba-inu-babyshib.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-shiba-inu-babyshib.png',
     token: 'BABYSHIB',
     coin: 'Baby Shiba Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/divergence-diver.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/divergence-diver.png',
     token: 'DIVER',
     coin: 'Divergence',
   },
@@ -12631,22 +13886,26 @@ export const DATA_TOKEN = [
     coin: 'FANC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gaia-token-gaia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gaia-token-gaia.png',
     token: 'GAIA',
     coin: 'GAIA Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/make-america-great-again-maga.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/make-america-great-again-maga.png',
     token: 'MAGA',
     coin: 'Make America Great Again',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/contentbox-box.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/contentbox-box.png',
     token: 'BOX',
     coin: 'ContentBox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galileo-protocol-leox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galileo-protocol-leox.png',
     token: 'LEOX',
     coin: 'Galileo Protocol',
   },
@@ -12666,7 +13925,8 @@ export const DATA_TOKEN = [
     coin: 'Koinos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-cz-battle-theczbattle.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-cz-battle-theczbattle.png',
     token: 'THECZBATTLE',
     coin: 'The CZ Battle',
   },
@@ -12686,7 +13946,8 @@ export const DATA_TOKEN = [
     coin: 'Milo Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zkpepes-zkpepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zkpepes-zkpepe.png',
     token: 'ZKPEPE',
     coin: 'ZKPEPEs',
   },
@@ -12696,12 +13957,14 @@ export const DATA_TOKEN = [
     coin: 'P00LS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cocomelon-coin-cocomelon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cocomelon-coin-cocomelon.png',
     token: 'COCOMELON',
     coin: 'Cocomelon Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cat-intelligence-agency-cia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cat-intelligence-agency-cia.png',
     token: 'CIA',
     coin: 'Cat Intelligence Agency',
   },
@@ -12711,7 +13974,8 @@ export const DATA_TOKEN = [
     coin: 'Ookeenga',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hanuman-universe-token-hut.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hanuman-universe-token-hut.png',
     token: 'HUT',
     coin: 'Hanuman Universe Token',
   },
@@ -12726,7 +13990,8 @@ export const DATA_TOKEN = [
     coin: 'BitDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/proof-of-liquidity-pol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/proof-of-liquidity-pol.png',
     token: 'POL',
     coin: 'Proof Of Liquidity',
   },
@@ -12736,12 +14001,14 @@ export const DATA_TOKEN = [
     coin: 'INOFI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/relictum-pro-gtn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/relictum-pro-gtn.png',
     token: 'GTN',
     coin: 'Relictum Pro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hubble-protocol-hbb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hubble-protocol-hbb.png',
     token: 'HBB',
     coin: 'Hubble Protocol',
   },
@@ -12757,7 +14024,8 @@ export const DATA_TOKEN = [
     coin: 'Seamless',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nuritopia-nblu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nuritopia-nblu.png',
     token: 'NBLU',
     coin: 'NuriTopia',
   },
@@ -12767,7 +14035,8 @@ export const DATA_TOKEN = [
     coin: 'Pixie',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/emorya-finance-emr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/emorya-finance-emr.png',
     token: 'EMR',
     coin: 'Emorya Finance',
   },
@@ -12777,7 +14046,8 @@ export const DATA_TOKEN = [
     coin: 'LynKey',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genomesdao-gnome.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genomesdao-gnome.png',
     token: 'GNOME',
     coin: 'GenomesDAO',
   },
@@ -12797,12 +14067,14 @@ export const DATA_TOKEN = [
     coin: 'Jivara',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xrender-ai-xrai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xrender-ai-xrai.png',
     token: 'XRAI',
     coin: 'XRender AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hiundead-hiundead.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hiundead-hiundead.png',
     token: 'HIUNDEAD',
     coin: 'hiUNDEAD',
   },
@@ -12812,7 +14084,8 @@ export const DATA_TOKEN = [
     coin: 'Vow',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/special-power-silver-spsi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/special-power-silver-spsi.png',
     token: 'SPSI',
     coin: 'Special Power Silver',
   },
@@ -12827,7 +14100,8 @@ export const DATA_TOKEN = [
     coin: 'Intelly',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tonka-finance-toka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tonka-finance-toka.png',
     token: 'TOKA',
     coin: 'Tonka Finance',
   },
@@ -12837,12 +14111,14 @@ export const DATA_TOKEN = [
     coin: 'Y Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aureus-nummus-gold-ang.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aureus-nummus-gold-ang.png',
     token: 'ANG',
     coin: 'Aureus Nummus Gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lunr-token-lunr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lunr-token-lunr.png',
     token: 'LUNR',
     coin: 'Lunr Token',
   },
@@ -12862,7 +14138,8 @@ export const DATA_TOKEN = [
     coin: 'JennyCo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mysticland-myth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mysticland-myth.png',
     token: 'MYTH',
     coin: 'Mysticland',
   },
@@ -12877,17 +14154,20 @@ export const DATA_TOKEN = [
     coin: 'SYL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/akitavax-akitax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/akitavax-akitax.png',
     token: 'AKITAX',
     coin: 'Akitavax',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rabi-protocol-rabi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rabi-protocol-rabi.png',
     token: 'RABI',
     coin: 'Rabi Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/super-athletes-token-sat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/super-athletes-token-sat.png',
     token: 'SAT',
     coin: 'Super Athletes Token',
   },
@@ -12902,7 +14182,8 @@ export const DATA_TOKEN = [
     coin: 'Fanzee',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/1ex-trading-board-1ex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/1ex-trading-board-1ex.png',
     token: '1EX',
     coin: '1ex Trading Board',
   },
@@ -12917,7 +14198,8 @@ export const DATA_TOKEN = [
     coin: 'CRYN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-centrifuge-wcfg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-centrifuge-wcfg.png',
     token: 'WCFG',
     coin: 'Wrapped Centrifuge',
   },
@@ -12932,17 +14214,20 @@ export const DATA_TOKEN = [
     coin: 'tehBag',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mazimatic-mazi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mazimatic-mazi.png',
     token: 'MAZI',
     coin: 'MaziMatic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/insc-(ordinals)-insc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/insc-(ordinals)-insc.png',
     token: 'INSC',
     coin: 'INSC (Ordinals)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ten-best-coins-tbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ten-best-coins-tbc.png',
     token: 'TBC',
     coin: 'Ten Best Coins',
   },
@@ -12957,7 +14242,8 @@ export const DATA_TOKEN = [
     coin: 'Round X',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/liquid-crypto-lqdx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/liquid-crypto-lqdx.png',
     token: 'LQDX',
     coin: 'Liquid Crypto',
   },
@@ -12977,17 +14263,20 @@ export const DATA_TOKEN = [
     coin: 'Echobay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oceanland-oland.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oceanland-oland.png',
     token: 'OLAND',
     coin: 'Oceanland',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/limocoin-swap-lmcswap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/limocoin-swap-lmcswap.png',
     token: 'LMCSWAP',
     coin: 'LimoCoin Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trace-network-labs-trace.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trace-network-labs-trace.png',
     token: 'TRACE',
     coin: 'Trace Network Labs',
   },
@@ -12997,17 +14286,20 @@ export const DATA_TOKEN = [
     coin: 'Moon App',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/play-kingdom-token-pkt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/play-kingdom-token-pkt.png',
     token: 'PKT',
     coin: 'Play Kingdom Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stitchcoin-stitch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stitchcoin-stitch.png',
     token: 'STITCH',
     coin: 'StitchCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/evulus-token-evu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/evulus-token-evu.png',
     token: 'EVU',
     coin: 'Evulus Token',
   },
@@ -13017,22 +14309,26 @@ export const DATA_TOKEN = [
     coin: 'TBCC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/centurion-invest-cix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/centurion-invest-cix.png',
     token: 'CIX',
     coin: 'Centurion Invest',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leaderdao-ldao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leaderdao-ldao.png',
     token: 'LDAO',
     coin: 'LeaderDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pax-unitas-paxu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pax-unitas-paxu.png',
     token: 'PAXU',
     coin: 'Pax Unitas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/equilibrium-games-eq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/equilibrium-games-eq.png',
     token: 'EQ',
     coin: 'Equilibrium Games',
   },
@@ -13042,7 +14338,8 @@ export const DATA_TOKEN = [
     coin: 'Pacific',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spellfire-spellfire.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spellfire-spellfire.png',
     token: 'SPELLFIRE',
     coin: 'Spellfire',
   },
@@ -13052,7 +14349,8 @@ export const DATA_TOKEN = [
     coin: 'WCA TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pixer-eternity-pxt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pixer-eternity-pxt.png',
     token: 'PXT',
     coin: 'Pixer Eternity',
   },
@@ -13062,22 +14360,26 @@ export const DATA_TOKEN = [
     coin: 'Zeniq',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mimic-coin-mimic.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mimic-coin-mimic.png',
     token: 'MIMIC',
     coin: 'MIMIC COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-debt-box-debt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-debt-box-debt.png',
     token: 'DEBT',
     coin: 'The Debt Box',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/media-network-media.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/media-network-media.png',
     token: 'MEDIA',
     coin: 'Media Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aiforge-governance-token-aif.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aiforge-governance-token-aif.png',
     token: 'AIF',
     coin: 'AiForge Governance Token',
   },
@@ -13097,27 +14399,32 @@ export const DATA_TOKEN = [
     coin: 'LEMON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ajuna-network-baju.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ajuna-network-baju.png',
     token: 'BAJU',
     coin: 'Ajuna Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safir-group-international-sgi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safir-group-international-sgi.png',
     token: 'SGI',
     coin: 'Safir Group International',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gecko-coin-gecko.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gecko-coin-gecko.png',
     token: 'GECKO',
     coin: 'Gecko Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnbdown-bnbdown.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnbdown-bnbdown.png',
     token: 'BNBDOWN',
     coin: 'BNBDOWN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/farmsent-farms.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/farmsent-farms.png',
     token: 'FARMS',
     coin: 'Farmsent',
   },
@@ -13127,27 +14434,32 @@ export const DATA_TOKEN = [
     coin: 'Kyberdyne',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kingdom-of-ants-antc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kingdom-of-ants-antc.png',
     token: 'ANTC',
     coin: 'Kingdom of Ants',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crazy-rabbit-crc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crazy-rabbit-crc.png',
     token: 'CRC',
     coin: 'Crazy Rabbit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xact-token-xact.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xact-token-xact.png',
     token: 'XACT',
     coin: 'XAct Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leandro-lopes-lopes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leandro-lopes-lopes.png',
     token: 'LOPES',
     coin: 'Leandro Lopes',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/launchpool-lpool.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/launchpool-lpool.png',
     token: 'LPOOL',
     coin: 'Launchpool',
   },
@@ -13157,47 +14469,56 @@ export const DATA_TOKEN = [
     coin: 'IPV Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fusionist-kace.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fusionist-kace.png',
     token: 'KACE',
     coin: 'Fusionist',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/viridis-network-vrd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/viridis-network-vrd.png',
     token: 'VRD',
     coin: 'Viridis Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lost-worlds-lost.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lost-worlds-lost.png',
     token: 'LOST',
     coin: 'Lost Worlds',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dbear-coin-dbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dbear-coin-dbc.png',
     token: 'DBC',
     coin: 'DBear Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/openworldnft-owner.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/openworldnft-owner.png',
     token: 'OWNER',
     coin: 'OPENWORLDNFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/world-friendship-cash-wfca.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/world-friendship-cash-wfca.png',
     token: 'WFCA',
     coin: 'World Friendship Cash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/harambe-on-solana-harambe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/harambe-on-solana-harambe.png',
     token: 'HARAMBE',
     coin: 'Harambe on Solana',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/resource-protocol-source.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/resource-protocol-source.png',
     token: 'SOURCE',
     coin: 'ReSource Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-network-ain.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-network-ain.png',
     token: 'AIN',
     coin: 'AI Network',
   },
@@ -13207,7 +14528,8 @@ export const DATA_TOKEN = [
     coin: 'Freechat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genomesdao-gene.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genomesdao-gene.png',
     token: 'GENE',
     coin: 'GenomesDAO',
   },
@@ -13222,12 +14544,14 @@ export const DATA_TOKEN = [
     coin: 'ArbiPad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zoo-race-nft-racezoo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zoo-race-nft-racezoo.png',
     token: 'RACEZOO',
     coin: 'Zoo Race NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brazilian-digital-token-brz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brazilian-digital-token-brz.png',
     token: 'BRZ',
     coin: 'Brazilian Digital Token',
   },
@@ -13242,7 +14566,8 @@ export const DATA_TOKEN = [
     coin: 'Hex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nemesis-downfall-nd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nemesis-downfall-nd.png',
     token: 'ND',
     coin: 'Nemesis Downfall',
   },
@@ -13252,32 +14577,38 @@ export const DATA_TOKEN = [
     coin: 'MeiFlex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blockchainspace-guild.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blockchainspace-guild.png',
     token: 'GUILD',
     coin: 'BlockchainSpace',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/battle-pets-pet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/battle-pets-pet.png',
     token: 'PET',
     coin: 'Battle Pets',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/montage-token-mtgx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/montage-token-mtgx.png',
     token: 'MTGX',
     coin: 'Montage Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stablecomp-scomp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stablecomp-scomp.png',
     token: 'SCOMP',
     coin: 'Stablecomp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trisolaris-tri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trisolaris-tri.png',
     token: 'TRI',
     coin: 'Trisolaris',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apartament-token-apt1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apartament-token-apt1.png',
     token: 'APT1',
     coin: 'Apartament Token',
   },
@@ -13292,7 +14623,8 @@ export const DATA_TOKEN = [
     coin: 'CaliCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dash-2-trade-d2t.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dash-2-trade-d2t.png',
     token: 'D2T',
     coin: 'Dash 2 Trade',
   },
@@ -13302,12 +14634,14 @@ export const DATA_TOKEN = [
     coin: 'RillaFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/terraport-terra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/terraport-terra.png',
     token: 'TERRA',
     coin: 'Terraport',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/marvellex-classic-mlxc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/marvellex-classic-mlxc.png',
     token: 'MLXC',
     coin: 'Marvellex Classic',
   },
@@ -13317,7 +14651,8 @@ export const DATA_TOKEN = [
     coin: 'Ktalk',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/degen-erc-20-degen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/degen-erc-20-degen.png',
     token: 'DEGEN',
     coin: 'Degen (ERC-20)',
   },
@@ -13337,7 +14672,8 @@ export const DATA_TOKEN = [
     coin: 'AiAkitaX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safe-anwang-safe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safe-anwang-safe.png',
     token: 'SAFE',
     coin: 'SAFE(AnWang)',
   },
@@ -13357,7 +14693,8 @@ export const DATA_TOKEN = [
     coin: 'GEC Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hamburglar-hamburglar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hamburglar-hamburglar.png',
     token: 'HAMBURGLAR',
     coin: 'Hamburglar',
   },
@@ -13367,27 +14704,32 @@ export const DATA_TOKEN = [
     coin: 'MeMusic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trustfi-network-tfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trustfi-network-tfi.png',
     token: 'TFI',
     coin: 'TrustFi Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iustitia-coin-ius.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iustitia-coin-ius.png',
     token: 'IUS',
     coin: 'Iustitia Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gigachadgpt-giga.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gigachadgpt-giga.png',
     token: '$GIGA',
     coin: 'GigaChadGPT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-2-0-btc2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-2-0-btc2.png',
     token: 'BTC2',
     coin: 'Bitcoin 2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/decentrawood-deod.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/decentrawood-deod.png',
     token: 'DEOD',
     coin: 'Decentrawood',
   },
@@ -13397,12 +14739,14 @@ export const DATA_TOKEN = [
     coin: 'Maxity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/happyinmoney-him.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/happyinmoney-him.png',
     token: 'HIM',
     coin: 'Happyinmoney',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meme-etf-memeetf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meme-etf-memeetf.png',
     token: 'MEMEETF',
     coin: 'Meme ETF',
   },
@@ -13412,37 +14756,44 @@ export const DATA_TOKEN = [
     coin: 'NASDEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-virtual-coin-gvc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-virtual-coin-gvc.png',
     token: 'GVC',
     coin: 'Global Virtual Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/k-pop-click-coin-kpc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/k-pop-click-coin-kpc.png',
     token: 'KPC',
     coin: 'K Pop Click Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/schmuserkadser-kad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/schmuserkadser-kad.png',
     token: 'KAD',
     coin: 'Schmuserkadser',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sunny-aggregator-sunny.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sunny-aggregator-sunny.png',
     token: 'SUNNY',
     coin: 'Sunny Aggregator',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/supercells-sct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/supercells-sct.png',
     token: 'SCT',
     coin: 'SuperCells',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tribal-credit-tribl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tribal-credit-tribl.png',
     token: 'TRIBL',
     coin: 'Tribal Credit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/voltage-finance-voltage.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/voltage-finance-voltage.png',
     token: 'VOLTAGE',
     coin: 'Voltage Finance',
   },
@@ -13452,27 +14803,32 @@ export const DATA_TOKEN = [
     coin: 'Fluxbot',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/angry-birds-brd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/angry-birds-brd.png',
     token: 'BRD',
     coin: 'Angry Birds',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/privateum-initiative-pri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/privateum-initiative-pri.png',
     token: 'PRI',
     coin: 'PRIVATEUM INITIATIVE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/buff-doge-coin-dogecoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/buff-doge-coin-dogecoin.png',
     token: 'DOGECOIN',
     coin: 'Buff Doge Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kaif-platform-kaf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kaif-platform-kaf.png',
     token: 'KAF',
     coin: 'KAIF Platform',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smile-ai-smile.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smile-ai-smile.png',
     token: 'SMILE',
     coin: 'Smile AI',
   },
@@ -13482,12 +14838,14 @@ export const DATA_TOKEN = [
     coin: 'SoBit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/poolotto-finance-plt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/poolotto-finance-plt.png',
     token: 'PLT',
     coin: 'Poolotto.finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptonijigen-ngn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptonijigen-ngn.png',
     token: 'NGN',
     coin: 'CryptoNijigen',
   },
@@ -13502,7 +14860,8 @@ export const DATA_TOKEN = [
     coin: 'Sex Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kapital-dao-kap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kapital-dao-kap.png',
     token: 'KAP',
     coin: 'Kapital DAO',
   },
@@ -13517,7 +14876,8 @@ export const DATA_TOKEN = [
     coin: 'CateCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/proteo-defi-proteo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/proteo-defi-proteo.png',
     token: 'PROTEO',
     coin: 'Proteo DeFi',
   },
@@ -13527,7 +14887,8 @@ export const DATA_TOKEN = [
     coin: 'dFund',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/colony-avalanche-index-cai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/colony-avalanche-index-cai.png',
     token: 'CAI',
     coin: 'Colony Avalanche Index',
   },
@@ -13547,27 +14908,32 @@ export const DATA_TOKEN = [
     coin: 'Kingaru',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unleashclub-unleash.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unleashclub-unleash.png',
     token: 'UNLEASH',
     coin: 'UnleashClub',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pixelverse-pixel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pixelverse-pixel.png',
     token: 'PIXEL',
     coin: 'PixelVerse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/veil-exchange-veil.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/veil-exchange-veil.png',
     token: 'VEIL',
     coin: 'Veil Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zone-of-avoidance-zoa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zone-of-avoidance-zoa.png',
     token: 'ZOA',
     coin: 'Zone of Avoidance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zillion-aakar-xo-zax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zillion-aakar-xo-zax.png',
     token: 'ZAX',
     coin: 'ZILLION AAKAR XO',
   },
@@ -13577,27 +14943,32 @@ export const DATA_TOKEN = [
     coin: 'NAGA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/forgotten-playland-fp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/forgotten-playland-fp.png',
     token: 'FP',
     coin: 'Forgotten Playland',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/etherempires-ete.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/etherempires-ete.png',
     token: 'ETE',
     coin: 'EtherEmpires',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dfistarter-dfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dfistarter-dfi.png',
     token: 'DFI',
     coin: 'DfiStarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polydoge-polydoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polydoge-polydoge.png',
     token: 'POLYDOGE',
     coin: 'PolyDoge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mmpro-token-mmpro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mmpro-token-mmpro.png',
     token: 'MMPRO',
     coin: 'MMPRO Token',
   },
@@ -13607,7 +14978,8 @@ export const DATA_TOKEN = [
     coin: 'Odyssey',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/happyai-smileai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/happyai-smileai.png',
     token: 'SMILEAI',
     coin: 'HappyAI',
   },
@@ -13622,17 +14994,20 @@ export const DATA_TOKEN = [
     coin: 'C+Charge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thetadrop-tdrop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thetadrop-tdrop.png',
     token: 'TDROP',
     coin: 'ThetaDrop',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/qitmeer-network-meer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/qitmeer-network-meer.png',
     token: 'MEER',
     coin: 'Qitmeer Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dynasty-coin-dny.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dynasty-coin-dny.png',
     token: 'DNY',
     coin: 'Dynasty Coin',
   },
@@ -13642,7 +15017,8 @@ export const DATA_TOKEN = [
     coin: 'BISOSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fit-token-snkrz-fit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fit-token-snkrz-fit.png',
     token: 'FIT',
     coin: 'FIT token (SNKRZ)',
   },
@@ -13657,22 +15033,26 @@ export const DATA_TOKEN = [
     coin: 'EMAID',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/silly-duck-duck.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/silly-duck-duck.png',
     token: 'DUCK',
     coin: 'Silly Duck',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/drive-to-earn-dte.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/drive-to-earn-dte.png',
     token: 'DTE',
     coin: 'Drive To Earn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/biis-(ordinals)-biis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/biis-(ordinals)-biis.png',
     token: 'BIIS',
     coin: 'biis (Ordinals)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/silent-notary-ubsn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/silent-notary-ubsn.png',
     token: 'UBSN',
     coin: 'Silent Notary',
   },
@@ -13682,7 +15062,8 @@ export const DATA_TOKEN = [
     coin: 'Berry',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sonarwatch-sonar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sonarwatch-sonar.png',
     token: 'SONAR',
     coin: 'SonarWatch',
   },
@@ -13697,17 +15078,20 @@ export const DATA_TOKEN = [
     coin: 'Wasder',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meter-stable-mtr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meter-stable-mtr.png',
     token: 'MTR',
     coin: 'Meter Stable',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/onlyfans-token-onlyfans.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/onlyfans-token-onlyfans.png',
     token: 'ONLYFANS',
     coin: 'Onlyfans Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ommniverse-ommi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ommniverse-ommi.png',
     token: 'OMMI',
     coin: 'Ommniverse',
   },
@@ -13717,7 +15101,8 @@ export const DATA_TOKEN = [
     coin: 'Galeon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reunit-wallet-reuni.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reunit-wallet-reuni.png',
     token: 'REUNI',
     coin: 'Reunit Wallet',
   },
@@ -13727,27 +15112,32 @@ export const DATA_TOKEN = [
     coin: 'COLONY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hitbtc-token-hit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hitbtc-token-hit.png',
     token: 'HIT',
     coin: 'HitBTC Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unique-network-unq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unique-network-unq.png',
     token: 'UNQ',
     coin: 'Unique Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/virtual-tourist-vt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/virtual-tourist-vt.png',
     token: 'VT',
     coin: 'Virtual Tourist',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/charged-particles-ionx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/charged-particles-ionx.png',
     token: 'IONX',
     coin: 'Charged Particles',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stackswap-stsw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stackswap-stsw.png',
     token: 'STSW',
     coin: 'Stackswap',
   },
@@ -13762,12 +15152,14 @@ export const DATA_TOKEN = [
     coin: 'TAIKAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cheersland-cheers.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cheersland-cheers.png',
     token: 'CHEERS',
     coin: 'CheersLand',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ark-meta-survival-arkt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ark-meta-survival-arkt.png',
     token: 'ARKT',
     coin: 'ARK Meta Survival',
   },
@@ -13777,17 +15169,20 @@ export const DATA_TOKEN = [
     coin: 'NEAT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meta-masters-guild-games-memagx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meta-masters-guild-games-memagx.png',
     token: 'MEMAGX',
     coin: 'Meta Masters Guild Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/adil-chain-adil.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/adil-chain-adil.png',
     token: 'ADIL',
     coin: 'ADIL-Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/celebrity-coin-v2-ccv2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/celebrity-coin-v2-ccv2.png',
     token: 'CCV2',
     coin: 'Celebrity Coin v2',
   },
@@ -13802,17 +15197,20 @@ export const DATA_TOKEN = [
     coin: 'CYBRIA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/konstellation-network-darc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/konstellation-network-darc.png',
     token: 'DARC',
     coin: 'Konstellation Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-real-estate-cre.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-real-estate-cre.png',
     token: 'CRE',
     coin: 'Crypto Real Estate',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lightning-bitcoin-lbtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lightning-bitcoin-lbtc.png',
     token: 'LBTC',
     coin: 'Lightning Bitcoin',
   },
@@ -13838,27 +15236,32 @@ export const DATA_TOKEN = [
     coin: 'ApeBond',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tongtongcoin-ttc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tongtongcoin-ttc.png',
     token: 'TTC',
     coin: 'TongTongCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solana-shib-sshib.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solana-shib-sshib.png',
     token: 'SSHIB',
     coin: 'Solana Shib',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/child-support-cs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/child-support-cs.png',
     token: 'CS',
     coin: 'Child Support',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crafting-finance-crf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crafting-finance-crf.png',
     token: 'CRF',
     coin: 'Crafting Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alium-finance-alm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alium-finance-alm.png',
     token: 'ALM',
     coin: 'Alium Finance',
   },
@@ -13868,7 +15271,8 @@ export const DATA_TOKEN = [
     coin: 'HOLD VIP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jax-network-wjxn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jax-network-wjxn.png',
     token: 'WJXN',
     coin: 'Jax.Network',
   },
@@ -13878,22 +15282,26 @@ export const DATA_TOKEN = [
     coin: 'X2Y2',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zen-panda-coin-zpc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zen-panda-coin-zpc.png',
     token: 'ZPC',
     coin: 'Zen Panda Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/utility-nexusmind-unmd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/utility-nexusmind-unmd.png',
     token: 'UNMD',
     coin: 'Utility NexusMind',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyber-arena-token-cat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyber-arena-token-cat.png',
     token: 'CAT',
     coin: 'Cyber Arena Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blueart-token-bla.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blueart-token-bla.png',
     token: 'BLA',
     coin: 'BLUEART TOKEN',
   },
@@ -13913,12 +15321,14 @@ export const DATA_TOKEN = [
     coin: 'Bitlocus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/attack-wagon-atk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/attack-wagon-atk.png',
     token: 'ATK',
     coin: 'Attack Wagon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/relation-labs-rel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/relation-labs-rel.png',
     token: 'REL',
     coin: 'Relation Labs',
   },
@@ -13928,7 +15338,8 @@ export const DATA_TOKEN = [
     coin: 'Ryoma',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aptoslaunch-token-alt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aptoslaunch-token-alt.png',
     token: 'ALT',
     coin: 'AptosLaunch Token',
   },
@@ -13938,22 +15349,26 @@ export const DATA_TOKEN = [
     coin: 'Itheum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/age-of-apes-apes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/age-of-apes-apes.png',
     token: 'APES',
     coin: 'Age of Apes',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/corgiai-corgiai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/corgiai-corgiai.png',
     token: 'CORGIAI',
     coin: 'CorgiAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rain-coin-rain.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rain-coin-rain.png',
     token: 'RAIN',
     coin: 'Rain Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defi-warrior-fiwa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defi-warrior-fiwa.png',
     token: 'FIWA',
     coin: 'DeFi Warrior (FIWA)',
   },
@@ -13963,12 +15378,14 @@ export const DATA_TOKEN = [
     coin: 'WATTTON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/undead-blocks-undead.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/undead-blocks-undead.png',
     token: 'UNDEAD',
     coin: 'Undead Blocks',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fincredit-protocol-finc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fincredit-protocol-finc.png',
     token: 'FINC',
     coin: 'FinCredit Protocol',
   },
@@ -13983,7 +15400,8 @@ export const DATA_TOKEN = [
     coin: 'dHealth',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/esg-financial-esg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/esg-financial-esg.png',
     token: 'ESG',
     coin: 'ESG Financial',
   },
@@ -14003,27 +15421,32 @@ export const DATA_TOKEN = [
     coin: 'ELIS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/plc-ultima-plcu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/plc-ultima-plcu.png',
     token: 'PLCU',
     coin: 'PLC Ultima',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/igup-iguverse-igup.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/igup-iguverse-igup.png',
     token: 'IGUP',
     coin: 'IGUP (IguVerse)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/idefiyieldprotocol-idyp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/idefiyieldprotocol-idyp.png',
     token: 'IDYP',
     coin: 'iDeFiYieldProtocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/megaton-finance-mega.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/megaton-finance-mega.png',
     token: 'MEGA',
     coin: 'Megaton Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/assetmantle-mntl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/assetmantle-mntl.png',
     token: 'MNTL',
     coin: 'AssetMantle',
   },
@@ -14033,7 +15456,8 @@ export const DATA_TOKEN = [
     coin: 'Exorde',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-ampleforth-wampl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-ampleforth-wampl.png',
     token: 'WAMPL',
     coin: 'Wrapped Ampleforth',
   },
@@ -14043,22 +15467,26 @@ export const DATA_TOKEN = [
     coin: 'Kudoe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bot-mascot-ai-mascot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bot-mascot-ai-mascot.png',
     token: 'MASCOT',
     coin: 'Bot Mascot Ai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/force-token-snkrz-frc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/force-token-snkrz-frc.png',
     token: 'FRC',
     coin: 'FORCE token (SNKRZ)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hop-protocol-hop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hop-protocol-hop.png',
     token: 'HOP',
     coin: 'Hop Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/qommodity-qaaa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/qommodity-qaaa.png',
     token: 'QAAA',
     coin: 'Qommodity',
   },
@@ -14073,32 +15501,38 @@ export const DATA_TOKEN = [
     coin: 'YAY Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/web3frontier-w3f.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/web3frontier-w3f.png',
     token: 'W3F',
     coin: 'Web3Frontier',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/evanesco-network-eva.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/evanesco-network-eva.png',
     token: 'EVA',
     coin: 'Evanesco Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/npick-block-npick.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/npick-block-npick.png',
     token: 'NPICK',
     coin: 'NPICK BLOCK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xeno-governance-token-gxe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xeno-governance-token-gxe.png',
     token: 'GXE',
     coin: 'XENO Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pond-coin-pndc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pond-coin-pndc.png',
     token: 'PNDC',
     coin: 'Pond Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/energreen-egrn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/energreen-egrn.png',
     token: 'EGRN',
     coin: 'Energreen',
   },
@@ -14108,12 +15542,14 @@ export const DATA_TOKEN = [
     coin: 'Aurix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/loopnetwork-loop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/loopnetwork-loop.png',
     token: 'LOOP',
     coin: 'LoopNetwork',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genesys-token-gsys.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genesys-token-gsys.png',
     token: 'GSYS',
     coin: 'Genesys Token',
   },
@@ -14124,7 +15560,8 @@ export const DATA_TOKEN = [
     coin: 'Artificial Intelligence Super Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tradetomato-ttm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tradetomato-ttm.png',
     token: 'TTM',
     coin: 'Tradetomato',
   },
@@ -14134,7 +15571,8 @@ export const DATA_TOKEN = [
     coin: 'Coinzix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/foodchain-global-food.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/foodchain-global-food.png',
     token: 'FOOD',
     coin: 'FoodChain Global',
   },
@@ -14144,7 +15582,8 @@ export const DATA_TOKEN = [
     coin: 'IGSECoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-villains-cv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-villains-cv.png',
     token: 'CV',
     coin: 'Crypto Villains',
   },
@@ -14154,12 +15593,14 @@ export const DATA_TOKEN = [
     coin: 'Xodex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-code-aicode.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-code-aicode.png',
     token: 'AICODE',
     coin: 'AI CODE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trivians-trivia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trivians-trivia.png',
     token: 'TRIVIA',
     coin: 'Trivians',
   },
@@ -14179,7 +15620,8 @@ export const DATA_TOKEN = [
     coin: 'Rezolut',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/exchangecoin-excc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/exchangecoin-excc.png',
     token: 'EXCC',
     coin: 'ExchangeCoin',
   },
@@ -14204,12 +15646,14 @@ export const DATA_TOKEN = [
     coin: 'Custodiy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-rangers-cr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-rangers-cr.png',
     token: 'CR',
     coin: 'Crypto Rangers',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/i-will-poop-it-nft-shit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/i-will-poop-it-nft-shit.png',
     token: 'SHIT',
     coin: 'I will poop it NFT',
   },
@@ -14229,7 +15673,8 @@ export const DATA_TOKEN = [
     coin: 'Rekt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nftcloud-cloud.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nftcloud-cloud.png',
     token: 'CLOUD',
     coin: 'NFTCloud',
   },
@@ -14254,7 +15699,8 @@ export const DATA_TOKEN = [
     coin: 'DUA Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/energy-solution-global-esg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/energy-solution-global-esg.png',
     token: 'ESG',
     coin: 'Energy Solution Global',
   },
@@ -14264,12 +15710,14 @@ export const DATA_TOKEN = [
     coin: 'HIRO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/microtuber-mct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/microtuber-mct.png',
     token: 'MCT',
     coin: 'Microtuber',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/songbird-finance-token-sfin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/songbird-finance-token-sfin.png',
     token: 'SFIN',
     coin: 'Songbird Finance Token',
   },
@@ -14279,22 +15727,26 @@ export const DATA_TOKEN = [
     coin: 'Altair',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fortuna-finance-ftna.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fortuna-finance-ftna.png',
     token: 'FTNA',
     coin: 'Fortuna Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blast-frontiers-blast.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blast-frontiers-blast.png',
     token: 'BLAST',
     coin: 'Blast Frontiers',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coinscope-coinscope.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coinscope-coinscope.png',
     token: 'COINSCOPE',
     coin: 'Coinscope',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ipmb-token-ipmb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ipmb-token-ipmb.png',
     token: 'IPMB',
     coin: 'IPMB Token',
   },
@@ -14309,32 +15761,38 @@ export const DATA_TOKEN = [
     coin: 'Amulet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/auto-betting-coin-abm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/auto-betting-coin-abm.png',
     token: 'ABM',
     coin: 'Auto Betting Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonft-coin-moonft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonft-coin-moonft.png',
     token: 'MOONFT',
     coin: 'Moonft Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-kaki-kaki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-kaki-kaki.png',
     token: 'KAKI',
     coin: 'Doge KaKi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aag-ventures-aag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aag-ventures-aag.png',
     token: 'AAG',
     coin: 'AAG Ventures',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hydraverse-hdv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hydraverse-hdv.png',
     token: 'HDV',
     coin: 'Hydraverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/linework-coin-lwc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/linework-coin-lwc.png',
     token: 'LWC',
     coin: 'Linework Coin',
   },
@@ -14344,7 +15802,8 @@ export const DATA_TOKEN = [
     coin: 'Scry.info',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/eternal-world-etl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/eternal-world-etl.png',
     token: 'ETL',
     coin: 'Eternal World',
   },
@@ -14364,27 +15823,32 @@ export const DATA_TOKEN = [
     coin: 'Qlindo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cogito-protocol-cgv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cogito-protocol-cgv.png',
     token: 'CGV',
     coin: 'Cogito Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-moxy-moxy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-moxy-moxy.png',
     token: 'MOXY',
     coin: 'Wrapped Moxy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safemoon-v2-sfm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safemoon-v2-sfm.png',
     token: 'SFM',
     coin: 'SafeMoon v2',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/thorwallet-dex-tgt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/thorwallet-dex-tgt.png',
     token: 'TGT',
     coin: 'THORWallet DEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lunchdao-lunch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lunchdao-lunch.png',
     token: 'LUNCH',
     coin: 'LunchDAO',
   },
@@ -14394,12 +15858,14 @@ export const DATA_TOKEN = [
     coin: 'Treecle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astra-dao-astradao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astra-dao-astradao.png',
     token: 'ASTRADAO',
     coin: 'Astra DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/otacon-ai-otacon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/otacon-ai-otacon.png',
     token: 'OTACON',
     coin: 'Otacon AI',
   },
@@ -14409,7 +15875,8 @@ export const DATA_TOKEN = [
     coin: 'Gas DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defrogs-defrogs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defrogs-defrogs.png',
     token: 'DEFROGS',
     coin: 'DeFrogs',
   },
@@ -14419,7 +15886,8 @@ export const DATA_TOKEN = [
     coin: 'CPUcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/day-by-day-dbd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/day-by-day-dbd.png',
     token: 'DBD',
     coin: 'Day By Day',
   },
@@ -14429,32 +15897,38 @@ export const DATA_TOKEN = [
     coin: 'VuzzMind',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/enosys-global-hln.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/enosys-global-hln.png',
     token: 'HLN',
     coin: 'Enosys Global',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pig-finance-pig.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pig-finance-pig.png',
     token: 'PIG',
     coin: 'Pig Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/your-future-exchange-yfx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/your-future-exchange-yfx.png',
     token: 'YFX',
     coin: 'Your Future Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ronald-mcdonald-ronald.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ronald-mcdonald-ronald.png',
     token: 'RONALD',
     coin: 'Ronald McDonald',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gaia-everworld-gaia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gaia-everworld-gaia.png',
     token: 'GAIA',
     coin: 'GAIA Everworld',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/poundtoken-gbpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/poundtoken-gbpt.png',
     token: 'GBPT',
     coin: 'poundtoken',
   },
@@ -14464,17 +15938,20 @@ export const DATA_TOKEN = [
     coin: 'GAMER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rebuschain-rebus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rebuschain-rebus.png',
     token: 'REBUS',
     coin: 'RebusChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pancake-games-gcake.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pancake-games-gcake.png',
     token: 'GCAKE',
     coin: 'Pancake Games',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/angelblock-thol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/angelblock-thol.png',
     token: 'THOL',
     coin: 'AngelBlock',
   },
@@ -14484,7 +15961,8 @@ export const DATA_TOKEN = [
     coin: 'SO-COL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gsenetwork-gse.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gsenetwork-gse.png',
     token: 'GSE',
     coin: 'GSENetwork',
   },
@@ -14504,12 +15982,14 @@ export const DATA_TOKEN = [
     coin: 'One Share',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mecha-morphing-mape.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mecha-morphing-mape.png',
     token: 'MAPE',
     coin: 'Mecha Morphing',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spartadex-sparta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spartadex-sparta.png',
     token: 'SPARTA',
     coin: 'SpartaDex',
   },
@@ -14534,7 +16014,8 @@ export const DATA_TOKEN = [
     coin: 'YOLO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogeswap-dogeswap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogeswap-dogeswap.png',
     token: 'DOGESWAP',
     coin: 'DOGESWAP',
   },
@@ -14544,12 +16025,14 @@ export const DATA_TOKEN = [
     coin: 'ZOOPIA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/3-kingdoms-multiverse-3km.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/3-kingdoms-multiverse-3km.png',
     token: '3KM',
     coin: '3 Kingdoms Multiverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/naos-finance-naos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/naos-finance-naos.png',
     token: 'NAOS',
     coin: 'NAOS Finance',
   },
@@ -14559,7 +16042,8 @@ export const DATA_TOKEN = [
     coin: 'JBC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/heroes-empires-he.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/heroes-empires-he.png',
     token: 'HE',
     coin: 'Heroes & Empires',
   },
@@ -14569,7 +16053,8 @@ export const DATA_TOKEN = [
     coin: 'Ribus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/realis-network-lis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/realis-network-lis.png',
     token: 'LIS',
     coin: 'Realis Network',
   },
@@ -14579,7 +16064,8 @@ export const DATA_TOKEN = [
     coin: 'Zeepin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/strip-finance-strip.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/strip-finance-strip.png',
     token: 'STRIP',
     coin: 'Strip Finance',
   },
@@ -14589,7 +16075,8 @@ export const DATA_TOKEN = [
     coin: 'VEROX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/globe-derivative-exchange-gdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/globe-derivative-exchange-gdt.png',
     token: 'GDT',
     coin: 'Globe Derivative Exchange',
   },
@@ -14599,7 +16086,8 @@ export const DATA_TOKEN = [
     coin: 'EdgeSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metafastest-metaf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metafastest-metaf.png',
     token: 'METAF',
     coin: 'METAFASTEST',
   },
@@ -14614,12 +16102,14 @@ export const DATA_TOKEN = [
     coin: 'Radar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/opx-finance-opx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/opx-finance-opx.png',
     token: 'OPX',
     coin: 'OPX Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saitarealty-saitarealty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saitarealty-saitarealty.png',
     token: 'SAITAREALTY',
     coin: 'Saitarealty',
   },
@@ -14629,7 +16119,8 @@ export const DATA_TOKEN = [
     coin: 'Pararium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pixel-world-coin-pwc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pixel-world-coin-pwc.png',
     token: 'PWC',
     coin: 'Pixel World Coin',
   },
@@ -14644,12 +16135,14 @@ export const DATA_TOKEN = [
     coin: 'DinoLFG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dream-token-drm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dream-token-drm.png',
     token: 'DRM',
     coin: 'Dream Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/equilibrium-eq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/equilibrium-eq.png',
     token: 'EQ',
     coin: 'Equilibrium',
   },
@@ -14664,12 +16157,14 @@ export const DATA_TOKEN = [
     coin: 'GP Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meteor-coin-mto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meteor-coin-mto.png',
     token: 'MTO',
     coin: 'Meteor Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bfic-gold-bficgold.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bfic-gold-bficgold.png',
     token: 'BFICGOLD',
     coin: 'BFIC Gold',
   },
@@ -14684,22 +16179,26 @@ export const DATA_TOKEN = [
     coin: 'PRIMAL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pixel-canvas-club.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pixel-canvas-club.png',
     token: 'CLUB',
     coin: 'Pixel Canvas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shell-trade-ss20.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shell-trade-ss20.png',
     token: 'SS20',
     coin: 'SHELL TRADE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bankbrc-bankbrc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bankbrc-bankbrc.png',
     token: 'BANKBRC',
     coin: 'BANKBRC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-protocol-the.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-protocol-the.png',
     token: 'THE',
     coin: 'The Protocol',
   },
@@ -14709,12 +16208,14 @@ export const DATA_TOKEN = [
     coin: 'BonkBaby',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moondao-mooney.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moondao-mooney.png',
     token: 'MOONEY',
     coin: 'MoonDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/battle-esports-coin-bes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/battle-esports-coin-bes.png',
     token: 'BES',
     coin: 'battle esports coin',
   },
@@ -14729,12 +16230,14 @@ export const DATA_TOKEN = [
     coin: 'HydraDX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sound-of-music-som.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sound-of-music-som.png',
     token: 'SOM',
     coin: 'Sound Of Music',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/egoras-credit-egc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/egoras-credit-egc.png',
     token: 'EGC',
     coin: 'Egoras Credit',
   },
@@ -14744,7 +16247,8 @@ export const DATA_TOKEN = [
     coin: 'PL^Gnet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saveplanetearth-spe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saveplanetearth-spe.png',
     token: 'SPE',
     coin: 'SavePlanetEarth',
   },
@@ -14774,22 +16278,26 @@ export const DATA_TOKEN = [
     coin: 'DAD Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hypersign-identity-hid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hypersign-identity-hid.png',
     token: 'HID',
     coin: 'Hypersign identity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/openlive-nft-opv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/openlive-nft-opv.png',
     token: 'OPV',
     coin: 'OpenLive NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/battleverse-bvc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/battleverse-bvc.png',
     token: 'BVC',
     coin: 'BattleVerse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deherogame-amg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deherogame-amg.png',
     token: 'AMG',
     coin: 'DeHeroGame',
   },
@@ -14799,7 +16307,8 @@ export const DATA_TOKEN = [
     coin: 'Kepple',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gold-secured-currency-gsx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gold-secured-currency-gsx.png',
     token: 'GSX',
     coin: 'Gold Secured Currency',
   },
@@ -14809,7 +16318,8 @@ export const DATA_TOKEN = [
     coin: 'Kneenano',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/when-memecoin-when.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/when-memecoin-when.png',
     token: 'WHEN',
     coin: 'WHEN memecoin',
   },
@@ -14824,7 +16334,8 @@ export const DATA_TOKEN = [
     coin: 'DeCats',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sonne-finance-sonne.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sonne-finance-sonne.png',
     token: 'SONNE',
     coin: 'Sonne Finance',
   },
@@ -14839,17 +16350,20 @@ export const DATA_TOKEN = [
     coin: 'Nagaya',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nft-track-protocol-ntp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nft-track-protocol-ntp.png',
     token: 'NTP',
     coin: 'NFT Track Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wingriders-governance-token-wrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wingriders-governance-token-wrt.png',
     token: 'WRT',
     coin: 'WingRiders Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoxcoin-satox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoxcoin-satox.png',
     token: 'SATOX',
     coin: 'Satoxcoin',
   },
@@ -14859,7 +16373,8 @@ export const DATA_TOKEN = [
     coin: 'UNIUM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pego-network-pg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pego-network-pg.png',
     token: 'PG',
     coin: 'PEGO Network',
   },
@@ -14874,12 +16389,14 @@ export const DATA_TOKEN = [
     coin: 'Solice',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/australian-safe-shepherd-ass.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/australian-safe-shepherd-ass.png',
     token: 'ASS',
     coin: 'Australian Safe Shepherd',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sonm-erc-20-snm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sonm-erc-20-snm.png',
     token: 'SNM',
     coin: 'SONM (ERC-20)',
   },
@@ -14889,17 +16406,20 @@ export const DATA_TOKEN = [
     coin: 'IMVU',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hurricane-nft-nhct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hurricane-nft-nhct.png',
     token: 'NHCT',
     coin: 'Hurricane NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/open-platform-open.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/open-platform-open.png',
     token: 'OPEN',
     coin: 'Open Platform',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/roth-token-roth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/roth-token-roth.png',
     token: 'ROTH',
     coin: 'Roth Token',
   },
@@ -14909,12 +16429,14 @@ export const DATA_TOKEN = [
     coin: 'Meta Ruffy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cashbackpro-cbp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cashbackpro-cbp.png',
     token: 'CBP',
     coin: 'CashBackPro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xspectar-xspectar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xspectar-xspectar.png',
     token: 'XSPECTAR',
     coin: 'xSPECTAR',
   },
@@ -14929,12 +16451,14 @@ export const DATA_TOKEN = [
     coin: 'Game.com',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-dao-network-aos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-dao-network-aos.png',
     token: 'AOS',
     coin: 'AI DAO Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/floki-ceo-flokiceo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/floki-ceo-flokiceo.png',
     token: 'FLOKICEO',
     coin: 'FLOKI CEO',
   },
@@ -14944,12 +16468,14 @@ export const DATA_TOKEN = [
     coin: 'e/acc',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitmex-token-bmex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitmex-token-bmex.png',
     token: 'BMEX',
     coin: 'Bitmex Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galaxy-wallet-gax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galaxy-wallet-gax.png',
     token: 'GAX',
     coin: 'Galaxy Wallet',
   },
@@ -14959,12 +16485,14 @@ export const DATA_TOKEN = [
     coin: 'CATCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/handleforex-forex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/handleforex-forex.png',
     token: 'FOREX',
     coin: 'handleFOREX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/futureswap-fst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/futureswap-fst.png',
     token: 'FST',
     coin: 'Futureswap',
   },
@@ -14979,7 +16507,8 @@ export const DATA_TOKEN = [
     coin: 'TRIA NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/etherparty-fuel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/etherparty-fuel.png',
     token: 'FUEL',
     coin: 'Etherparty',
   },
@@ -14989,32 +16518,38 @@ export const DATA_TOKEN = [
     coin: 'CloudTx',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/collateral-network-colt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/collateral-network-colt.png',
     token: 'COLT',
     coin: 'Collateral Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-god-god.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-god-god.png',
     token: 'GOD',
     coin: 'Bitcoin God',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spacexcoin-spxc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spacexcoin-spxc.png',
     token: 'SPXC',
     coin: 'SpaceXCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unilapse-unilapse.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unilapse-unilapse.png',
     token: 'UNILAPSE',
     coin: 'UNILAPSE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/privapp-network-bpriva.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/privapp-network-bpriva.png',
     token: 'BPRIVA',
     coin: 'Privapp Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/circleswap-cir.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/circleswap-cir.png',
     token: 'CIR',
     coin: 'CircleSwap',
   },
@@ -15044,22 +16579,26 @@ export const DATA_TOKEN = [
     coin: 'TosDis',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-lovely-inu-blovely.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-lovely-inu-blovely.png',
     token: 'BLOVELY',
     coin: 'Baby Lovely Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kittenfinance-kif.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kittenfinance-kif.png',
     token: 'KIF',
     coin: 'KittenFinance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yoshi-exchange-yoshi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yoshi-exchange-yoshi.png',
     token: 'YOSHI',
     coin: 'Yoshi.exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zeusshield-zsc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zeusshield-zsc.png',
     token: 'ZSC',
     coin: 'Zeusshield',
   },
@@ -15069,7 +16608,8 @@ export const DATA_TOKEN = [
     coin: 'KlubCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptoart-ai-cart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptoart-ai-cart.png',
     token: 'CART',
     coin: 'CryptoArt.Ai',
   },
@@ -15079,7 +16619,8 @@ export const DATA_TOKEN = [
     coin: 'Morpher',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/continuum-finance-ctn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/continuum-finance-ctn.png',
     token: 'CTN',
     coin: 'Continuum Finance',
   },
@@ -15089,12 +16630,14 @@ export const DATA_TOKEN = [
     coin: 'MiniSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hypercycle-hypc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hypercycle-hypc.png',
     token: 'HYPC',
     coin: 'HyperCycle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/indian-rupee-inr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/indian-rupee-inr.png',
     token: 'INR',
     coin: 'Indian Rupee',
   },
@@ -15104,7 +16647,8 @@ export const DATA_TOKEN = [
     coin: 'Vera',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mojitoswap-mjt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mojitoswap-mjt.png',
     token: 'MJT',
     coin: 'MojitoSwap',
   },
@@ -15114,7 +16658,8 @@ export const DATA_TOKEN = [
     coin: 'ZKBase',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/level-finance-lvl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/level-finance-lvl.png',
     token: 'LVL',
     coin: 'Level Finance',
   },
@@ -15139,17 +16684,20 @@ export const DATA_TOKEN = [
     coin: 'DeHealth',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pivotalcoin-pvc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pivotalcoin-pvc.png',
     token: 'PVC',
     coin: 'Pivotalcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/socean-staked-sol-scnsol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/socean-staked-sol-scnsol.png',
     token: 'SCNSOL',
     coin: 'Socean Staked Sol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xnft-protocol-xnft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xnft-protocol-xnft.png',
     token: 'XNFT',
     coin: 'xNFT Protocol',
   },
@@ -15160,12 +16708,14 @@ export const DATA_TOKEN = [
     coin: 'UNION Protocol Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spool-dao-spool.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spool-dao-spool.png',
     token: 'SPOOL',
     coin: 'Spool DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-swap-aiswap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-swap-aiswap.png',
     token: 'AISWAP',
     coin: 'AI Swap',
   },
@@ -15195,7 +16745,8 @@ export const DATA_TOKEN = [
     coin: 'Bottos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/equilibria-finance-eqb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/equilibria-finance-eqb.png',
     token: 'EQB',
     coin: 'Equilibria Finance',
   },
@@ -15215,17 +16766,20 @@ export const DATA_TOKEN = [
     coin: 'WeStarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/macaronswap-mcrn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/macaronswap-mcrn.png',
     token: 'MCRN',
     coin: 'MacaronSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/calvaria-duels-of-eternity-ria.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/calvaria-duels-of-eternity-ria.png',
     token: 'RIA',
     coin: 'Calvaria: Duels of Eternity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coral-swap-coral.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coral-swap-coral.png',
     token: 'CORAL',
     coin: 'Coral Swap',
   },
@@ -15235,27 +16789,32 @@ export const DATA_TOKEN = [
     coin: 'BlockCDN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gametree-gtcoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gametree-gtcoin.png',
     token: 'GTCOIN',
     coin: 'GAMETREE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/instadapp-inst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/instadapp-inst.png',
     token: 'INST',
     coin: 'Instadapp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wojak-finance-woj.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wojak-finance-woj.png',
     token: 'WOJ',
     coin: 'Wojak Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fire-protocol-fire.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fire-protocol-fire.png',
     token: 'FIRE',
     coin: 'Fire Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stella-fantasy-sfty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stella-fantasy-sfty.png',
     token: 'SFTY',
     coin: 'Stella Fantasy',
   },
@@ -15265,27 +16824,32 @@ export const DATA_TOKEN = [
     coin: 'BRC App',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wadzpay-token-wtk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wadzpay-token-wtk.png',
     token: 'WTK',
     coin: 'WadzPay Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aventis-metaverse-avtm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aventis-metaverse-avtm.png',
     token: 'AVTM',
     coin: 'Aventis Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/torah-network-vp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/torah-network-vp.png',
     token: 'VP',
     coin: 'Torah Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogegang-dogegang.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogegang-dogegang.png',
     token: 'DOGEGANG',
     coin: 'DOGEGANG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sashimi-sashimi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sashimi-sashimi.png',
     token: 'SASHIMI',
     coin: 'Sashimi',
   },
@@ -15305,22 +16869,26 @@ export const DATA_TOKEN = [
     coin: 'Fanadise',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starlink-slnv2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starlink-slnv2.png',
     token: 'SLNV2',
     coin: 'StarLink',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/4-next-unicorn-nxtu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/4-next-unicorn-nxtu.png',
     token: 'NXTU',
     coin: '4 Next Unicorn',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beefy-finance-beefi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beefy-finance-beefi.png',
     token: 'BEEFI',
     coin: 'Beefy.Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astroport-classic-astro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astroport-classic-astro.png',
     token: 'ASTRO',
     coin: 'Astroport Classic',
   },
@@ -15330,7 +16898,8 @@ export const DATA_TOKEN = [
     coin: 'ASYAGRO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lavita-ai-lavita.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lavita-ai-lavita.png',
     token: 'LAVITA',
     coin: 'Lavita AI',
   },
@@ -15345,7 +16914,8 @@ export const DATA_TOKEN = [
     coin: 'Pikaster',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/medicalchain-mtn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/medicalchain-mtn.png',
     token: 'MTN',
     coin: 'Medicalchain',
   },
@@ -15360,22 +16930,26 @@ export const DATA_TOKEN = [
     coin: 'Ari10',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-winkyverse-wnk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-winkyverse-wnk.png',
     token: 'WNK',
     coin: 'The Winkyverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alpaca-city-alpa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alpaca-city-alpa.png',
     token: 'ALPA',
     coin: 'Alpaca City',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnktothefuture-bft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnktothefuture-bft.png',
     token: 'BFT',
     coin: 'BnkToTheFuture',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chain-games-chain.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chain-games-chain.png',
     token: 'CHAIN',
     coin: 'Chain Games',
   },
@@ -15385,12 +16959,14 @@ export const DATA_TOKEN = [
     coin: 'Angle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/titan-hunters-tita.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/titan-hunters-tita.png',
     token: 'TITA',
     coin: 'Titan Hunters',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magic-shoes-magicshoes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magic-shoes-magicshoes.png',
     token: 'MAGICSHOES',
     coin: 'Magic Shoes',
   },
@@ -15400,7 +16976,8 @@ export const DATA_TOKEN = [
     coin: 'ProximaX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yachtingverse-yacht.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yachtingverse-yacht.png',
     token: 'YACHT',
     coin: 'YachtingVerse',
   },
@@ -15415,7 +16992,8 @@ export const DATA_TOKEN = [
     coin: 'NFTBomb',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pirichain-piri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pirichain-piri.png',
     token: 'PIRI',
     coin: 'Pirichain',
   },
@@ -15430,12 +17008,14 @@ export const DATA_TOKEN = [
     coin: 'Bounty0x',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/taxa-token-txt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/taxa-token-txt.png',
     token: 'TXT',
     coin: 'Taxa Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/play-point-p2e-pow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/play-point-p2e-pow.png',
     token: 'POW',
     coin: 'Play Point P2E',
   },
@@ -15450,17 +17030,20 @@ export const DATA_TOKEN = [
     coin: 'REEL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xen-crypto-polygon-mxen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xen-crypto-polygon-mxen.png',
     token: 'MXEN',
     coin: 'XEN Crypto (Polygon)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/halfpizza-piza.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/halfpizza-piza.png',
     token: 'PIZA',
     coin: 'HalfPizza',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yam-finance-v1-yam.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yam-finance-v1-yam.png',
     token: 'YAM',
     coin: 'YAM Finance V1',
   },
@@ -15480,7 +17063,8 @@ export const DATA_TOKEN = [
     coin: 'Remme',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/psyoptions-psy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/psyoptions-psy.png',
     token: 'PSY',
     coin: 'PsyOptions',
   },
@@ -15500,17 +17084,20 @@ export const DATA_TOKEN = [
     coin: 'Million',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/squid-game-squid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/squid-game-squid.png',
     token: 'SQUID',
     coin: 'Squid Game',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/conic-finance-cnc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/conic-finance-cnc.png',
     token: 'CNC',
     coin: 'Conic Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swordmagictoken-swo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swordmagictoken-swo.png',
     token: 'SWO',
     coin: 'SwordMagicToken',
   },
@@ -15525,12 +17112,14 @@ export const DATA_TOKEN = [
     coin: 'BITONE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xen-crypto-bsc-bxen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xen-crypto-bsc-bxen.png',
     token: 'BXEN',
     coin: 'XEN Crypto (BSC)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nftmart-token-nmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nftmart-token-nmt.png',
     token: 'NMT',
     coin: 'NFTMart Token',
   },
@@ -15540,12 +17129,14 @@ export const DATA_TOKEN = [
     coin: 'DERP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waykichain-governance-coin-wgrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waykichain-governance-coin-wgrt.png',
     token: 'WGRT',
     coin: 'WaykiChain Governance Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/empire-token-empire.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/empire-token-empire.png',
     token: 'EMPIRE',
     coin: 'Empire Token',
   },
@@ -15555,7 +17146,8 @@ export const DATA_TOKEN = [
     coin: 'LOOTEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/universal-liquidity-union-ulu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/universal-liquidity-union-ulu.png',
     token: 'ULU',
     coin: 'Universal Liquidity Union',
   },
@@ -15575,7 +17167,8 @@ export const DATA_TOKEN = [
     coin: 'DOGGO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/akropolis-delphi-adel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/akropolis-delphi-adel.png',
     token: 'ADEL',
     coin: 'Akropolis Delphi',
   },
@@ -15585,12 +17178,14 @@ export const DATA_TOKEN = [
     coin: 'MobiFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ecoreal-estate-ecoreal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ecoreal-estate-ecoreal.png',
     token: 'ECOREAL',
     coin: 'Ecoreal Estate',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dt-foundation-dt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dt-foundation-dt.png',
     token: 'DT',
     coin: 'DT Foundation',
   },
@@ -15600,12 +17195,14 @@ export const DATA_TOKEN = [
     coin: 'FrogSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/amazingteamdao-amazingteam.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/amazingteamdao-amazingteam.png',
     token: 'AMAZINGTEAM',
     coin: 'AmazingTeamDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blockchain-bets-bcb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blockchain-bets-bcb.png',
     token: 'BCB',
     coin: 'Blockchain Bets',
   },
@@ -15615,7 +17212,8 @@ export const DATA_TOKEN = [
     coin: 'MerchDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/voice-street-vst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/voice-street-vst.png',
     token: 'VST',
     coin: 'Voice Street',
   },
@@ -15631,7 +17229,8 @@ export const DATA_TOKEN = [
     coin: 'Decentralized Vulnerability Platform',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lucky-seven-dex-lsd7.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lucky-seven-dex-lsd7.png',
     token: 'LSD7',
     coin: 'Lucky Seven DEX',
   },
@@ -15641,17 +17240,20 @@ export const DATA_TOKEN = [
     coin: 'Alaya',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mcashchain-mcash.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mcashchain-mcash.png',
     token: 'MCASH',
     coin: 'Mcashchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/domi-online-domi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/domi-online-domi.png',
     token: 'DOMI',
     coin: 'Domi Online',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/babydoge-2-0-babydoge2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/babydoge-2-0-babydoge2.png',
     token: 'BABYDOGE2',
     coin: 'Babydoge 2.0',
   },
@@ -15661,12 +17263,14 @@ export const DATA_TOKEN = [
     coin: 'Mute',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/raiden-network-rdn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/raiden-network-rdn.png',
     token: 'RDN',
     coin: 'Raiden Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jeff-world-jeff.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jeff-world-jeff.png',
     token: 'JEFF',
     coin: 'JEFF World',
   },
@@ -15677,7 +17281,8 @@ export const DATA_TOKEN = [
     coin: 'Alongside Crypto Market Index',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/good-token-good.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/good-token-good.png',
     token: 'GOOD',
     coin: 'GOOD Token',
   },
@@ -15702,12 +17307,14 @@ export const DATA_TOKEN = [
     coin: 'Capshort',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mycryptobank-mcb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mycryptobank-mcb.png',
     token: 'MCB',
     coin: 'MyCryptoBank',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/federal-gold-coin-fgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/federal-gold-coin-fgc.png',
     token: 'FGC',
     coin: 'FEDERAL GOLD COIN',
   },
@@ -15717,7 +17324,8 @@ export const DATA_TOKEN = [
     coin: 'MODA DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flame-token-flame.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flame-token-flame.png',
     token: 'FLAME',
     coin: 'Flame Token',
   },
@@ -15732,17 +17340,20 @@ export const DATA_TOKEN = [
     coin: 'GoldFinX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-bam-btcbam.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-bam-btcbam.png',
     token: 'BTCBAM',
     coin: 'Bitcoin Bam',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/open-source-network-opn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/open-source-network-opn.png',
     token: 'OPN',
     coin: 'Open Source Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oracle-mesh-om3.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oracle-mesh-om3.png',
     token: 'OM3',
     coin: 'Oracle Mesh',
   },
@@ -15752,17 +17363,20 @@ export const DATA_TOKEN = [
     coin: 'XONE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sardis-network-srds.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sardis-network-srds.png',
     token: 'SRDS',
     coin: 'Sardis Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ripio-credit-network-rcn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ripio-credit-network-rcn.png',
     token: 'RCN',
     coin: 'Ripio Credit Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dragon-mainland-shards-dms.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dragon-mainland-shards-dms.png',
     token: 'DMS',
     coin: 'Dragon Mainland Shards',
   },
@@ -15772,7 +17386,8 @@ export const DATA_TOKEN = [
     coin: 'MatrixETF',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pooltogether-pool.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pooltogether-pool.png',
     token: 'POOL',
     coin: 'PoolTogether',
   },
@@ -15782,7 +17397,8 @@ export const DATA_TOKEN = [
     coin: 'Secretum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moon-rabbit-aaa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moon-rabbit-aaa.png',
     token: 'AAA',
     coin: 'Moon Rabbit',
   },
@@ -15797,12 +17413,14 @@ export const DATA_TOKEN = [
     coin: 'PROXI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/phantom-protocol-phm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/phantom-protocol-phm.png',
     token: 'PHM',
     coin: 'Phantom Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/andus-chain-deb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/andus-chain-deb.png',
     token: 'DEB',
     coin: 'Andus Chain',
   },
@@ -15812,7 +17430,8 @@ export const DATA_TOKEN = [
     coin: 'DogeSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cvault-finance-core.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cvault-finance-core.png',
     token: 'CORE',
     coin: 'cVault.finance',
   },
@@ -15822,22 +17441,26 @@ export const DATA_TOKEN = [
     coin: 'L',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/apedoge-apedoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/apedoge-apedoge.png',
     token: 'APEDOGE',
     coin: 'APEDOGE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xsaiyan-tech-saix.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xsaiyan-tech-saix.png',
     token: 'SAIX',
     coin: 'XSaiyan.tech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kaka-nft-world-kaka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kaka-nft-world-kaka.png',
     token: 'KAKA',
     coin: 'KAKA NFT World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/volare-network-volr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/volare-network-volr.png',
     token: 'VOLR',
     coin: 'Volare Network',
   },
@@ -15847,7 +17470,8 @@ export const DATA_TOKEN = [
     coin: 'pToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/agility-lsd-agi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/agility-lsd-agi.png',
     token: 'AGI',
     coin: 'Agility LSD',
   },
@@ -15857,17 +17481,20 @@ export const DATA_TOKEN = [
     coin: 'MEMEME',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moss-carbon-credit-mco2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moss-carbon-credit-mco2.png',
     token: 'MCO2',
     coin: 'Moss Carbon Credit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/noot-brc-20-noot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/noot-brc-20-noot.png',
     token: 'NOOT',
     coin: 'NOOT (BRC-20)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vestate-vestate.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vestate-vestate.png',
     token: 'VESTATE',
     coin: 'Vestate',
   },
@@ -15877,7 +17504,8 @@ export const DATA_TOKEN = [
     coin: 'XD Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/daosquare-markets-rice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/daosquare-markets-rice.png',
     token: 'RICE',
     coin: 'DAOSquare Markets',
   },
@@ -15887,27 +17515,32 @@ export const DATA_TOKEN = [
     coin: 'HashCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moeda-loyalty-points-mda.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moeda-loyalty-points-mda.png',
     token: 'MDA',
     coin: 'Moeda Loyalty Points',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magikal-ai-mgkl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magikal-ai-mgkl.png',
     token: 'MGKL',
     coin: 'MAGIKAL.ai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vader-protocol-vader.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vader-protocol-vader.png',
     token: 'VADER',
     coin: 'Vader Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xen-crypto-fantom-fmxen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xen-crypto-fantom-fmxen.png',
     token: 'FMXEN',
     coin: 'XEN Crypto (Fantom)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-file-bifi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-file-bifi.png',
     token: 'BIFI',
     coin: 'Bitcoin File',
   },
@@ -15927,7 +17560,8 @@ export const DATA_TOKEN = [
     coin: 'Burp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bsv-brc-bsvbrc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bsv-brc-bsvbrc.png',
     token: 'BSVBRC',
     coin: 'BSV (BRC)',
   },
@@ -15937,17 +17571,20 @@ export const DATA_TOKEN = [
     coin: 'Boo Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dnaxcat-token-dxct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dnaxcat-token-dxct.png',
     token: 'DXCT',
     coin: 'DNAxCAT Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-fan-token-glft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-fan-token-glft.png',
     token: 'GLFT',
     coin: 'Global Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zksync-id-zkid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zksync-id-zkid.png',
     token: 'ZKID',
     coin: 'zkSync id',
   },
@@ -15962,17 +17599,20 @@ export const DATA_TOKEN = [
     coin: 'AICoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/paralink-network-para.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/paralink-network-para.png',
     token: 'PARA',
     coin: 'Paralink Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/plc-ultima-classic-plcuc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/plc-ultima-classic-plcuc.png',
     token: 'PLCUC',
     coin: 'PLC Ultima Classic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/medishares-mds.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/medishares-mds.png',
     token: 'MDS',
     coin: 'MediShares',
   },
@@ -15982,12 +17622,14 @@ export const DATA_TOKEN = [
     coin: 'Ethermon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/onx-finance-onx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/onx-finance-onx.png',
     token: 'ONX',
     coin: 'OnX Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gay-pepe-gaypepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gay-pepe-gaypepe.png',
     token: 'GAYPEPE',
     coin: 'Gay Pepe',
   },
@@ -16002,7 +17644,8 @@ export const DATA_TOKEN = [
     coin: 'Drac (BRC)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jones-dao-jones.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jones-dao-jones.png',
     token: 'JONES',
     coin: 'Jones DAO',
   },
@@ -16017,22 +17660,26 @@ export const DATA_TOKEN = [
     coin: 'OST',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/freerossdao-free.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/freerossdao-free.png',
     token: 'FREE',
     coin: 'FreeRossDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/virtual-coin-vrc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/virtual-coin-vrc.png',
     token: 'VRC',
     coin: 'Virtual Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vica-token-vica.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vica-token-vica.png',
     token: 'VICA',
     coin: 'ViCA Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sabai-ecoverse-sabai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sabai-ecoverse-sabai.png',
     token: 'SABAI',
     coin: 'Sabai Ecoverse',
   },
@@ -16042,12 +17689,14 @@ export const DATA_TOKEN = [
     coin: 'Menzy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/exosama-network-sama.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/exosama-network-sama.png',
     token: 'SAMA',
     coin: 'Exosama Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/farmers-world-wood-fww.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/farmers-world-wood-fww.png',
     token: 'FWW',
     coin: 'Farmers World Wood',
   },
@@ -16067,22 +17716,26 @@ export const DATA_TOKEN = [
     coin: 'Demole',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-eat-doge-omnom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-eat-doge-omnom.png',
     token: 'OMNOM',
     coin: 'Doge Eat Doge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-wallet-token-swt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-wallet-token-swt.png',
     token: 'SWT',
     coin: 'Smart Wallet Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/as-monaco-fan-token-asm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/as-monaco-fan-token-asm.png',
     token: 'ASM',
     coin: 'AS Monaco Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/law-blocks-lbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/law-blocks-lbt.png',
     token: 'LBT',
     coin: 'Law Blocks',
   },
@@ -16092,7 +17745,8 @@ export const DATA_TOKEN = [
     coin: 'XDAG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/naka-bodhi-token-nbot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/naka-bodhi-token-nbot.png',
     token: 'NBOT',
     coin: 'Naka Bodhi Token',
   },
@@ -16102,12 +17756,14 @@ export const DATA_TOKEN = [
     coin: 'Primas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/buffer-finance-bfr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/buffer-finance-bfr.png',
     token: 'BFR',
     coin: 'Buffer Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/octopus-protocol-ops.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/octopus-protocol-ops.png',
     token: 'OPS',
     coin: 'Octopus Protocol',
   },
@@ -16117,22 +17773,26 @@ export const DATA_TOKEN = [
     coin: 'TokenClub',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trinity-network-credit-tnc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trinity-network-credit-tnc.png',
     token: 'TNC',
     coin: 'Trinity Network Credit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hurricaneswap-hct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hurricaneswap-hct.png',
     token: 'HCT',
     coin: 'HurricaneSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arbitrove-protocol-trove.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arbitrove-protocol-trove.png',
     token: 'TROVE',
     coin: 'Arbitrove Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bsc-tools-tools.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bsc-tools-tools.png',
     token: 'TOOLS',
     coin: 'BSC TOOLS',
   },
@@ -16142,7 +17802,8 @@ export const DATA_TOKEN = [
     coin: 'RIKEZA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sentre-protocol-sntr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sentre-protocol-sntr.png',
     token: 'SNTR',
     coin: 'Sentre Protocol',
   },
@@ -16152,32 +17813,38 @@ export const DATA_TOKEN = [
     coin: 'EG TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lite-token-lite.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lite-token-lite.png',
     token: 'LITE',
     coin: 'LITE token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metashooter-mhunt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metashooter-mhunt.png',
     token: 'MHUNT',
     coin: 'MetaShooter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mithrilshare-mis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mithrilshare-mis.png',
     token: 'MIS',
     coin: 'Mithril Share',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-ceo-dogeceo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-ceo-dogeceo.png',
     token: 'DOGECEO',
     coin: 'Doge CEO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaverse-etp-etp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaverse-etp-etp.png',
     token: 'ETP',
     coin: 'Metaverse ETP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iron-titanium-token-titan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iron-titanium-token-titan.png',
     token: 'TITAN',
     coin: 'IRON Titanium Token',
   },
@@ -16187,7 +17854,8 @@ export const DATA_TOKEN = [
     coin: 'Akt.io',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kabosu-family-kabosu1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kabosu-family-kabosu1.png',
     token: 'KABOSU1',
     coin: 'Kabosu Family',
   },
@@ -16197,17 +17865,20 @@ export const DATA_TOKEN = [
     coin: "JPEG'd",
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mimir-token-mimir.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mimir-token-mimir.png',
     token: 'MIMIR',
     coin: 'Mimir Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rake-finance-rak.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rake-finance-rak.png',
     token: 'RAK',
     coin: 'Rake Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magic-cube-coin-mcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magic-cube-coin-mcc.png',
     token: 'MCC',
     coin: 'Magic Cube Coin',
   },
@@ -16217,7 +17888,8 @@ export const DATA_TOKEN = [
     coin: 'Sailwars',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/electrifyasia-elec.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/electrifyasia-elec.png',
     token: 'ELEC',
     coin: 'ElectrifyAsia',
   },
@@ -16227,22 +17899,26 @@ export const DATA_TOKEN = [
     coin: 'ZURRENCY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/content-value-network-cvnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/content-value-network-cvnt.png',
     token: 'CVNT',
     coin: 'Content Value Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/corestarter-cstr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/corestarter-cstr.png',
     token: 'CSTR',
     coin: 'CoreStarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crystal-palace-fan-token-cpfc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crystal-palace-fan-token-cpfc.png',
     token: 'CPFC',
     coin: 'Crystal Palace Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-digital-content-gdc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-digital-content-gdc.png',
     token: 'GDC',
     coin: 'Global Digital Content',
   },
@@ -16252,7 +17928,8 @@ export const DATA_TOKEN = [
     coin: 'SoPay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safemars-smars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safemars-smars.png',
     token: 'SMARS',
     coin: 'SafeMars',
   },
@@ -16268,32 +17945,38 @@ export const DATA_TOKEN = [
     coin: 'Decentralized Eternal Virtual Traveller',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lakebanker-bac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lakebanker-bac.png',
     token: 'BAC',
     coin: 'LakeBanker',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unit-protocol-duck.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unit-protocol-duck.png',
     token: 'DUCK',
     coin: 'Unit Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/basis-gold-share-bags.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/basis-gold-share-bags.png',
     token: 'BAGS',
     coin: 'Basis Gold Share',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-tex-ctex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-tex-ctex.png',
     token: 'CTEX',
     coin: 'Crypto tex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iht-real-estate-protocol-iht.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iht-real-estate-protocol-iht.png',
     token: 'IHT',
     coin: 'IHT Real Estate Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/teddy-doge-teddy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/teddy-doge-teddy.png',
     token: 'TEDDY',
     coin: 'Teddy Doge',
   },
@@ -16303,12 +17986,14 @@ export const DATA_TOKEN = [
     coin: 'NavCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/basis-share-bas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/basis-share-bas.png',
     token: 'BAS',
     coin: 'Basis Share',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arcadierx-arcx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arcadierx-arcx.png',
     token: 'ARCX',
     coin: 'ArcadierX',
   },
@@ -16323,7 +18008,8 @@ export const DATA_TOKEN = [
     coin: 'CryptoAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shine-chain-sc20.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shine-chain-sc20.png',
     token: 'SC20',
     coin: 'Shine Chain',
   },
@@ -16333,22 +18019,26 @@ export const DATA_TOKEN = [
     coin: 'SpaceY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pandadao-pandadao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pandadao-pandadao.png',
     token: 'PANDADAO',
     coin: 'PandaDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-pepe-wpepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-pepe-wpepe.png',
     token: 'WPEPE',
     coin: 'Wrapped Pepe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hughug-coin-hghg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hughug-coin-hghg.png',
     token: 'HGHG',
     coin: 'HUGHUG Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/enno-cash-enno.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/enno-cash-enno.png',
     token: 'ENNO',
     coin: 'ENNO Cash',
   },
@@ -16358,37 +18048,44 @@ export const DATA_TOKEN = [
     coin: 'TERACON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/atem-network-atem.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/atem-network-atem.png',
     token: 'ATEM',
     coin: 'Atem Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bacondao-bacon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bacondao-bacon.png',
     token: 'BACON',
     coin: 'BaconDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/punchword-punch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/punchword-punch.png',
     token: 'PUNCH',
     coin: 'PUNCHWORD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cardiocoin-crdc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cardiocoin-crdc.png',
     token: 'CRDC',
     coin: 'Cardiocoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/talent-coin-bitrota-tlnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/talent-coin-bitrota-tlnt.png',
     token: 'TLNT',
     coin: 'TALENT Coin (Bitrota)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/infinity-skies-isky.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/infinity-skies-isky.png',
     token: 'ISKY',
     coin: 'Infinity Skies',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defi-for-you-dfy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defi-for-you-dfy.png',
     token: 'DFY',
     coin: 'Defi For You',
   },
@@ -16403,7 +18100,8 @@ export const DATA_TOKEN = [
     coin: 'Nebulas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lucky-block-v2-lblock.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lucky-block-v2-lblock.png',
     token: 'LBLOCK',
     coin: 'Lucky Block V2',
   },
@@ -16413,7 +18111,8 @@ export const DATA_TOKEN = [
     coin: 'PIVN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/loon-network-loon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/loon-network-loon.png',
     token: 'LOON',
     coin: 'Loon Network',
   },
@@ -16423,17 +18122,20 @@ export const DATA_TOKEN = [
     coin: 'HMX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alaska-gold-rush-carat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alaska-gold-rush-carat.png',
     token: 'CARAT',
     coin: 'Alaska Gold Rush',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-hunter-bth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-hunter-bth.png',
     token: 'BTH',
     coin: 'Bitcoin Hunter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nft-champions-champ.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nft-champions-champ.png',
     token: 'CHAMP',
     coin: 'NFT Champions',
   },
@@ -16443,12 +18145,14 @@ export const DATA_TOKEN = [
     coin: 'Zodium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mojaik-mainnet-fee.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mojaik-mainnet-fee.png',
     token: 'FEE',
     coin: 'Mojaik Mainnet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monero-classic-xmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monero-classic-xmc.png',
     token: 'XMC',
     coin: 'Monero Classic',
   },
@@ -16463,62 +18167,74 @@ export const DATA_TOKEN = [
     coin: 'Lien',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/levana-protocol-lvn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/levana-protocol-lvn.png',
     token: 'LVN',
     coin: 'Levana Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/every-game-egame.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/every-game-egame.png',
     token: 'EGAME',
     coin: 'EVERY GAME',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tmn-global-tmng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tmn-global-tmng.png',
     token: 'TMNG',
     coin: 'TMN Global',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chainport-portx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chainport-portx.png',
     token: 'PORTX',
     coin: 'ChainPort',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/eclipse-fi-eclip.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/eclipse-fi-eclip.png',
     token: 'ECLIP',
     coin: 'Eclipse Fi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alienb-token-alienb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alienb-token-alienb.png',
     token: 'ALIENB',
     coin: 'AlienB Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pine-token-pine.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pine-token-pine.png',
     token: 'PINE',
     coin: 'Pine Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clearcryptos-ccx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clearcryptos-ccx.png',
     token: 'CCX',
     coin: 'ClearCryptos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blackhole-protocol-black.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blackhole-protocol-black.png',
     token: 'BLACK',
     coin: 'BlackHole Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/artem-coin-artem.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/artem-coin-artem.png',
     token: 'ARTEM',
     coin: 'Artem Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/datahighway-dhx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/datahighway-dhx.png',
     token: 'DHX',
     coin: 'DataHighway',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnext-token-b3x.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnext-token-b3x.png',
     token: 'B3X',
     coin: 'Bnext Token',
   },
@@ -16528,7 +18244,8 @@ export const DATA_TOKEN = [
     coin: 'VIDY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gbrick-token-gbxt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gbrick-token-gbxt.png',
     token: 'GBXT',
     coin: 'Gbrick Token',
   },
@@ -16538,7 +18255,8 @@ export const DATA_TOKEN = [
     coin: 'Synchrony',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sukhavati-network-skt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sukhavati-network-skt.png',
     token: 'SKT',
     coin: 'Sukhavati Network',
   },
@@ -16548,7 +18266,8 @@ export const DATA_TOKEN = [
     coin: 'ArthSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/artizen-token-atnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/artizen-token-atnt.png',
     token: 'ATNT',
     coin: 'ARTIZEN Token',
   },
@@ -16563,7 +18282,8 @@ export const DATA_TOKEN = [
     coin: 'LanceGree',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/companion-pet-world-cpc1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/companion-pet-world-cpc1.png',
     token: 'CPC1',
     coin: 'Companion Pet World',
   },
@@ -16593,12 +18313,14 @@ export const DATA_TOKEN = [
     coin: 'Axl Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cherry-network-cher.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cherry-network-cher.png',
     token: 'CHER',
     coin: 'Cherry Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lord-of-dragons-logt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lord-of-dragons-logt.png',
     token: 'LOGT',
     coin: 'Lord of Dragons',
   },
@@ -16609,7 +18331,8 @@ export const DATA_TOKEN = [
     coin: 'The Italian Football Federation Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/planet-hares-hac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/planet-hares-hac.png',
     token: 'HAC',
     coin: 'Planet Hares',
   },
@@ -16624,7 +18347,8 @@ export const DATA_TOKEN = [
     coin: 'LBK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spherium-sphri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spherium-sphri.png',
     token: 'SPHRI',
     coin: 'Spherium',
   },
@@ -16639,12 +18363,14 @@ export const DATA_TOKEN = [
     coin: 'Plian',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/soroosh-smart-ecosystem-sse.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/soroosh-smart-ecosystem-sse.png',
     token: 'SSE',
     coin: 'Soroosh Smart Ecosystem',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flurry-finance-flurry.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flurry-finance-flurry.png',
     token: 'FLURRY',
     coin: 'Flurry Finance',
   },
@@ -16654,7 +18380,8 @@ export const DATA_TOKEN = [
     coin: 'Seba',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/seek-tiger-sti.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/seek-tiger-sti.png',
     token: 'STI',
     coin: 'Seek Tiger',
   },
@@ -16674,27 +18401,32 @@ export const DATA_TOKEN = [
     coin: 'NOA PLAY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/klap-finance-token-klap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/klap-finance-token-klap.png',
     token: 'KLAP',
     coin: 'KLAP Finance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tabtrader-token-ttt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tabtrader-token-ttt.png',
     token: 'TTT',
     coin: 'TabTrader Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bayc-fraction-token-ibayc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bayc-fraction-token-ibayc.png',
     token: 'IBAYC',
     coin: 'BAYC Fraction Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monster-galaxy-ggm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monster-galaxy-ggm.png',
     token: 'GGM',
     coin: 'Monster Galaxy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptomines-eternal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptomines-eternal.png',
     token: 'ETERNAL',
     coin: 'CryptoMines',
   },
@@ -16714,7 +18446,8 @@ export const DATA_TOKEN = [
     coin: 'ArkStart',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nightverse-game-nvg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nightverse-game-nvg.png',
     token: 'NVG',
     coin: 'NightVerse Game',
   },
@@ -16734,7 +18467,8 @@ export const DATA_TOKEN = [
     coin: 'TON Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/karmaverse-knot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/karmaverse-knot.png',
     token: 'KNOT',
     coin: 'Karmaverse',
   },
@@ -16744,32 +18478,38 @@ export const DATA_TOKEN = [
     coin: 'SubDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/muratiai-muratiai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/muratiai-muratiai.png',
     token: 'MURATIAI',
     coin: 'MuratiAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tridentdao-psi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tridentdao-psi.png',
     token: 'PSI',
     coin: 'TridentDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/matchcup-match.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/matchcup-match.png',
     token: 'MATCH',
     coin: 'Matchcup',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ovo-nft-platform-ovo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ovo-nft-platform-ovo.png',
     token: 'OVO',
     coin: 'OVO NFT Platform',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/placewar-place.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/placewar-place.png',
     token: 'PLACE',
     coin: 'PlaceWar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonkize-moonkize.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonkize-moonkize.png',
     token: 'MOONKIZE',
     coin: 'MOONKIZE',
   },
@@ -16789,22 +18529,26 @@ export const DATA_TOKEN = [
     coin: 'Filda',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/optionpanda-opa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/optionpanda-opa.png',
     token: 'OPA',
     coin: 'OptionPanda',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/x-protocol-pot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/x-protocol-pot.png',
     token: 'POT',
     coin: 'X Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lion-token-lion.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lion-token-lion.png',
     token: 'LION',
     coin: 'Lion Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/single-finance-single.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/single-finance-single.png',
     token: 'SINGLE',
     coin: 'Single Finance',
   },
@@ -16814,12 +18558,14 @@ export const DATA_TOKEN = [
     coin: 'Antmons',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grizzly-honey-ghny.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grizzly-honey-ghny.png',
     token: 'GHNY',
     coin: 'Grizzly Honey',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tezos-domains-ted.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tezos-domains-ted.png',
     token: 'TED',
     coin: 'Tezos Domains',
   },
@@ -16834,7 +18580,8 @@ export const DATA_TOKEN = [
     coin: 'ReadFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deed-(ordinals)-deed.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deed-(ordinals)-deed.png',
     token: 'DEED',
     coin: 'Deed (Ordinals)',
   },
@@ -16849,12 +18596,14 @@ export const DATA_TOKEN = [
     coin: 'Metronome',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unity-token-unt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unity-token-unt.png',
     token: 'UNT',
     coin: 'Unity Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vent-finance-vent.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vent-finance-vent.png',
     token: 'VENT',
     coin: 'Vent Finance',
   },
@@ -16879,7 +18628,8 @@ export const DATA_TOKEN = [
     coin: 'Hasaki',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ramifi-protocol-ram.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ramifi-protocol-ram.png',
     token: 'RAM',
     coin: 'Ramifi Protocol',
   },
@@ -16889,12 +18639,14 @@ export const DATA_TOKEN = [
     coin: 'PlayPad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bandot-protocol-bdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bandot-protocol-bdt.png',
     token: 'BDT',
     coin: 'Bandot Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ftribe-fighters-f2-nft-f2c.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ftribe-fighters-f2-nft-f2c.png',
     token: 'F2C',
     coin: 'Ftribe Fighters (F2 NFT)',
   },
@@ -16904,12 +18656,14 @@ export const DATA_TOKEN = [
     coin: 'Carrot',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/woozoo-music-wzm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/woozoo-music-wzm.png',
     token: 'WZM',
     coin: 'Woozoo Music',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-nemesis-nems.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-nemesis-nems.png',
     token: 'NEMS',
     coin: 'The Nemesis',
   },
@@ -16919,7 +18673,8 @@ export const DATA_TOKEN = [
     coin: 'NiiFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptopunks-fraction-token-ipunks.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptopunks-fraction-token-ipunks.png',
     token: 'IPUNKS',
     coin: 'CryptoPunks Fraction Token',
   },
@@ -16939,12 +18694,14 @@ export const DATA_TOKEN = [
     coin: 'XREATORS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/port-finance-port.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/port-finance-port.png',
     token: 'PORT',
     coin: 'Port Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hashtagger-com-mooo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hashtagger-com-mooo.png',
     token: 'MOOO',
     coin: 'Hashtagger.com',
   },
@@ -16955,12 +18712,14 @@ export const DATA_TOKEN = [
     coin: 'Filecoin Standard Full Hashrate Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/real-realm-real.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/real-realm-real.png',
     token: 'REAL',
     coin: 'Real Realm',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/green-beli-grbe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/green-beli-grbe.png',
     token: 'GRBE',
     coin: 'Green Beli',
   },
@@ -16970,7 +18729,8 @@ export const DATA_TOKEN = [
     coin: 'Carbon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nftlaunch-nftl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nftlaunch-nftl.png',
     token: 'NFTL',
     coin: 'NFTLaunch',
   },
@@ -16990,7 +18750,8 @@ export const DATA_TOKEN = [
     coin: 'TAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tortuga-finance-aptos-tapt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tortuga-finance-aptos-tapt.png',
     token: 'TAPT',
     coin: 'Tortuga Finance Aptos',
   },
@@ -17000,12 +18761,14 @@ export const DATA_TOKEN = [
     coin: '99Starz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tari-world-tari.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tari-world-tari.png',
     token: 'TARI',
     coin: 'Tari World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aladdindao-ald.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aladdindao-ald.png',
     token: 'ALD',
     coin: 'AladdinDAO',
   },
@@ -17015,42 +18778,50 @@ export const DATA_TOKEN = [
     coin: 'FACTS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/liquid-staking-derivatives-lsd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/liquid-staking-derivatives-lsd.png',
     token: 'LSD',
     coin: 'Liquid Staking Derivatives',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/polypad-polypad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/polypad-polypad.png',
     token: 'POLYPAD',
     coin: 'PolyPad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ordi-plus-trbs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ordi-plus-trbs.png',
     token: 'TRBS',
     coin: 'Ordi Plus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metagame-arena-mga.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metagame-arena-mga.png',
     token: 'MGA',
     coin: 'Metagame Arena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/singapore-dollar-sgd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/singapore-dollar-sgd.png',
     token: 'SGD',
     coin: 'Singapore Dollar',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/despace-protocol-des.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/despace-protocol-des.png',
     token: 'DES',
     coin: 'DeSpace Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/league-of-ancients-loa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/league-of-ancients-loa.png',
     token: 'LOA',
     coin: 'League of Ancients',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ratio-finance-ratio.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ratio-finance-ratio.png',
     token: 'RATIO',
     coin: 'Finance',
   },
@@ -17060,7 +18831,8 @@ export const DATA_TOKEN = [
     coin: 'Youclout',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/d-community-dili.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/d-community-dili.png',
     token: 'DILI',
     coin: 'D Community',
   },
@@ -17070,7 +18842,8 @@ export const DATA_TOKEN = [
     coin: 'Biop',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/biskit-protocol-biskit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/biskit-protocol-biskit.png',
     token: 'BISKIT',
     coin: 'Biskit Protocol',
   },
@@ -17085,37 +18858,44 @@ export const DATA_TOKEN = [
     coin: 'Phuture',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/street-runner-nft-srg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/street-runner-nft-srg.png',
     token: 'SRG',
     coin: 'Street Runner NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rangers-fan-token-rft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rangers-fan-token-rft.png',
     token: 'RFT',
     coin: 'Rangers Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spacemine-mine.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spacemine-mine.png',
     token: 'MINE',
     coin: 'SpaceMine',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/value-liquidity-value.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/value-liquidity-value.png',
     token: 'VALUE',
     coin: 'Value Liquidity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/liq-protocol-liq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/liq-protocol-liq.png',
     token: 'LIQ',
     coin: 'LIQ Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/venice-coin-venice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/venice-coin-venice.png',
     token: 'VENICE',
     coin: 'Venice Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cloudname-cname.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cloudname-cname.png',
     token: 'CNAME',
     coin: 'Cloudname',
   },
@@ -17125,17 +18905,20 @@ export const DATA_TOKEN = [
     coin: 'FIAT DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/operon-origins-oro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/operon-origins-oro.png',
     token: 'ORO',
     coin: 'Operon Origins',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/craftcoin-craft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/craftcoin-craft.png',
     token: 'CRAFT',
     coin: 'Craftcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metan-evolutions-metan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metan-evolutions-metan.png',
     token: 'METAN',
     coin: 'Metan Evolutions',
   },
@@ -17150,22 +18933,26 @@ export const DATA_TOKEN = [
     coin: 'Project X',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptoxpress-xpress.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptoxpress-xpress.png',
     token: 'XPRESS',
     coin: 'CryptoXpress',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/omniaverse-omnia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/omniaverse-omnia.png',
     token: 'OMNIA',
     coin: 'OmniaVerse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/super-bitcoin-sbtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/super-bitcoin-sbtc.png',
     token: 'SBTC',
     coin: 'Super Bitcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hero-arena-hera.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hero-arena-hera.png',
     token: 'HERA',
     coin: 'Hero Arena',
   },
@@ -17175,7 +18962,8 @@ export const DATA_TOKEN = [
     coin: '12Ships',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crepe-coin-crepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crepe-coin-crepe.png',
     token: 'CREPE',
     coin: 'Crepe Coin',
   },
@@ -17190,17 +18978,20 @@ export const DATA_TOKEN = [
     coin: 'JB2024',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beef-coin-beef.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beef-coin-beef.png',
     token: 'BEEF',
     coin: 'BEEF Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sportsicon-icons.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sportsicon-icons.png',
     token: 'ICONS',
     coin: 'SportsIcon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wistaverse-wista.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wistaverse-wista.png',
     token: 'WISTA',
     coin: 'Wistaverse',
   },
@@ -17215,7 +19006,8 @@ export const DATA_TOKEN = [
     coin: 'EFK token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jackpool-finance-jfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jackpool-finance-jfi.png',
     token: 'JFI',
     coin: 'JackPool.finance',
   },
@@ -17225,7 +19017,8 @@ export const DATA_TOKEN = [
     coin: 'Hepton',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aree-shards-aes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aree-shards-aes.png',
     token: 'AES',
     coin: 'Aree Shards',
   },
@@ -17235,12 +19028,14 @@ export const DATA_TOKEN = [
     coin: 'A2DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaoctagon-motg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaoctagon-motg.png',
     token: 'MOTG',
     coin: 'MetaOctagon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dprating-rating.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dprating-rating.png',
     token: 'RATING',
     coin: 'DPRating',
   },
@@ -17260,7 +19055,8 @@ export const DATA_TOKEN = [
     coin: 'Bear Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/otterhome-home.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/otterhome-home.png',
     token: 'HOME',
     coin: 'OtterHome',
   },
@@ -17270,27 +19066,32 @@ export const DATA_TOKEN = [
     coin: 'MetaRim',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bovineverse-token-bvt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bovineverse-token-bvt.png',
     token: 'BVT',
     coin: 'BovineVerse Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/victory-gem-vtg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/victory-gem-vtg.png',
     token: 'VTG',
     coin: 'Victory Gem',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/paypolitan-token-epan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/paypolitan-token-epan.png',
     token: 'EPAN',
     coin: 'Paypolitan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/core-multichain-cmcx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/core-multichain-cmcx.png',
     token: 'CMCX',
     coin: 'CORE MultiChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/race-kingdom-atoz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/race-kingdom-atoz.png',
     token: 'ATOZ',
     coin: 'Race Kingdom',
   },
@@ -17300,32 +19101,38 @@ export const DATA_TOKEN = [
     coin: 'Aradena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sekuritance-skrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sekuritance-skrt.png',
     token: 'SKRT',
     coin: 'Sekuritance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yin-finance-yin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yin-finance-yin.png',
     token: 'YIN',
     coin: 'YIN Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-rug-game-trg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-rug-game-trg.png',
     token: 'TRG',
     coin: 'The Rug Game',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/applesea-apple.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/applesea-apple.png',
     token: 'APPLE',
     coin: 'Applesea',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blind-boxes-bles.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blind-boxes-bles.png',
     token: 'BLES',
     coin: 'Blind Boxes',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sienna-erc20-wsienna.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sienna-erc20-wsienna.png',
     token: 'WSIENNA',
     coin: 'Sienna (ERC20)',
   },
@@ -17340,17 +19147,20 @@ export const DATA_TOKEN = [
     coin: 'Stox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-three-kingdoms-ttk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-three-kingdoms-ttk.png',
     token: 'TTK',
     coin: 'The Three Kingdoms',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-killbox-kbox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-killbox-kbox.png',
     token: 'KBOX',
     coin: 'The Killbox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/terivto-protocol-trv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/terivto-protocol-trv.png',
     token: 'TRV',
     coin: 'Terivto Protocol',
   },
@@ -17360,7 +19170,8 @@ export const DATA_TOKEN = [
     coin: 'Qitcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mobius-finance-mot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mobius-finance-mot.png',
     token: 'MOT',
     coin: 'Mobius Finance',
   },
@@ -17370,7 +19181,8 @@ export const DATA_TOKEN = [
     coin: 'CouponBay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/itemverse-item.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/itemverse-item.png',
     token: 'ITEM',
     coin: 'ITEMVERSE',
   },
@@ -17380,22 +19192,26 @@ export const DATA_TOKEN = [
     coin: 'Bidao',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/klever-finance-kfi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/klever-finance-kfi.png',
     token: 'KFI',
     coin: 'Klever Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/send-finance-send.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/send-finance-send.png',
     token: 'SEND',
     coin: 'Send Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unique-venture-clubs-unq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unique-venture-clubs-unq.png',
     token: 'UNQ',
     coin: 'Unique Venture Clubs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/veno-finance-vno.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/veno-finance-vno.png',
     token: 'VNO',
     coin: 'Veno Finance',
   },
@@ -17405,7 +19221,8 @@ export const DATA_TOKEN = [
     coin: 'T23',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fantom-maker-fame.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fantom-maker-fame.png',
     token: 'FAME',
     coin: 'Fantom Maker',
   },
@@ -17420,7 +19237,8 @@ export const DATA_TOKEN = [
     coin: 'KeyStake',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sandwich-network-sandwich.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sandwich-network-sandwich.png',
     token: 'SANDWICH',
     coin: 'Sandwich Network',
   },
@@ -17460,22 +19278,26 @@ export const DATA_TOKEN = [
     coin: 'Starpunk',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starlink-program-slk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starlink-program-slk.png',
     token: 'SLK',
     coin: 'Starlink Program',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/irena-green-energy-irena.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/irena-green-energy-irena.png',
     token: 'IRENA',
     coin: 'Irena Green Energy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/umma-token-umma.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/umma-token-umma.png',
     token: 'UMMA',
     coin: 'UMMA Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/photochromic-phcr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/photochromic-phcr.png',
     token: 'PHCR',
     coin: 'PhotoChromic',
   },
@@ -17485,22 +19307,26 @@ export const DATA_TOKEN = [
     coin: 'Colizeum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pera-finance-pera.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pera-finance-pera.png',
     token: 'PERA',
     coin: 'Pera Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dos-network-dos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dos-network-dos.png',
     token: 'DOS',
     coin: 'DOS Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/getaverse-geta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/getaverse-geta.png',
     token: 'GETA',
     coin: 'Getaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mayc-fraction-token-imayc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mayc-fraction-token-imayc.png',
     token: 'IMAYC',
     coin: 'MAYC Fraction Token',
   },
@@ -17510,22 +19336,26 @@ export const DATA_TOKEN = [
     coin: 'Savage',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safeward-ai-swi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safeward-ai-swi.png',
     token: 'SWI',
     coin: 'SafeWard AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quantfury-token-qtf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quantfury-token-qtf.png',
     token: 'QTF',
     coin: 'Quantfury Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waggle-network-wag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waggle-network-wag.png',
     token: 'WAG',
     coin: 'Waggle Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nomad-exiles-pride.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nomad-exiles-pride.png',
     token: 'PRIDE',
     coin: 'Nomad Exiles',
   },
@@ -17535,12 +19365,14 @@ export const DATA_TOKEN = [
     coin: 'HitChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-wolf-kingdom-wolf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-wolf-kingdom-wolf.png',
     token: '$WOLF',
     coin: 'The Wolf Kingdom',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sway-social-sway.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sway-social-sway.png',
     token: 'SWAY',
     coin: 'Sway Social',
   },
@@ -17555,12 +19387,14 @@ export const DATA_TOKEN = [
     coin: 'DBX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aegis-finance-ags.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aegis-finance-ags.png',
     token: 'AGS',
     coin: 'Aegis Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/carnomaly-carr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/carnomaly-carr.png',
     token: 'CARR',
     coin: 'Carnomaly',
   },
@@ -17571,17 +19405,20 @@ export const DATA_TOKEN = [
     coin: 'MIMO Parallel Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arowana-token-arw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arowana-token-arw.png',
     token: 'ARW',
     coin: 'Arowana Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skrumble-network-skm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skrumble-network-skm.png',
     token: 'SKM',
     coin: 'Skrumble Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nexus-dubai-nxd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nexus-dubai-nxd.png',
     token: 'NXD',
     coin: 'Nexus Dubai',
   },
@@ -17596,17 +19433,20 @@ export const DATA_TOKEN = [
     coin: 'Cindrum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alfprotocol-alf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alfprotocol-alf.png',
     token: 'ALF',
     coin: 'Alfprotocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trump-cards-fraction-token-itrump.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trump-cards-fraction-token-itrump.png',
     token: 'ITRUMP',
     coin: 'Trump Cards Fraction Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyberdragon-gold.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyberdragon-gold.png',
     token: 'GOLD',
     coin: 'CyberDragon Gold',
   },
@@ -17616,7 +19456,8 @@ export const DATA_TOKEN = [
     coin: 'Reaction',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ordinals-inscribe-ordii.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ordinals-inscribe-ordii.png',
     token: 'ORDII',
     coin: 'Ordinals Inscribe',
   },
@@ -17626,7 +19467,8 @@ export const DATA_TOKEN = [
     coin: 'GLI TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnb-tiger-inu-bnbtiger.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnb-tiger-inu-bnbtiger.png',
     token: 'BNBTIGER',
     coin: 'BNB Tiger Inu',
   },
@@ -17651,7 +19493,8 @@ export const DATA_TOKEN = [
     coin: 'Yesports',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyberstella-stl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyberstella-stl.png',
     token: 'STL',
     coin: 'Cyberstella',
   },
@@ -17673,22 +19516,26 @@ export const DATA_TOKEN = [
     coin: 'Environment Business Platform Tomato Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deus-finance-deus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deus-finance-deus.png',
     token: 'DEUS',
     coin: 'DEUS Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/synergy-token-syng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/synergy-token-syng.png',
     token: 'SYNG',
     coin: 'SYNERGY TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gtrs-cash-gtrs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gtrs-cash-gtrs.png',
     token: 'GTRS',
     coin: 'GTRS Cash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bamboodefi-bamboo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bamboodefi-bamboo.png',
     token: 'BAMBOO',
     coin: 'BambooDeFi',
   },
@@ -17703,7 +19550,8 @@ export const DATA_TOKEN = [
     coin: 'GooseFX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-9-company-the9.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-9-company-the9.png',
     token: 'THE9',
     coin: 'The 9 Company',
   },
@@ -17718,7 +19566,8 @@ export const DATA_TOKEN = [
     coin: 'Credits',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitune-ai-platform-token-tune.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitune-ai-platform-token-tune.png',
     token: 'TUNE',
     coin: 'Bitune AI Platform Token',
   },
@@ -17728,32 +19577,38 @@ export const DATA_TOKEN = [
     coin: 'Xi Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/krypton-galaxy-coin-kgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/krypton-galaxy-coin-kgc.png',
     token: 'KGC',
     coin: 'Krypton Galaxy Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/biblecoin-bibl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/biblecoin-bibl.png',
     token: 'BIBL',
     coin: 'Biblecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zenithdex-zenx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zenithdex-zenx.png',
     token: 'ZENX',
     coin: 'ZenithDex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digihealth-dgh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digihealth-dgh.png',
     token: 'DGH',
     coin: 'Digihealth',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crescite-token-cre.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crescite-token-cre.png',
     token: 'CRE',
     coin: 'Crescite Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pando-token-ptx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pando-token-ptx.png',
     token: 'PTX',
     coin: 'Pando Token',
   },
@@ -17768,22 +19623,26 @@ export const DATA_TOKEN = [
     coin: 'StepEx',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitshiba-shiba.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitshiba-shiba.png',
     token: 'SHIBA',
     coin: 'BitShiba',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/microcredittoken-1mct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/microcredittoken-1mct.png',
     token: '1MCT',
     coin: 'MicroCreditToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-solutions-token-sst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-solutions-token-sst.png',
     token: 'SST',
     coin: 'Smart Solutions Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/base-protocol-baseptl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/base-protocol-baseptl.png',
     token: 'BASEPTL',
     coin: 'Base Protocol',
   },
@@ -17793,7 +19652,8 @@ export const DATA_TOKEN = [
     coin: 'CEX Index',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galaxy-wallet-gax1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galaxy-wallet-gax1.png',
     token: 'GAX1',
     coin: 'Galaxy Wallet',
   },
@@ -17803,7 +19663,8 @@ export const DATA_TOKEN = [
     coin: 'iNFTspace',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blockasset-block.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blockasset-block.png',
     token: 'BLOCK',
     coin: 'Blockasset',
   },
@@ -17823,7 +19684,8 @@ export const DATA_TOKEN = [
     coin: 'Janex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/honeywood-cone.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/honeywood-cone.png',
     token: 'CONE',
     coin: 'HoneyWood',
   },
@@ -17833,7 +19695,8 @@ export const DATA_TOKEN = [
     coin: 'FAVOR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dolphinai-dolphin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dolphinai-dolphin.png',
     token: 'DOLPHIN',
     coin: 'DolphinAI',
   },
@@ -17843,12 +19706,14 @@ export const DATA_TOKEN = [
     coin: 'OmniCat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/links-token-links.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/links-token-links.png',
     token: 'LINKS',
     coin: 'LINKS Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/volley-token-voy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/volley-token-voy.png',
     token: 'VOY',
     coin: 'Volley token',
   },
@@ -17868,7 +19733,8 @@ export const DATA_TOKEN = [
     coin: 'Jur',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nasdac-crypto-coin-ndcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nasdac-crypto-coin-ndcc.png',
     token: 'NDCC',
     coin: 'NASDAC Crypto Coin',
   },
@@ -17883,12 +19749,14 @@ export const DATA_TOKEN = [
     coin: 'Cred',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/opensky-finance-osky.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/opensky-finance-osky.png',
     token: 'OSKY',
     coin: 'OpenSky Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/decred-next-dcrn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/decred-next-dcrn.png',
     token: 'DCRN',
     coin: 'Decred-Next',
   },
@@ -17898,12 +19766,14 @@ export const DATA_TOKEN = [
     coin: 'AxdtDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aonea-coin-a1a.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aonea-coin-a1a.png',
     token: 'A1A',
     coin: 'Aonea Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/biometric-financial-biofi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/biometric-financial-biofi.png',
     token: 'BIOFI',
     coin: 'Biometric Financial',
   },
@@ -17913,7 +19783,8 @@ export const DATA_TOKEN = [
     coin: 'Altbase',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lof-land-token-lof.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lof-land-token-lof.png',
     token: 'LOF',
     coin: 'LOF LAND TOKEN',
   },
@@ -17928,7 +19799,8 @@ export const DATA_TOKEN = [
     coin: 'PIPI Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-ai-bitcoinai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-ai-bitcoinai.png',
     token: 'BITCOINAI',
     coin: 'Bitcoin AI',
   },
@@ -17938,17 +19810,20 @@ export const DATA_TOKEN = [
     coin: 'STOone',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fodl-finance-fodl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fodl-finance-fodl.png',
     token: 'FODL',
     coin: 'FODL Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/trossard-tross.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/trossard-tross.png',
     token: 'TROSS',
     coin: 'Trossard',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/argonon-helium-arg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/argonon-helium-arg.png',
     token: 'ARG',
     coin: 'Argonon Helium',
   },
@@ -17983,7 +19858,8 @@ export const DATA_TOKEN = [
     coin: 'LOFI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reign-of-terror-reign.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reign-of-terror-reign.png',
     token: 'REIGN',
     coin: 'Reign of Terror',
   },
@@ -17993,12 +19869,14 @@ export const DATA_TOKEN = [
     coin: 'Wiki Cat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/planet-sandbox-psb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/planet-sandbox-psb.png',
     token: 'PSB',
     coin: 'Planet Sandbox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gode-chain-gode.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gode-chain-gode.png',
     token: 'GODE',
     coin: 'Gode Chain',
   },
@@ -18008,12 +19886,14 @@ export const DATA_TOKEN = [
     coin: 'Fidance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/domani-protocol-dextf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/domani-protocol-dextf.png',
     token: 'DEXTF',
     coin: 'Domani Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/health-link-htk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/health-link-htk.png',
     token: 'HTK',
     coin: 'Health Link',
   },
@@ -18028,12 +19908,14 @@ export const DATA_TOKEN = [
     coin: 'Akiverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lido-for-solana-stsol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lido-for-solana-stsol.png',
     token: 'STSOL',
     coin: 'Lido for Solana',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safemars-safemars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safemars-safemars.png',
     token: 'SAFEMARS',
     coin: 'Safemars',
   },
@@ -18043,7 +19925,8 @@ export const DATA_TOKEN = [
     coin: 'Aldrin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/darth-trader-darthtrader.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/darth-trader-darthtrader.png',
     token: 'DARTHTRADER',
     coin: 'Darth Trader',
   },
@@ -18058,12 +19941,14 @@ export const DATA_TOKEN = [
     coin: 'VNX Euro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pbtc35a-pbtc35a.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pbtc35a-pbtc35a.png',
     token: 'PBTC35A',
     coin: 'pBTC35A',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-innovation-platform-gip.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-innovation-platform-gip.png',
     token: 'GIP',
     coin: 'Global Innovation Platform',
   },
@@ -18088,22 +19973,26 @@ export const DATA_TOKEN = [
     coin: 'Koinon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avrora-token-avr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avrora-token-avr.png',
     token: 'AVR',
     coin: 'Avrora Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wault-usd-wusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wault-usd-wusd.png',
     token: 'WUSD',
     coin: 'Wault USD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swim-spread-wisdom-swim.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swim-spread-wisdom-swim.png',
     token: 'SWIM',
     coin: 'Swim Spread Wisdom',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dark-brandon-brandon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dark-brandon-brandon.png',
     token: 'BRANDON',
     coin: 'Dark Brandon',
   },
@@ -18113,12 +20002,14 @@ export const DATA_TOKEN = [
     coin: 'EEG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dangnn-daya-coin-dgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dangnn-daya-coin-dgc.png',
     token: 'DGC',
     coin: 'DANGNN DAYA COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flower-token-flower.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flower-token-flower.png',
     token: 'FLOWER',
     coin: 'Flower Token',
   },
@@ -18128,7 +20019,8 @@ export const DATA_TOKEN = [
     coin: 'DRAG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/salmonswap-slm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/salmonswap-slm.png',
     token: 'SLM',
     coin: 'SalmonSwap',
   },
@@ -18138,12 +20030,14 @@ export const DATA_TOKEN = [
     coin: 'Mammoth',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-block-chain-city-sbcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-block-chain-city-sbcc.png',
     token: 'SBCC',
     coin: 'Smart Block Chain City',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/christmas-pump-chrispump.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/christmas-pump-chrispump.png',
     token: 'CHRISPUMP',
     coin: 'Christmas Pump',
   },
@@ -18153,17 +20047,20 @@ export const DATA_TOKEN = [
     coin: 'Web3Camp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/halo-nft-official-halo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/halo-nft-official-halo.png',
     token: 'HALO',
     coin: 'HALO NFT OFFICIAL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/synchroni-sync.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/synchroni-sync.png',
     token: 'SYNC',
     coin: 'Synchroni',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/talis-protocol-talis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/talis-protocol-talis.png',
     token: 'TALIS',
     coin: 'Talis Protocol',
   },
@@ -18178,17 +20075,20 @@ export const DATA_TOKEN = [
     coin: 'Funft',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nirvana-chain-nac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nirvana-chain-nac.png',
     token: 'NAC',
     coin: 'Nirvana Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ggrid-network-token-ggd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ggrid-network-token-ggd.png',
     token: 'GGD',
     coin: 'GGrid Network Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/army-of-fortune-gem-afg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/army-of-fortune-gem-afg.png',
     token: 'AFG',
     coin: 'Army of Fortune Gem',
   },
@@ -18203,52 +20103,62 @@ export const DATA_TOKEN = [
     coin: 'DefiBox',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mantle-usd-musd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mantle-usd-musd.png',
     token: 'MUSD',
     coin: 'Mantle USD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/soundprotocol-sop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/soundprotocol-sop.png',
     token: 'SOP',
     coin: 'SoundProtocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/platform-of-meme-coins-payu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/platform-of-meme-coins-payu.png',
     token: 'PAYU',
     coin: 'Platform of meme coins',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gpt-protocol-gpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gpt-protocol-gpt.png',
     token: 'GPT',
     coin: 'GPT Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blin-metaverse-blin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blin-metaverse-blin.png',
     token: 'BLIN',
     coin: 'Blin Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/newqcdcoin-nqcd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/newqcdcoin-nqcd.png',
     token: 'NQCD',
     coin: 'NewQCDCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coin-nextep-swap-cxs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coin-nextep-swap-cxs.png',
     token: 'CXS',
     coin: 'Coin Nextep Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xfinite-entertainment-token-xet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xfinite-entertainment-token-xet.png',
     token: 'XET',
     coin: 'Xfinite Entertainment Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mayor-mccheese-mccheese.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mayor-mccheese-mccheese.png',
     token: 'MCCHEESE',
     coin: 'Mayor McCheese',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doodles-fraction-token-idoodles.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doodles-fraction-token-idoodles.png',
     token: 'IDOODLES',
     coin: 'Doodles Fraction Token',
   },
@@ -18268,22 +20178,26 @@ export const DATA_TOKEN = [
     coin: 'HZM Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mojito-markets-mojo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mojito-markets-mojo.png',
     token: 'MOJO',
     coin: 'Mojito Markets',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blankv2-blankv2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blankv2-blankv2.png',
     token: 'BLANKV2',
     coin: 'BLANKV2',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ignore-fud-4token.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ignore-fud-4token.png',
     token: '4TOKEN',
     coin: 'Ignore Fud',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/canary-dollar-cand.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/canary-dollar-cand.png',
     token: 'CAND',
     coin: 'Canary Dollar',
   },
@@ -18298,12 +20212,14 @@ export const DATA_TOKEN = [
     coin: 'ArbGPT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/probit-token-prob.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/probit-token-prob.png',
     token: 'PROB',
     coin: 'ProBit Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pendulum-pendulum.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pendulum-pendulum.png',
     token: 'PENDULUM',
     coin: 'Pendulum',
   },
@@ -18323,12 +20239,14 @@ export const DATA_TOKEN = [
     coin: 'Raft',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doginphire-fire.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doginphire-fire.png',
     token: 'FIRE',
     coin: 'Doginphire',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bloxmove-token-blxm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bloxmove-token-blxm.png',
     token: 'BLXM',
     coin: 'bloXmove Token',
   },
@@ -18343,7 +20261,8 @@ export const DATA_TOKEN = [
     coin: 'Node AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepe-the-pepe-pepee.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepe-the-pepe-pepee.png',
     token: 'PEPEE',
     coin: 'Pepe the pepe',
   },
@@ -18358,12 +20277,14 @@ export const DATA_TOKEN = [
     coin: 'FunFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/funsjourney-funjr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/funsjourney-funjr.png',
     token: 'FUNJR',
     coin: 'FunsJourney',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/expert-infra-eim.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/expert-infra-eim.png',
     token: 'EIM',
     coin: 'Expert Infra',
   },
@@ -18378,27 +20299,32 @@ export const DATA_TOKEN = [
     coin: 'Gec',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hachiai-memeha.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hachiai-memeha.png',
     token: 'MEMEHA',
     coin: 'HachiAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitdepositary-bdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitdepositary-bdt.png',
     token: 'BDT',
     coin: 'Bitdepositary',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/liquidlayer-lila.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/liquidlayer-lila.png',
     token: 'LILA',
     coin: 'LiquidLayer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/web-mingle-wmi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/web-mingle-wmi.png',
     token: 'WMI',
     coin: 'Web Mingle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hive-dollar-hbd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hive-dollar-hbd.png',
     token: 'HBD',
     coin: 'Hive Dollar',
   },
@@ -18433,7 +20359,8 @@ export const DATA_TOKEN = [
     coin: 'KleeKai',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-emergency-cem.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-emergency-cem.png',
     token: 'CEM',
     coin: 'Crypto Emergency',
   },
@@ -18443,7 +20370,8 @@ export const DATA_TOKEN = [
     coin: 'Mobipad',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/electric-cash-elcash.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/electric-cash-elcash.png',
     token: 'ELCASH',
     coin: 'Electric Cash',
   },
@@ -18453,7 +20381,8 @@ export const DATA_TOKEN = [
     coin: 'Pikaster',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/casinocoin-csc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/casinocoin-csc.png',
     token: 'CSC',
     coin: 'CasinoCoin',
   },
@@ -18468,7 +20397,8 @@ export const DATA_TOKEN = [
     coin: 'IX Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galactic-arena-the-nftverse-gan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galactic-arena-the-nftverse-gan.png',
     token: 'GAN',
     coin: 'Galactic Arena: The NFTverse',
   },
@@ -18478,7 +20408,8 @@ export const DATA_TOKEN = [
     coin: 'NexaCash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mx-million-metaverse-dao-mxmdao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mx-million-metaverse-dao-mxmdao.png',
     token: 'MXMDAO',
     coin: 'Mx Million Metaverse DAO',
   },
@@ -18488,7 +20419,8 @@ export const DATA_TOKEN = [
     coin: 'WIVEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/eblockstock-ebso.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/eblockstock-ebso.png',
     token: 'EBSO',
     coin: 'eBlockStock',
   },
@@ -18498,7 +20430,8 @@ export const DATA_TOKEN = [
     coin: 'NFTD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/i-love-snoopy-lovesnoopy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/i-love-snoopy-lovesnoopy.png',
     token: 'LOVESNOOPY',
     coin: 'I LOVE SNOOPY',
   },
@@ -18508,7 +20441,8 @@ export const DATA_TOKEN = [
     coin: 'iGameS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-lumina-tlt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-lumina-tlt.png',
     token: 'TLT',
     coin: 'THE LUMINA',
   },
@@ -18524,7 +20458,8 @@ export const DATA_TOKEN = [
     coin: 'Recycle Impact World Association',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/artery-network-artr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/artery-network-artr.png',
     token: 'ARTR',
     coin: 'Artery Network',
   },
@@ -18539,12 +20474,14 @@ export const DATA_TOKEN = [
     coin: 'Katecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/puffin-global-puffin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/puffin-global-puffin.png',
     token: 'PUFFIN',
     coin: 'Puffin Global',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hadeswap-hades.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hadeswap-hades.png',
     token: 'HADES',
     coin: 'HadeSwap',
   },
@@ -18554,22 +20491,26 @@ export const DATA_TOKEN = [
     coin: 'United',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rugged-art-rug.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rugged-art-rug.png',
     token: 'RUG',
     coin: 'Rugged Art',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/black-stallion-bs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/black-stallion-bs.png',
     token: 'BS',
     coin: 'Black Stallion',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vanguard-vanguard.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vanguard-vanguard.png',
     token: 'VANGUARD',
     coin: 'Vanguard',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dynasty-wars-dwars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dynasty-wars-dwars.png',
     token: 'DWARS',
     coin: 'Dynasty Wars',
   },
@@ -18579,12 +20520,14 @@ export const DATA_TOKEN = [
     coin: 'D-SHOP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blocksport-bspt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blocksport-bspt.png',
     token: 'BSPT',
     coin: 'Blocksport',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/riskshield-rsy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/riskshield-rsy.png',
     token: 'RSY',
     coin: 'RiskShield',
   },
@@ -18599,7 +20542,8 @@ export const DATA_TOKEN = [
     coin: 'SPIDER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metavpad-metav.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metavpad-metav.png',
     token: 'METAV',
     coin: 'MetaVPad',
   },
@@ -18610,7 +20554,8 @@ export const DATA_TOKEN = [
     coin: 'Metaverse Universal Assets DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reserveblock-rbx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reserveblock-rbx.png',
     token: 'RBX',
     coin: 'ReserveBlock',
   },
@@ -18625,17 +20570,20 @@ export const DATA_TOKEN = [
     coin: 'LRN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ninja-warriors-nwt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ninja-warriors-nwt.png',
     token: 'NWT',
     coin: 'Ninja Warriors',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/climbers-mithril.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/climbers-mithril.png',
     token: 'MITHRIL',
     coin: 'CLIMBERS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ocean-finance-of.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ocean-finance-of.png',
     token: 'OF',
     coin: 'Ocean Finance',
   },
@@ -18645,7 +20593,8 @@ export const DATA_TOKEN = [
     coin: 'Archethic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brcautobot-bab.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brcautobot-bab.png',
     token: 'BAB',
     coin: 'BrcAutoBot',
   },
@@ -18655,7 +20604,8 @@ export const DATA_TOKEN = [
     coin: 'YOTTA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yieldification-ydf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yieldification-ydf.png',
     token: 'YDF',
     coin: 'Yieldification',
   },
@@ -18665,7 +20615,8 @@ export const DATA_TOKEN = [
     coin: 'TX Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/marnotaur-taur.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/marnotaur-taur.png',
     token: 'TAUR',
     coin: 'Marnotaur',
   },
@@ -18685,22 +20636,26 @@ export const DATA_TOKEN = [
     coin: 'Lotty',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/party-cats-pct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/party-cats-pct.png',
     token: 'PCT',
     coin: 'Party-Cats',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kinesis-gold-kau.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kinesis-gold-kau.png',
     token: 'KAU',
     coin: 'Kinesis gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mmsscat-mmsscat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mmsscat-mmsscat.png',
     token: 'MMSSCAT',
     coin: 'MMSSCAT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/geegoopuzzle-ggp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/geegoopuzzle-ggp.png',
     token: 'GGP',
     coin: 'Geegoopuzzle',
   },
@@ -18710,22 +20665,26 @@ export const DATA_TOKEN = [
     coin: 'Covenant',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/we-are-so-back-wasb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/we-are-so-back-wasb.png',
     token: 'WASB',
     coin: 'We Are So Back',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/root-mobile-network-token-rmn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/root-mobile-network-token-rmn.png',
     token: 'RMN',
     coin: 'Root Mobile Network Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sommelier-somm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sommelier-somm.png',
     token: 'SOMM',
     coin: 'Sommelier',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/streeth-streeth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/streeth-streeth.png',
     token: 'STREETH',
     coin: 'STREETH',
   },
@@ -18740,7 +20699,8 @@ export const DATA_TOKEN = [
     coin: 'Bumper',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/omnicat-omnicat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/omnicat-omnicat.png',
     token: 'OMNICAT',
     coin: 'OMNICAT',
   },
@@ -18755,12 +20715,14 @@ export const DATA_TOKEN = [
     coin: 'Pikaster',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kinesis-silver-kag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kinesis-silver-kag.png',
     token: 'KAG',
     coin: 'Kinesis silver',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nextearth-nxtt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nextearth-nxtt.png',
     token: 'NXTT',
     coin: 'NextEarth',
   },
@@ -18770,42 +20732,50 @@ export const DATA_TOKEN = [
     coin: 'KOHENOOR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crown-sovereign-csov.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crown-sovereign-csov.png',
     token: 'CSOV',
     coin: 'Crown Sovereign',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/horizondex-hzndex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/horizondex-hzndex.png',
     token: 'HZNDEX',
     coin: 'HorizonDEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ram-sena-ramsena.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ram-sena-ramsena.png',
     token: 'RAMSENA',
     coin: 'Ram Sena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/six-sigma-sports-sge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/six-sigma-sports-sge.png',
     token: 'SGE',
     coin: 'Six Sigma Sports',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/depin-dao-depindao.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/depin-dao-depindao.png',
     token: 'DEPINDAO',
     coin: 'DePIN DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dracarys-token-dra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dracarys-token-dra.png',
     token: 'DRA',
     coin: 'Dracarys Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genesisforge-gsf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genesisforge-gsf.png',
     token: 'GSF',
     coin: 'GenesisForge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memeking-memeking.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memeking-memeking.png',
     token: 'MEMEKING',
     coin: 'MEMEKING',
   },
@@ -18815,12 +20785,14 @@ export const DATA_TOKEN = [
     coin: 'NOBODY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/databooms-dtbom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/databooms-dtbom.png',
     token: 'DTBOM',
     coin: 'DataBooms',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/argonprotocol-agt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/argonprotocol-agt.png',
     token: 'AGT',
     coin: 'ArgonProtocol',
   },
@@ -18830,12 +20802,14 @@ export const DATA_TOKEN = [
     coin: 'Evany',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/longtotem-long.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/longtotem-long.png',
     token: 'LONG',
     coin: 'LongTotem',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/creative-codes-aicrea.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/creative-codes-aicrea.png',
     token: 'AICREA',
     coin: 'Creative codes',
   },
@@ -18855,7 +20829,8 @@ export const DATA_TOKEN = [
     coin: 'QMC Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/geminiai-geminiai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/geminiai-geminiai.png',
     token: 'GEMINIAI',
     coin: 'GeminiAI',
   },
@@ -18886,12 +20861,14 @@ export const DATA_TOKEN = [
     coin: 'NAWARAT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/olea-token-olea.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/olea-token-olea.png',
     token: 'OLEA',
     coin: 'Olea Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/checkerchain-checkr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/checkerchain-checkr.png',
     token: 'CHECKR',
     coin: 'CheckerChain',
   },
@@ -18906,22 +20883,26 @@ export const DATA_TOKEN = [
     coin: 'SEIYAN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vnx-franc-vchf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vnx-franc-vchf.png',
     token: 'VCHF',
     coin: 'VNX Franc',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-accumulate-wacme.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-accumulate-wacme.png',
     token: 'WACME',
     coin: 'Wrapped Accumulate',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xadotools-xado.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xadotools-xado.png',
     token: 'XADO',
     coin: 'XADOTools',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kiirocoin-kiiro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kiirocoin-kiiro.png',
     token: 'KIIRO',
     coin: 'kiirocoin',
   },
@@ -18937,7 +20918,8 @@ export const DATA_TOKEN = [
     coin: 'Sparta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/maximus-token-maximus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/maximus-token-maximus.png',
     token: 'MAXIMUS',
     coin: 'MAXIMUS Token',
   },
@@ -18962,7 +20944,8 @@ export const DATA_TOKEN = [
     coin: 'HRDGCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/luxurious-pro-network-token-lpnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/luxurious-pro-network-token-lpnt.png',
     token: 'LPNT',
     coin: 'Luxurious Pro Network Token',
   },
@@ -18972,42 +20955,50 @@ export const DATA_TOKEN = [
     coin: 'DOGEAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/soldragon-dragon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/soldragon-dragon.png',
     token: 'DRAGON',
     coin: 'SolDragon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fufu-token-fufu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fufu-token-fufu.png',
     token: 'FUFU',
     coin: 'Fufu Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tangleswap-void.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tangleswap-void.png',
     token: 'VOID',
     coin: 'TangleSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skydrome-skydrome.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skydrome-skydrome.png',
     token: 'SKYDROME',
     coin: 'Skydrome',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/revolutiongames-rvlng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/revolutiongames-rvlng.png',
     token: 'RVLNG',
     coin: 'RevolutionGames',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/logan-governance-token-logan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/logan-governance-token-logan.png',
     token: 'LOGAN',
     coin: 'Logan Governance Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xrp-classic-xrpc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xrp-classic-xrpc.png',
     token: 'XRPC',
     coin: 'XRP Classic',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/noah-coin-noah.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/noah-coin-noah.png',
     token: 'NOAH',
     coin: 'Noah Coin',
   },
@@ -19017,17 +21008,20 @@ export const DATA_TOKEN = [
     coin: 'KStarCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-recharge-rcg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-recharge-rcg.png',
     token: 'RCG',
     coin: 'The Recharge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/frontfanz-fanx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/frontfanz-fanx.png',
     token: 'FANX',
     coin: 'FrontFanz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arbismart-rbis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arbismart-rbis.png',
     token: 'RBIS',
     coin: 'ArbiSmart',
   },
@@ -19047,62 +21041,74 @@ export const DATA_TOKEN = [
     coin: 'Lendex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-legend-bcl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-legend-bcl.png',
     token: 'BCL',
     coin: 'Bitcoin Legend',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satellite-doge-1-doge1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satellite-doge-1-doge1.png',
     token: 'DOGE1',
     coin: 'Satellite Doge-1',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solana-baby-solanababy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solana-baby-solanababy.png',
     token: 'SOLANABABY',
     coin: 'Solana Baby',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tomorrowlend-tmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tomorrowlend-tmt.png',
     token: 'TMT',
     coin: 'TomorrowLend',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/infinity-network-in.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/infinity-network-in.png',
     token: 'IN',
     coin: 'Infinity Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mundocrypto-mct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mundocrypto-mct.png',
     token: 'MCT',
     coin: 'Mundocrypto',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/battle-infinity-ibat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/battle-infinity-ibat.png',
     token: 'IBAT',
     coin: 'Battle Infinity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/black-sats-bsat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/black-sats-bsat.png',
     token: 'BSAT',
     coin: 'Black Sats',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/neuralink-nlink.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/neuralink-nlink.png',
     token: 'NLINK',
     coin: 'Neuralink',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-tomcat-babytomcat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-tomcat-babytomcat.png',
     token: 'BABYTOMCAT',
     coin: 'Baby Tomcat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cfx-quantum-cfxq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cfx-quantum-cfxq.png',
     token: 'CFXQ',
     coin: 'CFX Quantum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/betalk-token-bet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/betalk-token-bet.png',
     token: 'BET',
     coin: 'BETalk Token',
   },
@@ -19112,7 +21118,8 @@ export const DATA_TOKEN = [
     coin: 'FOMO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/turbochain-tbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/turbochain-tbc.png',
     token: 'TBC',
     coin: 'Turbochain',
   },
@@ -19122,22 +21129,26 @@ export const DATA_TOKEN = [
     coin: 'Passage',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/time-alliance-guild-time.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/time-alliance-guild-time.png',
     token: 'TIME',
     coin: 'Time Alliance Guild',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/elon-2024(bsc)-elon2024.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/elon-2024(bsc)-elon2024.png',
     token: 'ELON2024',
     coin: 'ELON 2024(BSC)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/curio-governance-cgt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/curio-governance-cgt.png',
     token: 'CGT',
     coin: 'Curio Governance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/korea-mainnet-x-kmx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/korea-mainnet-x-kmx.png',
     token: 'KMX',
     coin: 'Korea Mainnet X',
   },
@@ -19147,12 +21158,14 @@ export const DATA_TOKEN = [
     coin: 'SolFarm',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/azuki-fraction-token-iazuki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/azuki-fraction-token-iazuki.png',
     token: 'IAZUKI',
     coin: 'Azuki Fraction Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/datachainpro-dcp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/datachainpro-dcp.png',
     token: 'DCP',
     coin: 'DataChainPro',
   },
@@ -19167,17 +21180,20 @@ export const DATA_TOKEN = [
     coin: 'Byte',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepebonk-pepebonk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepebonk-pepebonk.png',
     token: 'PEPEBONK',
     coin: 'PepeBonk',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iyu-finance-iyu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iyu-finance-iyu.png',
     token: 'IYU',
     coin: 'IYU Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/steamboat-willie-mickey.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/steamboat-willie-mickey.png',
     token: 'MICKEY',
     coin: 'Steamboat Willie',
   },
@@ -19187,12 +21203,14 @@ export const DATA_TOKEN = [
     coin: 'JOKER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/babychita-token-bct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/babychita-token-bct.png',
     token: 'BCT',
     coin: 'BabyChita Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/broovs-projects-brs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/broovs-projects-brs.png',
     token: 'BRS',
     coin: 'Broovs Projects',
   },
@@ -19202,7 +21220,8 @@ export const DATA_TOKEN = [
     coin: 'MN Bridge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/element-black-elt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/element-black-elt.png',
     token: 'ELT',
     coin: 'Element Black',
   },
@@ -19227,12 +21246,14 @@ export const DATA_TOKEN = [
     coin: 'TapTap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/medabots-medamon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/medabots-medamon.png',
     token: 'MEDAMON',
     coin: 'Medabots',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-payment-dogepay.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-payment-dogepay.png',
     token: 'DOGEPAY',
     coin: 'Doge Payment',
   },
@@ -19242,12 +21263,14 @@ export const DATA_TOKEN = [
     coin: 'GeniuX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brcexchange-bex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brcexchange-bex.png',
     token: 'BEX',
     coin: 'BrcExchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/novem-gold-nnn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/novem-gold-nnn.png',
     token: 'NNN',
     coin: 'Novem Gold',
   },
@@ -19277,12 +21300,14 @@ export const DATA_TOKEN = [
     coin: 'ANIVERSE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/afro-moon-dog-amd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/afro-moon-dog-amd.png',
     token: 'AMD',
     coin: 'AFRO MOON DOG',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zeloop-eco-reward-erw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zeloop-eco-reward-erw.png',
     token: 'ERW',
     coin: 'ZeLoop Eco Reward',
   },
@@ -19292,12 +21317,14 @@ export const DATA_TOKEN = [
     coin: 'HEYI Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/calm-finance-calm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/calm-finance-calm.png',
     token: 'CALM',
     coin: 'Calm Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shibainux-shibainux.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shibainux-shibainux.png',
     token: 'SHIBAINUX',
     coin: 'SHIBAINUX',
   },
@@ -19322,17 +21349,20 @@ export const DATA_TOKEN = [
     coin: 'DePIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kitty-inu-kitty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kitty-inu-kitty.png',
     token: 'KITTY',
     coin: 'Kitty Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/k-stadium-ksta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/k-stadium-ksta.png',
     token: 'KSTA',
     coin: 'K STADIUM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/alphaguard-agd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/alphaguard-agd.png',
     token: 'AGD',
     coin: 'AlphaGuard',
   },
@@ -19347,17 +21377,20 @@ export const DATA_TOKEN = [
     coin: 'ordinex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sundae-token-sundae.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sundae-token-sundae.png',
     token: 'SUNDAE',
     coin: 'Sundae Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dragon-dragons.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dragon-dragons.png',
     token: 'DRAGONS',
     coin: 'Dragon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/caw-ceo-cawceo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/caw-ceo-cawceo.png',
     token: 'CAWCEO',
     coin: 'CAW CEO',
   },
@@ -19383,7 +21416,8 @@ export const DATA_TOKEN = [
     coin: 'JK Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rodeo-finance-rdo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rodeo-finance-rdo.png',
     token: 'RDO',
     coin: 'Rodeo Finance',
   },
@@ -19399,27 +21433,32 @@ export const DATA_TOKEN = [
     coin: 'Sanko GameCorp (Dream Machine Token)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/got-guaranteed-gotg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/got-guaranteed-gotg.png',
     token: 'GOTG',
     coin: 'Got Guaranteed',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gbgc-coin-gbgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gbgc-coin-gbgc.png',
     token: 'GBGC',
     coin: 'GBGC Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogecube-dogecube.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogecube-dogecube.png',
     token: 'DOGECUBE',
     coin: 'DOGECUBE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starfish-finance-sean.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starfish-finance-sean.png',
     token: 'SEAN',
     coin: 'Starfish Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grimace-coin-grimace.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grimace-coin-grimace.png',
     token: 'GRIMACE',
     coin: 'Grimace Coin',
   },
@@ -19439,7 +21478,8 @@ export const DATA_TOKEN = [
     coin: 'FROMCO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/middlelend-middle.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/middlelend-middle.png',
     token: 'MIDDLE',
     coin: 'MiddleLend',
   },
@@ -19454,7 +21494,8 @@ export const DATA_TOKEN = [
     coin: 'Lumenswap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/snailbrook-snail.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/snailbrook-snail.png',
     token: 'SNAIL',
     coin: 'SnailBrook',
   },
@@ -19469,17 +21510,20 @@ export const DATA_TOKEN = [
     coin: 'Frenzy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blueshift-blues.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blueshift-blues.png',
     token: 'BLUES',
     coin: 'Blueshift',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meme-grok-mgrok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meme-grok-mgrok.png',
     token: 'MGROK',
     coin: 'Meme Grok',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-smart-asset-gsa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-smart-asset-gsa.png',
     token: 'GSA',
     coin: 'Global Smart Asset',
   },
@@ -19489,7 +21533,8 @@ export const DATA_TOKEN = [
     coin: 'Domon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crazy-dave-crazydave.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crazy-dave-crazydave.png',
     token: 'CRAZYDAVE',
     coin: 'Crazy Dave',
   },
@@ -19499,22 +21544,26 @@ export const DATA_TOKEN = [
     coin: 'Knob',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/groooook-groooook.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/groooook-groooook.png',
     token: 'GROOOOOK',
     coin: 'Groooook',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/homer-simpson(solana)-homer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/homer-simpson(solana)-homer.png',
     token: 'HOMER',
     coin: 'Homer Simpson(Solana)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ibox-token-ibox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ibox-token-ibox.png',
     token: 'IBOX',
     coin: 'IBOX TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitbull-bitbull.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitbull-bitbull.png',
     token: 'BITBULL',
     coin: 'Bitbull',
   },
@@ -19524,7 +21573,8 @@ export const DATA_TOKEN = [
     coin: 'Neton',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pixel-panic-pixel.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pixel-panic-pixel.png',
     token: 'PIXEL',
     coin: 'Pixel Panic',
   },
@@ -19539,7 +21589,8 @@ export const DATA_TOKEN = [
     coin: 'X7 Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sportuniverse-suv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sportuniverse-suv.png',
     token: 'SUV',
     coin: 'Sportuniverse',
   },
@@ -19549,37 +21600,44 @@ export const DATA_TOKEN = [
     coin: 'Husky.AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bank-btc-bankbtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bank-btc-bankbtc.png',
     token: 'BANKBTC',
     coin: 'Bank BTC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swiftcloud-sc2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swiftcloud-sc2.png',
     token: 'SC2',
     coin: 'SwiftCloud',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bamboobounty-pan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bamboobounty-pan.png',
     token: 'PAN',
     coin: 'BambooBounty',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solpepe-solpepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solpepe-solpepe.png',
     token: 'SOLPEPE',
     coin: 'SOLPEPE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/onboard-social-board.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/onboard-social-board.png',
     token: 'BOARD',
     coin: 'Onboard Social',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethereum-express-ete.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethereum-express-ete.png',
     token: 'ETE',
     coin: 'Ethereum Express',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/animal-army-animal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/animal-army-animal.png',
     token: 'ANIMAL',
     coin: 'ANIMAL ARMY',
   },
@@ -19589,12 +21647,14 @@ export const DATA_TOKEN = [
     coin: 'BSC Fair',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gays-inu-lgbtq.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gays-inu-lgbtq.png',
     token: 'LGBTQ',
     coin: 'Gays Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dragon2024-dragon2024.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dragon2024-dragon2024.png',
     token: 'DRAGON2024',
     coin: 'Dragon2024',
   },
@@ -19604,7 +21664,8 @@ export const DATA_TOKEN = [
     coin: 'FROGMoon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/derby-stars-dsrun.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/derby-stars-dsrun.png',
     token: 'DSRUN',
     coin: 'Derby Stars',
   },
@@ -19614,7 +21675,8 @@ export const DATA_TOKEN = [
     coin: 'PANDA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mummy-finance-mmy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mummy-finance-mmy.png',
     token: 'MMY',
     coin: 'Mummy Finance',
   },
@@ -19634,12 +21696,14 @@ export const DATA_TOKEN = [
     coin: 'Materium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/domofuture-domo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/domofuture-domo.png',
     token: 'DOMO',
     coin: 'DOMOFuture',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-shark-babyshark.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-shark-babyshark.png',
     token: 'BABYSHARK',
     coin: 'Baby Shark',
   },
@@ -19649,12 +21713,14 @@ export const DATA_TOKEN = [
     coin: 'DUX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monox-protocol-mono.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monox-protocol-mono.png',
     token: 'MONO',
     coin: 'MonoX Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cash-bank-cbank.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cash-bank-cbank.png',
     token: 'CBANK',
     coin: 'CASH BANK',
   },
@@ -19664,17 +21730,20 @@ export const DATA_TOKEN = [
     coin: 'AICORE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magic-internet-money-mim.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magic-internet-money-mim.png',
     token: 'MIM',
     coin: 'Magic Internet Money',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mate-token-xmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mate-token-xmt.png',
     token: 'XMT',
     coin: 'Mate Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oneinch-oneinch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oneinch-oneinch.png',
     token: 'ONEINCH',
     coin: 'ONEINCH',
   },
@@ -19694,7 +21763,8 @@ export const DATA_TOKEN = [
     coin: 'BONK2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/play-store-play.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/play-store-play.png',
     token: 'PLAY',
     coin: 'Play Store',
   },
@@ -19709,7 +21779,8 @@ export const DATA_TOKEN = [
     coin: 'ZeroX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tradebull-token-tbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tradebull-token-tbt.png',
     token: 'TBT',
     coin: 'TradeBull Token',
   },
@@ -19724,12 +21795,14 @@ export const DATA_TOKEN = [
     coin: 'MiToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pocket-project-ppt1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pocket-project-ppt1.png',
     token: 'PPT1',
     coin: 'Pocket ProjecT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solabrador-sober.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solabrador-sober.png',
     token: 'SOBER',
     coin: 'Solabrador',
   },
@@ -19739,7 +21812,8 @@ export const DATA_TOKEN = [
     coin: 'YFI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/markmarkgo-mmg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/markmarkgo-mmg.png',
     token: 'MMG',
     coin: 'MarkmarkGo',
   },
@@ -19764,7 +21838,8 @@ export const DATA_TOKEN = [
     coin: 'Philcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kirby-erc-20-kirby.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kirby-erc-20-kirby.png',
     token: 'KIRBY',
     coin: 'Kirby (ERC-20)',
   },
@@ -19784,12 +21859,14 @@ export const DATA_TOKEN = [
     coin: 'FleaMint',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/illumicati-milk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/illumicati-milk.png',
     token: 'MILK',
     coin: 'ILLUMICATI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-vault-btcv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-vault-btcv.png',
     token: 'BTCV',
     coin: 'Bitcoin Vault',
   },
@@ -19819,7 +21896,8 @@ export const DATA_TOKEN = [
     coin: 'PEPE8',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fame-global-fameg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fame-global-fameg.png',
     token: 'FAMEG',
     coin: 'Fame Global',
   },
@@ -19834,7 +21912,8 @@ export const DATA_TOKEN = [
     coin: 'Loong',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/elon-mars-elonmars.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/elon-mars-elonmars.png',
     token: 'ELONMARS',
     coin: 'ELON MARS',
   },
@@ -19854,22 +21933,26 @@ export const DATA_TOKEN = [
     coin: 'Viblos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ondo-u-s-dollar-yield-usdy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ondo-u-s-dollar-yield-usdy.png',
     token: 'USDY',
     coin: 'Ondo U.S. Dollar Yield',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sonic-inu-sonic.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sonic-inu-sonic.png',
     token: 'SONIC',
     coin: 'Sonic Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/etf-solana-etf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/etf-solana-etf.png',
     token: 'ETF',
     coin: 'ETF (Solana)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/big-beans-gaming-bb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/big-beans-gaming-bb.png',
     token: 'BB',
     coin: 'Big Beans Gaming',
   },
@@ -19879,17 +21962,20 @@ export const DATA_TOKEN = [
     coin: 'Rocky',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-rental-token-srt1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-rental-token-srt1.png',
     token: 'SRT1',
     coin: 'Smart Rental Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/soltradingbot-stbot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/soltradingbot-stbot.png',
     token: 'STBOT',
     coin: 'SolTradingBot',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arti-project-arti.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arti-project-arti.png',
     token: 'ARTI',
     coin: 'ARTi Project',
   },
@@ -19914,7 +22000,8 @@ export const DATA_TOKEN = [
     coin: 'Helper',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/futurecoin-future.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/futurecoin-future.png',
     token: 'FUTURE',
     coin: 'FUTURECOIN',
   },
@@ -19934,32 +22021,38 @@ export const DATA_TOKEN = [
     coin: 'Kryxivia',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/0xsuiexchange-secg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/0xsuiexchange-secg.png',
     token: 'SECG',
     coin: '0xSuiExchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nero-token-nero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nero-token-nero.png',
     token: 'NERO',
     coin: 'Nero Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/basexchange-bex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/basexchange-bex.png',
     token: 'BEX',
     coin: 'BaseXchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/medicalveda-mveda.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/medicalveda-mveda.png',
     token: 'MVEDA',
     coin: 'Medicalveda',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/martian-martian.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/martian-martian.png',
     token: 'MARTIAN',
     coin: 'Martian',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sketch-coin-sket.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sketch-coin-sket.png',
     token: 'SKET',
     coin: 'Sketch Coin',
   },
@@ -19994,12 +22087,14 @@ export const DATA_TOKEN = [
     coin: 'Myra',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/falcon-hu-flchu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/falcon-hu-flchu.png',
     token: 'FLCHU',
     coin: 'FALCON HU',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pokemon-pokemon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pokemon-pokemon.png',
     token: 'POKEMON',
     coin: 'Pokemon',
   },
@@ -20009,7 +22104,8 @@ export const DATA_TOKEN = [
     coin: 'Ribbit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/2024token-2024token.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/2024token-2024token.png',
     token: '2024TOKEN',
     coin: '2024TOKEN',
   },
@@ -20034,7 +22130,8 @@ export const DATA_TOKEN = [
     coin: 'iinjaz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-paradox-metaverse-paradox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-paradox-metaverse-paradox.png',
     token: 'PARADOX',
     coin: 'The Paradox Metaverse',
   },
@@ -20044,17 +22141,20 @@ export const DATA_TOKEN = [
     coin: 'XDOGE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shibabitcoin-shibtc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shibabitcoin-shibtc.png',
     token: 'SHIBTC',
     coin: 'Shibabitcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sourceless-str.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sourceless-str.png',
     token: 'STR',
     coin: 'Sourceless',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genesis-asset-chain-gac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genesis-asset-chain-gac.png',
     token: 'GAC',
     coin: 'Genesis Asset Chain',
   },
@@ -20064,7 +22164,8 @@ export const DATA_TOKEN = [
     coin: 'XRUN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tombplus-tombplus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tombplus-tombplus.png',
     token: 'TOMBPLUS',
     coin: 'Tombplus',
   },
@@ -20074,12 +22175,14 @@ export const DATA_TOKEN = [
     coin: 'MetaUnit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/keeps-coin-kverse.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/keeps-coin-kverse.png',
     token: 'KVERSE',
     coin: 'Keeps Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lady-pepe-lpepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lady-pepe-lpepe.png',
     token: 'LPEPE',
     coin: 'Lady Pepe',
   },
@@ -20089,42 +22192,50 @@ export const DATA_TOKEN = [
     coin: 'MCFinance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fogr-computing-chain-fogr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fogr-computing-chain-fogr.png',
     token: 'FOGR',
     coin: 'FOGR Computing Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/artichoke-protocol-choke.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/artichoke-protocol-choke.png',
     token: 'CHOKE',
     coin: 'Artichoke Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mexican-peso-tether-mxnt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mexican-peso-tether-mxnt.png',
     token: 'MXNT',
     coin: 'Mexican Peso Tether',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/model-labs-model.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/model-labs-model.png',
     token: 'MODEL',
     coin: 'Model Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/super-trade-spx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/super-trade-spx.png',
     token: 'SPX',
     coin: 'Super Trade',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/good-meme-coin-good.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/good-meme-coin-good.png',
     token: 'GOOD',
     coin: 'Good Meme Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fognet-token-fog.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fognet-token-fog.png',
     token: 'FOG',
     coin: 'FOGNET Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/heart-ai-heartai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/heart-ai-heartai.png',
     token: 'HEARTAI',
     coin: 'Heart AI',
   },
@@ -20134,22 +22245,26 @@ export const DATA_TOKEN = [
     coin: 'xUSD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/allpaycoin-apcg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/allpaycoin-apcg.png',
     token: 'APCG',
     coin: 'ALLPAYCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/biconomy-exchange-token-bit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/biconomy-exchange-token-bit.png',
     token: 'BIT',
     coin: 'Biconomy Exchange Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaverse-miner-meta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaverse-miner-meta.png',
     token: 'META',
     coin: 'Metaverse Miner',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sui-launch-token-slt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sui-launch-token-slt.png',
     token: 'SLT',
     coin: 'Sui Launch Token',
   },
@@ -20179,37 +22294,44 @@ export const DATA_TOKEN = [
     coin: 'SIMU',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogemeta-dogemeta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogemeta-dogemeta.png',
     token: 'DOGEMETA',
     coin: 'DOGEMETA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/deepwaters-wtr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/deepwaters-wtr.png',
     token: 'WTR',
     coin: 'Deepwaters',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/storagechain-wstor.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/storagechain-wstor.png',
     token: 'WSTOR',
     coin: 'StorageChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bdplayground-bdp1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bdplayground-bdp1.png',
     token: 'BDP1',
     coin: 'BDPlayground',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tourismx-token-trmx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tourismx-token-trmx.png',
     token: 'TRMX',
     coin: 'TourismX Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mirror-breaker-mbr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mirror-breaker-mbr.png',
     token: 'MBR',
     coin: 'Mirror Breaker',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/eur-coinvertible-eurcv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/eur-coinvertible-eurcv.png',
     token: 'EURCV',
     coin: 'EUR CoinVertible',
   },
@@ -20229,12 +22351,14 @@ export const DATA_TOKEN = [
     coin: 'Punk Sat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitconey-bitconey.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitconey-bitconey.png',
     token: 'BITCONEY',
     coin: 'BITCONEY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/parma-fan-token-parma.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/parma-fan-token-parma.png',
     token: 'PARMA',
     coin: 'PARMA Fan Token',
   },
@@ -20244,7 +22368,8 @@ export const DATA_TOKEN = [
     coin: 'OPAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ordi-launch-orla.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ordi-launch-orla.png',
     token: 'ORLA',
     coin: 'Ordi Launch',
   },
@@ -20254,22 +22379,26 @@ export const DATA_TOKEN = [
     coin: 'XCorp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cruxdecussata-x.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cruxdecussata-x.png',
     token: 'X',
     coin: 'CruxDecussata',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goal-token-goal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goal-token-goal.png',
     token: 'GOAL',
     coin: 'GOAL token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/takamaka-green-coin-tkg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/takamaka-green-coin-tkg.png',
     token: 'TKG',
     coin: 'Takamaka Green Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/acala-usd-ausd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/acala-usd-ausd.png',
     token: 'AUSD',
     coin: 'Acala USD',
   },
@@ -20279,7 +22408,8 @@ export const DATA_TOKEN = [
     coin: 'MTRAX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chief-troll-officer-bsc-cto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chief-troll-officer-bsc-cto.png',
     token: 'CTO',
     coin: 'Chief Troll Officer (BSC)',
   },
@@ -20294,12 +22424,14 @@ export const DATA_TOKEN = [
     coin: 'Reelon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/good-person-coin-gpcx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/good-person-coin-gpcx.png',
     token: 'GPCX',
     coin: 'Good Person Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solanax-solanax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solanax-solanax.png',
     token: 'SOLANAX',
     coin: 'SOLANAX',
   },
@@ -20309,12 +22441,14 @@ export const DATA_TOKEN = [
     coin: 'FacetERC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/diginetguard-dng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/diginetguard-dng.png',
     token: 'DNG',
     coin: 'DigiNetGuard',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bankera-token-bnk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bankera-token-bnk.png',
     token: 'BNK',
     coin: 'Bankera Token',
   },
@@ -20334,12 +22468,14 @@ export const DATA_TOKEN = [
     coin: 'Verge (ETH)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/honorswap-honor.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/honorswap-honor.png',
     token: 'HONOR',
     coin: 'Honorswap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoinist-btcs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoinist-btcs.png',
     token: 'BTCS',
     coin: 'Bitcoinist',
   },
@@ -20359,57 +22495,68 @@ export const DATA_TOKEN = [
     coin: 'EasyToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kabuni-coin-kbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kabuni-coin-kbc.png',
     token: 'KBC',
     coin: 'Kabuni Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/esports-players-league-arena.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/esports-players-league-arena.png',
     token: 'ARENA',
     coin: 'Esports Players League',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xrpbaby-xrpbaby.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xrpbaby-xrpbaby.png',
     token: 'XRPBABY',
     coin: 'XRPBABY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xai-erc-20-xai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xai-erc-20-xai.png',
     token: 'XAI',
     coin: 'XAI (ERC-20)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-grok-babygrok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-grok-babygrok.png',
     token: 'BABYGROK',
     coin: 'Baby Grok',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-x-2-0-babyx2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-x-2-0-babyx2.png',
     token: 'BABYX2',
     coin: 'Baby X 2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grokapi-grokapi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grokapi-grokapi.png',
     token: 'GROKAPI',
     coin: 'GROKAPI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grokgpt-grokgpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grokgpt-grokgpt.png',
     token: 'GROKGPT',
     coin: 'GROKGPT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ains-domains-ains.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ains-domains-ains.png',
     token: 'AINS',
     coin: 'AINS domains',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memeboxtoken-mboxx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memeboxtoken-mboxx.png',
     token: 'MBOXX',
     coin: 'MemeBoxToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/upyy-payment-upy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/upyy-payment-upy.png',
     token: 'UPY',
     coin: 'UPYY Payment',
   },
@@ -20419,17 +22566,20 @@ export const DATA_TOKEN = [
     coin: 'XRP 2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/silys-coin-silycoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/silys-coin-silycoin.png',
     token: 'SILYCOIN',
     coin: 'SILYS COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zambesigold-zgd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zambesigold-zgd.png',
     token: 'ZGD',
     coin: 'Zambesigold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-kirby-aikirby.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-kirby-aikirby.png',
     token: 'AIKIRBY',
     coin: 'AI Kirby',
   },
@@ -20444,17 +22594,20 @@ export const DATA_TOKEN = [
     coin: 'RENEC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xym-finance-xymf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xym-finance-xymf.png',
     token: 'XYMF',
     coin: 'XYM Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mir-token-mirtoken.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mir-token-mirtoken.png',
     token: 'MIRTOKEN',
     coin: 'MIR TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chives-coin-xcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chives-coin-xcc.png',
     token: 'XCC',
     coin: 'Chives Coin',
   },
@@ -20464,22 +22617,26 @@ export const DATA_TOKEN = [
     coin: 'FiSphere',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/harder-meme-coin-harder.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/harder-meme-coin-harder.png',
     token: 'HARDER',
     coin: 'HARDER Meme Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/daw-currency-daw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/daw-currency-daw.png',
     token: 'DAW',
     coin: 'daw currency',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-blu-arctic-water-company-barc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-blu-arctic-water-company-barc.png',
     token: 'BARC',
     coin: 'The Blu Arctic Water Company',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-inu-grokinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-inu-grokinu.png',
     token: 'GROKINU',
     coin: 'Grok Inu',
   },
@@ -20499,22 +22656,26 @@ export const DATA_TOKEN = [
     coin: 'Fuji',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quantum-hunter-qh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quantum-hunter-qh.png',
     token: 'QH',
     coin: 'Quantum Hunter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/open-rights-exchange-ore.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/open-rights-exchange-ore.png',
     token: 'ORE',
     coin: 'Open Rights Exchange',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/passivesphere-ppx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/passivesphere-ppx.png',
     token: 'PPX',
     coin: 'PassiveSphere',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/onemilliondollars-omd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/onemilliondollars-omd.png',
     token: 'OMD',
     coin: 'Onemilliondollars',
   },
@@ -20529,7 +22690,8 @@ export const DATA_TOKEN = [
     coin: 'MOE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/seraph-coin-seraph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/seraph-coin-seraph.png',
     token: 'SERAPH',
     coin: 'Seraph Coin',
   },
@@ -20549,7 +22711,8 @@ export const DATA_TOKEN = [
     coin: 'GogolCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mochicat-mochicat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mochicat-mochicat.png',
     token: 'MOCHICAT',
     coin: 'MochiCat',
   },
@@ -20564,7 +22727,8 @@ export const DATA_TOKEN = [
     coin: 'Reactioon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aidoge-stellar-aidogexlm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aidoge-stellar-aidogexlm.png',
     token: 'AIDOGEXLM',
     coin: 'AIDOGE Stellar',
   },
@@ -20574,7 +22738,8 @@ export const DATA_TOKEN = [
     coin: 'Proton Loan',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/quantumvertics-qtv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/quantumvertics-qtv.png',
     token: 'QTV',
     coin: 'QuantumVertics',
   },
@@ -20589,32 +22754,38 @@ export const DATA_TOKEN = [
     coin: 'AICB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tesla-ai-teslai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tesla-ai-teslai.png',
     token: 'TESLAI',
     coin: 'Tesla AI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cindicator-cnd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cindicator-cnd.png',
     token: 'CND',
     coin: 'Cindicator',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monopoly-millionaire-control-mmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monopoly-millionaire-control-mmc.png',
     token: 'MMC',
     coin: 'Monopoly Millionaire Control',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mirarc-chain-mat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mirarc-chain-mat.png',
     token: 'MAT',
     coin: 'MirArc Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/arbibot-utility-token-aut.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/arbibot-utility-token-aut.png',
     token: 'AUT',
     coin: 'Arbibot Utility Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galaxy-memes-lego.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galaxy-memes-lego.png',
     token: 'LEGO',
     coin: 'Galaxy Memes',
   },
@@ -20624,17 +22795,20 @@ export const DATA_TOKEN = [
     coin: 'NEXTYPE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/espresso-ex-cof.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/espresso-ex-cof.png',
     token: 'COF',
     coin: 'Espresso Ex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/green-universe-coin-guc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/green-universe-coin-guc.png',
     token: 'GUC',
     coin: 'Green Universe Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chesscoin-0-32-chess032.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chesscoin-0-32-chess032.png',
     token: 'CHESS032',
     coin: 'CHESSCOIN 0.32%',
   },
@@ -20644,17 +22818,20 @@ export const DATA_TOKEN = [
     coin: 'K-WAVE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brave-power-crystal-bpc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brave-power-crystal-bpc.png',
     token: 'BPC',
     coin: 'Brave Power Crystal',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memescoin-memes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memescoin-memes.png',
     token: 'MEMES',
     coin: 'Memescoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grape-governance-token-ggt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grape-governance-token-ggt.png',
     token: 'GGT',
     coin: 'Grape Governance Token',
   },
@@ -20664,7 +22841,8 @@ export const DATA_TOKEN = [
     coin: 'RICESWAP',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solbroeb-solbroe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solbroeb-solbroe.png',
     token: 'SOLBROE',
     coin: 'SolBroeb',
   },
@@ -20684,22 +22862,26 @@ export const DATA_TOKEN = [
     coin: 'TOZEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tidex-token-tdx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tidex-token-tdx.png',
     token: 'TDX',
     coin: 'Tidex Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/octavus-prime-octavus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/octavus-prime-octavus.png',
     token: 'OCTAVUS',
     coin: 'Octavus Prime',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/datam-pcrm-pcrm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/datam-pcrm-pcrm.png',
     token: 'PCRM',
     coin: 'DATAM PCRM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sqtsant-sqtsant.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sqtsant-sqtsant.png',
     token: 'SQTSANT',
     coin: 'Sqtsant',
   },
@@ -20709,7 +22891,8 @@ export const DATA_TOKEN = [
     coin: 'Zeedex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonseer-moonseer.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonseer-moonseer.png',
     token: 'MOONSEER',
     coin: 'Moonseer',
   },
@@ -20734,12 +22917,14 @@ export const DATA_TOKEN = [
     coin: 'MeetPle',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/christmas-doge-xdoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/christmas-doge-xdoge.png',
     token: 'XDOGE',
     coin: 'Christmas DOGE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goatnft-token-got.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goatnft-token-got.png',
     token: 'GOT',
     coin: 'GoatNFT Token',
   },
@@ -20754,7 +22939,8 @@ export const DATA_TOKEN = [
     coin: 'AIGPT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cube-chain-qub.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cube-chain-qub.png',
     token: 'QUB',
     coin: 'Cube Chain',
   },
@@ -20764,12 +22950,14 @@ export const DATA_TOKEN = [
     coin: 'TYV Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/winr-protocol-winr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/winr-protocol-winr.png',
     token: 'WINR',
     coin: 'WINR Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tiger-meme-token-tgmt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tiger-meme-token-tgmt.png',
     token: 'TGMT',
     coin: 'Tiger Meme Token',
   },
@@ -20784,7 +22972,8 @@ export const DATA_TOKEN = [
     coin: 'AiDoge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kenka-metaverse-kenka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kenka-metaverse-kenka.png',
     token: 'KENKA',
     coin: 'KENKA METAVERSE',
   },
@@ -20804,12 +22993,14 @@ export const DATA_TOKEN = [
     coin: 'QCHAIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mmosh-pit-protocol-mmosh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mmosh-pit-protocol-mmosh.png',
     token: 'MMOSH',
     coin: 'MMOSH Pit Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chad-coin-chad.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chad-coin-chad.png',
     token: 'CHAD',
     coin: 'Chad Coin',
   },
@@ -20819,12 +23010,14 @@ export const DATA_TOKEN = [
     coin: 'LOUI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/inscriptiondao-icda.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/inscriptiondao-icda.png',
     token: 'ICDA',
     coin: 'InscriptionDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/guacamole-guac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/guacamole-guac.png',
     token: 'GUAC',
     coin: 'Guacamole',
   },
@@ -20834,17 +23027,20 @@ export const DATA_TOKEN = [
     coin: '16DAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astriddao-token-atid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astriddao-token-atid.png',
     token: 'ATID',
     coin: 'AstridDAO Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/only-possible-on-solana-opos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/only-possible-on-solana-opos.png',
     token: 'OPOS',
     coin: 'Only Possible On Solana',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/banus-finance-banus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/banus-finance-banus.png',
     token: 'BANUS',
     coin: 'Banus.Finance',
   },
@@ -20854,7 +23050,8 @@ export const DATA_TOKEN = [
     coin: 'XSHIB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/garbage-garbage.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/garbage-garbage.png',
     token: 'GARBAGE',
     coin: 'Garbage',
   },
@@ -20874,12 +23071,14 @@ export const DATA_TOKEN = [
     coin: 'NXD Next',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metafinance-metafi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metafinance-metafi.png',
     token: 'METAFI',
     coin: 'MetaFinance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rats-pro-rats2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rats-pro-rats2.png',
     token: 'RATS2',
     coin: 'Rats Pro',
   },
@@ -20894,7 +23093,8 @@ export const DATA_TOKEN = [
     coin: '28VCK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leisurepay-lpy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leisurepay-lpy.png',
     token: 'LPY',
     coin: 'LeisurePay',
   },
@@ -20909,7 +23109,8 @@ export const DATA_TOKEN = [
     coin: 'B8DEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/immopet-token-impt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/immopet-token-impt.png',
     token: 'IMPT',
     coin: 'IMMOPET Token',
   },
@@ -20919,12 +23120,14 @@ export const DATA_TOKEN = [
     coin: 'Zipmex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sense4fit-sfit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sense4fit-sfit.png',
     token: 'SFIT',
     coin: 'SENSE4FIT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/btchero-btchero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/btchero-btchero.png',
     token: 'BTCHERO',
     coin: 'BTCHero',
   },
@@ -20935,7 +23138,8 @@ export const DATA_TOKEN = [
     coin: 'Beauty Bakery Linked Operation Transaction Technology',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-ai-grokai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-ai-grokai.png',
     token: 'GROKAI',
     coin: 'GROK AI',
   },
@@ -20945,7 +23149,8 @@ export const DATA_TOKEN = [
     coin: 'JinDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metacraft-token-brc-20-mctp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metacraft-token-brc-20-mctp.png',
     token: 'MCTP',
     coin: 'Metacraft Token (BRC-20)',
   },
@@ -20960,7 +23165,8 @@ export const DATA_TOKEN = [
     coin: 'TokoQrt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rota-token-rota.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rota-token-rota.png',
     token: 'ROTA',
     coin: 'ROTA TOKEN',
   },
@@ -20980,12 +23186,14 @@ export const DATA_TOKEN = [
     coin: 'DeFi Mall',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/magnavox-odyssey-mobrc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/magnavox-odyssey-mobrc.png',
     token: 'MOBRC',
     coin: 'Magnavox Odyssey',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/superpepe-superpepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/superpepe-superpepe.png',
     token: 'SUPERPEPE',
     coin: 'SuperPepe',
   },
@@ -20995,7 +23203,8 @@ export const DATA_TOKEN = [
     coin: 'DOGE69',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/eurocointoken-ecte.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/eurocointoken-ecte.png',
     token: 'ECTE',
     coin: 'EurocoinToken',
   },
@@ -21010,37 +23219,44 @@ export const DATA_TOKEN = [
     coin: 'Xrise',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nft-combining-nftc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nft-combining-nftc.png',
     token: 'NFTC',
     coin: 'NFT Combining',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mille-token-mille.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mille-token-mille.png',
     token: 'MILLE',
     coin: 'Mille Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnbit-token-bbi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnbit-token-bbi.png',
     token: 'BBI',
     coin: 'BNBIT Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oggy-inu-oggybsc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oggy-inu-oggybsc.png',
     token: 'OGGYBSC',
     coin: 'Oggy Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dragonera-dragonera.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dragonera-dragonera.png',
     token: 'DRAGONERA',
     coin: 'DragonEra',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/levolution-levl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/levolution-levl.png',
     token: 'LEVL',
     coin: 'Levolution',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/babymemecoin-babymemecoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/babymemecoin-babymemecoin.png',
     token: 'BABYMEMECOIN',
     coin: 'BABYMEMECOIN',
   },
@@ -21050,7 +23266,8 @@ export const DATA_TOKEN = [
     coin: 'Pepa Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-memecoin-babymeme.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-memecoin-babymeme.png',
     token: 'BABYMEME',
     coin: 'Baby Memecoin',
   },
@@ -21060,7 +23277,8 @@ export const DATA_TOKEN = [
     coin: 'G999',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-bank-btcbank.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-bank-btcbank.png',
     token: 'BTCBANK',
     coin: 'Bitcoin bank',
   },
@@ -21070,12 +23288,14 @@ export const DATA_TOKEN = [
     coin: 'Monetas',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dragon-coin-dragon404.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dragon-coin-dragon404.png',
     token: 'DRAGON404',
     coin: 'Dragon Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kirby-inu-kirbyinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kirby-inu-kirbyinu.png',
     token: 'KIRBYINU',
     coin: 'Kirby Inu',
   },
@@ -21090,7 +23310,8 @@ export const DATA_TOKEN = [
     coin: 'XMAS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/queen-of-universe-quv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/queen-of-universe-quv.png',
     token: 'QUV',
     coin: 'Queen of Universe',
   },
@@ -21100,7 +23321,8 @@ export const DATA_TOKEN = [
     coin: 'GTAVI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/happy-birthday-coin-hbdc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/happy-birthday-coin-hbdc.png',
     token: 'HBDC',
     coin: 'happy birthday coin',
   },
@@ -21130,17 +23352,20 @@ export const DATA_TOKEN = [
     coin: 'Reflex',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zenith-coin-zenith.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zenith-coin-zenith.png',
     token: 'ZENITH',
     coin: 'Zenith Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/leviatanbonk-leviatanbonk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/leviatanbonk-leviatanbonk.png',
     token: 'LEVIATANBONK',
     coin: 'Leviatanbonk',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/taekwondo-access-credit-tac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/taekwondo-access-credit-tac.png',
     token: 'TAC',
     coin: 'Taekwondo Access Credit',
   },
@@ -21155,12 +23380,14 @@ export const DATA_TOKEN = [
     coin: 'iNAE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/desert-wars-nft-deswar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/desert-wars-nft-deswar.png',
     token: 'DESWAR',
     coin: 'Desert Wars NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xaigrok-xaigrok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xaigrok-xaigrok.png',
     token: 'XAIGROK',
     coin: 'XAIGROK',
   },
@@ -21175,27 +23402,32 @@ export const DATA_TOKEN = [
     coin: 'Tr3zor',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hnb-protocol-hnb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hnb-protocol-hnb.png',
     token: 'HNB',
     coin: 'HnB Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/clash-of-adventure-addclas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/clash-of-adventure-addclas.png',
     token: 'ADDCLAS',
     coin: 'Clash of adventure',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fanffle-token-fnf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fanffle-token-fnf.png',
     token: 'FNF',
     coin: 'Fanffle Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gold-coin-cat-gcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gold-coin-cat-gcc.png',
     token: 'GCC',
     coin: 'Gold Coin Cat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ironhero-ironhero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ironhero-ironhero.png',
     token: 'IRONHERO',
     coin: 'IRONHERO',
   },
@@ -21205,12 +23437,14 @@ export const DATA_TOKEN = [
     coin: 'Zigzach',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fund-of-yours-foy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fund-of-yours-foy.png',
     token: 'FOY',
     coin: 'Fund Of Yours',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/toffeenut-toffee.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/toffeenut-toffee.png',
     token: 'TOFFEE',
     coin: 'Toffeenut',
   },
@@ -21225,7 +23459,8 @@ export const DATA_TOKEN = [
     coin: 'AzukiDAO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/angry-bulls-club-abc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/angry-bulls-club-abc.png',
     token: 'ABC',
     coin: 'Angry Bulls Club',
   },
@@ -21235,7 +23470,8 @@ export const DATA_TOKEN = [
     coin: 'TurtleFly',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/angry-birds-space-abs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/angry-birds-space-abs.png',
     token: 'ABS',
     coin: 'ANGRY BIRDS SPACE',
   },
@@ -21245,7 +23481,8 @@ export const DATA_TOKEN = [
     coin: 'GyroX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/luxuryboomsquare-lbs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/luxuryboomsquare-lbs.png',
     token: 'LBS',
     coin: 'LuxuryBoomSquare',
   },
@@ -21256,12 +23493,14 @@ export const DATA_TOKEN = [
     coin: 'Freight Trust & Clearing Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/future-ai-prt-prt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/future-ai-prt-prt.png',
     token: 'PRT',
     coin: 'Future Ai (PRT)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/payaccept-payt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/payaccept-payt.png',
     token: 'PAYT',
     coin: 'PayAccept',
   },
@@ -21287,12 +23526,14 @@ export const DATA_TOKEN = [
     coin: 'Edoverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/doge-moon-dogemoon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/doge-moon-dogemoon.png',
     token: 'DOGEMOON',
     coin: 'Doge Moon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/troll-inu-trollinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/troll-inu-trollinu.png',
     token: 'TROLLINU',
     coin: 'Troll Inu',
   },
@@ -21302,12 +23543,14 @@ export const DATA_TOKEN = [
     coin: 'MemaSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waste-digital-coin-waco.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waste-digital-coin-waco.png',
     token: 'WACO',
     coin: 'Waste Digital Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genesis-spark-coin-gsc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genesis-spark-coin-gsc.png',
     token: 'GSC',
     coin: 'Genesis Spark Coin',
   },
@@ -21322,7 +23565,8 @@ export const DATA_TOKEN = [
     coin: 'Aion',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meme-musk-mememusk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meme-musk-mememusk.png',
     token: 'MEMEMUSK',
     coin: 'MEME MUSK',
   },
@@ -21332,12 +23576,14 @@ export const DATA_TOKEN = [
     coin: 'RUNNER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/designer-token-exit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/designer-token-exit.png',
     token: 'EXIT',
     coin: 'Designer Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yearn-classic-finance-earn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yearn-classic-finance-earn.png',
     token: 'EARN',
     coin: 'Yearn Classic Finance',
   },
@@ -21347,17 +23593,20 @@ export const DATA_TOKEN = [
     coin: 'Moss',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogelogy-dogelogy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogelogy-dogelogy.png',
     token: 'DOGELOGY',
     coin: 'Dogelogy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mondo-community-coin-mndcc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mondo-community-coin-mndcc.png',
     token: 'MNDCC',
     coin: 'Mondo Community Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dinosaur-dinos.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dinosaur-dinos.png',
     token: 'DINOS',
     coin: 'Dinosaur',
   },
@@ -21367,7 +23616,8 @@ export const DATA_TOKEN = [
     coin: 'BENED',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/r-dee-protocol-token-rdgx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/r-dee-protocol-token-rdgx.png',
     token: 'RDGX',
     coin: 'R-DEE Protocol Token',
   },
@@ -21387,7 +23637,8 @@ export const DATA_TOKEN = [
     coin: 'GazeTV',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sensei-inu-sinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sensei-inu-sinu.png',
     token: '$SINU',
     coin: 'Sensei Inu',
   },
@@ -21397,7 +23648,8 @@ export const DATA_TOKEN = [
     coin: 'LC Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vector-space-biosciences-inc-sbio.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vector-space-biosciences-inc-sbio.png',
     token: 'SBIO',
     coin: 'Vector Space Biosciences, Inc.',
   },
@@ -21412,22 +23664,26 @@ export const DATA_TOKEN = [
     coin: 'PEKACHU',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/carac-token-carac.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/carac-token-carac.png',
     token: 'CARAC',
     coin: 'CARAC Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ryoshi-token-old-ryoshi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ryoshi-token-old-ryoshi.png',
     token: 'RYOSHI',
     coin: 'Ryoshi Token (Old)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pickachu-picka.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pickachu-picka.png',
     token: 'PICKA',
     coin: 'Pickachu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tcg-verse-tcgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tcg-verse-tcgc.png',
     token: 'TCGC',
     coin: 'TCG Verse',
   },
@@ -21442,22 +23698,26 @@ export const DATA_TOKEN = [
     coin: 'VKENAF',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/scklingmice-kmice.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/scklingmice-kmice.png',
     token: 'KMICE',
     coin: 'Scklingmice',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rimaunangis-rxt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rimaunangis-rxt.png',
     token: 'RXT',
     coin: 'RIMAUNANGIS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptocars-ccar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptocars-ccar.png',
     token: 'CCAR',
     coin: 'CryptoCars',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-marketing-token-smttoken.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-marketing-token-smttoken.png',
     token: 'SMTTOKEN',
     coin: 'Smart Marketing Token',
   },
@@ -21467,12 +23727,14 @@ export const DATA_TOKEN = [
     coin: 'No Code X',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/patientory-ptoy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/patientory-ptoy.png',
     token: 'PTOY',
     coin: 'Patientory',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/obrok-token-obrok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/obrok-token-obrok.png',
     token: 'OBROK',
     coin: 'OBRok Token',
   },
@@ -21482,12 +23744,14 @@ export const DATA_TOKEN = [
     coin: 'Dymmax',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/qi-blockchain-qie.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/qi-blockchain-qie.png',
     token: 'QIE',
     coin: 'QI Blockchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/day-of-defeat-dod.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/day-of-defeat-dod.png',
     token: 'DOD',
     coin: 'Day Of Defeat',
   },
@@ -21503,12 +23767,14 @@ export const DATA_TOKEN = [
     coin: 'FOGnet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/locklab-locklab.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/locklab-locklab.png',
     token: 'LOCKLAB',
     coin: 'LockLAB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/finance-ai-fai.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/finance-ai-fai.png',
     token: 'FAI',
     coin: 'Finance AI',
   },
@@ -21518,32 +23784,38 @@ export const DATA_TOKEN = [
     coin: 'Cogecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaspace2045-mtw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaspace2045-mtw.png',
     token: 'MTW',
     coin: 'MetaSpace2045',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-majority-coin-tmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-majority-coin-tmc.png',
     token: 'TMC',
     coin: 'The Majority Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cybertruck-cybertruck.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cybertruck-cybertruck.png',
     token: 'CYBERTRUCK',
     coin: 'CYBERTRUCK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/top-down-survival-shooter-shooter.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/top-down-survival-shooter-shooter.png',
     token: 'SHOOTER',
     coin: 'Top Down Survival Shooter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dkey-bank-dkey.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dkey-bank-dkey.png',
     token: 'DKEY',
     coin: 'DKEY BANK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/weavers-token-vrs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/weavers-token-vrs.png',
     token: 'VRS',
     coin: 'Weavers Token',
   },
@@ -21583,27 +23855,32 @@ export const DATA_TOKEN = [
     coin: 'Blockster',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digital-bank-of-africa-dba.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digital-bank-of-africa-dba.png',
     token: 'DBA',
     coin: 'Digital Bank of Africa',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wooooo-coin-wooooo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wooooo-coin-wooooo.png',
     token: 'WOOOOO',
     coin: 'Wooooo! Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monopoly-meta-monopolymeta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monopoly-meta-monopolymeta.png',
     token: 'MONOPOLYMETA',
     coin: 'Monopoly Meta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-aliens-sas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-aliens-sas.png',
     token: 'SAS',
     coin: 'Smart Aliens',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chinese-communist-dragon-fentanyl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chinese-communist-dragon-fentanyl.png',
     token: 'FENTANYL',
     coin: 'Chinese Communist Dragon',
   },
@@ -21628,22 +23905,26 @@ export const DATA_TOKEN = [
     coin: 'Changer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/amaurot-amaurot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/amaurot-amaurot.png',
     token: 'AMAUROT',
     coin: 'AMAUROT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beforecoinmarketcap-bcmc1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beforecoinmarketcap-bcmc1.png',
     token: 'BCMC1',
     coin: 'BeforeCoinMarketCap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/starship-2023-starship.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/starship-2023-starship.png',
     token: 'STARSHIP',
     coin: 'Starship 2023',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/efin-decentralized-wefin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/efin-decentralized-wefin.png',
     token: 'WEFIN',
     coin: 'eFin Decentralized',
   },
@@ -21653,7 +23934,8 @@ export const DATA_TOKEN = [
     coin: 'ZHCASH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memecoin-2-0-meme2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memecoin-2-0-meme2.png',
     token: 'MEME2',
     coin: 'Memecoin 2.0',
   },
@@ -21663,7 +23945,8 @@ export const DATA_TOKEN = [
     coin: 'WALC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vacuum-coin-vc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vacuum-coin-vc.png',
     token: 'VC',
     coin: 'Vacuum Coin',
   },
@@ -21673,12 +23956,14 @@ export const DATA_TOKEN = [
     coin: 'ElonX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xchange-tech-xtoken.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xchange-tech-xtoken.png',
     token: 'XTOKEN',
     coin: 'Xchange.tech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xswap-protocol-xsp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xswap-protocol-xsp.png',
     token: 'XSP',
     coin: 'XSwap Protocol',
   },
@@ -21693,22 +23978,26 @@ export const DATA_TOKEN = [
     coin: 'Homeros',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vault-tech-vault.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vault-tech-vault.png',
     token: 'VAULT',
     coin: 'Vault Tech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fx-stock-token-fxst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fx-stock-token-fxst.png',
     token: 'FXST',
     coin: 'FX Stock Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/icommunity-labs-icom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/icommunity-labs-icom.png',
     token: 'ICOM',
     coin: 'iCommunity Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ordi-2.0-ordi2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ordi-2.0-ordi2.png',
     token: 'ORDI2',
     coin: 'ORDI 2.0',
   },
@@ -21718,7 +24007,8 @@ export const DATA_TOKEN = [
     coin: 'ELONX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lil-floki-lilfloki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lil-floki-lilfloki.png',
     token: 'LILFLOKI',
     coin: 'Lil Floki',
   },
@@ -21728,12 +24018,14 @@ export const DATA_TOKEN = [
     coin: 'Xiden',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galactic-war-glw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galactic-war-glw.png',
     token: 'GLW',
     coin: 'Galactic War',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/livegreen-coin-lgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/livegreen-coin-lgc.png',
     token: 'LGC',
     coin: 'LiveGreen Coin',
   },
@@ -21743,17 +24035,20 @@ export const DATA_TOKEN = [
     coin: 'Mineral',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-bank-grokbank.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-bank-grokbank.png',
     token: 'GROKBANK',
     coin: 'Grok Bank',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lambo-solana-lambosol.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lambo-solana-lambosol.png',
     token: 'LAMBOSOL',
     coin: 'Lambo (Solana)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meow-meow-coin-meow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meow-meow-coin-meow.png',
     token: 'MEOW',
     coin: 'Meow Meow Coin',
   },
@@ -21768,12 +24063,14 @@ export const DATA_TOKEN = [
     coin: 'Knobcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kala-coin-kala.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kala-coin-kala.png',
     token: 'KALA',
     coin: 'Kala Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lemonchain-lemc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lemonchain-lemc.png',
     token: 'LEMC',
     coin: 'LEMONCHAIN',
   },
@@ -21783,7 +24080,8 @@ export const DATA_TOKEN = [
     coin: 'YES Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cook-simpson-cook.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cook-simpson-cook.png',
     token: 'COOK',
     coin: 'Cook Simpson',
   },
@@ -21798,12 +24096,14 @@ export const DATA_TOKEN = [
     coin: 'BigPoint',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ragscoin-ragscoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ragscoin-ragscoin.png',
     token: 'RAGSCOIN',
     coin: 'Ragscoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/musk-meme-muskmeme.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/musk-meme-muskmeme.png',
     token: 'MUSKMEME',
     coin: 'MUSK MEME',
   },
@@ -21818,27 +24118,32 @@ export const DATA_TOKEN = [
     coin: 'Edain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/asva-labs-asva.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/asva-labs-asva.png',
     token: 'ASVA',
     coin: 'Asva Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gami-studio-gami.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gami-studio-gami.png',
     token: 'GAMI',
     coin: 'Gami Studio',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/derp-coin-derp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/derp-coin-derp.png',
     token: 'DERP',
     coin: 'Derp Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/elon-doge-elondoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/elon-doge-elondoge.png',
     token: 'ELONDOGE',
     coin: 'ELON DOGE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/piin-token-piins.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/piin-token-piins.png',
     token: 'PIINS',
     coin: 'PIIN Token',
   },
@@ -21863,12 +24168,14 @@ export const DATA_TOKEN = [
     coin: 'Biido',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/globalboost-y-bsty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/globalboost-y-bsty.png',
     token: 'BSTY',
     coin: 'GlobalBoost-Y',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/homer-simpson-simpson1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/homer-simpson-simpson1.png',
     token: 'SIMPSON1',
     coin: 'Homer Simpson',
   },
@@ -21878,17 +24185,20 @@ export const DATA_TOKEN = [
     coin: 'Neeo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/babypepe-babypepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/babypepe-babypepe.png',
     token: 'BABYPEPE',
     coin: 'BabyPepe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/recovery-right-token-rrt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/recovery-right-token-rrt.png',
     token: 'RRT',
     coin: 'Recovery Right Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/intexcoin-intx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/intexcoin-intx.png',
     token: 'INTX',
     coin: 'Intexcoin',
   },
@@ -21898,22 +24208,26 @@ export const DATA_TOKEN = [
     coin: 'Pantos',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ame-esports-night-amen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ame-esports-night-amen.png',
     token: 'AMEN',
     coin: 'AME Esports Night',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/halloween-halloween.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/halloween-halloween.png',
     token: 'HALLOWEEN',
     coin: 'HALLOWEEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fixed-asset-token-fix00.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fixed-asset-token-fix00.png',
     token: 'FIX00',
     coin: 'Fixed Asset Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chaingrok-cgrok.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chaingrok-cgrok.png',
     token: 'CGROK',
     coin: 'ChainGrok',
   },
@@ -21933,12 +24247,14 @@ export const DATA_TOKEN = [
     coin: 'Hippocrat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lego-coin-lego.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lego-coin-lego.png',
     token: 'LEGO',
     coin: 'Lego Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cybertronchain-ctc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cybertronchain-ctc.png',
     token: 'CTC',
     coin: 'CyberTronChain',
   },
@@ -21948,7 +24264,8 @@ export const DATA_TOKEN = [
     coin: 'Berith',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/of-course-i-still-love-you-ocisly.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/of-course-i-still-love-you-ocisly.png',
     token: 'OCISLY',
     coin: 'Of Course I Still Love You',
   },
@@ -21958,7 +24275,8 @@ export const DATA_TOKEN = [
     coin: 'FIDELIS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crinotcati-tcati.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crinotcati-tcati.png',
     token: 'TCATI',
     coin: 'CrinoTcati',
   },
@@ -21968,7 +24286,8 @@ export const DATA_TOKEN = [
     coin: 'DUBXCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brcshib-brcshib.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brcshib-brcshib.png',
     token: 'BRCSHIB',
     coin: 'brcshib',
   },
@@ -21988,7 +24307,8 @@ export const DATA_TOKEN = [
     coin: 'STIPS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/enjoy-network-eyn1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/enjoy-network-eyn1.png',
     token: 'EYN1',
     coin: 'Enjoy Network',
   },
@@ -21998,7 +24318,8 @@ export const DATA_TOKEN = [
     coin: 'Zyrri',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bulllauncher-bul.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bulllauncher-bul.png',
     token: 'BUL',
     coin: 'BullLauncher',
   },
@@ -22008,7 +24329,8 @@ export const DATA_TOKEN = [
     coin: 'Guapcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/global-gaming-gmng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/global-gaming-gmng.png',
     token: 'GMNG',
     coin: 'Global Gaming',
   },
@@ -22043,7 +24365,8 @@ export const DATA_TOKEN = [
     coin: 'EzyStayz',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/meta-masters-guild-memag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/meta-masters-guild-memag.png',
     token: 'MEMAG',
     coin: 'Meta Masters Guild',
   },
@@ -22053,12 +24376,14 @@ export const DATA_TOKEN = [
     coin: 'Glouki',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/globiance-euro-stablecoin-eurg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/globiance-euro-stablecoin-eurg.png',
     token: 'EURG',
     coin: 'Globiance Euro Stablecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satopay-yield-token-spy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satopay-yield-token-spy.png',
     token: 'SPY',
     coin: 'Satopay Yield Token',
   },
@@ -22073,7 +24398,8 @@ export const DATA_TOKEN = [
     coin: 'Aster',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/astrobits-astrb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/astrobits-astrb.png',
     token: 'ASTRB',
     coin: 'Astrobits',
   },
@@ -22083,22 +24409,26 @@ export const DATA_TOKEN = [
     coin: 'Hudi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/reality-metaverse-rltm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/reality-metaverse-rltm.png',
     token: 'RLTM',
     coin: 'Reality Metaverse',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lunachow-luchow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lunachow-luchow.png',
     token: 'LUCHOW',
     coin: 'LunaChow',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/plearn-token-pln.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/plearn-token-pln.png',
     token: 'PLN',
     coin: 'Plearn Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/2-0-pepe-pepe20.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/2-0-pepe-pepe20.png',
     token: 'PEPE20',
     coin: '2.0 Pepe',
   },
@@ -22108,7 +24438,8 @@ export const DATA_TOKEN = [
     coin: 'AgriCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/open-proprietary-protocol-opp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/open-proprietary-protocol-opp.png',
     token: 'OPP',
     coin: 'Open Proprietary Protocol',
   },
@@ -22124,7 +24455,8 @@ export const DATA_TOKEN = [
     coin: 'Satino',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fartcaster-fart.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fartcaster-fart.png',
     token: 'FART',
     coin: 'FartCaster',
   },
@@ -22139,12 +24471,14 @@ export const DATA_TOKEN = [
     coin: 'ASSAPLAY',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-gaming-united-cgu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-gaming-united-cgu.png',
     token: 'CGU',
     coin: 'Crypto Gaming United',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/btour-chain-msot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/btour-chain-msot.png',
     token: 'MSOT',
     coin: 'BTour Chain',
   },
@@ -22165,12 +24499,14 @@ export const DATA_TOKEN = [
     coin: 'DMTC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/maidsafecoin-maid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/maidsafecoin-maid.png',
     token: 'MAID',
     coin: 'MaidSafeCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/royal-smart-future-token-rsft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/royal-smart-future-token-rsft.png',
     token: 'RSFT',
     coin: 'Royal Smart Future Token',
   },
@@ -22200,7 +24536,8 @@ export const DATA_TOKEN = [
     coin: 'VCT NEXUS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonverse-moon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonverse-moon.png',
     token: 'MOON',
     coin: 'Moonverse',
   },
@@ -22215,7 +24552,8 @@ export const DATA_TOKEN = [
     coin: 'Kabosu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/horizondollar-hzd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/horizondollar-hzd.png',
     token: 'HZD',
     coin: 'HorizonDollar',
   },
@@ -22230,32 +24568,38 @@ export const DATA_TOKEN = [
     coin: 'Puriever',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/i-love-you-coin-iluc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/i-love-you-coin-iluc.png',
     token: 'ILUC',
     coin: 'I Love You Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-girl-grokgirl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-girl-grokgirl.png',
     token: 'GROKGIRL',
     coin: 'Grok Girl',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/o2o-global-payment-btcp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/o2o-global-payment-btcp.png',
     token: 'BTCP',
     coin: 'O2O Global Payment',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memesats-memrsats.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memesats-memrsats.png',
     token: 'MEMRSATS',
     coin: 'MEMESATS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/retrocraft-retro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/retrocraft-retro.png',
     token: 'RETRO',
     coin: 'Retrocraft',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xido-finance-xido.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xido-finance-xido.png',
     token: 'XIDO',
     coin: 'XIDO FINANCE',
   },
@@ -22265,12 +24609,14 @@ export const DATA_TOKEN = [
     coin: 'IMCOIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/eyes-protocol-eyes.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/eyes-protocol-eyes.png',
     token: 'EYES',
     coin: 'EYES Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/redlight-chain-redlc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/redlight-chain-redlc.png',
     token: 'REDLC',
     coin: 'Redlight Chain',
   },
@@ -22285,7 +24631,8 @@ export const DATA_TOKEN = [
     coin: 'UTIX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-bitcoin-hunters-aibtch.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-bitcoin-hunters-aibtch.png',
     token: 'AIBTCH',
     coin: 'AI BITCOIN HUNTERS',
   },
@@ -22310,7 +24657,8 @@ export const DATA_TOKEN = [
     coin: 'RICE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galatix-zone-gxz.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galatix-zone-gxz.png',
     token: 'GXZ',
     coin: 'Galatix Zone',
   },
@@ -22320,12 +24668,14 @@ export const DATA_TOKEN = [
     coin: 'Rand',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/greenzonex-gzx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/greenzonex-gzx.png',
     token: 'GZX',
     coin: 'GreenZoneX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tixl-token-txl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tixl-token-txl.png',
     token: 'TXL',
     coin: 'Tixl Token',
   },
@@ -22335,27 +24685,32 @@ export const DATA_TOKEN = [
     coin: 'Nutcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/biden-2024-biden2024.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/biden-2024-biden2024.png',
     token: 'BIDEN2024',
     coin: 'BIDEN 2024',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goldex-token-gldx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goldex-token-gldx.png',
     token: 'GLDX',
     coin: 'Goldex Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/freedom-jobs-business-fjb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/freedom-jobs-business-fjb.png',
     token: 'FJB',
     coin: 'Freedom. Jobs. Business.',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lox-network-lox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lox-network-lox.png',
     token: 'LOX',
     coin: 'Lox Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-hustle-app-husl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-hustle-app-husl.png',
     token: 'HUSL',
     coin: 'The Hustle App',
   },
@@ -22375,7 +24730,8 @@ export const DATA_TOKEN = [
     coin: 'Epanus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/axia-protocol-axia.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/axia-protocol-axia.png',
     token: 'AXIA',
     coin: 'Axia Protocol',
   },
@@ -22385,27 +24741,32 @@ export const DATA_TOKEN = [
     coin: 'BUYK',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitranium-bitra.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitranium-bitra.png',
     token: 'BITRA',
     coin: 'Bitranium',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptochrome-chm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptochrome-chm.png',
     token: 'CHM',
     coin: 'Cryptochrome',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rektgame-rekt2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rektgame-rekt2.png',
     token: 'REKT2',
     coin: 'rektgame',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ai-genesis-lab-gnsslab.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ai-genesis-lab-gnsslab.png',
     token: 'GNSSLAB',
     coin: 'AI GENESIS LAB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitpanda-ecosystem-token-best.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitpanda-ecosystem-token-best.png',
     token: 'BEST',
     coin: 'Bitpanda Ecosystem Token',
   },
@@ -22430,12 +24791,14 @@ export const DATA_TOKEN = [
     coin: 'Diamault',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shipit-pro-shpp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shipit-pro-shpp.png',
     token: 'SHPP',
     coin: 'Shipit pro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/export-mortos-platform-emp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/export-mortos-platform-emp.png',
     token: 'EMP',
     coin: 'Export Mortos Platform',
   },
@@ -22445,12 +24808,14 @@ export const DATA_TOKEN = [
     coin: 'WATER',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/translateme-network-token-tmn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/translateme-network-token-tmn.png',
     token: 'TMN',
     coin: 'TranslateMe Network Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yuan-chain-coin-ycc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yuan-chain-coin-ycc.png',
     token: 'YCC',
     coin: 'Yuan Chain Coin',
   },
@@ -22470,12 +24835,14 @@ export const DATA_TOKEN = [
     coin: 'Tronipay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nft-strike-nfts.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nft-strike-nfts.png',
     token: 'NFTS',
     coin: 'NFT STRIKE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solana-street-bets-ssb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solana-street-bets-ssb.png',
     token: 'SSB',
     coin: 'Solana Street Bets',
   },
@@ -22495,22 +24862,26 @@ export const DATA_TOKEN = [
     coin: 'VIC Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-spark-btcs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-spark-btcs.png',
     token: 'BTCS',
     coin: 'Bitcoin Spark',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chow-chow-chow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chow-chow-chow.png',
     token: 'CHOW',
     coin: 'CHOW CHOW',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dawin-token-dwt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dawin-token-dwt.png',
     token: 'DWT',
     coin: 'Dawin Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aerodrome-aerodrome.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aerodrome-aerodrome.png',
     token: 'AERODROME',
     coin: 'Aerodrome',
   },
@@ -22520,17 +24891,20 @@ export const DATA_TOKEN = [
     coin: 'Appics',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/nftgamingstars-gs1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/nftgamingstars-gs1.png',
     token: 'GS1',
     coin: 'NFTGamingStars',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coalculus-coal.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coalculus-coal.png',
     token: 'COAL',
     coin: 'Coalculus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metis-token-bsc-metis.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metis-token-bsc-metis.png',
     token: 'METIS',
     coin: 'Metis Token (BSC)',
   },
@@ -22540,17 +24914,20 @@ export const DATA_TOKEN = [
     coin: 'Dobuy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/paragon-pay-paragon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/paragon-pay-paragon.png',
     token: 'PARAGON',
     coin: 'Paragon Pay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/manta-hero-mhero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/manta-hero-mhero.png',
     token: 'MHERO',
     coin: 'Manta Hero',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/funder-one-capital-fundx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/funder-one-capital-fundx.png',
     token: 'FUNDX',
     coin: 'Funder One Capital',
   },
@@ -22560,7 +24937,8 @@ export const DATA_TOKEN = [
     coin: 'QnaAI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memerats-memerats.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memerats-memerats.png',
     token: 'MEMERATS',
     coin: 'Memerats',
   },
@@ -22580,7 +24958,8 @@ export const DATA_TOKEN = [
     coin: 'Aloha',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/melo-token-melo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/melo-token-melo.png',
     token: 'MELO',
     coin: 'Melo Token',
   },
@@ -22590,17 +24969,20 @@ export const DATA_TOKEN = [
     coin: 'Edgeless',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/the-valkyrie-vkye.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/the-valkyrie-vkye.png',
     token: 'VKYE',
     coin: 'THE Valkyrie',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/stohn-coin-soh.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/stohn-coin-soh.png',
     token: 'SOH',
     coin: 'Stohn Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/generation-gen.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/generation-gen.png',
     token: 'GEN',
     coin: 'Generation',
   },
@@ -22615,17 +24997,20 @@ export const DATA_TOKEN = [
     coin: 'MALGO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/social-swap-token-sst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/social-swap-token-sst.png',
     token: 'SST',
     coin: 'Social Swap Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goldbeantoken-gbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goldbeantoken-gbt.png',
     token: 'GBT',
     coin: 'GoldBeanToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metropoly-metro.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metropoly-metro.png',
     token: 'METRO',
     coin: 'Metropoly',
   },
@@ -22635,7 +25020,8 @@ export const DATA_TOKEN = [
     coin: 'Xave Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genforyou-the-token-gfytt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genforyou-the-token-gfytt.png',
     token: 'GFYTT',
     coin: 'GenForYou THE Token',
   },
@@ -22645,12 +25031,14 @@ export const DATA_TOKEN = [
     coin: 'Long Run',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yearn-finance-bit2-yfb2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yearn-finance-bit2-yfb2.png',
     token: 'YFB2',
     coin: 'Yearn Finance Bit2',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ulgen-hash-power-uhp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ulgen-hash-power-uhp.png',
     token: 'UHP',
     coin: 'Ulgen Hash Power',
   },
@@ -22675,22 +25063,26 @@ export const DATA_TOKEN = [
     coin: 'Nayuta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/galaxyprotocol-glx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/galaxyprotocol-glx.png',
     token: 'GLX',
     coin: 'GalaxyProtocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/community-business-token-cbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/community-business-token-cbt.png',
     token: 'CBT',
     coin: 'Community Business Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/scanetchain-swc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/scanetchain-swc.png',
     token: 'SWC',
     coin: 'Scanetchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smartnft-smartnft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smartnft-smartnft.png',
     token: 'SMARTNFT',
     coin: 'SmartNFT',
   },
@@ -22700,12 +25092,14 @@ export const DATA_TOKEN = [
     coin: 'DMT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/muse-ent-nft-msct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/muse-ent-nft-msct.png',
     token: 'MSCT',
     coin: 'MUSE ENT NFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mjc-token-mjct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mjc-token-mjct.png',
     token: 'MJCT',
     coin: 'MJC Token',
   },
@@ -22720,12 +25114,14 @@ export const DATA_TOKEN = [
     coin: 'GlitzKoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/asian-fintech-afin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/asian-fintech-afin.png',
     token: 'AFIN',
     coin: 'Asian Fintech',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/waltonchain-wta.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/waltonchain-wta.png',
     token: 'WTA',
     coin: 'Waltonchain',
   },
@@ -22735,7 +25131,8 @@ export const DATA_TOKEN = [
     coin: 'Bobo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hotdoge-hotdoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hotdoge-hotdoge.png',
     token: 'HOTDOGE',
     coin: 'HotDoge',
   },
@@ -22745,7 +25142,8 @@ export const DATA_TOKEN = [
     coin: 'Enecuum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xtrm-coin-xtrm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xtrm-coin-xtrm.png',
     token: 'XTRM',
     coin: 'XTRM COIN',
   },
@@ -22755,12 +25153,14 @@ export const DATA_TOKEN = [
     coin: 'ALBEDO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lovelace-world-lace.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lovelace-world-lace.png',
     token: 'LACE',
     coin: 'Lovelace World',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-us-dollar-btcus.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-us-dollar-btcus.png',
     token: 'BTCUS',
     coin: 'Bitcoin US Dollar',
   },
@@ -22770,7 +25170,8 @@ export const DATA_TOKEN = [
     coin: 'yesgo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/coin-tree-ctree.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/coin-tree-ctree.png',
     token: 'CTREE',
     coin: 'Coin Tree',
   },
@@ -22785,17 +25186,20 @@ export const DATA_TOKEN = [
     coin: 'AWNEX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ducato-protocol-token-ducato.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ducato-protocol-token-ducato.png',
     token: 'DUCATO',
     coin: 'Ducato Protocol Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dastra-network-dan.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dastra-network-dan.png',
     token: 'DAN',
     coin: 'Dastra Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gold-mining-members-gmm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gold-mining-members-gmm.png',
     token: 'GMM',
     coin: 'Gold Mining Members',
   },
@@ -22805,27 +25209,32 @@ export const DATA_TOKEN = [
     coin: 'Camelcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bone-token-shibnft-bone.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bone-token-shibnft-bone.png',
     token: 'BONE',
     coin: 'BONE token ShibNFT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/incube-chain-icb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/incube-chain-icb.png',
     token: 'ICB',
     coin: 'Incube Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tao-te-ching-ttc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tao-te-ching-ttc.png',
     token: 'TTC',
     coin: 'Tao Te Ching',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smart-world-union-swu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smart-world-union-swu.png',
     token: 'SWU',
     coin: 'Smart World Union',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/i-well-track-iwell.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/i-well-track-iwell.png',
     token: 'IWELL',
     coin: 'I WELL TRACK',
   },
@@ -22840,7 +25249,8 @@ export const DATA_TOKEN = [
     coin: 'FOOM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/giftedhands-ghd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/giftedhands-ghd.png',
     token: 'GHD',
     coin: 'Giftedhands',
   },
@@ -22865,7 +25275,8 @@ export const DATA_TOKEN = [
     coin: 'Shardus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/icrowdcoin-icc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/icrowdcoin-icc.png',
     token: 'ICC',
     coin: 'iCrowdCoin',
   },
@@ -22875,17 +25286,20 @@ export const DATA_TOKEN = [
     coin: 'Phaeton',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ouchi-finance-ouchi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ouchi-finance-ouchi.png',
     token: 'OUCHI',
     coin: 'Ouchi Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/simbcoin-swap-smbswap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/simbcoin-swap-smbswap.png',
     token: 'SMBSWAP',
     coin: 'Simbcoin Swap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/frenchie-network-fren.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/frenchie-network-fren.png',
     token: 'FREN',
     coin: 'Frenchie Network',
   },
@@ -22905,12 +25319,14 @@ export const DATA_TOKEN = [
     coin: 'YDragon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zupi-coin-zupi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zupi-coin-zupi.png',
     token: 'ZUPI',
     coin: 'Zupi Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bonkbest-bonkbest.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bonkbest-bonkbest.png',
     token: 'BONKBEST',
     coin: 'BonkBest',
   },
@@ -22935,7 +25351,8 @@ export const DATA_TOKEN = [
     coin: 'StarX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metadrive-premium-mdp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metadrive-premium-mdp.png',
     token: 'MDP',
     coin: 'MetaDrive Premium',
   },
@@ -22960,12 +25377,14 @@ export const DATA_TOKEN = [
     coin: '777',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/enterbutton-entc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/enterbutton-entc.png',
     token: 'ENTC',
     coin: 'ENTERBUTTON',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/genie-protocol-gnp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/genie-protocol-gnp.png',
     token: 'GNP',
     coin: 'Genie Protocol',
   },
@@ -22980,7 +25399,8 @@ export const DATA_TOKEN = [
     coin: 'SonoCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smartlox-smartlox.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smartlox-smartlox.png',
     token: 'SMARTLOX',
     coin: 'SmartLOX',
   },
@@ -22990,7 +25410,8 @@ export const DATA_TOKEN = [
     coin: 'MCOBIT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/capital-coin-cptl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/capital-coin-cptl.png',
     token: 'CPTL',
     coin: 'Capital Coin',
   },
@@ -23000,27 +25421,32 @@ export const DATA_TOKEN = [
     coin: 'BuildUp',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pop-network-pop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pop-network-pop.png',
     token: 'POP',
     coin: 'POP Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baseswap-bswap.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baseswap-bswap.png',
     token: 'BSWAP',
     coin: 'BaseSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unimax-finance-unex.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unimax-finance-unex.png',
     token: 'UNEX',
     coin: 'UniMax Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/defi-connect-new-dfc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/defi-connect-new-dfc.png',
     token: 'DFC',
     coin: 'Defi Connect (new)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptokki-tokki.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptokki-tokki.png',
     token: 'TOKKI',
     coin: 'CRYPTOKKI',
   },
@@ -23050,12 +25476,14 @@ export const DATA_TOKEN = [
     coin: 'Etherlite',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mxgp-fan-token-mxgp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mxgp-fan-token-mxgp.png',
     token: 'MXGP',
     coin: 'MXGP Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/yearn-finance-diamond-yfdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/yearn-finance-diamond-yfdt.png',
     token: 'YFDT',
     coin: 'Yearn Finance Diamond',
   },
@@ -23085,7 +25513,8 @@ export const DATA_TOKEN = [
     coin: 'Parallel',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/gera-coin-gera.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/gera-coin-gera.png',
     token: 'GERA',
     coin: 'Gera Coin',
   },
@@ -23100,7 +25529,8 @@ export const DATA_TOKEN = [
     coin: 'OXCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fight-out-fght.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fight-out-fght.png',
     token: 'FGHT',
     coin: 'Fight Out',
   },
@@ -23115,7 +25545,8 @@ export const DATA_TOKEN = [
     coin: 'DessFi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dtiger-inu-dtrinu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dtiger-inu-dtrinu.png',
     token: 'DTRINU',
     coin: 'DTIGER INU',
   },
@@ -23150,22 +25581,26 @@ export const DATA_TOKEN = [
     coin: 'ETF Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/miningtobit-mtb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/miningtobit-mtb.png',
     token: 'MTB',
     coin: 'MININGTOBIT',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/world-of-defish-wod.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/world-of-defish-wod.png',
     token: 'WOD',
     coin: 'World of Defish',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metaviral-metaviral.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metaviral-metaviral.png',
     token: 'METAVIRAL',
     coin: 'MetaViral',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/primal-new-prm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/primal-new-prm.png',
     token: 'PRM',
     coin: 'Primal (new)',
   },
@@ -23175,12 +25610,14 @@ export const DATA_TOKEN = [
     coin: 'Adverb',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sheesha-finance-polygon-msheesha.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sheesha-finance-polygon-msheesha.png',
     token: 'MSHEESHA',
     coin: 'Sheesha Finance Polygon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/navibration-navi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/navibration-navi.png',
     token: 'NAVI',
     coin: 'Navibration',
   },
@@ -23206,7 +25643,8 @@ export const DATA_TOKEN = [
     coin: 'Zamzam',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/proof-of-pepe-pop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/proof-of-pepe-pop.png',
     token: 'POP',
     coin: 'Proof Of Pepe',
   },
@@ -23216,7 +25654,8 @@ export const DATA_TOKEN = [
     coin: 'CROOLD',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bombcrypto-bcoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bombcrypto-bcoin.png',
     token: 'BCOIN',
     coin: 'Bombcrypto',
   },
@@ -23231,12 +25670,14 @@ export const DATA_TOKEN = [
     coin: 'HUPAYX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safegame-cash-sgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safegame-cash-sgc.png',
     token: 'SGC',
     coin: 'SafeGame Cash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zigzag-stablecoin-zag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zigzag-stablecoin-zag.png',
     token: 'ZAG',
     coin: 'ZigZag Stablecoin',
   },
@@ -23246,12 +25687,14 @@ export const DATA_TOKEN = [
     coin: 'GROK (BSC)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-arc-arc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-arc-arc.png',
     token: 'ARC',
     coin: 'Crypto ARC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hodl-solana-hodl.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hodl-solana-hodl.png',
     token: 'HODL',
     coin: 'HODL SOLANA',
   },
@@ -23262,7 +25705,8 @@ export const DATA_TOKEN = [
     coin: 'Mainstream For The Underground',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tokenize-xchange-tkx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tokenize-xchange-tkx.png',
     token: 'TKX',
     coin: 'Tokenize Xchange',
   },
@@ -23282,7 +25726,8 @@ export const DATA_TOKEN = [
     coin: 'ForTheDog',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bnsd-finance-bnsd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bnsd-finance-bnsd.png',
     token: 'BNSD',
     coin: 'BNSD Finance',
   },
@@ -23292,7 +25737,8 @@ export const DATA_TOKEN = [
     coin: 'Po.et',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vinu-network-vnn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vinu-network-vnn.png',
     token: 'VNN',
     coin: 'VINU Network',
   },
@@ -23327,7 +25773,8 @@ export const DATA_TOKEN = [
     coin: 'saxumdao',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/grok-2.0-grok2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/grok-2.0-grok2.png',
     token: 'GROK2',
     coin: 'GROK 2.0',
   },
@@ -23337,22 +25784,26 @@ export const DATA_TOKEN = [
     coin: 'WTF Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/matries-finance-mtes0.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/matries-finance-mtes0.png',
     token: 'MTES0',
     coin: 'Matries Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pump-it-up-pumpit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pump-it-up-pumpit.png',
     token: 'PUMPIT',
     coin: 'Pump It Up',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hybrid-bank-stable-coin-hbusd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hybrid-bank-stable-coin-hbusd.png',
     token: 'HBUSD',
     coin: 'Hybrid Bank Stable Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/greeneum-network-green.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/greeneum-network-green.png',
     token: 'GREEN',
     coin: 'Greeneum Network',
   },
@@ -23367,7 +25818,8 @@ export const DATA_TOKEN = [
     coin: 'AND COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hygenercoin-hg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hygenercoin-hg.png',
     token: 'HG',
     coin: 'HygenerCoin',
   },
@@ -23387,17 +25839,20 @@ export const DATA_TOKEN = [
     coin: 'Agricoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dhabi-coin-dbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dhabi-coin-dbc.png',
     token: 'DBC',
     coin: 'Dhabi Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ecoin-official-ecoin.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ecoin-official-ecoin.png',
     token: 'ECOIN',
     coin: 'Ecoin official',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crazy-bunny-crazybm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crazy-bunny-crazybm.png',
     token: 'CRAZYBM',
     coin: 'Crazy Bunny',
   },
@@ -23412,7 +25867,8 @@ export const DATA_TOKEN = [
     coin: 'CluCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mysterious-point-msp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mysterious-point-msp.png',
     token: 'MSP',
     coin: 'Mysterious Point',
   },
@@ -23422,7 +25878,8 @@ export const DATA_TOKEN = [
     coin: 'Edgecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wallstreetbets-dapp-wsb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wallstreetbets-dapp-wsb.png',
     token: 'WSB',
     coin: 'WallStreetBets DApp',
   },
@@ -23437,7 +25894,8 @@ export const DATA_TOKEN = [
     coin: 'Tcake',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bit-game-verse-token-bgvt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bit-game-verse-token-bgvt.png',
     token: 'BGVT',
     coin: 'BIT GAME VERSE TOKEN',
   },
@@ -23457,12 +25915,14 @@ export const DATA_TOKEN = [
     coin: 'Nesten',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kpop-coin-kpop.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kpop-coin-kpop.png',
     token: 'KPOP',
     coin: 'KPOP Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bhax-token-bhax.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bhax-token-bhax.png',
     token: 'BHAX',
     coin: 'BHAX Token',
   },
@@ -23472,22 +25932,26 @@ export const DATA_TOKEN = [
     coin: 'ZETCAB',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/new-earth-coin-nec.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/new-earth-coin-nec.png',
     token: 'NEC',
     coin: 'New Earth Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/k-chain-token-kct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/k-chain-token-kct.png',
     token: 'KCT',
     coin: 'K-Chain Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bangko-maharlika-mhlkbangko.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bangko-maharlika-mhlkbangko.png',
     token: 'MHLKBANGKO',
     coin: 'Bangko Maharlika',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hoppy-token-hoppy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hoppy-token-hoppy.png',
     token: 'HOPPY',
     coin: 'Hoppy Token',
   },
@@ -23497,12 +25961,14 @@ export const DATA_TOKEN = [
     coin: 'Tasuki',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fisco-coin-fscc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fisco-coin-fscc.png',
     token: 'FSCC',
     coin: 'Fisco Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/oi-network-mom.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/oi-network-mom.png',
     token: 'MOM',
     coin: 'Oi! Network',
   },
@@ -23512,17 +25978,20 @@ export const DATA_TOKEN = [
     coin: 'SVQ',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/happydoge-happydog.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/happydoge-happydog.png',
     token: 'HAPPYDOG',
     coin: 'HappyDoge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/binance-peg-tnc-btnc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/binance-peg-tnc-btnc.png',
     token: 'BTNC',
     coin: 'Binance-Peg TNC',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/riso-finance-riso.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/riso-finance-riso.png',
     token: 'RISO',
     coin: 'RISO FINANCE',
   },
@@ -23532,7 +26001,8 @@ export const DATA_TOKEN = [
     coin: 'Defiqa',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brandocoin-brc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brandocoin-brc.png',
     token: 'BRC',
     coin: 'Brandocoin',
   },
@@ -23542,12 +26012,14 @@ export const DATA_TOKEN = [
     coin: 'SINSO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/illuminaticoin-nati.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/illuminaticoin-nati.png',
     token: 'NATI',
     coin: 'IlluminatiCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dibapay-coin-diba.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dibapay-coin-diba.png',
     token: 'DIBA',
     coin: 'DIBAPAY COIN',
   },
@@ -23557,22 +26029,26 @@ export const DATA_TOKEN = [
     coin: 'AKM',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cyber-crowd-chain-ccc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cyber-crowd-chain-ccc.png',
     token: 'CCC',
     coin: 'Cyber Crowd Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/beautiful-princess-disorder-bpd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/beautiful-princess-disorder-bpd.png',
     token: 'BPD',
     coin: 'Beautiful Princess Disorder',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shiba-v-pepe-shepe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shiba-v-pepe-shepe.png',
     token: 'SHEPE',
     coin: 'Shiba V Pepe',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/surf-live-surf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/surf-live-surf.png',
     token: 'SURF',
     coin: 'Surf Live',
   },
@@ -23582,12 +26058,14 @@ export const DATA_TOKEN = [
     coin: 'Bitrich',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hideous-hideous.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hideous-hideous.png',
     token: 'HIDEOUS',
     coin: 'HIDEOUS',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/golds-exchange-coin-goldsx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/golds-exchange-coin-goldsx.png',
     token: 'GOLDSX',
     coin: 'GOLDS eXchange Coin',
   },
@@ -23597,12 +26075,14 @@ export const DATA_TOKEN = [
     coin: 'FOMOFI',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/colibri-protocol-clbr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/colibri-protocol-clbr.png',
     token: 'CLBR',
     coin: 'Colibri Protocol',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fashion-coin-fshn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fashion-coin-fshn.png',
     token: 'FSHN',
     coin: 'Fashion Coin',
   },
@@ -23612,7 +26092,8 @@ export const DATA_TOKEN = [
     coin: 'Bamboo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/green-climate-world-wgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/green-climate-world-wgc.png',
     token: 'WGC',
     coin: 'Green Climate World',
   },
@@ -23627,17 +26108,20 @@ export const DATA_TOKEN = [
     coin: 'WETH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ideal-opportunity-io.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ideal-opportunity-io.png',
     token: 'IO',
     coin: 'Ideal Opportunity',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/globiance-usd-stablecoin-usdg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/globiance-usd-stablecoin-usdg.png',
     token: 'USDG',
     coin: 'Globiance USD Stablecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sangkara-misa-misa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sangkara-misa-misa.png',
     token: 'MISA',
     coin: 'SANGKARA MISA',
   },
@@ -23647,12 +26131,14 @@ export const DATA_TOKEN = [
     coin: 'Weps',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shdwdrive-shdw1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shdwdrive-shdw1.png',
     token: 'SHDW1',
     coin: 'ShdwDrive',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vision-coin-vmc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vision-coin-vmc.png',
     token: 'VMC',
     coin: 'Vision Coin',
   },
@@ -23672,7 +26158,8 @@ export const DATA_TOKEN = [
     coin: 'BlueBenx',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptyk-token-ctk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptyk-token-ctk.png',
     token: 'CTK',
     coin: 'Cryptyk Token',
   },
@@ -23697,7 +26184,8 @@ export const DATA_TOKEN = [
     coin: 'Barter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safereum-safereum.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safereum-safereum.png',
     token: 'SAFEREUM',
     coin: 'SAFEREUM',
   },
@@ -23717,22 +26205,26 @@ export const DATA_TOKEN = [
     coin: 'Xank',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/harry-potter-finance-hpf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/harry-potter-finance-hpf.png',
     token: 'HPF',
     coin: 'Harry Potter Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/puregold-pgpay.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/puregold-pgpay.png',
     token: 'PGPAY',
     coin: 'Puregold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/spacepupper-spcppr.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/spacepupper-spcppr.png',
     token: 'SPCPPR',
     coin: 'SpacePupper',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sam-bankmeme-fried-sbf.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sam-bankmeme-fried-sbf.png',
     token: 'SBF',
     coin: 'Sam Bankmeme-Fried',
   },
@@ -23747,7 +26239,8 @@ export const DATA_TOKEN = [
     coin: 'Topcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptobharatcoin-cbc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptobharatcoin-cbc.png',
     token: 'CBC',
     coin: 'CryptoBharatCoin',
   },
@@ -23762,12 +26255,14 @@ export const DATA_TOKEN = [
     coin: 'CWallet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/balloon-coin-balo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/balloon-coin-balo.png',
     token: 'BALO',
     coin: 'Balloon coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bluesparrow-token-old-bsparrow.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bluesparrow-token-old-bsparrow.png',
     token: 'BSPARROW',
     coin: 'BlueSparrow Token (Old)',
   },
@@ -23802,17 +26297,20 @@ export const DATA_TOKEN = [
     coin: 'Avoteo',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tevi-coin-tevi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tevi-coin-tevi.png',
     token: 'TEVI',
     coin: 'TEVi Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/skillchain-ski.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/skillchain-ski.png',
     token: 'SKI',
     coin: 'Skillchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kriptocoin-krpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kriptocoin-krpt.png',
     token: 'KRPT',
     coin: 'KriptoCoin',
   },
@@ -23822,7 +26320,8 @@ export const DATA_TOKEN = [
     coin: 'VSolidus',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kernel-coin-knlc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kernel-coin-knlc.png',
     token: 'KNLC',
     coin: 'Kernel Coin',
   },
@@ -23832,7 +26331,8 @@ export const DATA_TOKEN = [
     coin: 'WAFL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/brcbtcs-brcbtcs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/brcbtcs-brcbtcs.png',
     token: 'BRCBTCS',
     coin: 'brcbtcs',
   },
@@ -23842,7 +26342,8 @@ export const DATA_TOKEN = [
     coin: 'Baby Bali',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/luffy-old-luffy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/luffy-old-luffy.png',
     token: 'LUFFY',
     coin: 'Luffy (Old)',
   },
@@ -23857,12 +26358,14 @@ export const DATA_TOKEN = [
     coin: 'U Network',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/marshall-inu-mri.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/marshall-inu-mri.png',
     token: 'MRI',
     coin: 'Marshall Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/iown-token-iown.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/iown-token-iown.png',
     token: 'IOWN',
     coin: 'iOWN Token',
   },
@@ -23872,12 +26375,14 @@ export const DATA_TOKEN = [
     coin: 'Buxcoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/zappay-coin-zapc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/zappay-coin-zapc.png',
     token: 'ZAPC',
     coin: 'ZapPay Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hedgetrade-hedg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hedgetrade-hedg.png',
     token: 'HEDG',
     coin: 'HedgeTrade',
   },
@@ -23902,7 +26407,8 @@ export const DATA_TOKEN = [
     coin: 'MIB Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tokyo-au-tokau.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tokyo-au-tokau.png',
     token: 'TOKAU',
     coin: 'Tokyo AU',
   },
@@ -23917,7 +26423,8 @@ export const DATA_TOKEN = [
     coin: 'Vancat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/recast1-coin-r1.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/recast1-coin-r1.png',
     token: 'R1',
     coin: 'Recast1 Coin',
   },
@@ -23927,7 +26434,8 @@ export const DATA_TOKEN = [
     coin: 'DAKOTA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/online-cold-wallet-ocw.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/online-cold-wallet-ocw.png',
     token: 'OCW',
     coin: 'Online Cold Wallet',
   },
@@ -23937,7 +26445,8 @@ export const DATA_TOKEN = [
     coin: 'concertVR',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/my-defi-legends-dlegends.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/my-defi-legends-dlegends.png',
     token: 'DLEGENDS',
     coin: 'My Defi Legends',
   },
@@ -23952,12 +26461,14 @@ export const DATA_TOKEN = [
     coin: 'FalconX',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tamakitty-titty.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tamakitty-titty.png',
     token: 'TITTY',
     coin: 'TamaKitty',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cptl-classic-cptlc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cptl-classic-cptlc.png',
     token: 'CPTLC',
     coin: 'CPTL Classic',
   },
@@ -23967,37 +26478,44 @@ export const DATA_TOKEN = [
     coin: 'DEVITA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shih-inu-token-shih.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shih-inu-token-shih.png',
     token: 'SHIH',
     coin: 'Shih Inu token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonlift-capital-mltpx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonlift-capital-mltpx.png',
     token: 'MLTPX',
     coin: 'MoonLift Capital',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cryptoknowmi-ckm.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cryptoknowmi-ckm.png',
     token: 'CKM',
     coin: 'Cryptoknowmi',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/solar-energy-seg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/solar-energy-seg.png',
     token: 'SEG',
     coin: 'Solar Energy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/elysium-token-lct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/elysium-token-lct.png',
     token: 'LCT',
     coin: 'Elysium Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mastercoin-mas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mastercoin-mas.png',
     token: 'MAS',
     coin: 'Mastercoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rabbitdao-rabbit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rabbitdao-rabbit.png',
     token: 'RABBIT',
     coin: 'RabbitDao',
   },
@@ -24007,17 +26525,20 @@ export const DATA_TOKEN = [
     coin: 'Vendit',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pancakelock-plock.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pancakelock-plock.png',
     token: 'PLOCK',
     coin: 'Pancakelock',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/strongnode-edge-sne.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/strongnode-edge-sne.png',
     token: 'SNE',
     coin: 'StrongNode Edge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pomerium-pmgpomerium.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pomerium-pmgpomerium.png',
     token: 'PMGPOMERIUM',
     coin: 'Pomerium',
   },
@@ -24027,7 +26548,8 @@ export const DATA_TOKEN = [
     coin: 'WEWE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/fashion-tv-token-ftvt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/fashion-tv-token-ftvt.png',
     token: 'FTVT',
     coin: 'Fashion TV Token',
   },
@@ -24037,12 +26559,14 @@ export const DATA_TOKEN = [
     coin: 'Mavatrix',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wrapped-enjinstarter-wejs.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wrapped-enjinstarter-wejs.png',
     token: 'WEJS',
     coin: 'Wrapped Enjinstarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/prostarter-prot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/prostarter-prot.png',
     token: 'PROT',
     coin: 'ProStarter',
   },
@@ -24052,12 +26576,14 @@ export const DATA_TOKEN = [
     coin: 'OpenAlexa',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/monun-stock-gold-msg.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/monun-stock-gold-msg.png',
     token: 'MSG',
     coin: 'Monun Stock Gold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/farm2kitchen-f2k.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/farm2kitchen-f2k.png',
     token: 'F2K',
     coin: 'Farm2Kitchen',
   },
@@ -24072,27 +26598,32 @@ export const DATA_TOKEN = [
     coin: 'AlgoGems',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/roarts-token-roar.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/roarts-token-roar.png',
     token: 'ROAR',
     coin: 'RoArts Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/esg-chain-esgc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/esg-chain-esgc.png',
     token: 'ESGC',
     coin: 'ESG Chain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rugame-labs-rug.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rugame-labs-rug.png',
     token: 'RUG',
     coin: 'RUGame Labs',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/festa-finance-ffa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/festa-finance-ffa.png',
     token: 'FFA',
     coin: 'Festa Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/erugo-world-coin-ewc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/erugo-world-coin-ewc.png',
     token: 'EWC',
     coin: 'Erugo World Coin',
   },
@@ -24122,7 +26653,8 @@ export const DATA_TOKEN = [
     coin: '0xCoco',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/pepechain-token-pc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/pepechain-token-pc.png',
     token: 'PC',
     coin: 'Pepechain Token',
   },
@@ -24132,27 +26664,32 @@ export const DATA_TOKEN = [
     coin: 'Oduwacoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/santa-floki-v2-0-hohohov2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/santa-floki-v2-0-hohohov2.png',
     token: 'HOHOHOV2',
     coin: 'Santa Floki v2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/property-blockchain-trade-pbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/property-blockchain-trade-pbt.png',
     token: 'PBT',
     coin: 'Property Blockchain Trade',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safecap-token-sfc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safecap-token-sfc.png',
     token: 'SFC',
     coin: 'SafeCap Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blocknubie-bknu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blocknubie-bknu.png',
     token: 'BKNU',
     coin: 'BLOCKNUBIE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/filedoge-filedoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/filedoge-filedoge.png',
     token: 'FILEDOGE',
     coin: 'Filedoge',
   },
@@ -24172,12 +26709,14 @@ export const DATA_TOKEN = [
     coin: 'Libonomy',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/flying-deer-fdc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/flying-deer-fdc.png',
     token: 'FDC',
     coin: 'Flying Deer',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xweowns-defi-weowns.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xweowns-defi-weowns.png',
     token: 'WEOWNS',
     coin: 'xWEOWNS DeFI',
   },
@@ -24187,22 +26726,26 @@ export const DATA_TOKEN = [
     coin: 'MetaPower',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/tacocat-token-tct.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/tacocat-token-tct.png',
     token: 'TCT',
     coin: 'TacoCat Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogwiffork-fork.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogwiffork-fork.png',
     token: 'FORK',
     coin: 'dogwiffork',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ethercash-ethcash.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ethercash-ethcash.png',
     token: 'ETHCASH',
     coin: 'Ethercash',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/aquagoat-finance-aquagoat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/aquagoat-finance-aquagoat.png',
     token: 'AQUAGOAT',
     coin: 'AquaGoat.Finance',
   },
@@ -24212,7 +26755,8 @@ export const DATA_TOKEN = [
     coin: 'PROOF',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sports-bet-token-sbet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sports-bet-token-sbet.png',
     token: 'SBET',
     coin: 'Sports Bet Token',
   },
@@ -24227,12 +26771,14 @@ export const DATA_TOKEN = [
     coin: 'BitBeb',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/elephant-money-elephant.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/elephant-money-elephant.png',
     token: 'ELEPHANT',
     coin: 'Elephant Money',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/chain-mall-cham.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/chain-mall-cham.png',
     token: 'CHAM',
     coin: 'Chain Mall',
   },
@@ -24242,7 +26788,8 @@ export const DATA_TOKEN = [
     coin: 'O9X Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/unobtanium-uno.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/unobtanium-uno.png',
     token: 'UNO',
     coin: 'Unobtanium',
   },
@@ -24257,17 +26804,20 @@ export const DATA_TOKEN = [
     coin: 'MedPing',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/betterment-digital-bemd.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/betterment-digital-bemd.png',
     token: 'BEMD',
     coin: 'Betterment Digital',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/smarty-pay-spy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/smarty-pay-spy.png',
     token: 'SPY',
     coin: 'Smarty Pay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogemongo-dogo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogemongo-dogo.png',
     token: 'DOGO',
     coin: 'DogemonGo',
   },
@@ -24282,7 +26832,8 @@ export const DATA_TOKEN = [
     coin: 'Elysian',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/black-dog-bdog.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/black-dog-bdog.png',
     token: 'BDOG',
     coin: 'Black Dog',
   },
@@ -24292,12 +26843,14 @@ export const DATA_TOKEN = [
     coin: 'Xpense',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/none-trading-none.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/none-trading-none.png',
     token: 'NONE',
     coin: 'None Trading',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/itam-cube-itamcube.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/itam-cube-itamcube.png',
     token: 'ITAMCUBE',
     coin: 'ITAM CUBE',
   },
@@ -24312,12 +26865,14 @@ export const DATA_TOKEN = [
     coin: 'DeliCoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hashbit-blockchain-hbit.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hashbit-blockchain-hbit.png',
     token: 'HBIT',
     coin: 'HashBit BlockChain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/jet-protocol-jet.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/jet-protocol-jet.png',
     token: 'JET',
     coin: 'Jet Protocol',
   },
@@ -24327,12 +26882,14 @@ export const DATA_TOKEN = [
     coin: 'Bitbull',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/moonstarter-mnst.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/moonstarter-mnst.png',
     token: 'MNST',
     coin: 'MoonStarter',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/earthstock-token-est.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/earthstock-token-est.png',
     token: 'EST',
     coin: 'earthStock token',
   },
@@ -24347,17 +26904,20 @@ export const DATA_TOKEN = [
     coin: 'OFTEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/golden-token-x-gdx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/golden-token-x-gdx.png',
     token: 'GDX',
     coin: 'Golden Token X',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wednesday-inu-wed.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wednesday-inu-wed.png',
     token: 'WED',
     coin: 'Wednesday Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sobatoken-soba.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sobatoken-soba.png',
     token: 'SOBA',
     coin: 'SobaToken',
   },
@@ -24372,12 +26932,14 @@ export const DATA_TOKEN = [
     coin: 'CLIQ token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/croc-cat-croccat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/croc-cat-croccat.png',
     token: 'CROCCAT',
     coin: 'croc cat',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/rentberry-berry.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/rentberry-berry.png',
     token: 'BERRY',
     coin: 'Rentberry',
   },
@@ -24387,27 +26949,32 @@ export const DATA_TOKEN = [
     coin: 'USD ZEE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/heaven-token-heaven.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/heaven-token-heaven.png',
     token: 'HEAVEN',
     coin: 'Heaven Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/greengold-token-greengold.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/greengold-token-greengold.png',
     token: 'GREENGOLD',
     coin: 'GREENGOLD Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/native-utility-token-nut.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/native-utility-token-nut.png',
     token: 'NUT',
     coin: 'Native Utility Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/metawhale-mtwp.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/metawhale-mtwp.png',
     token: 'MTWP',
     coin: 'MetaWhale',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/big-panda-panda.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/big-panda-panda.png',
     token: 'PANDA',
     coin: 'Big Panda',
   },
@@ -24417,12 +26984,14 @@ export const DATA_TOKEN = [
     coin: 'Nitro',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ulti-arena-ulti.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ulti-arena-ulti.png',
     token: 'ULTI',
     coin: 'Ulti Arena',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/kodi-coin-kodi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/kodi-coin-kodi.png',
     token: 'KODI',
     coin: 'Kodi Coin',
   },
@@ -24432,7 +27001,8 @@ export const DATA_TOKEN = [
     coin: 'Kitsumon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/happiness-hpns.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/happiness-hpns.png',
     token: 'HPNS',
     coin: 'Happiness',
   },
@@ -24442,22 +27012,26 @@ export const DATA_TOKEN = [
     coin: 'LOLTOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/welups-blockchain-welups.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/welups-blockchain-welups.png',
     token: 'WELUPS',
     coin: 'Welups Blockchain',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/libero-financial-libero.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/libero-financial-libero.png',
     token: 'LIBERO',
     coin: 'Libero Financial',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wemoney-e-money-wemoney.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wemoney-e-money-wemoney.png',
     token: 'WEMONEY',
     coin: 'WEMONEY E-Money',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/amazetoken-amt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/amazetoken-amt.png',
     token: 'AMT',
     coin: 'AmazeToken',
   },
@@ -24467,32 +27041,38 @@ export const DATA_TOKEN = [
     coin: 'Curecoin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/motherearth-mot.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/motherearth-mot.png',
     token: 'MOT',
     coin: 'MOTHEREARTH',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/new-year-token-nyt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/new-year-token-nyt.png',
     token: 'NYT',
     coin: 'New Year Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cremation-coin-cremateth.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cremation-coin-cremateth.png',
     token: 'CREMATETH',
     coin: 'Cremation Coin',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/xpansion-game-xps.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/xpansion-game-xps.png',
     token: 'XPS',
     coin: 'Xpansion Game',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/roseon-finance-rosn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/roseon-finance-rosn.png',
     token: 'ROSN',
     coin: 'Roseon Finance',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/upfi-network-ups.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/upfi-network-ups.png',
     token: 'UPS',
     coin: 'UPFI Network',
   },
@@ -24502,7 +27082,8 @@ export const DATA_TOKEN = [
     coin: 'Mainston',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/duke-inu-token-duke.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/duke-inu-token-duke.png',
     token: 'DUKE',
     coin: 'DUKE INU TOKEN',
   },
@@ -24512,12 +27093,14 @@ export const DATA_TOKEN = [
     coin: 'Cryptoku',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/cremation-coin-bsc-crematbsc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/cremation-coin-bsc-crematbsc.png',
     token: 'CREMATBSC',
     coin: 'Cremation Coin (BSC)',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/memeflate-mflate.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/memeflate-mflate.png',
     token: 'MFLATE',
     coin: 'MemeFlate',
   },
@@ -24527,17 +27110,20 @@ export const DATA_TOKEN = [
     coin: 'MetaSwap',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/baby-doge-2-0-babydoge20.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/baby-doge-2-0-babydoge20.png',
     token: 'BABYDOGE20',
     coin: 'BABY DOGE 2.0',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/lux-bio-cell-lbxc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/lux-bio-cell-lbxc.png',
     token: 'LBXC',
     coin: 'Lux Bio Cell',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/golden-duck-golduck.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/golden-duck-golduck.png',
     token: 'GOLDUCK',
     coin: 'Golden Duck',
   },
@@ -24547,7 +27133,8 @@ export const DATA_TOKEN = [
     coin: 'PalGold',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/marketmove-move.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/marketmove-move.png',
     token: 'MOVE',
     coin: 'MarketMove',
   },
@@ -24557,17 +27144,20 @@ export const DATA_TOKEN = [
     coin: 'Lunyr',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sports-data-token-sdt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sports-data-token-sdt.png',
     token: 'SDT',
     coin: 'Sports Data Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mxmboxceus-token-mbe.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mxmboxceus-token-mbe.png',
     token: 'MBE',
     coin: 'MxmBoxcEus Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/team-blaze-token-tbt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/team-blaze-token-tbt.png',
     token: 'TBT',
     coin: 'Team Blaze Token',
   },
@@ -24577,12 +27167,14 @@ export const DATA_TOKEN = [
     coin: 'TalentiDO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/swat-coin-swat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/swat-coin-swat.png',
     token: 'SWAT',
     coin: 'SWAT COIN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/telepathy-telepathy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/telepathy-telepathy.png',
     token: 'TELEPATHY',
     coin: 'Telepathy',
   },
@@ -24602,17 +27194,20 @@ export const DATA_TOKEN = [
     coin: 'PumaPay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vividart-vivid.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vividart-vivid.png',
     token: 'VIVID',
     coin: 'VividArt',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/saitama-v1-saitama.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/saitama-v1-saitama.png',
     token: 'SAITAMA',
     coin: 'Saitama v1',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dogecoin-2-0-doge2.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dogecoin-2-0-doge2.png',
     token: 'DOGE2',
     coin: 'Dogecoin 2.0',
   },
@@ -24622,32 +27217,38 @@ export const DATA_TOKEN = [
     coin: 'AANA',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/multiverse-capital-mvc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/multiverse-capital-mvc.png',
     token: 'MVC',
     coin: 'Multiverse Capital',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shontoken-shon.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shontoken-shon.png',
     token: 'SHON',
     coin: 'ShonToken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ainu-token-ainu.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ainu-token-ainu.png',
     token: 'AINU',
     coin: 'Ainu Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bitcoin-pay-btcpay.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bitcoin-pay-btcpay.png',
     token: 'BTCPAY',
     coin: 'Bitcoin Pay',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/digitalnote-xdn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/digitalnote-xdn.png',
     token: 'XDN',
     coin: 'DigitalNote',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/catvills-coin-catvills.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/catvills-coin-catvills.png',
     token: 'CATVILLS',
     coin: 'Catvills Coin',
   },
@@ -24657,7 +27258,8 @@ export const DATA_TOKEN = [
     coin: 'Air',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/onyxchain-onyx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/onyxchain-onyx.png',
     token: 'ONYX',
     coin: 'OnyxChain',
   },
@@ -24672,12 +27274,14 @@ export const DATA_TOKEN = [
     coin: 'PepElon',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/forever-aid-token-foat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/forever-aid-token-foat.png',
     token: 'FOAT',
     coin: 'FOREVER AID TOKEN',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/traders-coin-trdc.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/traders-coin-trdc.png',
     token: 'TRDC',
     coin: 'Traders coin',
   },
@@ -24697,12 +27301,14 @@ export const DATA_TOKEN = [
     coin: 'Lenda',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/bittree-bittree.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/bittree-bittree.png',
     token: 'BITTREE',
     coin: 'Bittree',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dolphincoin-dolph.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dolphincoin-dolph.png',
     token: 'DOLPH',
     coin: 'DolphinCoin',
   },
@@ -24717,17 +27323,20 @@ export const DATA_TOKEN = [
     coin: 'Agrello',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/minidoge-minidoge.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/minidoge-minidoge.png',
     token: 'MINIDOGE',
     coin: 'MiniDOGE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/whitexccommunityvip-whxcv.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/whitexccommunityvip-whxcv.png',
     token: 'WHXCV',
     coin: 'WhitexCcommunityVip',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/avorak-ai-avrk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/avorak-ai-avrk.png',
     token: 'AVRK',
     coin: 'Avorak AI',
   },
@@ -24737,12 +27346,14 @@ export const DATA_TOKEN = [
     coin: 'Bread',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/safe-nebula-snb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/safe-nebula-snb.png',
     token: 'SNB',
     coin: 'Safe Nebula',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ysoy-chain-farm-ysoy.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ysoy-chain-farm-ysoy.png',
     token: 'YSOY',
     coin: 'ysoy chain farm',
   },
@@ -24752,7 +27363,8 @@ export const DATA_TOKEN = [
     coin: 'CDbio',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/shibanft-shibanft.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/shibanft-shibanft.png',
     token: 'SHIBANFT',
     coin: 'ShibaNFT',
   },
@@ -24762,42 +27374,50 @@ export const DATA_TOKEN = [
     coin: 'Talkado',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/maharlika-crypto-mhlk.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/maharlika-crypto-mhlk.png',
     token: 'MHLK',
     coin: 'Maharlika Crypto',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/hungarian-vizsla-inu-hvi.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/hungarian-vizsla-inu-hvi.png',
     token: 'HVI',
     coin: 'Hungarian Vizsla Inu',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/la-peseta-ptas.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/la-peseta-ptas.png',
     token: 'PTAS',
     coin: 'La Peseta',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/game-on-players-gopx.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/game-on-players-gopx.png',
     token: 'GOPX',
     coin: 'Game On Players',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/turbowallet-turbo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/turbowallet-turbo.png',
     token: 'TURBO',
     coin: 'TurboWallet',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/blockmason-link-blink.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/blockmason-link-blink.png',
     token: 'BLINK',
     coin: 'Blockmason Link',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/sweeptoken-sweep.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/sweeptoken-sweep.png',
     token: 'SWEEP',
     coin: 'Sweeptoken',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoshistreetbets-token-ssb.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoshistreetbets-token-ssb.png',
     token: 'SSB',
     coin: 'SatoshiStreetBets Token',
   },
@@ -24812,7 +27432,8 @@ export const DATA_TOKEN = [
     coin: 'BighBull',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/subscriptio-sub.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/subscriptio-sub.png',
     token: 'SUB',
     coin: 'Subscriptio',
   },
@@ -24822,27 +27443,32 @@ export const DATA_TOKEN = [
     coin: 'RAISE',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/crypto-snack-snack.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/crypto-snack-snack.png',
     token: 'SNACK',
     coin: 'Crypto Snack',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/energy-token-eng.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/energy-token-eng.png',
     token: 'ENG',
     coin: 'Energy Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/inokbiss-ibiks.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/inokbiss-ibiks.png',
     token: 'IBIKS',
     coin: 'Inokbiss',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/dexshare-dexshare.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/dexshare-dexshare.png',
     token: 'DEXSHARE',
     coin: 'DEXShare',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/vizo-network-vizo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/vizo-network-vizo.png',
     token: 'VIZO',
     coin: 'Vizo Network',
   },
@@ -24852,22 +27478,26 @@ export const DATA_TOKEN = [
     coin: 'Sponge',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/substratum-sub.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/substratum-sub.png',
     token: 'SUB',
     coin: 'Substratum',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/ghostdag-org-gdag.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/ghostdag-org-gdag.png',
     token: 'GDAG',
     coin: 'GhostDAG.org',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/goldenugget-gnto.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/goldenugget-gnto.png',
     token: 'GNTO',
     coin: 'GoldeNugget',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/square-token-squa.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/square-token-squa.png',
     token: 'SQUA',
     coin: 'Square Token',
   },
@@ -24877,22 +27507,26 @@ export const DATA_TOKEN = [
     coin: 'MINDOL',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/mission-helios-helios.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/mission-helios-helios.png',
     token: 'HELIOS',
     coin: 'Mission Helios',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/satoshi-airlines-sat.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/satoshi-airlines-sat.png',
     token: 'SAT',
     coin: 'Satoshi Airlines',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/motogp-fan-token-mgpt.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/motogp-fan-token-mgpt.png',
     token: 'MGPT',
     coin: 'MotoGP Fan Token',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/newfuturecoin-nfcn.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/newfuturecoin-nfcn.png',
     token: 'NFCN',
     coin: 'NewFutureCoin',
   },
@@ -24902,7 +27536,8 @@ export const DATA_TOKEN = [
     coin: 'ARISTO',
   },
   {
-    image_url: 'https://coin360.com/icons/slug-coins/128x128/wenlambo-wenlambo.png',
+    image_url:
+      'https://coin360.com/icons/slug-coins/128x128/wenlambo-wenlambo.png',
     token: 'WENLAMBO',
     coin: 'Wenlambo',
   },

@@ -91,7 +91,7 @@ export const TableTopBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline max-w-[110px] overflow-auto text-ellipsis">
+                    <div className="text-normal underline max-w-[110px] text-ellipsis">
                       {row?.original?.symbol}
                     </div>
                   </div>

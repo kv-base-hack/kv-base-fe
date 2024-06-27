@@ -131,7 +131,7 @@ export default function TokenExplorerDetail({
           <IntegratedTerminal />
         </div>
         {/* content right */}
-        <div className="w-full h-full overflow-hidden">
+        <div className="w-full h-full overflow-hidden rounded-[20px]">
           {/* overview */}
           <CardCommon>
             <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">
@@ -258,7 +258,7 @@ export default function TokenExplorerDetail({
             </div>
           </CardCommon>
           {/* chart */}
-          <div className="w-full h-[480px] p-0 lg:mt-2">
+          <div className="w-full h-[520px] rounded-[20px] p-0 lg:mt-2">
             <WrapLineChart
               dataTokenInfo={dataTokenInfo}
               mode={mode}

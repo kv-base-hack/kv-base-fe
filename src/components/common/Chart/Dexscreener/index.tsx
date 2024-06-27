@@ -3,12 +3,13 @@ import './style.css'
 
 export const TradingDexscreener = ({ address }: { address: string }) => {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '410px' }}>
-      <div className="absolute left-0 right-0 h-[38px] z-[100] -bottom-[105px] rounded-b-[20px] bg-neutral-07"></div>
+    <div
+      className="overflow-hidden !rounded-[20px]"
+      style={{ position: 'relative', width: '100%', height: '580px' }}
+    >
       <div id="dexscreener-embed">
         <iframe
-          allowFullScreen
-          src={`https://dexscreener.com/${CHAIN_X}/${address}?embed=1&theme=ligh&trades=0&info=0&full`}
+          src={`https://dexscreener.com/${CHAIN_X}/${address}?embed=1&theme=ligh&trades=0&info=1`}
         ></iframe>
       </div>
     </div>

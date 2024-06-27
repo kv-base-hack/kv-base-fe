@@ -54,7 +54,7 @@ export const TooltipTokenInfo = ({
                   className={className}
                 />
                 {isSymbol && (
-                  <div className="underline max-w-[110px] overflow-auto text-ellipsis">
+                  <div className="underline max-w-[110px] text-ellipsis">
                     {symbol}
                   </div>
                 )}
@@ -66,7 +66,7 @@ export const TooltipTokenInfo = ({
                   <div className=" font-bold text-primary max-w-[140px] truncate">
                     {name}
                   </div>
-                  <div className="font-normal text-neutral-04 max-w-[110px] overflow-auto text-ellipsis">
+                  <div className="font-normal text-neutral-04 max-w-[110px] text-ellipsis">
                     {symbol}
                   </div>
                 </div>
