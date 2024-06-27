@@ -171,7 +171,7 @@ export default function LeaderboardPage() {
       cell: ({ row }) => {
         const { current_largest_position } = row.original
 
-        return current_largest_position ? (
+        return current_largest_position?.symbol ? (
           current_largest_position?.tokenAddress ? (
             <TooltipTokenInfo token={current_largest_position} chain={CHAIN} />
           ) : (
@@ -192,7 +192,7 @@ export default function LeaderboardPage() {
       enableSorting: false,
       cell: ({ row }) => {
         const { most_token_buy } = row.original
-        return most_token_buy ? (
+        return most_token_buy?.symbol ? (
           most_token_buy?.tokenAddress ? (
             <TooltipTokenInfo token={most_token_buy} chain={CHAIN} />
           ) : (
@@ -213,7 +213,7 @@ export default function LeaderboardPage() {
       enableSorting: false,
       cell: ({ row }) => {
         const { most_token_sell } = row.original
-        return most_token_sell ? (
+        return most_token_sell?.symbol ? (
           most_token_sell?.tokenAddress ? (
             <TooltipTokenInfo token={most_token_sell} chain={CHAIN} />
           ) : (

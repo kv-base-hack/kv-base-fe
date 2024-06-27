@@ -139,7 +139,7 @@ export const columnsLeaderboard = (
       enableSorting: false,
       cell: ({ row }) => {
         const { current_largest_position } = row.original
-        return current_largest_position ? (
+        return current_largest_position?.symbol ? (
           current_largest_position?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}`}
