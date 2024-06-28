@@ -16,6 +16,7 @@ import {
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
 import { TagMovement } from '../Tags/Movement'
+import { TokenSymbol } from '../TokenSymbol'
 
 export type Activity = {
   id: string
@@ -90,7 +91,7 @@ export const columnsActivity = (setSortBy: (v: string) => void) => {
               imgUrl={row?.original?.token_image_url}
               symbol={symbol}
             />
-            <div className="underline">{symbol}</div>
+            <TokenSymbol>{symbol}</TokenSymbol>
           </Link>
         )
       },

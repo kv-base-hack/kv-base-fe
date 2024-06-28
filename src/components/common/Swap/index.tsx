@@ -5,20 +5,25 @@ import { useAtom } from 'jotai'
 
 const theme = {
   // Check out the theme examples below
-  primary: '#FBFBFB',
-  secondary: '#D6D9DC',
-  dialog: '#FBFBFB',
+  primary: '#FFFFFF',
+  secondary: '#F8F8F8',
+  dialog: '#EDEDED',
   borderRadius: '20px',
   buttonRadius: '24px',
-  stroke: '#FCFCFC',
-  interactive: '#D6D9DC',
-  accent: '#6F767E',
-  success: '#189470',
-  warning: '#FF9901',
-  error: '#FF537B',
-  text: '#1C1A1F',
-  subtext: '#33383F',
-  fontFamily: 'Roboto',
+  stroke: '#E0E0E0',
+  icons: '#a9a9a9',
+  layer1: '#27262C',
+  layer2: '#363046',
+  interactive: '#F0F0F0',
+  chartRange: '#5DC5D2',
+  chartArea: '#457F89',
+  accent: '#4A90E2',
+  success: '#7ED321',
+  warning: '#F5A623',
+  error: '#D0021B',
+  text: '#4A4A4A',
+  subtext: '#9B9B9B',
+  fontFamily: 'Sora, Sans-serif',
 }
 export const IntegratedTerminal = () => {
   const [CHAIN] = useAtom(chainAtom)
@@ -84,12 +89,12 @@ export const IntegratedTerminal = () => {
     <Widget
       client="kaivest"
       feeSetting={settingFee as any}
-      width={425}
+      width={350}
       theme={theme as any}
       tokenList={[]}
       enableRoute
       enableDexes="kyberswap-elastic,uniswapv3,uniswap"
-      title={<div className="font-bold">Kaivest</div>}
+      title={<div className="font-bold font-sora">Kaivest</div>}
     />
   )
 }

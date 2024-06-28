@@ -13,6 +13,7 @@ import { useMemo } from 'react'
 import { DataTable } from '.'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const TableTopTokenBuy = ({
   page,
@@ -62,9 +63,9 @@ export const TableTopTokenBuy = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-03">
+                      <TokenSymbol className="text-neutral-03">
                         {row?.original?.symbol}
-                      </div>
+                      </TokenSymbol>
                     </div>
                   </Link>
                 ) : (
@@ -73,9 +74,9 @@ export const TableTopTokenBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-03">
+                    <TokenSymbol className="text-neutral-03">
                       {row?.original?.symbol}
-                    </div>
+                    </TokenSymbol>
                   </div>
                 )}
               </div>

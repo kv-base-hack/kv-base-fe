@@ -14,6 +14,7 @@ import {
 } from '@/lib/utils/renderIconMovement'
 import { ExternalLink } from 'lucide-react'
 import { TagMovement } from '../Tags/Movement'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const columnsActivitySmartMoneyOfToken = (chain: string) => {
   const columns: ColumnDef<Activity>[] = [
@@ -66,7 +67,7 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
               imgUrl={row?.original?.token_image_url}
               symbol={symbol}
             />
-            <div>{symbol}</div>
+            <TokenSymbol>{symbol}</TokenSymbol>
           </Link>
         ) : (
           <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
@@ -74,7 +75,7 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
               imgUrl={row?.original?.token_image_url}
               symbol={symbol}
             />
-            <div>{symbol}</div>
+            <TokenSymbol>{symbol}</TokenSymbol>
           </div>
         )
       },

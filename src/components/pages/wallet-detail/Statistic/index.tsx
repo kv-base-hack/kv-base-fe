@@ -6,6 +6,7 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
 import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
+import { TokenSymbol } from '@/components/common/TokenSymbol'
 import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import TradeStatisticIcon from '@/components/shared/icons/wallet-explorer/TradeStatisticIcon'
 import { useTradeStatisticTokensQuery } from '@/query/wallet-explorer/getTradeStatisticTokens'
@@ -85,7 +86,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
           ) : (
             <div className="flex gap-1 cursor-not-allowed items-center justify-between text-right">
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
-              <div>{symbol}</div>
+              <TokenSymbol>{symbol}</TokenSymbol>
             </div>
           )
         },

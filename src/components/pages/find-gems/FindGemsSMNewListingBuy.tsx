@@ -4,6 +4,7 @@ import { TitleCard } from '@/components/common/Card/TitleCard'
 import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { SelectDuration } from '@/components/common/SelectDuration'
+import { TokenSymbol } from '@/components/common/TokenSymbol'
 import Info from '@/components/shared/icons/Info'
 import { IconTarget } from '@/components/shared/icons/leaderboard/IconTarget'
 import { useSMNewListingBuyQuery } from '@/query/leaderboard/getSMNewListingBuy'
@@ -68,9 +69,7 @@ export const TableFindGemsSMNewListingBuy = () => {
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline">
-                        {row?.original?.symbol}
-                      </div>
+                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                     </div>
                   </Link>
                 ) : (

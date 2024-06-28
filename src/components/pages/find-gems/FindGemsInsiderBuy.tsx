@@ -16,6 +16,7 @@ import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { UnusualBuy } from '@/types/unusualBuy'
+import { TokenSymbol } from '@/components/common/TokenSymbol'
 
 export const TableFindGemsInsiderBuy = () => {
   const [duration, setDuration] = useState('24h')
@@ -71,9 +72,7 @@ export const TableFindGemsInsiderBuy = () => {
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline">
-                        {row?.original?.symbol}
-                      </div>
+                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                     </div>
                   </Link>
                 ) : (
@@ -82,9 +81,7 @@ export const TableFindGemsInsiderBuy = () => {
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline">
-                      {row?.original?.symbol}
-                    </div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

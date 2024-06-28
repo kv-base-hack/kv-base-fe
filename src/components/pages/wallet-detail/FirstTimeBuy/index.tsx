@@ -64,7 +64,7 @@ export const FirstTimeBuy = ({
         <SelectDuration duration={duration} setDuration={setDuration} />
       </div>
       {(dataFirstTimeBuy?.length as number) > 0 ? (
-        <div className="grid grid-cols-3 gap-2 h-full w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 h-full w-full">
           {dataFirstTimeBuy?.map((token, i) => {
             return (
               <div key={i} className="col-span-1">

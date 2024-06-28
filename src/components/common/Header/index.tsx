@@ -8,7 +8,6 @@ import MenuIcon from '@/components/shared/icons/onchain/MenuIcon'
 import { ButtonConnectWallet } from '../ConnectWallet'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
-import { Suspense } from 'react'
 
 export const Header = ({
   navbarOpen,
@@ -81,9 +80,7 @@ export const Header = ({
         <div className="flex items-center justify-end gap-4">
           <SearchComp />
           <div className="flex gap-4 justify-between items-stretch shrink-0">
-            <Suspense fallback={<div>Loading...</div>}>
-              <SelectChain size="lg" showName={false} />
-            </Suspense>
+            <SelectChain size="lg" showName={false} />
           </div>
           <ButtonConnectWallet />
           <div className="bg-[#0080FF] flex items-center justify-center !rounded-full ">

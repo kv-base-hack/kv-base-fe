@@ -3,6 +3,7 @@ import { TradingDexscreener } from '@/components/common/Chart/Dexscreener'
 
 export function WrapLineChart({
   address,
+  dataTokenInfo,
 }: {
   mode: string
   sparkLineIn7D?: number[][]
@@ -13,7 +14,10 @@ export function WrapLineChart({
 }) {
   return (
     <div className="!rounded-[20px] h-[570px] flex flex-col gap-4">
-      <TradingDexscreener address={address} />
+      <TradingDexscreener
+        address={address}
+        symbol={dataTokenInfo?.symbol || ''}
+      />
     </div>
   )
 }

@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { ImageToken } from '../Image/ImageToken'
 import { ReactNode } from 'react'
 import { CardInfo } from '@/components/Dashboard/CardInfoToken'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const TooltipTokenInfo = ({
   token,
@@ -53,11 +54,7 @@ export const TooltipTokenInfo = ({
                   symbol={symbol}
                   className={className}
                 />
-                {isSymbol && (
-                  <div className="underline max-w-[110px] text-ellipsis">
-                    {symbol}
-                  </div>
-                )}
+                {isSymbol && <TokenSymbol>{symbol}</TokenSymbol>}
               </div>
             ) : (
               <div className="flex items-center gap-2">
@@ -66,9 +63,9 @@ export const TooltipTokenInfo = ({
                   <div className=" font-bold text-primary max-w-[140px] truncate">
                     {name}
                   </div>
-                  <div className="font-normal text-neutral-04 max-w-[110px] text-ellipsis">
+                  <TokenSymbol className="text-neutral-04">
                     {symbol}
-                  </div>
+                  </TokenSymbol>
                 </div>
               </div>
             )}

@@ -19,7 +19,7 @@ export default function FindGems() {
 
   return (
     <div className="w-full h-full">
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
         <TableInsiderBuy limit={3} pagination={false} detail={false} />
         <TableNewListingBuy limit={3} pagination={false} detail={false} />
         <TableTopBuy limit={3} pagination={false} detail={false} />

@@ -5,6 +5,7 @@ import numeral from 'numeral'
 import Link from 'next/link'
 import { TokenStat } from '@/types/tradeStatisticTokens'
 import { useMemo } from 'react'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const ColumnsTradeStatisticToken = (setSort: (v: string) => void) => {
   const columns: ColumnDef<TokenStat>[] = useMemo(() => {
@@ -20,12 +21,12 @@ export const ColumnsTradeStatisticToken = (setSort: (v: string) => void) => {
               className="flex gap-3 items-center justify-between text-right"
             >
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
-              <div>{symbol}</div>
+              <TokenSymbol>{symbol}</TokenSymbol>
             </Link>
           ) : (
             <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
-              <div>{symbol}</div>
+              <TokenSymbol>{symbol}</TokenSymbol>
             </div>
           )
         },
