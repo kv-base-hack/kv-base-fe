@@ -127,7 +127,7 @@ export default function TokenExplorerDetail({
     <div className="w-full h-full flex flex-col gap-2 pt-2">
       <div className="m-0 flex flex-col-reverse xl:flex-row items-start gap-2">
         {/* swap left */}
-        <div className="">
+        <div className="font-sora">
           <IntegratedTerminal />
         </div>
         {/* content right */}
@@ -212,7 +212,7 @@ export default function TokenExplorerDetail({
                 <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
                   <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
-                    <div># Unusual Buy</div>
+                    <div className="whitespace-nowrap"># Unusual Buy</div>
                   </div>
                   <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
                     <DialogNumberOfSmartMoney

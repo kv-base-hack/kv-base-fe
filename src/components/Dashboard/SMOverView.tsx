@@ -71,7 +71,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
         iconFirst={<IconRanking />}
         title="Smart Money Overview"
       ></TitleCard>
-      <div className="flex items-center gap-3">
+      <div className="flex flex-col xl:flex-row items-center gap-3">
         <CardContent
           title="3D Total Earning"
           content="Total earnings of the top 500 Smartmoney in the last 3 days."

@@ -12,6 +12,7 @@ import { NewListingBuy } from '@/types/newListingBuy'
 import numeral from 'numeral'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const TableSMNewListingBuy = ({
   page,
@@ -54,9 +55,7 @@ export const TableSMNewListingBuy = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-07">
-                        {row?.original?.symbol}
-                      </div>
+                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                     </div>
                   </Link>
                 ) : (
@@ -65,9 +64,7 @@ export const TableSMNewListingBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-07">
-                      {row?.original?.symbol}
-                    </div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { TableProps } from '@/types'
 import { DataTable } from '.'
 import { useMemo } from 'react'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const TableCexDeposit = ({
   page,
@@ -47,9 +48,7 @@ export const TableCexDeposit = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-07">
-                        {row?.original?.symbol}
-                      </div>
+                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                     </div>
                   </Link>
                 ) : (
@@ -58,9 +57,7 @@ export const TableCexDeposit = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-07">
-                      {row?.original?.symbol}
-                    </div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

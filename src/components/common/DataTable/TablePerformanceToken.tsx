@@ -14,6 +14,7 @@ import { DataTable } from '.'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import numeral from 'numeral'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
+import { TokenSymbol } from '../TokenSymbol'
 
 interface TablePerformanceTokenProps {
   data: any[]
@@ -49,7 +50,7 @@ export const TablePerformanceToken = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="underline">{row?.original?.symbol}</div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </Link>
                 ) : (
                   <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
@@ -57,7 +58,7 @@ export const TablePerformanceToken = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div>{row?.original?.symbol}</div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

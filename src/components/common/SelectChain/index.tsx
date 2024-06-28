@@ -1,5 +1,3 @@
-'use client'
-
 import { useAtom } from 'jotai'
 
 import {
@@ -11,8 +9,8 @@ import {
 import { chainAtom } from '@/atom/chain'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useCallback } from 'react'
 import React from 'react'
 
 const renderChain = (chain: string) => {
@@ -57,14 +55,27 @@ export const SelectChain = ({
   size?: 'md' | 'lg'
 }) => {
   const [chain, setChain] = useAtom(chainAtom)
+  const router = useRouter()
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const search = searchParams.get('chain')
 
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
+
+  const handleSelectChain = (val: string) => {
+    setChain(val)
+    router.push(pathname + '?' + createQueryString('chain', val))
+  }
   return (
-    <Select
-      value={search ?? chain}
-      onValueChange={(val: string) => setChain(val)}
-    >
+    <Select value={search ?? chain} onValueChange={handleSelectChain}>
       <SelectTrigger
         className={cn(
           'flex w-full cursor-pointer gap-2 px-4 py-3 my-auto text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap',
@@ -76,8 +87,8 @@ export const SelectChain = ({
         <div className="flex gap-2 justify-between">
           <Image
             loading="lazy"
-            src={renderChain(chain).icon}
-            alt={chain}
+            src={renderChain(search ?? chain).icon}
+            alt={search ?? chain}
             width={size === 'lg' ? 32 : 24}
             height={size === 'lg' ? 32 : 24}
             className={cn(
@@ -86,14 +97,13 @@ export const SelectChain = ({
             )}
           />
           {showName ? (
-            <div className="grow">{renderChain(chain).value}</div>
+            <div className="grow">{renderChain(search ?? chain).value}</div>
           ) : null}
         </div>
       </SelectTrigger>
       <SelectContent className="border-none bg-neutral-07 z-[9999]">
         <SelectItem value="ethereum">Ethereum</SelectItem>
         <SelectItem value="base">Base</SelectItem>
-        {/* <SelectItem value="solana">Solana</SelectItem> */}
       </SelectContent>
     </Select>
   )

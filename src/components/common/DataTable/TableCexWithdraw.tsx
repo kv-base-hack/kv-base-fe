@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useMemo } from 'react'
 import { DataTable } from '.'
 import { TableProps } from '@/types'
+import { TokenSymbol } from '../TokenSymbol'
 
 export const TableCexWithdraw = ({
   page,
@@ -49,9 +50,7 @@ export const TableCexWithdraw = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-07">
-                        {row?.original?.symbol}
-                      </div>
+                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                     </div>
                   </Link>
                 ) : (
@@ -60,9 +59,7 @@ export const TableCexWithdraw = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-07">
-                      {row?.original?.symbol}
-                    </div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

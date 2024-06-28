@@ -18,6 +18,7 @@ import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { categoryAtom } from '@/atom/category'
 import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
+import { TokenSymbol } from '@/components/common/TokenSymbol'
 
 export const TableInsiderBuy = ({
   limit,
@@ -87,9 +88,7 @@ export const TableInsiderBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline">
-                      {row?.original?.symbol}
-                    </div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

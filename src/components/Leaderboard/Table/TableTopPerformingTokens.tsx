@@ -28,6 +28,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useGetTopTokenProfitQuery } from '@/query/leaderboard/getTopTokenProfit'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
+import { TokenSymbol } from '@/components/common/TokenSymbol'
 
 export const TablePerformanceToken = () => {
   const [page, setPage] = useState(1)
@@ -73,7 +74,7 @@ export const TablePerformanceToken = () => {
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div>{row?.original?.symbol}</div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>

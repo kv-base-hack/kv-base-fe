@@ -5,6 +5,7 @@ import { DataTable } from '@/components/common/DataTable'
 import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { SelectDuration } from '@/components/common/SelectDuration'
+import { TokenSymbol } from '@/components/common/TokenSymbol'
 import Info from '@/components/shared/icons/Info'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
@@ -72,9 +73,7 @@ export const TableFindGemsSMTopBuys = () => {
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline">
-                        {row?.original?.symbol}
-                      </div>
+                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                     </div>
                   </Link>
                 ) : (
@@ -83,9 +82,7 @@ export const TableFindGemsSMTopBuys = () => {
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline">
-                      {row?.original?.symbol}
-                    </div>
+                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
                   </div>
                 )}
               </div>
