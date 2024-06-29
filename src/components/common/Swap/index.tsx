@@ -34,29 +34,6 @@ export const IntegratedTerminal = () => {
   // })
   // const listTokenData = listTokenQuery.data?.data?.tokens || []
 
-  let settingFee = {
-    feeAmount: 50,
-    feeReceiver: '0x1b23FE43c1D6b3041B1C832334Fdd12f6d9dbD4e',
-    chargeFeeBy: 'currency_in',
-    isInBps: true,
-  }
-  if (CHAIN === 'bnb') {
-    settingFee = {
-      feeAmount: 50,
-      feeReceiver: '0xFE532Ecf242b950bAeE2956E77FAbF4764Fd0f5a',
-      chargeFeeBy: 'currency_in',
-      isInBps: true,
-    }
-  }
-  if (CHAIN === 'base') {
-    settingFee = {
-      feeAmount: 50,
-      feeReceiver: '0x1Cc7CAdbDc6E0E5a0b1f3EAB247A543E9420d1aD',
-      chargeFeeBy: 'currency_in',
-      isInBps: true,
-    }
-  }
-
   // const MY_TOKEN_LIST = [
   //   {
   //     name: 'KNC',
@@ -88,7 +65,12 @@ export const IntegratedTerminal = () => {
   return (
     <Widget
       client="kaivest"
-      feeSetting={settingFee as any}
+      feeSetting={{
+        feeAmount: 50,
+        feeReceiver: '0x4522d369AecD8162A461e1d3782e2587Db125108',
+        chargeFeeBy: 'currency_in',
+        isInBps: true,
+      }}
       width={350}
       theme={theme as any}
       tokenList={[]}
