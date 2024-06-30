@@ -19,8 +19,10 @@ import { nFormatter } from '@/utils/nFormatter'
 
 export const DialogUsers = ({
   users,
+  className = 'text-xl',
 }: {
   users: SmartMoneyTradeWithTokenResponse[]
+  className?: string
 }) => {
   const columns: ColumnDef<SmartMoneyTradeWithTokenResponse>[] = useMemo(() => {
     return [
@@ -98,7 +100,12 @@ export const DialogUsers = ({
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="text-neutral-07 whitespace-nowrap text-xl leading-5 underline">
+        <div
+          className={cn(
+            'text-neutral-07 whitespace-nowrap leading-5 underline',
+            className,
+          )}
+        >
           {nFormatter(users?.length)}
         </div>
       </DialogTrigger>

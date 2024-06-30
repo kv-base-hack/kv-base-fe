@@ -72,7 +72,7 @@ export const TradingSignal = () => {
         enableSorting: false,
         cell: ({ row }) => {
           const { users } = row.original
-          return <DialogUsers users={users} />
+          return <DialogUsers users={users} className="text-sm" />
         },
         align: 'center',
       },
@@ -115,7 +115,19 @@ export const TradingSignal = () => {
         enableSorting: false,
         cell: ({ row }) => {
           const net_flow = row.original.data.summary.net_flow
-          return <>{formatPriceNumber(net_flow)}</>
+          return (
+            <div
+              className={
+                net_flow > 0
+                  ? 'text-semantic-success-1'
+                  : net_flow < 0
+                  ? 'text-semantic-error-1'
+                  : ''
+              }
+            >
+              {formatPriceNumber(net_flow)}
+            </div>
+          )
         },
         align: 'center',
       },
@@ -125,7 +137,19 @@ export const TradingSignal = () => {
         enableSorting: false,
         cell: ({ row }) => {
           const realized = row.original.data.summary.realized_percent
-          return <>{realized.toFixed(2)}</>
+          return (
+            <div
+              className={
+                realized > 0
+                  ? 'text-semantic-success-1'
+                  : realized < 0
+                  ? 'text-semantic-error-1'
+                  : ''
+              }
+            >
+              {realized.toFixed(2)}
+            </div>
+          )
         },
         align: 'center',
       },

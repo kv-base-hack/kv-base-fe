@@ -93,7 +93,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
             ) : (
               <div className="flex items-center gap-1">
                 <div className="text-neutral-07 text-sm font-semibold">
-                  {formatPriceNumber(usdPrice)}
+                  {usdPrice ? renderPrice(usdPrice) : '-'}
                 </div>
                 <div className="flex gap-2 pr-5 text-sm tracking-normal leading-6">
                   <div
@@ -146,15 +146,15 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 'Avg Price'
               )}
             </div>
-            <div className="text-sm font-semibold tracking-normal leading-6 text-neutral-07">
-              {loading ? (
+            {loading ? (
+              <div className="text-sm font-semibold tracking-normal leading-6 text-neutral-07">
                 <Skeleton className="w-20 h-4 rounded-full" />
-              ) : avg_price ? (
-                `$${nFormatter(avg_price)}`
-              ) : (
-                '-'
-              )}
-            </div>
+              </div>
+            ) : (
+              <div className="text-base font-semibold tracking-normal leading-6 text-neutral-07">
+                {avg_price ? renderPrice(avg_price) : '-'}
+              </div>
+            )}
           </div>
           <div className="flex items-center justify-between">
             <div className="text-sm font-medium leading-5 text-neutral-400">
@@ -166,8 +166,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (roi as number) > 0
                   ? 'text-emerald-400'
                   : (roi as number) < 0
-                    ? 'text-error-500'
-                    : 'text-neutral-07',
+                  ? 'text-error-500'
+                  : 'text-neutral-07',
               )}
             >
               {loading ? (
@@ -193,8 +193,8 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                 (pnl as number) > 0
                   ? 'text-emerald-400'
                   : (pnl as number) < 0
-                    ? 'text-error-500'
-                    : 'text-neutral-07',
+                  ? 'text-error-500'
+                  : 'text-neutral-07',
               )}
             >
               {loading ? (
