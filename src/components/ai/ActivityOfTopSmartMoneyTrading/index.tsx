@@ -4,13 +4,8 @@ import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
 import { TagMovement } from '@/components/common/Tags/Movement'
-import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
-import { cn } from '@/lib/utils'
 import { nFormatter } from '@/lib/utils/nFormatter'
-import {
-  renderMovementIcon,
-  renderMovementName,
-} from '@/lib/utils/renderIconMovement'
+
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { ActivitySmartMoneyOfTokenProps } from '@/types'
 import { ColumnDef } from '@tanstack/react-table'

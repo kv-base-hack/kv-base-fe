@@ -12,14 +12,14 @@ const Skeleton = ({
   <div className={cn('overflow-hidden', className)}>
     <ContentLoader
       speed={1}
-      width={200}
+      width={500}
       height={200}
-      viewBox="0 0 200 200"
+      viewBox="0 0 500 200"
       backgroundColor="#D6D9DC"
       foregroundColor="#ecebeb"
       {...props}
     >
-      <rect x="0" y="0" rx="0" ry="0" width="200" height="200" />
+      <rect x="0" y="0" rx="0" ry="0" width="500" height="200" />
     </ContentLoader>
   </div>
 )

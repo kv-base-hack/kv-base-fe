@@ -4,6 +4,7 @@ import CexWithdrawIcon from '@/components/shared/icons/dashboard/CexWithdrawIcon
 import NewListingBuyIcon from '@/components/shared/icons/dashboard/NewListingBuyIcon'
 import NewListingSellIcon from '@/components/shared/icons/dashboard/NewListingSellIcon'
 import SellingIcon from '@/components/shared/icons/dashboard/SellingIcon'
+import { UnusualBuyIcon } from '@/components/shared/icons/dashboard/UnusualBuy'
 import { IconShoppingCart } from '@/components/shared/icons/leaderboard/IconShoppingCart'
 
 export const renderMovementName = (movement: string) => {
@@ -20,25 +21,44 @@ export const renderMovementName = (movement: string) => {
       return 'New Listing Buy'
     case 'new_listing_sell':
       return 'New Listing Sell'
+    case 'unusual_buy':
+      return 'Unusual Buy'
     default:
       return 'Movement'
   }
 }
 
-export const renderMovementIcon = (movement: string) => {
+export const renderMovementIcon = (
+  movement: string,
+  className?: string,
+  color?: string,
+) => {
   switch (movement) {
     case 'deposit':
-      return <CexDepositIcon className="w-4 h-4" />
+      return <CexDepositIcon className={className || 'w-4 h-4'} color={color} />
     case 'withdraw':
-      return <CexWithdrawIcon className="w-4 h-4" />
+      return (
+        <CexWithdrawIcon className={className || 'w-4 h-4'} color={color} />
+      )
     case 'buying':
-      return <IconShoppingCart className="w-4 h-4" color="#1A1D1F" />
+      return (
+        <IconShoppingCart
+          className={className || 'w-4 h-4'}
+          color={color || '#1A1D1F'}
+        />
+      )
     case 'selling':
-      return <SellingIcon className="w-4 h-4" />
+      return <SellingIcon className={className || 'w-4 h-4'} color={color} />
     case 'new_listing_buy':
-      return <NewListingBuyIcon className="w-4 h-4 " />
+      return (
+        <NewListingBuyIcon className={className || 'w-4 h-4'} color={color} />
+      )
     case 'new_listing_sell':
-      return <NewListingSellIcon className="w-4 h-4 " />
+      return (
+        <NewListingSellIcon className={className || 'w-4 h-4'} color={color} />
+      )
+    case 'unusual_buy':
+      return <UnusualBuyIcon />
     default:
       return null
   }
