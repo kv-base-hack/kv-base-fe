@@ -159,7 +159,6 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
       {/* <PaginationTable
         className="mt-8"
         currentPage={1}
-        updatePage={() => {}}
         pageSize={5}
         total={data.total}
         setPage={() => {}}

@@ -4,7 +4,7 @@ import { DataTable } from '@/components/common/DataTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { LinkCustom } from '@/components/common/Link'
 import { SelectDuration } from '@/components/common/SelectDuration'
-import Info from '@/components/shared/icons/Info'
+
 import { IconInsider } from '@/components/shared/icons/leaderboard/IconInsider'
 import { useGetInsiderBuyQuery } from '@/query/leaderboard/getInsiderBuy'
 import { nFormatter } from '@/utils/nFormatter'
@@ -157,6 +157,12 @@ export const TableInsiderBuy = ({
     ]
   }, [CHAIN, page, perPage])
 
+  const handlechangePage = (page: number) => {
+    setPage(page)
+  }
+
+  console.log(page)
+
   return (
     <CardCommon>
       <TitleCard
@@ -190,7 +196,6 @@ export const TableInsiderBuy = ({
           <PaginationTable
             className="mt-2"
             currentPage={page}
-            updatePage={(page: number) => setPage(page)}
             pageSize={perPage}
             total={totalInsiderBuy}
             setPage={setPage}

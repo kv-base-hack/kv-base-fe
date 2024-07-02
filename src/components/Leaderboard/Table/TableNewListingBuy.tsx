@@ -184,7 +184,6 @@ export const TableNewListingBuy = ({
           <PaginationTable
             className="mt-2"
             currentPage={page}
-            updatePage={(page: number) => setPage(page)}
             pageSize={perPage}
             total={totalSMNewListingBuy}
             setPage={setPage}

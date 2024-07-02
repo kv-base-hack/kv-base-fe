@@ -167,7 +167,6 @@ export const DialogNumberOfSmartMoney = ({
 
             <PaginationTable
               currentPage={start}
-              updatePage={(page: number) => setStart(page)}
               pageSize={limit}
               total={total}
               setPage={setStart}

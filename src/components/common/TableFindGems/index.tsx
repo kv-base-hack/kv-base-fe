@@ -32,8 +32,8 @@ export const RenderTableFindGemsByTab = ({
         noneBgHeader
       />
       <PaginationTable
+        className="mt-2"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={total}
         setPage={setPage}

@@ -52,7 +52,6 @@ export const FreshUnusualBuy = () => {
       <PaginationTable
         className="mt-8"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={totalFreshUnusalBuy}
         setPage={setPage}

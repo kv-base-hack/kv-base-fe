@@ -87,7 +87,6 @@ export default function Articles() {
         <PaginationTable
           className="my-4"
           currentPage={page}
-          updatePage={() => null}
           pageSize={10}
           total={10}
           setPage={setPage}

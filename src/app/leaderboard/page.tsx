@@ -267,7 +267,6 @@ export default function LeaderboardPage() {
       <PaginationTable
         className="mt-2"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={totalLeaderboard}
         setPage={setPage}

@@ -138,7 +138,6 @@ export const AiTradingSignal = () => {
           dataDexTradingSignalQuery.isFetching ? 'hidden' : 'visible',
         )}
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={total}
         setPage={setPage}

@@ -66,7 +66,6 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
         <PaginationTable
           className="mt-4"
           currentPage={currentPage}
-          updatePage={(page: number) => handlePageChange(page)}
           pageSize={itemsPerPage}
           total={totalPages}
           setPage={setCurrentPage}

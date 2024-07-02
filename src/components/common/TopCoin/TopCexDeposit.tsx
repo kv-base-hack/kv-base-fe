@@ -45,7 +45,6 @@ export const TopCexDeposit = () => {
       <PaginationTable
         className="mt-8"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={totalCexIn}
         setPage={setPage}

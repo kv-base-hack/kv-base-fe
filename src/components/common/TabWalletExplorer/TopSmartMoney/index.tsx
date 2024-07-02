@@ -76,7 +76,6 @@ export const TopSmartMoney = ({
       <PaginationTable
         className="mt-8"
         currentPage={pageTopSmartMoneyForToken}
-        updatePage={(page: number) => setPageTopSmartMoneyForToken(page)}
         pageSize={perPageTopSmartMoneyForToken}
         total={totalTopSmartMoneyForToken}
         setPage={setPageTopSmartMoneyForToken}

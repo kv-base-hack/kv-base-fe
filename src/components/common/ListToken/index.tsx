@@ -70,7 +70,6 @@ const RenderDataGem = ({
       <PaginationTable
         className="mt-8"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={10}
         total={total}
         setPage={setPage}

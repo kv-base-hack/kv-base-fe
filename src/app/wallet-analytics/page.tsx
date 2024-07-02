@@ -134,7 +134,6 @@ export default function WalletAnalytics() {
           <PaginationTable
             className="mt-8"
             currentPage={pageLeaderboard}
-            updatePage={(page: number) => setPageLeaderboard(page)}
             pageSize={perPageLeaderboard}
             total={totalLeaderboard}
             setPage={setPageLeaderboard}

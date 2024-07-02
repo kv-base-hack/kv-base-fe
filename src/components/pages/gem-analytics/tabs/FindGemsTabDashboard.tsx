@@ -148,7 +148,6 @@ export default function FindGemsTabDashboard() {
             <PaginationTable
               className="mt-8"
               currentPage={pageTopProfit}
-              updatePage={(page: number) => setPageTopProfit(page)}
               pageSize={10}
               total={totalTopTokenProfit}
               setPage={setPageTopProfit}

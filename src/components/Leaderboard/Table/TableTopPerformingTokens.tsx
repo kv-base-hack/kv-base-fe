@@ -287,7 +287,6 @@ export const TablePerformanceToken = () => {
       />
       <PaginationTable
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={10}
         total={totalTopTokenProfit}
         setPage={setPage}

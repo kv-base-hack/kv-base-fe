@@ -143,7 +143,6 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
       {/* <PaginationTable
         className="mt-8"
         currentPage={1}
-        updatePage={() => {}}
         pageSize={5}
         total={data.total}
         setPage={() => {}}

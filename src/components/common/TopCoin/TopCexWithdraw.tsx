@@ -46,7 +46,6 @@ export const TopCexWithdraw = () => {
       <PaginationTable
         className="mt-8"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={totalCexOut}
         setPage={setPage}

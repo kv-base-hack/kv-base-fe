@@ -126,7 +126,6 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
       <PaginationTable
         className="mt-4"
         currentPage={pageActivity}
-        updatePage={(page: number) => setPageActivity(page)}
         pageSize={10}
         total={totalActivity}
         setPage={setPageActivity}

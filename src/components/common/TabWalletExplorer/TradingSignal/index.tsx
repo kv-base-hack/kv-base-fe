@@ -181,7 +181,6 @@ export const TradingSignal = () => {
       <PaginationTable
         className="mt-8"
         currentPage={pageActivity}
-        updatePage={(page: number) => setPageActivity(page)}
         pageSize={10}
         total={total}
         setPage={setPageActivity}

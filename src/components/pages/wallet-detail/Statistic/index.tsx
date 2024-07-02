@@ -240,7 +240,6 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         <PaginationTable
           className="mt-4"
           currentPage={currentPage}
-          updatePage={(page: number) => handlePageChange(page)}
           pageSize={itemsPerPage}
           total={totalPages}
           setPage={setCurrentPage}

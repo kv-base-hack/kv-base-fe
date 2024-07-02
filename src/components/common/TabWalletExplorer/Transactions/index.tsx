@@ -82,7 +82,6 @@ export const Transactions = ({
       <PaginationTable
         className="mt-8"
         currentPage={pageSmartMoneyTransaction}
-        updatePage={(page: number) => setPageSmartMoneyTransaction(page)}
         pageSize={10}
         total={totalSmartMoneyTransaction}
         setPage={setPageSmartMoneyTransaction}

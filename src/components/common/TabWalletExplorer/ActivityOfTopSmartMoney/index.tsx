@@ -82,7 +82,6 @@ export const ActivityOfTopSmartMoney = ({
       <PaginationTable
         className="mt-8"
         currentPage={pageActivity}
-        updatePage={(page: number) => setPageActivity(page)}
         pageSize={10}
         total={totalActivity}
         setPage={setPageActivity}

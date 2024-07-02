@@ -8,17 +8,15 @@ import { ChangeEvent, useMemo, useState } from 'react'
 
 export const PaginationTable = ({
   currentPage,
-  updatePage,
   pageSize,
   total,
   setPage,
   className,
 }: {
   currentPage: number
-  updatePage: any
   pageSize: number
   total: number
-  setPage: any
+  setPage: (page: number) => void
   className?: string
 }) => {
   const [inputValue, setInputValue] = useState(currentPage)
@@ -27,17 +25,6 @@ export const PaginationTable = ({
     const remainder = total % pageSize
     return remainder && total > pageSize ? quotient + 1 : quotient
   }, [total, pageSize])
-
-  const handleJumpDownPage = () => {
-    if (currentPage <= 5) {
-      setPage(1)
-    } else setPage(currentPage - 5)
-  }
-  const handleJumpUpPage = () => {
-    if (currentPage >= totalPage - 5) {
-      setPage(totalPage)
-    } else setPage(currentPage + 5)
-  }
 
   const handleToPage = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target
@@ -51,6 +38,13 @@ export const PaginationTable = ({
     if (inputValue > 0) {
       setPage(inputValue)
     } else return
+  }
+
+  const handleChangePage = (page: number) => {
+    if (page < totalPage + 1) {
+      setPage(page)
+      setInputValue(page)
+    }
   }
 
   const renderPaginationItem = (
@@ -82,7 +76,7 @@ export const PaginationTable = ({
           pageSize={pageSize}
           current={currentPage}
           total={total}
-          onChange={updatePage}
+          onChange={handleChangePage}
           itemRender={renderPaginationItem}
           className="flex items-center"
           showSizeChanger={true}
@@ -91,7 +85,7 @@ export const PaginationTable = ({
       <div className="flex gap-2 items-center text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="max-w-6 bg-white rounded-lg text-center font-normal text-neutral-07 border border-[#EFEFEF] px-2 py-1"
+          className="max-w-6 bg-white rounded-lg text-center font-normal text-neutral-07 border border-[#EFEFEF]  py-1"
           onBlur={handleBlur}
           onChange={handleToPage}
         />

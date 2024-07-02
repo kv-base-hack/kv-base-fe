@@ -74,7 +74,6 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
           <PaginationTable
             currentPage={page}
             className="mt-4"
-            updatePage={handleChangePage}
             pageSize={limit}
             total={total}
             setPage={handleChangePage}

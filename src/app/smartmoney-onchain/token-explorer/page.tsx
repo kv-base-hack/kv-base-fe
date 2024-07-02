@@ -45,7 +45,6 @@ export default function TokenExplorer() {
           <PaginationTable
             className="mt-8"
             currentPage={page}
-            updatePage={() => null}
             pageSize={perPage}
             total={10}
             setPage={setPage}

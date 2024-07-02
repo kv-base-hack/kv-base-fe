@@ -30,7 +30,6 @@ export const SignalTriggered = ({ id }: { id: string }) => {
       <PaginationTable
         className="mt-8"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={total}
         setPage={setPage}

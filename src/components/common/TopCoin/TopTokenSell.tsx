@@ -55,7 +55,6 @@ export const TopTokenSell = () => {
       <PaginationTable
         className="mt-8"
         currentPage={page}
-        updatePage={(page: number) => setPage(page)}
         pageSize={perPage}
         total={total}
         setPage={setPage}
