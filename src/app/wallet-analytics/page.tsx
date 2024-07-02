@@ -88,8 +88,8 @@ export default function WalletAnalytics() {
                 listToken={listToken}
                 setListToken={setListToken}
               >
-                <div className="rounded-3xl h-10 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
-                  <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 text-white">
+                <div className="rounded-xl h-10 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
+                  <div className="bg-neutral-07 cursor-pointer rounded-xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 text-white">
                     Specific Token
                   </div>
                 </div>

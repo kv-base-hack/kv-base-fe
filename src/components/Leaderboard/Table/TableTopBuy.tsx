@@ -116,7 +116,7 @@ export const TableTopBuy = ({
         },
         cell: ({ row }) => {
           const { volume } = row.original
-          return <div>{nFormatter(volume)}</div>
+          return <div>${nFormatter(volume)}</div>
         },
         align: 'center',
       },

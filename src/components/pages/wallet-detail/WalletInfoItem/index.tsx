@@ -132,7 +132,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
               {loading ? (
                 <Skeleton className="w-20 h-4 rounded-full" />
               ) : spent ? (
-                `${nFormatter(spent)}`
+                `$${nFormatter(spent)}`
               ) : (
                 '-'
               )}

@@ -72,7 +72,7 @@ html {
 .rc-pagination-item {
   color: var(--Neutral-04, #6f767e);
   cursor: pointer;
-  font-family: 'Sora';
+  font-family: "Sora", sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;

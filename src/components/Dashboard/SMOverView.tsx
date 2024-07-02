@@ -90,7 +90,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                   : 'text-semantic-error-1',
               )}
             >
-              {nFormatter(totalEarning)}
+              ${nFormatter(totalEarning)}
             </p>
           )}
         </CardContent>

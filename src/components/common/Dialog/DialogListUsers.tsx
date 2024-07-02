@@ -85,10 +85,10 @@ export const DialogUsers = ({
             >
               PNL:
               <p>
+                $
                 {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
                   ? numeral(pnl).format('0,0.[000000]')
                   : nFormatter(pnl)}
-                $
               </p>
             </div>
           )

@@ -130,7 +130,7 @@ export const TableInsiderBuy = ({
         align: 'center',
         cell: ({ row }) => {
           const { total_spent } = row.original
-          return <div>{nFormatter(total_spent)}</div>
+          return <div>${nFormatter(total_spent)}</div>
         },
       },
       {

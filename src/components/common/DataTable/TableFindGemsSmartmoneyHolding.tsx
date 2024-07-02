@@ -109,7 +109,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         ),
         cell: ({ row }) => {
           const { total_spent_3d } = row.original
-          return <div>{nFormatter(total_spent_3d)}</div>
+          return <div>${nFormatter(total_spent_3d)}</div>
         },
         align: 'center',
       },
@@ -248,7 +248,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         ),
         cell: ({ row }) => {
           const { realized_percent } = row.original
-          return realized_percent === 0 ? (
+          return !realized_percent || realized_percent === 0 ? (
             <div className="text-neutral-07 text-sm not-italic leading-5">
               -
             </div>

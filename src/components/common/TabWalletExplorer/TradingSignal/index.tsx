@@ -147,7 +147,7 @@ export const TradingSignal = () => {
                   : ''
               }
             >
-              {realized.toFixed(2)}
+              {realized ? realized?.toFixed(2) : '-'}
             </div>
           )
         },

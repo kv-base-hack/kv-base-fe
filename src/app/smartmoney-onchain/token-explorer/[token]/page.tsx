@@ -227,7 +227,7 @@ export default function TokenExplorerDetail({
                         <div>SM BUY VOL</div>
                       </div>
                       <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                        {nFormatter(dataTokenInfo?.buy_volume || 0)}
+                        ${nFormatter(dataTokenInfo?.buy_volume || 0)}
                       </div>
                     </div>
                     <div className="flex flex-col flex-1 items-end py-px pl-20">
@@ -235,7 +235,7 @@ export default function TokenExplorerDetail({
                         <div>SM SELL VOL</div>
                       </div>
                       <div className="self-end mt-1 text-base font-medium leading-6 text-neutral-07">
-                        {nFormatter(dataTokenInfo?.sell_volume || 0)}
+                        ${nFormatter(dataTokenInfo?.sell_volume || 0)}
                       </div>
                     </div>
                   </div>

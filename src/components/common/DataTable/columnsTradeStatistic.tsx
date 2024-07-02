@@ -67,7 +67,7 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { total_spent } = row.original
-      return <div>{nFormatter(total_spent)}</div>
+      return <div>${nFormatter(total_spent)}</div>
     },
   },
   {
