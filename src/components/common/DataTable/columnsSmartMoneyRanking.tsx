@@ -51,10 +51,10 @@ export const columnsSmartMoneyRanking = (
       accessorKey: 'roi_3d',
       header: () => {
         return (
-          <span>
-            <span>ROI 3D of</span>
+          <div className="flex items-center gap-1">
+            <div>ROI 3D of</div>
             {tokenNode}
-          </span>
+          </div>
         )
       },
       enableSorting: false,
@@ -62,7 +62,10 @@ export const columnsSmartMoneyRanking = (
         const { roi_3d_token = 0 } = row.original
         return (
           <div
-            className={roi_3d_token < 0 ? 'text-error-500' : 'text-success-500'}
+            className={cn(
+              'px-1.5',
+              roi_3d_token < 0 ? 'text-error-500' : 'text-success-500',
+            )}
           >
             {(roi_3d_token < 0.001 && roi_3d_token > 0) ||
             (roi_3d_token > -0.001 && roi_3d_token < 0)
@@ -76,10 +79,10 @@ export const columnsSmartMoneyRanking = (
       accessorKey: 'pnl_3d',
       header: () => {
         return (
-          <span>
-            <span>PnL 3D of</span>
+          <div className="flex items-center gap-1">
+            <div>PnL 3D of</div>
             {tokenNode}
-          </span>
+          </div>
         )
       },
       enableSorting: false,
@@ -87,7 +90,10 @@ export const columnsSmartMoneyRanking = (
         const { pnl_3d_token } = row.original
         return (
           <div
-            className={pnl_3d_token < 0 ? 'text-error-500' : 'text-success-500'}
+            className={cn(
+              'px-1.5',
+              pnl_3d_token < 0 ? 'text-error-500' : 'text-success-500',
+            )}
           >
             {pnl_3d_token ? `$${nFormatter(pnl_3d_token)}` : '-'}
           </div>
@@ -123,7 +129,12 @@ export const columnsSmartMoneyRanking = (
       cell: ({ row }) => {
         const { pnl } = row.original
         return (
-          <div className={pnl < 0 ? 'text-error-500' : 'text-success-500'}>
+          <div
+            className={cn(
+              'px-1.5',
+              pnl < 0 ? 'text-error-500' : 'text-success-500',
+            )}
+          >
             {pnl ? `$${nFormatter(pnl)}` : '-'}
           </div>
         )
@@ -135,25 +146,39 @@ export const columnsSmartMoneyRanking = (
       enableSorting: false,
       cell: ({ row }) => {
         const { total_balance } = row.original
-        return <div>{total_balance ? `${nFormatter(total_balance)}` : '-'}</div>
+        return (
+          <div className="px-1.5">
+            {total_balance ? `$${nFormatter(total_balance)}` : '-'}
+          </div>
+        )
       },
     },
     {
       accessorKey: 'balance_of',
-      header: () => <span>Balance of {tokenNode}</span>,
+      header: () => (
+        <div className="flex items-center gap-1">Balance of {tokenNode}</div>
+      ),
       enableSorting: false,
       cell: ({ row }) => {
         const { balance_of_token } = row.original
         return (
-          <div>
-            {balance_of_token ? `${nFormatter(balance_of_token)}` : '-'}
+          <div className="px-1.5">
+            {balance_of_token ? `$${nFormatter(balance_of_token)}` : '-'}
           </div>
         )
       },
     },
     {
       accessorKey: '24h_balance_change',
-      header: () => <span>24h Balance change of {tokenNode}</span>,
+      header: () => (
+        <div className="flex items-center gap-1">
+          <div>
+            <div>24h Balance</div>
+            <div> change of</div>
+          </div>
+          {tokenNode}
+        </div>
+      ),
       enableSorting: false,
       cell: ({ row }) => {
         const { balance_change_24h } = row.original
@@ -180,7 +205,9 @@ export const columnsSmartMoneyRanking = (
     {
       accessorKey: 'number_of_token_trade',
       enableSorting: false,
-      header: () => <span># of trade {tokenNode}</span>,
+      header: () => (
+        <div className="flex items-center gap-1"># of trade {tokenNode}</div>
+      ),
       cell: ({ row }) => {
         const { number_of_token_trade } = row.original
         return (

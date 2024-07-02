@@ -30,7 +30,7 @@ function formatNumber(number: number) {
 export const formatPriceNumber = (value: number | undefined) => {
   if (!value) return '-'
   if (value > 10000 || value < -10000) {
-    return `${nFormatter(value)}$`
+    return `$${nFormatter(value)}`
   }
   if (value < 0.00001) {
     return formatNumber(value)

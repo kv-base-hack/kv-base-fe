@@ -124,7 +124,7 @@ export const TableNewListingBuy = ({
         },
         cell: ({ row }) => {
           const { total_spent } = row.original
-          return <>{nFormatter(total_spent)}</>
+          return <>${nFormatter(total_spent)}</>
         },
         align: 'center',
       },

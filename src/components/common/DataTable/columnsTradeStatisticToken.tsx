@@ -92,7 +92,7 @@ export const ColumnsTradeStatisticToken = (setSort: (v: string) => void) => {
         },
         cell: ({ row }) => {
           const { realized_percent } = row.original
-          return realized_percent === 0 ? (
+          return !realized_percent || realized_percent === 0 ? (
             '-'
           ) : (
             <div>
@@ -120,7 +120,7 @@ export const ColumnsTradeStatisticToken = (setSort: (v: string) => void) => {
         },
         cell: ({ row }) => {
           const { volume } = row.original
-          return <div>{nFormatter(volume)}</div>
+          return <div>${nFormatter(volume)}</div>
         },
       },
     ]

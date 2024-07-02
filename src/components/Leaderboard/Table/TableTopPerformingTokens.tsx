@@ -145,10 +145,12 @@ export const TablePerformanceToken = () => {
         ),
         cell: ({ row }) => {
           const { realized } = row.original
-          return (
+          return realized ? (
             <div className="flex w-full justify-start">
               {numeral(realized).format('0,0.[00]')}%
             </div>
+          ) : (
+            <div>-</div>
           )
         },
       },

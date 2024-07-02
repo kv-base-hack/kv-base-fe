@@ -81,7 +81,7 @@ export const TokenInfo = ({
                 <div>SM BUY VOL</div>
               </div>
               <div className="text-sm font-medium leading-6 text-neutral-07">
-                {loading ? null : nFormatter(volume_buy || 0)}
+                {loading ? null : `$${nFormatter(volume_buy || 0)}`}
               </div>
             </div>
             <div className="flex flex-col flex-1 items-end pl-20">
@@ -89,7 +89,7 @@ export const TokenInfo = ({
                 <div>SM SELL VOL</div>
               </div>
               <div className="self-end text-sm font-medium leading-6 text-neutral-07">
-                {loading ? null : nFormatter(volume_sell || 0)}
+                {loading ? null : `$${nFormatter(volume_sell || 0)}`}
               </div>
             </div>
           </div>

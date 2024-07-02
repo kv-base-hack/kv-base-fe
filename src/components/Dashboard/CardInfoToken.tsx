@@ -6,6 +6,7 @@ import { renderPrice } from '@/lib/utils/renderPrice'
 import Image from 'next/image'
 import numeral from 'numeral'
 import { ImageToken } from '../common/Image/ImageToken'
+import { formatPriceNumber } from '@/utils/formatPriceNumber'
 
 type CardInfoProps = {
   image_url: string
@@ -109,11 +110,7 @@ export const CardInfo = ({
               Realized %
             </p>
             <p className="text-[15px] leading-6 font-medium text-neutral-01">
-              {realized_percent ? (
-                <>{numeral(realized_percent).format('0,0.[00]')}%</>
-              ) : (
-                '-'
-              )}
+              {realized_percent ? <>{realized_percent.toFixed(2)}%</> : '-'}
             </p>
           </div>
         </div>

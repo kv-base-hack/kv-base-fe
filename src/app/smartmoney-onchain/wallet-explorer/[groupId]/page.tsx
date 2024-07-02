@@ -219,7 +219,7 @@ export default function WalletExplorerDetail({
                     <Skeleton />
                   </div>
                 ) : (
-                  <>{nFormatter(userBalance?.total_balance || 0)}$</>
+                  <>${nFormatter(userBalance?.total_balance || 0)}</>
                 )}
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function WalletExplorerDetail({
                         <Skeleton />
                       </div>
                     ) : (
-                      <>{nFormatter(userInfo?.pnl || 0)}$</>
+                      <>${nFormatter(userInfo?.pnl || 0)}</>
                     )}
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export default function WalletExplorerDetail({
                         <Skeleton />
                       </div>
                     ) : (
-                      <> {nFormatter(userInfo?.volume_24h || 0)}$</>
+                      <>${nFormatter(userInfo?.volume_24h || 0)}</>
                     )}
                   </div>
                 </div>

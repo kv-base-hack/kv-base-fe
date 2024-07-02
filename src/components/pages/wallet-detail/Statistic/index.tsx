@@ -186,7 +186,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         },
         cell: ({ row }) => {
           const { volume } = row.original
-          return <div>{nFormatter(volume)}</div>
+          return <div>${nFormatter(volume)}</div>
         },
         align: 'end',
       },
