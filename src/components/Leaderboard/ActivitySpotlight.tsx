@@ -145,7 +145,7 @@ const Card = ({
                 <Skeleton className="w-[140px] h-[14px] rounded-lg" />
               ) : (
                 <p className="text-xs text-neutral-04 text-medium">
-                  {moment(item.signal_time).fromNow()}
+                  {moment(item.block_timestamp).fromNow()}
                 </p>
               )}
             </div>

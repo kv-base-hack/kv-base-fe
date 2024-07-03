@@ -52,12 +52,10 @@ const renderToken = (
   return (
     <a
       href={`/smartmoney-onchain/token-explorer/${token}?chain=${chain}`}
-      className="flex "
+      className="flex gap-1"
     >
       <ImageToken symbol={symbol} imgUrl={image_url} />
-      <span className=" text-[#0C68E9] hover:underline font-semibold">
-        {upperCase(symbol)}
-      </span>
+      <span className="underline font-semibold">{upperCase(symbol)}</span>
     </a>
   )
 }
