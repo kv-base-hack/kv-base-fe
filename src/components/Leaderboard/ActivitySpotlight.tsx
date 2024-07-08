@@ -62,7 +62,10 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
         <div className="flex justify-between gap-4 h-full">
           {dataSpotlight.map((item, i) => {
             return dataSpotlightQuery.isFetching ? (
-              <div className="w-[345px] h-[156px] overflow-hidden rounded-[20px]">
+              <div
+                key={i}
+                className="w-[345px] h-[156px] overflow-hidden rounded-[20px]"
+              >
                 <Skeleton />
               </div>
             ) : (

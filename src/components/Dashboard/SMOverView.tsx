@@ -56,7 +56,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
     useSMNewListingBuyQuery({
       limit: 5,
       start: 1,
-      chain: 'solana',
+      chain: CHAIN,
       duration: '24h',
       sort_by: '',
     }),
