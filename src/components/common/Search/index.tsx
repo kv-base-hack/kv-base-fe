@@ -70,7 +70,7 @@ export const SearchComp = () => {
   }
 
   useEffect(() => {
-    const data = localStorage?.getItem('recently_searched')
+    const data = window?.localStorage?.getItem('recently_searched')
     let tokenData: any = []
     if (data) {
       tokenData = JSON.parse(data)
@@ -91,21 +91,24 @@ export const SearchComp = () => {
               tokenData.pop()
             }
             setDataRecently(tokenData)
-            localStorage.setItem('recently_searched', JSON.stringify(tokenData))
+            window?.localStorage.setItem(
+              'recently_searched',
+              JSON.stringify(tokenData),
+            )
           }
         })
     }
   }, [listTokenQuery?.data?.data?.tokens])
 
   useEffect(() => {
-    const data = localStorage.getItem('recently_searched')
+    const data = window?.localStorage?.getItem('recently_searched')
     if (data) {
       setDataRecently(JSON.parse(data))
     }
   }, [])
 
   const handleRemoveAllRecently = () => {
-    localStorage.removeItem('recently_searched')
+    window?.localStorage.removeItem('recently_searched')
     setDataRecently([])
   }
 
