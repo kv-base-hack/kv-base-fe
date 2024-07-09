@@ -71,6 +71,7 @@ const config: Config = {
         '2xl': '1560px',
         '3xl': '1700px',
       },
+
     },
   },
   plugins: [require('tailwindcss-animate')],

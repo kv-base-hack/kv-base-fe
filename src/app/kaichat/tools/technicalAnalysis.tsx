@@ -8,6 +8,7 @@ import { getTokenList } from '@/services/api'
 import { BotMessage } from '@/components/common'
 import { nanoid } from '@/lib/utils'
 import { CHAIN_X } from '@/constant/chain'
+import { Button } from '@/components/ui/button'
 
 const parameters = z.object({
   symbol: z
@@ -80,6 +81,8 @@ export const createTechnicalAnalysisTool: CreateToolFunction = (aiState) => {
           interval,
         )
 
+        console.log('taResp', taResp)
+
         aiState.done({
           chatId: aiState.get().chatId,
           messages: [
@@ -145,9 +148,13 @@ export const createTechnicalAnalysisTool: CreateToolFunction = (aiState) => {
         })
 
         return (
-          <BotMessage
-            content={`Sorry, I can't find the technical analysis of ${symbol}`}
-          />
+          <>
+            <BotMessage
+              content={`There is currently no Technical Indicator data about this token, please try other tokens with larger capitalization and liquidity`}
+            />
+            <Button>Technical analyst of ETH in 1h timeframe</Button>
+            <Button>Technical analyst of BTC in 1h timeframe</Button>
+          </>
         )
       }
     },

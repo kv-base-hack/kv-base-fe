@@ -2,23 +2,18 @@
 'use client'
 
 import { TokenList } from '@/types/tokenList'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BotMessage } from '../../common'
 import { TokenItem } from '../../common/Search/TokenItem'
 import { runAnalysis } from './action'
-import {
-  StreamableValue,
-  readStreamableValue,
-  useActions,
-  useUIState,
-} from 'ai/rsc'
+import { StreamableValue, useActions, useUIState } from 'ai/rsc'
 import { AI } from '@/app/kaichat/action'
 import { TokenInfo } from '@/components/common/Message/TokenInfo'
 import { SkeletonText } from '@/components/common/Skeleton/SkeletonText'
-import { CHAIN_X } from '@/constant/chain'
 import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
+import { LogoChat } from '@/components/shared/icons/LogoChat'
 
 interface TokenListProps {
   symbol: string
@@ -89,7 +84,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
   }
 
   return (
-    <div className="px-6">
+    <div className="py-6">
       <h2 className="text-neutral-07 font-semibold text-base">
         Please choose token you want to Analyze
       </h2>
@@ -103,23 +98,30 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
         ))}
       </div>
       {selectedToken ? (
-        <div>
-          <TokenInfo
-            imgUrl={selectedToken.imageUrl}
-            name={selectedToken.name}
-            symbol={selectedToken.symbol}
-            usdPrice={selectedToken.usdPrice}
-            price_24h={selectedToken.price_24h}
-            volume_buy={smTokenSummary?.buy_volume || 0}
-            volume_sell={smTokenSummary?.sell_volume || 0}
-            avg_entry={smTokenSummary?.avg_price_smart_money || 0}
-            number_sm_hold={smTokenSummary?.number_of_smart_money_hold || 0}
-            unusual_buy={smTokenSummary?.number_of_unusual_buy}
-            loading={smTokenSummaryQuery.isFetching}
-            address={selectedToken.tokenAddress}
-          />
-          <div>
-            {analysis ? <BotMessage content={analysis} /> : <SkeletonText />}
+        <div className="flex items-start gap-4 mt-8">
+          <LogoChat className="w-8 h-8 shrink-0" />
+          <div className="w-full">
+            <TokenInfo
+              imgUrl={selectedToken.imageUrl}
+              name={selectedToken.name}
+              symbol={selectedToken.symbol}
+              usdPrice={selectedToken.usdPrice}
+              price_24h={selectedToken.price_24h}
+              volume_buy={smTokenSummary?.buy_volume || 0}
+              volume_sell={smTokenSummary?.sell_volume || 0}
+              avg_entry={smTokenSummary?.avg_price_smart_money || 0}
+              number_sm_hold={smTokenSummary?.number_of_smart_money_hold || 0}
+              unusual_buy={smTokenSummary?.number_of_unusual_buy}
+              loading={smTokenSummaryQuery.isFetching}
+              address={selectedToken.tokenAddress}
+            />
+            <div>
+              {analysis ? (
+                <BotMessage content={analysis} isLogo={false} />
+              ) : (
+                <SkeletonText />
+              )}
+            </div>
           </div>
         </div>
       ) : null}

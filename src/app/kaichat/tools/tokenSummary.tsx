@@ -18,7 +18,7 @@ export const createSmartMoneyAnalystTool = (
 ): RenderTool => {
   return {
     description:
-      'Show information of token and provide smart moeny data analyst of token',
+      'Show information of token and provide smart money data analyst of token',
     parameters,
     generate: async function* ({ symbol }: z.infer<typeof parameters>) {
       yield <SkeletonTokenInfo />

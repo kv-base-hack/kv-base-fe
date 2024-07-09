@@ -5,12 +5,7 @@ import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
 import { TagMovement } from '@/components/common/Tags/Movement'
 import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
-import { cn } from '@/lib/utils'
 import { nFormatter } from '@/lib/utils/nFormatter'
-import {
-  renderMovementIcon,
-  renderMovementName,
-} from '@/lib/utils/renderIconMovement'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { SmartMoneyTransaction } from '@/types'
 import { ColumnDef } from '@tanstack/react-table'

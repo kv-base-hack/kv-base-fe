@@ -16,6 +16,12 @@ import { createTopSmartMoneyTradingTool } from './tools/topSmartMoneyTrading'
 import { createActivityOfTopSmartMoneyTradingTool } from './tools/activityOfSmartMoney'
 import { createTechnicalAnalysisTool } from './tools/technicalAnalysis'
 import { createMarketNewsTool } from './tools/marketNews'
+import { createAnalyzeWalletTool } from './tools/analyzeWallet'
+import { createShouldBuyTokensTool } from './tools/shouldBuyTokens'
+import { LogoChat } from '@/components/shared/icons/LogoChat'
+import { createSmartMoneyNewListingBuyTool } from './tools/smartMoneyNewListingBuy'
+import { createSmartMoneyTopBuysTool } from './tools/smartMoneyTopBuys'
+import { createInsiderBuy } from './tools/insiderBuy'
 
 async function submitUserMessage(content: string) {
   'use server'
@@ -37,13 +43,14 @@ async function submitUserMessage(content: string) {
   let textStream: undefined | ReturnType<typeof createStreamableValue<string>>
   let textNode: undefined | React.ReactNode
 
-  console.log(...aiState.get().messages)
-
   const result = await streamUI({
     model: openai('gpt-3.5-turbo'),
     initial: (
-      <div className="flex items-start">
-        <DotLoading />
+      <div className="flex items-start gap-4 py-8">
+        <LogoChat className="w-8 h-8 shrink-0" />
+        <div className="flex items-start">
+          <DotLoading />
+        </div>
       </div>
     ),
     system: `\
@@ -55,6 +62,11 @@ async function submitUserMessage(content: string) {
     4. If the user inquires about Smart Money transactions for a token, call the \`smart_money_transactions\` function to display the "Smart Money Transactions" UI for the specified token.
     5. If the user asks about top Smart Money trading for a token, call the \`top_smart_money_trading\` function to show the "Top Smart Money Trading" UI for the given token.
     6. If the user requests information on the activity of top Smart Money trading for a token, call the \`activity_of_top_smart_money_trading\` function to present the "Activity of Top Smart Money Trading" UI for the token in question.
+    7. If the user requests analyze wallet by address, call the \`analyze_wallet\` function to show the analysis of the wallet.
+    8. If the user requests about what tokens they should buy, call the \`should_buy_tokens\` function to provide a list of tokens that they should consider buying.
+    9. If the user inquires about Smart Money New Listing Buy, call the \`smart_money_new_listing_buy\` function to display the "Smart Money New Listing Buy" UI for the specified token on chain.
+    10. If the user inquires about Smart Money Top Buys, call the \`smart_money_top_buys\` function to display the "Smart Money Top Buys" UI for the specified token on chain.
+    11. If the user inquires about Insider Buy, call the \`insider_buy\` function to display the "Insider Buy" UI for the specified token on chain.
 
     In the UI, messages enclosed in square brackets [] indicate a UI element or a user event. For example:
     - "[Information of SOL]" signifies that the SOL token information interface is being shown to the user.
@@ -105,6 +117,11 @@ async function submitUserMessage(content: string) {
       topSmartMoneyTrading: createTopSmartMoneyTradingTool(aiState),
       activityOfSmartMoneyTrading:
         createActivityOfTopSmartMoneyTradingTool(aiState),
+      walletAnalyze: createAnalyzeWalletTool(aiState),
+      shouldBuyTokens: createShouldBuyTokensTool(aiState),
+      smartMoneyNewListingBuy: createSmartMoneyNewListingBuyTool(aiState),
+      smartMoneyTopBuys: createSmartMoneyTopBuysTool(aiState),
+      insiderBuy: createInsiderBuy(aiState),
     },
   })
 

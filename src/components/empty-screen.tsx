@@ -87,9 +87,9 @@ export function EmptyScreen({
                   ? ''
                   : 'hover:underline',
               )}
-              // onClick={async () => {
-              //   submitMessage(message.message)
-              // }}
+              onClick={async () => {
+                submitMessage(message.message)
+              }}
             >
               <div
                 className={cn(

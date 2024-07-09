@@ -154,7 +154,7 @@ export default function Home() {
                       tabIndex={0}
                       onKeyDown={onKeyDown}
                       placeholder="Message..."
-                      className="w-full min-h-[48px] pl-12 pr-4 py-4 resize-none focus-within:outline-none text-base placeholder:text-base bg-[#F4F4F4] backdrop-blur rounded-[48px] border border-white/10 placeholder:text-[#6F767E]/80"
+                      className="w-full min-h-[48px] pl-12 pr-4 py-4 resize-none focus-within:outline-none text-neutral-07 text-base placeholder:text-base bg-[#F4F4F4] backdrop-blur rounded-[48px] border border-white/10 placeholder:text-[#6F767E]/80"
                       autoFocus
                       spellCheck={false}
                       autoComplete="off"

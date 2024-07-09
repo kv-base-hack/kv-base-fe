@@ -161,8 +161,6 @@ export const TableInsiderBuy = ({
     setPage(page)
   }
 
-  console.log(page)
-
   return (
     <CardCommon>
       <TitleCard

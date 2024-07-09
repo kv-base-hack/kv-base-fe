@@ -42,7 +42,7 @@ export const TokenInfo = ({
   const percentSell = (volume_sell * 100) / (volume_buy + volume_sell)
 
   return (
-    <div className="flex items-center justify-between px-6 py-4 bg-[#EFEFEF] rounded-[20px] border border-white/10 mt-8 mb-4">
+    <div className="flex items-center justify-between px-6 py-3 bg-[#EFEFEF] rounded-full border border-white/10 mb-4 w-full">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-3">
           <ImageToken imgUrl={imgUrl} symbol={symbol} className="w-10 h-10" />

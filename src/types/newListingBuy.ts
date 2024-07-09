@@ -21,6 +21,7 @@ export interface NewListingBuy {
   market_cap: number
   fdv: number
   total_spent: number
+  users?: any[]
 }
 
 export interface NewListingBuyResponse {

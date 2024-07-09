@@ -49,8 +49,6 @@ export const ChatHistory = ({
     setCurrentMessage(undefined)
   }
 
-  console.log(messagesHistory)
-
   return (
     <div className="h-full flex flex-col min-w-[300px] max-w-[340px] py-4 gap-3 border border-white/10 bg-neutral-01 rounded-2xl justify-between">
       <div className="border-b border-[#EFEFEF] px-4 pb-4 text-neutral-07 font-semibold text-[15px] leading-6">

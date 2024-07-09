@@ -7,13 +7,24 @@ import { useStreamableText } from '@/lib/hooks/use-streamable-text'
 import { StreamableValue } from 'ai/rsc'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
+import { LogoChat } from '../shared/icons/LogoChat'
+import Image from 'next/image'
 
 // Different types of message bubbles.
 
 export function UserMessage({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-start p-6 text-xs xl:text-base font-normal text-neutral-07 rounded-[20px] bg-[#D6D9DC]/5">
-      {children}
+    <div className="flex items-start gap-4">
+      <Image
+        src={'/images/user-avatar.png'}
+        alt="user"
+        width={32}
+        height={32}
+        className="rounded-full bg-[#BBCEC5]"
+      />
+      <div className="flex flex-start text-xs xl:text-base font-normal text-neutral-07">
+        {children}
+      </div>
     </div>
   )
 }
@@ -21,30 +32,35 @@ export function UserMessage({ children }: { children: React.ReactNode }) {
 export function BotMessage({
   content,
   className,
+  isLogo = true,
 }: {
   content: string | StreamableValue<string>
   className?: string
+  isLogo?: boolean
 }) {
   const text = useStreamableText(content)
   return (
-    <div
-      className={cn(
-        'group relative flex flex-col items-start justify-start text-xs xl:text-base p-6 bg-neutral-01 text-neutral-07 rounded-[20px]',
-        className,
-      )}
-    >
-      <MemoizedReactMarkdown
-        className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
-        remarkPlugins={[remarkGfm, remarkMath]}
-        components={{
-          p({ children }) {
-            // @ts-ignore
-            return <p className="mb-2 last:mb-0">{children}</p>
-          },
-        }}
+    <div className="flex items-start gap-4 my-8">
+      {isLogo && <LogoChat className="w-8 h-8 shrink-0" />}
+      <div
+        className={cn(
+          'group relative flex flex-col items-start justify-start text-xs xl:text-base bg-neutral-01 text-neutral-07 rounded-[20px]',
+          className,
+        )}
       >
-        {text}
-      </MemoizedReactMarkdown>
+        <MemoizedReactMarkdown
+          className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+          remarkPlugins={[remarkGfm, remarkMath]}
+          components={{
+            p({ children }) {
+              // @ts-ignore
+              return <p className="mb-2 last:mb-0">{children}</p>
+            },
+          }}
+        >
+          {text}
+        </MemoizedReactMarkdown>
+      </div>
     </div>
   )
 }
