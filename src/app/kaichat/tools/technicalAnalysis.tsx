@@ -27,7 +27,6 @@ export const createTechnicalAnalysisTool: CreateToolFunction = (aiState) => {
       symbol,
       interval,
     }: z.infer<typeof parameters>) {
-      console.log({ symbol, interval })
       yield <SkeletonMessageSmartMoney />
 
       const searchResp = await getTokenList({
@@ -114,8 +113,6 @@ export const createTechnicalAnalysisTool: CreateToolFunction = (aiState) => {
 
         return <TechnicalAnalysis data={taResp.data} />
       } catch (e) {
-        console.log(e)
-
         aiState.done({
           chatId: aiState.get().chatId,
           messages: [
