@@ -34,7 +34,7 @@ const RenderNumber = ({
   return (
     <div
       className={cn(
-        value > 0 ? 'text-[#32AE60]' : value < 0 ? 'text-[#F04D1A]' : '',
+        value > 0 ? 'text-[#32AE60]' : value < 0 ? 'text-[#F04D1A]' : 'hidden',
         className,
       )}
     >
@@ -86,15 +86,17 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div className="flex flex-wrap gap-x-1">
           {renderWallet(sender, CHAIN)}
-          has bought{' '}
+          has bought
           <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span> of
           {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
           {renderPrice(price)} His avg price is{' '}
           <RenderNumber value={avg_price}>
             {renderPrice(avg_price)}
           </RenderNumber>{' '}
-          and <RenderNumber value={pnl}>{nFormatter(pnl)}</RenderNumber> PnL
-          with ROI <RenderNumber value={roi}>{roi?.toFix(2)}</RenderNumber>
+          <span className={pnl ? '' : 'hidden'}>and</span>
+          <RenderNumber value={pnl}>{nFormatter(pnl)}</RenderNumber>{' '}
+          <span className={pnl ? '' : 'hidden'}>PnL with ROI</span>{' '}
+          <RenderNumber value={roi}>{roi?.toFix(2)}</RenderNumber>
         </div>
       )
     case 'withdraw':
@@ -123,17 +125,23 @@ export const ContentSpotlight = ({ item }: any) => {
           </span>
           His avg price is
           <span className="text-semibold text-[#F04D1A]">
-            {nFormatter(avg_price)}
+            {renderPrice(avg_price)}
           </span>
-          and
-          <span className="text-semibold text-[#F04D1A]">
+          <span className={pnl ? '' : 'hidden'}>and</span>
+          <span
+            className={cn('text-semibold text-[#F04D1A]', pnl ? '' : 'hidden')}
+          >
             {nFormatter(pnl)}
           </span>
-          PnL with ROI{' '}
+          <span className={pnl ? '' : 'hidden'}>PnL with ROI</span>
           <span
             className={cn(
               'text-semibold ',
-              roi > 0 ? 'text-[#32AE60]' : roi < 0 ? 'text-[#F04D1A]' : '',
+              roi > 0
+                ? 'text-[#32AE60]'
+                : roi < 0
+                ? 'text-[#F04D1A]'
+                : 'hidden',
             )}
           >
             {nFormatter(roi)}
@@ -160,7 +168,14 @@ export const ContentSpotlight = ({ item }: any) => {
             ${nFormatter(value_in_usdt)}
           </span>{' '}
           at {renderPrice(price)}.{' '}
-          <div className="flex flex-wrap gap-x-1">
+          <div
+            className={cn(
+              'flex-wrap gap-x-1',
+              Boolean(token_age) && Boolean(price_change_24h)
+                ? 'flex'
+                : 'hidden',
+            )}
+          >
             <span>This token is</span>
             {token_age && <> created {moment(token_age).fromNow()}</>}
             24h Price % is
@@ -192,7 +207,14 @@ export const ContentSpotlight = ({ item }: any) => {
               {renderPrice(avg_price)}
             </>
           </div>
-          <div className="flex flex-wrap gap-x-1">
+          <div
+            className={cn(
+              'flex-wrap gap-x-1',
+              Boolean(token_age) && Boolean(price_change_24h)
+                ? 'flex'
+                : 'hidden',
+            )}
+          >
             <span>This token is</span>
             {token_age && <> created {moment(token_age).fromNow()}</>}
             24h Price % is

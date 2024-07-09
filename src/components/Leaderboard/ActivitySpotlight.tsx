@@ -99,7 +99,7 @@ const Card = ({
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 rounded-[20px] p-4 w-full',
+        'flex flex-col gap-2 rounded-[20px] p-4 w-full min-h-[150px]',
         item.action === 'buying' || item.action === 'withdraw'
           ? 'bg-[#E1F1FF]'
           : item.action === 'selling' || item.action === 'deposit'
