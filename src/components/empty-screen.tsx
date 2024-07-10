@@ -122,7 +122,7 @@ export function EmptyScreen({
               </div>
               <div
                 className={cn(
-                  'w-full h-full absolute bg-[#EEE]/60 rounded-[20px] z-10 cursor-not-allowed right-[0.5px]',
+                  'w-full h-full absolute bg-[#EEE]/60 rounded-[20px] z-10 cursor-not-allowed right-0 top-0',
                   message.message === 'Whitepaper Analysis'
                     ? 'visible'
                     : 'hidden',
