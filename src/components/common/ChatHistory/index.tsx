@@ -3,51 +3,19 @@
 import { MessageHistory } from './message-history'
 import { useAtom } from 'jotai'
 import { messageAtom } from '@/atom/message'
-import { useState } from 'react'
-import SearchIcon from '@/components/shared/icons/SearchIcon'
 
 export const ChatHistory = ({
-  messages,
+  setCurrentMessage,
   setMessages,
+  currentMessage,
+  onCreateNewChat,
 }: {
-  messages: any[]
+  setCurrentMessage: (v: number) => void
   setMessages: any
+  currentMessage: number | undefined
+  onCreateNewChat: () => void
 }) => {
-  const [messagesHistory, setMessagesHistory] = useAtom<any[]>(messageAtom)
-  const [currentMessage, setCurrentMessage] = useState<number>()
-
-  const totalMessages = messagesHistory.length || 0
-
-  const updateMessageHistory = (index: number, newContent: any) => {
-    const oldMessage = [...messagesHistory]
-
-    if (oldMessage[index]) {
-      oldMessage[index] = messages
-    }
-
-    setMessagesHistory(oldMessage)
-  }
-
-  const handleCreateNewChat = () => {
-    if (typeof currentMessage !== 'undefined') {
-      updateMessageHistory(currentMessage, messages)
-    } else {
-      const newMessages = [...messagesHistory, messages]
-      setMessagesHistory(newMessages)
-    }
-
-    setCurrentMessage(undefined)
-    setMessages([])
-  }
-
-  const onCreateNewChat = () => {
-    if (messages.length === 0) return
-    if (totalMessages === 20) {
-      setMessagesHistory(messagesHistory.shift())
-    }
-    handleCreateNewChat()
-    setCurrentMessage(undefined)
-  }
+  const [messagesHistory] = useAtom<any[]>(messageAtom)
 
   return (
     <div className="h-full flex flex-col min-w-[300px] max-w-[340px] py-4 gap-3 border border-white/10 bg-neutral-01 rounded-2xl justify-between">
