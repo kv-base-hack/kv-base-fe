@@ -13,8 +13,8 @@ const exampleMessages = [
     message: 'News Analysic of market today',
   },
   {
-    heading: 'Technical analyst of ERTH in 1h timeframe',
-    message: 'Technical analyst of ERTH in 1h timeframe',
+    heading: 'Technical analyst of ETH in 1h timeframe',
+    message: 'Technical analyst of ETH in 1h timeframe',
   },
   {
     heading: 'Whitepaper Analysis of LDO',
@@ -72,7 +72,7 @@ export function EmptyScreen({
         </div>
         <div className="grid grid-cols-2 gap-4 w-full">
           {messageColor.map((message, index) => (
-            <Button
+            <div
               key={index}
               className={cn(
                 'h-auto p-3 border border-[#EFEFEF] rounded-[20px] text-neutral-07 text-lg font-bold flex items-center gap-4 relative',
@@ -83,9 +83,7 @@ export function EmptyScreen({
                   : index === 2
                   ? 'bg-[#F5EDFA]'
                   : 'bg-[#c8dcf7]',
-                message.message === 'Whitepaper Analysis'
-                  ? ''
-                  : 'hover:underline',
+                message.message === 'Whitepaper Analysis',
               )}
               onClick={async () => {
                 submitMessage(message.message)
@@ -124,13 +122,13 @@ export function EmptyScreen({
               </div>
               <div
                 className={cn(
-                  'w-full h-full absolute bg-[#EEE]/60 rounded-[20px] z-10 cursor-not-allowed',
+                  'w-full h-full absolute bg-[#EEE]/60 rounded-[20px] z-10 cursor-not-allowed right-[0.5px]',
                   message.message === 'Whitepaper Analysis'
                     ? 'visible'
                     : 'hidden',
                 )}
               ></div>
-            </Button>
+            </div>
           ))}
         </div>
 
