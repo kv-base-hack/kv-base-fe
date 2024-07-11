@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useTradeFirstTimeQuery } from '@/query/wallet-explorer/getUserTradeFirstTime'
 import { SelectDuration } from '@/components/common/SelectDuration'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 
 export const FirstTimeBuy = ({
   address,
@@ -12,8 +13,7 @@ export const FirstTimeBuy = ({
   address: string
   chain: string
 }) => {
-  const [start, setStart] = useState(0)
-  const [page, setPage] = useState(1)
+  const [start, setStart] = useState(1)
   const [duration, setDuration] = useState('72h')
 
   const tradeStatisticTokensQuery = useQuery(
@@ -29,29 +29,14 @@ export const FirstTimeBuy = ({
 
   const getVisibleItems = () => {
     const startIndex = start
-    const endIndex = startIndex + 3
+    const endIndex = startIndex + 2
     return tradeStatisticTokens?.slice(startIndex, endIndex)
   }
 
   const totalToken = tradeStatisticTokens?.length || 1
-  const totalPage = Math.ceil(totalToken / 3)
-
-  const nextPage = () => {
-    if (page < totalPage) {
-      setStart(start + 3)
-      setPage(page + 1)
-    }
-  }
-
-  const prevPage = () => {
-    if (page > 1) {
-      setStart(start - 3)
-      setPage(page - 1)
-    }
-  }
 
   const dataFirstTimeBuy = tradeStatisticTokensQuery.isFetching
-    ? [...(Array(3).keys() as any)]
+    ? [...(Array(2).keys() as any)]
     : getVisibleItems()
 
   return (
@@ -64,10 +49,10 @@ export const FirstTimeBuy = ({
         <SelectDuration duration={duration} setDuration={setDuration} />
       </div>
       {(dataFirstTimeBuy?.length as number) > 0 ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 h-full w-full">
+        <div className="flex items-center gap-2 h-full w-full">
           {dataFirstTimeBuy?.map((token, i) => {
             return (
-              <div key={i} className="col-span-1">
+              <div key={i} className="w-full">
                 <WalletInfoItem
                   imgUrl={token.imageUrl}
                   symbol={token.symbol}
@@ -90,6 +75,13 @@ export const FirstTimeBuy = ({
           No results
         </div>
       )}
+      <PaginationTable
+        className="mt-2"
+        currentPage={start}
+        pageSize={2}
+        total={totalToken}
+        setPage={setStart}
+      />
     </div>
   )
 }

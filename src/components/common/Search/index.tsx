@@ -130,7 +130,7 @@ export const SearchComp = () => {
   return (
     <div
       ref={ref}
-      className="flex justify-end w-[400px] max-w-[400px] lg:max-w-[200px] relative wrap-box rounded-full wrap-box"
+      className="flex lg:max-w-[600px] w-full relative wrap-box rounded-[20px] wrap-box"
     >
       <div
         className={cn(
@@ -154,7 +154,7 @@ export const SearchComp = () => {
         </div>
       </div>
       {openSearch ? (
-        <div className="absolute top-[60px] max-h-[500px] overflow-y-auto w-screen -right-1/2 md:w-full lg:min-w-[400px] md:right-0 no-scrollbar scroll-smooth ">
+        <div className="absolute top-[60px] max-h-[500px] overflow-y-auto w-screen -right-1/2 md:w-full lg:min-w-[500px] md:right-0 no-scrollbar scroll-smooth ">
           {search ? (
             <div className="">
               <div className="flex flex-col justify-center p-4 rounded-2xl border border-white/10 border-solid bg-stone-900 w-full">
@@ -190,7 +190,7 @@ export const SearchComp = () => {
                       <div
                         key={index}
                         onClick={handleNavigateWalletDetail(wallet)}
-                        className="flex gap-3.5 justify-between self-stretch px-4 py-3 rounded-xl max-w-[585px] max-md:flex-wrap"
+                        className="flex gap-3.5 justify-between self-stretch py-3 rounded-xl max-w-[585px] max-md:flex-wrap"
                       >
                         <div className="flex gap-3 items-center">
                           <div className="shrink-0 self-stretch my-auto w-2 h-2 bg-purple-500 rounded-full" />
@@ -202,7 +202,9 @@ export const SearchComp = () => {
                         </div>
                         <div className="flex gap-5 justify-between text-sm font-semibold tracking-normal leading-6 text-right text-green-500">
                           <div className="text-base tracking-normal text-stone-300">
-                            <span className="text-gray-500">Volume 24h.</span>{' '}
+                            <span className="text-gray-500 whitespace-nowrap">
+                              Volume 24h
+                            </span>{' '}
                             <span className="text-stone-300">
                               {nFormatter(wallet.volume_24h)}
                             </span>
@@ -217,7 +219,9 @@ export const SearchComp = () => {
                           >
                             ROI: {wallet.roi_percent?.toFixed(2)}%
                           </div>
-                          <div>PNL: {nFormatter(wallet?.pnl)}</div>
+                          <div className="text-base">
+                            PNL: {nFormatter(wallet?.pnl)}
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -247,53 +251,6 @@ export const SearchComp = () => {
                   </div>
                 ))}
               </div>
-              {/* <div className="flex gap-3 self-start mt-4 tracking-normal text-zinc-400">
-                <WalletIcon />
-                <div>Popular wallet search</div>
-              </div>
-              <div className="flex gap-3 mt-3 tracking-normal text-white max-md:flex-wrap">
-                <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />
-                <div className="flex-1 max-md:max-w-full">Binance 12</div>
-              </div>
-              <div className="flex gap-3 mt-3 tracking-normal text-white max-md:flex-wrap">
-                <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />
-                <div className="flex-1 max-md:max-w-full">DWF Lab 1</div>
-              </div>
-              <div className="flex gap-3 mt-3 tracking-normal text-white whitespace-nowrap max-md:flex-wrap">
-                <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />
-                <span className="whitespace-pre-wrap">
-                  0xda9dfa...ff26f6ea73cf
-                </span>
-              </div>
-              <div className="flex gap-3 self-start mt-4 tracking-normal text-zinc-400">
-                <Image
-                  loading="lazy"
-                  src="/images/bot.png"
-                  className="shrink-0 aspect-square"
-                  alt="bot"
-                  width={24}
-                  height={26}
-                />
-                <div>Popular KAI AI question</div>
-              </div>
-              <div className="flex gap-3 mt-3 tracking-normal text-white max-md:flex-wrap">
-                <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />
-                <div className="flex-1 max-md:max-w-full">
-                  Make a analysis of SOL today
-                </div>
-              </div>
-              <div className="flex gap-3 mt-3 tracking-normal text-white max-md:flex-wrap">
-                <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />
-                <div className="flex-1 max-md:max-w-full">
-                  Technical analyst of JUP in the latest 1 days
-                </div>
-              </div>
-              <div className="flex gap-3 mt-3 tracking-normal text-white max-md:flex-wrap">
-                <SearchIcon className="shrink-0 my-auto w-4 aspect-square" />
-                <div className="flex-1 max-md:max-w-full">
-                  What token Smart Money is buying in 24h
-                </div>
-              </div> */}
               <div className="flex gap-3 mt-4 tracking-normal text-zinc-400 max-md:flex-wrap">
                 <div className="flex-1 max-md:max-w-full">Recent search</div>
                 <div

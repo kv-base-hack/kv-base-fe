@@ -38,7 +38,6 @@ export const CardInfo = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1">
           <div className="w-2.5 h-2.5 rounded-full bg-success-500"></div>
-
           <ImageToken imgUrl={image_url} symbol={symbol} className="w-6 h-6" />
           <div className="text-xl text-white font-semibold ml-2">{symbol}</div>
         </div>

@@ -150,9 +150,9 @@ export const CardAISignal = ({
           {loading ? (
             <Skeleton className="w-[100px] h-[14px] rounded-lg " />
           ) : (
-            <p className="text-neutral-07 text-xl font-medium">
+            <div className="text-neutral-07 text-xl font-medium">
               {renderPrice(item.entry)}
-            </p>
+            </div>
           )}
         </div>
         <div className="flex items-center justify-between">
@@ -164,9 +164,9 @@ export const CardAISignal = ({
           {loading ? (
             <Skeleton className="w-[100px] h-[14px] rounded-lg" />
           ) : (
-            <p className="text-xl font-medium flex items-center text-neutral-07">
+            <div className="text-xl font-medium flex items-center text-neutral-07">
               {renderPrice(item.target_min)}-{renderPrice(item.target_max)}
-            </p>
+            </div>
           )}
         </div>
         <div className="flex items-center justify-between">

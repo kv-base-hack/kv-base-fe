@@ -22,7 +22,6 @@ export const ImageToken = ({
         const img = new Image()
         img.onload = () => setTmpSrc(src)
         img.onerror = () => setTmpSrc(null)
-        img.src = src
       }
     }
   }, [imgUrl, symbol])
@@ -72,6 +71,7 @@ export const ImageToken = ({
       alt={`${symbol} icon`}
       width={24}
       height={24}
+      unoptimized
     />
   )
 }
