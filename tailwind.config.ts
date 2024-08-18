@@ -24,6 +24,8 @@ const config: Config = {
           'linear-gradient(239deg, #5B599A 9.01%, #5C958C 48.59%, #5EBC75 85.68%)',
         'gradient-btn':
           'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
+        'conic-gradient':
+          'conic-gradient(from -90deg at 50% 50%, #B7CFFF 0deg, #0355FD 360deg)'
       },
       colors: {
         brand: '#0C68E9',
@@ -40,7 +42,7 @@ const config: Config = {
         'semantic-error-3': '#FF6A55',
         'success-500': '#34C759',
         'error-500': '#FF3B30',
-        background: '#050505',
+        background: '#111218',
         header: '#1F1F1F',
         'neutral-00': '#FFFFFF',
         'neutral-01': '#FCFCFC',
@@ -61,6 +63,12 @@ const config: Config = {
         'neutral-shades-0475': '#9A9FA5',
         'yellow-border': '#7E7244',
         'black-300': '#DADCE0',
+        disabled: '#98A2B3',
+        core: '#15FFAB',
+        green: '#32AE60',
+        red: '#F04D1A',
+        'blue-purple': '#8338EC',
+        marengo: '#5B5B65',
       },
       boxShadow: {
         'chat-ai':

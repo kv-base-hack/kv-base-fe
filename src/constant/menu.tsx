@@ -1,5 +1,9 @@
 export const MENU = [
   {
+    url: '/smart-traders',
+    menu: 'Smart Traders',
+  },
+  {
     url: '/smartmoney-onchain/dashboard',
     menu: 'Dashboard',
   },
@@ -15,10 +19,7 @@ export const MENU = [
     url: '/tracking',
     menu: 'Tracking',
   },
-  {
-    url: '/leaderboard',
-    menu: 'Leaderboard',
-  },
+
   {
     url: '/kaichat',
     menu: 'Kaichat',

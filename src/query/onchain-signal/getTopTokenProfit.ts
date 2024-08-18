@@ -1,5 +1,4 @@
 import { getTopTokenProfit } from '@/services/api'
-import { useQuery } from '@tanstack/react-query'
 
 const GET_TOP_TOKEN_PROFIT = 'GET_TOP_TOKEN_PROFIT'
 
@@ -15,12 +14,16 @@ export const useTopTokenProfitQuery = ({
   start: number
   chain: string
   sort_by?: string
-}) =>
-  useQuery({
-    queryKey: [
-      GET_TOP_TOKEN_PROFIT,
-      { duration, limit, start, chain, sort_by },
-    ],
-    queryFn: () =>
-      getTopTokenProfit({ duration, limit, start, chain, sort_by }),
-  })
+}) => ({
+  queryKey: [GET_TOP_TOKEN_PROFIT, { duration, limit, start, chain, sort_by }],
+  queryFn: async () => {
+    const result = await getTopTokenProfit({
+      duration,
+      limit,
+      start,
+      chain,
+      sort_by,
+    })
+    return result.data
+  },
+})

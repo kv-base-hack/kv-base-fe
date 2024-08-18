@@ -1,11 +1,12 @@
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { SortIcon } from '@/components/shared/icons/SortIcon'
-import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import { Leaderboard } from '@/types/leaderboard'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
-import moment from 'moment'
 import Link from 'next/link'
+import numeral from 'numeral'
+import Image from 'next/image'
+import { ImageRanking } from '../Image/image-ranking'
+import { TooltipWallet } from '../Tooltip/tooltip-wallet'
 
 export const columnsLeaderboard = (
   page: number,
@@ -27,19 +28,48 @@ export const columnsLeaderboard = (
       header: () => (
         <div className="flex items-center gap-2">
           <div>Smart Money</div>
-          <SortMultipleIcon className="h-4 w-4" />
         </div>
       ),
       enableSorting: false,
       cell: ({ row }) => {
-        const { user_address } = row.original
+        const { user_address, ranking } = row.original
         return (
-          <Link
-            className="w-32 truncate"
-            href={`/smartmoney-onchain/wallet-explorer/${user_address || '1'}`}
-          >
-            {user_address}
-          </Link>
+          <TooltipWallet data={row.original}>
+            <div className="flex items-center gap-1">
+              <ImageRanking ranking={ranking} size={16} />
+              <Link
+                className="max-w-32 truncate text-neutral-300 underline"
+                href={`/smartmoney-onchain/wallet-explorer/${user_address}`}
+              >
+                {user_address}
+              </Link>
+            </div>
+          </TooltipWallet>
+        )
+      },
+    },
+    {
+      accessorKey: 'badges',
+      header: () => {
+        return <div>Badges</div>
+      },
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { badges } = row.original
+        return (
+          <div className="flex gap-1">
+            {badges?.map((badge, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={`/images/badges/${badge}.png`}
+                  alt={badge}
+                  width={16}
+                  height={16}
+                />
+              )
+            })}
+          </div>
         )
       },
     },
@@ -57,9 +87,7 @@ export const columnsLeaderboard = (
       cell: ({ row }) => {
         const { roi } = row.original
         return (
-          <div className="text-success-500">
-            {roi ? `${roi.toFixed(2)}%` : '-'}
-          </div>
+          <div className="text-green">{roi ? `${roi.toFixed(2)}%` : '-'}</div>
         )
       },
     },
@@ -71,16 +99,32 @@ export const columnsLeaderboard = (
           className="whitespace-nowrap"
           role="button"
         >
-          Net Profit
+          Total Profit
         </div>
       ),
       cell: ({ row }) => {
         const { net_profit } = row.original
         return (
-          <div className="text-success-500">
+          <div className="text-green">
             {net_profit ? `$${nFormatter(net_profit)}` : '-'}
           </div>
         )
+      },
+    },
+    {
+      accessorKey: 'win_rate',
+      header: () => (
+        <div
+          onClick={() => setSortBy('win_rate')}
+          className="whitespace-nowrap"
+          role="button"
+        >
+          Winrate
+        </div>
+      ),
+      cell: ({ row }) => {
+        const { win_rate_percent } = row.original
+        return <div>{numeral(win_rate_percent).format('0,0.[00]') || '-'}%</div>
       },
     },
     {
@@ -91,7 +135,7 @@ export const columnsLeaderboard = (
           className="whitespace-nowrap"
           role="button"
         >
-          Total Balance
+          Balance
         </div>
       ),
       cell: ({ row }) => {
@@ -103,7 +147,9 @@ export const columnsLeaderboard = (
     },
     {
       accessorKey: 'most_profitable_trade',
-      header: () => 'Most Profitable Trade',
+      header: () => {
+        return <div className="flex items-center gap-0.5">Most Profitable</div>
+      },
       enableSorting: false,
       cell: ({ row }) => {
         const { most_profit_token } = row.original
@@ -133,13 +179,11 @@ export const columnsLeaderboard = (
     },
     {
       accessorKey: 'current_largest_position',
-      header: () => (
-        <div className="w-full text-center">Current Largest Position</div>
-      ),
+      header: () => <div className="w-full text-center">Largest Hold</div>,
       enableSorting: false,
       cell: ({ row }) => {
         const { current_largest_position } = row.original
-        return current_largest_position?.symbol ? (
+        return current_largest_position ? (
           current_largest_position?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}`}
@@ -165,12 +209,12 @@ export const columnsLeaderboard = (
     },
     {
       accessorKey: 'most_bought_token_24h',
-      header: () => 'Most Bought Token (24h)',
+      header: () => 'Top Buy 24h',
       enableSorting: false,
       cell: ({ row }) => {
         const { most_token_buy } = row.original
-        return most_token_buy ? (
-          most_token_buy?.tokenAddress ? (
+        return [...Array(1).keys()].map((_, index) => {
+          return most_token_buy?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${most_token_buy?.tokenAddress}`}
               className="flex items-center justify-between gap-3 text-right"
@@ -190,57 +234,72 @@ export const columnsLeaderboard = (
               <div>{most_token_buy.symbol}</div>
             </div>
           )
-        ) : null
+        })
       },
     },
     {
-      accessorKey: 'most_sell_token_24h',
-      header: () => 'Most Sell Token (24h)',
+      accessorKey: 'most_gain_token_24h',
+      header: () => 'Most Gain 24h',
       enableSorting: false,
       cell: ({ row }) => {
-        const { most_token_sell } = row.original
-        return most_token_sell ? (
-          most_token_sell?.tokenAddress ? (
+        const { most_profit_token_24h } = row.original
+        return most_profit_token_24h ? (
+          most_profit_token_24h?.tokenAddress ? (
             <Link
-              href={`/smartmoney-onchain/token-explorer/${most_token_sell?.tokenAddress}`}
+              href={`/smartmoney-onchain/token-explorer/${most_profit_token_24h?.tokenAddress}`}
               className="flex items-center justify-between gap-3 text-right"
             >
               <ImageToken
-                imgUrl={most_token_sell?.imageUrl}
-                symbol={most_token_sell?.symbol}
+                imgUrl={most_profit_token_24h?.imageUrl}
+                symbol={most_profit_token_24h?.symbol}
               />
-              <div>{most_token_sell.symbol}</div>
+              <div>{most_profit_token_24h.symbol}</div>
             </Link>
           ) : (
             <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
-                imgUrl={most_token_sell?.imageUrl}
-                symbol={most_token_sell?.symbol}
+                imgUrl={most_profit_token_24h?.imageUrl}
+                symbol={most_profit_token_24h?.symbol}
               />
-              <div>{most_token_sell.symbol}</div>
+              <div>{most_profit_token_24h.symbol}</div>
             </div>
           )
         ) : null
       },
     },
     {
-      accessorKey: 'latest_trade',
-      header: () => (
-        <div
-          onClick={() => setSortBy('last_trade')}
-          className="whitespace-nowrap"
-          role="button"
-        >
-          Last Trade
-        </div>
-      ),
+      accessorKey: 'token_hold',
+      header: () => 'Tokens Hold',
+      enableSorting: false,
       cell: ({ row }) => {
-        const { last_trade } = row.original
-        return (
-          <div className="flex justify-end text-right text-neutral-04">
-            {moment(last_trade).fromNow()}
-          </div>
-        )
+        const { token_holds } = row.original
+        return token_holds?.map((token, index) => {
+          return token?.tokenAddress ? (
+            <Link
+              key={index}
+              href={`/smartmoney-onchain/token-explorer/${token?.tokenAddress}`}
+              className="flex items-center justify-between gap-3 text-right"
+            >
+              <ImageToken imgUrl={token?.imageUrl} symbol={token?.symbol} />
+            </Link>
+          ) : (
+            <div
+              key={index}
+              className="flex items-center justify-between gap-3 text-right"
+            >
+              <ImageToken imgUrl={token?.imageUrl} symbol={token?.symbol} />
+            </div>
+          )
+        })
+      },
+    },
+    {
+      accessorKey: 'number_of_trades',
+      header: () => <div className=""># of Trades</div>,
+      enableSorting: false,
+      cell: ({ row }) => {
+        const { total_trade } = row.original
+        return <div>{total_trade}</div>
       },
     },
   ]

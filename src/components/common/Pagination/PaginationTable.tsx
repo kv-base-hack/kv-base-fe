@@ -85,7 +85,7 @@ export const PaginationTable = ({
       <div className="flex items-center gap-2 text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="max-w-6 rounded-lg border border-[#EFEFEF] bg-white py-1 text-center font-normal text-neutral-07"
+          className="max-w-6 rounded-lg border py-1 text-center font-normal text-neutral-07"
           onBlur={handleBlur}
           onChange={handleToPage}
         />

@@ -6,8 +6,8 @@ const SkeletonCell = (props: any, width?: number, height?: number) => (
     width={width ? width : 69}
     height={height ? height : 12}
     viewBox="0 0 69 12"
-    backgroundColor="#D6D9DC"
-    foregroundColor="#ecebeb"
+    backgroundColor="rgba(255,255,255, 0.05)"
+    foregroundColor="rgba(255,255,255, 0.1)"
     {...props}
   >
     <rect x="1" y="0" rx="6" ry="6" width="68" height={height ? height : 12} />

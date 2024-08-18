@@ -2,9 +2,10 @@ import { InsiderBuyResponse } from '@/types/insiderBuy'
 import { LeaderboardResponse } from '@/types/leaderboard'
 import { NewListingBuyResponse } from '@/types/new-listing-buy'
 import { TopSmartMoneyTradeUsersListProps } from '@/types/smartmoney'
-import { SpotlightResp } from '@/types/spotlight'
+import { DataLeaderboardSpotlight } from '@/types/spotlight'
 import { TokenListResponse } from '@/types/tokenList'
 import { TopTokenBuyResponse } from '@/types/top-token-buy'
+import { DataTopTokenProfit } from '@/types/top-token-profit'
 import { TopActivityResponse } from '@/types/topActivity'
 import { TopTokenProfitResponse } from '@/types/topTokenProfit'
 import { DexTradingSignalResponse } from '@/types/tradingSignal'
@@ -55,7 +56,7 @@ export const getDexTradingSignal = async ({
   })
 }
 
-export const getTopTokenProfit = async ({
+export const getTopTokenProfit = ({
   limit = 10,
   duration = '24h',
   start = 1,
@@ -67,14 +68,14 @@ export const getTopTokenProfit = async ({
   duration?: string
   chain: string
   sort_by?: string
-}): Promise<TopTokenProfitResponse> => {
-  return await api.get('/v1/token/smart_money_token_profit', {
+}) => {
+  return api.get<DataTopTokenProfit>('/v1/token/smart_money_token_profit', {
     params: {
       limit,
       start,
       chain,
       duration,
-      sort_by: sort_by,
+      sort_by,
     },
   })
 }
@@ -374,11 +375,26 @@ export const getSpotlight = ({
   limit: number
   start: number
 }) => {
-  return api.get<SpotlightResp>('/v1/spotlight', {
+  return api.get('/v1/spotlight', {
     params: {
       chain,
       limit,
       start,
+    },
+  })
+}
+
+export const getLeaderboardSpotlight = ({
+  chain,
+  duration,
+}: {
+  chain: string
+  duration: string
+}) => {
+  return api.get<DataLeaderboardSpotlight>('/v1/leaderboard/spotlight', {
+    params: {
+      chain,
+      duration,
     },
   })
 }

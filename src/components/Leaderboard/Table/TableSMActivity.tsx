@@ -6,7 +6,6 @@ import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
-import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import { TagMovement } from '@/components/common/Tags/Movement'
 import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import Close from '@/components/shared/icons/Close'
@@ -229,11 +228,7 @@ export const TableSMActivity = () => {
       >
         <div className="flex items-center gap-4 text-neutral-04">
           <p className="text-sm font-semibold text-neutral-04">Filter by</p>
-          <DialogSelectToken listToken={listToken} setListToken={setListToken}>
-            <button className="my-auto whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2">
-              Specific Token
-            </button>
-          </DialogSelectToken>
+
           {listToken?.length > 0 ? (
             <div className="flex items-center gap-2">
               {listToken.map((item) => (

@@ -11,8 +11,19 @@ export interface Leaderboard {
   most_token_buy: MostTokenBuy
   most_token_sell: MostTokenSell
   most_profit_token: MostProfitToken
+  most_profit_token_24h: MostProfitToken24h
   last_trade: string
   total_balance: number
+  pnl_of_3d_trades: number
+  volume_24h: number
+  point: number
+  badges: string[]
+  ranking: string
+  win_rate_percent: number
+  buy_trade: number
+  sell_trade: number
+  total_trade: number
+  token_holds: TokenHold[]
 }
 
 export interface CurrentLargestPosition {
@@ -26,6 +37,8 @@ export interface CurrentLargestPosition {
   imageUrl: string
   dexId: string
   url: string
+  volumeH24: number
+  fdv: number
   priceChangeM5: number
   priceChangeH1: number
   priceChangeH2: number
@@ -34,6 +47,12 @@ export interface CurrentLargestPosition {
   priceChangeH24: number
   liquidity_usd: number
   pair_address: string
+  websites: string[]
+  discord_url: string
+  telegram_handle: string
+  twitter_handle: string
+  updated_at: string
+  created_at: string
 }
 
 export interface MostTokenBuy {
@@ -47,6 +66,8 @@ export interface MostTokenBuy {
   imageUrl: string
   dexId: string
   url: string
+  volumeH24: number
+  fdv: number
   priceChangeM5: number
   priceChangeH1: number
   priceChangeH2: number
@@ -55,6 +76,12 @@ export interface MostTokenBuy {
   priceChangeH24: number
   liquidity_usd: number
   pair_address: string
+  websites: string[]
+  discord_url: string
+  telegram_handle: string
+  twitter_handle: string
+  updated_at: string
+  created_at: string
 }
 
 export interface MostTokenSell {
@@ -68,6 +95,8 @@ export interface MostTokenSell {
   imageUrl: string
   dexId: string
   url: string
+  volumeH24: number
+  fdv: number
   priceChangeM5: number
   priceChangeH1: number
   priceChangeH2: number
@@ -76,6 +105,12 @@ export interface MostTokenSell {
   priceChangeH24: number
   liquidity_usd: number
   pair_address: string
+  websites: string[]
+  discord_url: string
+  telegram_handle: string
+  twitter_handle: string
+  updated_at: string
+  created_at: string
 }
 
 export interface MostProfitToken {
@@ -89,6 +124,8 @@ export interface MostProfitToken {
   imageUrl: string
   dexId: string
   url: string
+  volumeH24: number
+  fdv: number
   priceChangeM5: number
   priceChangeH1: number
   priceChangeH2: number
@@ -97,6 +134,70 @@ export interface MostProfitToken {
   priceChangeH24: number
   liquidity_usd: number
   pair_address: string
+  websites: string[]
+  discord_url: string
+  telegram_handle: string
+  twitter_handle: string
+  updated_at: string
+  created_at: string
+}
+
+export interface MostProfitToken24h {
+  usdPrice: number
+  tokenAddress: string
+  symbol: string
+  cex_symbol: string
+  name: string
+  chainId: string
+  sourcePrice: string
+  imageUrl: string
+  dexId: string
+  url: string
+  volumeH24: number
+  fdv: number
+  priceChangeM5: number
+  priceChangeH1: number
+  priceChangeH2: number
+  priceChangeH4: number
+  priceChangeH6: number
+  priceChangeH24: number
+  liquidity_usd: number
+  pair_address: string
+  websites: string[]
+  discord_url: string
+  telegram_handle: string
+  twitter_handle: string
+  updated_at: string
+  created_at: string
+}
+
+export interface TokenHold {
+  usdPrice: number
+  tokenAddress: string
+  symbol: string
+  cex_symbol: string
+  name: string
+  chainId: string
+  sourcePrice: string
+  imageUrl: string
+  dexId: string
+  url: string
+  volumeH24: number
+  fdv: number
+  priceChangeM5: number
+  priceChangeH1: number
+  priceChangeH2: number
+  priceChangeH4: number
+  priceChangeH6: number
+  priceChangeH24: number
+  liquidity_usd: number
+  pair_address: string
+  websites: string[]
+  discord_url: string
+  telegram_handle: string
+  twitter_handle: string
+  updated_at: string
+  created_at: string
 }
 
 export interface LeaderboardResponse {

@@ -17,6 +17,7 @@ import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { TokenList } from '@/types/tokenList'
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
+import { useQuery } from '@tanstack/react-query'
 
 export function DialogSelectToken({
   children,
@@ -40,11 +41,13 @@ export function DialogSelectToken({
   const [debounceSearch, setDebounceSearch] = useState('')
   const CHAIN = useAtomValue(chainAtom)
 
-  const listTokenQuery = useTokenListQuery({
-    symbol_search: debounceSearch,
-    chain: CHAIN,
-  })
-  const listTokenData = listTokenQuery.data?.data?.tokens || []
+  const listTokenQuery = useQuery(
+    useTokenListQuery({
+      symbol_search: debounceSearch,
+      chain: CHAIN,
+    }),
+  )
+  const listTokenData = listTokenQuery.data?.tokens || []
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
@@ -77,8 +80,11 @@ export function DialogSelectToken({
     }
   }
 
-  const handleApplySelect = () => {
-    if (setListToken && listToken) {
+  const handleApplySelect = (e: any) => {
+    if (tokens.length === 0) {
+      e.preventDefault()
+    }
+    if (setListToken && tokens.length > 0) {
       setListToken([...tokens])
     }
   }
@@ -86,34 +92,35 @@ export function DialogSelectToken({
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="z-[999999] !p-0">
-        <div className="flex max-w-[510px] flex-col rounded-lg border-none border-white/10 bg-zinc-900 py-4">
+      <DialogContent className="z-[999999] max-w-[433px] overflow-hidden rounded-[20px] !p-0">
+        <div className="flex max-w-[510px] flex-col rounded-[20px] border-none border-white/10 bg-black/50 py-4">
           <div className="flex w-full justify-between gap-5 px-4 text-xl font-bold leading-7 tracking-tight text-zinc-100 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
-            <div></div>
-            <div className="text-center">Select tokens</div>
+            <div />
+            <div className="flex justify-center font-[AoenikPro] text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-[#F4F4F4]">
+              Choose Tokens
+            </div>
             <DialogClose>
               <Close />
             </DialogClose>
           </div>
-          <div className="mt-4 flex flex-col justify-center bg-zinc-900 bg-opacity-30 px-4 text-base leading-6 tracking-tight text-gray-500 max-md:max-w-full">
-            <div className="flex justify-start gap-4 rounded-xl border border-solid border-white/10 bg-black bg-opacity-30 px-4 py-3.5 backdrop-blur-[50px] max-md:max-w-full max-md:flex-wrap">
+          <div className="mt-4 flex flex-col justify-center px-4 text-base leading-6 tracking-tight text-gray-500 max-md:max-w-full">
+            <div className="flex justify-start gap-2 rounded-3xl border-white/10 bg-white/10 px-3 py-2 max-md:max-w-full max-md:flex-wrap">
               <SearchIcon />
               <input
-                placeholder="Search token name or paste address"
-                className="h-6 w-full bg-transparent font-normal text-neutral-03 outline-none focus:outline-none"
+                placeholder="Search for tokens, address,..."
+                className="h-6 w-full bg-transparent font-normal text-disabled outline-none focus:outline-none"
                 value={search}
                 onChange={handleSearchChange}
               />
             </div>
           </div>
-          <div className="mt-4 h-px bg-white bg-opacity-10 max-md:max-w-full" />
           <div className="relative h-[500px] overflow-y-auto px-4 pb-16">
             {listTokenData?.map((token, index) =>
               token.tokenAddress && action === 'navigate' ? (
                 <DialogClose key={index} className="w-full cursor-pointer">
                   <div
                     onClick={handleNavigte(token)}
-                    className="mt-4 flex justify-between rounded-xl bg-zinc-800 p-4 max-md:max-w-full max-md:flex-wrap"
+                    className="mt-4 flex justify-between rounded-xl bg-zinc-800 p-2 max-md:max-w-full max-md:flex-wrap"
                   >
                     <div className="flex justify-between gap-4 whitespace-nowrap">
                       <ImageToken
@@ -143,7 +150,7 @@ export function DialogSelectToken({
                             className={cn(
                               'text-sm not-italic leading-5 text-neutral-dark-03',
                               token.price_24h > 0
-                                ? 'text-success-500'
+                                ? 'text-green'
                                 : 'text-error-500',
                             )}
                           >
@@ -160,61 +167,72 @@ export function DialogSelectToken({
                 <div
                   key={index}
                   className={cn(
-                    'mt-4',
+                    'mt-4 p-px',
                     tokens?.find(
                       (item) => item.tokenAddress === token.tokenAddress,
-                    ) &&
-                      'z-0 rounded-xl bg-gradient-to-b from-[#9945FF] to-[#14F195] p-px',
+                    )
+                      ? 'z-0 rounded-xl bg-gradient-to-b from-[#9945FF] to-[#14F195]'
+                      : 'rounded-xl hover:bg-white/5',
                   )}
                 >
                   <div
                     onClick={handleSelectToken(token)}
                     className={cn(
-                      'z-1 flex h-full w-full cursor-pointer justify-between rounded-xl p-4',
+                      'z-1 flex h-full w-full cursor-pointer justify-between rounded-xl',
                       tokens?.find(
                         (item) => item.tokenAddress === token.tokenAddress,
                       )
-                        ? 'bg-neutral-07'
+                        ? 'bg-black/90'
                         : '',
                     )}
                   >
-                    <div className="flex justify-between gap-4 whitespace-nowrap">
-                      <ImageToken
-                        imgUrl={token?.imageUrl}
-                        symbol={token?.symbol}
-                      />
-                      <div className="flex flex-1 flex-col">
-                        <div className="text-base font-bold leading-6 tracking-normal text-zinc-100">
-                          {token.symbol}
-                        </div>
-                        <div className="text-sm leading-4 tracking-normal text-gray-300">
-                          {token.name}
+                    <div
+                      className={cn(
+                        'z-1 flex h-full w-full cursor-pointer justify-between rounded-xl p-2',
+                        tokens?.find(
+                          (item) => item.tokenAddress === token.tokenAddress,
+                        )
+                          ? 'bg-[#15ffab0d]'
+                          : 'bg-transparent',
+                      )}
+                    >
+                      <div className="flex justify-between gap-4 whitespace-nowrap">
+                        <ImageToken
+                          imgUrl={token?.imageUrl}
+                          symbol={token?.symbol}
+                        />
+                        <div className="flex flex-1 flex-col">
+                          <div className="text-base font-bold leading-6 tracking-normal text-zinc-100">
+                            {token.symbol}
+                          </div>
+                          <div className="text-sm leading-4 tracking-normal text-gray-300">
+                            {token.name}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
-                      <div className="self-end text-base font-bold leading-6 tracking-normal text-zinc-100">
-                        {formatPriceNumber(token.usdPrice)}
-                      </div>
-                      <div className="flex items-center justify-between gap-2 text-sm leading-4 tracking-normal">
-                        {token.price_24h === 0 ? (
-                          <div className="text-sm not-italic leading-5 text-neutral-dark-03">
-                            -
-                          </div>
-                        ) : (
-                          <div
-                            className={cn(
-                              'text-sm not-italic leading-5 text-neutral-dark-03',
-                              token.price_24h > 0
-                                ? 'text-success-500'
-                                : 'text-error-500',
-                            )}
-                          >
-                            {token.price_24h > 0 ? '+' : ''}
-                            {token.price_24h.toFixed(2)}%
-                          </div>
-                        )}
-                        <div className="">24h</div>
+                      <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
+                        <div className="self-end text-base font-bold leading-6 tracking-normal text-zinc-100">
+                          {formatPriceNumber(token.usdPrice)}
+                        </div>
+                        <div className="flex items-center justify-between gap-2 text-sm leading-4 tracking-normal">
+                          {token.price_24h === 0 ? (
+                            <div className="text-sm not-italic leading-5 text-neutral-dark-03">
+                              -
+                            </div>
+                          ) : (
+                            <div
+                              className={cn(
+                                'text-sm not-italic leading-5 text-neutral-dark-03',
+                                token.price_24h > 0
+                                  ? 'text-green'
+                                  : 'text-error-500',
+                              )}
+                            >
+                              {token.price_24h > 0 ? '+' : ''}
+                              {token.price_24h.toFixed(2)}%
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -226,13 +244,22 @@ export function DialogSelectToken({
                 <div
                   onClick={handleApplySelect}
                   className={cn(
-                    'flex w-auto items-center justify-center rounded-full',
-                    tokens.length > 0 ? 'button-gradient' : 'bg-neutral-500',
+                    '"w-auto flex items-center justify-center rounded-3xl p-px shadow-lg backdrop-blur-[2px]',
+                    tokens.length > 0
+                      ? 'bg-gradient-to-r from-[#9945FF] to-[#14F195]'
+                      : 'cursor-not-allowed bg-white/10 text-disabled',
                   )}
                 >
-                  <span className="hidden h-12 items-center justify-center self-stretch rounded-full px-6 py-2 font-medium xl:flex">
-                    Select Token
-                  </span>
+                  <div
+                    className={cn(
+                      'flex h-full w-full items-center justify-center rounded-full py-3 font-medium',
+                      tokens.length > 0
+                        ? 'bg-black'
+                        : 'cursor-not-allowed text-disabled',
+                    )}
+                  >
+                    Choose Token
+                  </div>
                 </div>
               </DialogClose>
             </div>

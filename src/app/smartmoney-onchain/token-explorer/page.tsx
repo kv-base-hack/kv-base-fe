@@ -4,7 +4,7 @@ import { chainAtom } from '@/atom/chain'
 import { DataTable } from '@/components/common/DataTable'
 import { columnsListToken } from '@/components/common/DataTable/columnsListToken'
 import { WrapTableTab } from '@/components/common/DataTable/WrapTableTab'
-import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
+
 import { GroupHeader } from '@/components/common/GroupHeader'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
@@ -29,7 +29,6 @@ export default function TokenExplorer() {
         title="Token Explorer"
         desc="Enter a token name, contract address and explore in-depth dashboards with relevant price data, exchange inflow and outflow, holder analysis interactive graph, top transactions, top balance changes, and more!"
       ></GroupHeader>
-      <DialogSelectToken />
       {/* table */}
       <div className="mx-10 mt-4 pb-10">
         <WrapTableTab>

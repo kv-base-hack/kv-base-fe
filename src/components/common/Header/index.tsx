@@ -22,6 +22,10 @@ export const Header = ({
 
   const MENU = [
     {
+      url: '/smart-traders',
+      menu: 'Smart Traders',
+    },
+    {
       url: '/smartmoney-onchain/dashboard',
       menu: 'Dashboard',
     },
@@ -37,10 +41,7 @@ export const Header = ({
       url: '/tracking',
       menu: 'Tracking',
     },
-    {
-      url: '/leaderboard',
-      menu: 'Leaderboard',
-    },
+
     {
       url: '/kaichat',
       menu: 'Kaichat',
@@ -48,52 +49,50 @@ export const Header = ({
   ]
 
   return (
-    <div className="w-full px-8 py-4">
-      <div className="flex w-full items-center justify-between rounded-[48px] bg-header p-3 shadow-2xl max-md:flex-wrap max-md:px-5">
-        <Link href="/" className="flex items-center">
-          <Image
-            loading="lazy"
-            src="/assets/images/logo.svg"
-            className="w-[43px] shrink-0"
-            width={43}
-            height={47}
-            alt="logo"
-          />
-          <p className="font-sora hidden text-[32px] font-semibold leading-10 lg:block">
-            Kaivest
-          </p>
-        </Link>
+    <div className="flex items-center gap-3 bg-header px-4 py-2 max-md:px-5 md:gap-5">
+      <Link href="/" className="flex items-center gap-4">
+        <Image
+          loading="lazy"
+          src="/assets/images/logo.svg"
+          className="w-[36px] shrink-0"
+          width={36}
+          height={41}
+          alt="logo"
+        />
+        <p className="font-sora bg-conic-gradient hidden bg-clip-text text-[30px] font-medium leading-10 text-transparent lg:block">
+          KAIVEST
+        </p>
+      </Link>
 
-        <div className="hidden items-center gap-1 whitespace-nowrap xl:flex">
-          {MENU.map((i) => {
-            const isActive = pathname.includes(i.url?.split('?')[0])
-            return (
-              <MenuItem
-                key={i.url}
-                url={i.url}
-                menu={i.menu}
-                isActive={isActive}
-              />
-            )
-          })}
+      <div className="leading-6max-md:flex-wrap hidden w-full gap-8 px-2 py-1.5 text-base font-medium max-md:px-5 lg:flex lg:justify-center">
+        {MENU.map((i) => {
+          const isActive = pathname.includes(i.url?.split('?')[0])
+          return (
+            <MenuItem
+              key={i.url}
+              url={i.url}
+              menu={i.menu}
+              isActive={isActive}
+            />
+          )
+        })}
+        <SearchComp />
+      </div>
+
+      <div className="flex items-center justify-end gap-4">
+        <div className="flex shrink-0 items-stretch justify-between gap-4">
+          <Suspense fallback={<div>Loading...</div>}>
+            <SelectChain size="lg" showName={false} />
+          </Suspense>
         </div>
-
-        <div className="flex items-center justify-end gap-4">
-          <SearchComp />
-          <div className="flex shrink-0 items-stretch justify-between gap-4">
-            <Suspense fallback={<div>Loading...</div>}>
-              <SelectChain size="lg" showName={false} />
-            </Suspense>
-          </div>
-          <ButtonConnectWallet />
-          <div className="flex items-center justify-center !rounded-full bg-[#0080FF]">
-            <div
-              onClick={() => setNavbarOpen(!navbarOpen)}
-              className="flex h-8 w-8 items-center justify-center overflow-visible rounded-full lg:h-10 lg:w-10 xl:hidden"
-              role="button"
-            >
-              <MenuIcon />
-            </div>
+        <ButtonConnectWallet />
+        <div className="flex items-center justify-center !rounded-full bg-[#0080FF]">
+          <div
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="flex h-8 w-8 items-center justify-center overflow-visible rounded-full lg:h-10 lg:w-10 xl:hidden"
+            role="button"
+          >
+            <MenuIcon />
           </div>
         </div>
       </div>
@@ -114,8 +113,8 @@ const MenuItem = ({
     <Link
       href={url}
       className={cn(
-        'rounded-[48px] px-3 py-2 text-sm font-semibold transition-all duration-200 ease-in-out hover:bg-[#6f767e66] hover:text-neutral-01',
-        isActive ? 'bg-[#6f767e66] text-neutral-01' : 'text-neutral-04',
+        'my-auto !cursor-pointer self-stretch whitespace-nowrap',
+        isActive ? 'text-core' : 'text-disabled',
       )}
     >
       {menu}

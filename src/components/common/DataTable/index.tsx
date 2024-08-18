@@ -62,7 +62,7 @@ export function DataTable<TData, TValue>({
   return (
     <Table className={tableClassName}>
       <TableHeader
-        className={cn(noneBgHeader ? '' : 'bg-neutral-04', classNameHeader)}
+        className={cn(noneBgHeader ? '' : 'bg-neutral-06', classNameHeader)}
         style={{
           backgroundColor: noneBgHeader
             ? ''
@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
                   style={{ width: column.columnDef.size }}
                   key={id}
                   className={cn(
-                    'h-10 px-1.5',
+                    'h-10 px-1.5 first-of-type:pl-4 last-of-type:pr-4',
                     noneBorder
                       ? ''
                       : 'border-b-[0.5px] border-t-[0.5px] border-white/20',
@@ -89,7 +89,7 @@ export function DataTable<TData, TValue>({
                   {!isPlaceholder && (
                     <div
                       className={cn(
-                        'flex items-center gap-1 whitespace-nowrap text-xs font-normal text-neutral-04',
+                        'flex items-center gap-1 text-[15px] text-sm font-normal text-[#6F767E]',
                         align === 'end'
                           ? 'justify-end'
                           : align === 'center'
@@ -117,7 +117,8 @@ export function DataTable<TData, TValue>({
               data-state={row.getIsSelected() && 'selected'}
               className={cn(
                 rowClassName,
-                isFetching ? null : 'cursor-pointer hover:bg-neutral-02',
+                index % 2 === 0 ? 'bg-neutral-06/30' : 'bg-transparent',
+                isFetching ? null : 'cursor-pointer hover:bg-neutral-06/10',
               )}
             >
               {row.getVisibleCells().map((cell) => {
@@ -125,7 +126,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <TableCell
                     key={cell.id}
-                    className="border-t border-[#EFEFEF]"
+                    className="px-1.5 font-normal first-of-type:pl-4 last-of-type:pr-4"
                   >
                     {isFetching ? (
                       <div
@@ -143,7 +144,7 @@ export function DataTable<TData, TValue>({
                     ) : (
                       <div
                         className={cn(
-                          'flex w-full items-center text-sm font-semibold text-neutral-07',
+                          'flex w-full items-center',
                           contentClassName,
                           align === 'end'
                             ? 'justify-end'

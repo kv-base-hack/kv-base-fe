@@ -8,8 +8,7 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectMovement } from '@/components/common/Select/SelectMovements'
 import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
-import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
-import Close from '@/components/shared/icons/Close'
+
 import { Switch } from '@/components/ui/switch'
 import { useTradeActivityQuery } from '@/query/wallet-explorer/getTradeActivity'
 import { TokenList } from '@/types/tokenList'
@@ -81,14 +80,6 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
       childHeader={
         <div className="flex items-center gap-4 max-md:flex-wrap">
           <div className="flex items-center gap-2">
-            <DialogSelectToken
-              listToken={listToken}
-              setListToken={setListToken}
-            >
-              <button className="my-auto whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2 text-neutral-04">
-                Specific Token
-              </button>
-            </DialogSelectToken>
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
                 {listToken.map((item) => (

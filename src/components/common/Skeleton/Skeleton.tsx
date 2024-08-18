@@ -18,8 +18,8 @@ const Skeleton = ({
     width={width}
     height={height}
     viewBox={`0 0 ${width} ${height}`}
-    backgroundColor="#D6D9DC"
-    foregroundColor="#ecebeb"
+    backgroundColor="rgba(255,255,255, 0.05)"
+    foregroundColor="rgba(255,255,255, 0.1)"
     {...props}
   >
     <rect x="0" y="0" rx={rx} ry={ry} width={width} height={height} />

@@ -10,9 +10,7 @@ import { IntegratedTerminal } from '@/components/common/Swap'
 import { cn } from '@/lib/utils'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { TradingSignal } from '@/components/common/TabWalletExplorer/TradingSignal'
-import { ImageToken } from '@/components/common/Image/ImageToken'
-import MenuArrowDownIcon from '@/components/shared/icons/MenuArrowDown'
-import { DialogSelectToken } from '@/components/common/Dialog/DialogSelectToken'
+
 import { Transactions } from '@/components/common/TabWalletExplorer/Transactions'
 import { TopSmartMoney } from '@/components/common/TabWalletExplorer/TopSmartMoney'
 import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/ActivityOfTopSmartMoney'
@@ -132,21 +130,6 @@ export default function TokenExplorerDetail({
           <CardCommon>
             <div className="flex w-full justify-between gap-5 max-lg:flex-wrap">
               <div className="flex justify-between gap-5 whitespace-nowrap">
-                <DialogSelectToken action="navigate">
-                  <div className="flex cursor-pointer items-center gap-2 rounded-[360px] border border-solid border-white border-opacity-10 bg-gray-300 bg-opacity-10 px-4 py-2 text-xl font-bold leading-8 tracking-tight text-neutral-07 backdrop-blur-[50px]">
-                    <div className="flex gap-2">
-                      <ImageToken
-                        className="h-8 w-8 rounded-full"
-                        imgUrl={dataTokenInfo?.image_url}
-                        symbol={dataTokenInfo?.symbol}
-                      />
-                      <div className="text-neutral-07">
-                        {dataTokenInfo?.symbol}
-                      </div>
-                    </div>
-                    <MenuArrowDownIcon />
-                  </div>
-                </DialogSelectToken>
                 {/* <div className="flex flex-col items-start gap-2 justify-center my-auto text-sm tracking-normal leading-5">
                   <div className="flex items-center gap-2 px-px">
                     <div className="flex gap-1 justify-center px-px">

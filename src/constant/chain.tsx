@@ -1,1 +1,1 @@
-export const CHAIN_X = 'ethereum'
+export const CHAIN = 'base'

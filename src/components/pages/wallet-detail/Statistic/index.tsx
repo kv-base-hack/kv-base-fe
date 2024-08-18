@@ -5,7 +5,6 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { SelectDuration } from '@/components/common/SelectDuration'
-import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import { TokenSymbol } from '@/components/common/TokenSymbol'
 import { TooltipTokenInfo } from '@/components/common/Tooltip/TooltipTokenInfo'
 import TradeStatisticIcon from '@/components/shared/icons/wallet-explorer/TradeStatisticIcon'
@@ -201,14 +200,6 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
       childHeader={
         <div className="flex items-center gap-2">
           <div className="flex flex-wrap items-center gap-2">
-            <DialogSelectToken
-              listToken={listToken}
-              setListToken={setListToken}
-            >
-              <button className="my-auto whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2 text-neutral-04">
-                Specific Token
-              </button>
-            </DialogSelectToken>
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
                 {listToken.map((item) => (

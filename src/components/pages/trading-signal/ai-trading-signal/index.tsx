@@ -8,7 +8,6 @@ import { CardAISignal } from './CardAISignal'
 import Close from '@/components/shared/icons/Close'
 import { TokenList } from '@/types/tokenList'
 import { useQuery } from '@tanstack/react-query'
-import { DialogSelectToken } from '@/components/common/SelectTokens/DialogSelectTokens'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 
@@ -96,13 +95,6 @@ export const AiTradingSignal = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <DialogSelectToken listToken={listToken} setListToken={setListToken}>
-            <div className="h-10 rounded-xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
-              <div className="flex h-full cursor-pointer items-center justify-center rounded-xl bg-neutral-01 px-7 text-sm leading-5 tracking-normal text-neutral-07">
-                Specific Token
-              </div>
-            </div>
-          </DialogSelectToken>
           {listToken?.length > 0 ? (
             <div className="flex items-center gap-2">
               {listToken.map((item) => (
