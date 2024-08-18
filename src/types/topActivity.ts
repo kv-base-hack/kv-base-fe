@@ -22,6 +22,8 @@ export interface TopActivity {
   chainId: string
   tx: string
   scan_link: string
+  ranking: string
+  badges: string[]
 }
 
 export interface TopActivityResponse {

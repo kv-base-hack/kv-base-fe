@@ -52,10 +52,10 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
   return (
     <CardCommon>
       <TitleCard title="Activity Spotlight by AI" iconFirst={<IconFire />}>
-        {pathName.includes('/tracking') ? (
+        {pathName.includes('/activity') ? (
           ''
         ) : (
-          <LinkCustom url="/tracking" title="See all" />
+          <LinkCustom url="/activity" title="See all" />
         )}
       </TitleCard>
       <div className="flex h-full flex-col justify-between">

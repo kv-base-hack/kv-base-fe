@@ -16,8 +16,8 @@ export const MENU = [
     menu: 'Trading Signal',
   },
   {
-    url: '/tracking',
-    menu: 'Tracking',
+    url: '/activity',
+    menu: 'Activity',
   },
 
   {

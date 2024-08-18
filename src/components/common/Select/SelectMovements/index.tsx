@@ -51,7 +51,7 @@ const renderMovement = (chain: string) => {
     case 'new_listing_sell': {
       return {
         value: 'New Listing Sell',
-        icon: <NewListingSellIcon className="h-4 w-4 text-red-500" />,
+        icon: <NewListingSellIcon className="text-red-500 h-4 w-4" />,
       }
     }
     default: {
@@ -66,20 +66,30 @@ const renderMovement = (chain: string) => {
 export const SelectMovement = ({
   movement,
   setMovement,
+  setPage,
+  text = 'All Movements',
 }: {
   movement: string
   setMovement: (value: string) => void
+  setPage?: (val: number) => void
+  text?: string
 }) => {
   return (
-    <Select value={movement} onValueChange={(val: string) => setMovement(val)}>
-      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal">
-        <div className="flex items-center justify-between gap-2 text-neutral-04">
+    <Select
+      value={movement}
+      onValueChange={(val: string) => {
+        setMovement(val)
+        if (setPage) setPage(1)
+      }}
+    >
+      <SelectTrigger className="my-auto flex h-8 w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-0 text-sm font-medium leading-6 tracking-normal text-white">
+        <div className="flex items-center justify-between gap-2">
           {renderMovement(movement).icon}
           <div className="grow">{renderMovement(movement).value}</div>
         </div>
       </SelectTrigger>
-      <SelectContent className="z-[9999] border-none bg-white text-neutral-07">
-        <SelectItem value="all">All Movements</SelectItem>
+      <SelectContent className="z-[9999] border-none bg-neutral-07">
+        <SelectItem value="all">{text}</SelectItem>
         <SelectItem value="buying">
           <div className="flex items-center gap-2.5">
             <BuyingIcon className="h-4 w-4" />
@@ -100,7 +110,7 @@ export const SelectMovement = ({
         </SelectItem>
         <SelectItem value="new_listing_sell">
           <div className="flex items-center gap-2.5">
-            <NewListingSellIcon className="h-4 w-4 text-red-500" />
+            <NewListingSellIcon className="text-red-500 h-4 w-4" />
             <span>New Listing Sell</span>
           </div>
         </SelectItem>

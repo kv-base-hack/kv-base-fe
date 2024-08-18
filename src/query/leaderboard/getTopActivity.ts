@@ -1,4 +1,4 @@
-import { getTopActivity } from '@/services/leaderboard/api'
+import { getTopActivity } from '@/services/api'
 
 const GET_TOP_ACTIVITY = 'GET_TOP_ACTIVITY'
 
@@ -21,10 +21,16 @@ export const useTopActivityQuery = ({
 }) => ({
   queryKey: [
     GET_TOP_ACTIVITY,
-    { action, limit, start, chain, amount_filter, token_addresses, sort_by },
+    action,
+    limit,
+    start,
+    chain,
+    amount_filter,
+    token_addresses,
+    sort_by,
   ],
-  queryFn: () =>
-    getTopActivity({
+  queryFn: async () => {
+    const result = await getTopActivity({
       action,
       limit,
       start,
@@ -32,5 +38,7 @@ export const useTopActivityQuery = ({
       amount_filter,
       token_addresses,
       sort_by,
-    }),
+    })
+    return result.data
+  },
 })

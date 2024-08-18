@@ -28,6 +28,8 @@ const config: Config = {
           'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
         'gradient-card-ai':
           'radial-gradient(70.71% 70.71% at 50% 50%, ), rgba(11, 2, 23, 0.10);',
+        'conic-gradient-logo':
+          'conic-gradient(from -90deg at 50% 50%, #B7CFFF 0deg, #0355FD 360deg)'
       },
       colors: {
         'primary-1': '#E7F177',

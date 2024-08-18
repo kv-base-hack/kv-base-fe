@@ -1,3 +1,4 @@
+import { SpotlightResp } from '@/types/activity/spotlight'
 import { InsiderBuyResponse } from '@/types/insiderBuy'
 import { LeaderboardResponse } from '@/types/leaderboard'
 import { NewListingBuyResponse } from '@/types/new-listing-buy'
@@ -375,7 +376,7 @@ export const getSpotlight = ({
   limit: number
   start: number
 }) => {
-  return api.get('/v1/spotlight', {
+  return api.get<SpotlightResp>('/v1/spotlight', {
     params: {
       chain,
       limit,
@@ -398,3 +399,4 @@ export const getLeaderboardSpotlight = ({
     },
   })
 }
+

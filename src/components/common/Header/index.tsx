@@ -38,8 +38,8 @@ export const Header = ({
       menu: 'Trading Signal',
     },
     {
-      url: '/tracking',
-      menu: 'Tracking',
+      url: '/activity',
+      menu: 'Activity',
     },
 
     {
@@ -59,7 +59,7 @@ export const Header = ({
           height={41}
           alt="logo"
         />
-        <p className="font-sora bg-conic-gradient hidden bg-clip-text text-[30px] font-medium leading-10 text-transparent lg:block">
+        <p className="font-sora bg-conic-gradient-logo hidden bg-clip-text text-[30px] font-medium leading-10 text-transparent lg:block">
           KAIVEST
         </p>
       </Link>
