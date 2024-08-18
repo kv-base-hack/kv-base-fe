@@ -22,7 +22,7 @@ export function UserMessage({ children }: { children: React.ReactNode }) {
         height={32}
         className="rounded-full bg-[#BBCEC5]"
       />
-      <div className="flex flex-start text-xs xl:text-base font-normal text-neutral-07">
+      <div className="flex-start flex text-xs font-normal text-neutral-07 xl:text-base">
         {children}
       </div>
     </div>
@@ -40,16 +40,16 @@ export function BotMessage({
 }) {
   const text = useStreamableText(content)
   return (
-    <div className="flex items-start gap-4 my-8">
-      {isLogo && <LogoChat className="w-8 h-8 shrink-0" />}
+    <div className="my-8 flex items-start gap-4">
+      {isLogo && <LogoChat className="h-8 w-8 shrink-0" />}
       <div
         className={cn(
-          'group relative flex flex-col items-start justify-start text-xs xl:text-base bg-neutral-01 text-neutral-07 rounded-[20px]',
+          'group relative flex flex-col items-start justify-start rounded-[20px] bg-neutral-01 text-xs text-neutral-07 xl:text-base',
           className,
         )}
       >
         <MemoizedReactMarkdown
-          className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+          className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 break-words"
           remarkPlugins={[remarkGfm, remarkMath]}
           components={{
             p({ children }) {
@@ -76,7 +76,7 @@ export function BotCard({
     <div className="group relative flex items-start md:-ml-12">
       <div
         className={cn(
-          'flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow-sm bg-primary text-primary-foreground',
+          'bg-primary text-primary-foreground flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow-sm',
           !showAvatar && 'invisible',
         )}
       >

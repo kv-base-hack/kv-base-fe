@@ -9,7 +9,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
         #
       </div>
     ),
@@ -21,7 +21,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'symbol',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5 whitespace-nowrap">
+      <div className="whitespace-nowrap text-sm font-bold not-italic leading-5 text-neutral-07">
         Token Name
       </div>
     ),
@@ -34,9 +34,9 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
         >
           <ImageToken
             symbol={row?.original?.symbol}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
-          <div className="flex flex-col gap-1.5 w-full items-start justify-start">
+          <div className="flex w-full flex-col items-start justify-start gap-1.5">
             <div className="truncate">{row?.original?.network}</div>
             <div className="font-normal text-neutral-04">
               {row?.original?.symbol}
@@ -44,10 +44,10 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
           </div>
         </Link>
       ) : (
-        <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+        <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
           <ImageToken
             symbol={row?.original?.symbol}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
           <div>{row?.original?.network}</div>
           <div className="text-normal text-neutral-07">
@@ -60,14 +60,14 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'price',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
         Price
       </div>
     ),
     cell: ({ row }) => {
       const { current_price } = row.original
       return (
-        <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
           ${current_price}
         </div>
       )
@@ -76,7 +76,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'price_24h',
     header: () => (
-      <div className="text-neutral-07 whitespace-nowrap text-sm not-italic font-bold leading-5">
+      <div className="whitespace-nowrap text-sm font-bold not-italic leading-5 text-neutral-07">
         Price (24h%)
       </div>
     ),
@@ -101,7 +101,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
   {
     accessorKey: 'oi_24h',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
         OI (24h%)
       </div>
     ),
@@ -125,8 +125,8 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     accessorKey: 'market_cap',
     enableSorting: false,
     header: () => (
-      <div className="flex items-center justify-center w-full gap-1">
-        <div className="text-right text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="flex w-full items-center justify-center gap-1">
+        <div className="text-right text-sm font-bold not-italic leading-5 text-neutral-07">
           Marketcap
         </div>
       </div>
@@ -134,7 +134,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { market_cap } = row.original
       return (
-        <div className="w-full text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-07">
           ${nFormatter(market_cap)}
         </div>
       )
@@ -144,8 +144,8 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     accessorKey: 'action',
     enableSorting: false,
     header: () => (
-      <div className="flex items-center justify-center w-full gap-1">
-        <div className="text-right text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="flex w-full items-center justify-center gap-1">
+        <div className="text-right text-sm font-bold not-italic leading-5 text-neutral-07">
           Action
         </div>
       </div>
@@ -155,11 +155,11 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
       return (
         <div
           className={cn(
-            'flex w-[100px] flex-col rounded-md uppercase justify-center items-center gap-2.5 px-2 py-0.5 text-center text-xs not-italic font-bold leading-4 tracking-[-0.12px]',
+            'flex w-[100px] flex-col items-center justify-center gap-2.5 rounded-md px-2 py-0.5 text-center text-xs font-bold uppercase not-italic leading-4 tracking-[-0.12px]',
             action === 'deposit'
-              ? 'text-secondary-1 bg-secondary-1/10'
+              ? 'bg-secondary-1/10 text-secondary-1'
               : action === 'withdraw'
-                ? 'text-secondary-4 bg-secondary-4/10'
+                ? 'bg-secondary-4/10 text-secondary-4'
                 : '',
           )}
         >
@@ -172,14 +172,14 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     accessorKey: 'unusual',
     enableSorting: false,
     header: () => (
-      <div className="w-full whitespace-nowrap text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="w-full whitespace-nowrap text-center text-sm font-bold not-italic leading-5 text-neutral-07">
         Unusual
       </div>
     ),
     cell: ({ row }) => {
       const { unusual_percent } = row.original
       return (
-        <div className="w-full text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-07">
           {unusual_percent.toFixed(2)}%
         </div>
       )
@@ -189,8 +189,8 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     accessorKey: 'net_flow',
     enableSorting: false,
     header: () => (
-      <div className="flex items-center justify-center w-full gap-1 whitespace-nowrap">
-        <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="flex w-full items-center justify-center gap-1 whitespace-nowrap">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
           Net Flow
         </div>
       </div>
@@ -198,7 +198,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     cell: ({ row }) => {
       const { net_flow } = row.original
       return (
-        <div className="w-full text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-07">
           ${nFormatter(net_flow)}
         </div>
       )
@@ -208,8 +208,8 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
     accessorKey: '24h_vol',
     enableSorting: false,
     header: () => (
-      <div className="flex items-center justify-center w-full gap-1 whitespace-nowrap">
-        <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="flex w-full items-center justify-center gap-1 whitespace-nowrap">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
           24h Vol
         </div>
       </div>
@@ -219,7 +219,7 @@ export const columnsFindGemsUnusualCex: ColumnDef<TopUnusualCex>[] = [
       return volume_24h === 0 ? (
         <div className="w-full text-center text-neutral-07">-</div>
       ) : (
-        <div className="w-full text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-07">
           ${nFormatter(volume_24h)}
         </div>
       )

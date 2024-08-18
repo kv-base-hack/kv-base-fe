@@ -30,7 +30,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'id',
         enableSorting: false,
         header: () => (
-          <div className="text-sm not-italic text-neutral-dartk-05 font-normal leading-6 tracking-[-0.14px]">
+          <div className="text-neutral-dartk-05 text-sm font-normal not-italic leading-6 tracking-[-0.14px]">
             #
           </div>
         ),
@@ -43,14 +43,14 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'symbol',
         enableSorting: false,
         header: () => (
-          <div className="text-sm text-neutral-04 not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap text-sm font-normal not-italic leading-6 tracking-[-0.14px] text-neutral-04">
             Token Name
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
@@ -58,12 +58,12 @@ export const TableFindGemsFreshWalletUnusual = ({
                     <TooltipTokenInfo token={row?.original} chain={chain} />
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-07">
+                    <div className="text-normal text-neutral-07 underline">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -77,7 +77,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'total_spent',
         header: () => (
           <div
-            className="w-full text-neutral-04 font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
             onClick={() => setSort('total_spent')}
             role="button"
           >
@@ -98,7 +98,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'roi',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('roi')}
             role="button"
           >
@@ -124,7 +124,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'pnl',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('pnl')}
             role="button"
           >
@@ -149,7 +149,7 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: 'avg_price',
         header: () => (
-          <div className="text-center text-neutral-04 w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px] text-neutral-04">
             Avg Price
           </div>
         ),
@@ -163,7 +163,7 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: 'current_price',
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
+          <div className="text-sm not-italic leading-5 text-neutral-04">
             Current Price
           </div>
         ),
@@ -182,7 +182,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'price',
         header: () => (
           <div
-            className="w-full text-neutral-04 font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -194,7 +194,7 @@ export const TableFindGemsFreshWalletUnusual = ({
           return price_change_24h ? (
             <div
               className={cn(
-                'leading-[140%] flex items-center',
+                'flex items-center leading-[140%]',
                 price_change_24h > 0 ? 'text-success-500' : 'text-error-500',
                 price_change_24h === 0 && 'text-neutral-03',
               )}
@@ -203,7 +203,7 @@ export const TableFindGemsFreshWalletUnusual = ({
               {price_change_24h.toFixed(2)}%
             </div>
           ) : (
-            <div className="text-center w-full">-</div>
+            <div className="w-full text-center">-</div>
           )
         },
         align: 'center',
@@ -212,7 +212,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'liquidity',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('liquidity')}
             role="button"
           >
@@ -222,7 +222,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         cell: ({ row }) => {
           const { liquidity } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               ${nFormatter(liquidity)}
             </div>
           )
@@ -233,7 +233,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'fdv',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('fdv')}
             role="button"
           >
@@ -243,7 +243,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         cell: ({ row }) => {
           const { fdv } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               ${nFormatter(fdv)}
             </div>
           )
@@ -254,7 +254,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: 'buyer_count',
         header: () => (
           <div className="flex items-center gap-0.5">
-            <div className="text-neutral-04 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-04">
               # of Wallet
             </div>
             <TooltipTable type="numberOfSMBuy" />

@@ -34,9 +34,9 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
     {
       accessorKey: 'smart_money',
       header: () => (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <div>Smart Money</div>
-          <SortMultipleIcon className="w-4 h-4" />
+          <SortMultipleIcon className="h-4 w-4" />
         </div>
       ),
       enableSorting: false,
@@ -44,7 +44,7 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
         const { sender } = row.original
         return (
           <Link
-            className="underline max-w-32 truncate"
+            className="max-w-32 truncate underline"
             href={`/smartmoney-onchain/wallet-explorer/${sender}?chain=${chain}`}
           >
             {sender}
@@ -61,7 +61,7 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
         return row?.original?.token_address ? (
           <Link
             href={`/smartmoney-onchain/token-explorer/${row.original.token_address}?chain=${chain}`}
-            className="flex gap-3 items-center justify-between text-right"
+            className="flex items-center justify-between gap-3 text-right"
           >
             <ImageToken
               imgUrl={row?.original?.token_image_url}
@@ -70,7 +70,7 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
             <TokenSymbol>{symbol}</TokenSymbol>
           </Link>
         ) : (
-          <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+          <div className="flex cursor-not-allowed items-center justify-between gap-3 text-right">
             <ImageToken
               imgUrl={row?.original?.token_image_url}
               symbol={symbol}
@@ -146,7 +146,7 @@ export const columnsActivitySmartMoneyOfToken = (chain: string) => {
         const { scan_link } = row.original
         return (
           <a href={scan_link} target="_blank">
-            <ExternalLink className="w-4 h-4 text-neutral-03" />
+            <ExternalLink className="h-4 w-4 text-neutral-03" />
           </a>
         )
       },

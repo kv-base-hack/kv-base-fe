@@ -86,9 +86,9 @@ export default function OnchainSignals() {
   const totalTopTokenProfit = topTokenProfitQuery.data?.data.total || 1
 
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       <GroupHeader
-        className="mt-10 mx-10 hidden lg:block"
+        className="mx-10 mt-10 hidden lg:block"
         title="Smart Money Onchain Dashboard"
       />
       {/* table */}
@@ -125,14 +125,14 @@ export default function OnchainSignals() {
           </WrapTable>
         </div>
       ) : null}
-      <div className="hidden md:flex lg:hidden justify-start p-4 items-center text-lg font-medium tracking-tight leading-6 depth-1">
+      <div className="depth-1 hidden items-center justify-start p-4 text-lg font-medium leading-6 tracking-tight md:flex lg:hidden">
         {TABLET_TAB.map((item, idx) => (
           <div
             className={cn(
               'cursor-pointer',
               tab === item.value
                 ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
-                : 'self-stretch my-auto',
+                : 'my-auto self-stretch',
             )}
             key={idx}
             onClick={() => setTab(item.value)}
@@ -141,14 +141,14 @@ export default function OnchainSignals() {
           </div>
         ))}
       </div>
-      <div className="flex overflow-x-auto md:hidden justify-start p-4 items-center text-lg font-medium tracking-tight leading-6 depth-1">
+      <div className="depth-1 flex items-center justify-start overflow-x-auto p-4 text-lg font-medium leading-6 tracking-tight md:hidden">
         {MOBILE_TAB.map((item, idx) => (
           <div
             className={cn(
               'cursor-pointer whitespace-nowrap',
               tab === item.value
                 ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
-                : 'self-stretch my-auto',
+                : 'my-auto self-stretch',
             )}
             key={idx}
             onClick={() => setTab(item.value)}

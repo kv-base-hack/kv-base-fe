@@ -48,23 +48,23 @@ export const Header = ({
   ]
 
   return (
-    <div className="px-8 py-4 w-full">
-      <div className="w-full flex items-center justify-between p-3 shadow-2xl bg-header max-md:flex-wrap max-md:px-5 rounded-[48px]">
+    <div className="w-full px-8 py-4">
+      <div className="flex w-full items-center justify-between rounded-[48px] bg-header p-3 shadow-2xl max-md:flex-wrap max-md:px-5">
         <Link href="/" className="flex items-center">
           <Image
             loading="lazy"
             src="/assets/images/logo.svg"
-            className="shrink-0 w-[43px]"
+            className="w-[43px] shrink-0"
             width={43}
             height={47}
             alt="logo"
           />
-          <p className="text-[32px] leading-10 font-semibold font-sora hidden lg:block">
+          <p className="font-sora hidden text-[32px] font-semibold leading-10 lg:block">
             Kaivest
           </p>
         </Link>
 
-        <div className="items-center gap-1 whitespace-nowrap hidden xl:flex">
+        <div className="hidden items-center gap-1 whitespace-nowrap xl:flex">
           {MENU.map((i) => {
             const isActive = pathname.includes(i.url?.split('?')[0])
             return (
@@ -80,16 +80,16 @@ export const Header = ({
 
         <div className="flex items-center justify-end gap-4">
           <SearchComp />
-          <div className="flex gap-4 justify-between items-stretch shrink-0">
+          <div className="flex shrink-0 items-stretch justify-between gap-4">
             <Suspense fallback={<div>Loading...</div>}>
               <SelectChain size="lg" showName={false} />
             </Suspense>
           </div>
           <ButtonConnectWallet />
-          <div className="bg-[#0080FF] flex items-center justify-center !rounded-full ">
+          <div className="flex items-center justify-center !rounded-full bg-[#0080FF]">
             <div
               onClick={() => setNavbarOpen(!navbarOpen)}
-              className="flex xl:hidden overflow-visible w-8 h-8 lg:h-10 lg:w-10 justify-center rounded-full items-center"
+              className="flex h-8 w-8 items-center justify-center overflow-visible rounded-full lg:h-10 lg:w-10 xl:hidden"
               role="button"
             >
               <MenuIcon />
@@ -114,7 +114,7 @@ const MenuItem = ({
     <Link
       href={url}
       className={cn(
-        'text-sm font-semibold px-3 py-2 rounded-[48px] hover:bg-[#6f767e66] hover:text-neutral-01 transition-all duration-200 ease-in-out',
+        'rounded-[48px] px-3 py-2 text-sm font-semibold transition-all duration-200 ease-in-out hover:bg-[#6f767e66] hover:text-neutral-01',
         isActive ? 'bg-[#6f767e66] text-neutral-01' : 'text-neutral-04',
       )}
     >

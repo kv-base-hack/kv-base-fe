@@ -67,21 +67,21 @@ export const ShouldBuyTokens = () => {
   }
 
   return (
-    <div className="flex items-start gap-4 my-8">
-      <LogoChat className="w-8 h-8" />
+    <div className="my-8 flex items-start gap-4">
+      <LogoChat className="h-8 w-8" />
       <div>
-        <h2 className="text-neutral-07 text-[15px] leading-6 font-normal">
+        <h2 className="text-[15px] font-normal leading-6 text-neutral-07">
           Kaivest suggests that you can refer to the tokens purchased by
           smartmoney within the past 24 hours, below are the categories of
           potential tokens that you can choose:
         </h2>
-        <div className="flex items-end justify-between mt-4 gap-4">
+        <div className="mt-4 flex items-end justify-between gap-4">
           <Button
             variant="link"
-            className="h-auto w-full p-3 border-[#EFEFEF] border bg-neutral-01 rounded-[20px] text-sm text-neutral-07 text-[15px] leading-6 flex items-center gap-4 font-bold"
+            className="flex h-auto w-full items-center gap-4 rounded-[20px] border border-[#EFEFEF] bg-neutral-01 p-3 text-[15px] text-sm font-bold leading-6 text-neutral-07"
             onClick={() => onSmartMoneyNewListingBuyClick()}
           >
-            <div className="line-clamp-2 md:line-clamp-1 text-left w-full">
+            <div className="line-clamp-2 w-full text-left md:line-clamp-1">
               Smart money new listing buy
             </div>
             <div className="">
@@ -90,10 +90,10 @@ export const ShouldBuyTokens = () => {
           </Button>
           <Button
             variant="link"
-            className="h-auto w-full p-3 border-[#EFEFEF] border bg-neutral-01 rounded-[20px] text-sm text-neutral-07 text-[15px] leading-6 flex items-center gap-4 font-bold"
+            className="flex h-auto w-full items-center gap-4 rounded-[20px] border border-[#EFEFEF] bg-neutral-01 p-3 text-[15px] text-sm font-bold leading-6 text-neutral-07"
             onClick={() => onSmartMoneyTopBuysClick()}
           >
-            <div className="line-clamp-2 md:line-clamp-1 text-left w-full">
+            <div className="line-clamp-2 w-full text-left md:line-clamp-1">
               Smart money top buys
             </div>
             <div className="">
@@ -102,10 +102,10 @@ export const ShouldBuyTokens = () => {
           </Button>
           <Button
             variant="link"
-            className="h-auto w-full p-3 border-[#EFEFEF] border bg-neutral-01 rounded-[20px] text-sm text-neutral-07 text-[15px] leading-6 flex items-center gap-4 font-bold"
+            className="flex h-auto w-full items-center gap-4 rounded-[20px] border border-[#EFEFEF] bg-neutral-01 p-3 text-[15px] text-sm font-bold leading-6 text-neutral-07"
             onClick={() => onInsiderBuyClick()}
           >
-            <div className="line-clamp-2 md:line-clamp-1 text-left w-full">
+            <div className="line-clamp-2 w-full text-left md:line-clamp-1">
               Insider Buy
             </div>
             <div className="">

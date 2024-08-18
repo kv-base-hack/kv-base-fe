@@ -68,14 +68,14 @@ export const TableInsiderBuy = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
             Tokens
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${CHAIN}`}
@@ -83,7 +83,7 @@ export const TableInsiderBuy = ({
                     <TooltipTokenInfo token={row.original} chain={CHAIN} />
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -101,7 +101,7 @@ export const TableInsiderBuy = ({
         accessorKey: 'token_age',
         header: () => (
           <div
-            className="text-center text-neutral-04 w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px] text-neutral-04"
             onClick={() => setSortBy('token_age')}
             role="button"
           >
@@ -179,9 +179,9 @@ export const TableInsiderBuy = ({
           )}
         </div>
       </TitleCard>
-      <div className="overflow-x-auto flex flex-col h-full justify-between">
+      <div className="flex h-full flex-col justify-between overflow-x-auto">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+          className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
           columns={columns}
           data={dataInsiderBuy}
           isFetching={insiderBuyQuery.isFetching}

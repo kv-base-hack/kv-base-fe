@@ -11,10 +11,10 @@ export const SelectSpecificToken = () => {
     <Select value={chain} onValueChange={(val: string) => setChain(val)}>
       <SelectTrigger
         className={cn(
-          'flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-gray-300 whitespace-nowrap border border-solid backdrop-blur-[50px] bg-neutral-07/50 border-white/10 rounded-xl',
+          'my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-xl border border-solid border-white/10 bg-neutral-07/50 px-4 py-3 text-base font-medium leading-6 tracking-normal text-gray-300 backdrop-blur-[50px]',
         )}
       >
-        <div className="justify-center px-7 py-2.5 text-sm tracking-normal leading-5 text-white rounded-xl border border-purple-500 border-solid shadow-lg backdrop-blur-[2px] bg-white bg-opacity-10">
+        <div className="justify-center rounded-xl border border-solid border-purple-500 bg-white bg-opacity-10 px-7 py-2.5 text-sm leading-5 tracking-normal text-white shadow-lg backdrop-blur-[2px]">
           Specific Token
         </div>
       </SelectTrigger>

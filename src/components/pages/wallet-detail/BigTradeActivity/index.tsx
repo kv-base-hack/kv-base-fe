@@ -85,7 +85,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
               listToken={listToken}
               setListToken={setListToken}
             >
-              <button className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent text-neutral-04 px-4 py-2 my-auto">
+              <button className="my-auto whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2 text-neutral-04">
                 Specific Token
               </button>
             </DialogSelectToken>
@@ -114,7 +114,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
     >
       <div className="mt-8">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4"
+          className="text-xs font-bold leading-4 tracking-normal"
           columns={columnsBigTradeActivity(chain)}
           data={dataActivity?.slice(0, 10) || []}
           isFetching={activityQuery.isFetching}

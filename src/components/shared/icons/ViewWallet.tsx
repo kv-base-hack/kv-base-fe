@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function ViewWalletIcon() {
   return (
@@ -46,7 +46,7 @@ function ViewWalletIcon() {
         </linearGradient>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default ViewWalletIcon;
+export default ViewWalletIcon

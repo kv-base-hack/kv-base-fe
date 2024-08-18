@@ -13,7 +13,7 @@ export const FindGemsPage = () => {
   }
 
   return (
-    <div className="w-full h-full pt-4">
+    <div className="h-full w-full pt-4">
       <GroupHeader className="mx-2 md:mx-10" title="Gem Analytics" />
       <FindGemsTabHeader {...{ activeTab, handleActiveTab }} />
       <FindGemsTabs {...{ activeTab }} />

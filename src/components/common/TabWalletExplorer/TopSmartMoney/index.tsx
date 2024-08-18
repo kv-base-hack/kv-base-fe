@@ -36,19 +36,19 @@ export const TopSmartMoney = ({
 
   return (
     <div>
-      <div className="flex items-center mb-4 gap-2 font-medium">
-        <div className="text-neutral-07 text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
+      <div className="mb-4 flex items-center gap-2 font-medium">
+        <div className="text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-neutral-07">
           Top Smart Money trading
         </div>
         <div className="flex items-center gap-2">
           <ImageToken
-            className="w-8 h-8"
+            className="h-8 w-8"
             symbol={dataTokenInfo?.symbol}
             imgUrl={dataTokenInfo?.image_url}
           />
           <div className="text-purple-300">{dataTokenInfo?.symbol}</div>
           <TooltipCustom
-            className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+            className="z-999 w-[320px] border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
             content="Top Smart Money Profiting"
           >
             <InfoIcon />
@@ -56,12 +56,12 @@ export const TopSmartMoney = ({
         </div>
       </div>
       <DataTable
-        className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+        className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
         columns={columnsSmartMoneyRanking(
           pageTopSmartMoneyForToken,
           perPageTopSmartMoneyForToken,
           <ImageToken
-            className="w-4 h-4"
+            className="h-4 w-4"
             symbol={dataTokenInfo?.symbol}
             imgUrl={dataTokenInfo?.image_url}
           />,

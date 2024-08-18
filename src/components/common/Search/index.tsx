@@ -130,17 +130,17 @@ export const SearchComp = () => {
   return (
     <div
       ref={ref}
-      className="flex lg:max-w-[600px] w-full relative wrap-box rounded-[20px] wrap-box"
+      className="wrap-box wrap-box relative flex w-full rounded-[20px] lg:max-w-[600px]"
     >
       <div
         className={cn(
-          'flex justify-start items-center my-auto rounded-full p-px',
+          'my-auto flex items-center justify-start rounded-full p-px',
           focusing
-            ? ' bg-gradient-to-r from-[#0080FF] to-white shadow-lg backdrop-blur-[2px]'
+            ? 'bg-gradient-to-r from-[#0080FF] to-white shadow-lg backdrop-blur-[2px]'
             : '',
         )}
       >
-        <div className="flex gap-2 justify-end items-center p-2 my-auto text-base font-medium leading-6 text-neutral-02 rounded-full border border-white/20 bg-neutral-07">
+        <div className="my-auto flex items-center justify-end gap-2 rounded-full border border-white/20 bg-neutral-07 p-2 text-base font-medium leading-6 text-neutral-02">
           <SearchIcon onClick={() => setOpenSearch(true)} />
           <input
             value={search}
@@ -154,12 +154,12 @@ export const SearchComp = () => {
         </div>
       </div>
       {openSearch ? (
-        <div className="absolute top-[60px] max-h-[500px] overflow-y-auto w-screen -right-1/2 md:w-full lg:min-w-[500px] md:right-0 no-scrollbar scroll-smooth ">
+        <div className="no-scrollbar absolute -right-1/2 top-[60px] max-h-[500px] w-screen overflow-y-auto scroll-smooth md:right-0 md:w-full lg:min-w-[500px]">
           {search ? (
             <div className="">
-              <div className="flex flex-col justify-center p-4 rounded-2xl border border-white/10 border-solid bg-stone-900 w-full">
-                <div className="flex gap-4 justify-start items-center py-2 text-base font-medium leading-6 shadow-lg backdrop-blur-lg text-zinc-50 max-md:flex-wrap">
-                  <div className="flex items-center justify-start px-4 py-1 whitespace-nowrap rounded-3xl bg-zinc-100 bg-opacity-10">
+              <div className="flex w-full flex-col justify-center rounded-2xl border border-solid border-white/10 bg-stone-900 p-4">
+                <div className="flex items-center justify-start gap-4 py-2 text-base font-medium leading-6 text-zinc-50 shadow-lg backdrop-blur-lg max-md:flex-wrap">
+                  <div className="flex items-center justify-start whitespace-nowrap rounded-3xl bg-zinc-100 bg-opacity-10 px-4 py-1">
                     All
                   </div>
                   <div className="my-auto">Token</div>
@@ -190,19 +190,19 @@ export const SearchComp = () => {
                       <div
                         key={index}
                         onClick={handleNavigateWalletDetail(wallet)}
-                        className="flex gap-3.5 justify-between self-stretch py-3 rounded-xl max-w-[585px] max-md:flex-wrap"
+                        className="flex max-w-[585px] justify-between gap-3.5 self-stretch rounded-xl py-3 max-md:flex-wrap"
                       >
-                        <div className="flex gap-3 items-center">
-                          <div className="shrink-0 self-stretch my-auto w-2 h-2 bg-purple-500 rounded-full" />
+                        <div className="flex items-center gap-3">
+                          <div className="my-auto h-2 w-2 shrink-0 self-stretch rounded-full bg-purple-500" />
                           <div>{`${wallet.address?.substring(
                             0,
                             6,
                           )}...${wallet.address?.slice(-6)}`}</div>
                           <ViewWalletIcon />
                         </div>
-                        <div className="flex gap-5 justify-between text-sm font-semibold tracking-normal leading-6 text-right text-green-500">
+                        <div className="flex justify-between gap-5 text-right text-sm font-semibold leading-6 tracking-normal text-green-500">
                           <div className="text-base tracking-normal text-stone-300">
-                            <span className="text-gray-500 whitespace-nowrap">
+                            <span className="whitespace-nowrap text-gray-500">
                               Volume 24h
                             </span>{' '}
                             <span className="text-stone-300">
@@ -230,28 +230,28 @@ export const SearchComp = () => {
               </div>
             </div>
           ) : (
-            <div className="z-50 flex flex-col justify-center p-4 text-base leading-6 rounded-2xl border border-white/10 border-solid bg-neutral-07 max-w-[320px] md:max-w-[678px] lg:max-w-[620px]">
+            <div className="z-50 flex max-w-[320px] flex-col justify-center rounded-2xl border border-solid border-white/10 bg-neutral-07 p-4 text-base leading-6 md:max-w-[678px] lg:max-w-[620px]">
               <div className="flex gap-3 self-start font-medium text-zinc-400">
                 <TopTrendingIcon />
                 <div>Top Performing Tokens</div>
               </div>
-              <div className="flex overflow-x-auto gap-3 justify-start mt-3 tracking-normal text-center text-white whitespace-nowrap max-md:flex-wrap">
+              <div className="mt-3 flex justify-start gap-3 overflow-x-auto whitespace-nowrap text-center tracking-normal text-white max-md:flex-wrap">
                 {dataToken.map((token, index: number) => (
                   <div
                     key={index}
                     onClick={navigateTokenDetail(token)}
-                    className="z-50 flex cursor-pointer !w-24 flex-col justify-center p-3 rounded-xl bg-zinc-700"
+                    className="z-50 flex !w-24 cursor-pointer flex-col justify-center rounded-xl bg-zinc-700 p-3"
                   >
                     <ImageToken
                       symbol={token.symbol}
                       imgUrl={token.thumb}
-                      className="self-center w-8 h-8 aspect-square"
+                      className="aspect-square h-8 w-8 self-center"
                     />
                     <div className="mt-2">{token.symbol}</div>
                   </div>
                 ))}
               </div>
-              <div className="flex gap-3 mt-4 tracking-normal text-zinc-400 max-md:flex-wrap">
+              <div className="mt-4 flex gap-3 tracking-normal text-zinc-400 max-md:flex-wrap">
                 <div className="flex-1 max-md:max-w-full">Recent search</div>
                 <div
                   className="cursor-pointer"
@@ -265,14 +265,14 @@ export const SearchComp = () => {
                   <div
                     key={index}
                     onClick={navigateTokenDetail(item)}
-                    className="flex hover:underline cursor-pointer items-center gap-3 pr-9 mt-3 whitespace-nowrap leading-[140%] max-md:flex-wrap max-md:pr-5"
+                    className="mt-3 flex cursor-pointer items-center gap-3 whitespace-nowrap pr-9 leading-[140%] hover:underline max-md:flex-wrap max-md:pr-5"
                   >
                     <LastDateIcon />
-                    <div className="flex items-center flex-1 gap-2 py-px pr-20 max-md:flex-wrap">
+                    <div className="flex flex-1 items-center gap-2 py-px pr-20 max-md:flex-wrap">
                       <ImageToken
                         symbol={item.symbol}
                         imgUrl={item.imageUrl}
-                        className="self-center w-5 h-5 aspect-square"
+                        className="aspect-square h-5 w-5 self-center"
                       />
                       <div className="flex gap-1">
                         <div className="text-white">{item.name}</div>

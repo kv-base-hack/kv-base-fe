@@ -63,9 +63,9 @@ export default function LeaderboardPage() {
     {
       accessorKey: 'smart_money',
       header: () => (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <div>Smart Money</div>
-          <SortMultipleIcon className="w-4 h-4" />
+          <SortMultipleIcon className="h-4 w-4" />
         </div>
       ),
       enableSorting: false,
@@ -151,7 +151,7 @@ export default function LeaderboardPage() {
           most_profit_token?.tokenAddress ? (
             <TooltipTokenInfo token={most_profit_token} chain={CHAIN} />
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={most_profit_token?.imageUrl}
                 symbol={most_profit_token?.symbol}
@@ -175,7 +175,7 @@ export default function LeaderboardPage() {
           current_largest_position?.tokenAddress ? (
             <TooltipTokenInfo token={current_largest_position} chain={CHAIN} />
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={current_largest_position?.imageUrl}
                 symbol={current_largest_position?.symbol}
@@ -196,7 +196,7 @@ export default function LeaderboardPage() {
           most_token_buy?.tokenAddress ? (
             <TooltipTokenInfo token={most_token_buy} chain={CHAIN} />
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={most_token_buy?.imageUrl}
                 symbol={most_token_buy?.symbol}
@@ -217,7 +217,7 @@ export default function LeaderboardPage() {
           most_token_sell?.tokenAddress ? (
             <TooltipTokenInfo token={most_token_sell} chain={CHAIN} />
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={most_token_sell?.imageUrl}
                 symbol={most_token_sell?.symbol}
@@ -242,7 +242,7 @@ export default function LeaderboardPage() {
       cell: ({ row }) => {
         const { last_trade } = row.original
         return (
-          <div className="flex text-right justify-end text-neutral-04">
+          <div className="flex justify-end text-right text-neutral-04">
             {moment(last_trade).fromNow()}
           </div>
         )
@@ -251,11 +251,11 @@ export default function LeaderboardPage() {
   ]
 
   return (
-    <div className="bg-neutral-01 rounded-2xl flex flex-col gap-4 border border-[#EFEFEF] pb-6">
+    <div className="flex flex-col gap-4 rounded-2xl border border-[#EFEFEF] bg-neutral-01 pb-6">
       <SMMoneyOverview className="!border-none" />
       <div className="px-6">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4"
+          className="text-xs font-bold leading-4 tracking-normal"
           columns={columns}
           data={dataLeaderboard}
           isFetching={dataLeaderboardQuery.isFetching}

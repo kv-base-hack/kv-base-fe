@@ -13,7 +13,7 @@ interface MessageSmartMoneyResponse {
 
 export const MessageSmartMoney = (data: MessageSmartMoneyResponse) => {
   return (
-    <div className="bg-[#1A1D1F]/50 border border-white/10 p-4 backdrop-blur-[32px] shadow-chat-ai rounded-2xl mb-10 w-full flex flex-col gap-4">
+    <div className="mb-10 flex w-full flex-col gap-4 rounded-2xl border border-white/10 bg-[#1A1D1F]/50 p-4 shadow-chat-ai backdrop-blur-[32px]">
       <MessageTopTokenBuy
         data={data.top_buy_by_smart_money}
         total={data.total_buy}

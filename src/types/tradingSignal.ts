@@ -35,7 +35,6 @@ export interface AITradingSignalInfo {
   target_min: number
   ai_score: number
   users: SmartMoneyTradeWithTokenResponse[]
-
 }
 
 export interface Data {

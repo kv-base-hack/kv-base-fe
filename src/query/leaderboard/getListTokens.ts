@@ -1,4 +1,4 @@
-import { getTokenList } from "@/services/leaderboard/api"
+import { getTokenList } from '@/services/leaderboard/api'
 
 const GET_LIST_TOKENS = 'GET_LIST_TOKENS'
 

@@ -59,8 +59,8 @@ export const SelectTradeValue = ({
 }) => {
   return (
     <Select>
-      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-neutral-04 whitespace-nowrap border border-solid border-neutral-03 bg-transparent rounded-xl">
-        <div className="flex items-center gap-2 justify-between">
+      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-neutral-04">
+        <div className="flex items-center justify-between gap-2">
           {Array.isArray(valueSelected)
             ? valueSelected?.length === 0
               ? 'All Trade Value ($)'
@@ -70,7 +70,7 @@ export const SelectTradeValue = ({
             : null}
         </div>
       </SelectTrigger>
-      <SelectContent className="border-none bg-neutral-07 z-[9999]">
+      <SelectContent className="z-[9999] border-none bg-neutral-07">
         <div className="flex flex-col gap-2">
           {options.map((item, idx: number) => {
             if (!item) {
@@ -103,7 +103,7 @@ export const SelectTradeValue = ({
               >
                 <label
                   htmlFor={item?.value as string}
-                  className="text-[#6F767E] text-base not-italic font-normal leading-6 tracking-[-0.16px]"
+                  className="text-base font-normal not-italic leading-6 tracking-[-0.16px] text-[#6F767E]"
                 >
                   {item.label}
                 </label>

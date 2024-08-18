@@ -1,6 +1,6 @@
 export const SmartMoneyNewListingBuyText = () => {
   return (
-    <ul className="list-decimal mt-2 text-neutral-07 text-[15px] leading-6">
+    <ul className="mt-2 list-decimal text-[15px] leading-6 text-neutral-07">
       <p>
         Here are some actions users can consider to enhance your trading
         decisions and strategies:

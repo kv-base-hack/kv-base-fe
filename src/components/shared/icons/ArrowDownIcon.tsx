@@ -1,4 +1,10 @@
-function ArrowDownIcon({ className, onClick }: { className?: string; onClick?: () => void }) {
+function ArrowDownIcon({
+  className,
+  onClick,
+}: {
+  className?: string
+  onClick?: () => void
+}) {
   return (
     <svg
       className={className}
@@ -7,7 +13,8 @@ function ArrowDownIcon({ className, onClick }: { className?: string; onClick?: (
       width="16"
       height="16"
       viewBox="0 0 16 16"
-      fill="none">
+      fill="none"
+    >
       <path
         d="M4 6L8 10L12 6"
         stroke="#6F767E"

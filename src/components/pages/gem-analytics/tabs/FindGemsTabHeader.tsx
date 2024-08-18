@@ -24,19 +24,19 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
   }
 
   return (
-    <div className="flex px-2 mt-4 flex-col text-base tracking-normal leading-6">
+    <div className="mt-4 flex flex-col px-2 text-base leading-6 tracking-normal">
       <div className="flex items-center justify-between gap-4">
-        <div className="flex overflow-y-auto gap-4 self-stretch font-medium tracking-tight text-center text-neutral-03 max-md:flex-wrap max-md:pr-5">
+        <div className="flex gap-4 self-stretch overflow-y-auto text-center font-medium tracking-tight text-neutral-03 max-md:flex-wrap max-md:pr-5">
           {tabs.map((item, index) => {
             return (
               <div
                 key={index}
                 onClick={() => handleActiveTab(item)}
                 className={cn(
-                  'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 !text-[15px] not-italic font-semibold',
+                  'cursor-pointer justify-center whitespace-nowrap px-4 py-2 !text-[15px] font-semibold not-italic transition-all duration-300',
                   activeTab === item
-                    ? 'bg-neutral-03 text-neutral-07 border border-solid rounded-lg'
-                    : 'text-neutral-04 border border-solid border-transparent',
+                    ? 'rounded-lg border border-solid bg-neutral-03 text-neutral-07'
+                    : 'border border-solid border-transparent text-neutral-04',
                 )}
               >
                 {item}
@@ -45,7 +45,7 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
           })}
         </div>
         <DialogFilterSpecificToken filterVal={filter} handleOk={handleOk}>
-          <div className="flex items-center h-10 w-auto cursor-pointer px-4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07 whitespace-nowrap border border-solid backdrop-blur-[50px] border-neutral-03 rounded-lg">
+          <div className="my-auto flex h-10 w-auto cursor-pointer items-center whitespace-nowrap rounded-lg border border-solid border-neutral-03 px-4 text-base font-medium leading-6 tracking-normal text-neutral-07 backdrop-blur-[50px]">
             Add Filter
           </div>
         </DialogFilterSpecificToken>

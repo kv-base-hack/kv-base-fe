@@ -10,7 +10,7 @@ export const TokenSymbol = ({
   return (
     <div
       className={cn(
-        'max-w-[100px] truncate text-normal underline text-neutral-07',
+        'text-normal max-w-[100px] truncate text-neutral-07 underline',
         className,
       )}
     >

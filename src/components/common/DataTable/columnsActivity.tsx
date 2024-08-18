@@ -58,9 +58,9 @@ export const columnsActivity = (setSortBy: (v: string) => void) => {
     {
       accessorKey: 'smart_money',
       header: () => (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <div>Smart Money</div>
-          <SortMultipleIcon className="w-4 h-4" />
+          <SortMultipleIcon className="h-4 w-4" />
         </div>
       ),
       enableSorting: false,
@@ -68,7 +68,7 @@ export const columnsActivity = (setSortBy: (v: string) => void) => {
         const { sender } = row.original
         return (
           <Link
-            className="underline max-w-32 truncate"
+            className="max-w-32 truncate underline"
             href={`/smartmoney-onchain/wallet-explorer/${sender}`}
           >
             {sender}
@@ -85,7 +85,7 @@ export const columnsActivity = (setSortBy: (v: string) => void) => {
         return (
           <Link
             href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
-            className="flex gap-3 items-center justify-between text-right"
+            className="flex items-center justify-between gap-3 text-right"
           >
             <ImageToken
               imgUrl={row?.original?.token_image_url}
@@ -183,7 +183,7 @@ export const columnsActivity = (setSortBy: (v: string) => void) => {
             {price_change_24h.toFixed(2)}%
           </div>
         ) : (
-          <div className="text-left w-full">-</div>
+          <div className="w-full text-left">-</div>
         )
       },
     },
@@ -196,7 +196,7 @@ export const columnsActivity = (setSortBy: (v: string) => void) => {
         const { scan_link } = row.original
         return (
           <a href={scan_link} target="_blank">
-            <ExternalLink className="w-4 h-4 text-neutral-03" />
+            <ExternalLink className="h-4 w-4 text-neutral-03" />
           </a>
         )
       },

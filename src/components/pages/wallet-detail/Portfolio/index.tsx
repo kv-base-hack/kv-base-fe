@@ -49,13 +49,13 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
 
   return (
     <WrapTable
-      className="justify-start h-full"
+      className="h-full justify-start"
       icon={<AssetsIcon />}
       title="Assets"
     >
-      <div className="mt-4 h-full flex flex-col justify-between">
+      <div className="mt-4 flex h-full flex-col justify-between">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+          className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
           columns={columnsPortfolio(CHAIN)}
           data={dataSource}
           noneBorder

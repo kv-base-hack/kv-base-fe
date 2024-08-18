@@ -14,20 +14,22 @@ export const ModeFilter = ({
     <ToggleGroup.Root
       type="single"
       aria-label="times range"
-      className="flex overflow-hidden gap-2"
+      className="flex gap-2 overflow-hidden"
       value={value}
-      onValueChange={onChange}>
+      onValueChange={onChange}
+    >
       {options?.map((o) => (
         <ToggleGroup.Item
           key={o}
           value={o}
           aria-label={o}
           className={cn(
-            'uppercase px-2 py-1 text-paragraph-2',
+            'text-paragraph-2 px-2 py-1 uppercase',
             value === o
-              ? 'bg-white/10 text-neutral-dark-3 font-bold rounded-[9px]'
-              : 'text-neutral-dark-5 font-normal'
-          )}>
+              ? 'text-neutral-dark-3 rounded-[9px] bg-white/10 font-bold'
+              : 'text-neutral-dark-5 font-normal',
+          )}
+        >
           {o}
         </ToggleGroup.Item>
       ))}

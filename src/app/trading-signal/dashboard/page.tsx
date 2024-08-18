@@ -60,12 +60,12 @@ const DUMMY_CHART = [
 
 export default function TradingSignal() {
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       <div className="flex flex-col justify-center self-stretch p-10 max-md:px-5">
         <GroupHeader
           title="Kaivest Trading Signal"
           desc={
-            <div className="text-base tracking-normal leading-6 text-zinc-50 max-md:max-w-full">
+            <div className="text-base leading-6 tracking-normal text-zinc-50 max-md:max-w-full">
               Kaivest trading signal is a trading approach executed by market
               data and technical indicators. It trades automatically based on a
               number of{' '}
@@ -81,16 +81,16 @@ export default function TradingSignal() {
         <Image
           loading="lazy"
           src="/assets/images/trading-signal.svg"
-          className="mt-4 w-full aspect-[3.7] max-md:max-w-full"
+          className="mt-4 aspect-[3.7] w-full max-md:max-w-full"
           alt="trading signal"
         />
-        <div className="flex flex-col justify-center p-6 mt-4 font-bold text-neutral-04 rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-neutral-07/50 border-white border-opacity-10 max-md:px-5 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-wrap max-md:max-w-full">
-            <div className="flex flex-col flex-1">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary-4">
+        <div className="mt-4 flex flex-col justify-center rounded-lg border border-solid border-white border-opacity-10 bg-neutral-07/50 p-6 font-bold text-neutral-04 shadow-lg backdrop-blur-lg max-md:max-w-full max-md:px-5">
+          <div className="flex gap-5 max-md:max-w-full max-md:flex-wrap">
+            <div className="flex flex-1 flex-col">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-4">
                 <ROIIcon />
               </div>
-              <div className="flex gap-1 pr-5 mt-5 text-sm tracking-normal leading-4 max-md:pr-5">
+              <div className="mt-5 flex gap-1 pr-5 text-sm leading-4 tracking-normal max-md:pr-5">
                 <div>Total 30D ROI</div>
                 <InfoIcon />
               </div>
@@ -98,7 +98,7 @@ export default function TradingSignal() {
                 +245.45%
               </div>
               <div className="flex">
-                <div className="flex gap-1 justify-start p-1 mt-2 text-xs tracking-normal leading-4 rounded bg-gray-300/10">
+                <div className="mt-2 flex justify-start gap-1 rounded bg-gray-300/10 p-1 text-xs leading-4 tracking-normal">
                   <IncreaseIcon />
                   <div>
                     <span className="text-primary-2">37.8%</span>{' '}
@@ -107,38 +107,38 @@ export default function TradingSignal() {
                 </div>
               </div>
             </div>
-            <div className="shrink-0 w-px rounded-sm bg-white bg-opacity-10 h-[184px]" />
-            <div className="flex flex-col flex-1">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary-2">
+            <div className="h-[184px] w-px shrink-0 rounded-sm bg-white bg-opacity-10" />
+            <div className="flex flex-1 flex-col">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-2">
                 <PNLIcon />
               </div>
-              <div className="flex gap-1 pr-1.5 mt-5 text-sm tracking-normal leading-4">
+              <div className="mt-5 flex gap-1 pr-1.5 text-sm leading-4 tracking-normal">
                 <div>Kaivest’s invest total PNL</div>
                 <InfoIcon />
               </div>
-              <div className="mt-2 text-5xl text-primary-2 font-normal max-md:text-4xl">
+              <div className="mt-2 text-5xl font-normal text-primary-2 max-md:text-4xl">
                 +$5.5k
               </div>
               <div className="flex">
-                <div className="justify-center p-1 mt-2 text-xs tracking-normal leading-4 rounded-lg bg-gray-300/10">
+                <div className="mt-2 justify-center rounded-lg bg-gray-300/10 p-1 text-xs leading-4 tracking-normal">
                   <span className="text-primary-2">+$451</span>{' '}
                   <span className="text-neutral-04">Unrealized PNL</span>
                 </div>
               </div>
             </div>
-            <div className="shrink-0 w-px rounded-sm bg-white bg-opacity-10 h-[184px]" />
-            <div className="flex flex-col flex-1">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary-3">
+            <div className="h-[184px] w-px shrink-0 rounded-sm bg-white bg-opacity-10" />
+            <div className="flex flex-1 flex-col">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-3">
                 <WinrateIcon />
               </div>
-              <div className="mt-5 whitespace-nowrap text-sm tracking-normal leading-4">
+              <div className="mt-5 whitespace-nowrap text-sm leading-4 tracking-normal">
                 Total Risk Reward Ratio / Winrate
               </div>
-              <div className="mt-2 text-5xl text-neutral-01 font-normal max-md:text-4xl">
+              <div className="mt-2 text-5xl font-normal text-neutral-01 max-md:text-4xl">
                 1:2.3 / 72%
               </div>
               <div className="flex">
-                <div className="justify-center p-1 mt-2 text-xs tracking-normal leading-4 rounded bg-gray-300 bg-opacity-10">
+                <div className="mt-2 justify-center rounded bg-gray-300 bg-opacity-10 p-1 text-xs leading-4 tracking-normal">
                   <span className="text-primary-2">124</span>{' '}
                   <span className="text-neutral-04">
                     {' '}
@@ -151,44 +151,44 @@ export default function TradingSignal() {
         </div>
         <div className="mt-8 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-            <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
               <Link
                 href="/trading-signal/ai-signal"
-                className="flex cursor-pointer flex-col grow p-6 w-full rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-neutral-07/50 border-white border-opacity-10 max-md:px-5 max-md:mt-8 max-md:max-w-full"
+                className="flex w-full grow cursor-pointer flex-col rounded-lg border border-solid border-white border-opacity-10 bg-neutral-07/50 p-6 shadow-lg backdrop-blur-lg max-md:mt-8 max-md:max-w-full max-md:px-5"
               >
-                <div className="flex gap-4 items-center pr-20 text-xl tracking-tight leading-8 text-neutral-01 max-md:flex-wrap max-md:pr-5">
+                <div className="flex items-center gap-4 pr-20 text-xl leading-8 tracking-tight text-neutral-01 max-md:flex-wrap max-md:pr-5">
                   <div>KAIVEST AI Signal </div>
                   <BotIcon />
                 </div>
-                <div className="mt-4 text-base tracking-normal leading-6 text-neutral-01 max-md:max-w-full">
+                <div className="mt-4 text-base leading-6 tracking-normal text-neutral-01 max-md:max-w-full">
                   Kaivest AI signal delves into comprehensive market trend
                   analysis, evaluation, and prediction based on a series of
                   critical indicators. It incorporates multi-source data from
                   on-chain information, technical analysis, and sentiment
                   analysis.
                 </div>
-                <div className="flex gap-4 justify-between mt-8 max-md:flex-wrap">
-                  <div className="flex flex-col flex-1">
-                    <div className="text-sm font-bold tracking-normal leading-4 text-neutral-04">
+                <div className="mt-8 flex justify-between gap-4 max-md:flex-wrap">
+                  <div className="flex flex-1 flex-col">
+                    <div className="text-sm font-bold leading-4 tracking-normal text-neutral-04">
                       30D ROI
                     </div>
-                    <div className="mt-2 text-xl font-semibold tracking-tight leading-8 text-primary-2">
+                    <div className="mt-2 text-xl font-semibold leading-8 tracking-tight text-primary-2">
                       +192.88%
                     </div>
                   </div>
-                  <div className="flex flex-col flex-1 whitespace-nowrap justify-center">
-                    <div className="text-sm font-bold tracking-[-0.13px] leading-4 text-neutral-04">
+                  <div className="flex flex-1 flex-col justify-center whitespace-nowrap">
+                    <div className="text-sm font-bold leading-4 tracking-[-0.13px] text-neutral-04">
                       Risk Reward Ratio / Winrate
                     </div>
-                    <div className="mt-2 text-xl font-semibold tracking-tight leading-8 text-right text-neutral-03">
+                    <div className="mt-2 text-right text-xl font-semibold leading-8 tracking-tight text-neutral-03">
                       1:3.3 / 67%
                     </div>
                   </div>
                   <div className="flex flex-col justify-center">
-                    <div className="self-end text-sm font-bold tracking-normal leading-4 text-neutral-04">
+                    <div className="self-end text-sm font-bold leading-4 tracking-normal text-neutral-04">
                       Max drawdown
                     </div>
-                    <div className="mt-2 text-xl font-semibold tracking-tight leading-8 text-right text-primary-3">
+                    <div className="mt-2 text-right text-xl font-semibold leading-8 tracking-tight text-primary-3">
                       18%
                     </div>
                   </div>
@@ -202,11 +202,11 @@ export default function TradingSignal() {
                     showDate={false}
                   />
                 </div>
-                <div className="flex gap-3 justify-between mt-4 text-sm font-bold tracking-normal leading-4 text-neutral-shades-0475 max-md:flex-wrap max-md:max-w-full">
+                <div className="mt-4 flex justify-between gap-3 text-sm font-bold leading-4 tracking-normal text-neutral-shades-0475 max-md:max-w-full max-md:flex-wrap">
                   <div>
                     <span className="text-neutral-04">21d 21h 29m</span> Runtime
                   </div>
-                  <div className="shrink-0 my-auto w-0.5 h-2 rounded-sm bg-zinc-800" />
+                  <div className="my-auto h-2 w-0.5 shrink-0 rounded-sm bg-zinc-800" />
                   <div>
                     <span className="text-neutral-04">1573</span>{' '}
                     <span className="text-neutral-shades-0475">
@@ -214,54 +214,54 @@ export default function TradingSignal() {
                     </span>
                   </div>
                 </div>
-                <div className="flex gap-5 justify-between mt-8 max-md:flex-wrap max-md:max-w-full">
-                  <div className="justify-center p-1 my-auto text-xs font-bold tracking-normal leading-4 rounded bg-zinc-800 text-neutral-shades-0475">
+                <div className="mt-8 flex justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
+                  <div className="my-auto justify-center rounded bg-zinc-800 p-1 text-xs font-bold leading-4 tracking-normal text-neutral-shades-0475">
                     Profit sharing 20%{' '}
                     <span className="text-neutral-shades-0475">or</span>{' '}
                     89$/month
                   </div>
-                  <div className="justify-center px-4 py-2 text-base font-semibold tracking-normal leading-6 whitespace-nowrap rounded-lg bg-gray-300 bg-opacity-10 text-zinc-50">
+                  <div className="justify-center whitespace-nowrap rounded-lg bg-gray-300 bg-opacity-10 px-4 py-2 text-base font-semibold leading-6 tracking-normal text-zinc-50">
                     Subcribe
                   </div>
                 </div>
               </Link>
             </div>
-            <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-              <div className="flex cursor-pointer flex-col grow p-6 w-full rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-zinc-900 bg-opacity-50 border-white border-opacity-10 max-md:px-5 max-md:mt-8 max-md:max-w-full">
-                <div className="flex items-center gap-4 px-0.5 text-xl tracking-tight leading-8 text-zinc-50 max-md:flex-wrap">
+            <div className="ml-5 flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
+              <div className="flex w-full grow cursor-pointer flex-col rounded-lg border border-solid border-white border-opacity-10 bg-zinc-900 bg-opacity-50 p-6 shadow-lg backdrop-blur-lg max-md:mt-8 max-md:max-w-full max-md:px-5">
+                <div className="flex items-center gap-4 px-0.5 text-xl leading-8 tracking-tight text-zinc-50 max-md:flex-wrap">
                   <div className="max-md:max-w-full">
                     Follow Smart-money Onchain Signal
                   </div>
                   <TargetIcon />
                 </div>
-                <div className="mt-4 text-base tracking-normal leading-6 text-zinc-50 max-md:max-w-full">
+                <div className="mt-4 text-base leading-6 tracking-normal text-zinc-50 max-md:max-w-full">
                   When the Kaivest detects a trade by smart money, the bot
                   automatically executes the same trade for the users following
                   this strategy, ensuring they can act quickly on market
                   opportunities.
                 </div>
-                <div className="flex gap-4 justify-between mt-8 max-md:flex-wrap">
-                  <div className="flex flex-col flex-1">
-                    <div className="text-sm font-bold tracking-normal leading-4 text-neutral-04">
+                <div className="mt-8 flex justify-between gap-4 max-md:flex-wrap">
+                  <div className="flex flex-1 flex-col">
+                    <div className="text-sm font-bold leading-4 tracking-normal text-neutral-04">
                       30D ROI
                     </div>
-                    <div className="mt-2 text-xl font-semibold tracking-tight leading-8 text-primary-2">
+                    <div className="mt-2 text-xl font-semibold leading-8 tracking-tight text-primary-2">
                       +32.88%
                     </div>
                   </div>
-                  <div className="flex flex-col flex-1 items-end whitespace-nowrap justify-center">
-                    <div className="text-sm font-bold tracking-[-0.13px] leading-4 text-neutral-04">
+                  <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
+                    <div className="text-sm font-bold leading-4 tracking-[-0.13px] text-neutral-04">
                       Risk Reward Ratio / Winrate
                     </div>
-                    <div className="mt-2 text-xl font-semibold tracking-tight leading-8 text-right text-gray-300">
+                    <div className="mt-2 text-right text-xl font-semibold leading-8 tracking-tight text-gray-300">
                       1:1.3 / 77%
                     </div>
                   </div>
                   <div className="flex flex-col justify-center">
-                    <div className="self-end text-sm font-bold tracking-normal leading-4 text-neutral-04">
+                    <div className="self-end text-sm font-bold leading-4 tracking-normal text-neutral-04">
                       Max drawdown
                     </div>
-                    <div className="mt-2 text-xl font-semibold tracking-tight leading-8 text-right text-red-400">
+                    <div className="mt-2 text-right text-xl font-semibold leading-8 tracking-tight text-red-400">
                       13%
                     </div>
                   </div>
@@ -275,11 +275,11 @@ export default function TradingSignal() {
                     showDate={false}
                   />
                 </div>
-                <div className="flex gap-3 justify-between mt-4 text-sm font-bold tracking-normal leading-4 text-neutral-shades-0475 max-md:flex-wrap max-md:max-w-full">
+                <div className="mt-4 flex justify-between gap-3 text-sm font-bold leading-4 tracking-normal text-neutral-shades-0475 max-md:max-w-full max-md:flex-wrap">
                   <div>
                     <span className="text-neutral-04">11d 14h 29m</span> Runtime
                   </div>
-                  <div className="shrink-0 my-auto w-0.5 h-2 rounded-sm bg-zinc-800" />
+                  <div className="my-auto h-2 w-0.5 shrink-0 rounded-sm bg-zinc-800" />
                   <div>
                     <span className="text-neutral-04">13</span>{' '}
                     <span className="text-neutral-shades-0475">
@@ -287,13 +287,13 @@ export default function TradingSignal() {
                     </span>
                   </div>
                 </div>
-                <div className="flex gap-5 justify-between mt-8 max-md:flex-wrap max-md:max-w-full">
-                  <div className="justify-center p-1 my-auto text-xs font-bold tracking-normal leading-4 rounded bg-zinc-800 text-neutral-shades-0475">
+                <div className="mt-8 flex justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
+                  <div className="my-auto justify-center rounded bg-zinc-800 p-1 text-xs font-bold leading-4 tracking-normal text-neutral-shades-0475">
                     Profit sharing 10%{' '}
                     <span className="text-neutral-shades-0475">or</span>{' '}
                     49$/month
                   </div>
-                  <div className="justify-center px-4 py-2 text-base font-semibold tracking-normal leading-6 whitespace-nowrap rounded-lg bg-gray-300 bg-opacity-10 text-zinc-50">
+                  <div className="justify-center whitespace-nowrap rounded-lg bg-gray-300 bg-opacity-10 px-4 py-2 text-base font-semibold leading-6 tracking-normal text-zinc-50">
                     Subcribe
                   </div>
                 </div>

@@ -20,13 +20,13 @@ export const TitleCard = ({
       <div className="flex items-center gap-1">
         <div className="flex items-center gap-1 lg:gap-2">
           {iconFirst}
-          <p className="text-neutral-07 font-semibold text-lg font-inter">
+          <p className="font-inter text-lg font-semibold text-neutral-07">
             {title}
           </p>
         </div>
         {content && (
           <TooltipCustom content={content as string} side="bottom">
-            <Info className="w-5 h-5" />
+            <Info className="h-5 w-5" />
           </TooltipCustom>
         )}
       </div>

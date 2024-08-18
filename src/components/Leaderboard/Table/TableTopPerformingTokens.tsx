@@ -60,16 +60,16 @@ export const TablePerformanceToken = () => {
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row.original.address}?chain=${CHAIN}`}
-                    className="flex gap-3 items-center justify-between text-right"
+                    className="flex items-center justify-between gap-3 text-right"
                   >
                     <TooltipTokenInfo token={row.original} chain={CHAIN} />
                   </Link>
                 ) : (
-                  <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+                  <div className="flex cursor-not-allowed items-center justify-between gap-3 text-right">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -157,7 +157,7 @@ export const TablePerformanceToken = () => {
       {
         accessorKey: 'avg_cost',
         header: () => (
-          <div className="flex items-center gap-2 ">
+          <div className="flex items-center gap-2">
             <div>Avg Price</div>
             <TooltipCustom content="Average entry price at which smart money bought the token.">
               <Info />
@@ -185,11 +185,11 @@ export const TablePerformanceToken = () => {
         header: () => (
           <div
             onClick={() => setSortBy('price_change')}
-            className="cursor-pointer flex items-center gap-2 whitespace-nowrap"
+            className="flex cursor-pointer items-center gap-2 whitespace-nowrap"
             role="button"
           >
             <div>Price (%)</div>
-            <div className="flex justify-center items-center w-4 h-4">
+            <div className="flex h-4 w-4 items-center justify-center">
               <SortIcon />
             </div>
           </div>
@@ -223,7 +223,7 @@ export const TablePerformanceToken = () => {
         accessorKey: 'liquidity',
         header: () => (
           <div
-            className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('liquidity')}
             role="button"
           >
@@ -277,7 +277,7 @@ export const TablePerformanceToken = () => {
         </div>
       </TitleCard>
       <DataTable
-        className="text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap bg-neutral-07/50"
+        className="whitespace-nowrap bg-neutral-07/50 text-base font-semibold leading-6 tracking-normal text-gray-300"
         columns={columns}
         data={dataTopTokenProfit}
         isFetching={topTokenProfitQuery.isFetching}

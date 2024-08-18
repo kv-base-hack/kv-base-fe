@@ -75,20 +75,20 @@ export const AiTradingSignal = () => {
 
   return (
     <CardCommon>
-      <p className="text-neutral-07 text-[32px] leading-[48px] font-normal">
+      <p className="text-[32px] font-normal leading-[48px] text-neutral-07">
         Trading Signal By AI
       </p>
       <div className="flex items-center justify-between">
-        <div className="flex overflow-y-auto gap-4 self-stretch py-2 font-medium tracking-tight leading-8 text-center max-md:flex-wrap max-md:pr-5">
+        <div className="flex gap-4 self-stretch overflow-y-auto py-2 text-center font-medium leading-8 tracking-tight max-md:flex-wrap max-md:pr-5">
           {tabsSignal.map((item, index) => (
             <div
               key={index}
               onClick={() => handleActiveTab(item)}
               className={cn(
-                'cursor-pointer whitespace-nowrap transition-all duration-300 justify-center px-4 py-2 rounded-lg !text-xl not-italic font-medium leading-8 border border-solid hover:bg-neutral-03 hover:text-neutral-07',
+                'cursor-pointer justify-center whitespace-nowrap rounded-lg border border-solid px-4 py-2 !text-xl font-medium not-italic leading-8 transition-all duration-300 hover:bg-neutral-03 hover:text-neutral-07',
                 activeTab === item.tab
-                  ? 'tab-find-gems text-neutral-07 bg-neutral-03 border-[#FEFEFE]'
-                  : 'text-neutral-04 border-transparent',
+                  ? 'tab-find-gems border-[#FEFEFE] bg-neutral-03 text-neutral-07'
+                  : 'border-transparent text-neutral-04',
               )}
             >
               {item.tab}
@@ -97,8 +97,8 @@ export const AiTradingSignal = () => {
         </div>
         <div className="flex items-center gap-2">
           <DialogSelectToken listToken={listToken} setListToken={setListToken}>
-            <div className="rounded-xl h-10 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
-              <div className="text-neutral-07 cursor-pointer rounded-xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 bg-neutral-01">
+            <div className="h-10 rounded-xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+              <div className="flex h-full cursor-pointer items-center justify-center rounded-xl bg-neutral-01 px-7 text-sm leading-5 tracking-normal text-neutral-07">
                 Specific Token
               </div>
             </div>
@@ -107,10 +107,10 @@ export const AiTradingSignal = () => {
             <div className="flex items-center gap-2">
               {listToken.map((item) => (
                 <div
-                  className="rounded-3xl h-9 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]"
+                  className="h-9 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
                   key={item.tokenAddress}
                 >
-                  <div className="text-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-4 gap-1 h-full text-sm tracking-normal leading-5 bg-neutral-01">
+                  <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-01 px-4 text-sm leading-5 tracking-normal text-neutral-07">
                     <ImageToken imgUrl={item?.imageUrl} symbol={item?.symbol} />
                     <div>{item.symbol}</div>
                     <Close onclick={handleRemoveToken(item)} />
@@ -122,7 +122,7 @@ export const AiTradingSignal = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
         {dataDexTradingSignal?.map((item, index) => (
           <CardAISignal
             key={index}

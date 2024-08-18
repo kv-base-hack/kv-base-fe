@@ -13,7 +13,7 @@ const renderWallet = (wallet: string, chain: string) => {
   return (
     <a
       href={`/smartmoney-onchain/wallet-explorer/${wallet}?chain=${chain}`}
-      className="flex text-[#0C68E9] hover:underline font-semibold"
+      className="flex font-semibold text-[#0C68E9] hover:underline"
     >
       {wallet.slice(0, 4)}
       ...
@@ -55,7 +55,7 @@ const renderToken = (
       className="flex gap-1"
     >
       <ImageToken symbol={symbol} imgUrl={image_url} />
-      <span className="underline font-semibold">{upperCase(symbol)}</span>
+      <span className="font-semibold underline">{upperCase(symbol)}</span>
     </a>
   )
 }
@@ -136,12 +136,12 @@ export const ContentSpotlight = ({ item }: any) => {
           <span className={pnl ? '' : 'hidden'}>PnL with ROI</span>
           <span
             className={cn(
-              'text-semibold ',
+              'text-semibold',
               roi > 0
                 ? 'text-[#32AE60]'
                 : roi < 0
-                ? 'text-[#F04D1A]'
-                : 'hidden',
+                  ? 'text-[#F04D1A]'
+                  : 'hidden',
             )}
           >
             {nFormatter(roi)}
@@ -164,7 +164,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div className="flex flex-wrap gap-x-1">
           {renderWallet(sender, CHAIN)} has bought{' '}
-          <span className="text-[#32AE60] font-semibold">
+          <span className="font-semibold text-[#32AE60]">
             ${nFormatter(value_in_usdt)}
           </span>{' '}
           at {renderPrice(price)}.{' '}
@@ -184,8 +184,8 @@ export const ContentSpotlight = ({ item }: any) => {
                 price_change_24h > 0
                   ? 'text-[#32AE60]'
                   : price_change_24h < 0
-                  ? 'text-[#F04D1A]'
-                  : ''
+                    ? 'text-[#F04D1A]'
+                    : ''
               }
             >
               {price_change_24h}%
@@ -199,7 +199,7 @@ export const ContentSpotlight = ({ item }: any) => {
         <div className="flex flex-wrap gap-1">
           <div className="flex flex-wrap gap-x-1">
             {renderWallet(sender, CHAIN)} has bought
-            <span className="text-[#32AE60] font-semibold">
+            <span className="font-semibold text-[#32AE60]">
               ${nFormatter(value_in_usdt)}
             </span>
             <>
@@ -223,8 +223,8 @@ export const ContentSpotlight = ({ item }: any) => {
                 price_change_24h > 0
                   ? 'text-[#32AE60]'
                   : price_change_24h < 0
-                  ? 'text-[#F04D1A]'
-                  : ''
+                    ? 'text-[#F04D1A]'
+                    : ''
               }
             >
               {price_change_24h}%

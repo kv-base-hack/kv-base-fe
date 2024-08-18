@@ -14,5 +14,5 @@ export const IconSend = () => {
         fill="#6F767E"
       />
     </svg>
-  );
-};
+  )
+}

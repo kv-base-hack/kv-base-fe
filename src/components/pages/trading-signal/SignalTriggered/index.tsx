@@ -19,7 +19,7 @@ export const SignalTriggered = ({ id }: { id: string }) => {
   return (
     <WrapTable title="">
       <DataTable
-        className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+        className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
         columns={columnsSignalTriggered}
         data={dataSignalTriggered || []}
         isFetching={dataSignalQuery.isFetching}

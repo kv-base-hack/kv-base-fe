@@ -122,12 +122,12 @@ export const PriceRelation = ({
         </div>
       </div> */}
       {/* */}
-      <div className="self-stretch mt-4 w-full">
+      <div className="mt-4 w-full self-stretch">
         <div className="flex gap-5 max-lg:flex-col max-lg:gap-0">
-          <div className="flex flex-col w-1/2 max-lg:ml-0 max-lg:w-full">
-            <div className="flex flex-col grow self-stretch px-6 py-4 w-full whitespace-nowrap rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10 max-md:px-5 max-md:mt-6 max-md:max-w-full">
-              <div className="flex gap-4 justify-between pb-2 max-md:flex-wrap max-md:max-w-full">
-                <div className="grow text-xl font-semibold tracking-tight leading-8 text-gray-300">
+          <div className="flex w-1/2 flex-col max-lg:ml-0 max-lg:w-full">
+            <div className="flex w-full grow flex-col self-stretch whitespace-nowrap rounded-lg border border-solid border-white/10 bg-neutral-07/50 px-6 py-4 shadow-2xl backdrop-blur-lg max-md:mt-6 max-md:max-w-full max-md:px-5">
+              <div className="flex justify-between gap-4 pb-2 max-md:max-w-full max-md:flex-wrap">
+                <div className="grow text-xl font-semibold leading-8 tracking-tight text-gray-300">
                   Withdraw vs Deposit
                 </div>
                 <DateGroup
@@ -136,8 +136,8 @@ export const PriceRelation = ({
                   handleActive={setDurationWithDrawDeposit}
                 />
               </div>
-              <div className="flex gap-5 justify-between py-4 max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col justify-between text-lg tracking-tight leading-8 text-white basis-0">
+              <div className="flex justify-between gap-5 py-4 max-md:max-w-full max-md:flex-wrap">
+                <div className="flex basis-0 flex-col justify-between text-lg leading-8 tracking-tight text-white">
                   <div>{percentWithdraw}%</div>
                   <div className="mt-56 max-md:mt-10">{percentDeposit}%</div>
                 </div>
@@ -155,17 +155,17 @@ export const PriceRelation = ({
                     className="bg-primary-2"
                   ></div>
                 </div>
-                <div className="flex flex-col flex-1 justify-between">
-                  <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
+                <div className="flex flex-1 flex-col justify-between">
+                  <div className="flex w-full flex-col items-start rounded-lg border border-solid border-secondary-1 py-2 pl-4 pr-20 max-md:pr-5">
                     <div className="text-2xl leading-9 text-red-400">
                       Withdraw
                     </div>
-                    <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
+                    <div className="flex gap-2 text-lg leading-8 tracking-tight text-gray-300">
                       <ImageToken
-                        className="w-10 h-10"
+                        className="h-10 w-10"
                         symbol={dataTokenInfo?.symbol}
                       />
-                      <div className="flex flex-col flex-1 justify-center">
+                      <div className="flex flex-1 flex-col justify-center">
                         <div>
                           {numeral(
                             dataTokenInspectDW?.cex_out_flow || 0,
@@ -180,16 +180,16 @@ export const PriceRelation = ({
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-start py-2 pr-20 pl-4 mt-14 w-full rounded-lg border border-solid border-secondary-4 max-md:pr-5 max-md:mt-10">
+                  <div className="mt-14 flex w-full flex-col items-start rounded-lg border border-solid border-secondary-4 py-2 pl-4 pr-20 max-md:mt-10 max-md:pr-5">
                     <div className="text-2xl leading-9 text-stone-400">
                       Deposit
                     </div>
-                    <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
+                    <div className="flex gap-2 text-lg leading-8 tracking-tight text-gray-300">
                       <ImageToken
-                        className="w-10 h-10"
+                        className="h-10 w-10"
                         symbol={dataTokenInfo?.symbol}
                       />
-                      <div className="flex flex-col flex-1 justify-center">
+                      <div className="flex flex-1 flex-col justify-center">
                         <div>
                           {numeral(dataTokenInspectDW?.cex_in_flow || 0).format(
                             '0,0.00',
@@ -208,10 +208,10 @@ export const PriceRelation = ({
               </div>
             </div>
           </div>
-          <div className="flex flex-col ml-5 mt-4 lg:mt-0 w-1/2 max-lg:ml-0 max-lg:w-full">
-            <div className="flex flex-col grow self-stretch px-6 py-4 w-full rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-07/50 border-white/10 max-md:px-5 max-md:mt-6 max-md:max-w-full">
-              <div className="flex gap-5 justify-between pb-2 w-full max-lg:flex-wrap max-lg:max-w-full">
-                <div className="flex-auto text-xl font-semibold tracking-tight leading-8 text-gray-300">
+          <div className="ml-5 mt-4 flex w-1/2 flex-col max-lg:ml-0 max-lg:w-full lg:mt-0">
+            <div className="flex w-full grow flex-col self-stretch rounded-lg border border-solid border-white/10 bg-neutral-07/50 px-6 py-4 shadow-2xl backdrop-blur-lg max-md:mt-6 max-md:max-w-full max-md:px-5">
+              <div className="flex w-full justify-between gap-5 pb-2 max-lg:max-w-full max-lg:flex-wrap">
+                <div className="flex-auto text-xl font-semibold leading-8 tracking-tight text-gray-300">
                   Sell vs Buy
                 </div>
                 <DateGroup
@@ -220,8 +220,8 @@ export const PriceRelation = ({
                   handleActive={setDurationSellBuy}
                 />
               </div>
-              <div className="flex gap-5 justify-between py-4 whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col justify-between text-lg tracking-tight leading-8 text-white basis-0">
+              <div className="flex justify-between gap-5 whitespace-nowrap py-4 max-md:max-w-full max-md:flex-wrap">
+                <div className="flex basis-0 flex-col justify-between text-lg leading-8 tracking-tight text-white">
                   <div>{percentSell}%</div>
                   <div className="mt-56 max-md:mt-10">{percentBuy}%</div>
                 </div>
@@ -235,15 +235,15 @@ export const PriceRelation = ({
                     className="bg-primary-2"
                   ></div>
                 </div>
-                <div className="flex flex-col flex-1 justify-between">
-                  <div className="flex flex-col items-start py-2 pr-20 pl-4 w-full rounded-lg border border-solid border-secondary-1 max-md:pr-5">
+                <div className="flex flex-1 flex-col justify-between">
+                  <div className="flex w-full flex-col items-start rounded-lg border border-solid border-secondary-1 py-2 pl-4 pr-20 max-md:pr-5">
                     <div className="text-2xl leading-9 text-red-400">Sell</div>
-                    <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
+                    <div className="flex gap-2 text-lg leading-8 tracking-tight text-gray-300">
                       <ImageToken
-                        className="w-10 h-10"
+                        className="h-10 w-10"
                         symbol={dataTokenInfo?.symbol}
                       />
-                      <div className="flex flex-col flex-1 justify-center">
+                      <div className="flex flex-1 flex-col justify-center">
                         <div>
                           {numeral(
                             dataTokenInspectBS?.out_flow_in_token || 0,
@@ -258,14 +258,14 @@ export const PriceRelation = ({
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-start py-2 pr-20 pl-4 mt-14 w-full rounded-lg border border-solid border-secondary-4 max-md:pr-5 max-md:mt-10">
+                  <div className="mt-14 flex w-full flex-col items-start rounded-lg border border-solid border-secondary-4 py-2 pl-4 pr-20 max-md:mt-10 max-md:pr-5">
                     <div className="text-2xl leading-9 text-stone-400">Buy</div>
-                    <div className="flex gap-2 text-lg tracking-tight leading-8 text-gray-300">
+                    <div className="flex gap-2 text-lg leading-8 tracking-tight text-gray-300">
                       <ImageToken
-                        className="w-10 h-10"
+                        className="h-10 w-10"
                         symbol={dataTokenInfo?.symbol}
                       />
-                      <div className="flex flex-col flex-1 justify-center">
+                      <div className="flex flex-1 flex-col justify-center">
                         <div>
                           {numeral(
                             dataTokenInspectBS?.in_flow_in_token || 0,

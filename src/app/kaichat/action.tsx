@@ -47,7 +47,7 @@ async function submitUserMessage(content: string) {
     model: openai('gpt-3.5-turbo'),
     initial: (
       <div className="flex items-start gap-4 py-8">
-        <LogoChat className="w-8 h-8 shrink-0" />
+        <LogoChat className="h-8 w-8 shrink-0" />
         <div className="flex items-start">
           <DotLoading />
         </div>

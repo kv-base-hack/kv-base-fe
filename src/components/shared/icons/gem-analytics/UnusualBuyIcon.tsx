@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function GemAnalyticsUnusualBuyIcon() {
   return (
@@ -29,7 +29,7 @@ function GemAnalyticsUnusualBuyIcon() {
         </linearGradient>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default GemAnalyticsUnusualBuyIcon;
+export default GemAnalyticsUnusualBuyIcon

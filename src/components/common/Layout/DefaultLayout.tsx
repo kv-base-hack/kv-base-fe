@@ -9,7 +9,7 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <div className="bg-background w-full min-h-screen">
+    <div className="min-h-screen w-full bg-background">
       <div className="flex items-start">
         <div className="w-full">
           <Headroom

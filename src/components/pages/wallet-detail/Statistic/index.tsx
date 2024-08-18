@@ -84,7 +84,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
           return tokenAddress ? (
             <TooltipTokenInfo token={row.original} chain={CHAIN} />
           ) : (
-            <div className="flex gap-1 cursor-not-allowed items-center justify-between text-right">
+            <div className="flex cursor-not-allowed items-center justify-between gap-1 text-right">
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
               <TokenSymbol>{symbol}</TokenSymbol>
             </div>
@@ -176,7 +176,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         header: () => {
           return (
             <div
-              className="text-neutral-04 whitespace-nowrap"
+              className="whitespace-nowrap text-neutral-04"
               role="button"
               onClick={() => setSort('total_spent')}
             >
@@ -195,7 +195,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
 
   return (
     <WrapTable
-      className="justify-start h-full"
+      className="h-full justify-start"
       icon={<TradeStatisticIcon />}
       title={<div className="whitespace-nowrap">Trades Statistics</div>}
       childHeader={
@@ -205,7 +205,7 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
               listToken={listToken}
               setListToken={setListToken}
             >
-              <button className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent text-neutral-04 px-4 py-2 my-auto">
+              <button className="my-auto whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2 text-neutral-04">
                 Specific Token
               </button>
             </DialogSelectToken>
@@ -227,9 +227,9 @@ export const Statistic: React.FC<StatisticProps> = ({ address, chain }) => {
         </div>
       }
     >
-      <div className="mt-4 h-full flex flex-col justify-between">
+      <div className="mt-4 flex h-full flex-col justify-between">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+          className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
           columns={columns}
           data={dataSource}
           noneBorder

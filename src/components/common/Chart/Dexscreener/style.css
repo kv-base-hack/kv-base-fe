@@ -5,7 +5,7 @@
   border-radius: 20px;
 }
 
-@media(min-width:1400px) {
+@media (min-width: 1400px) {
   #dexscreener-embed {
     padding-bottom: 65%;
     border-radius: 20px;

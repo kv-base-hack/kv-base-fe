@@ -85,15 +85,15 @@ export default function FindGemsTabDashboard() {
   const totalTopTokenProfit = topTokenProfitQuery.data?.data.total || 1
 
   return (
-    <div className="w-full h-full">
-      <div className="hidden md:flex lg:hidden justify-start p-4 items-center text-lg font-medium tracking-tight leading-6 depth-1">
+    <div className="h-full w-full">
+      <div className="depth-1 hidden items-center justify-start p-4 text-lg font-medium leading-6 tracking-tight md:flex lg:hidden">
         {TABLET_TAB.map((item, idx) => (
           <div
             className={cn(
               'cursor-pointer',
               tab === item.value
                 ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
-                : 'self-stretch my-auto',
+                : 'my-auto self-stretch',
             )}
             key={idx}
             onClick={() => setTab(item.value)}
@@ -102,14 +102,14 @@ export default function FindGemsTabDashboard() {
           </div>
         ))}
       </div>
-      <div className="flex overflow-x-auto md:hidden justify-start p-4 items-center text-lg font-medium tracking-tight leading-6 depth-1">
+      <div className="depth-1 flex items-center justify-start overflow-x-auto p-4 text-lg font-medium leading-6 tracking-tight md:hidden">
         {MOBILE_TAB.map((item, idx) => (
           <div
             className={cn(
               'cursor-pointer whitespace-nowrap',
               tab === item.value
                 ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
-                : 'self-stretch my-auto',
+                : 'my-auto self-stretch',
             )}
             key={idx}
             onClick={() => setTab(item.value)}
@@ -123,7 +123,7 @@ export default function FindGemsTabDashboard() {
 
       {/* table */}
       {width > 834 || (width <= 834 && tab === 'top_performing') ? (
-        <div className="m-0 lg:mx-10 pb-10">
+        <div className="m-0 pb-10 lg:mx-10">
           <WrapTable
             icon={<SmartMoneyTopPerformingIcon />}
             title="Smart Money Top Performing Tokens"

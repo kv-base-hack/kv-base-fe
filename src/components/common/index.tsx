@@ -1,2 +1,2 @@
-export * from "./message";
-export * from "./spinner";
+export * from './message'
+export * from './spinner'

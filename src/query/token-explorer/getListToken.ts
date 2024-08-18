@@ -11,7 +11,7 @@ export const useTokenListQuery = ({
 }: {
   symbol_search: string
   chain: string
-    enabled?: boolean
+  enabled?: boolean
   limit?: number
 }) =>
   useQuery({

@@ -82,19 +82,19 @@ export function DataTable<TData, TValue>({
                     'h-10 px-1.5',
                     noneBorder
                       ? ''
-                      : 'border-t-[0.5px] border-b-[0.5px] border-white/20',
+                      : 'border-b-[0.5px] border-t-[0.5px] border-white/20',
                     contentClassName,
                   )}
                 >
                   {!isPlaceholder && (
                     <div
                       className={cn(
-                        'flex font-normal items-center text-xs gap-1 text-neutral-04 whitespace-nowrap',
+                        'flex items-center gap-1 whitespace-nowrap text-xs font-normal text-neutral-04',
                         align === 'end'
-                          ? 'justify-end '
+                          ? 'justify-end'
                           : align === 'center'
-                          ? 'justify-center'
-                          : 'justify-start',
+                            ? 'justify-center'
+                            : 'justify-start',
                       )}
                     >
                       <div className="flex items-center gap-1.5">
@@ -134,8 +134,8 @@ export function DataTable<TData, TValue>({
                           align === 'end'
                             ? 'justify-end'
                             : align === 'center'
-                            ? 'justify-center'
-                            : 'justify-start',
+                              ? 'justify-center'
+                              : 'justify-start',
                         )}
                       >
                         <SkeletonCell />
@@ -143,13 +143,13 @@ export function DataTable<TData, TValue>({
                     ) : (
                       <div
                         className={cn(
-                          'flex items-center w-full text-neutral-07 font-semibold text-sm',
+                          'flex w-full items-center text-sm font-semibold text-neutral-07',
                           contentClassName,
                           align === 'end'
                             ? 'justify-end'
                             : align === 'center'
-                            ? 'justify-center'
-                            : 'justify-start',
+                              ? 'justify-center'
+                              : 'justify-start',
                         )}
                       >
                         {flexRender(

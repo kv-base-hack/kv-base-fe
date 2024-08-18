@@ -20,8 +20,10 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-linear-1':
           'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
-        'sol-gradient': 'linear-gradient(239deg, #5B599A 9.01%, #5C958C 48.59%, #5EBC75 85.68%)',
-        'gradient-btn': 'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
+        'sol-gradient':
+          'linear-gradient(239deg, #5B599A 9.01%, #5C958C 48.59%, #5EBC75 85.68%)',
+        'gradient-btn':
+          'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
       },
       colors: {
         brand: '#0C68E9',
@@ -71,7 +73,6 @@ const config: Config = {
         '2xl': '1560px',
         '3xl': '1700px',
       },
-
     },
   },
   plugins: [require('tailwindcss-animate')],

@@ -18,14 +18,18 @@ export const SelectChain = ({
     <Select value={chain} onValueChange={(val: string) => setChain(val)}>
       <SelectTrigger
         className={cn(
-          'flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-semibold tracking-normal leading-6 text-gray-300 whitespace-nowrap',
+          'my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap px-4 py-3 text-base font-semibold leading-6 tracking-normal text-gray-300',
           size === 'lg'
-            ? 'bg-transparent border-none outline-none focus:ring-0 focus:ring-offset-0 p-0'
-            : 'border border-solid backdrop-blur-[50px] bg-neutral-07/50 border-white/10 rounded-[360px]'
-        )}>
-        <div className="flex items-center gap-2 justify-between">
+            ? 'border-none bg-transparent p-0 outline-none focus:ring-0 focus:ring-offset-0'
+            : 'rounded-[360px] border border-solid border-white/10 bg-neutral-07/50 backdrop-blur-[50px]',
+        )}
+      >
+        <div className="flex items-center justify-between gap-2">
           <SolanaIcon
-            className={cn('object-center aspect-square', size === 'lg' ? 'w-10 h-10' : 'w-8 h-8')}
+            className={cn(
+              'aspect-square object-center',
+              size === 'lg' ? 'h-10 w-10' : 'h-8 w-8',
+            )}
           />
           {showName ? <div className="grow">Solana</div> : null}
         </div>

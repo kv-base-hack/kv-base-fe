@@ -107,11 +107,11 @@ export default function Home() {
   return (
     <div className="flex items-stretch gap-2">
       <div className="w-full">
-        <div className="flex flex-col p-6 bg-neutral-01  rounded-2xl">
+        <div className="flex flex-col rounded-2xl bg-neutral-01 p-6">
           {messages.length ? (
             <div
               style={{ height: `${chatHeight}px` }}
-              className="overflow-auto scroll-smooth no-scrollbar"
+              className="no-scrollbar overflow-auto scroll-smooth"
             >
               <ChatList messages={messages} />
             </div>
@@ -181,13 +181,13 @@ export default function Home() {
             >
               <div className="flex items-center gap-2">
                 <div className="relative w-full">
-                  <LogoChat className="absolute top-4 left-4 z-10" />
+                  <LogoChat className="absolute left-4 top-4 z-10" />
                   <Textarea
                     ref={inputRef}
                     tabIndex={0}
                     onKeyDown={onKeyDown}
                     placeholder="Ask Kaichat anything..."
-                    className="w-full min-h-[48px] pl-12 pr-4 py-4 resize-none focus-within:outline-none text-neutral-07 text-base placeholder:text-base bg-[#F4F4F4] backdrop-blur rounded-[48px] border border-white/10 placeholder:text-[#6F767E]/80"
+                    className="min-h-[48px] w-full resize-none rounded-[48px] border border-white/10 bg-[#F4F4F4] py-4 pl-12 pr-4 text-base text-neutral-07 backdrop-blur placeholder:text-base placeholder:text-[#6F767E]/80 focus-within:outline-none"
                     autoFocus
                     spellCheck={false}
                     autoComplete="off"
@@ -203,7 +203,7 @@ export default function Home() {
                         <button
                           type="submit"
                           disabled={inputValue === ''}
-                          className="bg-[#0C68E9] w-10 h-10 rounded-full flex items-center justify-center"
+                          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0C68E9]"
                         >
                           <IconArrow className="text-white" />
                           <span className="sr-only">Send message</span>
@@ -215,7 +215,7 @@ export default function Home() {
                 </div>
                 <button
                   className={cn(
-                    'text-neutral-07 whitespace-nowrap bg-neutral-01 p-4 rounded-[48px]',
+                    'whitespace-nowrap rounded-[48px] bg-neutral-01 p-4 text-neutral-07',
                     messagesHistory.length === 0 ? 'visible' : 'hidden',
                   )}
                   onClick={onCreateNewChat}

@@ -55,34 +55,34 @@ export function EmptyScreen({
   submitMessage: (message: string) => void
 }) {
   return (
-    <div className="flex flex-col gap-6 h-full p-4 overflow-auto">
-      <div className="flex flex-col gap-4 px-4 md:px-8 md:gap-8 pb-5">
+    <div className="flex h-full flex-col gap-6 overflow-auto p-4">
+      <div className="flex flex-col gap-4 px-4 pb-5 md:gap-8 md:px-8">
         <div className="flex flex-col gap-[30px]">
-          <h2 className="text-neutral-07 text-[32px] md:text-[48px] font-bold leading-[48px]">
+          <h2 className="text-[32px] font-bold leading-[48px] text-neutral-07 md:text-[48px]">
             Welcome To Kaichat,
             <p className="text-neutral-04">
               your personal AI investment assistant
             </p>
           </h2>
-          <p className="text-neutral-07 font-medium text-xl md:text-xl ">
+          <p className="text-xl font-medium text-neutral-07 md:text-xl">
             Need suggestions about hot coins, market trends, trading strategies,
             technical analysis, smartmoney onchain analysis? I&apos;m here to
             help!
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-4 w-full">
+        <div className="grid w-full grid-cols-2 gap-4">
           {messageColor.map((message, index) => (
             <div
               key={index}
               className={cn(
-                'h-auto p-3 border border-[#EFEFEF] rounded-[20px] text-neutral-07 text-lg font-bold flex items-center gap-4 relative',
+                'relative flex h-auto items-center gap-4 rounded-[20px] border border-[#EFEFEF] p-3 text-lg font-bold text-neutral-07',
                 index === 0
                   ? 'bg-[#FFF6EB]'
                   : index === 1
-                  ? 'bg-[#DFF9E8]'
-                  : index === 2
-                  ? 'bg-[#F5EDFA]'
-                  : 'bg-[#c8dcf7]',
+                    ? 'bg-[#DFF9E8]'
+                    : index === 2
+                      ? 'bg-[#F5EDFA]'
+                      : 'bg-[#c8dcf7]',
                 message.message === 'Whitepaper Analysis',
               )}
               onClick={async () => {
@@ -91,14 +91,14 @@ export function EmptyScreen({
             >
               <div
                 className={cn(
-                  'p-2 rounded-xl',
+                  'rounded-xl p-2',
                   index === 0
                     ? 'bg-[#FBA94B]'
                     : index === 1
-                    ? 'bg-[#32AE60]'
-                    : index === 2
-                    ? 'bg-[#B981DA]'
-                    : 'bg-[#0C68E9]',
+                      ? 'bg-[#32AE60]'
+                      : index === 2
+                        ? 'bg-[#B981DA]'
+                        : 'bg-[#0C68E9]',
                 )}
               >
                 <svg
@@ -117,12 +117,12 @@ export function EmptyScreen({
                   />
                 </svg>
               </div>
-              <div className="line-clamp-2 md:line-clamp-1 text-left w-full">
+              <div className="line-clamp-2 w-full text-left md:line-clamp-1">
                 {message.heading}
               </div>
               <div
                 className={cn(
-                  'w-full h-full absolute bg-[#EEE]/60 rounded-[20px] z-10 cursor-not-allowed right-0 top-0',
+                  'absolute right-0 top-0 z-10 h-full w-full cursor-not-allowed rounded-[20px] bg-[#EEE]/60',
                   message.message === 'Whitepaper Analysis'
                     ? 'visible'
                     : 'hidden',
@@ -132,17 +132,17 @@ export function EmptyScreen({
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-4 md:gap-x-8 w-full">
+        <div className="grid w-full grid-cols-2 gap-x-4 gap-y-4 md:gap-x-8">
           {exampleMessages.map((message, index) => (
             <Button
               key={index}
               variant="link"
-              className="h-auto p-3 border-[#EFEFEF] border bg-neutral-01 rounded-[20px] text-sm text-neutral-07 text-[15px] leading-6 font-normal flex items-center gap-4"
+              className="flex h-auto items-center gap-4 rounded-[20px] border border-[#EFEFEF] bg-neutral-01 p-3 text-[15px] text-sm font-normal leading-6 text-neutral-07"
               onClick={async () => {
                 submitMessage(message.message)
               }}
             >
-              <div className="line-clamp-2 md:line-clamp-1 text-left w-full">
+              <div className="line-clamp-2 w-full text-left md:line-clamp-1">
                 {message.heading}
               </div>
               <div className="">

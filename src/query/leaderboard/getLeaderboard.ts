@@ -1,4 +1,3 @@
-
 import { getLeaderboard } from '@/services/leaderboard/api'
 import { useQuery } from '@tanstack/react-query'
 
@@ -19,7 +18,13 @@ export const useLeaderboardQuery = ({
 }) => ({
   queryKey: [GET_LEADERBOARD, { chain, limit, start, sortBy, token_addresses }],
   queryFn: async () => {
-    const data = await getLeaderboard({ chain, limit, start, sortBy, token_addresses })
+    const data = await getLeaderboard({
+      chain,
+      limit,
+      start,
+      sortBy,
+      token_addresses,
+    })
     return data.data
-  }
+  },
 })

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function GemAnalyticsSMNewListingBuyIcon() {
   return (
@@ -29,7 +29,7 @@ function GemAnalyticsSMNewListingBuyIcon() {
         </linearGradient>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default GemAnalyticsSMNewListingBuyIcon;
+export default GemAnalyticsSMNewListingBuyIcon

@@ -10,25 +10,25 @@ export const DialogAiAnalysis = ({ item }: { item: DexTradingSignalInfo }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="py-2 w-full border border-transparent font-semibold rounded-[48px] backdrop-blur-[32px] text-base text-neutral-07 bg-[#D8F0FF]">
-          <div className=" hover:scale-110 transition-all duration-300">
+        <button className="w-full rounded-[48px] border border-transparent bg-[#D8F0FF] py-2 text-base font-semibold text-neutral-07 backdrop-blur-[32px]">
+          <div className="transition-all duration-300 hover:scale-110">
             AI Analysis
           </div>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-h-[70%] max-w-[1000px] overflow-auto top-[450px] bg-neutral-01">
+      <DialogContent className="top-[450px] max-h-[70%] max-w-[1000px] overflow-auto bg-neutral-01">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-1">
             <IconAiAnalysis />
-            <p className="text-neutral-07 text-xl font-medium">
+            <p className="text-xl font-medium text-neutral-07">
               AI Analysis of
             </p>
             <ImageToken
               imgUrl={item?.image_url}
               symbol={item?.symbol}
-              className="w-[32px] h-[32px]"
+              className="h-[32px] w-[32px]"
             />
-            <div className="font-bold text-xl text-neutral-04 flex items-center gap-1">
+            <div className="flex items-center gap-1 text-xl font-bold text-neutral-04">
               <p className="text-neutral-07">{item?.symbol}</p>{' '}
               <p>{item.name}</p>
             </div>
@@ -36,7 +36,7 @@ export const DialogAiAnalysis = ({ item }: { item: DexTradingSignalInfo }) => {
 
           <div>
             <MemoizedReactMarkdown
-              className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 text-neutral-07"
+              className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 break-words text-neutral-07"
               remarkPlugins={[remarkGfm, remarkMath]}
               components={{
                 p({ children }) {

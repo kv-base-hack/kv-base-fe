@@ -37,7 +37,7 @@ export const columnsSignalTriggered: ColumnDef<SignalTriggered>[] = [
       return (
         <div
           className={cn(
-            'flex items-center gap-2.5 justify-center self-stretch px-2 py-0.5 my-auto text-center whitespace-nowrap rounded-md bg-opacity-10',
+            'my-auto flex items-center justify-center gap-2.5 self-stretch whitespace-nowrap rounded-md bg-opacity-10 px-2 py-0.5 text-center',
             direction === 'short'
               ? 'bg-secondary-1/10 text-secondary-1'
               : 'bg-primary-2/10 text-success-500',

@@ -47,12 +47,12 @@ export const SelectDuration = ({
       <SelectTrigger
         area-label="select-date"
         className={cn(
-          'flex w-auto cursor-pointer gap-2 px-4 py-2 my-auto text-sm font-semibold tracking-normal leading-6 text-neutral-04 whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent',
+          'my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2 text-sm font-semibold leading-6 tracking-normal text-neutral-04',
         )}
       >
         <div className="grow">{renderDuration(duration).value}</div>
       </SelectTrigger>
-      <SelectContent className="border-none !min-w-16 bg-neutral-07 z-[9999]">
+      <SelectContent className="z-[9999] !min-w-16 border-none bg-neutral-07">
         <SelectItem value="1h">1H</SelectItem>
         <SelectItem value="4h">4H</SelectItem>
         <SelectItem value="24h">1D</SelectItem>

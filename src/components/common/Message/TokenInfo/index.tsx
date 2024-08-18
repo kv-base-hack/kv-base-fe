@@ -19,8 +19,8 @@ const MarketInfo = ({
 }) => {
   return (
     <div className="flex flex-col items-center justify-between gap-1">
-      <div className=" text-[#797979] text-xs font-normal">{title}</div>
-      <div className="text-[#1A1D1F] text-sm font-semibold">
+      <div className="text-xs font-normal text-[#797979]">{title}</div>
+      <div className="text-sm font-semibold text-[#1A1D1F]">
         {loading ? <SkeletonCell /> : <>{children}</>}
       </div>
     </div>
@@ -42,10 +42,10 @@ export const TokenInfo = ({
   const percentSell = (volume_sell * 100) / (volume_buy + volume_sell)
 
   return (
-    <div className="flex items-center justify-between px-6 py-3 bg-[#EFEFEF] rounded-full border border-white/10 mb-4 w-full">
+    <div className="mb-4 flex w-full items-center justify-between rounded-full border border-white/10 bg-[#EFEFEF] px-6 py-3">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-3">
-          <ImageToken imgUrl={imgUrl} symbol={symbol} className="w-10 h-10" />
+          <ImageToken imgUrl={imgUrl} symbol={symbol} className="h-10 w-10" />
 
           <p className="text-2xl font-semibold text-[#111827]">{symbol}</p>
         </div>
@@ -54,7 +54,7 @@ export const TokenInfo = ({
         <MarketInfo title="AVG SM entry" loading={loading}>
           {renderPrice(avg_entry)}
         </MarketInfo>
-        <div className="w-px h-10 flex-1 bg-[#E7E9EB]"></div>
+        <div className="h-10 w-px flex-1 bg-[#E7E9EB]"></div>
 
         <MarketInfo title="# SM hold" loading={loading}>
           <DialogNumberOfSmartMoney
@@ -64,7 +64,7 @@ export const TokenInfo = ({
             duration={'24h'}
           />
         </MarketInfo>
-        <div className="w-px h-10 bg-[#E7E9EB]"></div>
+        <div className="h-10 w-px bg-[#E7E9EB]"></div>
         <MarketInfo title="# Unusual buy" loading={loading}>
           <DialogNumberOfSmartMoney
             number={unusual_buy || 0}
@@ -73,19 +73,19 @@ export const TokenInfo = ({
             duration={'24h'}
           />
         </MarketInfo>
-        <div className="w-px h-10 bg-[#E7E9EB]"></div>
+        <div className="h-10 w-px bg-[#E7E9EB]"></div>
         <div className="flex flex-col items-center justify-between whitespace-nowrap">
           <div className="flex gap-1">
-            <div className="flex flex-col flex-1">
-              <div className="flex items-center justify-center text-xs tracking-normal leading-5 text-right text-neutral-04">
+            <div className="flex flex-1 flex-col">
+              <div className="flex items-center justify-center text-right text-xs leading-5 tracking-normal text-neutral-04">
                 <div>SM BUY VOL</div>
               </div>
               <div className="text-sm font-medium leading-6 text-neutral-07">
                 {loading ? null : `$${nFormatter(volume_buy || 0)}`}
               </div>
             </div>
-            <div className="flex flex-col flex-1 items-end pl-20">
-              <div className="flex items-center gap-1 justify-center text-xs tracking-normal leading-5 text-right text-neutral-04">
+            <div className="flex flex-1 flex-col items-end pl-20">
+              <div className="flex items-center justify-center gap-1 text-right text-xs leading-5 tracking-normal text-neutral-04">
                 <div>SM SELL VOL</div>
               </div>
               <div className="self-end text-sm font-medium leading-6 text-neutral-07">
@@ -93,32 +93,32 @@ export const TokenInfo = ({
               </div>
             </div>
           </div>
-          <div className="flex gap-0.5 w-full justify-between">
+          <div className="flex w-full justify-between gap-0.5">
             {loading ? (
-              <div className="w-20 h-3 overflow-hidden rounded-full">
+              <div className="h-3 w-20 overflow-hidden rounded-full">
                 <Skeleton />
               </div>
             ) : (
               <div
                 style={{ width: percentBuy + '%' }}
-                className="shrink-0 h-1 bg-lime-300 rounded-[100px]"
+                className="h-1 shrink-0 rounded-[100px] bg-lime-300"
               />
             )}
             {loading ? (
-              <div className="w-20 h-3 overflow-hidden rounded-full">
+              <div className="h-3 w-20 overflow-hidden rounded-full">
                 <Skeleton />
               </div>
             ) : (
               <div
                 style={{ width: percentSell + '%' }}
-                className="shrink-0 h-1 bg-rose-500 rounded-[100px]"
+                className="h-1 shrink-0 rounded-[100px] bg-rose-500"
               />
             )}
           </div>
         </div>
       </div>
 
-      <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-6 py-3 h-full text-[15px] leading-6 font-bold text-[#FCFCFC] hover:underline">
+      <div className="flex h-full cursor-pointer items-center justify-center rounded-3xl bg-neutral-07 px-6 py-3 text-[15px] font-bold leading-6 text-[#FCFCFC] hover:underline">
         <Link href={`/smartmoney-onchain/token-explorer/${address}`}>
           See Detail in Token Explore
         </Link>

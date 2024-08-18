@@ -25,9 +25,9 @@ export const columnsLeaderboard = (
     {
       accessorKey: 'smart_money',
       header: () => (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <div>Smart Money</div>
-          <SortMultipleIcon className="w-4 h-4" />
+          <SortMultipleIcon className="h-4 w-4" />
         </div>
       ),
       enableSorting: false,
@@ -111,7 +111,7 @@ export const columnsLeaderboard = (
           most_profit_token?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${most_profit_token?.tokenAddress}`}
-              className="flex gap-3 items-center justify-between text-right"
+              className="flex items-center justify-between gap-3 text-right"
             >
               <ImageToken
                 imgUrl={most_profit_token?.imageUrl}
@@ -120,7 +120,7 @@ export const columnsLeaderboard = (
               <div>{most_profit_token.symbol}</div>
             </Link>
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={most_profit_token?.imageUrl}
                 symbol={most_profit_token?.symbol}
@@ -143,7 +143,7 @@ export const columnsLeaderboard = (
           current_largest_position?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}`}
-              className="flex gap-3 items-center justify-between text-right"
+              className="flex items-center justify-between gap-3 text-right"
             >
               <ImageToken
                 imgUrl={current_largest_position?.imageUrl}
@@ -152,7 +152,7 @@ export const columnsLeaderboard = (
               <div>{current_largest_position.symbol}</div>
             </Link>
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={current_largest_position?.imageUrl}
                 symbol={current_largest_position?.symbol}
@@ -173,7 +173,7 @@ export const columnsLeaderboard = (
           most_token_buy?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${most_token_buy?.tokenAddress}`}
-              className="flex gap-3 items-center justify-between text-right"
+              className="flex items-center justify-between gap-3 text-right"
             >
               <ImageToken
                 imgUrl={most_token_buy?.imageUrl}
@@ -182,7 +182,7 @@ export const columnsLeaderboard = (
               <div>{most_token_buy.symbol}</div>
             </Link>
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={most_token_buy?.imageUrl}
                 symbol={most_token_buy?.symbol}
@@ -203,7 +203,7 @@ export const columnsLeaderboard = (
           most_token_sell?.tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${most_token_sell?.tokenAddress}`}
-              className="flex gap-3 items-center justify-between text-right"
+              className="flex items-center justify-between gap-3 text-right"
             >
               <ImageToken
                 imgUrl={most_token_sell?.imageUrl}
@@ -212,7 +212,7 @@ export const columnsLeaderboard = (
               <div>{most_token_sell.symbol}</div>
             </Link>
           ) : (
-            <div className="flex gap-3 items-center justify-between text-right">
+            <div className="flex items-center justify-between gap-3 text-right">
               <ImageToken
                 imgUrl={most_token_sell?.imageUrl}
                 symbol={most_token_sell?.symbol}
@@ -237,7 +237,7 @@ export const columnsLeaderboard = (
       cell: ({ row }) => {
         const { last_trade } = row.original
         return (
-          <div className="flex text-right justify-end text-neutral-04">
+          <div className="flex justify-end text-right text-neutral-04">
             {moment(last_trade).fromNow()}
           </div>
         )

@@ -6,7 +6,7 @@ export const getSmartMoneyTransactions = async (
   address: string,
   page: number,
   perPage: number,
-  chain: string
+  chain: string,
 ) => {
   const limit = perPage
   const start = (page - 1) * perPage + 1

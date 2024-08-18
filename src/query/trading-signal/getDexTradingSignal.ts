@@ -15,8 +15,7 @@ export const useGetDexTradingSignalQuery = ({
   type?: string
   addresses?: string
   chain?: string
-}) =>
-({
+}) => ({
   queryKey: [GET_DEX_TRADING_SIGNAL, { start, limit, type, addresses, chain }],
   queryFn: async () => {
     const data = getDexTradingSignal({ start, limit, type, addresses, chain })

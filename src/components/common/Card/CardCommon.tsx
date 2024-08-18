@@ -11,7 +11,7 @@ export const CardCommon = ({
   return (
     <div
       className={cn(
-        'bg-neutral-01 p-6 rounded-2xl flex flex-col gap-4 border border-[#EFEFEF] w-full',
+        'flex w-full flex-col gap-4 rounded-2xl border border-[#EFEFEF] bg-neutral-01 p-6',
         className,
       )}
     >

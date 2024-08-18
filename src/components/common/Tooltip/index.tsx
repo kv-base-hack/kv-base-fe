@@ -23,14 +23,14 @@ export const TooltipCustom: React.FC<TooltipCustomProps> = ({
     <TooltipProvider>
       <Tooltip delayDuration={200}>
         <TooltipTrigger asChild>
-          <Button className="!p-0 !m-0">{children}</Button>
+          <Button className="!m-0 !p-0">{children}</Button>
         </TooltipTrigger>
         <TooltipContent
           datatype="bottom"
           side={side}
           className={cn(
             className,
-            'shadow-box bg-neutral-01 text-neutral-07 max-w-[240px] border border-neutral-07/10 rounded-lg',
+            'max-w-[240px] rounded-lg border border-neutral-07/10 bg-neutral-01 text-neutral-07 shadow-box',
           )}
         >
           {content}

@@ -1,14 +1,14 @@
 export const SkeletonText = () => {
   return (
-    <div className="w-[500px] h-[120px] flex flex-col gap-4">
-      <div className="h-3 line-1 rounded-lg">
-        <div className="h-3 background-gradient rounded-lg"></div>
+    <div className="flex h-[120px] w-[500px] flex-col gap-4">
+      <div className="line-1 h-3 rounded-lg">
+        <div className="background-gradient h-3 rounded-lg"></div>
       </div>
-      <div className="h-3 line-2">
-        <div className="h-3 background-gradient"></div>
+      <div className="line-2 h-3">
+        <div className="background-gradient h-3"></div>
       </div>
-      <div className="h-3 line-3">
-        <div className="h-3 background-gradient"></div>
+      <div className="line-3 h-3">
+        <div className="background-gradient h-3"></div>
       </div>
     </div>
   )

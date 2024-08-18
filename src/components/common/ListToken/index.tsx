@@ -48,14 +48,14 @@ const RenderDataGem = ({
         return (
           <div
             key={index}
-            className="flex gap-2 justify-between mt-4 w-full text-sm tracking-normal leading-4 whitespace-nowrap"
+            className="mt-4 flex w-full justify-between gap-2 whitespace-nowrap text-sm leading-4 tracking-normal"
           >
-            <div className="flex gap-3 items-center text-gray-300">
-              <div className="self-stretch my-auto">
+            <div className="flex items-center gap-3 text-gray-300">
+              <div className="my-auto self-stretch">
                 {index + 1 + (page - 1) * 10}
               </div>
               <ImageToken imgUrl={item?.image_url} symbol={item?.symbol} />
-              <div className="self-stretch my-auto text-right">
+              <div className="my-auto self-stretch text-right">
                 {item?.symbol}
               </div>
             </div>
@@ -219,17 +219,17 @@ export const ListToken = () => {
     }
   }
   return (
-    <div className="hidden xl:flex flex-col justify-center max-w-[264px]">
-      <div className="flex flex-col p-4 w-full rounded-lg border border-solid shadow-lg backdrop-blur-lg bg-neutral-07/50 border-white/10">
-        <div className="flex items-center gap-2 text-base font-bold tracking-normal leading-6 text-zinc-100">
-          <div className="w-6 h-6">
-            <TopTrendingIcon className="w-6 h-6" />
+    <div className="hidden max-w-[264px] flex-col justify-center xl:flex">
+      <div className="flex w-full flex-col rounded-lg border border-solid border-white/10 bg-neutral-07/50 p-4 shadow-lg backdrop-blur-lg">
+        <div className="flex items-center gap-2 text-base font-bold leading-6 tracking-normal text-zinc-100">
+          <div className="h-6 w-6">
+            <TopTrendingIcon className="h-6 w-6" />
           </div>
           <SelectFindGems gem={gem} setGem={setGem} setPage={setPage} />
         </div>
         {renderSelectValue()}
       </div>
-      <div className="mt-4 w-full text-sm italic tracking-normal leading-5 underline text-neutral-02">
+      <div className="mt-4 w-full text-sm italic leading-5 tracking-normal text-neutral-02 underline">
         <span className="underline">Tips:</span> You can{' '}
         <span className="font-bold">click on tokens </span>to get AI Analyst
         quickly.

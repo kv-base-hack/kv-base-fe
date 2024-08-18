@@ -1,4 +1,4 @@
-import { getInsiderBuy } from "@/services/leaderboard/api"
+import { getInsiderBuy } from '@/services/leaderboard/api'
 
 const GET_INSIDER_BUY = 'GET_INSIDER_BUY'
 
@@ -19,5 +19,5 @@ export const useGetInsiderBuyQuery = ({
   queryFn: async () => {
     const data = await getInsiderBuy({ limit, duration, start, chain, sort_by })
     return data.data
-  }
+  },
 })

@@ -21,7 +21,7 @@ const MarketInfo = ({
 }) => {
   return (
     <div className="flex flex-col items-start gap-1">
-      <div className="flex items-center gap-1 text-neutral-300 text-sm font-normal">
+      <div className="flex items-center gap-1 text-sm font-normal text-neutral-300">
         {icon}
         <span>{title}</span>
       </div>
@@ -36,7 +36,7 @@ const renderPercentChange = (percent: number) => {
   return (
     <div
       className={cn(
-        'flex items-center gap-1 text-sm font-medium pt-1.5',
+        'flex items-center gap-1 pt-1.5 text-sm font-medium',
         percent > 0 ? 'text-success-500' : 'text-error-500',
       )}
     >
@@ -51,15 +51,15 @@ const renderPercentChange = (percent: number) => {
 
 export const MessageTokenInfo = (data: MessageTokenInfoResponse) => {
   return (
-    <div className="bg-[#1A1D1F]/50 border border-white/10 p-4 backdrop-blur-[32px] shadow-chat-ai rounded-2xl mb-10 w-full flex flex-col gap-4">
+    <div className="mb-10 flex w-full flex-col gap-4 rounded-2xl border border-white/10 bg-[#1A1D1F]/50 p-4 shadow-chat-ai backdrop-blur-[32px]">
       <div className="flex items-center gap-20">
         <div className="flex items-center gap-3">
-          <ImageToken symbol={data.symbol} className="w-[45px] h-[45px]" />
+          <ImageToken symbol={data.symbol} className="h-[45px] w-[45px]" />
           <div className="flex flex-col justify-between">
-            <p className="text-black-300 text-base font-medium">
+            <p className="text-base font-medium text-black-300">
               {data.symbol}
             </p>
-            <p className="text-black-300 text-sm font-normal">{data.name}</p>
+            <p className="text-sm font-normal text-black-300">{data.name}</p>
           </div>
         </div>
 
@@ -69,19 +69,19 @@ export const MessageTokenInfo = (data: MessageTokenInfoResponse) => {
             title="Marketcap"
             total={data?.market_cap}
           />
-          <div className="w-px h-10 flex-1 bg-white/30"></div>
+          <div className="h-10 w-px flex-1 bg-white/30"></div>
           <MarketInfo
             icon={<IconDollar />}
             title="Volume 24h"
             total={data?.volume_24h}
           />
-          <div className="w-px h-10 bg-white/30"></div>
+          <div className="h-10 w-px bg-white/30"></div>
           <MarketInfo
             icon={<IconDollar />}
             title="Liquidity"
             total={data?.liquidity}
           />
-          <div className="w-px h-10 bg-white/30"></div>
+          <div className="h-10 w-px bg-white/30"></div>
           <MarketInfo
             icon={<IconDollar />}
             title="FDV"
@@ -90,12 +90,12 @@ export const MessageTokenInfo = (data: MessageTokenInfoResponse) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-stretch gap-4 p-4 rounded-2xl bg-[#111315]/50 backdrop-blur-[50px]">
+      <div className="flex flex-col items-stretch gap-4 rounded-2xl bg-[#111315]/50 p-4 backdrop-blur-[50px]">
         <div className="flex gap-4 pl-4">
-          <p className="text-[32px] leading-[48px] text-[#FEFEFE] font-bold">
+          <p className="text-[32px] font-bold leading-[48px] text-[#FEFEFE]">
             {renderPrice(data.usd_price)}
           </p>
-          <p className="font-normal text-2xl">
+          <p className="text-2xl font-normal">
             {renderPercentChange(data.percent_change_24h)}
           </p>
         </div>

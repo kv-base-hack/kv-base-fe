@@ -92,10 +92,10 @@ export interface TokenInfoProps {
   loading?: boolean
   address?: string
   pair?: string
-  marketcap?: number,
-  volume?: number,
-  liquidity?: number,
-  tokenAge?: string,
+  marketcap?: number
+  volume?: number
+  liquidity?: number
+  tokenAge?: string
   unusual_buy?: number
   volume_sell: number
 }

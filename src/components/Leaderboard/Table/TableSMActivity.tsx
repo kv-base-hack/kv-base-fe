@@ -79,9 +79,9 @@ export const TableSMActivity = () => {
     {
       accessorKey: 'smart_money',
       header: () => (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <div>Smart Money</div>
-          <SortMultipleIcon className="w-4 h-4" />
+          <SortMultipleIcon className="h-4 w-4" />
         </div>
       ),
       enableSorting: false,
@@ -89,7 +89,7 @@ export const TableSMActivity = () => {
         const { sender } = row.original
         return (
           <Link
-            className="underline max-w-32 truncate"
+            className="max-w-32 truncate underline"
             href={`/smartmoney-onchain/wallet-explorer/${sender}?chain=${CHAIN}`}
           >
             {sender}
@@ -194,7 +194,7 @@ export const TableSMActivity = () => {
             {price_change_24h.toFixed(2)}%
           </div>
         ) : (
-          <div className="text-left w-full">-</div>
+          <div className="w-full text-left">-</div>
         )
       },
     },
@@ -207,7 +207,7 @@ export const TableSMActivity = () => {
         const { scan_link } = row.original
         return (
           <a href={scan_link} target="_blank">
-            <ExternalLink className="w-4 h-4 text-neutral-07" />
+            <ExternalLink className="h-4 w-4 text-neutral-07" />
           </a>
         )
       },
@@ -228,9 +228,9 @@ export const TableSMActivity = () => {
         iconSecond={<Info />}
       >
         <div className="flex items-center gap-4 text-neutral-04">
-          <p className="text-neutral-04 text-sm font-semibold">Filter by</p>
+          <p className="text-sm font-semibold text-neutral-04">Filter by</p>
           <DialogSelectToken listToken={listToken} setListToken={setListToken}>
-            <button className="whitespace-nowrap border border-solid border-neutral-03 rounded-xl bg-transparent  px-4 py-2 my-auto">
+            <button className="my-auto whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-2">
               Specific Token
             </button>
           </DialogSelectToken>
@@ -238,7 +238,7 @@ export const TableSMActivity = () => {
             <div className="flex items-center gap-2">
               {listToken.map((item) => (
                 <div
-                  className="bg-neutral-01 cursor-pointer rounded-xl flex items-center justify-center px-4 gap-1 h-full py-2 text-sm tracking-normal leading-5 text-neutral-07 border border-neutral-03"
+                  className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-xl border border-neutral-03 bg-neutral-01 px-4 py-2 text-sm leading-5 tracking-normal text-neutral-07"
                   key={item.tokenAddress}
                 >
                   <ImageToken imgUrl={item?.imageUrl} symbol={item?.symbol} />
@@ -261,7 +261,7 @@ export const TableSMActivity = () => {
 
       <div className="">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4"
+          className="text-xs font-bold leading-4 tracking-normal"
           columns={columns}
           data={dataSource as any}
           isFetching={activityQuery.isFetching}

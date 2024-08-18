@@ -30,7 +30,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'id',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">#</div>
+          <div className="text-sm not-italic leading-5 text-neutral-04">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -41,14 +41,14 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'symbol',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-04">
             Token Name
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <TooltipTokenInfo
                     token={row?.original}
@@ -56,7 +56,7 @@ export const TableFindGemsSmartMoneyHolding = ({
                     nameToken={true}
                   />
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -77,7 +77,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         enableSorting: false,
         header: () => (
           <div className="flex items-center gap-0.5">
-            <div className="text-neutral-04 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-04">
               # of SM
             </div>
             <TooltipTable type="numberOfSMBuy" />
@@ -117,7 +117,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'avg_price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
+          <div className="text-sm not-italic leading-5 text-neutral-04">
             Avg Price
           </div>
         ),
@@ -125,7 +125,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         cell: ({ row }) => {
           const { avg_price } = row.original
           return (
-            <div className="text-neutral-07 whitespace-nowrap text-sm not-italic leading-5">
+            <div className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-07">
               {renderPrice(avg_price)}
             </div>
           )
@@ -135,14 +135,14 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
+          <div className="text-sm not-italic leading-5 text-neutral-04">
             Price
           </div>
         ),
         cell: ({ row }) => {
           const { current_price } = row.original
           return (
-            <div className="text-neutral-07 whitespace-nowrap text-sm not-italic leading-5">
+            <div className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-07">
               {renderPrice(current_price)}
             </div>
           )
@@ -153,7 +153,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'price_24h',
         header: () => (
           <div
-            className="text-neutral-07 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-07"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -164,13 +164,13 @@ export const TableFindGemsSmartMoneyHolding = ({
         cell: ({ row }) => {
           const { price_percent_change_24h } = row.original
           return price_percent_change_24h === 0 ? (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-07 text-sm not-italic  leading-5',
+                'text-sm not-italic leading-5 text-neutral-07',
                 price_percent_change_24h > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -239,7 +239,7 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'realized_percent',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('realized_percent')}
             role="button"
           >
@@ -249,11 +249,11 @@ export const TableFindGemsSmartMoneyHolding = ({
         cell: ({ row }) => {
           const { realized_percent } = row.original
           return !realized_percent || realized_percent === 0 ? (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               -
             </div>
           ) : (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               {realized_percent.toFixed(2)}%
             </div>
           )

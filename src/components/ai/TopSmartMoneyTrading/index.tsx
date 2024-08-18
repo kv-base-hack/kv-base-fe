@@ -34,9 +34,9 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
       {
         accessorKey: 'smart_money',
         header: () => (
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
             <div>Smart Money</div>
-            <SortMultipleIcon className="w-4 h-4" />
+            <SortMultipleIcon className="h-4 w-4" />
           </div>
         ),
         enableSorting: false,
@@ -80,9 +80,9 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: 'roi_3d_total',
         enableSorting: false,
         header: () => (
-          <div className="cursor-pointer flex flex-col items-center whitespace-nowrap">
+          <div className="flex cursor-pointer flex-col items-center whitespace-nowrap">
             <div>ROI 3D</div>
-            <div className="flex justify-center items-center w-4 h-4">
+            <div className="flex h-4 w-4 items-center justify-center">
               Total
             </div>
           </div>
@@ -105,7 +105,7 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: '3d_pnl',
         enableSorting: false,
         header: () => (
-          <div className="cursor-pointer flex items-center gap-2 whitespace-nowrap">
+          <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap">
             <div>3D PnL</div>
           </div>
         ),
@@ -123,7 +123,7 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: 'volume_24h',
         enableSorting: false,
         header: () => (
-          <div className="cursor-pointer flex items-center gap-2 whitespace-nowrap">
+          <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap">
             Volume 24H
           </div>
         ),
@@ -137,7 +137,7 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: 'total_balance',
         enableSorting: false,
         header: () => (
-          <div className="cursor-pointer flex items-center gap-2 whitespace-nowrap">
+          <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap">
             Total Balance
           </div>
         ),
@@ -153,7 +153,7 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: 'number_trades',
         enableSorting: false,
         header: () => (
-          <div className="cursor-pointer flex flex-col items-center whitespace-nowrap">
+          <div className="flex cursor-pointer flex-col items-center whitespace-nowrap">
             <p>Number of</p>
             <p>Trades(3d)</p>
           </div>
@@ -168,14 +168,14 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: 'latest_trade',
         enableSorting: false,
         header: () => (
-          <div className="cursor-pointer flex items-center gap-2 whitespace-nowrap">
+          <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap">
             Last Trade
           </div>
         ),
         cell: ({ row }) => {
           const { last_trade } = row.original
           return (
-            <div className="flex text-right justify-end text-neutral-04 whitespace-nowrap">
+            <div className="flex justify-end whitespace-nowrap text-right text-neutral-04">
               {moment(last_trade).fromNow()}
             </div>
           )
@@ -186,10 +186,10 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
   }, [])
 
   return (
-    <div className="p-6 font-semibold rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-01 bg-opacity-50 border-[#EFEFEF] leading-[160%] max-md:px-5">
-      <div className="rounded-lg bg-[#EFEFEF] w-fit py-2 px-4">
+    <div className="rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 bg-opacity-50 p-6 font-semibold leading-[160%] shadow-2xl backdrop-blur-lg max-md:px-5">
+      <div className="w-fit rounded-lg bg-[#EFEFEF] px-4 py-2">
         <div className="flex items-center gap-2">
-          <p className="grow font-medium relative mt-1">Top SM</p>
+          <p className="relative mt-1 grow font-medium">Top SM</p>
         </div>
       </div>
       <DataTable

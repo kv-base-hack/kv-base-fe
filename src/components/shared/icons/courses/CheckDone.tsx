@@ -16,7 +16,8 @@ function CheckDone({
       fill="none"
       className={className}
       onClick={onClick}
-      {...props}>
+      {...props}
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"

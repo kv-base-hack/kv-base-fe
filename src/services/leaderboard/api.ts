@@ -1,14 +1,14 @@
-import { InsiderBuyResponse } from "@/types/insiderBuy";
-import { LeaderboardResponse } from "@/types/leaderboard";
-import { NewListingBuyResponse } from "@/types/new-listing-buy";
-import { TopSmartMoneyTradeUsersListProps } from "@/types/smartmoney";
-import { SpotlightResp } from "@/types/spotlight";
-import { TokenListResponse } from "@/types/tokenList";
-import { TopTokenBuyResponse } from "@/types/top-token-buy";
-import { TopActivityResponse } from "@/types/topActivity";
-import { TopTokenProfitResponse } from "@/types/topTokenProfit";
-import { DexTradingSignalResponse } from "@/types/tradingSignal";
-import axios from "axios";
+import { InsiderBuyResponse } from '@/types/insiderBuy'
+import { LeaderboardResponse } from '@/types/leaderboard'
+import { NewListingBuyResponse } from '@/types/new-listing-buy'
+import { TopSmartMoneyTradeUsersListProps } from '@/types/smartmoney'
+import { SpotlightResp } from '@/types/spotlight'
+import { TokenListResponse } from '@/types/tokenList'
+import { TopTokenBuyResponse } from '@/types/top-token-buy'
+import { TopActivityResponse } from '@/types/topActivity'
+import { TopTokenProfitResponse } from '@/types/topTokenProfit'
+import { DexTradingSignalResponse } from '@/types/tradingSignal'
+import axios from 'axios'
 
 const api = axios.create({
   baseURL: 'https://api.kaivest.net/onchain',
@@ -50,7 +50,7 @@ export const getDexTradingSignal = async ({
       page: start,
       perPage: limit,
       type,
-      chain
+      chain,
     },
   })
 }
@@ -136,7 +136,7 @@ export const getTopTokenBuy = async ({
   })
 }
 
-///// TODO: need to update 
+///// TODO: need to update
 export const getInsiderBuy = async ({
   start,
   limit,
@@ -361,16 +361,24 @@ export const getTotalEarning = ({ chain }: { chain?: string }) => {
   return api.get('/v1/sm/overview', {
     params: {
       chain,
-    }
+    },
   })
 }
 
-export const getSpotlight = ({ chain, limit, start }: { chain: string, limit: number, start: number }) => {
+export const getSpotlight = ({
+  chain,
+  limit,
+  start,
+}: {
+  chain: string
+  limit: number
+  start: number
+}) => {
   return api.get<SpotlightResp>('/v1/spotlight', {
     params: {
       chain,
       limit,
-      start
-    }
+      start,
+    },
   })
 }

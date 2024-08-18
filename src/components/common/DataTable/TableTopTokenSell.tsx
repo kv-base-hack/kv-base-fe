@@ -40,7 +40,7 @@ export const TableTopTokenSell = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
             Tokens
           </div>
         ),
@@ -52,7 +52,7 @@ export const TableTopTokenSell = ({
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
+                    <div className="flex w-full items-center justify-start gap-1.5">
                       <ImageToken
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
@@ -63,7 +63,7 @@ export const TableTopTokenSell = ({
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -101,7 +101,7 @@ export const TableTopTokenSell = ({
         accessorKey: 'volume',
         header: () => (
           <div
-            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('volume')}
             role="button"
           >
@@ -122,7 +122,7 @@ export const TableTopTokenSell = ({
         accessorKey: 'balance_change_percent',
         header: () => (
           <div
-            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('balance_change')}
             role="button"
           >
@@ -134,7 +134,7 @@ export const TableTopTokenSell = ({
           return balance_change_percent ? (
             <div
               className={cn(
-                'leading-[140%] flex items-center',
+                'flex items-center leading-[140%]',
                 balance_change_percent > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -149,14 +149,14 @@ export const TableTopTokenSell = ({
               {balance_change_percent.toFixed(2)}%
             </div>
           ) : (
-            <div className="text-center w-full">-</div>
+            <div className="w-full text-center">-</div>
           )
         },
       },
       {
         accessorKey: 'avg_price',
         header: () => (
-          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
             Avg Price
           </div>
         ),
@@ -187,7 +187,7 @@ export const TableTopTokenSell = ({
         accessorKey: 'price',
         header: () => (
           <div
-            className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('price_change')}
             role="button"
           >
@@ -200,7 +200,7 @@ export const TableTopTokenSell = ({
           return price_percent_change ? (
             <div
               className={cn(
-                'text-right w-full flex items-center justify-center leading-[140%]',
+                'flex w-full items-center justify-center text-right leading-[140%]',
                 price_percent_change > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -211,14 +211,14 @@ export const TableTopTokenSell = ({
               {price_percent_change.toFixed(2)}%
             </div>
           ) : (
-            <div className="text-center w-full">-</div>
+            <div className="w-full text-center">-</div>
           )
         },
       },
       {
         accessorKey: 'seller_count',
         header: () => (
-          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
             # of SM Sell
           </div>
         ),
@@ -240,7 +240,7 @@ export const TableTopTokenSell = ({
   }, [duration, page, perPage, setSortBy])
   return (
     <DataTable
-      className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+      className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
       columns={columns}
       data={data || []}
       isFetching={isFetching}

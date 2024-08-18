@@ -40,8 +40,8 @@ export const FirstTimeBuy = ({
     : getVisibleItems()
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between h-full">
+    <div className="flex h-full flex-col">
+      <div className="flex h-full items-center justify-between">
         <WalletInfoItemTitle
           name="First Time Buy"
           icon={<FirstTimeBuyIcon />}
@@ -49,7 +49,7 @@ export const FirstTimeBuy = ({
         <SelectDuration duration={duration} setDuration={setDuration} />
       </div>
       {(dataFirstTimeBuy?.length as number) > 0 ? (
-        <div className="flex items-center gap-2 h-full w-full">
+        <div className="flex h-full w-full items-center gap-2">
           {dataFirstTimeBuy?.map((token, i) => {
             return (
               <div key={i} className="w-full">
@@ -71,7 +71,7 @@ export const FirstTimeBuy = ({
           })}
         </div>
       ) : (
-        <div className="flex items-center justify-center h-full font-semibold text-sm text-neutral-03">
+        <div className="flex h-full items-center justify-center text-sm font-semibold text-neutral-03">
           No results
         </div>
       )}

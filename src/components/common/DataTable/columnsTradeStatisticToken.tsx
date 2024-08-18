@@ -18,13 +18,13 @@ export const ColumnsTradeStatisticToken = (setSort: (v: string) => void) => {
           return tokenAddress ? (
             <Link
               href={`/smartmoney-onchain/token-explorer/${tokenAddress}`}
-              className="flex gap-3 items-center justify-between text-right"
+              className="flex items-center justify-between gap-3 text-right"
             >
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
               <TokenSymbol>{symbol}</TokenSymbol>
             </Link>
           ) : (
-            <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+            <div className="flex cursor-not-allowed items-center justify-between gap-3 text-right">
               <ImageToken imgUrl={imageUrl} symbol={symbol} />
               <TokenSymbol>{symbol}</TokenSymbol>
             </div>
@@ -110,7 +110,7 @@ export const ColumnsTradeStatisticToken = (setSort: (v: string) => void) => {
         header: () => {
           return (
             <div
-              className="text-neutral-04 whitespace-nowrap"
+              className="whitespace-nowrap text-neutral-04"
               role="button"
               onClick={() => setSort('total_spent')}
             >

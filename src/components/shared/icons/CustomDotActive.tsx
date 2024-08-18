@@ -7,7 +7,8 @@ export const CustomDotActive = (props: any) => {
       width="28"
       height="26"
       viewBox="0 0 28 26"
-      fill="none">
+      fill="none"
+    >
       <ellipse
         cx="9.85449"
         cy="9"

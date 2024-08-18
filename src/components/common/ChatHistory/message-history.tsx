@@ -10,11 +10,11 @@ export const MessageHistory = ({
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 rounded-xl p-3 hover:bg-white/5 group text-neutral-07',
+        'group flex flex-col gap-2 rounded-xl p-3 text-neutral-07 hover:bg-white/5',
         isActive ? 'bg-white/5' : 'bg-transparent',
       )}
     >
-      <p className="text-neutral-07 text-sm font-medium line-clamp-2 group-hover:underline">
+      <p className="line-clamp-2 text-sm font-medium text-neutral-07 group-hover:underline">
         {msg[0]?.display?.props?.children}
       </p>
     </div>

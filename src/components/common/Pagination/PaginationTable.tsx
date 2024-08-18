@@ -67,7 +67,7 @@ export const PaginationTable = ({
   return (
     <div
       className={cn(
-        'flex flex-col md:flex-row justify-center items-center gap-2 mb-10 md:mb-0',
+        'mb-10 flex flex-col items-center justify-center gap-2 md:mb-0 md:flex-row',
         className,
       )}
     >
@@ -82,10 +82,10 @@ export const PaginationTable = ({
           showSizeChanger={true}
         />
       </div>
-      <div className="flex gap-2 items-center text-sm">
+      <div className="flex items-center gap-2 text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="max-w-6 bg-white rounded-lg text-center font-normal text-neutral-07 border border-[#EFEFEF]  py-1"
+          className="max-w-6 rounded-lg border border-[#EFEFEF] bg-white py-1 text-center font-normal text-neutral-07"
           onBlur={handleBlur}
           onChange={handleToPage}
         />

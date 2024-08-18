@@ -1,4 +1,4 @@
-import { metadata } from './../../app/layout';
+import { metadata } from './../../app/layout'
 export interface DataTokenExplorerTradingSignal {
   _id: string
   pair: string

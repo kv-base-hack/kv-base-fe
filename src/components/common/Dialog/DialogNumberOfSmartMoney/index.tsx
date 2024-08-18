@@ -66,7 +66,7 @@ export const DialogNumberOfSmartMoney = ({
         accessorKey: 'id',
         cell: ({ row }) => {
           return (
-            <div className="text-base text-neutral-400 font-semibold">
+            <div className="text-base font-semibold text-neutral-400">
               {row.index + 1 + (start - 1) * limit}
             </div>
           )
@@ -79,12 +79,12 @@ export const DialogNumberOfSmartMoney = ({
           const address = row.original.user_address
           return (
             <Link href={`/smartmoney-onchain/wallet-explorer/${address}`}>
-              <div className="text-base text-neutral-300 font-semibold flex items-center gap-3">
+              <div className="flex items-center gap-3 text-base font-semibold text-neutral-300">
                 <p className="hover:underline">
                   {address?.substring(0, 6)}..
                   {address?.substring(address?.length - 4, address?.length)}
                 </p>
-                <div className="p-1 rounded-full bg-[#D8F0FF]">
+                <div className="rounded-full bg-[#D8F0FF] p-1">
                   <IconArrowColorRightUp />
                 </div>
               </div>
@@ -98,7 +98,7 @@ export const DialogNumberOfSmartMoney = ({
           return (
             <div
               className={cn(
-                'text-sm font-semibold flex items-center gap-1',
+                'flex items-center gap-1 text-sm font-semibold',
                 row.original.roi >= 0 ? 'text-success-500' : 'text-error-500',
               )}
             >
@@ -140,19 +140,19 @@ export const DialogNumberOfSmartMoney = ({
       <Dialog>
         <DialogTrigger>
           <div
-            className="text-neutral-07 whitespace-nowrap text-sm not-italic leading-5 underline"
+            className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-07 underline"
             onClick={() => setVisible(true)}
           >
             {nFormatter(number)}
           </div>
         </DialogTrigger>
-        <DialogContent className="max-w-[617px] !p-0 !rounded-xl !border-none">
-          <div className="flex flex-col gap-4 p-4 bg-[#1e1e1e80] rounded-xl">
+        <DialogContent className="max-w-[617px] !rounded-xl !border-none !p-0">
+          <div className="flex flex-col gap-4 rounded-xl bg-[#1e1e1e80] p-4">
             <div className="relative">
-              <p className="text-neutral-02 text-xl font-medium text-center">
+              <p className="text-center text-xl font-medium text-neutral-02">
                 List of Wallet
               </p>
-              <DialogClose className="absolute top-0.5 right-0">
+              <DialogClose className="absolute right-0 top-0.5">
                 <Close />
               </DialogClose>
             </div>

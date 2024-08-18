@@ -121,8 +121,8 @@ export const TradingSignal = () => {
                 net_flow > 0
                   ? 'text-semantic-success-1'
                   : net_flow < 0
-                  ? 'text-semantic-error-1'
-                  : ''
+                    ? 'text-semantic-error-1'
+                    : ''
               }
             >
               {formatPriceNumber(net_flow)}
@@ -143,8 +143,8 @@ export const TradingSignal = () => {
                 realized > 0
                   ? 'text-semantic-success-1'
                   : realized < 0
-                  ? 'text-semantic-error-1'
-                  : ''
+                    ? 'text-semantic-error-1'
+                    : ''
               }
             >
               {realized ? realized?.toFixed(2) : '-'}
@@ -170,7 +170,7 @@ export const TradingSignal = () => {
   return dataTradingSignal?.length > 0 ? (
     <WrapTable title="">
       <DataTable
-        className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+        className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
         columns={columns}
         data={dataTradingSignal}
         isFetching={activityQuery.isFetching}
@@ -187,9 +187,9 @@ export const TradingSignal = () => {
       />
     </WrapTable>
   ) : (
-    <div className="flex flex-col justify-center items-center py-10">
+    <div className="flex flex-col items-center justify-center py-10">
       <EmptyTableIcon />
-      <div className="w-2/3 text-[#D6D9DC] text-center text-sm not-italic font-medium leading-5 tracking-[-0.14px]">
+      <div className="w-2/3 text-center text-sm font-medium not-italic leading-5 tracking-[-0.14px] text-[#D6D9DC]">
         Currently, there are no trading signals available for this token. Please
         check back later or explore other opportunities on our platform. Thank
         you for your understanding and patience.

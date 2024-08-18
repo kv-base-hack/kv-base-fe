@@ -10,7 +10,7 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'id',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
         #
       </div>
     ),
@@ -22,7 +22,7 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'symbol',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5 whitespace-nowrap">
+      <div className="whitespace-nowrap text-sm font-bold not-italic leading-5 text-neutral-07">
         Token Name
       </div>
     ),
@@ -35,9 +35,9 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
         >
           <ImageToken
             symbol={row?.original?.symbol}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
-          <div className="flex flex-col gap-1.5 w-full items-start justify-start">
+          <div className="flex w-full flex-col items-start justify-start gap-1.5">
             <div className="truncate">{row?.original?.name}</div>
             <div className="text-normal text-neutral-07">
               {row?.original?.symbol}
@@ -45,10 +45,10 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
           </div>
         </Link>
       ) : (
-        <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+        <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
           <ImageToken
             symbol={row?.original?.symbol}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
           <div>{row?.original?.name}</div>
           <div className="text-normal text-neutral-07">
@@ -61,14 +61,14 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'price',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
         Price
       </div>
     ),
     cell: ({ row }) => {
       const { price } = row.original
       return (
-        <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
           {numeral(price).format('$0,0.[00000000]')}
         </div>
       )
@@ -77,20 +77,20 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
   {
     accessorKey: 'price_24h',
     header: () => (
-      <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
         Price (24h%)
       </div>
     ),
     cell: ({ row }) => {
       const { price_change_percentage_24h } = row.original
       return price_change_percentage_24h === 0 ? (
-        <div className="text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-07">
           -
         </div>
       ) : (
         <div
           className={cn(
-            'text-neutral-07 text-sm not-italic font-bold leading-5',
+            'text-sm font-bold not-italic leading-5 text-neutral-07',
             price_change_percentage_24h > 0
               ? 'text-semantic-success-1'
               : 'text-semantic-error-1',
@@ -106,8 +106,8 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
     accessorKey: 'market_cap',
     enableSorting: false,
     header: () => (
-      <div className="flex items-center justify-center w-full gap-1">
-        <div className="text-right text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="flex w-full items-center justify-center gap-1">
+        <div className="text-right text-sm font-bold not-italic leading-5 text-neutral-07">
           Marketcap
         </div>
       </div>
@@ -116,7 +116,7 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
       const { market_cap } = row.original
       const format = market_cap?.split('$')?.[1]?.split(',')?.join('')
       return (
-        <div className="w-full text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-07">
           ${nFormatter(parseFloat(format))}
         </div>
       )
@@ -126,8 +126,8 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
     accessorKey: 'total_volume',
     enableSorting: false,
     header: () => (
-      <div className="flex items-center justify-center w-full gap-1">
-        <div className="text-right text-neutral-07 text-sm not-italic font-bold leading-5">
+      <div className="flex w-full items-center justify-center gap-1">
+        <div className="text-right text-sm font-bold not-italic leading-5 text-neutral-07">
           Total Volume
         </div>
       </div>
@@ -136,7 +136,7 @@ export const columnsFindGemsTrending: ColumnDef<TrendingToken>[] = [
       const { total_volume } = row.original
       const format = total_volume?.split('$')?.[1]?.split(',')?.join('')
       return (
-        <div className="w-full text-center text-neutral-07 text-sm not-italic font-bold leading-5">
+        <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-07">
           ${nFormatter(parseFloat(format))}
         </div>
       )

@@ -76,7 +76,7 @@ export const IntegratedTerminal = () => {
       tokenList={[]}
       enableRoute
       enableDexes="kyberswap-elastic,uniswapv3,uniswap"
-      title={<div className="font-bold font-sora">Kaivest</div>}
+      title={<div className="font-sora font-bold">Kaivest</div>}
     />
   )
 }

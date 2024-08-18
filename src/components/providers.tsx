@@ -18,18 +18,37 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import dynamic from 'next/dynamic'
 
 import { WagmiProvider, createConfig, http } from 'wagmi'
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import {
+  connectorsForWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit'
 import { getDefaultConfig } from '@rainbow-me/rainbowkit'
 import { mainnet, base } from 'wagmi/chains'
 
+import {
+  bitgetWallet,
+  walletConnectWallet,
+} from '@rainbow-me/rainbowkit/wallets'
+
 const id = '2e7dc518c252e86b1423572af2179822'
 
-const config = getDefaultConfig({
-  appName: 'Kaivest App',
-  projectId: id,
-  chains: [mainnet, base],
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: 'Recommended',
+      wallets: [bitgetWallet, walletConnectWallet],
+    },
+  ],
+  {
+    appName: 'Kaivest App',
+    projectId: id,
+  },
+)
+
+const config = createConfig({
+  connectors,
+  chains: [base],
   transports: {
-    [mainnet.id]: http(),
     [base.id]: http(),
   },
 })

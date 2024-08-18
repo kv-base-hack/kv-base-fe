@@ -1,6 +1,5 @@
-import { CHAIN_X } from "@/constant/chain"
-import { getTopTokenBuy } from "@/services/leaderboard/api"
-
+import { CHAIN_X } from '@/constant/chain'
+import { getTopTokenBuy } from '@/services/leaderboard/api'
 
 const GET_TOP_TOKEN_BUY = 'GET_TOP_TOKEN_BUY'
 

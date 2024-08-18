@@ -1,4 +1,10 @@
-function WarningIcon({ className, onClick }: { className?: string; onClick?: () => void }) {
+function WarningIcon({
+  className,
+  onClick,
+}: {
+  className?: string
+  onClick?: () => void
+}) {
   return (
     <svg
       className={className}
@@ -7,7 +13,8 @@ function WarningIcon({ className, onClick }: { className?: string; onClick?: () 
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g id="UI icon/alert_circled/light">
         <path
           id="Path 51 (Stroke)"

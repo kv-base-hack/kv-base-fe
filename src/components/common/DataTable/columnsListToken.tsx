@@ -11,7 +11,7 @@ export const columnsListToken = (page: number, perPage: number) => {
     {
       accessorKey: 'id',
       header: () => (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-dark-05">
           #
         </div>
       ),
@@ -23,7 +23,7 @@ export const columnsListToken = (page: number, perPage: number) => {
     {
       accessorKey: 'symbol',
       header: () => (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5 whitespace-nowrap">
+        <div className="whitespace-nowrap text-sm font-bold not-italic leading-5 text-neutral-dark-05">
           Token Name
         </div>
       ),
@@ -33,7 +33,7 @@ export const columnsListToken = (page: number, perPage: number) => {
           <Link
             href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
           >
-            <div className="flex gap-1.5 w-full items-center justify-start">
+            <div className="flex w-full items-center justify-start gap-1.5">
               <ImageToken
                 imgUrl={row?.original?.thumb}
                 symbol={row?.original?.symbol}
@@ -45,7 +45,7 @@ export const columnsListToken = (page: number, perPage: number) => {
             </div>
           </Link>
         ) : (
-          <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+          <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
             <ImageToken
               imgUrl={row?.original?.thumb}
               symbol={row?.original?.symbol}
@@ -61,7 +61,7 @@ export const columnsListToken = (page: number, perPage: number) => {
     {
       accessorKey: 'price',
       header: () => (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-dark-05">
           Price
         </div>
       ),
@@ -73,7 +73,7 @@ export const columnsListToken = (page: number, perPage: number) => {
     {
       accessorKey: 'price_24h',
       header: () => (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-dark-05">
           24h
         </div>
       ),
@@ -96,7 +96,7 @@ export const columnsListToken = (page: number, perPage: number) => {
     {
       accessorKey: 'price_7d',
       header: () => (
-        <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="text-sm font-bold not-italic leading-5 text-neutral-dark-05">
           7d
         </div>
       ),
@@ -107,7 +107,7 @@ export const columnsListToken = (page: number, perPage: number) => {
     {
       accessorKey: 'open_interest',
       header: () => (
-        <div className="text-center w-full text-neutral-dark-05 text-sm not-italic font-bold leading-5 whitespace-nowrap">
+        <div className="w-full whitespace-nowrap text-center text-sm font-bold not-italic leading-5 text-neutral-dark-05">
           Open Interest
         </div>
       ),
@@ -119,8 +119,8 @@ export const columnsListToken = (page: number, perPage: number) => {
       accessorKey: 'market_cap',
       enableSorting: false,
       header: () => (
-        <div className="flex items-center justify-center w-full gap-1">
-          <div className="text-right text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="flex w-full items-center justify-center gap-1">
+          <div className="text-right text-sm font-bold not-italic leading-5 text-neutral-dark-05">
             Marketcap
           </div>
           <svg
@@ -147,7 +147,7 @@ export const columnsListToken = (page: number, perPage: number) => {
         const { market_cap } = row.original
         const format = market_cap?.split('$')?.[1]?.split(',')?.join('')
         return (
-          <div className="w-full text-center text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+          <div className="w-full text-center text-sm font-bold not-italic leading-5 text-neutral-dark-05">
             ${nFormatter(parseFloat(format))}
           </div>
         )
@@ -157,8 +157,8 @@ export const columnsListToken = (page: number, perPage: number) => {
       accessorKey: 'volume_24h',
       enableSorting: false,
       header: () => (
-        <div className="flex items-center justify-center w-full gap-1 whitespace-nowrap">
-          <div className="text-neutral-dark-05 text-sm not-italic font-bold leading-5">
+        <div className="flex w-full items-center justify-center gap-1 whitespace-nowrap">
+          <div className="text-sm font-bold not-italic leading-5 text-neutral-dark-05">
             Total Volumn
           </div>
           <svg

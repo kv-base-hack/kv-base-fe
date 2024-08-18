@@ -1,4 +1,9 @@
-import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from '@/components/ui/select'
 
 const options = [
   {
@@ -27,15 +32,19 @@ export const SelectSmartMoney = ({
   setSmartMoney: (value: string) => void
 }) => {
   return (
-    <Select value={smartMoney} onValueChange={(val: string) => setSmartMoney(val)}>
-      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-white whitespace-nowrap border border-solid bg-transparent border-white/40 rounded-[360px]">
-        <div className="flex items-center gap-2 justify-between">
+    <Select
+      value={smartMoney}
+      onValueChange={(val: string) => setSmartMoney(val)}
+    >
+      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-white">
+        <div className="flex items-center justify-between gap-2">
           <div className="grow">
-            {options.find((item) => item.value === smartMoney)?.label || 'All Smart Money'}
+            {options.find((item) => item.value === smartMoney)?.label ||
+              'All Smart Money'}
           </div>
         </div>
       </SelectTrigger>
-      <SelectContent className="border-none bg-neutral-07 z-[9999]">
+      <SelectContent className="z-[9999] border-none bg-neutral-07">
         {options.map((option) => (
           <SelectItem key={option.value} value={option.value}>
             {option.label}

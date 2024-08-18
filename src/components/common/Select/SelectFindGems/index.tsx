@@ -49,14 +49,14 @@ export const SelectFindGems = ({
         setPage(1)
       }}
     >
-      <SelectTrigger className="flex w-auto cursor-pointer gap-2 px-4 py-3 my-auto text-base font-medium tracking-normal leading-6 text-white whitespace-nowrap bg-transparent border-none">
-        <div className="flex items-center gap-2 justify-between">
+      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap border-none bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-white">
+        <div className="flex items-center justify-between gap-2">
           <div className="grow">
             {options.find((item) => item.value === gem)?.label}
           </div>
         </div>
       </SelectTrigger>
-      <SelectContent className="border-none bg-neutral-07 z-[9999]">
+      <SelectContent className="z-[9999] border-none bg-neutral-07">
         <div className="flex flex-col gap-2">
           {options.map((option) => (
             <SelectItem key={option.value} value={option.value}>

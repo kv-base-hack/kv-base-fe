@@ -1,4 +1,3 @@
-
 import { getSMNewListingBuys } from '@/services/leaderboard/api'
 
 const GET_SM_NEW_LISTING_BUY = 'GET_SM_NEW_LISTING_BUY'
@@ -18,9 +17,18 @@ export const useSMNewListingBuyQuery = ({
   chain,
   sort_by,
 }: SMNewListingBuy) => ({
-  queryKey: [GET_SM_NEW_LISTING_BUY, { limit, duration, start, chain, sort_by }],
+  queryKey: [
+    GET_SM_NEW_LISTING_BUY,
+    { limit, duration, start, chain, sort_by },
+  ],
   queryFn: async () => {
-    const data = await getSMNewListingBuys({ limit, duration, start, chain, sort_by })
+    const data = await getSMNewListingBuys({
+      limit,
+      duration,
+      start,
+      chain,
+      sort_by,
+    })
     return data.data
-  }
+  },
 })

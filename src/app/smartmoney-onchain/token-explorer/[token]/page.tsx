@@ -120,23 +120,23 @@ export default function TokenExplorerDetail({
     (dataTokenInfo?.buy_volume + dataTokenInfo?.sell_volume)
 
   return (
-    <div className="w-full h-full flex flex-col gap-2 pt-2">
-      <div className="m-0 flex flex-col-reverse xl:flex-row items-start gap-2">
+    <div className="flex h-full w-full flex-col gap-2 pt-2">
+      <div className="m-0 flex flex-col-reverse items-start gap-2 xl:flex-row">
         {/* swap left */}
         <div className="font-sora">
           <IntegratedTerminal />
         </div>
         {/* content right */}
-        <div className="w-full h-full overflow-hidden rounded-[20px]">
+        <div className="h-full w-full overflow-hidden rounded-[20px]">
           {/* overview */}
           <CardCommon>
-            <div className="flex gap-5 justify-between w-full max-lg:flex-wrap">
-              <div className="flex gap-5 justify-between whitespace-nowrap">
+            <div className="flex w-full justify-between gap-5 max-lg:flex-wrap">
+              <div className="flex justify-between gap-5 whitespace-nowrap">
                 <DialogSelectToken action="navigate">
-                  <div className="flex cursor-pointer items-center gap-2 px-4 py-2 text-xl font-bold tracking-tight leading-8 text-neutral-07 border border-solid backdrop-blur-[50px] bg-gray-300 bg-opacity-10 border-white border-opacity-10 rounded-[360px]">
+                  <div className="flex cursor-pointer items-center gap-2 rounded-[360px] border border-solid border-white border-opacity-10 bg-gray-300 bg-opacity-10 px-4 py-2 text-xl font-bold leading-8 tracking-tight text-neutral-07 backdrop-blur-[50px]">
                     <div className="flex gap-2">
                       <ImageToken
-                        className="w-8 h-8 rounded-full"
+                        className="h-8 w-8 rounded-full"
                         imgUrl={dataTokenInfo?.image_url}
                         symbol={dataTokenInfo?.symbol}
                       />
@@ -180,9 +180,9 @@ export default function TokenExplorerDetail({
                   </div>
                 </div> */}
               </div>
-              <div className="flex gap-5 justify-between px-5 max-md:flex-wrap">
+              <div className="flex justify-between gap-5 px-5 max-md:flex-wrap">
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
+                  <div className="flex items-center justify-center gap-1 text-right text-sm leading-5 tracking-normal text-neutral-04">
                     <div>AVG SM Entry</div>
                   </div>
                   <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
@@ -191,12 +191,12 @@ export default function TokenExplorerDetail({
                     )}
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
+                <div className="h-16 w-px shrink-0 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col justify-center">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
+                  <div className="flex items-center justify-center gap-1 text-right text-sm leading-5 tracking-normal text-neutral-04">
                     <div className="whitespace-nowrap"># SM Hold</div>
                   </div>
-                  <div className="self-center mt-1 text-base font-medium leading-6 text-neutral-07">
+                  <div className="mt-1 self-center text-base font-medium leading-6 text-neutral-07">
                     <DialogNumberOfSmartMoney
                       number={dataTokenInfo?.number_of_smart_money_hold || 0}
                       address={dataTokenInfo?.token_address || ''}
@@ -205,9 +205,9 @@ export default function TokenExplorerDetail({
                     />
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
+                <div className="h-16 w-px shrink-0 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center gap-1 justify-center text-sm tracking-normal leading-5 text-right text-neutral-04">
+                  <div className="flex items-center justify-center gap-1 text-right text-sm leading-5 tracking-normal text-neutral-04">
                     <div className="whitespace-nowrap"># Unusual Buy</div>
                   </div>
                   <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
@@ -219,34 +219,34 @@ export default function TokenExplorerDetail({
                     />
                   </div>
                 </div>
-                <div className="shrink-0 w-px h-16 rounded-sm bg-neutral-03" />
+                <div className="h-16 w-px shrink-0 rounded-sm bg-neutral-03" />
                 <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex gap-1 justify-center mt-2">
-                    <div className="flex flex-col flex-1 py-px">
-                      <div className="flex items-center gap-1 justify-center text-xs tracking-normal leading-5 text-right text-neutral-04">
+                  <div className="mt-2 flex justify-center gap-1">
+                    <div className="flex flex-1 flex-col py-px">
+                      <div className="flex items-center justify-center gap-1 text-right text-xs leading-5 tracking-normal text-neutral-04">
                         <div>SM BUY VOL</div>
                       </div>
                       <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
                         ${nFormatter(dataTokenInfo?.buy_volume || 0)}
                       </div>
                     </div>
-                    <div className="flex flex-col flex-1 items-end py-px pl-20">
-                      <div className="flex items-center gap-1 justify-center text-xs tracking-normal leading-5 text-right text-neutral-04">
+                    <div className="flex flex-1 flex-col items-end py-px pl-20">
+                      <div className="flex items-center justify-center gap-1 text-right text-xs leading-5 tracking-normal text-neutral-04">
                         <div>SM SELL VOL</div>
                       </div>
-                      <div className="self-end mt-1 text-base font-medium leading-6 text-neutral-07">
+                      <div className="mt-1 self-end text-base font-medium leading-6 text-neutral-07">
                         ${nFormatter(dataTokenInfo?.sell_volume || 0)}
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-0.5 py-0.5 w-full">
+                  <div className="flex w-full gap-0.5 py-0.5">
                     <div
                       style={{ width: percentBuy + '%' }}
-                      className="shrink-0 h-1 bg-lime-300 rounded-[100px]"
+                      className="h-1 shrink-0 rounded-[100px] bg-lime-300"
                     />
                     <div
                       style={{ width: percentSell + '%' }}
-                      className="shrink-0 h-1 bg-rose-500 rounded-[100px]"
+                      className="h-1 shrink-0 rounded-[100px] bg-rose-500"
                     />
                   </div>
                 </div>
@@ -254,7 +254,7 @@ export default function TokenExplorerDetail({
             </div>
           </CardCommon>
           {/* chart */}
-          <div className="w-full h-[520px] rounded-[20px] p-0 lg:mt-2">
+          <div className="h-[520px] w-full rounded-[20px] p-0 lg:mt-2">
             <WrapLineChart
               dataTokenInfo={dataTokenInfo}
               mode={mode}
@@ -267,7 +267,7 @@ export default function TokenExplorerDetail({
         </div>
       </div>
       <CardCommon className="z-50">
-        <div className="flex gap-2 justify-start items-center self-stretch py-2 text-lg font-medium tracking-tight leading-6 text-center text-neutral-400 max-md:flex-wrap">
+        <div className="flex items-center justify-start gap-2 self-stretch py-2 text-center text-lg font-medium leading-6 tracking-tight text-neutral-400 max-md:flex-wrap">
           {TABS.map((item, index) => {
             return (
               <div
@@ -276,7 +276,7 @@ export default function TokenExplorerDetail({
                 className={cn(
                   'cursor-pointer self-stretch px-3 py-2',
                   item === tab
-                    ? 'justify-center text-neutral-07 whitespace-nowrap rounded-lg border border-solid border-white/10 bg-neutral-03'
+                    ? 'justify-center whitespace-nowrap rounded-lg border border-solid border-white/10 bg-neutral-03 text-neutral-07'
                     : 'my-auto',
                 )}
               >

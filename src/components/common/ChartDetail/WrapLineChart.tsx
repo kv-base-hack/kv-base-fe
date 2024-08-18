@@ -49,15 +49,15 @@ export function WrapLineChart({
 
   const percentChange = checkPercent(mode, dataTokenInfo)
   return (
-    <div className="rounded-lg h-full border border-white/10 flex flex-col gap-4">
+    <div className="flex h-full flex-col gap-4 rounded-lg border border-white/10">
       <div className="flex items-start justify-between px-6 pt-4">
         <div>
-          <div className="flex gap-3 text-sm leading-5 whitespace-nowrap">
+          <div className="flex gap-3 whitespace-nowrap text-sm leading-5">
             <ImageToken
               symbol={dataTokenInfo?.symbol}
-              className="object-center w-6 aspect-square"
+              className="aspect-square w-6 object-center"
             />
-            <div className="flex gap-1 my-auto">
+            <div className="my-auto flex gap-1">
               <div className="grow font-bold text-gray-300">
                 {dataTokenInfo?.name}
               </div>

@@ -31,15 +31,15 @@ export const ButtonConnectWallet = () => {
           return (
             <div
               onClick={handelOpenModal}
-              className="z-50 relative flex flex-row justify-center items-center cursor-pointer"
+              className="relative z-50 flex cursor-pointer flex-row items-center justify-center"
             >
               {(() => {
                 if (!connected) {
                   return (
-                    <div className="flex flex-col flex-1 justify-center items-stretch text-[15px] leading-6 font-bold tracking-wide  whitespace-nowrap bg-[#0C68E9] rounded-full">
+                    <div className="flex flex-1 flex-col items-stretch justify-center whitespace-nowrap rounded-full bg-[#0C68E9] text-[15px] font-bold leading-6 tracking-wide">
                       <div
                         id="connect-button"
-                        className="justify-center items-stretch px-4 py-2 rounded-[360px]"
+                        className="items-stretch justify-center rounded-[360px] px-4 py-2"
                       >
                         Connect Wallet
                       </div>
@@ -48,7 +48,7 @@ export const ButtonConnectWallet = () => {
                 }
                 if (chain.unsupported) {
                   return (
-                    <div className="z-20 text-[15px] leading-6 font-bold text-white">
+                    <div className="z-20 text-[15px] font-bold leading-6 text-white">
                       Wrong network
                     </div>
                   )
@@ -60,9 +60,9 @@ export const ButtonConnectWallet = () => {
           return (
             <div
               onClick={handelOpenModal}
-              className="z-50 relative md:px-4 md:py-3 hover:cursor-pointer flex items-center justify-center md:gap-x-[10px] gap-x-1.5 bg-[#0C68E9] rounded-full"
+              className="relative z-50 flex items-center justify-center gap-x-1.5 rounded-full bg-[#0C68E9] hover:cursor-pointer md:gap-x-[10px] md:px-4 md:py-3"
             >
-              <div className="z-20 font-bold text-neutral-7">
+              <div className="text-neutral-7 z-20 font-bold">
                 {account.address.substring(0, 6)}...
                 {account.address.substring(
                   account.address.length - 4,

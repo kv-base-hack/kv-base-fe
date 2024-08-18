@@ -51,19 +51,19 @@ export default function WalletAnalytics() {
   }
 
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       {/* header */}
-      <div className="w-full flex flex-col justify-center items-center mt-8">
-        <div className="w-2/3 flex flex-col justify-center items-center">
-          <div className="text-center text-[40px] not-italic font-bold leading-[60px] bg-gradient-to-r from-[#9945FF] to-[#14F195] inline-block text-transparent bg-clip-text">
+      <div className="mt-8 flex w-full flex-col items-center justify-center">
+        <div className="flex w-2/3 flex-col items-center justify-center">
+          <div className="inline-block bg-gradient-to-r from-[#9945FF] to-[#14F195] bg-clip-text text-center text-[40px] font-bold not-italic leading-[60px] text-transparent">
             Wallet Analytics
           </div>
-          <div className="text-center text-2xl not-italic font-normal leading-9 text-neutral-200">
+          <div className="text-center text-2xl font-normal not-italic leading-9 text-neutral-200">
             In-depth analysis of wallets, highlighting key insights. You can
             enter a Smart Money wallet in the search bar or find it in the Smart
             Money rankings below
           </div>
-          <div className="text-neutral-400 text-center text-lg not-italic font-medium leading-6 tracking-[-0.36px]">
+          <div className="text-center text-lg font-medium not-italic leading-6 tracking-[-0.36px] text-neutral-400">
             (Currently supporting{' '}
             <Link className="underline" href={'/gem-analytics'}>
               Smart Money
@@ -88,8 +88,8 @@ export default function WalletAnalytics() {
                 listToken={listToken}
                 setListToken={setListToken}
               >
-                <div className="rounded-xl h-10 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
-                  <div className="bg-neutral-07 cursor-pointer rounded-xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 text-white">
+                <div className="h-10 rounded-xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+                  <div className="flex h-full cursor-pointer items-center justify-center rounded-xl bg-neutral-07 px-7 text-sm leading-5 tracking-normal text-white">
                     Specific Token
                   </div>
                 </div>
@@ -98,10 +98,10 @@ export default function WalletAnalytics() {
                 <div className="flex items-center gap-2">
                   {listToken.map((item) => (
                     <div
-                      className="rounded-3xl h-9 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]"
+                      className="h-9 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
                       key={item.tokenAddress}
                     >
-                      <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-4 gap-1 h-full text-sm tracking-normal leading-5 text-white">
+                      <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-07 px-4 text-sm leading-5 tracking-normal text-white">
                         <ImageToken
                           imgUrl={item?.imageUrl}
                           symbol={item?.symbol}
@@ -118,7 +118,7 @@ export default function WalletAnalytics() {
         >
           <div className="mt-8">
             <DataTable
-              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+              className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
               columns={columnsLeaderboard(
                 pageLeaderboard,
                 perPageLeaderboard,

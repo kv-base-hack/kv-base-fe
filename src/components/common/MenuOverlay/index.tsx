@@ -44,21 +44,21 @@ const MenuOverlay = ({
   ]
   return (
     <nav
-      className={`fixed overflow-y-auto !z-[9999] flex top-0 left-0 w-screen shadow-lg h-screen backdrop-blur-[20px] bg-neutral-07/50  text-white transform delay-100 transition-all duration-300 ${
-        navbarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+      className={`fixed left-0 top-0 !z-[9999] flex h-screen w-screen transform overflow-y-auto bg-neutral-07/50 text-white shadow-lg backdrop-blur-[20px] transition-all delay-100 duration-300 ${
+        navbarOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
       }`}
     >
-      <div className="flex flex-col self-stretch px-4 py-2 w-full">
-        <div className="flex gap-3 justify-between px-3 w-full text-3xl leading-10 text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+      <div className="flex w-full flex-col self-stretch px-4 py-2">
+        <div className="flex w-full justify-between gap-3 whitespace-nowrap px-3 text-3xl leading-10 text-white max-md:max-w-full max-md:flex-wrap">
           <Link
             href="/"
-            className="cursor-pointer flex items-center gap-2 my-auto text-3xl leading-10 text-white whitespace-nowrap"
+            className="my-auto flex cursor-pointer items-center gap-2 whitespace-nowrap text-3xl leading-10 text-white"
           >
-            <div className="w-[28px] h-[30px]">
+            <div className="h-[30px] w-[28px]">
               <Image
                 loading="lazy"
                 src="/assets/images/logo.svg"
-                className="shrink-0 w-[36px]"
+                className="w-[36px] shrink-0"
                 alt="logo"
                 width={36}
                 height={40}
@@ -68,20 +68,20 @@ const MenuOverlay = ({
           </Link>
           <Close
             onclick={() => setNavbarOpen(!navbarOpen)}
-            className="cursor-pointer shrink-0 my-auto w-8 aspect-square"
+            className="my-auto aspect-square w-8 shrink-0 cursor-pointer"
           />
         </div>
-        <div className="shrink-0 mt-4 h-px rounded-sm bg-white bg-opacity-10 max-md:max-w-full" />
-        <div className="flex justify-center items-center px-4 py-2 mt-4 text-base font-medium leading-6 text-center text-white rounded-2xl max-md:px-5 max-md:max-w-full">
-          <div className="flex flex-col gap-2 items-center max-w-full w-[165px]">
+        <div className="mt-4 h-px shrink-0 rounded-sm bg-white bg-opacity-10 max-md:max-w-full" />
+        <div className="mt-4 flex items-center justify-center rounded-2xl px-4 py-2 text-center text-base font-medium leading-6 text-white max-md:max-w-full max-md:px-5">
+          <div className="flex w-[165px] max-w-full flex-col items-center gap-2">
             {MENU.map((item) => {
               const isActive = pathname.includes(item.url?.split('?')[0])
               return (
                 <Link
                   className={cn(
-                    'flex cursor-pointer items-center gap-2 justify-center self-stretch px-3 py-2 whitespace-nowrap',
+                    'flex cursor-pointer items-center justify-center gap-2 self-stretch whitespace-nowrap px-3 py-2',
                     isActive
-                      ? 'rounded-3xl backdrop-blur-[50px] bg-white/20'
+                      ? 'rounded-3xl bg-white/20 backdrop-blur-[50px]'
                       : '',
                   )}
                   onClick={() => setNavbarOpen(false)}

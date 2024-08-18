@@ -72,14 +72,14 @@ export const TableTopBuy = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
             Tokens
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${CHAIN}`}
@@ -87,7 +87,7 @@ export const TableTopBuy = ({
                     <TooltipTokenInfo token={row?.original} chain={CHAIN} />
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -124,7 +124,7 @@ export const TableTopBuy = ({
         accessorKey: 'balance_change_percent',
         header: () => (
           <div
-            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('balance_change')}
             role="button"
           >
@@ -136,7 +136,7 @@ export const TableTopBuy = ({
           return balance_change_percent ? (
             <div
               className={cn(
-                'leading-[140%] flex items-center',
+                'flex items-center leading-[140%]',
                 balance_change_percent > 0
                   ? 'text-semantic-success-1'
                   : 'text-semantic-error-1',
@@ -151,7 +151,7 @@ export const TableTopBuy = ({
               {balance_change_percent.toFixed(2)}%
             </div>
           ) : (
-            <div className="text-center w-full">-</div>
+            <div className="w-full text-center">-</div>
           )
         },
         align: 'center',
@@ -198,9 +198,9 @@ export const TableTopBuy = ({
           )}
         </div>
       </TitleCard>
-      <div className="overflow-x-auto h-full flex flex-col justify-between">
+      <div className="flex h-full flex-col justify-between overflow-x-auto">
         <DataTable
-          className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+          className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
           columns={columns}
           data={data}
           isFetching={dataSMTopTokenBuyQuery.isFetching}

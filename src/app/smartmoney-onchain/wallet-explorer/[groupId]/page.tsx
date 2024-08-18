@@ -157,27 +157,27 @@ export default function WalletExplorerDetail({
   const userInfo = userInfoQuery?.data?.user_info
 
   return (
-    <div className="w-full h-full">
-      <div className="flex gap-2 justify-center self-stretch">
+    <div className="h-full w-full">
+      <div className="flex justify-center gap-2 self-stretch">
         {/* left */}
-        <div className="flex flex-col w-1/2 self-stretch p-6 rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] overflow-hidden">
+        <div className="flex w-1/2 flex-col self-stretch overflow-hidden rounded-2xl border border-solid border-[#EFEFEF] bg-neutral-01 p-6 shadow-lg">
           <div className="flex items-start justify-between max-md:flex-wrap">
             <div className="flex gap-2">
               {userInfoQuery.isFetching ? (
-                <div className="w-24 h-24 rounded-full overflow-hidden">
+                <div className="h-24 w-24 overflow-hidden rounded-full">
                   <Skeleton />
                 </div>
               ) : (
-                <AvatarIcon className="w-24 aspect-square" />
+                <AvatarIcon className="aspect-square w-24" />
               )}
               <div className="flex flex-col justify-end leading-[160%]">
                 <div className="text-xl font-bold tracking-tight text-neutral-04">
                   Whale Untag
                 </div>
                 {userInfoQuery.isFetching ? (
-                  <Skeleton className="w-[200px] h-[30px] rounded-full overflow-hidden" />
+                  <Skeleton className="h-[30px] w-[200px] overflow-hidden rounded-full" />
                 ) : (
-                  <div className="flex gap-1 pr-5 mt-2 text-base tracking-normal leading-6 text-gray-400 whitespace-nowrap">
+                  <div className="mt-2 flex gap-1 whitespace-nowrap pr-5 text-base leading-6 tracking-normal text-gray-400">
                     <div>{`${params.groupId?.substring(
                       0,
                       6,
@@ -188,8 +188,8 @@ export default function WalletExplorerDetail({
                     </a>
                   </div>
                 )}
-                <div className="flex gap-2 mt-1 text-base tracking-normal text-zinc-300">
-                  <div className="flex gap-1 items-center">
+                <div className="mt-1 flex gap-2 text-base tracking-normal text-zinc-300">
+                  <div className="flex items-center gap-1">
                     <LastDateIcon />
                     <div>Last trade</div>
                   </div>
@@ -208,14 +208,14 @@ export default function WalletExplorerDetail({
               <SelectDuration duration={duration} setDuration={setDuration} />
             </div>
           </div>
-          <div className="flex justify-center mt-6 max-md:flex-wrap">
+          <div className="mt-6 flex justify-center max-md:flex-wrap">
             <div className="flex flex-col">
-              <div className="flex gap-2 whitespace-nowrap text-xl font-semibold tracking-normal leading-5 text-neutral-07">
+              <div className="flex gap-2 whitespace-nowrap text-xl font-semibold leading-5 tracking-normal text-neutral-07">
                 Total Balance
               </div>
-              <div className="mt-1 text-[32px] leading-[48px] font-semibold text-neutral-07">
+              <div className="mt-1 text-[32px] font-semibold leading-[48px] text-neutral-07">
                 {userBalanceQuery.isFetching ? (
-                  <div className="w-40 h-4 rounded-2xl overflow-hidden">
+                  <div className="h-4 w-40 overflow-hidden rounded-2xl">
                     <Skeleton />
                   </div>
                 ) : (
@@ -223,25 +223,25 @@ export default function WalletExplorerDetail({
                 )}
               </div>
             </div>
-            <div className="flex items-center justify-end flex-1 gap-5 my-auto max-md:flex-wrap">
+            <div className="my-auto flex flex-1 items-center justify-end gap-5 max-md:flex-wrap">
               <div className="flex items-center gap-1">
-                <div className="text-2xl text-black bg-[#B5E4CA] rounded-full w-16 h-16 flex items-center justify-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#B5E4CA] text-2xl text-black">
                   $
                 </div>
                 <div className="flex flex-col whitespace-nowrap">
-                  <div className="text-[15px] leading-6 font-semibold text-neutral-07">
+                  <div className="text-[15px] font-semibold leading-6 text-neutral-07">
                     PnL
                   </div>
                   <div
                     className={cn(
-                      'mt-1 text-xl leading-9  font-semibold',
+                      'mt-1 text-xl font-semibold leading-9',
                       (userInfo?.pnl as number) > 0
                         ? 'text-success-500'
                         : 'text-error-500',
                     )}
                   >
                     {userInfoQuery.isFetching ? (
-                      <div className="w-12 h-4 rounded-2xl overflow-hidden">
+                      <div className="h-4 w-12 overflow-hidden rounded-2xl">
                         <Skeleton />
                       </div>
                     ) : (
@@ -252,23 +252,23 @@ export default function WalletExplorerDetail({
               </div>
               <div className="h-12 w-px bg-neutral-03" />
               <div className="flex items-center gap-1">
-                <div className="text-2xl text-black bg-[#B1E5FC] rounded-full w-16 h-16 flex items-center justify-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#B1E5FC] text-2xl text-black">
                   <IconUptrend />
                 </div>
                 <div className="flex flex-col">
-                  <div className="text-[15px] leading-6 font-semibold text-neutral-07">
+                  <div className="text-[15px] font-semibold leading-6 text-neutral-07">
                     ROI
                   </div>
                   <div
                     className={cn(
-                      'mt-1 text-xl leading-9 font-semibold',
+                      'mt-1 text-xl font-semibold leading-9',
                       (userInfo?.roi_percent as number) > 0
                         ? 'text-success-500'
                         : 'text-error-500',
                     )}
                   >
                     {userInfoQuery.isFetching ? (
-                      <div className="w-12 h-4 rounded-2xl overflow-hidden">
+                      <div className="h-4 w-12 overflow-hidden rounded-2xl">
                         <Skeleton />
                       </div>
                     ) : (
@@ -279,16 +279,16 @@ export default function WalletExplorerDetail({
               </div>
               <div className="h-12 w-px bg-neutral-03" />
               <div className="flex items-center gap-1">
-                <div className="text-2xl text-black bg-[#B1E5FC] rounded-full w-16 h-16 flex items-center justify-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#B1E5FC] text-2xl text-black">
                   <IconChart />
                 </div>
                 <div className="flex flex-col">
-                  <div className="text-[15px] leading-6 font-semibold text-neutral-07">
+                  <div className="text-[15px] font-semibold leading-6 text-neutral-07">
                     Volume
                   </div>
-                  <div className="mt-1 text-xl leading-9 text-neutral-07 font-semibold">
+                  <div className="mt-1 text-xl font-semibold leading-9 text-neutral-07">
                     {userInfoQuery.isFetching ? (
-                      <div className="w-12 h-4 rounded-2xl overflow-hidden">
+                      <div className="h-4 w-12 overflow-hidden rounded-2xl">
                         <Skeleton />
                       </div>
                     ) : (
@@ -299,7 +299,7 @@ export default function WalletExplorerDetail({
               </div>
             </div>
           </div>
-          <div className="h-full w-full pr-5 overflow-hidden">
+          <div className="h-full w-full overflow-hidden pr-5">
             <LineChart
               dataTokenInfo={null}
               sparkLineIn7D={DUMMY_CHART}
@@ -310,12 +310,12 @@ export default function WalletExplorerDetail({
           </div>
         </div>
         {/* right */}
-        <div className="w-1/2 relative flex flex-col items-center gap-2">
-          <div className="flex gap-2 w-full">
-            <div className="p-4 w-full rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] h-full">
+        <div className="relative flex w-1/2 flex-col items-center gap-2">
+          <div className="flex w-full gap-2">
+            <div className="h-full w-full rounded-2xl border border-solid border-[#EFEFEF] bg-neutral-01 p-4 shadow-lg">
               <WalletInfoItemTitle
                 name={DATA_STATS[0].name}
-                icon={<div className="w-4 h-4 bg-secondary-3 rounded-[4px]" />}
+                icon={<div className="h-4 w-4 rounded-[4px] bg-secondary-3" />}
               />
               <WalletInfoItem
                 imgUrl={DATA_STATS[0].imgUrl}
@@ -332,10 +332,10 @@ export default function WalletExplorerDetail({
                 loading={tradeStatisticQuery.isFetching}
               />
             </div>
-            <div className="p-4 w-full rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] h-full">
+            <div className="h-full w-full rounded-2xl border border-solid border-[#EFEFEF] bg-neutral-01 p-4 shadow-lg">
               <WalletInfoItemTitle
                 name={DATA_STATS[1].name}
-                icon={<div className="w-4 h-4 bg-secondary-3 rounded-[4px]" />}
+                icon={<div className="h-4 w-4 rounded-[4px] bg-secondary-3" />}
               />
               <WalletInfoItem
                 imgUrl={DATA_STATS[1].imgUrl}
@@ -352,13 +352,13 @@ export default function WalletExplorerDetail({
               />
             </div>
           </div>
-          <div className="p-4 w-full rounded-2xl border border-solid shadow-lg bg-neutral-01 border-[#EFEFEF] h-full">
+          <div className="h-full w-full rounded-2xl border border-solid border-[#EFEFEF] bg-neutral-01 p-4 shadow-lg">
             <FirstTimeBuy address={params.groupId} chain={CHAIN} />
           </div>
         </div>
       </div>
       {/* table */}
-      <div className="flex w-auto mt-2 gap-2 h-full">
+      <div className="mt-2 flex h-full w-auto gap-2">
         <div className="w-1/2">
           <PortfolioComp address={params.groupId} chain={CHAIN} />
         </div>
@@ -367,7 +367,7 @@ export default function WalletExplorerDetail({
         </div>
       </div>
       {/* table */}
-      <div className="mt-2 mb-0 pb-10">
+      <div className="mb-0 mt-2 pb-10">
         <BigTradeActivity address={params.groupId} chain={CHAIN} />
       </div>
     </div>

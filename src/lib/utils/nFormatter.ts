@@ -12,8 +12,13 @@ export function nFormatter(number: number) {
   }
 
   const suffixes = ['', 'K', 'M', 'B', 'T', 'P', 'E']
-  const suffixIndex = Math.min(Math.floor(Math.log10(absoluteNumber) / 3), suffixes.length - 1)
-  const formattedNumber = (absoluteNumber / Math.pow(10, 3 * suffixIndex)).toFixed(1)
+  const suffixIndex = Math.min(
+    Math.floor(Math.log10(absoluteNumber) / 3),
+    suffixes.length - 1,
+  )
+  const formattedNumber = (
+    absoluteNumber / Math.pow(10, 3 * suffixIndex)
+  ).toFixed(1)
 
   return (isNegative ? '-' : '') + formattedNumber + suffixes[suffixIndex]
 }

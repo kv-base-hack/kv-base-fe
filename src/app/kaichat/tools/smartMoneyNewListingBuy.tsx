@@ -60,8 +60,8 @@ export const createSmartMoneyNewListingBuyTool: CreateToolFunction = (
         })
 
         return (
-          <div className="flex items-start gap-4 my-8">
-            <LogoChat className="w-8 h-8 shrink-0" />
+          <div className="my-8 flex items-start gap-4">
+            <LogoChat className="h-8 w-8 shrink-0" />
             <SmartMoneyNewListingBuy data={initData} />
           </div>
         )

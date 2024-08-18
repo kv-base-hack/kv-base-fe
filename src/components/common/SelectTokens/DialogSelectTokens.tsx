@@ -95,62 +95,62 @@ export function DialogSelectToken({
       <DialogTrigger asChild onClick={() => setEnabled(true)}>
         {children}
       </DialogTrigger>
-      <DialogContent className="!p-0 z-[999999]">
-        <div className="flex flex-col py-4 rounded-lg border-none bg-neutral-01 border-white/10 max-w-[510px]">
-          <div className="flex px-4 gap-5 w-full justify-between text-xl font-bold tracking-tight leading-7 text-neutral-07 max-md:flex-wrap max-md:pl-5 max-md:max-w-full">
+      <DialogContent className="z-[999999] !p-0">
+        <div className="flex max-w-[510px] flex-col rounded-lg border-none border-white/10 bg-neutral-01 py-4">
+          <div className="flex w-full justify-between gap-5 px-4 text-xl font-bold leading-7 tracking-tight text-neutral-07 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
             <div></div>
             <div className="text-center">Select tokens</div>
             <DialogClose>
               <Close />
             </DialogClose>
           </div>
-          <div className="flex px-4 flex-col justify-center mt-4 text-base tracking-tight leading-6 text-neutral-07  max-md:max-w-full">
-            <div className="flex gap-4 justify-start px-4 py-3.5 rounded-xl border border-solid backdrop-blur-[50px]  border-neutral-07 max-md:flex-wrap max-md:max-w-full">
+          <div className="mt-4 flex flex-col justify-center px-4 text-base leading-6 tracking-tight text-neutral-07 max-md:max-w-full">
+            <div className="flex justify-start gap-4 rounded-xl border border-solid border-neutral-07 px-4 py-3.5 backdrop-blur-[50px] max-md:max-w-full max-md:flex-wrap">
               <SearchIcon />
               <input
                 placeholder="Search token name or paste address"
-                className="w-full h-6 bg-transparent outline-none focus:outline-none font-normal "
+                className="h-6 w-full bg-transparent font-normal outline-none focus:outline-none"
                 value={search}
                 onChange={handleSearchChange}
               />
             </div>
           </div>
           <div className="mt-4 h-px bg-white bg-opacity-10 max-md:max-w-full" />
-          <div className="h-[500px] px-4 relative overflow-y-auto pb-16">
+          <div className="relative h-[500px] overflow-y-auto px-4 pb-16">
             {listTokenData?.map((token, index) =>
               token.tokenAddress && action === 'navigate' ? (
                 <DialogClose key={index} className="w-full cursor-pointer">
                   <div
                     onClick={handleNavigte(token)}
-                    className="flex justify-between p-4 mt-4 rounded-xl bg-zinc-800 max-md:flex-wrap max-md:max-w-full"
+                    className="mt-4 flex justify-between rounded-xl bg-zinc-800 p-4 max-md:max-w-full max-md:flex-wrap"
                   >
-                    <div className="flex gap-4 justify-between whitespace-nowrap">
+                    <div className="flex justify-between gap-4 whitespace-nowrap">
                       <ImageToken
                         symbol={token?.symbol}
                         imgUrl={token?.imageUrl}
                       />
-                      <div className="flex flex-col items-start flex-1">
-                        <div className="text-base font-bold tracking-normal leading-6 text-neutral-07">
+                      <div className="flex flex-1 flex-col items-start">
+                        <div className="text-base font-bold leading-6 tracking-normal text-neutral-07">
                           {token.symbol}
                         </div>
-                        <div className="text-sm tracking-normal leading-4 text-neutral-07">
+                        <div className="text-sm leading-4 tracking-normal text-neutral-07">
                           {token.name}
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col flex-1 justify-center items-end whitespace-nowrap">
-                      <div className="self-end text-base font-bold tracking-normal leading-6 text-neutral-07">
+                    <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
+                      <div className="self-end text-base font-bold leading-6 tracking-normal text-neutral-07">
                         {formatPriceNumber(token.usdPrice)}
                       </div>
-                      <div className="flex items-center gap-2 justify-between text-sm tracking-normal leading-4">
+                      <div className="flex items-center justify-between gap-2 text-sm leading-4 tracking-normal">
                         {token.price_24h === 0 ? (
-                          <div className="text-neutral-07 text-sm not-italic leading-5">
+                          <div className="text-sm not-italic leading-5 text-neutral-07">
                             -
                           </div>
                         ) : (
                           <div
                             className={cn(
-                              'text-neutral-07 text-sm not-italic  leading-5',
+                              'text-sm not-italic leading-5 text-neutral-07',
                               token.price_24h > 0
                                 ? 'text-semantic-success-1'
                                 : 'text-semantic-error-1',
@@ -169,17 +169,17 @@ export function DialogSelectToken({
                 <div
                   key={index}
                   className={cn(
-                    'mt-4  p-px',
+                    'mt-4 p-px',
                     tokens?.find(
                       (item) => item.tokenAddress === token.tokenAddress,
                     ) &&
-                      'z-0 bg-gradient-to-b from-[#0080FF] to-[#14F195] rounded-xl',
+                      'z-0 rounded-xl bg-gradient-to-b from-[#0080FF] to-[#14F195]',
                   )}
                 >
                   <div
                     onClick={handleSelectToken(token)}
                     className={cn(
-                      'flex z-1 cursor-pointer w-full h-full justify-between p-4 rounded-xl',
+                      'z-1 flex h-full w-full cursor-pointer justify-between rounded-xl p-4',
                       tokens?.find(
                         (item) => item.tokenAddress === token.tokenAddress,
                       )
@@ -187,33 +187,33 @@ export function DialogSelectToken({
                         : '',
                     )}
                   >
-                    <div className="flex gap-4 justify-between whitespace-nowrap">
+                    <div className="flex justify-between gap-4 whitespace-nowrap">
                       <ImageToken
                         imgUrl={token?.imageUrl}
                         symbol={token?.symbol}
                       />
-                      <div className="flex flex-col flex-1">
-                        <div className="text-base font-bold tracking-normal leading-6 text-neutral-07">
+                      <div className="flex flex-1 flex-col">
+                        <div className="text-base font-bold leading-6 tracking-normal text-neutral-07">
                           {token.symbol}
                         </div>
-                        <div className="text-sm tracking-normal leading-4 text-neutral-07">
+                        <div className="text-sm leading-4 tracking-normal text-neutral-07">
                           {token.name}
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col flex-1 justify-center items-end whitespace-nowrap">
-                      <div className="self-end text-base font-bold tracking-normal leading-6 text-neutral-07">
+                    <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
+                      <div className="self-end text-base font-bold leading-6 tracking-normal text-neutral-07">
                         {formatPriceNumber(token.usdPrice)}
                       </div>
-                      <div className="flex items-center gap-2 justify-between text-sm tracking-normal leading-4">
+                      <div className="flex items-center justify-between gap-2 text-sm leading-4 tracking-normal">
                         {token.price_24h === 0 ? (
-                          <div className="text-neutral-07 text-sm not-italic leading-5">
+                          <div className="text-sm not-italic leading-5 text-neutral-07">
                             -
                           </div>
                         ) : (
                           <div
                             className={cn(
-                              'text-sm not-italic  leading-5',
+                              'text-sm not-italic leading-5',
                               token.price_24h >= 0
                                 ? 'text-semantic-success-1'
                                 : 'text-semantic-error-1',
@@ -230,16 +230,16 @@ export function DialogSelectToken({
                 </div>
               ),
             )}
-            <div className="fixed left-0 w-full flex justify-center bottom-4">
-              <DialogClose className="w-full mx-8">
+            <div className="fixed bottom-4 left-0 flex w-full justify-center">
+              <DialogClose className="mx-8 w-full">
                 <div
                   onClick={handleApplySelect}
                   className={cn(
-                    'w-auto rounded-full flex items-center justify-center',
+                    'flex w-auto items-center justify-center rounded-full',
                     tokens.length > 0 ? 'button-gradient' : 'bg-neutral-500',
                   )}
                 >
-                  <span className="hidden font-medium xl:flex h-12 justify-center rounded-full items-center self-stretch px-6 py-2">
+                  <span className="hidden h-12 items-center justify-center self-stretch rounded-full px-6 py-2 font-medium xl:flex">
                     Select Token
                   </span>
                 </div>

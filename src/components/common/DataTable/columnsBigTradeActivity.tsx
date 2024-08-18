@@ -141,7 +141,7 @@ export const columnsBigTradeActivity = (chain: string) => {
             {price_change_24h.toFixed(2)}%
           </div>
         ) : (
-          <div className="text-left w-full">-</div>
+          <div className="w-full text-left">-</div>
         )
       },
     },
@@ -154,7 +154,7 @@ export const columnsBigTradeActivity = (chain: string) => {
         const { scan_link } = row.original
         return (
           <a href={scan_link} target="_blank">
-            <ExternalLink className="w-4 h-4 text-neutral-07" />
+            <ExternalLink className="h-4 w-4 text-neutral-07" />
           </a>
         )
       },

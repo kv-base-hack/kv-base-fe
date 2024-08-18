@@ -1,4 +1,4 @@
-import { getTotalEarning } from "@/services/leaderboard/api"
+import { getTotalEarning } from '@/services/leaderboard/api'
 
 const GET_TOTAL_EARNING = 'GET_TOTAL_EARNING'
 

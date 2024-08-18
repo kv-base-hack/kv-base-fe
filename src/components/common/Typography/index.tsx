@@ -1,7 +1,7 @@
 export const Heading3 = ({ ...props }) => {
   return (
     <div
-      className="text-neutral-100 text-[40px] not-italic font-normal leading-[60px]"
+      className="text-[40px] font-normal not-italic leading-[60px] text-neutral-100"
       {...props}
     />
   )

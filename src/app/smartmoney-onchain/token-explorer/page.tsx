@@ -22,10 +22,10 @@ export default function TokenExplorer() {
   const [perPage] = useState(10)
 
   return (
-    <div className="w-full h-full pt-2">
+    <div className="h-full w-full pt-2">
       {/* header */}
       <GroupHeader
-        className="mt-4 mx-10"
+        className="mx-10 mt-4"
         title="Token Explorer"
         desc="Enter a token name, contract address and explore in-depth dashboards with relevant price data, exchange inflow and outflow, holder analysis interactive graph, top transactions, top balance changes, and more!"
       ></GroupHeader>
@@ -35,7 +35,7 @@ export default function TokenExplorer() {
         <WrapTableTab>
           <div className="mt-8">
             <DataTable
-              className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+              className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
               columns={columnsListToken(page, perPage)}
               data={dataToken || []}
               isFetching={trendingTokenQuery.isFetching}

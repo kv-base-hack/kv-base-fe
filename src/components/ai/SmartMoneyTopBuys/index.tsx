@@ -38,19 +38,19 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
             Tokens
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
+                    <div className="flex w-full items-center justify-start gap-1.5">
                       <ImageToken
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
@@ -59,7 +59,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -98,7 +98,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
         cell: ({ row }) => {
           const { volume } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               ${nFormatter(volume)}
             </div>
           )
@@ -140,13 +140,13 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
         cell: ({ row }) => {
           const { price_percent_change_24h } = row.original
           return price_percent_change_24h === 0 ? (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-neutral-07 text-sm not-italic  leading-5',
+                'text-sm not-italic leading-5 text-neutral-07',
                 price_percent_change_24h > 0
                   ? 'text-success-500'
                   : 'text-error-500',
@@ -186,7 +186,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
   }, [])
   return (
     <div>
-      <div className="p-6 font-semibold rounded-lg border border-solid bg-neutral-01 border-[#EFEFEF] leading-[160%] max-md:px-5 flex flex-col gap-5">
+      <div className="flex flex-col gap-5 rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 p-6 font-semibold leading-[160%] max-md:px-5">
         <TitleCard
           iconFirst={<IconShoppingCart />}
           title="SM Top Buy"
@@ -195,7 +195,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
           <Link
             href="/find-gems"
             onClick={() => setActiveTab('SM Top Buys')}
-            className="bg-neutral-07 px-5 py-2 rounded-full text-[#FCFCFC] text-[15px] leading-6"
+            className="rounded-full bg-neutral-07 px-5 py-2 text-[15px] leading-6 text-[#FCFCFC]"
           >
             See Detail in Find Gems
           </Link>

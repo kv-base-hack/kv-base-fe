@@ -48,7 +48,7 @@ export const TooltipTokenInfo = ({
             href={`/smartmoney-onchain/token-explorer/${address}?chain=${chain}`}
           >
             {!nameToken ? (
-              <div className="flex gap-1.5 w-full items-center justify-start">
+              <div className="flex w-full items-center justify-start gap-1.5">
                 <ImageToken
                   imgUrl={imgUrl}
                   symbol={symbol}
@@ -59,8 +59,8 @@ export const TooltipTokenInfo = ({
             ) : (
               <div className="flex items-center gap-2">
                 <ImageToken imgUrl={imgUrl} symbol={symbol} />
-                <div className="flex flex-col gap-1.5 w-full items-start justify-start">
-                  <div className=" font-bold text-primary max-w-[140px] truncate">
+                <div className="flex w-full flex-col items-start justify-start gap-1.5">
+                  <div className="text-primary max-w-[140px] truncate font-bold">
                     {name}
                   </div>
                   <TokenSymbol className="text-neutral-04">
@@ -71,7 +71,7 @@ export const TooltipTokenInfo = ({
             )}
           </Link>
         </TooltipTrigger>
-        <TooltipContent className="!p-0 !border-none">
+        <TooltipContent className="!border-none !p-0">
           <CardInfo
             image_url={imgUrl}
             symbol={symbol}

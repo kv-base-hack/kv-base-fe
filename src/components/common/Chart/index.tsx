@@ -22,7 +22,7 @@ ChartJS.register(
   Tooltip,
   Legend,
   Filler,
-  BarElement
+  BarElement,
 )
 
 export const ChartTokenDetail = ({
@@ -76,11 +76,15 @@ export const ChartTokenDetail = ({
                 const gradient = ctx.createLinearGradient(0, 0, 0, 100)
                 gradient.addColorStop(
                   0,
-                  changePrice > 0 ? 'rgba(69, 178, 107, 0.1)' : 'rgba(239, 70, 111, 0.1)'
+                  changePrice > 0
+                    ? 'rgba(69, 178, 107, 0.1)'
+                    : 'rgba(239, 70, 111, 0.1)',
                 )
                 gradient.addColorStop(
                   1,
-                  changePrice > 0 ? 'rgba(69, 178, 107, 0)' : 'rgba(239, 70, 111, 0)'
+                  changePrice > 0
+                    ? 'rgba(69, 178, 107, 0)'
+                    : 'rgba(239, 70, 111, 0)',
                 )
                 return gradient
               },

@@ -38,19 +38,19 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
             Tokens
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
+                    <div className="flex w-full items-center justify-start gap-1.5">
                       <ImageToken
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
@@ -59,7 +59,7 @@ export const TableFreshUnusualBuy = ({
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -77,7 +77,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'total_spent',
         header: () => (
           <div
-            className="w-full text-neutral-04 font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
             onClick={() => setSortBy('total_spent')}
             role="button"
           >
@@ -98,7 +98,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'pnl',
         header: () => (
           <div
-            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('pnl')}
             role="button"
           >
@@ -122,7 +122,7 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'avg_price',
         header: () => (
-          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
             Avg Price
           </div>
         ),
@@ -136,7 +136,7 @@ export const TableFreshUnusualBuy = ({
         accessorKey: 'price',
         header: () => (
           <div
-            className="w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap"
+            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('price_change')}
             role="button"
           >
@@ -148,7 +148,7 @@ export const TableFreshUnusualBuy = ({
           return price_change_24h ? (
             <div
               className={cn(
-                'leading-[140%] flex items-center',
+                'flex items-center leading-[140%]',
                 price_change_24h > 0 ? 'text-success-500' : 'text-error-500',
                 price_change_24h === 0 && 'text-neutral-03',
               )}
@@ -157,14 +157,14 @@ export const TableFreshUnusualBuy = ({
               {price_change_24h.toFixed(2)}%
             </div>
           ) : (
-            <div className="text-center w-full">-</div>
+            <div className="w-full text-center">-</div>
           )
         },
       },
       {
         accessorKey: 'buyer_count',
         header: () => (
-          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
             # of Wallet
           </div>
         ),
@@ -186,7 +186,7 @@ export const TableFreshUnusualBuy = ({
   }, [duration, page, perPage, setSortBy])
   return (
     <DataTable
-      className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+      className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
       columns={columns}
       data={data || []}
       isFetching={isFetching}

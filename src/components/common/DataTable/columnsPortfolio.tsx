@@ -49,8 +49,8 @@ export const columnsPortfolio = (chain: string) => {
               price_24h_change > 0
                 ? 'text-semantic-success-1'
                 : price_24h_change < 0
-                ? 'text-semantic-error-1'
-                : 'text-neutral-07',
+                  ? 'text-semantic-error-1'
+                  : 'text-neutral-07',
             )}
           >
             {price_24h_change > 0 ? '+' : ''}

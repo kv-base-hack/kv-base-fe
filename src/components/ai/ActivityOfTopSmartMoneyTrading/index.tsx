@@ -32,7 +32,7 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
         cell: ({ row }) => {
           const time = row.original.block_timestamp
           return (
-            <div className="text-[#6F767E] text-base">
+            <div className="text-base text-[#6F767E]">
               {moment(time).fromNow()}
             </div>
           )
@@ -46,7 +46,7 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
           const { sender } = row.original
           return (
             <Link
-              className="underline max-w-32 text-xs text-neutral-07"
+              className="max-w-32 text-xs text-neutral-07 underline"
               href={`/smartmoney-onchain/wallet-explorer/${sender}`}
             >
               {sender.substring(0, 6)}...
@@ -62,28 +62,28 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.token_address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.token_address}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
+                    <div className="flex w-full items-center justify-start gap-1.5">
                       <ImageToken
                         imgUrl={row?.original?.token_image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div className="text-normal underline text-neutral-04">
+                      <div className="text-normal text-neutral-04 underline">
                         {row?.original?.symbol}
                       </div>
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.token_image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal underline text-neutral-04">
+                    <div className="text-normal text-neutral-04 underline">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -129,12 +129,12 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
       {
         accessorKey: 'current_price',
         header: () => {
-          return <div className="flex gap-2 items-center">Price</div>
+          return <div className="flex items-center gap-2">Price</div>
         },
         enableSorting: false,
         cell: ({ row }) => {
           return (
-            <div className="text-neutral-07 text-xs font-bold">
+            <div className="text-xs font-bold text-neutral-07">
               {renderPrice(row.original.price)}
             </div>
           )
@@ -143,8 +143,8 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
     ]
   }, [])
   return (
-    <div className="p-6 font-semibold rounded-lg border border-solid backdrop-blur-lg bg-neutral-01 border-[#EFEFEF] shadow-chat-ai leading-[160%] max-md:px-5">
-      <div className="border border-white/10 rounded-[20px] bg-[#EFEFEF] w-fit py-2 px-4">
+    <div className="rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 p-6 font-semibold leading-[160%] shadow-chat-ai backdrop-blur-lg max-md:px-5">
+      <div className="w-fit rounded-[20px] border border-white/10 bg-[#EFEFEF] px-4 py-2">
         <div className="flex items-center gap-2">
           <p>Activity of Top SM</p>
         </div>

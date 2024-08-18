@@ -1,4 +1,3 @@
-
 import { ActiveTab } from '@/components/pages/gem-analytics/tabs/types'
 import { atom } from 'jotai'
 

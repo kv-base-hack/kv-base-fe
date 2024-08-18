@@ -159,7 +159,7 @@ const CustomTooltip = ({
   if (active && payload && payload.length) {
     return (
       <div>
-        <p className="text-[#A7ACB4] text-sm font-normal">{label}</p>
+        <p className="text-sm font-normal text-[#A7ACB4]">{label}</p>
       </div>
     )
   }

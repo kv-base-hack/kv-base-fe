@@ -10,8 +10,8 @@ export const TokenFilter = ({
   onClick: (value: TokenList) => void
 }) => {
   return (
-    <div className="rounded-xl p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
-      <div className="bg-neutral-01 cursor-pointer rounded-xl flex items-center justify-center px-4 py-2 gap-1 h-full text-sm tracking-normal leading-5 text-neutral-07">
+    <div className="rounded-xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+      <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-xl bg-neutral-01 px-4 py-2 text-sm leading-5 tracking-normal text-neutral-07">
         <ImageToken imgUrl={token?.imageUrl} symbol={token?.symbol} />
         <div>{token.symbol}</div>
         <Close onclick={onClick} />

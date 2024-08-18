@@ -33,19 +33,19 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'symbol',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
             Tokens
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <div className="flex gap-1.5 w-full items-center justify-start">
+                    <div className="flex w-full items-center justify-start gap-1.5">
                       <ImageToken
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
@@ -54,7 +54,7 @@ export const TableCexWithdraw = ({
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -71,7 +71,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'withdraw_value',
         header: () => (
-          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
             Withdraw Value
           </div>
         ),
@@ -88,7 +88,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'cex_netflow',
         header: () => (
-          <div className="text-center w-full font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
             CEX Netflow
           </div>
         ),
@@ -96,7 +96,7 @@ export const TableCexWithdraw = ({
         cell: ({ row }) => {
           const { net_flow } = row.original
           return (
-            <div className="text-neutral-07 text-center w-full">
+            <div className="w-full text-center text-neutral-07">
               ${nFormatter(net_flow)}
             </div>
           )
@@ -105,7 +105,7 @@ export const TableCexWithdraw = ({
       {
         accessorKey: 'oi',
         header: () => (
-          <div className="text-sm w-full not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+          <div className="w-full whitespace-nowrap text-sm font-normal not-italic leading-6 tracking-[-0.14px]">
             OI (%)
           </div>
         ),
@@ -132,7 +132,7 @@ export const TableCexWithdraw = ({
   }, [page, perPage])
   return (
     <DataTable
-      className="text-xs font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+      className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
       columns={columns}
       data={data || []}
       isFetching={isFetching}

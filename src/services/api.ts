@@ -794,7 +794,7 @@ export const getTokenExplorerTradingSignal = async ({
     params: {
       page,
       perPage,
-    }
+    },
   })
 }
 
@@ -1255,7 +1255,7 @@ export const getDexTradingSignal = async ({
       perPage: limit,
       type,
       addresses,
-      chain
+      chain,
     },
   })
 }
@@ -1271,17 +1271,17 @@ export const getChanelDetail = async ({
 export const getUserInfo = async ({
   address,
   chain,
-  duration
+  duration,
 }: {
   address: string
-    chain: string
+  chain: string
   duration?: string
 }): Promise<UserInfoResponse> => {
   return await userApi.get('/v1/user/info', {
     params: {
       chain,
       address,
-      duration
+      duration,
     },
   })
 }
@@ -1302,7 +1302,7 @@ export const getUserBalance = async ({
       addresses,
       address,
       chain,
-      duration
+      duration,
     },
   })
 }

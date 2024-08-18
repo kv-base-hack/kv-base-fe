@@ -56,9 +56,9 @@ const ToastCustom = ({
             onOpenChange={setOpen}
           >
             <ToastTitle className="ToastTitle">
-              <div className="flex items-center justify-between w-full">
+              <div className="flex w-full items-center justify-between">
                 {icon ? <div className="mr-2">{icon}</div> : null}
-                <div className="text-neutral-dark-1 text-base not-italic font-bold leading-6 font-inter">
+                <div className="text-neutral-dark-1 font-inter text-base font-bold not-italic leading-6">
                   {title}
                 </div>
               </div>
@@ -67,7 +67,7 @@ const ToastCustom = ({
               <ToastDescription asChild>
                 <div
                   className={cn(
-                    'text-neutral-dark-1 font-normal leading-[22px] font-poppins',
+                    'text-neutral-dark-1 font-poppins font-normal leading-[22px]',
                     icon ? 'ml-[34px]' : 'ml-0',
                   )}
                 >

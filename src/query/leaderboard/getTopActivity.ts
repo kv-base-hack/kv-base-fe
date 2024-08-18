@@ -1,5 +1,4 @@
-import { getTopActivity } from "@/services/leaderboard/api"
-
+import { getTopActivity } from '@/services/leaderboard/api'
 
 const GET_TOP_ACTIVITY = 'GET_TOP_ACTIVITY'
 
@@ -20,6 +19,18 @@ export const useTopActivityQuery = ({
   token_addresses: string
   sort_by: string
 }) => ({
-  queryKey: [GET_TOP_ACTIVITY, { action, limit, start, chain, amount_filter, token_addresses, sort_by }],
-  queryFn: () => getTopActivity({ action, limit, start, chain, amount_filter, token_addresses, sort_by }),
+  queryKey: [
+    GET_TOP_ACTIVITY,
+    { action, limit, start, chain, amount_filter, token_addresses, sort_by },
+  ],
+  queryFn: () =>
+    getTopActivity({
+      action,
+      limit,
+      start,
+      chain,
+      amount_filter,
+      token_addresses,
+      sort_by,
+    }),
 })

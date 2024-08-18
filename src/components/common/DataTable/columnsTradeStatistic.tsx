@@ -25,25 +25,25 @@ export const columnsTradeStatistic: ColumnDef<TradeStatistic>[] = [
       return row?.original?.address ? (
         <Link
           href={`/smartmoney-onchain/token-explorer/${row.original.address}`}
-          className="flex gap-3 items-center justify-between text-right"
+          className="flex items-center justify-between gap-3 text-right"
         >
           <Image
             loading="lazy"
             alt="token"
             src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
             width={24}
             height={24}
           />
           <div>{symbol}</div>
         </Link>
       ) : (
-        <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+        <div className="flex cursor-not-allowed items-center justify-between gap-3 text-right">
           <Image
             loading="lazy"
             alt="token"
             src="/assets/icons/token/usdt.svg"
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
             width={24}
             height={24}
           />

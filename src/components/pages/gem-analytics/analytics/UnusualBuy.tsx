@@ -25,25 +25,25 @@ export const GemAnalyticsUnusualBuy = () => {
     <WrapTable
       className="p-4"
       title={
-        <div className="text-[15px] not-italic font-bold leading-6 tracking-[-0.15px]">
+        <div className="text-[15px] font-bold not-italic leading-6 tracking-[-0.15px]">
           Unusual Buying
         </div>
       }
       icon={<GemAnalyticsUnusualBuyIcon />}
     >
-      <div className="flex flex-col gap-4 mt-4">
+      <div className="mt-4 flex flex-col gap-4">
         {freshUnusalBuyQuery.isFetching
           ? [1, 2, 3].map((_, index) => (
               <div
                 key={index}
                 className="flex animate-pulse items-center justify-start gap-2"
               >
-                <div className="w-3 h-3 bg-neutral-500 rounded-lg"></div>
+                <div className="h-3 w-3 rounded-lg bg-neutral-500"></div>
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-neutral-500 rounded-full"></div>
-                  <div className="bg-neutral-500 rounded-lg w-[40px] h-5"></div>
+                  <div className="h-6 w-6 rounded-full bg-neutral-500"></div>
+                  <div className="h-5 w-[40px] rounded-lg bg-neutral-500"></div>
                 </div>
-                <div className="bg-neutral-500 rounded-lg w-full h-5"></div>
+                <div className="h-5 w-full rounded-lg bg-neutral-500"></div>
               </div>
             ))
           : freshUnusalBuyQuery.data?.data?.unusual_token_buy?.map(
@@ -52,18 +52,18 @@ export const GemAnalyticsUnusualBuy = () => {
                   key={index}
                   className="flex items-center justify-start gap-2"
                 >
-                  <div className="w-3 text-[#D6D9DC] text-[13px] not-italic font-normal leading-4 tracking-[-0.13px]">
+                  <div className="w-3 text-[13px] font-normal not-italic leading-4 tracking-[-0.13px] text-[#D6D9DC]">
                     {index + 1}
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6">
+                    <div className="h-6 w-6">
                       <ImageToken
                         imgUrl={item.image_url}
                         symbol={item?.symbol}
-                        className="w-6 h-6"
+                        className="h-6 w-6"
                       />
                     </div>
-                    <div className="text-[#D6D9DC] text-right text-[13px] not-italic font-normal leading-4 tracking-[-0.13px] truncate">
+                    <div className="truncate text-right text-[13px] font-normal not-italic leading-4 tracking-[-0.13px] text-[#D6D9DC]">
                       {item?.symbol}
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export const GemAnalyticsUnusualBuy = () => {
                         {item.price_change_24h.toFixed(2)}%
                       </div>
                     ) : (
-                      <div className="text-left w-full">-</div>
+                      <div className="w-full text-left">-</div>
                     )}
                   </div>
                 </div>

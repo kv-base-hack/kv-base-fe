@@ -10,14 +10,14 @@ import { SMMoneyOverview } from '@/components/Dashboard/SMOverView'
 
 export default function Leaderboard() {
   return (
-    <div className="w-full h-full flex flex-col gap-2">
+    <div className="flex h-full w-full flex-col gap-2">
       <SMMoneyOverview />
-      <div className="flex flex-col xl:flex-row items-ceter gap-2">
+      <div className="items-ceter flex flex-col gap-2 xl:flex-row">
         <LastestAiSignal />
         <ActivitySpotlight limit={2} />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 xl:grid-cols-3">
         <TableInsiderBuy limit={5} />
         <TableNewListingBuy limit={5} />
         <TableTopBuy limit={5} />

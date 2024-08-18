@@ -85,10 +85,10 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
 
   return (
     <div className="py-6">
-      <h2 className="text-neutral-07 font-semibold text-base">
+      <h2 className="text-base font-semibold text-neutral-07">
         Please choose token you want to Analyze
       </h2>
-      <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6 gap-2 mt-4 w-[80%] xl:w-[100%]">
+      <div className="mt-4 grid w-[80%] grid-cols-3 gap-2 lg:grid-cols-4 xl:w-[100%] xl:grid-cols-5 3xl:grid-cols-6">
         {tokens.map((token, index: number) => (
           <TokenItem
             key={index}
@@ -98,8 +98,8 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
         ))}
       </div>
       {selectedToken ? (
-        <div className="flex items-start gap-4 mt-8">
-          <LogoChat className="w-8 h-8 shrink-0" />
+        <div className="mt-8 flex items-start gap-4">
+          <LogoChat className="h-8 w-8 shrink-0" />
           <div className="w-full">
             <TokenInfo
               imgUrl={selectedToken.imageUrl}

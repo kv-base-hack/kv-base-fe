@@ -88,7 +88,7 @@ export default function TradingSignalDetail({
 
   return (
     <div className="flex flex-col self-stretch p-10 max-md:px-5">
-      <div className="flex items-center gap-0 text-xl tracking-tight leading-8 max-md:flex-wrap max-md:max-w-full">
+      <div className="flex items-center gap-0 text-xl leading-8 tracking-tight max-md:max-w-full max-md:flex-wrap">
         <Link href="/trading-signal" className="text-gray-400">
           Kaivest Trading Signal
         </Link>
@@ -97,16 +97,16 @@ export default function TradingSignalDetail({
           KAI AI Signal
         </div>
       </div>
-      <div className="h-px my-4 bg-white/10 w-full"></div>
+      <div className="my-4 h-px w-full bg-white/10"></div>
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+        <div className="flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
           <div className="flex flex-col justify-center px-5 leading-[123%] max-md:mt-4 max-md:max-w-full">
             <div className="flex items-center gap-5 pr-20 leading-[150%] max-md:flex-wrap max-md:pr-5">
               <div className="text-3xl font-bold text-gray-300">
                 {dataChannelDetail?.name}
               </div>
-              <div className="rounded-3xl h-12 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
-                <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 text-white">
+              <div className="h-12 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+                <div className="flex h-full cursor-pointer items-center justify-center rounded-3xl bg-neutral-07 px-7 text-sm leading-5 tracking-normal text-white">
                   Follow Signal
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function TradingSignalDetail({
             <div className="mt-4 text-sm font-bold tracking-normal text-gray-500 max-md:max-w-full">
               Introduction
             </div>
-            <div className="mt-4 text-base tracking-normal leading-6 text-zinc-50 max-md:max-w-full">
+            <div className="mt-4 text-base leading-6 tracking-normal text-zinc-50 max-md:max-w-full">
               Kaivest AI signal delves into comprehensive market trend analysis,
               evaluation, and prediction based on a series of critical
               indicators. It incorporates multi-source data from on-chain
@@ -123,7 +123,7 @@ export default function TradingSignalDetail({
             <div className="mt-4 text-sm font-bold tracking-normal text-gray-500 max-md:max-w-full">
               Risk Control
             </div>
-            <div className="mt-4 text-base tracking-normal leading-6 max-md:max-w-full">
+            <div className="mt-4 text-base leading-6 tracking-normal max-md:max-w-full">
               Trade Size:{' '}
               <span className="font-medium">Use 1% margin of your account</span>
               <br />
@@ -136,12 +136,12 @@ export default function TradingSignalDetail({
             </div>
           </div>
         </div>
-        <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col grow justify-center max-md:mt-4 max-md:max-w-full">
-            <div className="flex flex-col justify-center p-4 rounded-xl border border-solid bg-neutral-07/30 border-white/10 max-md:max-w-full">
-              <div className="flex gap-0 justify-between max-md:flex-wrap">
-                <div className="flex flex-col flex-1">
-                  <div className="text-sm font-bold tracking-normal leading-4 text-neutral-04">
+        <div className="ml-5 flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
+          <div className="flex grow flex-col justify-center max-md:mt-4 max-md:max-w-full">
+            <div className="flex flex-col justify-center rounded-xl border border-solid border-white/10 bg-neutral-07/30 p-4 max-md:max-w-full">
+              <div className="flex justify-between gap-0 max-md:flex-wrap">
+                <div className="flex flex-1 flex-col">
+                  <div className="text-sm font-bold leading-4 tracking-normal text-neutral-04">
                     3D ROI
                   </div>
                   <div
@@ -163,30 +163,30 @@ export default function TradingSignalDetail({
                     %
                   </div>
                 </div>
-                <div className="flex flex-col flex-1 justify-center">
-                  <div className="w-full text-right text-sm whitespace-nowrap font-bold tracking-normal leading-4 text-neutral-04">
+                <div className="flex flex-1 flex-col justify-center">
+                  <div className="w-full whitespace-nowrap text-right text-sm font-bold leading-4 tracking-normal text-neutral-04">
                     Winrate
                   </div>
-                  <div className="mt-2 text-3xl leading-10 text-right text-gray-300">
+                  <div className="mt-2 text-right text-3xl leading-10 text-gray-300">
                     {dataChannelDetail?.winRate
                       ? dataChannelDetail.winRate.toFixed(2)
                       : '-'}
                     %
                   </div>
                 </div>
-                <div className="flex flex-col flex-1 justify-center">
-                  <div className="w-full text-right text-sm whitespace-nowrap font-bold tracking-normal leading-4 text-neutral-04">
+                <div className="flex flex-1 flex-col justify-center">
+                  <div className="w-full whitespace-nowrap text-right text-sm font-bold leading-4 tracking-normal text-neutral-04">
                     Follower
                   </div>
-                  <div className="mt-2 text-3xl leading-10 text-right text-gray-300">
+                  <div className="mt-2 text-right text-3xl leading-10 text-gray-300">
                     0
                   </div>
                 </div>
-                <div className="flex flex-col flex-1 justify-center">
-                  <div className="self-end text-sm font-bold tracking-normal leading-4 text-neutral-04">
+                <div className="flex flex-1 flex-col justify-center">
+                  <div className="self-end text-sm font-bold leading-4 tracking-normal text-neutral-04">
                     Max drawdown
                   </div>
-                  <div className="mt-2 text-3xl leading-10 text-right text-error-500">
+                  <div className="mt-2 text-right text-3xl leading-10 text-error-500">
                     0%
                   </div>
                 </div>
@@ -200,14 +200,14 @@ export default function TradingSignalDetail({
                   showDate={false}
                 />
               </div>
-              <div className="flex gap-3 justify-between mt-4 text-sm font-bold tracking-normal leading-4 text-zinc-400 max-md:flex-wrap max-md:max-w-full">
+              <div className="mt-4 flex justify-between gap-3 text-sm font-bold leading-4 tracking-normal text-zinc-400 max-md:max-w-full max-md:flex-wrap">
                 <div>
                   <span className="text-neutral-04">
                     {dataChannelDetail?.runtime}
                   </span>{' '}
                   Runtime
                 </div>
-                <div className="shrink-0 my-auto w-0.5 h-2 rounded-sm bg-zinc-800" />
+                <div className="my-auto h-2 w-0.5 shrink-0 rounded-sm bg-zinc-800" />
                 <div>
                   <span className="text-neutral-04">
                     {dataChannelDetail?.total7DaysSignals}
@@ -218,10 +218,10 @@ export default function TradingSignalDetail({
                 </div>
               </div>
             </div>
-            <div className="flex relative flex-col justify-center p-4 mt-4 rounded-xl border border-solid bg-neutral-07/30 border-white/10 max-md:max-w-full">
-              <div className="flex opacity-10 gap-1 justify-between max-md:flex-wrap max-md:max-w-full">
+            <div className="relative mt-4 flex flex-col justify-center rounded-xl border border-solid border-white/10 bg-neutral-07/30 p-4 max-md:max-w-full">
+              <div className="flex justify-between gap-1 opacity-10 max-md:max-w-full max-md:flex-wrap">
                 <div className="flex flex-col justify-center pr-2.5">
-                  <div className="text-sm font-bold tracking-normal leading-4 text-neutral-02">
+                  <div className="text-sm font-bold leading-4 tracking-normal text-neutral-02">
                     3D backtested APY
                   </div>
                   <div className="mt-2 text-3xl leading-10 text-neutral-03">
@@ -229,22 +229,22 @@ export default function TradingSignalDetail({
                   </div>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <div className="self-start ml-5 text-sm font-bold tracking-normal leading-4 text-neutral-02 max-md:ml-2.5">
+                  <div className="ml-5 self-start text-sm font-bold leading-4 tracking-normal text-neutral-02 max-md:ml-2.5">
                     Supported trading pairs
                   </div>
-                  <div className="flex gap-2 mt-2">
-                    <div className="flex gap-2 my-auto">
-                      <IconUSDT className="shrink-0 w-6 aspect-[0.93]" />
-                      <IconUSDT className="shrink-0 aspect-square w-[26px]" />
-                      <IconUSDT className="shrink-0 aspect-square w-[26px]" />
+                  <div className="mt-2 flex gap-2">
+                    <div className="my-auto flex gap-2">
+                      <IconUSDT className="aspect-[0.93] w-6 shrink-0" />
+                      <IconUSDT className="aspect-square w-[26px] shrink-0" />
+                      <IconUSDT className="aspect-square w-[26px] shrink-0" />
                     </div>
-                    <div className="text-3xl leading-10 text-right text-neutral-02">
+                    <div className="text-right text-3xl leading-10 text-neutral-02">
                       180+
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute text-xl font-medium w-full items-center justify-center bg-gradient-to-r from-[#9945FF] to-[#14F195] inline-block text-transparent bg-clip-text">
+              <div className="absolute inline-block w-full items-center justify-center bg-gradient-to-r from-[#9945FF] to-[#14F195] bg-clip-text text-xl font-medium text-transparent">
                 Coming Soon
               </div>
             </div>
@@ -252,7 +252,7 @@ export default function TradingSignalDetail({
         </div>
       </div>
       <div className="mt-4">
-        <div className="flex gap-4 justify-start items-center self-stretch py-2 text-lg font-medium tracking-tight leading-6 text-center text-neutral-400 max-md:flex-wrap">
+        <div className="flex items-center justify-start gap-4 self-stretch py-2 text-center text-lg font-medium leading-6 tracking-tight text-neutral-400 max-md:flex-wrap">
           {TABS.map((item, index) => {
             return (
               <div
@@ -261,7 +261,7 @@ export default function TradingSignalDetail({
                 className={cn(
                   'cursor-pointer self-stretch px-3 py-2',
                   item === tab
-                    ? 'justify-center text-white whitespace-nowrap tab-explorer border border-solid border-white/10'
+                    ? 'tab-explorer justify-center whitespace-nowrap border border-solid border-white/10 text-white'
                     : 'my-auto',
                 )}
               >

@@ -71,20 +71,20 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
         iconFirst={<IconRanking />}
         title="Smart Money Overview"
       ></TitleCard>
-      <div className="flex flex-col xl:flex-row items-center gap-3">
+      <div className="flex flex-col items-center gap-3 xl:flex-row">
         <CardContent
           title="3D Total Earning"
           content="Total earnings of the top 500 Smartmoney in the last 3 days."
           className="bg-[#B5E4CA]/30"
         >
           {totalEarningQuery.isFetching ? (
-            <div className="w-[200px] h-12 rounded-full overflow-hidden">
+            <div className="h-12 w-[200px] overflow-hidden rounded-full">
               <Skeleton />
             </div>
           ) : (
             <p
               className={cn(
-                'text-[48px] leading-[48px] font-semibold',
+                'text-[48px] font-semibold leading-[48px]',
                 totalEarning > 0
                   ? 'text-semantic-success-1'
                   : 'text-semantic-error-1',
@@ -105,14 +105,14 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                 return (
                   <div key={index}>
                     {findGemsTrendingQuery.isFetching ? (
-                      <div className="w-11 h-11 rounded-full overflow-hidden">
+                      <div className="h-11 w-11 overflow-hidden rounded-full">
                         <Skeleton />
                       </div>
                     ) : (
                       <TooltipTokenInfo
                         token={token}
                         chain={CHAIN}
-                        className="w-11 h-11"
+                        className="h-11 w-11"
                         isSymbol={false}
                       />
                     )}
@@ -120,7 +120,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                 )
               })
             ) : (
-              <div className="h-[50.5px] text-neutral-07 text-lg">
+              <div className="h-[50.5px] text-lg text-neutral-07">
                 No result
               </div>
             )}
@@ -137,14 +137,14 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                 return (
                   <div key={index}>
                     {smNewListingBuyQuery.isFetching ? (
-                      <div className="w-11 h-11 rounded-full overflow-hidden">
+                      <div className="h-11 w-11 overflow-hidden rounded-full">
                         <Skeleton />
                       </div>
                     ) : (
                       <TooltipTokenInfo
                         token={token}
                         chain={CHAIN}
-                        className="w-11 h-11"
+                        className="h-11 w-11"
                         isSymbol={false}
                       />
                     )}
@@ -152,7 +152,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
                 )
               })
             ) : (
-              <div className="h-[50.5px] text-neutral-07 text-lg">
+              <div className="h-[50.5px] text-lg text-neutral-07">
                 No result
               </div>
             )}
@@ -177,16 +177,16 @@ const CardContent = ({
   className?: string
 }) => {
   return (
-    <div className={cn('p-4 rounded-xl w-full', className)}>
+    <div className={cn('w-full rounded-xl p-4', className)}>
       <div className="flex flex-col gap-4 p-4">
         {img ? (
-          <div className="bg-neutral-07 rounded-full w-12 h-12 flex items-center justify-center p-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-07 p-3">
             {img}
           </div>
         ) : null}
         <div>
           <div className="flex items-center gap-1">
-            <p className="text-neutral-05 text-sm font-semibold">{title}</p>
+            <p className="text-sm font-semibold text-neutral-05">{title}</p>
             <TooltipCustom content={content}>
               <IconInfo />
             </TooltipCustom>

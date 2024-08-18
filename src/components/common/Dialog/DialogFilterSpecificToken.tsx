@@ -70,23 +70,23 @@ export const DialogFilterSpecificToken = ({
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="!p-0 z-[999999]">
-        <div className="flex flex-col p-6 rounded-xl bg-white max-w-[600px] max-md:px-5">
-          <div className="flex gap-2 justify-between text-xl font-medium tracking-tight leading-8 whitespace-nowrap text-neutral-07 max-md:flex-wrap max-md:max-w-full">
+      <DialogContent className="z-[999999] !p-0">
+        <div className="flex max-w-[600px] flex-col rounded-xl bg-white p-6 max-md:px-5">
+          <div className="flex justify-between gap-2 whitespace-nowrap text-xl font-medium leading-8 tracking-tight text-neutral-07 max-md:max-w-full max-md:flex-wrap">
             <div>Filter</div>
-            <DialogClose className="border-none focus:outline-none outline-none">
+            <DialogClose className="border-none outline-none focus:outline-none">
               <Close />
             </DialogClose>
           </div>
-          <div className="mt-2 text-base tracking-normal leading-6 text-neutral-07 max-md:max-w-full">
+          <div className="mt-2 text-base leading-6 tracking-normal text-neutral-07 max-md:max-w-full">
             Choose up to 7 metrics. You can apply filters based on the selected
             metrics (optional).
           </div>
-          <div className="flex gap-4 mt-8 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
-            <div className="w-1/4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-8 flex gap-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
+            <div className="my-auto w-1/4 text-base font-medium leading-6 tracking-normal text-neutral-07">
               24h Price %
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -101,7 +101,7 @@ export const DialogFilterSpecificToken = ({
                 icon={<div>%</div>}
               />
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -117,11 +117,11 @@ export const DialogFilterSpecificToken = ({
               />
             </div>
           </div>
-          <div className="flex gap-4 mt-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
-            <div className="w-1/4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-4 flex gap-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
+            <div className="my-auto w-1/4 text-base font-medium leading-6 tracking-normal text-neutral-07">
               Market Cap
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -136,7 +136,7 @@ export const DialogFilterSpecificToken = ({
                 icon={<div>$</div>}
               />
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -152,11 +152,11 @@ export const DialogFilterSpecificToken = ({
               />
             </div>
           </div>
-          <div className="flex gap-4 mt-4 text-sm leading-5 whitespace-nowrap text-neutral-07 max-md:flex-wrap">
-            <div className="w-1/4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-4 flex gap-4 whitespace-nowrap text-sm leading-5 text-neutral-07 max-md:flex-wrap">
+            <div className="my-auto w-1/4 text-base font-medium leading-6 tracking-normal text-neutral-07">
               TVL
             </div>
-            <div className="flex flex-1 gap-5 justify-between rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -171,7 +171,7 @@ export const DialogFilterSpecificToken = ({
                 icon={<div>$</div>}
               />
             </div>
-            <div className="flex flex-1 gap-5 justify-between rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -187,11 +187,11 @@ export const DialogFilterSpecificToken = ({
               />
             </div>
           </div>
-          <div className="flex gap-4 mt-4 text-sm leading-5 whitespace-nowrap text-neutral-07 max-md:flex-wrap">
-            <div className="w-1/4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-4 flex gap-4 whitespace-nowrap text-sm leading-5 text-neutral-07 max-md:flex-wrap">
+            <div className="my-auto w-1/4 text-base font-medium leading-6 tracking-normal text-neutral-07">
               FDV
             </div>
-            <div className="flex flex-1 gap-5 justify-between rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -206,7 +206,7 @@ export const DialogFilterSpecificToken = ({
                 icon={<div>$</div>}
               />
             </div>
-            <div className="flex flex-1 gap-5 justify-between rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -222,11 +222,11 @@ export const DialogFilterSpecificToken = ({
               />
             </div>
           </div>
-          <div className="flex gap-4 mt-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
-            <div className="w-1/4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-4 flex gap-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
+            <div className="my-auto w-1/4 text-base font-medium leading-6 tracking-normal text-neutral-07">
               24H Volume
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -241,7 +241,7 @@ export const DialogFilterSpecificToken = ({
                 icon={<div>$</div>}
               />
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -257,11 +257,11 @@ export const DialogFilterSpecificToken = ({
               />
             </div>
           </div>
-          <div className="flex gap-4 mt-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
-            <div className="w-1/4 my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-4 flex gap-4 text-sm leading-5 text-neutral-07 max-md:flex-wrap">
+            <div className="my-auto w-1/4 text-base font-medium leading-6 tracking-normal text-neutral-07">
               CEX Netflow
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -275,7 +275,7 @@ export const DialogFilterSpecificToken = ({
                 icon={<div>$</div>}
               />
             </div>
-            <div className="flex flex-1 gap-5 justify-between whitespace-nowrap rounded-xl border border-solid bg-white bg-opacity-10 border-white border-opacity-10">
+            <div className="flex flex-1 justify-between gap-5 whitespace-nowrap rounded-xl border border-solid border-white border-opacity-10 bg-white bg-opacity-10">
               <CustomInputFilter
                 onChange={(e) =>
                   setFilter({
@@ -290,17 +290,17 @@ export const DialogFilterSpecificToken = ({
               />
             </div>
           </div>
-          <div className="flex gap-4 items-center mt-4 max-md:flex-wrap max-md:max-w-full">
-            <div className="w-1/4 self-stretch my-auto text-base font-medium tracking-normal leading-6 text-neutral-07">
+          <div className="mt-4 flex items-center gap-4 max-md:max-w-full max-md:flex-wrap">
+            <div className="my-auto w-1/4 self-stretch text-base font-medium leading-6 tracking-normal text-neutral-07">
               Category
             </div>
-            <div className="flex flex-1 text-sm leading-6 rounded-xl border border-solid bg-white/10 border-white/10 text-neutral-07">
-              <div className="flex items-center px-3 py-2 w-full">
+            <div className="flex flex-1 rounded-xl border border-solid border-white/10 bg-white/10 text-sm leading-6 text-neutral-07">
+              <div className="flex w-full items-center px-3 py-2">
                 <div className="flex-1">Select Category</div>
                 <ArrowDownIcon />
               </div>
             </div>
-            <div className="flex flex-1 gap-2 w-full">
+            <div className="flex w-full flex-1 gap-2">
               <div className="flex flex-col justify-center">
                 <Switch className="bg-neutral-09" />
               </div>
@@ -309,14 +309,14 @@ export const DialogFilterSpecificToken = ({
               </div>
             </div>
           </div>
-          <div className="flex gap-2 mt-8 font-medium whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+          <div className="mt-8 flex gap-2 whitespace-nowrap font-medium max-md:max-w-full max-md:flex-wrap">
             <div
               onClick={() => handleReset()}
-              className="flex cursor-pointer flex-1 justify-center items-center px-4 py-2 text-sm leading-6 rounded-3xl border border-solid border-white/10 text-neutral-07"
+              className="flex flex-1 cursor-pointer items-center justify-center rounded-3xl border border-solid border-white/10 px-4 py-2 text-sm leading-6 text-neutral-07"
             >
               Reset
             </div>
-            <DialogClose className="flex cursor-pointer button-apply flex-1 justify-center items-center px-4 py-2 text-base leading-6 text-white rounded-3xl">
+            <DialogClose className="button-apply flex flex-1 cursor-pointer items-center justify-center rounded-3xl px-4 py-2 text-base leading-6 text-white">
               <div onClick={() => handleOk(filter)}> Apply</div>
             </DialogClose>
           </div>

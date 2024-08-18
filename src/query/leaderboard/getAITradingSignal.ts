@@ -1,4 +1,3 @@
-
 import { getDexTradingSignal } from '@/services/leaderboard/api'
 
 const GET_AI_TRADING_SIGNAL = 'GET_AI_TRADING_SIGNAL'
@@ -18,5 +17,5 @@ export const useGetAITradingSignalQuery = ({
   queryFn: async () => {
     const data = await getDexTradingSignal({ start, limit, type, chain })
     return data.data
-  }
+  },
 })

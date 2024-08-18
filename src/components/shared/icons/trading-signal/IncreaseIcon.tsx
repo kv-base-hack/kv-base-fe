@@ -6,7 +6,8 @@ function IncreaseIcon({ className }: { className?: string }) {
       width="12"
       height="14"
       fill="none"
-      viewBox="0 0 12 14">
+      viewBox="0 0 12 14"
+    >
       <g stroke="#83BF6E" strokeLinecap="round" strokeWidth="2">
         <path strokeLinejoin="round" d="M1 6l5-5 5 5"></path>
         <path d="M6 13V1"></path>

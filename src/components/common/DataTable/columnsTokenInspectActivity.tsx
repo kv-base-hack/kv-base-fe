@@ -28,7 +28,7 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
     enableSorting: false,
     cell: ({ row }) => {
       const { sender } = row.original
-      return <div className="underline max-w-32 truncate">{sender}</div>
+      return <div className="max-w-32 truncate underline">{sender}</div>
     },
   },
   {
@@ -40,21 +40,21 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
       return row?.original?.token_address ? (
         <Link
           href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
-          className="flex gap-3 items-center justify-between text-right"
+          className="flex items-center justify-between gap-3 text-right"
         >
           <ImageToken
             symbol={symbol}
             imgUrl={row?.original?.token_image_url}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
           <div>{symbol}</div>
         </Link>
       ) : (
-        <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+        <div className="flex cursor-not-allowed items-center justify-between gap-3 text-right">
           <ImageToken
             symbol={symbol}
             imgUrl={row?.original?.token_image_url}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
           <div>{symbol}</div>
         </div>

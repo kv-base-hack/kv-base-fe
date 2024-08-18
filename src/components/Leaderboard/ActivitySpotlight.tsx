@@ -58,13 +58,13 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
           <LinkCustom url="/tracking" title="See all" />
         )}
       </TitleCard>
-      <div className="flex flex-col justify-between h-full">
-        <div className="flex justify-between gap-4 h-full">
+      <div className="flex h-full flex-col justify-between">
+        <div className="flex h-full justify-between gap-4">
           {dataSpotlight.map((item, i) => {
             return dataSpotlightQuery.isFetching ? (
               <div
                 key={i}
-                className="w-[345px] h-[156px] overflow-hidden rounded-[20px]"
+                className="h-[156px] w-[345px] overflow-hidden rounded-[20px]"
               >
                 <Skeleton />
               </div>
@@ -99,35 +99,35 @@ const Card = ({
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 rounded-[20px] p-4 w-full min-h-[150px]',
+        'flex min-h-[150px] w-full flex-col gap-2 rounded-[20px] p-4',
         item.action === 'buying' || item.action === 'withdraw'
           ? 'bg-[#E1F1FF]'
           : item.action === 'selling' || item.action === 'deposit'
-          ? 'bg-[#FFF1E1]'
-          : item.action === 'new_listing_buy'
-          ? 'bg-[#F4E7FC]'
-          : item.action === 'unusual_buy'
-          ? 'bg-[#E1FFEF]'
-          : 'bg-[#E1F1FF]',
+            ? 'bg-[#FFF1E1]'
+            : item.action === 'new_listing_buy'
+              ? 'bg-[#F4E7FC]'
+              : item.action === 'unusual_buy'
+                ? 'bg-[#E1FFEF]'
+                : 'bg-[#E1F1FF]',
       )}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {loading ? (
-            <Skeleton className="w-10 h-10 rounded-xl" />
+            <Skeleton className="h-10 w-10 rounded-xl" />
           ) : (
             <div
               className={cn(
-                ' rounded-xl p-2',
+                'rounded-xl p-2',
                 item.action === 'buying' || item.action === 'withdraw'
                   ? 'bg-[#0C68E9]'
                   : item.action === 'selling' || item.action === 'deposit'
-                  ? 'bg-[#FBA94B]'
-                  : item.action === 'new_listing_buy'
-                  ? 'bg-[#B981DA]'
-                  : item.action === 'unusual_buy'
-                  ? 'bg-[#32AE60]'
-                  : 'bg-[#0C68E9]',
+                    ? 'bg-[#FBA94B]'
+                    : item.action === 'new_listing_buy'
+                      ? 'bg-[#B981DA]'
+                      : item.action === 'unusual_buy'
+                        ? 'bg-[#32AE60]'
+                        : 'bg-[#0C68E9]',
               )}
             >
               {renderMovementIcon(item.action, 'w-6 h-6', '#FCFCFC')}
@@ -136,18 +136,18 @@ const Card = ({
           <div className={loading ? 'flex flex-col gap-2' : ''}>
             <div className="flex items-center gap-2">
               {loading ? (
-                <Skeleton className="w-[140px] h-[14px] rounded-lg" />
+                <Skeleton className="h-[14px] w-[140px] rounded-lg" />
               ) : (
-                <div className="text-neutral-07 text-base font-semibold">
+                <div className="text-base font-semibold text-neutral-07">
                   {renderMovementName(item.action)}
                 </div>
               )}
             </div>
             <div>
               {loading ? (
-                <Skeleton className="w-[140px] h-[14px] rounded-lg" />
+                <Skeleton className="h-[14px] w-[140px] rounded-lg" />
               ) : (
-                <p className="text-xs text-neutral-04 text-medium">
+                <p className="text-medium text-xs text-neutral-04">
                   {moment(item.block_timestamp).fromNow()}
                 </p>
               )}
@@ -160,7 +160,7 @@ const Card = ({
         </a>
       </div>
 
-      <div className="text-neutral-07 text-[15px] leading-6 font-normal">
+      <div className="text-[15px] font-normal leading-6 text-neutral-07">
         <ContentSpotlight item={item} />
       </div>
     </div>

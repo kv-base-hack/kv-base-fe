@@ -1,7 +1,14 @@
 import 'chartjs-adapter-date-fns'
 import moment from 'moment'
 import { useMemo } from 'react'
-import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import {
+  Area,
+  AreaChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
 import SkeletonChart from '@/components/common/Skeleton/SkeletonChart'
 import { CustomDotActive } from '@/components/shared/icons/CustomDotActive'
 import { TokenInfo } from '@/types/tokenInfo'
@@ -64,7 +71,8 @@ export function LineChart({
         }}
         onMouseLeave={() => {
           setValueIndex(undefined)
-        }}>
+        }}
+      >
         <Tooltip
           wrapperStyle={{
             backgroundColor: 'transparent',
@@ -142,7 +150,7 @@ const CustomTooltip = ({
   if (active && payload && payload.length) {
     return (
       <div>
-        <p className="text-[#A7ACB4] text-sm font-normal font-inter">{label}</p>
+        <p className="font-inter text-sm font-normal text-[#A7ACB4]">{label}</p>
       </div>
     )
   }

@@ -19,10 +19,10 @@ const renderContent = (type: string) => {
 export const TooltipTable = ({ type }: { type: string }) => {
   return (
     <TooltipCustom
-      className="max-w-[210px] z-[99999] bg-neutral-06 text-neutral-02 shadow-sm border-white/10 font-inter flex flex-wrap"
+      className="z-[99999] flex max-w-[210px] flex-wrap border-white/10 bg-neutral-06 font-inter text-neutral-02 shadow-sm"
       content={renderContent(type)}
     >
-      <InfoIcon className="w-4 h-4 md:w-5 lg:w-5" />
+      <InfoIcon className="h-4 w-4 md:w-5 lg:w-5" />
     </TooltipCustom>
   )
 }

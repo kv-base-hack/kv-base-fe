@@ -2,7 +2,7 @@ import ContentLoader from 'react-content-loader'
 
 const SkeletonChart = (props: any) => (
   <ContentLoader
-    className="mb-4 -mt-[50px] rounded-lg overflow-hidden"
+    className="-mt-[50px] mb-4 overflow-hidden rounded-lg"
     speed={1}
     width={1500}
     height={300}

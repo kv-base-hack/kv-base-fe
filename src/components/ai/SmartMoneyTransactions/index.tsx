@@ -32,7 +32,7 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
         cell: ({ row }) => {
           const time = row.original.block_timestamp
           return (
-            <div className="text-[#6F767E] text-base">
+            <div className="text-base text-[#6F767E]">
               {moment(time).fromNow()}
             </div>
           )
@@ -41,9 +41,9 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
       {
         accessorKey: 'sm',
         header: () => (
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
             <div>Smart Money</div>
-            <SortMultipleIcon className="w-4 h-4" />
+            <SortMultipleIcon className="h-4 w-4" />
           </div>
         ),
         enableSorting: false,
@@ -51,7 +51,7 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
           const { sender } = row.original
           return (
             <Link
-              className="underline max-w-32 text-xs"
+              className="max-w-32 text-xs underline"
               href={`/smartmoney-onchain/wallet-explorer/${sender}`}
             >
               {sender.substring(0, 6)}...
@@ -64,9 +64,9 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
         accessorKey: 'movements',
         header: () => {
           return (
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <div>Movements</div>
-              <SortMultipleIcon className="w-4 h-4" />
+              <SortMultipleIcon className="h-4 w-4" />
             </div>
           )
         },
@@ -80,9 +80,9 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
         accessorKey: 'value',
         header: () => {
           return (
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <div>Value</div>
-              <SortMultipleIcon className="w-4 h-4" />
+              <SortMultipleIcon className="h-4 w-4" />
             </div>
           )
         },
@@ -106,7 +106,7 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
       {
         accessorKey: 'price',
         header: () => {
-          return <div className="flex gap-2 items-center">Price</div>
+          return <div className="flex items-center gap-2">Price</div>
         },
         enableSorting: false,
         cell: ({ row }) => {
@@ -121,10 +121,10 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
   }, [])
 
   return (
-    <div className="p-6 font-semibold rounded-lg border border-solid shadow-2xl backdrop-blur-lg bg-neutral-01 bg-opacity-50 border-white/10 leading-[160%] max-md:px-5 mt-4">
-      <div className="border border-white/10 rounded-[20px] bg-[#EFEFEF] w-fit py-2 px-4">
+    <div className="mt-4 rounded-lg border border-solid border-white/10 bg-neutral-01 bg-opacity-50 p-6 font-semibold leading-[160%] shadow-2xl backdrop-blur-lg max-md:px-5">
+      <div className="w-fit rounded-[20px] border border-white/10 bg-[#EFEFEF] px-4 py-2">
         <div className="flex items-center gap-2">
-          <p className="grow font-medium relative mt-1">SM Transaction</p>
+          <p className="relative mt-1 grow font-medium">SM Transaction</p>
           <InfoIcon />
         </div>
       </div>

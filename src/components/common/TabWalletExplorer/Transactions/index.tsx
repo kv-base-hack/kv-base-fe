@@ -39,20 +39,20 @@ export const Transactions = ({
     smartMoneyTransactionQuery?.data?.data?.total || 1
   return (
     <div>
-      <div className="flex items-center justify-between mb-4 font-medium">
+      <div className="mb-4 flex items-center justify-between font-medium">
         <div className="flex items-center gap-2">
-          <div className="text-neutral-07 text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
+          <div className="text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-neutral-07">
             Smart Money Transactions of
           </div>
           <div className="flex items-center gap-2">
             <ImageToken
-              className="w-8 h-8"
+              className="h-8 w-8"
               imgUrl={dataTokenInfo?.image_url}
               symbol={dataTokenInfo?.symbol}
             />
             <div className="text-purple-300">{dataTokenInfo?.symbol}</div>
             <TooltipCustom
-              className="w-[320px] z-999 bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+              className="z-999 w-[320px] border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
               content="Smart Money Transactions"
             >
               <InfoIcon />
@@ -71,7 +71,7 @@ export const Transactions = ({
         </div>
       </div>
       <DataTable
-        className="text-xs mt-4 font-bold tracking-normal leading-4 text-gray-300 bg-neutral-06 bg-neutral-07/50"
+        className="mt-4 bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
         columns={columnsSmartMoneyTransaction(CHAIN)}
         data={dataSmartMoneyTransaction || []}
         isFetching={smartMoneyTransactionQuery.isFetching}

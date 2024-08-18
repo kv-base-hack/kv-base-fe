@@ -10,7 +10,7 @@ export const SelectChain = ({
   size?: 'md' | 'lg'
 }) => {
   return (
-    <div className="flex gap-2 justify-between">
+    <div className="flex justify-between gap-2">
       <Image
         loading="lazy"
         src="/assets/icons/chain/base.svg"
@@ -18,7 +18,7 @@ export const SelectChain = ({
         width={size === 'lg' ? 32 : 24}
         height={size === 'lg' ? 32 : 24}
         className={cn(
-          'object-center aspect-square rounded-full flex-1 w-full',
+          'aspect-square w-full flex-1 rounded-full object-center',
           size === 'lg' ? 'w-8' : 'w-6',
         )}
       />

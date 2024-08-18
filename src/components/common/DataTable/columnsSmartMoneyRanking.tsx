@@ -33,7 +33,7 @@ export const columnsSmartMoneyRanking = (
       cell: ({ row }) => {
         const { user_address } = row.original
         return (
-          <div className="flex items-center truncate w-32 gap-2">
+          <div className="flex w-32 items-center gap-2 truncate">
             <Link
               className="underline"
               href={`/smartmoney-onchain/wallet-explorer/${
@@ -118,7 +118,7 @@ export const columnsSmartMoneyRanking = (
             {roi.toFixed(2)}%
           </div>
         ) : (
-          <div className="text-left w-full">-</div>
+          <div className="w-full text-left">-</div>
         )
       },
     },
@@ -198,7 +198,7 @@ export const columnsSmartMoneyRanking = (
             {balance_change_24h.toFixed(2)}%
           </div>
         ) : (
-          <div className="text-left w-full">-</div>
+          <div className="w-full text-left">-</div>
         )
       },
     },

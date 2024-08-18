@@ -17,6 +17,10 @@ export const useFreshUnusualBuyQuery = ({
   sort_by: string
 }) =>
   useQuery({
-    queryKey: [GET_FRESH_WALLET_UNUSUAL_BUY, { limit, duration, start, chain, sort_by }],
-    queryFn: () => getFreshWalletUnusualBuy({ limit, duration, start, chain, sort_by }),
+    queryKey: [
+      GET_FRESH_WALLET_UNUSUAL_BUY,
+      { limit, duration, start, chain, sort_by },
+    ],
+    queryFn: () =>
+      getFreshWalletUnusualBuy({ limit, duration, start, chain, sort_by }),
   })

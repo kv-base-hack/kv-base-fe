@@ -63,24 +63,24 @@ export const CardAISignal = ({
 
   return (
     <div
-      className="p-6 flex flex-col gap-4 bg-transparent border border-[#EFEFEF] border-solid rounded-2xl w-full backdrop-blur-lg shadow-ai-signal"
+      className="shadow-ai-signal flex w-full flex-col gap-4 rounded-2xl border border-solid border-[#EFEFEF] bg-transparent p-6 backdrop-blur-lg"
       style={{ zIndex: 10 - index }}
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2">
           {loading ? (
-            <Skeleton className="w-[54px] h-[54px] rounded-full" />
+            <Skeleton className="h-[54px] w-[54px] rounded-full" />
           ) : (
             <ImageToken
               imgUrl={item?.image_url}
               symbol={item?.symbol}
-              className="w-[54px] h-[54px]"
+              className="h-[54px] w-[54px]"
             />
           )}
           <div className={loading ? 'flex flex-col gap-2' : ''}>
             <div className="flex items-center gap-2">
               {loading ? (
-                <Skeleton className="w-[140px] h-[14px] rounded-lg" />
+                <Skeleton className="h-[14px] w-[140px] rounded-lg" />
               ) : (
                 <Link
                   href={`/smartmoney-onchain/token-explorer/${item.address}?chain=${CHAIN}`}
@@ -89,11 +89,11 @@ export const CardAISignal = ({
                 >
                   <a
                     target="_blank"
-                    className="flex items-center gap-1 font-bold text-xl  hover:underline"
+                    className="flex items-center gap-1 text-xl font-bold hover:underline"
                   >
                     <p
                       className={cn(
-                        'text-[#1A1D1F] ',
+                        'text-[#1A1D1F]',
                         pathName === '/smartmoney-onchain/dashboard'
                           ? 'max-w-20 truncate'
                           : '',
@@ -103,7 +103,7 @@ export const CardAISignal = ({
                     </p>
                     <p
                       className={cn(
-                        ' text-[#6F767E] ',
+                        'text-[#6F767E]',
                         pathName === '/smartmoney-onchain/dashboard'
                           ? 'max-w-20 truncate'
                           : 'max-w-[160px] truncate',
@@ -117,13 +117,13 @@ export const CardAISignal = ({
             </div>
             <div>
               {loading ? (
-                <Skeleton className="w-[140px] h-[14px] rounded-lg" />
+                <Skeleton className="h-[14px] w-[140px] rounded-lg" />
               ) : (
                 <div className="flex items-center gap-1">
                   <div>
                     <IconClockCounter />
                   </div>
-                  <p className="text-sm text-neutral-04 font-medium whitespace-nowrap">
+                  <p className="whitespace-nowrap text-sm font-medium text-neutral-04">
                     Created {moment(item.signal_time).fromNow()}
                   </p>
                 </div>
@@ -132,7 +132,7 @@ export const CardAISignal = ({
           </div>
         </div>
         {loading ? (
-          <Skeleton className="w-8 h-8 rounded-full" />
+          <Skeleton className="h-8 w-8 rounded-full" />
         ) : (
           <div className="rounded-full">
             {renderIcon(item.dex_trade_signal_type)}
@@ -143,40 +143,40 @@ export const CardAISignal = ({
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           {loading ? (
-            <Skeleton className="w-[100px] h-[14px] rounded-lg " />
+            <Skeleton className="h-[14px] w-[100px] rounded-lg" />
           ) : (
             <p className="text-xl font-normal text-[#6F767E]">Entry</p>
           )}
           {loading ? (
-            <Skeleton className="w-[100px] h-[14px] rounded-lg " />
+            <Skeleton className="h-[14px] w-[100px] rounded-lg" />
           ) : (
-            <div className="text-neutral-07 text-xl font-medium">
+            <div className="text-xl font-medium text-neutral-07">
               {renderPrice(item.entry)}
             </div>
           )}
         </div>
         <div className="flex items-center justify-between">
           {loading ? (
-            <Skeleton className="w-[100px] h-[14px] rounded-lg" />
+            <Skeleton className="h-[14px] w-[100px] rounded-lg" />
           ) : (
             <p className="text-xl font-normal text-[#6F767E]">Target</p>
           )}
           {loading ? (
-            <Skeleton className="w-[100px] h-[14px] rounded-lg" />
+            <Skeleton className="h-[14px] w-[100px] rounded-lg" />
           ) : (
-            <div className="text-xl font-medium flex items-center text-neutral-07">
+            <div className="flex items-center text-xl font-medium text-neutral-07">
               {renderPrice(item.target_min)}-{renderPrice(item.target_max)}
             </div>
           )}
         </div>
         <div className="flex items-center justify-between">
           {loading ? (
-            <Skeleton className="w-[100px] h-[14px] rounded-lg" />
+            <Skeleton className="h-[14px] w-[100px] rounded-lg" />
           ) : (
             <p className="text-xl font-normal text-[#6F767E]"># of Wallet</p>
           )}
           {loading ? (
-            <Skeleton className="w-[100px] h-[14px] rounded-lg" />
+            <Skeleton className="h-[14px] w-[100px] rounded-lg" />
           ) : (
             <DialogUsers users={item.users} />
           )}

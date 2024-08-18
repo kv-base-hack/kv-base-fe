@@ -23,7 +23,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
   name,
 }) => {
   return (
-    <div className="flex gap-3 items-center justify-start text-xl font-semibold leading-6 text-neutral-07">
+    <div className="flex items-center justify-start gap-3 text-xl font-semibold leading-6 text-neutral-07">
       {icon}
       <div>{name}</div>
     </div>
@@ -62,40 +62,40 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   const CHAIN = useAtomValue(chainAtom)
 
   return (
-    <div className="flex flex-col self-stretch mt-2 w-full">
-      <div className="flex flex-col gap-2 mt-2 w-full p-3 border border-solid rounded-xl border-[#EFEFEF]">
+    <div className="mt-2 flex w-full flex-col self-stretch">
+      <div className="mt-2 flex w-full flex-col gap-2 rounded-xl border border-solid border-[#EFEFEF] p-3">
         <div className="flex gap-2.5 whitespace-nowrap">
           {loading ? (
-            <Skeleton className="w-10 h-10 rounded-full" />
+            <Skeleton className="h-10 w-10 rounded-full" />
           ) : (
-            <ImageToken imgUrl={imgUrl} symbol={symbol} className="w-8 h-8" />
+            <ImageToken imgUrl={imgUrl} symbol={symbol} className="h-8 w-8" />
           )}
-          <div className="flex flex-col flex-1 justify-center">
+          <div className="flex flex-1 flex-col justify-center">
             {loading ? (
-              <Skeleton className="h-4 w-[120px] rounded-full overflow-hidden" />
+              <Skeleton className="h-4 w-[120px] overflow-hidden rounded-full" />
             ) : (
               <Link
                 href={`/smartmoney-onchain/token-explorer/${address}?chain=${CHAIN}`}
                 className="hover:underline"
               >
-                <div className="flex gap-1 pr-5 overflow-hidden">
-                  <div className="text-base font-medium tracking-tight leading-6 text-neutral-07 max-w-[100px] truncate">
+                <div className="flex gap-1 overflow-hidden pr-5">
+                  <div className="max-w-[100px] truncate text-base font-medium leading-6 tracking-tight text-neutral-07">
                     {symbol}
                   </div>
-                  <div className="text-sm font-semibold tracking-normal leading-6 text-[#A7ACB0] max-w-[100px] truncate">
+                  <div className="max-w-[100px] truncate text-sm font-semibold leading-6 tracking-normal text-[#A7ACB0]">
                     {name}
                   </div>
                 </div>
               </Link>
             )}
             {loading ? (
-              <Skeleton className="h-4 w-[120px] rounded-full overflow-hidden mt-1" />
+              <Skeleton className="mt-1 h-4 w-[120px] overflow-hidden rounded-full" />
             ) : (
               <div className="flex items-center gap-1">
-                <div className="text-neutral-07 text-sm font-semibold">
+                <div className="text-sm font-semibold text-neutral-07">
                   {usdPrice ? renderPrice(usdPrice) : '-'}
                 </div>
-                <div className="flex gap-2 pr-5 text-sm tracking-normal leading-6">
+                <div className="flex gap-2 pr-5 text-sm leading-6 tracking-normal">
                   <div
                     className={cn(
                       'flex items-center justify-start leading-[140%]',
@@ -123,14 +123,14 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
           <div className="flex items-center justify-between whitespace-nowrap">
             <div className="text-sm font-medium leading-5 text-neutral-400">
               {loading ? (
-                <Skeleton className="w-20 h-4 rounded-full" />
+                <Skeleton className="h-4 w-20 rounded-full" />
               ) : (
                 'Spent'
               )}
             </div>
-            <div className="text-base font-semibold tracking-normal leading-6 text-neutral-07">
+            <div className="text-base font-semibold leading-6 tracking-normal text-neutral-07">
               {loading ? (
-                <Skeleton className="w-20 h-4 rounded-full" />
+                <Skeleton className="h-4 w-20 rounded-full" />
               ) : spent ? (
                 `$${nFormatter(spent)}`
               ) : (
@@ -141,37 +141,37 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
           <div className="flex items-center justify-between">
             <div className="text-sm font-medium leading-5 text-neutral-400">
               {loading ? (
-                <Skeleton className="w-20 h-4 rounded-full" />
+                <Skeleton className="h-4 w-20 rounded-full" />
               ) : (
                 'Avg Price'
               )}
             </div>
             {loading ? (
-              <div className="text-sm font-semibold tracking-normal leading-6 text-neutral-07">
-                <Skeleton className="w-20 h-4 rounded-full" />
+              <div className="text-sm font-semibold leading-6 tracking-normal text-neutral-07">
+                <Skeleton className="h-4 w-20 rounded-full" />
               </div>
             ) : (
-              <div className="text-base font-semibold tracking-normal leading-6 text-neutral-07">
+              <div className="text-base font-semibold leading-6 tracking-normal text-neutral-07">
                 {avg_price ? renderPrice(avg_price) : '-'}
               </div>
             )}
           </div>
           <div className="flex items-center justify-between">
             <div className="text-sm font-medium leading-5 text-neutral-400">
-              {loading ? <Skeleton className="w-20 h-4 rounded-full" /> : 'ROI'}
+              {loading ? <Skeleton className="h-4 w-20 rounded-full" /> : 'ROI'}
             </div>
             <div
               className={cn(
-                'text-base font-semibold tracking-normal leading-6 ',
+                'text-base font-semibold leading-6 tracking-normal',
                 (roi as number) > 0
                   ? 'text-emerald-400'
                   : (roi as number) < 0
-                  ? 'text-error-500'
-                  : 'text-neutral-07',
+                    ? 'text-error-500'
+                    : 'text-neutral-07',
               )}
             >
               {loading ? (
-                <Skeleton className="w-20 h-4 rounded-full" />
+                <Skeleton className="h-4 w-20 rounded-full" />
               ) : roi ? (
                 (roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0) ? (
                   numeral(roi).format('0,0.[0000]%')
@@ -185,20 +185,20 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
           </div>
           <div className="flex items-center justify-between">
             <div className="text-sm font-medium leading-5 text-neutral-400">
-              {loading ? <Skeleton className="w-20 h-4 rounded-full" /> : 'PnL'}
+              {loading ? <Skeleton className="h-4 w-20 rounded-full" /> : 'PnL'}
             </div>
             <div
               className={cn(
-                'text-base font-semibold tracking-normal leading-6 ',
+                'text-base font-semibold leading-6 tracking-normal',
                 (pnl as number) > 0
                   ? 'text-emerald-400'
                   : (pnl as number) < 0
-                  ? 'text-error-500'
-                  : 'text-neutral-07',
+                    ? 'text-error-500'
+                    : 'text-neutral-07',
               )}
             >
               {loading ? (
-                <Skeleton className="w-20 h-4 rounded-full" />
+                <Skeleton className="h-4 w-20 rounded-full" />
               ) : pnl ? (
                 `$${nFormatter(pnl)}`
               ) : (

@@ -17,6 +17,10 @@ export const useTopTokenProfitQuery = ({
   sort_by?: string
 }) =>
   useQuery({
-    queryKey: [GET_TOP_TOKEN_PROFIT, { duration, limit, start, chain, sort_by }],
-    queryFn: () => getTopTokenProfit({ duration, limit, start, chain, sort_by }),
+    queryKey: [
+      GET_TOP_TOKEN_PROFIT,
+      { duration, limit, start, chain, sort_by },
+    ],
+    queryFn: () =>
+      getTopTokenProfit({ duration, limit, start, chain, sort_by }),
   })

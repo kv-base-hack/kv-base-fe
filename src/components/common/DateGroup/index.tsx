@@ -15,20 +15,25 @@ export const DateGroup = ({
   handleActive: (active: string) => void
 }) => {
   return (
-    <div className="flex gap-1 cursor-pointer justify-between items-center text-base tracking-normal text-gray-500">
-      {dataSource?.map((item: { value: string; label: string }, index: number) => {
-        return (
-          <div
-            key={index}
-            onClick={() => handleActive(item.value)}
-            className={cn(
-              active === item.value ? ' bg-gray-300/10 text-gray-300 rounded-lg' : '',
-              'px-4 py-1.5 cursor-pointer hover:bg-gray-300/10 hover:text-gray-300 hover:rounded-lg transition-all duration-300'
-            )}>
-            {item.label}
-          </div>
-        )
-      })}
+    <div className="flex cursor-pointer items-center justify-between gap-1 text-base tracking-normal text-gray-500">
+      {dataSource?.map(
+        (item: { value: string; label: string }, index: number) => {
+          return (
+            <div
+              key={index}
+              onClick={() => handleActive(item.value)}
+              className={cn(
+                active === item.value
+                  ? 'rounded-lg bg-gray-300/10 text-gray-300'
+                  : '',
+                'cursor-pointer px-4 py-1.5 transition-all duration-300 hover:rounded-lg hover:bg-gray-300/10 hover:text-gray-300',
+              )}
+            >
+              {item.label}
+            </div>
+          )
+        },
+      )}
     </div>
   )
 }

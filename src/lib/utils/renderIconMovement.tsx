@@ -35,27 +35,27 @@ export const renderMovementIcon = (
 ) => {
   switch (movement) {
     case 'deposit':
-      return <CexDepositIcon className={className || 'w-4 h-4'} color={color} />
+      return <CexDepositIcon className={className || 'h-4 w-4'} color={color} />
     case 'withdraw':
       return (
-        <CexWithdrawIcon className={className || 'w-4 h-4'} color={color} />
+        <CexWithdrawIcon className={className || 'h-4 w-4'} color={color} />
       )
     case 'buying':
       return (
         <IconShoppingCart
-          className={className || 'w-4 h-4'}
+          className={className || 'h-4 w-4'}
           color={color || '#1A1D1F'}
         />
       )
     case 'selling':
-      return <SellingIcon className={className || 'w-4 h-4'} color={color} />
+      return <SellingIcon className={className || 'h-4 w-4'} color={color} />
     case 'new_listing_buy':
       return (
-        <NewListingBuyIcon className={className || 'w-4 h-4'} color={color} />
+        <NewListingBuyIcon className={className || 'h-4 w-4'} color={color} />
       )
     case 'new_listing_sell':
       return (
-        <NewListingSellIcon className={className || 'w-4 h-4'} color={color} />
+        <NewListingSellIcon className={className || 'h-4 w-4'} color={color} />
       )
     case 'unusual_buy':
       return <UnusualBuyIcon />

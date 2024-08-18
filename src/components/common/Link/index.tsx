@@ -14,7 +14,7 @@ export const LinkCustom = ({
     <Link
       href={url}
       onClick={onClick}
-      className="text-base text-[#0C68E9] font-bold flex items-center gap-1"
+      className="flex items-center gap-1 text-base font-bold text-[#0C68E9]"
     >
       {title}
       <ChevronRight />

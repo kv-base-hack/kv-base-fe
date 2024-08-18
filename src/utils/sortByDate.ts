@@ -23,7 +23,11 @@ export function sortByDate(data: any) {
 
       return dateA - dateB
     } else {
-      console.error('Invalid date format found in keys:', dateStringA, dateStringB)
+      console.error(
+        'Invalid date format found in keys:',
+        dateStringA,
+        dateStringB,
+      )
       // Handle invalid dates (optional: return 0, throw error, etc.)
       return 0 // Assuming you want to keep invalid dates in their original position
     }

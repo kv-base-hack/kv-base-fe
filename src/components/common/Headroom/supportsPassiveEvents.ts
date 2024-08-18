@@ -3,19 +3,19 @@
  * @returns Boolean
  */
 export default function supportsPassiveEvents() {
-  let isSupported = false;
+  let isSupported = false
 
   try {
-    const options = Object.defineProperty({}, "passive", {
+    const options = Object.defineProperty({}, 'passive', {
       get: () => {
-        isSupported = true;
-        return false;
-      }
-    });
+        isSupported = true
+        return false
+      },
+    })
 
-    window.addEventListener("test", () => {}, options);
-    window.removeEventListener("test", () => {});
+    window.addEventListener('test', () => {}, options)
+    window.removeEventListener('test', () => {})
   } catch (error) {}
 
-  return isSupported;
+  return isSupported
 }

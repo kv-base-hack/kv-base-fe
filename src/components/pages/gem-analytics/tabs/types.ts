@@ -6,7 +6,7 @@ export const tabs = [
   'SM Top Sells',
   'Top CEX Withdraw',
   'Top CEX Deposit',
-  'Unusual CEX'
+  'Unusual CEX',
 ] as const
 
 export type ActiveTab = (typeof tabs)[number]

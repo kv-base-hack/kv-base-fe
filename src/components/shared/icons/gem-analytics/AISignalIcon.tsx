@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function AISignalIcon() {
   return (
@@ -62,7 +62,7 @@ function AISignalIcon() {
         </linearGradient>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default AISignalIcon;
+export default AISignalIcon

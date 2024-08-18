@@ -31,7 +31,7 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'id',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">#</div>
+          <div className="text-sm not-italic leading-5 text-neutral-04">#</div>
         ),
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
@@ -42,14 +42,14 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'symbol',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5 whitespace-nowrap">
+          <div className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-04">
             Token Name
           </div>
         ),
         cell: ({ row }) => {
           return (
             <div className="w-full">
-              <div className="flex items-center justify-start w-full">
+              <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <TooltipTokenInfo
                     token={row.original}
@@ -57,7 +57,7 @@ export const TableFindGemsUnusualCex = ({
                     nameToken={true}
                   />
                 ) : (
-                  <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
@@ -79,8 +79,8 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'action',
         enableSorting: false,
         header: () => (
-          <div className="flex w-full gap-2 justify-center items-center">
-            <div className="text-center text-neutral-04 text-sm not-italic leading-5">
+          <div className="flex w-full items-center justify-center gap-2">
+            <div className="text-center text-sm not-italic leading-5 text-neutral-04">
               Action
             </div>
             <SortMultipleIcon />
@@ -89,21 +89,21 @@ export const TableFindGemsUnusualCex = ({
         cell: ({ row }) => {
           const { action } = row.original
           return (
-            <div className="w-full flex justify-center">
+            <div className="flex w-full justify-center">
               <div
                 className={cn(
-                  'flex rounded-md text-neutral-07 justify-center items-center gap-2.5 px-2 py-0.5 text-center text-xs not-italic leading-4 tracking-[-0.12px]',
+                  'flex items-center justify-center gap-2.5 rounded-md px-2 py-0.5 text-center text-xs not-italic leading-4 tracking-[-0.12px] text-neutral-07',
                   action === 'deposit'
-                    ? ' bg-secondary-1'
+                    ? 'bg-secondary-1'
                     : action === 'withdraw'
-                    ? ' bg-secondary-4'
-                    : '',
+                      ? 'bg-secondary-4'
+                      : '',
                 )}
               >
                 {action === 'deposit' ? (
-                  <CexDepositIcon className="w-4 h-4" />
+                  <CexDepositIcon className="h-4 w-4" />
                 ) : (
-                  <CexWithdrawIcon className="w-4 h-4" />
+                  <CexWithdrawIcon className="h-4 w-4" />
                 )}
                 {upperFirst(action)}
               </div>
@@ -116,14 +116,14 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'unusual',
         enableSorting: false,
         header: () => (
-          <div className="whitespace-nowrap text-neutral-04 text-sm not-italic leading-5">
+          <div className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-04">
             Unusual
           </div>
         ),
         cell: ({ row }) => {
           const { unusual_percent } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               {unusual_percent.toFixed(2)}%
             </div>
           )
@@ -135,7 +135,7 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'net_flow',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('net_flow')}
             role="button"
           >
@@ -145,7 +145,7 @@ export const TableFindGemsUnusualCex = ({
         cell: ({ row }) => {
           const { net_flow_24h } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               ${nFormatter(net_flow_24h)}
             </div>
           )
@@ -156,14 +156,14 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'price',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
+          <div className="text-sm not-italic leading-5 text-neutral-04">
             Price
           </div>
         ),
         cell: ({ row }) => {
           const { current_price } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               {renderPrice(current_price)}
             </div>
           )
@@ -174,7 +174,7 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'price_24h',
         header: () => (
           <div
-            className="text-neutral-04 whitespace-nowrap text-sm not-italic leading-5"
+            className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('price_change')}
             role="button"
           >
@@ -204,7 +204,7 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'oi_24h',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
+          <div className="text-sm not-italic leading-5 text-neutral-04">
             OI (24h%)
           </div>
         ),
@@ -227,14 +227,14 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: 'market_cap',
         enableSorting: false,
         header: () => (
-          <div className="text-neutral-04 text-sm not-italic leading-5">
+          <div className="text-sm not-italic leading-5 text-neutral-04">
             Marketcap
           </div>
         ),
         cell: ({ row }) => {
           const { market_cap } = row.original
           return (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               ${nFormatter(market_cap)}
             </div>
           )
@@ -245,7 +245,7 @@ export const TableFindGemsUnusualCex = ({
         accessorKey: '24h_vol',
         header: () => (
           <div
-            className="text-neutral-04 text-sm not-italic leading-5"
+            className="text-sm not-italic leading-5 text-neutral-04"
             onClick={() => setSort('volume_24h')}
             role="button"
           >
@@ -257,7 +257,7 @@ export const TableFindGemsUnusualCex = ({
           return volume_24h === 0 ? (
             <div className="text-neutral-07">-</div>
           ) : (
-            <div className="text-neutral-07 text-sm not-italic leading-5">
+            <div className="text-sm not-italic leading-5 text-neutral-07">
               ${nFormatter(volume_24h)}
             </div>
           )

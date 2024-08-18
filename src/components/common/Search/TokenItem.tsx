@@ -18,22 +18,22 @@ export const TokenItem: React.FC<TokenItemProps> = ({ token, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="flex max-w-[172px] flex-col p-4 rounded-2xl bg-neutral-01 border border-solid shadow-chat-ai backdrop-blur-[32px] border-neutral-03 cursor-pointer group"
+      className="group flex max-w-[172px] cursor-pointer flex-col rounded-2xl border border-solid border-neutral-03 bg-neutral-01 p-4 shadow-chat-ai backdrop-blur-[32px]"
       role="button"
     >
       <div className="flex items-center gap-3 text-sm leading-5 text-neutral-07">
         <ImageToken
           imgUrl={token?.imageUrl}
           symbol={token?.symbol}
-          className="shrink-0 w-8 h-8 aspect-square"
+          className="aspect-square h-8 w-8 shrink-0"
         />
-        <div className="my-auto min-h-10 flex flex-col items-start group-hover:underline">
+        <div className="my-auto flex min-h-10 flex-col items-start group-hover:underline">
           <div className="w-[90px] truncate">{token.symbol}</div>
           <div className="w-[90px] truncate">({token.name})</div>
         </div>
       </div>
-      <div className="flex gap-1 justify-start items-center mt-1">
-        <div className="text-base font-bold tracking-tight leading-8 text-neutral-04">
+      <div className="mt-1 flex items-center justify-start gap-1">
+        <div className="text-base font-bold leading-8 tracking-tight text-neutral-04">
           {renderPrice(token.usdPrice)}
         </div>
         <div

@@ -19,7 +19,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'symbol',
     header: () => (
-      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
         Symbol
       </div>
     ),
@@ -28,23 +28,23 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
         <Link
           href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
         >
-          <div className="flex gap-1.5 w-full items-center justify-start">
+          <div className="flex w-full items-center justify-start gap-1.5">
             <ImageToken
               symbol={row?.original?.symbol}
-              className="w-6 aspect-square fill-blue-950"
+              className="aspect-square w-6 fill-blue-950"
             />
-            <div className="text-normal underline text-neutral-07">
+            <div className="text-normal text-neutral-07 underline">
               {row?.original?.symbol}
             </div>
           </div>
         </Link>
       ) : (
-        <div className="flex gap-1.5 w-full items-center justify-start cursor-not-allowed">
+        <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
           <ImageToken
             symbol={row?.original?.symbol}
-            className="w-6 aspect-square fill-blue-950"
+            className="aspect-square w-6 fill-blue-950"
           />
-          <div className="text-normal underline text-neutral-07">
+          <div className="text-normal text-neutral-07 underline">
             {row?.original?.symbol}
           </div>
         </div>
@@ -55,7 +55,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'withdraw_value',
     header: () => (
-      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
         Withdraw Value
       </div>
     ),
@@ -72,14 +72,14 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'cex_netflow',
     header: () => (
-      <div className="font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
         CEX Netflow
       </div>
     ),
     cell: ({ row }) => {
       const { net_flow } = row.original
       return (
-        <div className="text-neutral-07 text-center w-full">
+        <div className="w-full text-center text-neutral-07">
           ${nFormatter(net_flow)}
         </div>
       )
@@ -89,7 +89,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
   {
     accessorKey: 'oi',
     header: () => (
-      <div className="text-sm w-full text-right not-italic font-normal leading-6 tracking-[-0.14px] whitespace-nowrap">
+      <div className="w-full whitespace-nowrap text-right text-sm font-normal not-italic leading-6 tracking-[-0.14px]">
         OI (%)
       </div>
     ),
@@ -98,7 +98,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
       return oi ? (
         <div
           className={cn(
-            'text-right w-full',
+            'w-full text-right',
             oi > 0 ? 'text-primary-2' : 'text-primary-3',
             oi === 0 && 'text-neutral-07',
           )}
@@ -107,7 +107,7 @@ export const columnsCexWithdraw: ColumnDef<TopCexOut>[] = [
           {oi.toFixed(2)}%
         </div>
       ) : (
-        <div className="text-right w-full">-</div>
+        <div className="w-full text-right">-</div>
       )
     },
     enableSorting: false,
