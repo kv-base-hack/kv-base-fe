@@ -30,7 +30,7 @@ import {
   walletConnectWallet,
 } from '@rainbow-me/rainbowkit/wallets'
 
-const id = '2e7dc518c252e86b1423572af2179822'
+const id = '1ebe6fb9116de9c6b95344ccc29e7cec'
 
 const connectors = connectorsForWallets(
   [
