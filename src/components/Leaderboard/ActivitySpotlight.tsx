@@ -60,7 +60,7 @@ export const ActivitySpotlight = ({ limit }: { limit: number }) => {
       </TitleCard>
       <div className="flex h-full flex-col justify-between">
         <div className="flex h-full justify-between gap-4">
-          {dataSpotlight.map((item, i) => {
+          {dataSpotlight.map((item: any, i: number) => {
             return dataSpotlightQuery.isFetching ? (
               <div
                 key={i}

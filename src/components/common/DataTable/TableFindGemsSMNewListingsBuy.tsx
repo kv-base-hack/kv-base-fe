@@ -9,9 +9,12 @@ import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { NewListingBuy } from '@/types/newListingBuy'
 import numeral from 'numeral'
-import { TooltipTable } from '../Tooltip/TooltipTable'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
+import { TooltipTable } from '../Tooltip/TooltipTable'
+
+import CircularProgress from '../CircularProgress'
+import { StVol } from '@/components/pages/find-gems/tables/cols/st-vol'
+import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
 
 export const TableFindGemsSMNewListingsBuy = ({
   tab,
@@ -22,7 +25,7 @@ export const TableFindGemsSMNewListingsBuy = ({
   total,
   isFetching,
   setSort,
-  chain,
+  duration,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<NewListingBuy>[] = useMemo(() => {
     return [
@@ -42,20 +45,29 @@ export const TableFindGemsSMNewListingsBuy = ({
       {
         accessorKey: 'symbol',
         enableSorting: false,
-        header: () => (
-          <div className="whitespace-nowrap text-sm font-normal not-italic leading-6 tracking-[-0.14px] text-neutral-04">
-            Token Name
-          </div>
-        ),
+        header: () => <div>Token Name</div>,
         cell: ({ row }) => {
           return (
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <TooltipTokenInfo token={row?.original} chain={chain} />
+                    <div className="flex w-full items-center justify-start gap-1.5">
+                      <ImageToken
+                        imgUrl={row?.original?.image_url}
+                        symbol={row?.original?.symbol}
+                      />
+                      <div>
+                        <div className="text-normal max-w-[100px] truncate text-neutral-03 underline">
+                          {row?.original?.name}
+                        </div>
+                        <div className="max-w-[100px] truncate">
+                          {row?.original?.symbol}
+                        </div>
+                      </div>
+                    </div>
                   </Link>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
@@ -63,7 +75,7 @@ export const TableFindGemsSMNewListingsBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal text-neutral-07 underline">
+                    <div className="text-normal text-neutral-03 underline">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -76,115 +88,78 @@ export const TableFindGemsSMNewListingsBuy = ({
       {
         accessorKey: 'token_age',
         header: () => (
-          <div
-            className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px] text-neutral-04"
-            onClick={() => setSort('token_age')}
-            role="button"
-          >
-            Token Age
+          <div onClick={() => setSort('token_age')} role="button">
+            Age
           </div>
         ),
-        align: 'center',
         cell: ({ row }) => {
           const { token_age } = row.original
+          return <div className="text-neutral-03">{token_age}</div>
+        },
+      },
+      {
+        accessorKey: 'score',
+        header: () => (
+          <div className="flex items-center gap-1">
+            AI Score
+            <TooltipTable type="" />
+          </div>
+        ),
+        enableSorting: false,
+        cell: ({ row }) => {
+          const { score } = row.original
           return (
-            <div className="w-full text-center text-neutral-07">
-              {token_age}
-            </div>
+            <CircularProgress
+              size={40}
+              percentage={parseFloat(
+                numeral(score.toString()).format('0,0.[00]'),
+              )}
+            />
           )
         },
       },
       {
-        accessorKey: 'total_spent',
-        header: () => (
-          <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
-            onClick={() => setSort('total_spent')}
-            role="button"
-          >
-            Total Spent
-          </div>
-        ),
-        align: 'center',
+        accessorKey: 'liq-fdv',
+        header: () => <div>Liq/FDV</div>,
         cell: ({ row }) => {
-          const { total_spent } = row.original
+          const { liquidity, fdv } = row.original
           return (
-            <div className="w-full items-center justify-center text-center text-neutral-07">
-              ${nFormatter(total_spent)}
+            <div>
+              <p>${nFormatter(liquidity)}</p>
+              <p>${nFormatter(fdv)}</p>
             </div>
           )
-        },
-      },
-      {
-        accessorKey: 'roi',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('roi')}
-            role="button"
-          >
-            ROI
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { roi } = row.original
-          return !roi || roi === 0 ? (
-            '-'
-          ) : (
-            <div className={roi < 0 ? 'text-error-500' : 'text-success-500'}>
-              {(roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0)
-                ? numeral(roi).format('0,0.[000000]')
-                : roi.toFixed(2)}
-              %
-            </div>
-          )
-        },
-      },
-      {
-        accessorKey: 'pnl',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('pnl')}
-            role="button"
-          >
-            PnL
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { pnl } = row.original
-          return !pnl || pnl === 0 ? (
-            '-'
-          ) : (
-            <div className={pnl < 0 ? 'text-error-500' : 'text-success-500'}>
-              {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
-                ? numeral(pnl).format('0,0.[000000]')
-                : nFormatter(pnl)}
-              $
-            </div>
-          )
-        },
-      },
-      {
-        accessorKey: 'avg_price',
-        header: () => (
-          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px] text-neutral-04">
-            Avg Price
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { avg_price } = row.original
-          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
         },
         enableSorting: false,
       },
       {
-        accessorKey: 'current_price',
+        accessorKey: 'price_change',
         header: () => (
-          <div className="text-sm not-italic leading-5 text-neutral-04">
-            Current Price
+          <div onClick={() => setSort('price_change')} role="button">
+            24h%
           </div>
         ),
+        cell: ({ row }) => {
+          const { price_change_24h } = row.original
+          return price_change_24h ? (
+            <div
+              className={cn(
+                'flex items-center leading-[140%]',
+                price_change_24h > 0 ? 'text-green' : 'text-error-500',
+                price_change_24h === 0 && 'text-neutral-03',
+              )}
+            >
+              {price_change_24h > 0 ? '+' : ''}
+              {price_change_24h.toFixed(2)}%
+            </div>
+          ) : (
+            '-'
+          )
+        },
+      },
+      {
+        accessorKey: 'current_price',
+        header: () => <div>Price</div>,
         enableSorting: false,
         cell: ({ row }) => {
           const { current_price } = row.original
@@ -196,87 +171,86 @@ export const TableFindGemsSMNewListingsBuy = ({
         },
       },
       {
-        accessorKey: 'price',
+        accessorKey: 'avg_price',
         header: () => (
-          <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
-            onClick={() => setSort('price_change')}
-            role="button"
-          >
-            24h Price %
+          <div className="flex items-center gap-0.5">
+            <div>Avg entry</div>
+            <TooltipTable type="avgPrice" />
           </div>
         ),
         cell: ({ row }) => {
-          const { price_change_24h } = row.original
-          return price_change_24h ? (
-            <div
-              className={cn(
-                'flex items-center leading-[140%]',
-                price_change_24h > 0 ? 'text-success-500' : 'text-error-500',
-                price_change_24h === 0 && 'text-neutral-03',
-              )}
-            >
-              {price_change_24h > 0 ? '+' : ''}
-              {price_change_24h.toFixed(2)}%
+          const { avg_price } = row.original
+          return <div className="text-neutral-03">{renderPrice(avg_price)}</div>
+        },
+        enableSorting: false,
+      },
+      {
+        accessorKey: 'hold_value',
+        header: () => <div>Hold Value</div>,
+        cell: ({ row }) => {
+          const { hold_in_usdt } = row.original
+          return (
+            <div className="w-full text-neutral-03">
+              ${nFormatter(hold_in_usdt)}
             </div>
-          ) : (
-            <div className="w-full text-center">-</div>
           )
         },
       },
       {
-        accessorKey: 'liquidity',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('liquidity')}
-            role="button"
-          >
-            Liquidity
-          </div>
-        ),
+        accessorKey: 'profit_roi',
+        enableSorting: false,
+        header: () => <div>Profit/ROI</div>,
         cell: ({ row }) => {
-          const { liquidity } = row.original
+          const { roi, pnl } = row.original
+
           return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              ${nFormatter(liquidity)}
+            <div>
+              <div className={pnl < 0 ? 'text-error-500' : 'text-green'}>
+                {!pnl || pnl === 0 ? (
+                  '-'
+                ) : (
+                  <>
+                    {pnl < 0 ? '' : '+'}$
+                    {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
+                      ? numeral(pnl).format('0,0.[000000]')
+                      : nFormatter(pnl)}
+                  </>
+                )}
+              </div>
+              <div className={roi < 0 ? 'text-error-500' : 'text-green'}>
+                {!roi || roi === 0 ? (
+                  '-'
+                ) : (
+                  <>
+                    {roi < 0 ? '' : '+'}
+                    {(roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0)
+                      ? numeral(roi).format('0,0.[000000]')
+                      : roi.toFixed(2)}
+                    %
+                  </>
+                )}
+              </div>
             </div>
           )
         },
-        align: 'end',
       },
       {
-        accessorKey: 'fdv',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('fdv')}
-            role="button"
-          >
-            FDV
-          </div>
-        ),
+        accessorKey: 'realized_percent',
+        enableSorting: false,
+        header: () => <div>Realized %</div>,
         cell: ({ row }) => {
-          const { fdv } = row.original
-          return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              ${nFormatter(fdv)}
-            </div>
-          )
+          const { realized_percent } = row.original
+          return <div>{realized_percent.toFixed(2)}%</div>
         },
-        align: 'end',
       },
       {
         accessorKey: 'buyer_count',
         header: () => (
           <div className="flex items-center gap-0.5">
-            <div className="text-sm not-italic leading-5 text-neutral-04">
-              # of SM Buy
-            </div>
+            <div># ST</div>
             <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
-        align: 'center',
         cell: ({ row }) => {
           const { number_of_smart_money, address } = row.original
           return (
@@ -284,14 +258,34 @@ export const TableFindGemsSMNewListingsBuy = ({
               number={number_of_smart_money}
               address={address}
               type="new_listing_buy"
-              duration="24h"
+              duration={duration as string}
             />
           )
         },
         enableSorting: false,
       },
+      {
+        accessorKey: 'st_tx',
+        header: () => <div># ST Tx</div>,
+        cell: ({ row }) => {
+          const { tx_buy, tx_sell } = row.original
+          return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />
+        },
+      },
+      {
+        accessorKey: 'st_vol',
+        header: () => <div>ST Vol</div>,
+        cell: ({ row }) => {
+          const { buy_volume_in_usdt, sell_volume_in_usdt } = row.original
+
+          return (
+            <StVol buyVol={buy_volume_in_usdt} sellVol={sell_volume_in_usdt} />
+          )
+        },
+        align: 'end',
+      },
     ]
-  }, [chain, page, perPage, setSort])
+  }, [duration, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

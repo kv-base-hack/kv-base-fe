@@ -1,4 +1,5 @@
-import { CHAIN_X } from '@/constant/chain'
+
+import { CHAIN } from '@/constant/chain'
 import { getFindGemsSmartMoneyHolding } from '@/services/api'
 
 const GET_FIND_GEMS_SMART_MONEY_HOLDING = 'GET_FIND_GEMS_SMART_MONEY_HOLDING'
@@ -22,7 +23,7 @@ type FindGemsSmartMoneyHolding = {
 }
 
 export const useFindGemsSmartMoneyHoldingQuery = ({
-  chain = CHAIN_X,
+  chain = CHAIN,
   limit = 10,
   start = 1,
   price_change_24h_min = 0,

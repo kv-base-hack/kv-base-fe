@@ -135,7 +135,7 @@ export const SmartTraders = ({
                 This dataset features the{' '}
                 <span className="font-bold">top-performing wallets</span> over
                 the last <span className="font-bold">30 days</span>, selected
-                for their exceptional trading metrics. Boltrade uses{' '}
+                for their exceptional trading metrics. Kaivest uses{' '}
                 <span className="font-bold">
                   cutting-edge algorithms and AI
                 </span>{' '}

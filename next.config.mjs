@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/smartmoney-onchain/dashboard',
+        destination: '/smart-traders',
         permanent: true,
       },
     ]

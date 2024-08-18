@@ -9,9 +9,8 @@ import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import numeral from 'numeral'
 import { UnusualBuy } from '@/types/unusualBuy'
-import { TooltipTable } from '../Tooltip/TooltipTable'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
+import { TooltipTable } from '../Tooltip/TooltipTable'
 
 export const TableFindGemsFreshWalletUnusual = ({
   tab,
@@ -22,7 +21,7 @@ export const TableFindGemsFreshWalletUnusual = ({
   total,
   isFetching,
   setSort,
-  chain,
+  duration,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<UnusualBuy>[] = useMemo(() => {
     return [
@@ -42,20 +41,24 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: 'symbol',
         enableSorting: false,
-        header: () => (
-          <div className="whitespace-nowrap text-sm font-normal not-italic leading-6 tracking-[-0.14px] text-neutral-04">
-            Token Name
-          </div>
-        ),
+        header: () => <div>Token Name</div>,
         cell: ({ row }) => {
           return (
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}?chain=${chain}`}
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <TooltipTokenInfo token={row?.original} chain={chain} />
+                    <div className="flex w-full items-center justify-start gap-1.5">
+                      <ImageToken
+                        imgUrl={row?.original?.image_url}
+                        symbol={row?.original?.symbol}
+                      />
+                      <div className="text-normal max-w-[120px] truncate text-neutral-03 underline">
+                        {row?.original?.symbol}
+                      </div>
+                    </div>
                   </Link>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
@@ -63,7 +66,7 @@ export const TableFindGemsFreshWalletUnusual = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <div className="text-normal text-neutral-07 underline">
+                    <div className="text-normal text-neutral-03 underline">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -74,99 +77,55 @@ export const TableFindGemsFreshWalletUnusual = ({
         },
       },
       {
-        accessorKey: 'total_spent',
-        header: () => (
-          <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
-            onClick={() => setSort('total_spent')}
-            role="button"
-          >
-            Total Spent
-          </div>
-        ),
-        align: 'center',
+        accessorKey: 'age',
+        header: () => <div>Age</div>,
         cell: ({ row }) => {
-          const { total_spent } = row.original
+          const { token_age } = row.original
+          return <div className="text-neutral-03">{token_age}</div>
+        },
+      },
+      {
+        accessorKey: 'liq-fdv',
+        header: () => <div>Liq/FDV</div>,
+        cell: ({ row }) => {
+          const { liquidity, fdv } = row.original
           return (
-            <div className="w-full items-center justify-center text-center text-neutral-07">
-              ${nFormatter(total_spent)}
+            <div>
+              <p>${nFormatter(liquidity)}</p>
+              <p>${nFormatter(fdv)}</p>
             </div>
           )
-        },
-      },
-      {
-        accessorKey: 'roi',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('roi')}
-            role="button"
-          >
-            ROI
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { roi } = row.original
-          return !roi || roi === 0 ? (
-            '-'
-          ) : (
-            <div className={roi < 0 ? 'text-error-500' : 'text-success-500'}>
-              {(roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0)
-                ? numeral(roi).format('0,0.[000000]')
-                : roi.toFixed(2)}
-              %
-            </div>
-          )
-        },
-        align: 'center',
-      },
-      {
-        accessorKey: 'pnl',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('pnl')}
-            role="button"
-          >
-            PnL
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { pnl } = row.original
-          return !pnl || pnl === 0 ? (
-            '-'
-          ) : (
-            <div className={pnl < 0 ? 'text-error-500' : 'text-success-500'}>
-              {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
-                ? numeral(pnl).format('0,0.[000000]')
-                : nFormatter(pnl)}
-              $
-            </div>
-          )
-        },
-        align: 'center',
-      },
-      {
-        accessorKey: 'avg_price',
-        header: () => (
-          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px] text-neutral-04">
-            Avg Price
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { avg_price } = row.original
-          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
         },
         enableSorting: false,
-        align: 'center',
+      },
+      {
+        accessorKey: 'price',
+        header: () => (
+          <div onClick={() => setSort('price_change')} role="button">
+            24h%
+          </div>
+        ),
+        cell: ({ row }) => {
+          const { price_change_24h } = row.original
+          return price_change_24h ? (
+            <div
+              className={cn(
+                'flex items-center leading-[140%]',
+                price_change_24h > 0 ? 'text-green' : 'text-error-500',
+                price_change_24h === 0 && 'text-neutral-03',
+              )}
+            >
+              {price_change_24h > 0 ? '+' : ''}
+              {price_change_24h.toFixed(2)}%
+            </div>
+          ) : (
+            <div>-</div>
+          )
+        },
       },
       {
         accessorKey: 'current_price',
-        header: () => (
-          <div className="text-sm not-italic leading-5 text-neutral-04">
-            Current Price
-          </div>
-        ),
+        header: () => <div>Price</div>,
         enableSorting: false,
         cell: ({ row }) => {
           const { current_price } = row.original
@@ -176,87 +135,85 @@ export const TableFindGemsFreshWalletUnusual = ({
             </div>
           )
         },
-        align: 'center',
       },
       {
-        accessorKey: 'price',
+        accessorKey: 'avg_price',
         header: () => (
-          <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
-            onClick={() => setSort('price_change')}
-            role="button"
-          >
-            24h Price %
+          <div className="flex items-center gap-0.5">
+            <div>Avg entry</div>
+            <TooltipTable type="avgPrice" />
           </div>
         ),
         cell: ({ row }) => {
-          const { price_change_24h } = row.original
-          return price_change_24h ? (
-            <div
-              className={cn(
-                'flex items-center leading-[140%]',
-                price_change_24h > 0 ? 'text-success-500' : 'text-error-500',
-                price_change_24h === 0 && 'text-neutral-03',
-              )}
-            >
-              {price_change_24h > 0 ? '+' : ''}
-              {price_change_24h.toFixed(2)}%
+          const { avg_price } = row.original
+          return <div className="text-neutral-03">{renderPrice(avg_price)}</div>
+        },
+        enableSorting: false,
+      },
+      {
+        accessorKey: 'buy_vol',
+        header: () => <div>Buy Vol</div>,
+        cell: ({ row }) => {
+          const { total_spent } = row.original
+          return (
+            <div className="text-neutral-03">${nFormatter(total_spent)}</div>
+          )
+        },
+      },
+
+      {
+        accessorKey: 'hold_value',
+        header: () => <div>Hold Value</div>,
+        cell: ({ row }) => {
+          const { hold_in_usdt } = row.original
+          return (
+            <div className="w-full text-neutral-03">
+              ${nFormatter(hold_in_usdt)}
             </div>
+          )
+        },
+      },
+      {
+        accessorKey: 'profit_roi',
+        enableSorting: false,
+        header: () => <div>Profit/ROI</div>,
+        cell: ({ row }) => {
+          const { roi, pnl } = row.original
+
+          return !roi || roi === 0 ? (
+            '-'
           ) : (
-            <div className="w-full text-center">-</div>
-          )
-        },
-        align: 'center',
-      },
-      {
-        accessorKey: 'liquidity',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('liquidity')}
-            role="button"
-          >
-            Liquidity
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { liquidity } = row.original
-          return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              ${nFormatter(liquidity)}
+            <div>
+              <div className={pnl < 0 ? 'text-error-500' : 'text-green'}>
+                {pnl < 0 ? '' : '+'}$
+                {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
+                  ? numeral(pnl).format('0,0.[000000]')
+                  : nFormatter(pnl)}
+              </div>
+              <div className={roi < 0 ? 'text-error-500' : 'text-green'}>
+                {roi < 0 ? '' : '+'}
+                {(roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0)
+                  ? numeral(roi).format('0,0.[000000]')
+                  : roi.toFixed(2)}
+                %
+              </div>
             </div>
           )
         },
-        align: 'center',
       },
       {
-        accessorKey: 'fdv',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('fdv')}
-            role="button"
-          >
-            FDV
-          </div>
-        ),
+        accessorKey: 'realized',
+        header: () => <div>Realized %</div>,
         cell: ({ row }) => {
-          const { fdv } = row.original
-          return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              ${nFormatter(fdv)}
-            </div>
-          )
+          const { realized_percent } = row.original
+          return <div>{realized_percent.toFixed(2)}%</div>
         },
-        align: 'center',
       },
       {
         accessorKey: 'buyer_count',
         header: () => (
           <div className="flex items-center gap-0.5">
-            <div className="text-sm not-italic leading-5 text-neutral-04">
-              # of Wallet
-            </div>
+            <div># Wallet</div>
             <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
@@ -268,14 +225,13 @@ export const TableFindGemsFreshWalletUnusual = ({
               number={number_of_users}
               address={address}
               type="unusual_buy"
-              duration="24h"
+              duration={duration as string}
             />
           )
         },
-        enableSorting: false,
       },
     ]
-  }, [chain, page, perPage, setSort])
+  }, [duration, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

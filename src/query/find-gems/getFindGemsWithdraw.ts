@@ -1,4 +1,4 @@
-import { CHAIN_X } from '@/constant/chain'
+import { CHAIN } from '@/constant/chain'
 import { getFindGemsWithdraw } from '@/services/api'
 
 const GET_FIND_GEMS_WITHDRAW = 'GET_FIND_GEMS_WITHDRAW'
@@ -22,7 +22,7 @@ interface FindGemsWithdraw {
 }
 
 export const useFindGemsWithdrawQuery = ({
-  chain = CHAIN_X,
+  chain = CHAIN,
   limit = 10,
   start = 1,
   price_change_24h_min = 0,

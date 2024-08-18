@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
@@ -11,28 +10,17 @@ type TooltipCustomProps = {
   children: React.ReactNode
   content: string
   className?: string
-  side?: any
 }
 export const TooltipCustom: React.FC<TooltipCustomProps> = ({
   children,
   content,
   className,
-  side,
 }) => {
   return (
-    <TooltipProvider>
-      <Tooltip delayDuration={200}>
-        <TooltipTrigger asChild>
-          <Button className="!m-0 !p-0">{children}</Button>
-        </TooltipTrigger>
-        <TooltipContent
-          datatype="bottom"
-          side={side}
-          className={cn(
-            className,
-            'max-w-[240px] rounded-lg border border-neutral-07/10 bg-neutral-01 text-neutral-07 shadow-box',
-          )}
-        >
+    <TooltipProvider delayDuration={200}>
+      <Tooltip>
+        <TooltipTrigger>{children}</TooltipTrigger>
+        <TooltipContent className={cn(className, 'z-[100000] shadow-box')}>
           {content}
         </TooltipContent>
       </Tooltip>

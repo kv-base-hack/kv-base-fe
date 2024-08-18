@@ -25,7 +25,7 @@ export const TitleCard = ({
           </p>
         </div>
         {content && (
-          <TooltipCustom content={content as string} side="bottom">
+          <TooltipCustom content={content as string}>
             <Info className="h-5 w-5" />
           </TooltipCustom>
         )}

@@ -22,17 +22,18 @@ export const RenderTableFindGemsByTab = ({
 }) => {
   return (
     <div>
-      <DataTable
-        className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
-        columns={columns}
-        data={dataTable || []}
-        isFetching={isFetching}
-        emptyData="No results."
-        noneBorder
-        noneBgHeader
-      />
+      <div className="mt-4">
+        <DataTable
+          columns={columns}
+          data={dataTable || []}
+          isFetching={isFetching}
+          emptyData="No results."
+          noneBorder
+          noneBgHeader
+        />
+      </div>
       <PaginationTable
-        className="mt-2"
+        className="mt-4"
         currentPage={page}
         pageSize={perPage}
         total={total}

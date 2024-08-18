@@ -1,5 +1,3 @@
-'use client'
-
 import ArrowLeftIcon from '@/components/shared/icons/ArrowLeft'
 import ArrowRightIcon from '@/components/shared/icons/ArrowRight'
 import { cn } from '@/lib/utils'
@@ -32,6 +30,7 @@ export const PaginationTable = ({
     const valueAsNumber = Number(value)
     if (valueAsNumber > totalPage) return
     setInputValue(valueAsNumber)
+    setPage(valueAsNumber)
   }
 
   const handleBlur = () => {
@@ -85,12 +84,12 @@ export const PaginationTable = ({
       <div className="flex items-center gap-2 text-sm">
         <input
           value={inputValue > 0 ? inputValue : ''}
-          className="max-w-6 rounded-lg border py-1 text-center font-normal text-neutral-07"
+          className="h-6 max-w-16 rounded-full border border-[#525860] bg-transparent py-1 text-center font-normal text-[#D6D9DC]"
           onBlur={handleBlur}
           onChange={handleToPage}
         />
         <span className="text-[#6F767E]">of</span>
-        <span className="text-[#6F767E]">{totalPage} page</span>
+        <span className="text-white">{totalPage} page</span>
       </div>
     </div>
   )

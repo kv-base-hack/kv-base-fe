@@ -1,22 +1,22 @@
-import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
-import { cn } from '@/lib/utils'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { SmartMoneyHolding } from '@/types/find-gems/smartMoneyHolding'
 import Link from 'next/link'
-import numeral from 'numeral'
-import { TableFindGemsProps } from '@/types'
 import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
+import { TableFindGemsProps } from '@/types'
 import { renderPrice } from '@/lib/utils/renderPrice'
-import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
 
 import CircularProgress from '../CircularProgress'
-import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
+import numeral from 'numeral'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { cn } from '@/lib/utils'
+import { FirstTimeBuy } from '@/types/fist-time-buy'
 import { StVol } from '@/components/pages/find-gems/tables/cols/st-vol'
+import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
 
-export const TableFindGemsSmartMoneyHolding = ({
+export const TableFindGemsFisrtTimeBuy = ({
   tab,
   page,
   perPage,
@@ -26,7 +26,7 @@ export const TableFindGemsSmartMoneyHolding = ({
   isFetching,
   setSort,
 }: TableFindGemsProps) => {
-  const columns: ColumnDef<SmartMoneyHolding>[] = useMemo(() => {
+  const columns: ColumnDef<FirstTimeBuy>[] = useMemo(() => {
     return [
       {
         accessorKey: 'id',
@@ -131,17 +131,17 @@ export const TableFindGemsSmartMoneyHolding = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { price_percent_change_24h } = row.original
-          return price_percent_change_24h ? (
+          const { price_change_24h } = row.original
+          return price_change_24h ? (
             <div
               className={cn(
                 'flex items-center leading-[140%]',
-                price_percent_change_24h > 0 ? 'text-green' : 'text-error-500',
-                price_percent_change_24h === 0 && 'text-neutral-03',
+                price_change_24h > 0 ? 'text-green' : 'text-error-500',
+                price_change_24h === 0 && 'text-neutral-03',
               )}
             >
-              {price_percent_change_24h > 0 ? '+' : ''}
-              {price_percent_change_24h.toFixed(2)}%
+              {price_change_24h > 0 ? '+' : ''}
+              {price_change_24h.toFixed(2)}%
             </div>
           ) : (
             '-'
@@ -232,11 +232,11 @@ export const TableFindGemsSmartMoneyHolding = ({
         header: () => <div>Realized %</div>,
         cell: ({ row }) => {
           const { realized_percent } = row.original
-          return <div>{realized_percent.toFixed(2)}%</div>
+          return <>{numeral(realized_percent).format('0,0.[00]')}%</>
         },
       },
       {
-        accessorKey: 'number_of_smart_money_hold',
+        accessorKey: 'number_of_users',
         enableSorting: false,
         header: () => (
           <div className="flex items-center gap-0.5">
@@ -245,12 +245,12 @@ export const TableFindGemsSmartMoneyHolding = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { number_of_smart_money_hold, address } = row.original
+          const { number_of_users, address } = row.original
           return (
             <DialogNumberOfSmartMoney
-              number={number_of_smart_money_hold}
+              number={number_of_users}
               address={address}
-              type="find-gems-sm-holding"
+              type="first-time-buy"
               duration="24h"
             />
           )
@@ -268,10 +268,8 @@ export const TableFindGemsSmartMoneyHolding = ({
         accessorKey: 'st_vol',
         header: () => <div>ST Vol</div>,
         cell: ({ row }) => {
-          const { buy_volume_in_usdt, sell_volume_in_usdt } = row.original
-          return (
-            <StVol buyVol={buy_volume_in_usdt} sellVol={sell_volume_in_usdt} />
-          )
+          const { buy_usdt_amount, sell_usdt_amount } = row.original
+          return <StVol buyVol={buy_usdt_amount} sellVol={sell_usdt_amount} />
         },
         align: 'end',
       },

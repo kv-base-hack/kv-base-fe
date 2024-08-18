@@ -16,7 +16,16 @@ export interface SmartMoneyHolding {
   realized_percent: number
   pnl: number
   total_spent_3d: number
-  roi?: number
+  roi: number
+  liquidity: number
+  fdv: number
+  tx_buy: number
+  tx_sell: number
+  buy_volume_in_usdt: number
+  sell_volume_in_usdt: number
+  hold_in_usdt: number
+  token_age: string
+  score: number
 }
 
 export interface FindGemsSmartMoneyHoldingResponse {

@@ -1,4 +1,5 @@
-import { CHAIN_X } from '@/constant/chain'
+
+import { CHAIN } from '@/constant/chain'
 import { getFindGemsSMNewListingsBuy } from '@/services/api'
 
 const GET_FIND_GEMS_SM_NEW_LISTINGS_BUY = 'GET_FIND_GEMS_SM_NEW_LISTINGS_BUY'
@@ -22,7 +23,7 @@ interface FindGemsSMNewListingsBuy {
 }
 
 export const useFindGemsSMNewListingsBuyQuery = ({
-  chain = CHAIN_X,
+  chain = CHAIN,
   limit = 10,
   start = 1,
   price_change_24h_min = 0,

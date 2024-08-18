@@ -9,9 +9,13 @@ import { TableFindGemsProps } from '@/types'
 import { useMemo } from 'react'
 import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
-import { TooltipTable } from '../Tooltip/TooltipTable'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TooltipTokenInfo } from '../Tooltip/TooltipTokenInfo'
+import { TooltipTable } from '../Tooltip/TooltipTable'
+
+import numeral from 'numeral'
+import CircularProgress from '../CircularProgress'
+import { StVol } from '@/components/pages/find-gems/tables/cols/st-vol'
+import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
 
 export const TableFindGemsSM = ({
   tab,
@@ -21,17 +25,15 @@ export const TableFindGemsSM = ({
   data,
   total,
   isFetching,
+  duration,
   setSort,
-  chain,
 }: TableFindGemsProps) => {
   const columns: ColumnDef<TopTokenBuy>[] = useMemo(() => {
     return [
       {
         accessorKey: 'id',
         enableSorting: false,
-        header: () => (
-          <div className="text-sm not-italic leading-5 text-neutral-04">#</div>
-        ),
+        header: () => <div>#</div>,
         cell: ({ row }) => {
           return <div>{row.index + 1 + (page - 1) * perPage}</div>
         },
@@ -40,36 +42,37 @@ export const TableFindGemsSM = ({
       {
         accessorKey: 'symbol',
         enableSorting: false,
-        header: () => (
-          <div className="whitespace-nowrap text-sm not-italic leading-5 text-neutral-04">
-            Token Name
-          </div>
-        ),
+        header: () => <div>Token Name</div>,
         cell: ({ row }) => {
           return (
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
-                  <TooltipTokenInfo
-                    token={row?.original}
-                    chain={chain}
-                    nameToken={true}
-                  />
+                  <Link
+                    href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
+                  >
+                    <div className="flex w-full items-center justify-start gap-1.5">
+                      <ImageToken
+                        imgUrl={row?.original?.image_url}
+                        symbol={row?.original?.symbol}
+                      />
+                      <div>
+                        <div className="text-normal max-w-[100px] truncate text-neutral-03 underline">
+                          {row?.original?.name}
+                        </div>
+                        <div className="max-w-[100px] truncate">
+                          {row?.original?.symbol}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <TooltipCustom
-                      className="z-999 border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
-                      content={row?.original?.name}
-                    >
-                      <div className="max-w-40 truncate">
-                        {row?.original?.name}
-                      </div>
-                    </TooltipCustom>
-                    <div className="text-normal text-neutral-07">
+                    <div className="text-normal text-neutral-03 underline">
                       {row?.original?.symbol}
                     </div>
                   </div>
@@ -80,140 +83,70 @@ export const TableFindGemsSM = ({
         },
       },
       {
-        accessorKey: 'number_of_buys',
-        enableSorting: false,
+        accessorKey: 'token_age',
         header: () => (
-          <div className="flex items-center gap-0.5">
-            <div className="whitespace-nowrap text-end text-sm not-italic leading-5 text-neutral-04">
-              # of SM
-            </div>
-            <TooltipTable type="numberOfSMBuy" />
+          <div onClick={() => setSort('token_age')} role="button">
+            Age
           </div>
         ),
-        size: 50,
-        align: 'center',
         cell: ({ row }) => {
-          const { number_of_smart_money, address } = row.original
+          const { token_Age } = row.original
+          return <div className="text-neutral-03">{token_Age}</div>
+        },
+      },
+      {
+        accessorKey: 'score',
+        header: () => (
+          <div className="flex items-center gap-1">
+            AI Score
+            <TooltipTable type="" />
+          </div>
+        ),
+        enableSorting: false,
+        cell: ({ row }) => {
+          const { score } = row.original
           return (
-            <DialogNumberOfSmartMoney
-              number={number_of_smart_money}
-              address={address}
-              type="trade"
-              duration="24h"
+            <CircularProgress
+              size={40}
+              percentage={parseFloat(
+                numeral(score.toString()).format('0,0.[00]'),
+              )}
             />
           )
         },
       },
       {
-        accessorKey: 'volume',
-        enableSorting: false,
-        header: () => (
-          <div className="text-sm not-italic leading-5 text-neutral-04">
-            Volume
-          </div>
-        ),
-        align: 'center',
+        accessorKey: 'liq-fdv',
+        header: () => <div>Liq/FDV</div>,
         cell: ({ row }) => {
-          const { volume } = row.original
+          const { liquidity_usd, fdv } = row.original
           return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              ${nFormatter(volume)}
+            <div>
+              <p>${nFormatter(liquidity_usd)}</p>
+              <p>${nFormatter(fdv)}</p>
             </div>
           )
         },
-      },
-      // {
-      //   accessorKey: 'balance_24h_change',
-      //   header: () => (
-      //     <div className="text-neutral-04 text-sm not-italic leading-5">
-      //       24h Balance change
-      //     </div>
-      //   ),
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const { balance_24h_change } = row.original
-      //     return balance_24h_change ? (
-      //       <div
-      //         className={cn(
-      //           'text-left flex items-center justify-start leading-[140%]',
-      //           balance_24h_change > 0 ? 'text-success-500' : 'text-error-500',
-      //           balance_24h_change === 0 && 'text-neutral-07',
-      //         )}
-      //       >
-      //         {balance_24h_change !== 0 && balance_24h_change > 0 ? (
-      //           <PercentUpIcon />
-      //         ) : (
-      //           <PercentDownIcon />
-      //         )}
-      //         {balance_24h_change > 0 ? '+' : ''}
-      //         {balance_24h_change.toFixed(2)}%
-      //       </div>
-      //     ) : (
-      //       <div className="text-left w-full">-</div>
-      //     )
-      //   },
-      // },
-      {
-        accessorKey: 'avg_price',
         enableSorting: false,
-        header: () => (
-          <div className="text-sm not-italic leading-5 text-neutral-04">
-            Avg Price
-          </div>
-        ),
-        align: 'center',
-        cell: ({ row }) => {
-          const { avg_price } = row.original
-          return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              {renderPrice(avg_price)}
-            </div>
-          )
-        },
-      },
-      {
-        accessorKey: 'price',
-        enableSorting: false,
-        header: () => (
-          <div className="text-sm not-italic leading-5 text-neutral-04">
-            Price
-          </div>
-        ),
-        align: 'center',
-        cell: ({ row }) => {
-          const { current_price } = row.original
-          return (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
-              {renderPrice(current_price)}
-            </div>
-          )
-        },
       },
       {
         accessorKey: '24h',
         header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('price_change')}
-            role="button"
-          >
+          <div onClick={() => setSort('price_change')} role="button">
             24h
           </div>
         ),
-        align: 'center',
         cell: ({ row }) => {
           const { price_percent_change_24h } = row.original
           return price_percent_change_24h === 0 ? (
-            <div className="text-sm not-italic leading-5 text-neutral-07">
+            <div className="text-sm not-italic leading-5 text-neutral-03">
               -
             </div>
           ) : (
             <div
               className={cn(
-                'text-sm not-italic leading-5 text-neutral-07',
-                price_percent_change_24h > 0
-                  ? 'text-success-500'
-                  : 'text-error-500',
+                'text-sm not-italic leading-5 text-neutral-03',
+                price_percent_change_24h > 0 ? 'text-green' : 'text-error-500',
               )}
             >
               {price_percent_change_24h > 0 ? '+' : ''}
@@ -223,66 +156,131 @@ export const TableFindGemsSM = ({
         },
       },
       {
-        accessorKey: 'liquidity',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('liquidity')}
-            role="button"
-          >
-            Liquidity
-          </div>
-        ),
-        align: 'center',
+        accessorKey: 'price',
+        enableSorting: false,
+        header: () => <div>Price</div>,
         cell: ({ row }) => {
-          const { liquidity_usd } = row.original
+          const { current_price } = row.original
           return (
-            <div className="text-neutral-07">
-              {liquidity_usd ? nFormatter(liquidity_usd) : '-'}
+            <div className="text-sm not-italic leading-5 text-neutral-03">
+              {renderPrice(current_price)}
             </div>
           )
         },
       },
       {
-        accessorKey: 'fdv',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('fdv')}
-            role="button"
-          >
-            FDV
-          </div>
-        ),
-        align: 'center',
+        accessorKey: 'avg_price',
+        enableSorting: false,
+        header: () => <div>Avg Price</div>,
         cell: ({ row }) => {
-          const { fdv } = row.original
+          const { avg_price } = row.original
           return (
-            <div className="text-neutral-07">{fdv ? nFormatter(fdv) : '-'}</div>
+            <div className="text-sm not-italic leading-5 text-neutral-03">
+              {renderPrice(avg_price)}
+            </div>
           )
         },
       },
       {
-        accessorKey: 'volume_24h',
-        header: () => (
-          <div
-            className="text-sm not-italic leading-5 text-neutral-04"
-            onClick={() => setSort('volume_24h')}
-            role="button"
-          >
-            24h Vol
-          </div>
-        ),
-        align: 'end',
+        accessorKey: 'hold_value',
+        header: () => <div>Hold Value</div>,
         cell: ({ row }) => {
-          const { volume_24h = 0 } = row.original
+          const { hold_in_usdt } = row.original
           return (
-            <div className="text-neutral-07">${nFormatter(volume_24h)}</div>
+            <div className="w-full text-neutral-03">
+              ${nFormatter(hold_in_usdt)}
+            </div>
           )
         },
       },
+      {
+        accessorKey: 'profit_roi',
+        enableSorting: false,
+        header: () => <div>Profit/ROI</div>,
+        cell: ({ row }) => {
+          const { roi, pnl } = row.original
+
+          return (
+            <div>
+              <div className={pnl < 0 ? 'text-error-500' : 'text-green'}>
+                {!pnl || pnl === 0 ? (
+                  '-'
+                ) : (
+                  <>
+                    {pnl < 0 ? '' : '+'}$
+                    {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
+                      ? numeral(pnl).format('0,0.[000000]')
+                      : nFormatter(pnl)}
+                  </>
+                )}
+              </div>
+              <div className={roi < 0 ? 'text-error-500' : 'text-green'}>
+                {!roi || roi === 0 ? (
+                  '-'
+                ) : (
+                  <>
+                    {roi < 0 ? '' : '+'}
+                    {(roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0)
+                      ? numeral(roi).format('0,0.[000000]')
+                      : roi.toFixed(2)}
+                    %
+                  </>
+                )}
+              </div>
+            </div>
+          )
+        },
+      },
+      {
+        accessorKey: 'realized_percent',
+        enableSorting: false,
+        header: () => <div>Realized %</div>,
+        cell: ({ row }) => {
+          const { realized_percent } = row.original
+          return <div>{realized_percent.toFixed(2)}%</div>
+        },
+      },
+      {
+        accessorKey: 'number_of_buys',
+        enableSorting: false,
+        header: () => (
+          <div className="flex items-center gap-0.5 whitespace-nowrap">
+            <p># ST</p>
+            <TooltipTable type="numberOfSMBuy" />
+          </div>
+        ),
+        cell: ({ row }) => {
+          const { number_of_smart_money, address } = row.original
+          return (
+            <DialogNumberOfSmartMoney
+              number={number_of_smart_money}
+              address={address}
+              type="trade"
+              duration={duration as string}
+            />
+          )
+        },
+      },
+      {
+        accessorKey: 'st_tx',
+        header: () => <div># ST Tx</div>,
+        cell: ({ row }) => {
+          const { tx_buy, tx_sell } = row.original
+          return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />
+        },
+      },
+      {
+        accessorKey: 'st_vol',
+        header: () => <div>ST Vol</div>,
+        cell: ({ row }) => {
+          const { buy_usdt_amount, sell_usdt_amount } = row.original
+
+          return <StVol buyVol={buy_usdt_amount} sellVol={sell_usdt_amount} />
+        },
+        align: 'end',
+      },
     ]
-  }, [chain, page, perPage, setSort])
+  }, [duration, page, perPage, setSort])
   return (
     <RenderTableFindGemsByTab
       tab={tab}

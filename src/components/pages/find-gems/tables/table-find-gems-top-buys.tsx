@@ -1,33 +1,34 @@
 import { gemFilterAtom } from '@/atom/gemFilter'
-import { TableFindGemsSmartMoneyHolding } from '@/components/common/DataTable/TableFindGemsSmartmoneyHolding'
-import { useFindGemsSmartMoneyHoldingQuery } from '@/query/find-gems/getFindGemsSmartMoneyHolding'
+import { TableFindGemsSM } from '@/components/common/DataTable/TableFindGemsSM'
+import { useGetTopTokenBuy } from '@/query/onchain-signal/getTopTokenBuy'
 import { useQuery } from '@tanstack/react-query'
 import { useAtom } from 'jotai'
 import { parseAsInteger, useQueryState } from 'nuqs'
 import React from 'react'
 
-interface FindGemsTabSmartHoldingProps {
+interface FindGemsTabTopBuysProps {
   tab: string
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export const FindGemsTabSmartHolding: React.FC<
-  FindGemsTabSmartHoldingProps
-> = ({ tab, searchParams }) => {
-  const currentPage = parseInt(searchParams?.smh_start?.toString() || '1')
-  const currentPerPage = parseInt(searchParams?.smh_limit?.toString() || '10')
-  const currentDuration = searchParams?.smh_duration?.toString() || '24h'
-  const currentSortBy = searchParams?.smh_sort?.toString() || ''
+export const FindGemsTabTopBuys: React.FC<FindGemsTabTopBuysProps> = ({
+  tab,
+  searchParams,
+}) => {
+  const currentPage = parseInt(searchParams?.ttb_start?.toString() || '1')
+  const currentPerPage = parseInt(searchParams?.ttb_limit?.toString() || '10')
+  const currentDuration = searchParams?.ttb_duration?.toString() || '24h'
+  const currentSortBy = searchParams?.ttb_sort?.toString() || ''
 
   const [, setPage] = useQueryState(
-    'smh_start',
+    'ttb_start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
     }),
   )
 
-  const [, setSortBy] = useQueryState('smh_sort', {
+  const [, setSortBy] = useQueryState('ttb_sort', {
     defaultValue: currentSortBy,
     history: 'push',
     shallow: false,
@@ -35,12 +36,14 @@ export const FindGemsTabSmartHolding: React.FC<
 
   const [filter] = useAtom(gemFilterAtom)
 
-  // smart money holding
-  const findGemsTrendingQuery = useQuery(
-    useFindGemsSmartMoneyHoldingQuery({
+  // top buy
+  const topTokenBuyQuery = useQuery(
+    useGetTopTokenBuy({
       limit: currentPerPage,
       start: currentPage,
       chain: 'solana',
+      duration: currentDuration,
+      action: 'buying',
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,
       market_cap_min: filter.minMarketcap,
@@ -52,13 +55,12 @@ export const FindGemsTabSmartHolding: React.FC<
       cex_net_flow_min: filter.minCexNetflow,
       cex_net_flow_max: filter.maxCexNetflow,
       sort_by: currentSortBy,
-      duration: currentDuration,
     }),
   )
-  const dataFindGemsTrending = findGemsTrendingQuery.isFetching
+  const dataFindGemsBuy = topTokenBuyQuery.isFetching
     ? [...Array(currentPerPage).keys()]
-    : findGemsTrendingQuery.data?.smart_money_holding || []
-  const totalFindGemTrending = findGemsTrendingQuery.data?.total || 1
+    : topTokenBuyQuery?.data?.top_buy_by_smart_money || []
+  const totalFindGemsBuy = topTokenBuyQuery?.data?.total_buy || 1
 
   const handleSortBy = (val: string) => {
     setSortBy(val)
@@ -66,15 +68,16 @@ export const FindGemsTabSmartHolding: React.FC<
   }
 
   return (
-    <TableFindGemsSmartMoneyHolding
+    <TableFindGemsSM
       tab={tab}
       page={currentPage}
       perPage={currentPerPage}
       setPage={setPage}
-      data={dataFindGemsTrending}
-      total={totalFindGemTrending}
-      isFetching={findGemsTrendingQuery.isFetching}
+      data={dataFindGemsBuy}
+      total={totalFindGemsBuy}
+      isFetching={topTokenBuyQuery.isFetching}
       setSort={handleSortBy}
+      duration={currentDuration}
     />
   )
 }

@@ -10,6 +10,7 @@ export interface TopTokenBuy {
   current_price: number
   token_amount: number
   usdt_amount: number
+  volume: number
   avg_price: number
   image_url: string
   number_of_smart_money: number
@@ -17,16 +18,30 @@ export interface TopTokenBuy {
   price_percent_change: number
   market_cap: number
   liquidity_usd: number
-  volume: number
   volume_24h: number
   address: string
   net_flow: number
-  pnl: number
   balance_change_percent: number
-  balance_24h_change: number
   fdv: number
+  users: User[]
+  realized_percent: number
+  hold_in_token: number
+  hold_in_usdt: number
+  tx_buy: number
+  tx_sell: number
+  roi: number
+  buy_usdt_amount: number
+  sell_usdt_amount: number
+  token_Age: string
+  score: number
+  pnl: number
 }
 
+export interface User {
+  user_address: string
+  roi: number
+  pnl: number
+}
 export interface TopTokenBuyResponse {
   data: DataTopTokenBuy
 }

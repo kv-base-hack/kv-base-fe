@@ -1,4 +1,4 @@
-import { CHAIN_X } from '@/constant/chain'
+import { CHAIN } from '@/constant/chain'
 import { getTopTokenBuy } from '@/services/api'
 
 const GET_TOP_TOKEN_BUY = 'GET_TOP_TOKEN_BUY'
@@ -26,7 +26,7 @@ export const useGetTopTokenBuy = ({
   limit = 10,
   duration = '24h',
   start = 1,
-  chain = CHAIN_X,
+  chain = CHAIN,
   action = 'buying',
   price_change_24h_min = 0,
   price_change_24h_max = 0,

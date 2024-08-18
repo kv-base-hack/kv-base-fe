@@ -39,6 +39,7 @@ import { UnusualBuyResponse } from '@/types/unusualBuy'
 import { UserBalanceResponse } from '@/types/userBalance'
 import { UserInfoResponse } from '@/types/userInfo'
 import axios from 'axios'
+import { DataFirstTimeBuy } from '@/types/fist-time-buy'
 
 const api = axios.create({
   baseURL: 'https://api.kaivest.net/onchain',
@@ -370,7 +371,7 @@ export const getFreshWalletUnusualBuy = async ({
   chain: string
   sort_by: string
 }): Promise<UnusualBuyResponse> => {
-  return await api.get('/v1/token/unusual_token_buy', {
+  return await api.get('/v1/findgem/unusual_token_buy', {
     params: {
       limit,
       duration,
@@ -415,7 +416,7 @@ export const getTopTokenBuy = async ({
   cex_net_flow_max?: number
   sort_by?: string
 }): Promise<TopTokenBuyResponse> => {
-  return await api.get('/v1/token/top_smart_money_trade', {
+  return await api.get('/v1/findgems/top_smart_money_trade', {
     params: {
       limit,
       duration,
@@ -432,6 +433,30 @@ export const getTopTokenBuy = async ({
       volume_24h_max,
       cex_net_flow_min,
       cex_net_flow_max,
+      sort_by,
+    },
+  })
+}
+
+export const getFirstTimeBuy = async ({
+  limit = 5,
+  start = 1,
+  duration = '24h',
+  chain,
+  sort_by,
+}: {
+  limit?: number
+  start?: number
+  duration?: string
+  chain: string
+  sort_by: string
+}) => {
+  return api.get<DataFirstTimeBuy>('/v1/findgems/first_time_buy', {
+    params: {
+      limit,
+      start,
+      duration,
+      chain,
       sort_by,
     },
   })
@@ -1066,7 +1091,7 @@ export const getFindGemsSMNewListingsBuy = async ({
   sort_by?: string
   duration: string
 }): Promise<NewListingBuyResponse> => {
-  return await api.get('/v1/token/smart_money_new_listing_buy', {
+  return await api.get('/v1/fidngems/smart_money_new_listing_buy', {
     params: {
       start,
       limit,
@@ -1120,7 +1145,7 @@ export const getFindGemsFreshWalletUnusual = async ({
   sort_by?: string
   duration: string
 }): Promise<UnusualBuyResponse> => {
-  return await api.get('v1/token/unusual_token_buy', {
+  return await api.get('v1/findgems/unusual_token_buy', {
     params: {
       start,
       limit,

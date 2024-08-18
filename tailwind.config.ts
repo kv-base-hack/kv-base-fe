@@ -24,11 +24,12 @@ const config: Config = {
           'linear-gradient(239deg, #5B599A 9.01%, #5C958C 48.59%, #5EBC75 85.68%)',
         'gradient-btn':
           'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
-        'conic-gradient':
-          'conic-gradient(from -90deg at 50% 50%, #B7CFFF 0deg, #0355FD 360deg)'
+        'fill-new-green':
+          'linear-gradient(180deg, rgba(27, 27, 49, 0.50) 0%, rgba(60, 82, 75, 0.50) 100%)',
+        'gradient-card-ai':
+          'radial-gradient(70.71% 70.71% at 50% 50%, ), rgba(11, 2, 23, 0.10);',
       },
       colors: {
-        brand: '#0C68E9',
         'primary-1': '#E7F177',
         'primary-2': '#83BF6E',
         'primary-3': '#FF6A55',
@@ -43,7 +44,7 @@ const config: Config = {
         'success-500': '#34C759',
         'error-500': '#FF3B30',
         background: '#111218',
-        header: '#1F1F1F',
+        header: '#1C1A1F',
         'neutral-00': '#FFFFFF',
         'neutral-01': '#FCFCFC',
         'neutral-02': '#F4F4F4',
@@ -63,18 +64,25 @@ const config: Config = {
         'neutral-shades-0475': '#9A9FA5',
         'yellow-border': '#7E7244',
         'black-300': '#DADCE0',
-        disabled: '#98A2B3',
-        core: '#15FFAB',
+        'light-telegray': '#D0D0DA',
         green: '#32AE60',
         red: '#F04D1A',
+        core: '#15FFAB',
         'blue-purple': '#8338EC',
         marengo: '#5B5B65',
+        disabled: '#98A2B3',
       },
       boxShadow: {
         'chat-ai':
           '0px 0px 14px -4px rgba(0, 0, 0, 0.05), 0px 32px 48px -8px rgba(0, 0, 0, 0.10)',
         box: '0px 17.525px 21.907px 0px rgba(0, 0, 0, 0.05), 0px -0.73px 0.73px -1.46px rgba(255, 255, 255, 0.35) inset;',
         lg: '0px 6px 16px 0px rgba(0, 0, 0, 0.08);',
+        search:
+          '0px 32px 48px -8px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        tooltip:
+          '0px 32px 48px -8px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        card:
+          '2px 4px 16px 0px rgba(248, 248, 248, 0.06)'
       },
       screens: {
         xl: '1440px',

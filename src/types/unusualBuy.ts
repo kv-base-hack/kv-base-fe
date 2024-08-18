@@ -21,6 +21,8 @@ export interface UnusualBuy {
   token_age: string
   fdv: number
   total_spent: number
+  hold_in_usdt: number
+  realized_percent: number
 }
 
 export interface UnusualBuyResponse {

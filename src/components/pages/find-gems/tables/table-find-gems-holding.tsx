@@ -7,14 +7,14 @@ import Link from 'next/link'
 import numeral from 'numeral'
 import { TableFindGemsProps } from '@/types'
 import { useMemo } from 'react'
-import { RenderTableFindGemsByTab } from '../TableFindGems'
 import { renderPrice } from '@/lib/utils/renderPrice'
-import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TooltipTable } from '../Tooltip/TooltipTable'
+import { TooltipTable } from '@/components/common/Tooltip/TooltipTable'
+import CircularProgress from '@/components/common/CircularProgress'
+import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
 
-import CircularProgress from '../CircularProgress'
-import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
-import { StVol } from '@/components/pages/find-gems/tables/cols/st-vol'
+import { RenderTableFindGemsByTab } from '@/components/common/TableFindGems'
+import { StVol } from './cols/st-vol'
+import { StTx } from './cols/st-tx'
 
 export const TableFindGemsSmartMoneyHolding = ({
   tab,

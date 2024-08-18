@@ -82,11 +82,12 @@ html {
 }
 
 .rc-pagination-item-active {
-  color: var(--Neutral-07, #1a1d1f);
-  background: var(--UI-On-Surface-LV3, #e7e9eb);
+  color: var(--Neutral-07, #fff);
+  background: var(--UI-On-Surface-LV3, #9945ff33);
   border-radius: 8px;
-  border: 1px solid var(--UI-Stroke, #efefef);
+  border: 1px solid var(--UI-Stroke, #b2ffdf8c);
 }
+
 .button-gradient {
   background: linear-gradient(
       178deg,

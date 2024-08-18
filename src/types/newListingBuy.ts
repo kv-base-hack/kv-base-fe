@@ -8,20 +8,33 @@ export interface NewListingBuy {
   address: string
   symbol: string
   current_price: number
-  usdt_value: number
   image_url: string
   pnl: number
   token_age: string
   avg_price: number
   price_change_24h: number
   number_of_smart_money: number
-  price: number
-  roi: number
+  usdt_value: number
+  total_spent: number
   liquidity: number
   market_cap: number
   fdv: number
-  total_spent: number
-  users?: any[]
+  roi: number
+  users: User[]
+  realized_percent: number
+  hold_in_token: number
+  hold_in_usdt: number
+  tx_buy: number
+  tx_sell: number
+  buy_volume_in_usdt: number
+  sell_volume_in_usdt: number
+  score: number
+}
+
+export interface User {
+  user_address: string
+  roi: number
+  pnl: number
 }
 
 export interface NewListingBuyResponse {
