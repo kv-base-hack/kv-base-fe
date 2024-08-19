@@ -18,6 +18,12 @@ import { CardCommon } from '@/components/common/Card/CardCommon'
 import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
 import { formatPriceNumber } from '@/utils/formatPriceNumber'
 import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
+import { TokenInfo } from '@/components/pages/token-explorer/token-info'
+import { StAnalysisByAI } from '@/components/pages/token-explorer/st-analysis-ai'
+import { UnusualBuyAnalysis } from '@/components/pages/token-explorer/unusual-buy-analysis'
+import MoreInfoIcon from '@/components/shared/icons/token-explorer/more-info'
+import { Switch } from '@/components/ui/switch'
+import { SelectDuration } from '@/components/common/Select/SelectDuration'
 
 const DUMMY_CHART = [
   [1700582400, 139.2820760583722837],
@@ -79,6 +85,9 @@ export default function TokenExplorerDetail({
   const [mode, setMode] = useState('1d')
   const [tab, setTabs] = useState('Transactions')
   const CHAIN = useAtomValue(chainAtom)
+  const [hideSmallTrade, setHideSmallTrade] = useState(false)
+  const [hideSmallBalance, setHideSmallBalance] = useState(false)
+  const [duration, setDuration] = useState('24h')
 
   //
   const tokenInfoQuery = useTokenInfoQuery({
@@ -94,13 +103,74 @@ export default function TokenExplorerDetail({
     setMode(mode)
   }, [])
 
+  const renderFilterTab = (tab: string) => {
+    switch (tab) {
+      case 'Transactions':
+        return (
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
+              {`Hide Small Trades (<$1K)`}
+            </span>
+            <Switch
+              checked={hideSmallTrade}
+              onCheckedChange={(checked: boolean) => setHideSmallTrade(checked)}
+            />
+          </div>
+        )
+      case 'Top Smart Traders':
+        return (
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-4">
+              <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
+                {`Hide Small Token Balance (<$1K)`}
+              </span>
+              <Switch
+                checked={hideSmallBalance}
+                onCheckedChange={(checked: boolean) =>
+                  setHideSmallBalance(checked)
+                }
+              />
+            </div>
+            <SelectDuration duration={duration} setDuration={setDuration} />
+          </div>
+        )
+      case 'Smart Traders Activity':
+        return (
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
+              {`Hide Small Trades (<$1K)`}
+            </span>
+            <Switch
+              checked={hideSmallTrade}
+              onCheckedChange={(checked: boolean) => setHideSmallTrade(checked)}
+            />
+          </div>
+        )
+      case 'Trading Signal':
+        return (
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
+              {`Hide Small Token Balance (<$1K)`}
+            </span>
+            <Switch
+              checked={hideSmallBalance}
+              onCheckedChange={(checked: boolean) =>
+                setHideSmallBalance(checked)
+              }
+            />
+          </div>
+        )
+    }
+    return null
+  }
+
   const renderContentTab = (tab: string) => {
     switch (tab) {
       case 'Transactions':
         return <Transactions dataTokenInfo={dataTokenInfo} />
-      case 'Top Smart Money':
+      case 'Top Smart Traders':
         return <TopSmartMoney dataTokenInfo={dataTokenInfo} />
-      case 'Activity of Top Smart Money':
+      case 'Smart Traders Activity':
         return <ActivityOfTopSmartMoney dataTokenInfo={dataTokenInfo} />
       case 'Trading Signal':
         return <TradingSignal />
@@ -119,157 +189,62 @@ export default function TokenExplorerDetail({
 
   return (
     <div className="flex h-full w-full flex-col gap-2 pt-2">
-      <div className="m-0 flex flex-col-reverse items-start gap-2 xl:flex-row">
-        {/* swap left */}
-        <div className="font-sora">
-          <IntegratedTerminal />
-        </div>
-        {/* content right */}
-        <div className="h-full w-full overflow-hidden rounded-[20px]">
-          {/* overview */}
-          <CardCommon>
-            <div className="flex w-full justify-between gap-5 max-lg:flex-wrap">
-              <div className="flex justify-between gap-5 whitespace-nowrap">
-                {/* <div className="flex flex-col items-start gap-2 justify-center my-auto text-sm tracking-normal leading-5">
-                  <div className="flex items-center gap-2 px-px">
-                    <div className="flex gap-1 justify-center px-px">
-                      <div className="font-medium text-neutral-04">Token:</div>
-                      <div className="text-brand">{`${params.token?.substring(
-                        0,
-                        4,
-                      )}...${params.token?.slice(-3)}`}</div>
-                    </div>
-                    <CopyCustom
-                      value={params.token}
-                      icon={
-                        <CopyIcon className="cursor-pointer text-neutral-04" />
-                      }
-                    />
-                  </div>
-                  <div className="flex items-center gap-2 px-px">
-                    <div className="flex items-center gap-1 justify-center px-px">
-                      <div className="font-medium text-neutral-04">Pair:</div>
-                      <div className="text-brand">{`${dataTokenInfo?.pair_address?.substring(
-                        0,
-                        4,
-                      )}...${dataTokenInfo?.pair_address?.slice(-3)}`}</div>
-                    </div>
-                    <CopyCustom
-                      value={dataTokenInfo?.pair_address || ''}
-                      icon={
-                        <CopyIcon className="cursor-pointer text-neutral-04" />
-                      }
-                    />
-                  </div>
-                </div> */}
-              </div>
-              <div className="flex justify-between gap-5 px-5 max-md:flex-wrap">
-                <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center justify-center gap-1 text-right text-sm leading-5 tracking-normal text-neutral-04">
-                    <div>AVG SM Entry</div>
-                  </div>
-                  <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                    {formatPriceNumber(
-                      dataTokenInfo?.avg_price_smart_money || 0,
-                    )}
-                  </div>
-                </div>
-                <div className="h-16 w-px shrink-0 rounded-sm bg-neutral-03" />
-                <div className="flex flex-col justify-center">
-                  <div className="flex items-center justify-center gap-1 text-right text-sm leading-5 tracking-normal text-neutral-04">
-                    <div className="whitespace-nowrap"># SM Hold</div>
-                  </div>
-                  <div className="mt-1 self-center text-base font-medium leading-6 text-neutral-07">
-                    <DialogNumberOfSmartMoney
-                      number={dataTokenInfo?.number_of_smart_money_hold || 0}
-                      address={dataTokenInfo?.token_address || ''}
-                      type="find-gems-sm-holding"
-                      duration={'24h'}
-                    />
-                  </div>
-                </div>
-                <div className="h-16 w-px shrink-0 rounded-sm bg-neutral-03" />
-                <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="flex items-center justify-center gap-1 text-right text-sm leading-5 tracking-normal text-neutral-04">
-                    <div className="whitespace-nowrap"># Unusual Buy</div>
-                  </div>
-                  <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                    <DialogNumberOfSmartMoney
-                      number={dataTokenInfo?.number_of_unusual_buy || 0}
-                      address={dataTokenInfo?.token_address || ''}
-                      type="unusual_buy"
-                      duration={'24h'}
-                    />
-                  </div>
-                </div>
-                <div className="h-16 w-px shrink-0 rounded-sm bg-neutral-03" />
-                <div className="flex flex-col items-center justify-center whitespace-nowrap">
-                  <div className="mt-2 flex justify-center gap-1">
-                    <div className="flex flex-1 flex-col py-px">
-                      <div className="flex items-center justify-center gap-1 text-right text-xs leading-5 tracking-normal text-neutral-04">
-                        <div>SM BUY VOL</div>
-                      </div>
-                      <div className="mt-1 text-base font-medium leading-6 text-neutral-07">
-                        ${nFormatter(dataTokenInfo?.buy_volume || 0)}
-                      </div>
-                    </div>
-                    <div className="flex flex-1 flex-col items-end py-px pl-20">
-                      <div className="flex items-center justify-center gap-1 text-right text-xs leading-5 tracking-normal text-neutral-04">
-                        <div>SM SELL VOL</div>
-                      </div>
-                      <div className="mt-1 self-end text-base font-medium leading-6 text-neutral-07">
-                        ${nFormatter(dataTokenInfo?.sell_volume || 0)}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex w-full gap-0.5 py-0.5">
-                    <div
-                      style={{ width: percentBuy + '%' }}
-                      className="h-1 shrink-0 rounded-[100px] bg-lime-300"
-                    />
-                    <div
-                      style={{ width: percentSell + '%' }}
-                      className="h-1 shrink-0 rounded-[100px] bg-rose-500"
-                    />
-                  </div>
-                </div>
-              </div>
+      {/* first section */}
+      <div className="mb-2 mt-3 flex w-full flex-col items-center gap-2 px-4 xl:flex-row">
+        <TokenInfo dataTokenInfo={dataTokenInfo} params={params} />
+        <StAnalysisByAI params={params} />
+        <UnusualBuyAnalysis params={params} />
+      </div>
+      <div className="m-0 my-2 flex items-start gap-2 lg:mx-4">
+        <div className="w-full overflow-hidden rounded-[20px] border-white/10 bg-neutral-07 shadow-2xl backdrop-blur-lg lg:w-2/3">
+          <div className="flex flex-col items-start self-stretch overflow-hidden border border-solid border-white/10 shadow-box backdrop-blur-lg lg:gap-6">
+            {/* overview */}
+            <div className="mt-4 w-full lg:mt-0">
+              <WrapLineChart
+                dataTokenInfo={dataTokenInfo}
+                mode={mode}
+                sparkLineIn7D={DUMMY_CHART}
+                onModeChange={handleModeChange}
+                loading={tokenInfoQuery.isLoading}
+                address={params.token}
+              />
             </div>
-          </CardCommon>
-          {/* chart */}
-          <div className="h-[520px] w-full rounded-[20px] p-0 lg:mt-2">
-            <WrapLineChart
-              dataTokenInfo={dataTokenInfo}
-              mode={mode}
-              sparkLineIn7D={DUMMY_CHART}
-              onModeChange={handleModeChange}
-              loading={tokenInfoQuery.isLoading}
-              address={params.token}
-            />
           </div>
         </div>
       </div>
-      <CardCommon className="z-50">
-        <div className="flex items-center justify-start gap-2 self-stretch py-2 text-center text-lg font-medium leading-6 tracking-tight text-neutral-400 max-md:flex-wrap">
-          {TABS.map((item, index) => {
-            return (
-              <div
-                key={index}
-                onClick={handleChangeTab(item)}
-                className={cn(
-                  'cursor-pointer self-stretch px-3 py-2',
-                  item === tab
-                    ? 'justify-center whitespace-nowrap rounded-lg border border-solid border-white/10 bg-neutral-03 text-neutral-07'
-                    : 'my-auto',
-                )}
-              >
-                {item}
-              </div>
-            )
-          })}
+      <div className="m-0 my-2 flex items-start gap-4 lg:mx-4">
+        <div className="flex h-full w-full flex-col justify-start self-stretch rounded-2xl border border-solid border-white/10 bg-black bg-opacity-50 p-6 font-semibold leading-[160%] shadow-2xl backdrop-blur-lg max-md:px-5">
+          <div className="flex items-center">
+            <div className="flex flex-1 items-center justify-start gap-4 self-stretch overflow-x-auto whitespace-nowrap py-2 text-center text-base font-medium leading-6 tracking-tight text-neutral-400 max-md:flex-wrap">
+              {TABS.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={handleChangeTab(item)}
+                    className={cn(
+                      'cursor-pointer self-stretch font-medium',
+                      item === tab ? 'text-neutral-100' : '',
+                    )}
+                  >
+                    <div className="flex items-center gap-1">
+                      {item}
+                      <MoreInfoIcon />
+                    </div>
+                    <div
+                      className={cn(
+                        'mt-2 h-px w-full',
+                        item === tab ? 'active-tab-gradient' : 'bg-transparent',
+                      )}
+                    ></div>
+                  </div>
+                )
+              })}
+            </div>
+            <div>{renderFilterTab(tab)}</div>
+          </div>
+          {renderContentTab(tab)}
         </div>
-        {renderContentTab(tab)}
-      </CardCommon>
+      </div>
     </div>
   )
 }

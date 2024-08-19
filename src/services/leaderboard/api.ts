@@ -4,6 +4,8 @@ import { LeaderboardResponse } from '@/types/leaderboard'
 import { NewListingBuyResponse } from '@/types/new-listing-buy'
 import { TopSmartMoneyTradeUsersListProps } from '@/types/smartmoney'
 import { DataLeaderboardSpotlight } from '@/types/spotlight'
+import { TokenInfoTradeResponse } from '@/types/token-explorer/token-info-trade'
+import { TokenInfoUnusualBuyResponse } from '@/types/token-explorer/token-info-unusual-buy'
 import { TokenListResponse } from '@/types/tokenList'
 import { TopTokenBuyResponse } from '@/types/top-token-buy'
 import { DataTopTokenProfit } from '@/types/top-token-profit'
@@ -400,3 +402,38 @@ export const getLeaderboardSpotlight = ({
   })
 }
 
+export const getTokenInfoUnusualBuy = async ({
+  chain,
+  address,
+  duration,
+}: {
+  chain: string
+  address: string
+  duration: string
+}): Promise<TokenInfoUnusualBuyResponse> => {
+  return await api.get('/v1/token/info/unusual_buy', {
+    params: {
+      address,
+      chain,
+      duration,
+    },
+  })
+}
+
+export const getTokenInfoTrade = async ({
+  chain,
+  address,
+  duration,
+}: {
+  chain: string
+  address: string
+  duration: string
+}): Promise<TokenInfoTradeResponse> => {
+  return await api.get('/v1/token/info/trade', {
+    params: {
+      address,
+      chain,
+      duration,
+    },
+  })
+}

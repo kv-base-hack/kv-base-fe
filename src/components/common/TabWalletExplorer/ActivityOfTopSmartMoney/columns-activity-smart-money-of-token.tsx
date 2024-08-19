@@ -1,0 +1,191 @@
+import { ImageToken } from '@/components/common/Image/ImageToken'
+import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
+import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
+import { cn } from '@/lib/utils'
+import { Activity } from '@/types/activitySmartMoneyOfToken'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { ColumnDef } from '@tanstack/react-table'
+import moment from 'moment'
+import Link from 'next/link'
+import { renderPrice } from '@/lib/utils/renderPrice'
+import {
+  renderMovementIcon,
+  renderMovementName,
+} from '@/lib/utils/renderIconMovement'
+import { ExternalLink, FilterIcon } from 'lucide-react'
+import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
+
+export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
+  {
+    accessorKey: 'time',
+    header: () => 'Time',
+    cell: ({ row }) => {
+      const { time } = row.original
+      return (
+        <div className="flex items-center gap-1 text-neutral-04">
+          {moment(time).format('MMM DD, HH:mm')}
+          <TimeAgoIcon />
+        </div>
+      )
+    },
+  },
+  {
+    accessorKey: 'smart_money',
+    header: () => (
+      <div className="flex items-center gap-2">
+        <div>Smart Traders</div>
+        <FilterIcon className="h-4 w-4" />
+      </div>
+    ),
+    enableSorting: false,
+    cell: ({ row }) => {
+      const { sender } = row.original
+      return (
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1">
+              <Link
+                className="max-w-32 truncate underline"
+                href={`/smartmoney-onchain/wallet-explorer/${sender}`}
+              >
+                {sender}
+              </Link>
+              <FilterIcon className="h-4 w-4" />
+            </div>
+          </div>
+        </div>
+      )
+    },
+  },
+  // {
+  //   accessorKey: 'symbol',
+  //   header: () => 'Tokens',
+  //   enableSorting: false,
+  //   cell: ({ row }) => {
+  //     const { symbol } = row.original
+  //     return row?.original?.token_address ? (
+  //       <Link
+  //         href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
+  //         className="flex font-medium gap-3 items-center justify-between text-right text-neutral-300"
+  //       >
+  //         <ImageToken imgUrl={row?.original?.token_image_url} symbol={symbol} />
+  //         <div>{symbol}</div>
+  //       </Link>
+  //     ) : (
+  //       <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
+  //         <ImageToken imgUrl={row?.original?.token_image_url} symbol={symbol} />
+  //         <div className="font-medium text-neutral-300">{symbol}</div>
+  //       </div>
+  //     )
+  //   },
+  // },
+  {
+    accessorKey: 'movements',
+    header: () => {
+      return <div>Movements</div>
+    },
+    enableSorting: false,
+    cell: ({ row }) => {
+      const { movement } = row.original
+      return (
+        <div
+          className={cn(
+            'my-auto flex items-center justify-center gap-2.5 self-stretch whitespace-nowrap rounded-md bg-opacity-10 px-2 py-0.5 text-center text-xs',
+            movement === 'deposit'
+              ? 'bg-secondary-1/10 text-secondary-1'
+              : movement === 'withdraw'
+                ? 'bg-secondary-4/10 text-secondary-4'
+                : movement === 'buying'
+                  ? 'bg-success-500/10 text-green'
+                  : movement === 'selling'
+                    ? 'bg-error-500/10 text-error-500'
+                    : movement === 'new_listing_buy'
+                      ? 'bg-[#89D36F]/10 text-[#89D36F]'
+                      : movement === 'new_listing_sell'
+                        ? 'bg-[#DC6803]/10 text-[#DC6803]'
+                        : 'bg-success-500/10 text-green',
+          )}
+        >
+          {renderMovementIcon(movement)}
+          {renderMovementName(movement)}
+        </div>
+      )
+    },
+  },
+  {
+    accessorKey: 'value',
+    header: () => 'Value',
+    enableSorting: false,
+    size: 220,
+    cell: ({ row }) => {
+      const { value_in_usdt, symbol, value_in_token } = row.original
+      return (
+        <div className="flex items-center gap-2 text-neutral-300">
+          <div>{renderTradingValue(value_in_usdt)}</div>
+          <div className="font-medium">
+            <span className="text-green">(${nFormatter(value_in_usdt)}) </span>
+            {nFormatter(value_in_token)} {symbol}
+          </div>
+        </div>
+      )
+    },
+  },
+  {
+    accessorKey: 'current_price',
+    header: () => 'Price',
+    enableSorting: false,
+    cell: ({ row }) => {
+      const { price } = row.original
+      return (
+        <div
+          className={cn('flex items-center justify-center text-neutral-300')}
+        >
+          {renderPrice(price)}
+        </div>
+      )
+    },
+  },
+  {
+    accessorKey: 'avg_entry_buy',
+    header: () => 'Avg Entry Buy',
+    enableSorting: false,
+    cell: ({ row }) => {
+      const { avg_price } = row.original
+      return (
+        <div
+          className={cn('flex items-center justify-center text-neutral-300')}
+        >
+          {renderPrice(avg_price)}
+        </div>
+      )
+    },
+  },
+  {
+    accessorKey: 'profit',
+    header: () => 'Profit',
+    enableSorting: false,
+    cell: ({ row }) => {
+      return (
+        <div
+          className={cn('flex items-center justify-center text-neutral-300')}
+        >
+          _
+        </div>
+      )
+    },
+  },
+  // {
+  //   accessorKey: 'link_scan',
+  //   header: () => 'Scan',
+  //   size: 50,
+  //   enableSorting: false,
+  //   cell: ({ row }) => {
+  //     const { scan_link } = row.original
+  //     return (
+  //       <a href={scan_link} target="_blank">
+  //         <ExternalLink className="w-4 h-4 text-neutral-300" />
+  //       </a>
+  //     )
+  //   },
+  // },
+]

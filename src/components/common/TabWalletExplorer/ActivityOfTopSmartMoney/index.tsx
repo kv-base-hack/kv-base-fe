@@ -3,15 +3,10 @@ import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { useState } from 'react'
 import { TokenInfo } from '@/types/tokenInfo'
-import { ImageToken } from '@/components/common/Image/ImageToken'
-import { TooltipCustom } from '@/components/common/Tooltip'
-import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
 import { useActivitySmartMoneyOfTokenQuery } from '@/query/token-explorer/getActivitySmartMoneyOfToken'
-import { columnsActivitySmartMoneyOfToken } from '@/components/common/DataTable/columnsActivitySmartMoneyOfToken'
 import { useParams } from 'next/navigation'
 import { PaginationTable } from '../../Pagination/PaginationTable'
-import { SelectTradeValue } from '../../Select/SelectTradeValue'
-import { SelectMovement } from '../../Select/SelectMovements'
+import { columnsActivitySmartMoneyOfToken } from './columns-activity-smart-money-of-token'
 
 export const ActivityOfTopSmartMoney = ({
   dataTokenInfo,
@@ -39,21 +34,21 @@ export const ActivityOfTopSmartMoney = ({
   //
   return (
     <div className="w-full">
-      <div className="mb-4 flex w-full items-center justify-between font-medium">
+      {/* <div className="flex items-center justify-between mb-4 font-medium w-full">
         <div className="flex items-center gap-2">
-          <div className="text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-neutral-07">
+          <div className="text-[#F4F4F4] text-xl not-italic font-medium leading-8 tracking-[-0.4px]">
             Activity of Top Smart Money trading
           </div>
           <div className="flex items-center gap-2">
             <ImageToken
-              className="h-8 w-8"
+              className="w-8 h-8"
               imgUrl={dataTokenInfo?.image_url}
               symbol={dataTokenInfo?.symbol}
             />
             <div className="text-purple-300">{dataTokenInfo?.symbol}</div>
             <TooltipCustom
-              className="z-999 w-[320px] border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
-              content="Activity of Top Smart Money Profiting"
+              className="max-w-[210px] z-[999] bg-neutral-06 text-neutral-02 shadow-sm border-white/10"
+              content="Lists other activities at least 5k$ of smart money when trading this token."
             >
               <InfoIcon />
             </TooltipCustom>
@@ -63,16 +58,18 @@ export const ActivityOfTopSmartMoney = ({
           <SelectTradeValue
             valueSelected={tradeValue}
             setValueSelected={setTradeValue}
+            setPage={setPageActivity}
           />
           <SelectMovement
             movement={filterActivity}
             setMovement={setFilterActivity}
+            setPage={setPageActivity}
           />
         </div>
-      </div>
+      </div> */}
       <DataTable
         className="w-full bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
-        columns={columnsActivitySmartMoneyOfToken(CHAIN)}
+        columns={columnsActivitySmartMoneyOfToken}
         data={dataActivity || []}
         isFetching={activityQuery.isFetching}
         noneBorder
@@ -80,7 +77,7 @@ export const ActivityOfTopSmartMoney = ({
         emptyData="No results."
       />
       <PaginationTable
-        className="mt-8"
+        className="mt-4"
         currentPage={pageActivity}
         pageSize={10}
         total={totalActivity}

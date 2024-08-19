@@ -7,11 +7,11 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import { TooltipCustom } from '@/components/common/Tooltip'
 import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
 import { useSmartMoneyTransactionQuery } from '@/query/token-explorer/getSmartMoneyTransaction'
-import { columnsSmartMoneyTransaction } from '@/components/common/DataTable/columnsSmartMoneyTransaction'
 import { useParams } from 'next/navigation'
 import { PaginationTable } from '../../Pagination/PaginationTable'
 import { SelectTradeValue } from '../../Select/SelectTradeValue'
 import { SelectMovement } from '../../Select/SelectMovements'
+import { columnsSmartMoneyTransaction } from './columns-smart-money-transaction'
 
 export const Transactions = ({
   dataTokenInfo,
@@ -38,10 +38,10 @@ export const Transactions = ({
   const totalSmartMoneyTransaction =
     smartMoneyTransactionQuery?.data?.data?.total || 1
   return (
-    <div>
-      <div className="mb-4 flex items-center justify-between font-medium">
+    <div className="w-full">
+      <div className="mb-4 flex flex-col flex-wrap items-center justify-between font-medium lg:flex-row">
         <div className="flex items-center gap-2">
-          <div className="text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-neutral-07">
+          <div className="text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-[#F4F4F4]">
             Smart Money Transactions of
           </div>
           <div className="flex items-center gap-2">
@@ -52,8 +52,8 @@ export const Transactions = ({
             />
             <div className="text-purple-300">{dataTokenInfo?.symbol}</div>
             <TooltipCustom
-              className="z-999 w-[320px] border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
-              content="Smart Money Transactions"
+              className="z-[999] max-w-[210px] border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
+              content="Lists transactions specifically for that token made by smart money."
             >
               <InfoIcon />
             </TooltipCustom>
@@ -63,16 +63,18 @@ export const Transactions = ({
           <SelectTradeValue
             valueSelected={tradeValue}
             setValueSelected={setTradeValue}
+            setPage={setPageSmartMoneyTransaction}
           />
           <SelectMovement
             movement={filterActivity}
             setMovement={setFilterActivity}
+            setPage={setPageSmartMoneyTransaction}
           />
         </div>
       </div>
       <DataTable
         className="mt-4 bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
-        columns={columnsSmartMoneyTransaction(CHAIN)}
+        columns={columnsSmartMoneyTransaction}
         data={dataSmartMoneyTransaction || []}
         isFetching={smartMoneyTransactionQuery.isFetching}
         noneBorder
@@ -80,7 +82,7 @@ export const Transactions = ({
         emptyData="No results."
       />
       <PaginationTable
-        className="mt-8"
+        className="mt-4"
         currentPage={pageSmartMoneyTransaction}
         pageSize={10}
         total={totalSmartMoneyTransaction}

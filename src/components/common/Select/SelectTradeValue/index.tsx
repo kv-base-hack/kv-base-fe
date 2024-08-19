@@ -53,13 +53,15 @@ const renderValue = (value: string) => {
 export const SelectTradeValue = ({
   valueSelected,
   setValueSelected,
+  setPage,
 }: {
   valueSelected: unknown
   setValueSelected: (value: unknown) => void
+  setPage?: (val: number) => void
 }) => {
   return (
     <Select>
-      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-xl border border-solid border-neutral-03 bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-neutral-04">
+      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-white">
         <div className="flex items-center justify-between gap-2">
           {Array.isArray(valueSelected)
             ? valueSelected?.length === 0
@@ -94,6 +96,7 @@ export const SelectTradeValue = ({
               }
 
               setValueSelected(newValueSelected)
+              if (setPage) setPage(1)
             }
 
             return (
