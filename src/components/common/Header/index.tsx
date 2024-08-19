@@ -26,25 +26,12 @@ export const Header = ({
       menu: 'Smart Traders',
     },
     {
-      url: '/smartmoney-onchain/dashboard',
-      menu: 'Dashboard',
-    },
-    {
       url: '/find-gems',
       menu: 'Find Gems',
     },
     {
-      url: `/trading-signal?chain=${CHAIN}`,
-      menu: 'Trading Signal',
-    },
-    {
       url: '/activity',
       menu: 'Activity',
-    },
-
-    {
-      url: '/kaichat',
-      menu: 'Kaichat',
     },
   ]
 
@@ -59,7 +46,7 @@ export const Header = ({
           height={41}
           alt="logo"
         />
-        <p className="font-sora bg-conic-gradient-logo hidden bg-clip-text text-[30px] font-medium leading-10 text-transparent lg:block">
+        <p className="font-sora hidden bg-conic-gradient-logo bg-clip-text text-[30px] font-medium leading-10 text-transparent lg:block">
           KAIVEST
         </p>
       </Link>

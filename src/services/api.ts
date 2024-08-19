@@ -188,7 +188,7 @@ export const tradeStatistic = async ({
   duration: string
   token_address: string
 }): Promise<TradeStatisticResponse> => {
-  return await userApi.get('v1/user/user_trade_stats', {
+  return await api.get('v1/user/user_trade_stats', {
     params: {
       address,
       chain,
@@ -211,7 +211,7 @@ export const tradeStatisticTokens = async ({
   token_address: string
   sort_by: string
 }): Promise<TradeStatisticTokensResponse> => {
-  return await userApi.get('v1/user/user_trade_stats_for_tokens', {
+  return await api.get('v1/user/user_trade_stats_for_tokens', {
     params: {
       address,
       chain,
@@ -654,7 +654,7 @@ export const getTradeActivity = async ({
   token_address: string
   amount_filter: string
 }): Promise<TopActivityResponse> => {
-  return await userApi.get('v1/user/inspect/activities', {
+  return await api.get('v1/user/inspect/activities', {
     params: {
       chain,
       action,
@@ -743,7 +743,7 @@ export const getSmartMoneyTransaction = async ({
   action: string
   amount_filter: string
 }): Promise<SmartMoneyTransactionResponse> => {
-  return await userApi.get('/v1/token/smart_money_tx', {
+  return await api.get('/v1/token/smart_money_tx', {
     params: {
       chain,
       limit,
@@ -1302,7 +1302,7 @@ export const getUserInfo = async ({
   chain: string
   duration?: string
 }): Promise<UserInfoResponse> => {
-  return await userApi.get('/v1/user/info', {
+  return await api.get('/v1/user/info', {
     params: {
       chain,
       address,
@@ -1454,7 +1454,7 @@ export const getTopSmartMoneyTradeUsersList = ({
 }
 
 export const getSmartMoneyTokenSummary = (chain: string, address: string) => {
-  return userApi.get('/v1/token/smart_money_token_summary', {
+  return api.get('/v1/token/smart_money_token_summary', {
     params: {
       chain,
       address,
@@ -1475,7 +1475,7 @@ export const userTradeFirstTimeBuy = async ({
   token_address: string
   sort_by: string
 }): Promise<TradeStatisticTokensResponse> => {
-  return await userApi.get('v1/user/user_trade_first_time_buy', {
+  return await api.get('v1/user/user_trade_first_time_buy', {
     params: {
       address,
       chain,

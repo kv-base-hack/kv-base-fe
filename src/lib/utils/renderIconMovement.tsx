@@ -41,12 +41,7 @@ export const renderMovementIcon = (
         <CexWithdrawIcon className={className || 'h-4 w-4'} color={color} />
       )
     case 'buying':
-      return (
-        <IconShoppingCart
-          className={className || 'h-4 w-4'}
-          color={color || '#1A1D1F'}
-        />
-      )
+      return <BuyingIcon className={className || 'h-4 w-4'} />
     case 'selling':
       return <SellingIcon className={className || 'h-4 w-4'} color={color} />
     case 'new_listing_buy':

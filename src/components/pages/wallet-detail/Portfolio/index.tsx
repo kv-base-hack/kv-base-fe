@@ -1,76 +1,63 @@
-import { chainAtom } from '@/atom/chain'
 import { DataTable } from '@/components/common/DataTable'
-import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { columnsPortfolio } from '@/components/common/DataTable/columnsPortfolio'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
-import AssetsIcon from '@/components/shared/icons/wallet-explorer/AssetsIcon'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
-import { useQuery } from '@tanstack/react-query'
-import { useAtomValue } from 'jotai'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
+import { columnsTradeStatisticToken } from '../Statistic/columns-trade-statistic-token'
 
 type PortfolioProps = {
   address: string
   chain: string
+  hideSmallAsset: boolean
 }
 
-export const PortfolioComp: React.FC<PortfolioProps> = ({ address, chain }) => {
+export const PortfolioComp: React.FC<PortfolioProps> = ({
+  address,
+  chain,
+  hideSmallAsset,
+}) => {
+  const [sort, setSort] = useState('')
   // pagination portfolio in FE
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(5)
-  const CHAIN = useAtomValue(chainAtom)
+  const [itemsPerPage] = useState(8)
   // get user balance
-  const userBalanceQuery = useQuery(
-    useGetUserBalanceQuery({
-      address,
-      chain,
-      page: currentPage,
-      perPage: itemsPerPage,
-      duration: '24h',
-    }),
-  )
-  const userBalance = userBalanceQuery?.data
+  const userBalanceQuery = useGetUserBalanceQuery({
+    address,
+    chain,
+    page: currentPage,
+    perPage: itemsPerPage,
+  })
+  const userBalance = userBalanceQuery?.data?.data
 
   const totalPages = userBalance?.tokens?.length || 0
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber)
-  }
-
-  const getVisibleItems = useMemo(() => {
+  const getVisibleItems = () => {
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
     return userBalance?.tokens?.slice(startIndex, endIndex)
-  }, [currentPage, itemsPerPage, userBalance?.tokens])
+  }
 
   const dataSource = userBalanceQuery?.isFetching
-    ? [...(Array(5).keys() as any)]
-    : getVisibleItems || []
+    ? [...(Array(6).keys() as any)]
+    : getVisibleItems() || []
 
   return (
-    <WrapTable
-      className="h-full justify-start"
-      icon={<AssetsIcon />}
-      title="Assets"
-    >
-      <div className="mt-4 flex h-full flex-col justify-between">
-        <DataTable
-          className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
-          columns={columnsPortfolio(CHAIN)}
-          data={dataSource}
-          noneBorder
-          noneBgHeader
-          emptyData="No results."
-          isFetching={userBalanceQuery.isFetching}
-        />
-        <PaginationTable
-          className="mt-4"
-          currentPage={currentPage}
-          pageSize={itemsPerPage}
-          total={totalPages}
-          setPage={setCurrentPage}
-        />
-      </div>
-    </WrapTable>
+    <div className="flex h-full flex-col justify-between">
+      <DataTable
+        className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
+        columns={columnsTradeStatisticToken(setSort)}
+        data={dataSource}
+        noneBorder
+        noneBgHeader
+        emptyData="No results."
+        isFetching={userBalanceQuery.isFetching}
+      />
+      <PaginationTable
+        className="mt-4"
+        currentPage={currentPage}
+        pageSize={itemsPerPage}
+        total={totalPages}
+        setPage={setCurrentPage}
+      />
+    </div>
   )
 }

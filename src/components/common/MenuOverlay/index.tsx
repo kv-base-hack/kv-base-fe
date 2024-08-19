@@ -22,16 +22,8 @@ const MenuOverlay = ({
       menu: 'Smart Traders',
     },
     {
-      url: '/smartmoney-onchain/dashboard',
-      menu: 'Dashboard',
-    },
-    {
       url: '/find-gems',
       menu: 'Find Gems',
-    },
-    {
-      url: `/trading-signal?chain=${CHAIN}`,
-      menu: 'Trading Signal',
     },
     {
       url: '/activity',

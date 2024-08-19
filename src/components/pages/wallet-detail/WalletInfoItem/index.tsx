@@ -1,15 +1,12 @@
-import { chainAtom } from '@/atom/chain'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import Skeleton from '@/components/common/Skeleton'
-import { ChevronDown } from '@/components/shared/icons/ChevronDown'
-import { ChevronUp } from '@/components/shared/icons/ChevronUp'
+import SkeletonChart from '@/components/common/Skeleton/SkeletonChart'
+import SkeletonDefault from '@/components/common/Skeleton/SkeletonDefault'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import { cn } from '@/lib/utils'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { nFormatter } from '@/lib/utils/nFormatter'
-import { renderPrice } from '@/utils/renderPrice'
-import { useAtomValue } from 'jotai'
+import { renderPrice } from '@/lib/utils/renderPrice'
 import Link from 'next/link'
 import numeral from 'numeral'
 
@@ -23,9 +20,9 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
   name,
 }) => {
   return (
-    <div className="flex items-center justify-start gap-3 text-xl font-semibold leading-6 text-neutral-07">
-      {icon}
-      <div>{name}</div>
+    <div className="flex w-full justify-start gap-3 text-base leading-6 text-white">
+      <div className="h-6 w-6">{icon}</div>
+      <div className="font-medium">{name}</div>
     </div>
   )
 }
@@ -33,174 +30,154 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 type WalletInfoItemProps = {
   imgUrl?: string
   symbol?: string
-  name?: string
+  chain?: string
   priceChangeH24?: number
   usdPrice?: number
   avg_price?: number
-  spent?: number
+  volume?: number
   roi?: number
   pnl?: number
   address?: string
-  price?: number
   loading?: boolean
 }
 
 export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   imgUrl,
   symbol,
-  name,
+  chain,
   priceChangeH24,
   usdPrice,
   avg_price,
-  spent,
+  volume,
   roi,
   pnl,
   address,
-  price,
   loading,
 }) => {
-  const CHAIN = useAtomValue(chainAtom)
-
   return (
-    <div className="mt-2 flex w-full flex-col self-stretch">
-      <div className="mt-2 flex w-full flex-col gap-2 rounded-xl border border-solid border-[#EFEFEF] p-3">
-        <div className="flex gap-2.5 whitespace-nowrap">
-          {loading ? (
-            <Skeleton className="h-10 w-10 rounded-full" />
-          ) : (
+    <div className="flex flex-col self-stretch">
+      <div className="flex gap-4 whitespace-nowrap">
+        {loading ? (
+          <div className="h-8 w-8 overflow-hidden rounded-full">
+            <SkeletonDefault />
+          </div>
+        ) : (
+          <Link
+            href={`/smartmoney-onchain/token-explorer/${address}`}
+            className="hover:underline"
+          >
             <ImageToken imgUrl={imgUrl} symbol={symbol} className="h-8 w-8" />
-          )}
-          <div className="flex flex-1 flex-col justify-center">
-            {loading ? (
-              <Skeleton className="h-4 w-[120px] overflow-hidden rounded-full" />
-            ) : (
-              <Link
-                href={`/smartmoney-onchain/token-explorer/${address}?chain=${CHAIN}`}
-                className="hover:underline"
-              >
-                <div className="flex gap-1 overflow-hidden pr-5">
-                  <div className="max-w-[100px] truncate text-base font-medium leading-6 tracking-tight text-neutral-07">
-                    {symbol}
-                  </div>
-                  <div className="max-w-[100px] truncate text-sm font-semibold leading-6 tracking-normal text-[#A7ACB0]">
-                    {name}
-                  </div>
-                </div>
-              </Link>
-            )}
-            {loading ? (
-              <Skeleton className="mt-1 h-4 w-[120px] overflow-hidden rounded-full" />
-            ) : (
-              <div className="flex items-center gap-1">
-                <div className="text-sm font-semibold text-neutral-07">
-                  {usdPrice ? renderPrice(usdPrice) : '-'}
-                </div>
-                <div className="flex gap-2 pr-5 text-sm leading-6 tracking-normal">
-                  <div
-                    className={cn(
-                      'flex items-center justify-start leading-[140%]',
-                      priceChangeH24 && priceChangeH24 > 0
-                        ? 'text-success-500'
-                        : 'text-error-500',
-                      priceChangeH24 === 0 && 'text-neutral-07',
-                    )}
-                  >
-                    {priceChangeH24 && priceChangeH24 > 0 ? (
-                      <ChevronUp />
-                    ) : priceChangeH24 === 0 ? (
-                      ''
-                    ) : (
-                      <ChevronDown />
-                    )}
-                    {priceChangeH24}%
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center justify-between whitespace-nowrap">
-            <div className="text-sm font-medium leading-5 text-neutral-400">
-              {loading ? (
-                <Skeleton className="h-4 w-20 rounded-full" />
-              ) : (
-                'Spent'
-              )}
+          </Link>
+        )}
+        <div className="flex flex-1 flex-col justify-center gap-1">
+          {loading ? (
+            <div className="h-4 w-28 overflow-hidden rounded-full">
+              <SkeletonDefault />
             </div>
-            <div className="text-base font-semibold leading-6 tracking-normal text-neutral-07">
-              {loading ? (
-                <Skeleton className="h-4 w-20 rounded-full" />
-              ) : spent ? (
-                `$${nFormatter(spent)}`
-              ) : (
-                '-'
-              )}
-            </div>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="text-sm font-medium leading-5 text-neutral-400">
-              {loading ? (
-                <Skeleton className="h-4 w-20 rounded-full" />
-              ) : (
-                'Avg Price'
-              )}
-            </div>
-            {loading ? (
-              <div className="text-sm font-semibold leading-6 tracking-normal text-neutral-07">
-                <Skeleton className="h-4 w-20 rounded-full" />
-              </div>
-            ) : (
-              <div className="text-base font-semibold leading-6 tracking-normal text-neutral-07">
-                {avg_price ? renderPrice(avg_price) : '-'}
-              </div>
-            )}
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="text-sm font-medium leading-5 text-neutral-400">
-              {loading ? <Skeleton className="h-4 w-20 rounded-full" /> : 'ROI'}
-            </div>
-            <div
-              className={cn(
-                'text-base font-semibold leading-6 tracking-normal',
-                (roi as number) > 0
-                  ? 'text-emerald-400'
-                  : (roi as number) < 0
-                    ? 'text-error-500'
-                    : 'text-neutral-07',
-              )}
+          ) : (
+            <Link
+              href={`/smartmoney-onchain/token-explorer/${address}`}
+              className="hover:underline"
             >
-              {loading ? (
-                <Skeleton className="h-4 w-20 rounded-full" />
-              ) : roi ? (
-                (roi < 0.001 && roi > 0) || (roi > -0.001 && roi < 0) ? (
-                  numeral(roi).format('0,0.[0000]%')
+              <div className="flex gap-1 pr-5">
+                <div className="text-sm font-medium leading-6 tracking-tight text-purple-50 underline">
+                  {symbol}
+                </div>
+                {loading ? (
+                  <div className="h-4 w-28 overflow-hidden rounded-full">
+                    <SkeletonDefault />
+                  </div>
                 ) : (
-                  `${roi?.toFixed(2)}%`
-                )
+                  <div className="flex gap-2 pr-5 text-sm font-medium leading-6 tracking-normal">
+                    <div
+                      className={cn(
+                        'flex items-center justify-start leading-[140%]',
+                        priceChangeH24 && (priceChangeH24 as number) > 0
+                          ? 'text-green'
+                          : 'text-error-500',
+                        priceChangeH24 === 0 && 'text-neutral-dark-03',
+                      )}
+                    >
+                      {priceChangeH24 &&
+                      priceChangeH24 !== 0 &&
+                      (priceChangeH24 as number) > 0 ? (
+                        <PercentUpIcon />
+                      ) : (
+                        <PercentDownIcon />
+                      )}
+                      {priceChangeH24?.toFixed(2)}%
+                    </div>
+                    <div className="text-neutral-50">
+                      {renderPrice(usdPrice as number)}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </Link>
+          )}
+        </div>
+      </div>
+      <div className="mt-3 flex w-full flex-col rounded-xl border border-solid border-white border-opacity-10 p-2">
+        <div className="flex gap-5">
+          <div className="flex flex-1 flex-col justify-center">
+            <div className="text-sm font-medium leading-5 text-neutral-400">
+              Avg Entry/Vol Buy
+            </div>
+            <div className="mt-1 text-base font-medium leading-6 tracking-normal text-neutral-50">
+              {loading ? (
+                <div className="h-4 w-28 overflow-hidden rounded-full">
+                  <SkeletonDefault />
+                </div>
+              ) : avg_price ? (
+                formatPriceNumber(avg_price)
+              ) : (
+                '-'
+              )}
+            </div>
+            <div
+              className={cn(
+                'mt-1 flex justify-start text-base font-medium leading-6 tracking-normal',
+                (volume as number) >= 0 ? 'text-green' : 'text-error-500',
+              )}
+            >
+              {loading ? (
+                <div className="h-4 w-28 overflow-hidden rounded-full">
+                  <SkeletonDefault />
+                </div>
+              ) : volume ? (
+                formatPriceNumber(volume)
               ) : (
                 '-'
               )}
             </div>
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-1 flex-col whitespace-nowrap text-right">
             <div className="text-sm font-medium leading-5 text-neutral-400">
-              {loading ? <Skeleton className="h-4 w-20 rounded-full" /> : 'PnL'}
+              Total Profit/Avg ROI
+            </div>
+            <div className="mt-1 flex w-full justify-end text-base font-medium leading-6 tracking-normal text-neutral-50">
+              {loading ? (
+                <div className="h-4 w-28 overflow-hidden rounded-full">
+                  <SkeletonDefault />
+                </div>
+              ) : pnl ? (
+                formatPriceNumber(pnl)
+              ) : (
+                '-'
+              )}
             </div>
             <div
               className={cn(
-                'text-base font-semibold leading-6 tracking-normal',
-                (pnl as number) > 0
-                  ? 'text-emerald-400'
-                  : (pnl as number) < 0
-                    ? 'text-error-500'
-                    : 'text-neutral-07',
+                'mt-1 flex justify-end text-base font-medium leading-6 tracking-normal',
+                (roi as number) >= 0 ? 'text-green' : 'text-error-500',
               )}
             >
               {loading ? (
-                <Skeleton className="h-4 w-20 rounded-full" />
-              ) : pnl ? (
-                `$${nFormatter(pnl)}`
+                <div className="h-4 w-28 overflow-hidden rounded-full">
+                  <SkeletonDefault />
+                </div>
+              ) : roi ? (
+                formatPriceNumber(roi)
               ) : (
                 '-'
               )}

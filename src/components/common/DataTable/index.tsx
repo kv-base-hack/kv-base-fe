@@ -126,7 +126,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <TableCell
                     key={cell.id}
-                    className="px-1.5 font-normal first-of-type:pl-4 last-of-type:pr-4"
+                    className="px-1.5 py-4 font-normal first-of-type:pl-4 last-of-type:pr-4"
                   >
                     {isFetching ? (
                       <div

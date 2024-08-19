@@ -10,6 +10,7 @@ export interface TokenStat {
   chain?: string
   cex_symbol: string
   name: string
+  time?: string
   chainId: string
   sourcePrice: string
   imageUrl: string
@@ -29,9 +30,14 @@ export interface TokenStat {
   pnl: number
   avg_roi: number
   realized_percent: number
+  realized_percent_30d: number
+  unrealized_percent_30d: number
+  total_profit_30d: number
+  balance: number
   volume: number
   avg_price: number
   roi: number
+  entry_price_sell: number
 }
 
 export interface TradeStatisticTokensResponse {

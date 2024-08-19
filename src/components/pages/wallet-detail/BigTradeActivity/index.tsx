@@ -1,35 +1,25 @@
-import { chainAtom } from '@/atom/chain'
-import { TokenFilter } from '@/components/common/Card/TokenFilter'
 import { DataTable } from '@/components/common/DataTable'
-import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { columnsBigTradeActivity } from '@/components/common/DataTable/columnsBigTradeActivity'
-
-import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
-import { SelectMovement } from '@/components/common/Select/SelectMovements'
-import { SelectTradeValue } from '@/components/common/Select/SelectTradeValue'
-
-import { Switch } from '@/components/ui/switch'
 import { useTradeActivityQuery } from '@/query/wallet-explorer/getTradeActivity'
 import { TokenList } from '@/types/tokenList'
-import { useAtomValue } from 'jotai'
 import { useState } from 'react'
+import { columnsActivityWalletDetail } from './columns-activity-wallet-detail'
 
 type BigTradeActivityProps = {
   address: string
   chain: string
+  hideSmallTrade: boolean
 }
 
 export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
   address,
   chain,
+  hideSmallTrade,
 }) => {
   const [pageActivity, setPageActivity] = useState(1)
   const [filterActivity, setFilterActivity] = useState('all')
   const [listToken, setListToken] = useState<TokenList[]>([])
   const [tradeValue, setTradeValue] = useState<unknown>([])
-  const [showBigTradeBigger5k, setShowBigTradeBigger5k] = useState(false)
-
   // get data Big Trade Activity
   const activityQuery = useTradeActivityQuery({
     action: filterActivity,
@@ -38,7 +28,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
     chain,
     address,
     amount_filter: tradeValue?.toString() || '',
-    is_big_trade_only: showBigTradeBigger5k,
+    is_big_trade_only: hideSmallTrade,
     token_address:
       listToken?.map((item) => item.tokenAddress)?.toString() || '',
   })
@@ -48,26 +38,25 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
     : activityQuery.data?.data.activities || []
   const totalActivity = activityQuery.data?.data.total || 1
 
-  const handleRemoveToken = (item: TokenList) => (e: any) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const newListToken = listToken.filter(
-      (token) => token.tokenAddress !== item.tokenAddress,
-    )
-    setListToken([...newListToken])
-  }
+  // const handleRemoveToken = (item: TokenList) => (e: any) => {
+  //   e.preventDefault()
+  //   e.stopPropagation()
+  //   const newListToken = listToken.filter(
+  //     (token) => token.tokenAddress !== item.tokenAddress,
+  //   )
+  //   setListToken([...newListToken])
+  // }
 
-  const handleFilterBigTrade = (checked: boolean) => {
-    setShowBigTradeBigger5k(checked)
-  }
+  // const handleFilterBigTrade = (checked: boolean) => {
+  //   setShowBigTradeBigger5k(checked)
+  // }
 
   return (
-    <WrapTable
-      title={
+    <div>
+      {/* <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div>Trade Activity</div>
           <div className="flex items-center gap-4">
-            <span className="font-normal leading-5 tracking-[-0.14px]">
+            <span className="text-sm not-italic font-normal leading-5 tracking-[-0.14px]">
               {`Only show big trade(>$5K)`}
             </span>
             <Switch
@@ -76,18 +65,37 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
             />
           </div>
         </div>
-      }
-      childHeader={
         <div className="flex items-center gap-4 max-md:flex-wrap">
+          <div className="my-auto text-base tracking-normal leading-6 text-zinc-50">
+            Filter by
+          </div>
           <div className="flex items-center gap-2">
+            <DialogSelectToken
+              listToken={listToken}
+              setListToken={setListToken}
+            >
+              <div className="rounded-3xl h-10 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]">
+                <div className="bg-background cursor-pointer rounded-3xl flex items-center justify-center px-7 h-full text-sm tracking-normal leading-5 text-white">
+                  Choose Token
+                </div>
+              </div>
+            </DialogSelectToken>
             {listToken?.length > 0 ? (
               <div className="flex items-center gap-2">
                 {listToken.map((item) => (
-                  <TokenFilter
-                    token={item}
-                    key={item.address}
-                    onClick={handleRemoveToken(item)}
-                  />
+                  <div
+                    className="rounded-3xl h-9 p-px bg-gradient-to-r from-[#9945FF] to-[#14F195] shadow-lg backdrop-blur-[2px]"
+                    key={item.tokenAddress}
+                  >
+                    <div className="bg-neutral-07 cursor-pointer rounded-3xl flex items-center justify-center px-4 gap-1 h-full text-sm tracking-normal leading-5 text-white">
+                      <ImageToken
+                        imgUrl={item?.imageUrl}
+                        symbol={item?.symbol}
+                      />
+                      <div>{item.symbol}</div>
+                      <Close onclick={handleRemoveToken(item)} />
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : null}
@@ -95,18 +103,19 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
           <SelectTradeValue
             valueSelected={tradeValue}
             setValueSelected={setTradeValue}
+            setPage={setPageActivity}
           />
           <SelectMovement
             movement={filterActivity}
             setMovement={setFilterActivity}
+            setPage={setPageActivity}
           />
         </div>
-      }
-    >
-      <div className="mt-8">
+      </div> */}
+      <div>
         <DataTable
-          className="text-xs font-bold leading-4 tracking-normal"
-          columns={columnsBigTradeActivity(chain)}
+          className="bg-neutral-06 bg-neutral-07/50 text-xs font-normal leading-4 tracking-normal text-gray-300"
+          columns={columnsActivityWalletDetail}
           data={dataActivity?.slice(0, 10) || []}
           isFetching={activityQuery.isFetching}
           noneBorder
@@ -121,6 +130,6 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
         total={totalActivity}
         setPage={setPageActivity}
       />
-    </WrapTable>
+    </div>
   )
 }

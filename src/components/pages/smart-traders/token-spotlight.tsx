@@ -9,13 +9,13 @@ import CircularProgress from '@/components/common/CircularProgress'
 
 import { IconUsers } from '@/components/ui/icons'
 import { useQuery } from '@tanstack/react-query'
-import { CardBalanceToken } from '../gem-analytics/smart-money-overview/card-balance-token'
 import {
   IconCoinHand,
   IconTrendUp,
   IconCart,
 } from '@/components/shared/icons/wallet-explorer/icon-trader-spotlight'
 import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
+import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
 
 const PieChartX = PieChart as any
 
@@ -135,7 +135,7 @@ export const TokenSpotLight = ({
                 data={dataChart}
                 dataKey="percent"
                 nameKey="type"
-                innerRadius={100}
+                innerRadius={90}
                 outerRadius={130}
                 strokeWidth={5}
                 paddingAngle={8}
