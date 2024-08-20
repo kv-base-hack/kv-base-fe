@@ -274,6 +274,7 @@ export const TableFindGemsSmartMoneyHolding = ({
           )
         },
         align: 'end',
+        width: 128,
       },
     ]
   }, [page, perPage, setSort])

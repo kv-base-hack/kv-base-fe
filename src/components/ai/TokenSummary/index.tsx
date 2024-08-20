@@ -4,7 +4,6 @@
 import { TokenList } from '@/types/tokenList'
 import React from 'react'
 import { BotMessage } from '../../common'
-import { TokenItem } from '../../common/Search/TokenItem'
 import { runAnalysis } from './action'
 import { StreamableValue, useActions, useUIState } from 'ai/rsc'
 import { AI } from '@/app/kaichat/action'
@@ -88,7 +87,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
       <h2 className="text-base font-semibold text-neutral-07">
         Please choose token you want to Analyze
       </h2>
-      <div className="mt-4 grid w-[80%] grid-cols-3 gap-2 lg:grid-cols-4 xl:w-[100%] xl:grid-cols-5 3xl:grid-cols-6">
+      {/* <div className="mt-4 grid w-[80%] grid-cols-3 gap-2 lg:grid-cols-4 xl:w-[100%] xl:grid-cols-5 3xl:grid-cols-6">
         {tokens.map((token, index: number) => (
           <TokenItem
             key={index}
@@ -96,7 +95,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
             onClick={() => onClickToken(token)}
           />
         ))}
-      </div>
+      </div> */}
       {selectedToken ? (
         <div className="mt-8 flex items-start gap-4">
           <LogoChat className="h-8 w-8 shrink-0" />

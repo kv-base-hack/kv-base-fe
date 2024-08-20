@@ -272,6 +272,7 @@ export const TableFindGemsFisrtTimeBuy = ({
           return <StVol buyVol={buy_usdt_amount} sellVol={sell_usdt_amount} />
         },
         align: 'end',
+        width: 128,
       },
     ]
   }, [page, perPage, setSort])

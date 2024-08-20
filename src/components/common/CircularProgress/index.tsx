@@ -1,18 +1,18 @@
+import { checkScoreToken } from '@/utils/checkScoreToken'
+import numeral from 'numeral'
 import React from 'react'
 
 const CircularProgress = ({
   percentage,
   size = 100,
-  lineWidth = 1,
-  color = '#32AE60',
-  colorInactive = '#32ae604d',
+  lineWidth = 2,
+  colorInactive = '#BDBDBD1A',
   fontSize = 12,
   isText = true,
 }: {
   percentage: number
   size?: number
   lineWidth?: number
-  color?: string
   colorInactive?: string
   fontSize?: number
   isText?: boolean
@@ -36,7 +36,7 @@ const CircularProgress = ({
         cy={size / 2}
         r={radius}
         fill="none"
-        stroke={color}
+        stroke={checkScoreToken(percentage).scoreColor}
         strokeWidth={lineWidth}
         strokeDasharray={circumference}
         strokeDashoffset={circumference - progressLength}
@@ -49,9 +49,9 @@ const CircularProgress = ({
           textAnchor="middle"
           dy=".3em"
           fontSize={fontSize}
-          fill="#BDBDBD"
+          fill={checkScoreToken(percentage).color}
         >
-          {percentage}
+          {numeral(percentage).format('0,0,[0]')}
         </text>
       )}
     </svg>

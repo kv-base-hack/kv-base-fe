@@ -12,8 +12,8 @@ export const StVol = ({
   const percentSell = (sellVol / total) * 100
 
   return (
-    <div>
-      <div className="flex items-start gap-2">
+    <div className="w-full">
+      <div className="flex items-start justify-between gap-2">
         <div className="flex flex-col items-start">
           <p className="text-sm font-medium text-neutral-500">Buy Vol</p>
           <p className="text-neutral-03">${nFormatter(buyVol)}</p>

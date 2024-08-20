@@ -283,6 +283,7 @@ export const TableFindGemsSMNewListingsBuy = ({
           )
         },
         align: 'end',
+        width: 128,
       },
     ]
   }, [duration, page, perPage, setSort])
