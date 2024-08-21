@@ -23,8 +23,6 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({
   const userBalanceQuery = useGetUserBalanceQuery({
     address,
     chain,
-    page: currentPage,
-    perPage: itemsPerPage,
   })
   const userBalance = userBalanceQuery?.data?.data
 

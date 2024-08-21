@@ -210,63 +210,65 @@ export default function WalletExplorerDetail({
     <div className="h-full w-full">
       <div className="mx-4 mt-2 flex flex-col justify-center gap-2 self-stretch md:flex-row md:flex-wrap xl:flex-nowrap">
         {/* left */}
-        <div className="max-w-1/2 flex w-full flex-col self-stretch overflow-hidden rounded-2xl border border-solid border-white/10 bg-black/50 shadow-2xl backdrop-blur-lg md:w-1/2 xl:w-1/4">
-          <div className="mt-6 flex gap-4 whitespace-nowrap px-5 text-base font-medium leading-6 tracking-normal text-[#EFEFEF]">
-            <ImageRanking ranking={userInfo?.ranking} size={56} />
-            <div>
-              <div className="flex items-center gap-2">
-                <div>{`${params.groupId?.substring(
-                  0,
-                  6,
-                )}...${params.groupId?.slice(-6)}`}</div>
-                <div className="mt-1">
-                  <CopyCustom
-                    value={params.groupId}
-                    icon={<IconCopyAddress />}
+        <div className="max-w-1/2 flex w-full flex-col gap-4 self-stretch overflow-hidden rounded-2xl border border-solid border-white/10 bg-black/50 p-4 shadow-2xl backdrop-blur-lg md:w-1/2 xl:w-1/4">
+          <div className="flex flex-col gap-2">
+            <div className="mt-6 flex gap-4 whitespace-nowrap px-5 text-base font-medium leading-6 tracking-normal text-[#EFEFEF]">
+              <ImageRanking ranking={userInfo?.ranking} size={56} />
+              <div>
+                <div className="flex items-center gap-2">
+                  <div>{`${params.groupId?.substring(
+                    0,
+                    6,
+                  )}...${params.groupId?.slice(-6)}`}</div>
+                  <div className="mt-1">
+                    <CopyCustom
+                      value={params.groupId}
+                      icon={<IconCopyAddress />}
+                    />
+                  </div>
+                  <a
+                    href={`https://solscan.io/account/${params.groupId}`}
+                    target="_blank"
+                  >
+                    <Image
+                      loading="lazy"
+                      src="/images/scan.webp"
+                      className="h-[23px] w-[23px]"
+                      width={23}
+                      height={23}
+                      alt="scan"
+                    />
+                  </a>
+                </div>
+                <div className="mt-2 flex items-end">
+                  {userInfo?.badges?.map((item, index) => {
+                    return (
+                      <Image
+                        key={index}
+                        src={`/images/badges/${item}.png`}
+                        alt={item}
+                        width={24}
+                        height={24}
+                      />
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-2 px-5 text-base tracking-normal text-zinc-300">
+              <div className="flex items-center gap-1 text-neutral-400">
+                <LastDateIcon />
+                <div>Last trade</div>
+              </div>
+              {userInfo?.last_activity ? (
+                <div className="font-medium">
+                  <ReactTimeAgo
+                    date={new Date(userInfo.last_activity)}
+                    locale="en-US"
                   />
                 </div>
-                <a
-                  href={`https://solscan.io/account/${params.groupId}`}
-                  target="_blank"
-                >
-                  <Image
-                    loading="lazy"
-                    src="/images/scan.webp"
-                    className="h-[23px] w-[23px]"
-                    width={23}
-                    height={23}
-                    alt="scan"
-                  />
-                </a>
-              </div>
-              <div className="mt-2 flex items-end">
-                {userInfo?.badges?.map((item, index) => {
-                  return (
-                    <Image
-                      key={index}
-                      src={`/images/badges/${item}.png`}
-                      alt={item}
-                      width={24}
-                      height={24}
-                    />
-                  )
-                })}
-              </div>
+              ) : null}
             </div>
-          </div>
-          <div className="mt-2.5 flex gap-2 px-5 text-base tracking-normal text-zinc-300">
-            <div className="flex items-center gap-1 text-neutral-400">
-              <LastDateIcon />
-              <div>Last trade</div>
-            </div>
-            {userInfo?.last_activity ? (
-              <div className="font-medium">
-                <ReactTimeAgo
-                  date={new Date(userInfo.last_activity)}
-                  locale="en-US"
-                />
-              </div>
-            ) : null}
           </div>
           <WalletInfoPieChart address={params.groupId} />
         </div>
@@ -279,7 +281,7 @@ export default function WalletExplorerDetail({
           className="relative order-3 flex h-[unset] w-full items-center gap-4 p-6 font-normal xl:order-2 xl:w-1/2"
         >
           <div className="h-px w-full bg-white/10" />
-          <div className="flex w-full items-center gap-4">
+          <div className="flex w-full gap-6">
             <div className="mt-2 w-[55%]">
               <div className="flex w-full items-center justify-between gap-16">
                 <div className="w-1/2">

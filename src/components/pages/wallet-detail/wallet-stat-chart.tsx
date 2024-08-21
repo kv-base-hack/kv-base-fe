@@ -32,20 +32,22 @@ export function WalletStatChart({ userInfoChart }: any) {
   }
 
   return (
-    <ChartContainer config={chartConfig} className="z-50 ml-2 aspect-square">
-      <RadarChartX width={300} height={290} data={chartData}>
-        <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent hideLabel />}
-        />
-        <PolarAngleAxis dataKey="month" />
-        <PolarGrid />
-        <Radar
-          dataKey="desktop"
-          fill="var(--color-desktop)"
-          fillOpacity={0.6}
-        />
-      </RadarChartX>
-    </ChartContainer>
+    <div className="h-[290px] w-[300px]">
+      <ChartContainer config={chartConfig} className="z-50 aspect-square">
+        <RadarChartX data={chartData}>
+          <ChartTooltip
+            cursor={false}
+            content={<ChartTooltipContent hideLabel />}
+          />
+          <PolarAngleAxis dataKey="month" />
+          <PolarGrid />
+          <Radar
+            dataKey="desktop"
+            fill="var(--color-desktop)"
+            fillOpacity={0.6}
+          />
+        </RadarChartX>
+      </ChartContainer>
+    </div>
   )
 }
