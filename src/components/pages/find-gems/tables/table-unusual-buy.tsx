@@ -40,7 +40,7 @@ export const FindGemsTabFreshWalletUnusual: React.FC<
     useFindGemsFreshWalletUnusualQuery({
       limit: currentPerPage,
       start: currentPage,
-      chain: 'solana',
+      chain: 'base',
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,
       market_cap_min: filter.minMarketcap,
