@@ -26,10 +26,6 @@ const chatApi = axios.create({
   baseURL: 'https://api-chat.kaivest.net',
 })
 
-const solanaApi = axios.create({
-  baseURL: 'https://api-solana.kaivest.net',
-})
-
 const userApi = axios.create({
   baseURL: 'https://api.kaivest.net/user-onchain',
 })

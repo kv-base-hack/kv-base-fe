@@ -41,7 +41,7 @@ export const FindGemsTabTopBuys: React.FC<FindGemsTabTopBuysProps> = ({
     useGetTopTokenBuy({
       limit: currentPerPage,
       start: currentPage,
-      chain: 'solana',
+      chain: 'base',
       duration: currentDuration,
       action: 'buying',
       price_change_24h_min: filter.min24hVolumn,

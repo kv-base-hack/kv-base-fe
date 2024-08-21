@@ -1091,7 +1091,7 @@ export const getFindGemsSMNewListingsBuy = async ({
   sort_by?: string
   duration: string
 }): Promise<NewListingBuyResponse> => {
-  return await api.get('/v1/fidngems/smart_money_new_listing_buy', {
+  return await api.get('/v1/findgems/smart_money_new_listing_buy', {
     params: {
       start,
       limit,
@@ -1391,7 +1391,7 @@ export const getTopSmartMoneyTradeUsersList = ({
 }: TopSmartMoneyTradeUsersListProps) => {
   switch (type) {
     case 'trade':
-      return api.get('/v1/token/top_smart_money_trade_users_list', {
+      return api.get('/v1/findgems/top_smart_money_trade_users_list', {
         params: {
           chain,
           limit,
@@ -1401,7 +1401,7 @@ export const getTopSmartMoneyTradeUsersList = ({
         },
       })
     case 'unusual_buy':
-      return api.get('/v1/token/unusual_token_buy_users_list', {
+      return api.get('/v1/findgems/unusual_token_buy_users_list', {
         params: {
           chain,
           limit,
@@ -1411,7 +1411,7 @@ export const getTopSmartMoneyTradeUsersList = ({
         },
       })
     case 'new_listing_buy':
-      return api.get('/v1/token/smart_money_new_listing_buy_users_list', {
+      return api.get('/v1/findgems/smart_money_new_listing_buy_users_list', {
         params: {
           chain,
           limit,
@@ -1421,7 +1421,7 @@ export const getTopSmartMoneyTradeUsersList = ({
         },
       })
     case 'profit':
-      return api.get('/v1/token/smart_money_token_profit_users_list', {
+      return api.get('/v1/findgems/smart_money_token_profit_users_list', {
         params: {
           chain,
           limit,
@@ -1441,7 +1441,7 @@ export const getTopSmartMoneyTradeUsersList = ({
         },
       })
     default:
-      return api.get('/v1/token/smart_money_token_profit_users_list', {
+      return api.get('/v1/findgems/smart_money_token_profit_users_list', {
         params: {
           chain,
           limit,

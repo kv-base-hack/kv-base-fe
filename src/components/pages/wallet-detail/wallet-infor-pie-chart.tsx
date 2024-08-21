@@ -54,7 +54,7 @@ const PieChartX = PieChart as any
 export function WalletInfoPieChart({ address }: { address: string }) {
   const userBalanceQuery = useGetUserBalanceQuery({
     address,
-    chain: 'solana',
+    chain: 'base',
     page: 1,
     perPage: 10,
   })

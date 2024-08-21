@@ -77,7 +77,7 @@ export const TokenSpotLight = ({
 }) => {
   const leaderboardSpotlightQuery = useQuery(
     useLeaderboardSpotlightQuery({
-      chain: 'solana',
+      chain: 'base',
       duration: durationSpotlight,
     }),
   )
