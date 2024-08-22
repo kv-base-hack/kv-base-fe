@@ -3,7 +3,7 @@ import { ActivitySmartMoneyOfTokenResponse } from '@/types/activitySmartMoneyOfT
 import { CexDepositResponse } from '@/types/cexDeposit'
 import { CexWithdrawResponse } from '@/types/cexWithdraw'
 import { CourseResponse } from '@/types/course'
-import { DexTradingSignalResponse } from '@/types/trading-signal/dexTradingSignal'
+import { DataDexTradingSignal, DexTradingSignalResponse } from '@/types/trading-signal/dexTradingSignal'
 import { FindGemsDepositResponse } from '@/types/find-gems/deposit'
 import { FindGemsSmartMoneyHoldingResponse } from '@/types/find-gems/smartMoneyHolding'
 import { FindGemsUnusualCexResponse } from '@/types/find-gems/unusual-cex'
@@ -1261,25 +1261,25 @@ export const getListChanel = async (): Promise<ListChannelResponse> => {
   return await signalApi.get(`/channels`)
 }
 
-export const getDexTradingSignal = async ({
+export const getDexTradingSignal = ({
   start,
   limit,
   type,
-  addresses,
+  token_addresses,
   chain,
 }: {
   start: number
   limit: number
   type?: string
-  addresses?: string
+  token_addresses?: string
   chain?: string
-}): Promise<DexTradingSignalResponse> => {
-  return await signalApi.get(`/dex-signals`, {
+}) => {
+  return signalApi.get<DataDexTradingSignal>(`/dex-signals`, {
     params: {
       page: start,
       perPage: limit,
       type,
-      addresses,
+      addresses: token_addresses,
       chain,
     },
   })
@@ -1432,6 +1432,16 @@ export const getTopSmartMoneyTradeUsersList = ({
       })
     case 'find-gems-sm-holding':
       return api.get('/v1/findgems/smart_money_holding_users_list', {
+        params: {
+          chain,
+          limit,
+          start,
+          address,
+          duration,
+        },
+      })
+    case 'first-time-buy':
+      return api.get('/v1/findgems/first_time_buy_users_list', {
         params: {
           chain,
           limit,

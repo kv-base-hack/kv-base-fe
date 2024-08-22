@@ -6,20 +6,19 @@ import {
   DialogContent,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import { useMemo, useState } from 'react'
 import { cn } from '@/lib/utils'
 import numeral from 'numeral'
+import { IconArrowColorRightUp } from '@/components/shared/icons/ArrowColorRightUp'
 import { useQuery } from '@tanstack/react-query'
+import { useGetTopSmartMoneyTradeQuery } from '@/query/top-smart-money/getTopSmartMoneyTrade'
 import Close from '@/components/shared/icons/Close'
 import Link from 'next/link'
-import { useGetTopSmartMoneyTradeQuery } from '@/query/leaderboard/getTopSmartMoneyTrade'
-import { IconArrowColorRightUp } from '@/components/shared/icons/IconArrowColorRightUp'
-import { nFormatter } from '@/utils/nFormatter'
 import { DataTable } from '../DataTable'
-import { useAtomValue } from 'jotai'
-import { chainAtom } from '@/atom/chain'
 import { PaginationTable } from '../Pagination/PaginationTable'
+import { CHAIN } from '@/constant/chain'
 
 interface ListWalletProps {
   user_address: string
@@ -38,7 +37,6 @@ export const DialogNumberOfSmartMoney = ({
   type: string
   duration: string
 }) => {
-  const CHAIN = useAtomValue(chainAtom)
   const [start, setStart] = useState(1)
   const [limit, setLimit] = useState(5)
   const [visible, setVisible] = useState(false)
@@ -66,7 +64,7 @@ export const DialogNumberOfSmartMoney = ({
         accessorKey: 'id',
         cell: ({ row }) => {
           return (
-            <div className="text-base font-semibold">
+            <div className="text-base font-semibold text-neutral-400">
               {row.index + 1 + (start - 1) * limit}
             </div>
           )
@@ -79,12 +77,12 @@ export const DialogNumberOfSmartMoney = ({
           const address = row.original.user_address
           return (
             <Link href={`/smartmoney-onchain/wallet-explorer/${address}`}>
-              <div className="flex items-center gap-3 text-base font-semibold">
+              <div className="flex items-center gap-3 text-base font-semibold text-neutral-300">
                 <p className="hover:underline">
                   {address?.substring(0, 6)}..
                   {address?.substring(address?.length - 4, address?.length)}
                 </p>
-                <div className="rounded-full bg-[#D8F0FF] p-1">
+                <div className="rounded-full border border-white/10 bg-[#1a1d1f80] p-1">
                   <IconArrowColorRightUp />
                 </div>
               </div>
@@ -99,9 +97,7 @@ export const DialogNumberOfSmartMoney = ({
             <div
               className={cn(
                 'flex items-center gap-1 text-sm font-semibold',
-                row.original.roi >= 0
-                  ? 'text-semantic-success-1'
-                  : 'text-semantic-error-1',
+                row.original.roi >= 0 ? 'text-green' : 'text-error-500',
               )}
             >
               <p>ROI:</p>
@@ -120,15 +116,15 @@ export const DialogNumberOfSmartMoney = ({
             <div
               className={cn(
                 'flex items-center gap-1',
-                pnl < 0 ? 'text-semantic-error-1' : 'text-semantic-success-1',
+                pnl < 0 ? 'text-error-500' : 'text-green',
               )}
             >
               PNL:
               <p>
-                $
                 {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
                   ? numeral(pnl).format('0,0.[000000]')
                   : nFormatter(pnl)}
+                $
               </p>
             </div>
           )
@@ -139,50 +135,43 @@ export const DialogNumberOfSmartMoney = ({
   }, [limit, start])
   return (
     <>
-      {number > 0 ? (
-        <Dialog>
-          <DialogTrigger>
-            <div
-              className="whitespace-nowrap text-sm not-italic leading-5 underline"
-              onClick={() => setVisible(true)}
-            >
-              {nFormatter(number)}
+      <Dialog>
+        <DialogTrigger>
+          <div
+            className="whitespace-nowrap text-sm font-medium not-italic leading-5 text-neutral-300 underline"
+            onClick={() => setVisible(true)}
+          >
+            {nFormatter(number)}
+          </div>
+        </DialogTrigger>
+        <DialogContent className="max-w-[617px] !rounded-xl !border-none !p-0">
+          <div className="flex flex-col gap-4 rounded-xl bg-[#1e1e1e80] p-4">
+            <div className="relative">
+              <p className="text-center text-xl font-medium text-neutral-02">
+                List of Wallet
+              </p>
+              <DialogClose className="absolute right-0 top-0.5">
+                <Close />
+              </DialogClose>
             </div>
-          </DialogTrigger>
-          <DialogContent className="max-w-[617px] !rounded-xl !border-none !p-0">
-            <div className="flex flex-col gap-4 rounded-xl bg-neutral-01 p-4">
-              <div className="relative">
-                <p className="text-center text-xl font-medium text-neutral-07">
-                  List of Wallet
-                </p>
-                <DialogClose className="absolute right-0 top-0.5">
-                  <Close />
-                </DialogClose>
-              </div>
 
-              <DataTable
-                data={listUsers}
-                columns={columns}
-                emptyData="No result!!!"
-                classNameHeader="hidden"
-                isFetching={topSmartMoneyTradeQuery.isFetching}
-              />
+            <DataTable
+              data={listUsers}
+              columns={columns}
+              emptyData="No result!!!"
+              classNameHeader="hidden"
+              isFetching={topSmartMoneyTradeQuery.isFetching}
+            />
 
-              <PaginationTable
-                currentPage={start}
-                pageSize={limit}
-                total={total}
-                setPage={setStart}
-              />
-            </div>
-          </DialogContent>
-        </Dialog>
-      ) : (
-        <div className="whitespace-nowrap text-sm not-italic leading-5">
-          {' '}
-          {nFormatter(number)}
-        </div>
-      )}
+            <PaginationTable
+              currentPage={start}
+              pageSize={limit}
+              total={total}
+              setPage={setStart}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   )
 }

@@ -1,3 +1,4 @@
+import CircularProgress from '@/components/common/CircularProgress'
 import { CopyCustom } from '@/components/common/CopyCustom'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
@@ -29,15 +30,7 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
       }
       childHeader={
         <div className="flex items-center gap-2">
-          <div
-            style={{
-              color: checkScoreToken(dataTokenInfo?.score).scoreColor,
-              borderColor: checkScoreToken(dataTokenInfo?.score).scoreColor,
-            }}
-            className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-solid text-sm"
-          >
-            {Math.floor(dataTokenInfo?.score)}
-          </div>
+          <CircularProgress percentage={dataTokenInfo?.score} size={24} />
           <div
             style={{
               backgroundColor: checkScoreToken(dataTokenInfo?.score)

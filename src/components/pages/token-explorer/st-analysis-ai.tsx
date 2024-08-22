@@ -96,7 +96,7 @@ export function StAnalysisByAI({ params }: { params: { token: string } }) {
                   : 'text-core',
               )}
             >
-              {renderPrice(dataTokenInfoTrade?.total_profit || 0)}$
+              {renderPrice(dataTokenInfoTrade?.total_profit || 0)}
             </div>
           </div>
           <div className="flex flex-1 cursor-pointer flex-col items-start">

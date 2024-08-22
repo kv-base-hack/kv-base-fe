@@ -1,4 +1,3 @@
-import { ImageToken } from '@/components/common/Image/ImageToken'
 import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
 import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import { cn } from '@/lib/utils'
@@ -12,19 +11,25 @@ import {
   renderMovementIcon,
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
-import { ExternalLink, FilterIcon } from 'lucide-react'
+import { FilterIcon } from 'lucide-react'
 import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
+import { SmartTradersCell } from '../../Cell/smart-traders'
 
 export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
   {
     accessorKey: 'time',
     header: () => 'Time',
     cell: ({ row }) => {
-      const { time } = row.original
+      console.log(row.original)
+      const { time, scan_link } = row.original
       return (
         <div className="flex items-center gap-1 text-neutral-04">
           {moment(time).format('MMM DD, HH:mm')}
-          <TimeAgoIcon />
+          <Link href={scan_link} passHref legacyBehavior>
+            <a target="_blank">
+              <TimeAgoIcon />
+            </a>
+          </Link>
         </div>
       )
     },
@@ -39,46 +44,10 @@ export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
     ),
     enableSorting: false,
     cell: ({ row }) => {
-      const { sender } = row.original
-      return (
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-1">
-            <div className="flex items-center gap-1">
-              <Link
-                className="max-w-32 truncate underline"
-                href={`/smartmoney-onchain/wallet-explorer/${sender}`}
-              >
-                {sender}
-              </Link>
-              <FilterIcon className="h-4 w-4" />
-            </div>
-          </div>
-        </div>
-      )
+      console.log(row.original)
+      return <SmartTradersCell data={row.original} />
     },
   },
-  // {
-  //   accessorKey: 'symbol',
-  //   header: () => 'Tokens',
-  //   enableSorting: false,
-  //   cell: ({ row }) => {
-  //     const { symbol } = row.original
-  //     return row?.original?.token_address ? (
-  //       <Link
-  //         href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
-  //         className="flex font-medium gap-3 items-center justify-between text-right text-neutral-300"
-  //       >
-  //         <ImageToken imgUrl={row?.original?.token_image_url} symbol={symbol} />
-  //         <div>{symbol}</div>
-  //       </Link>
-  //     ) : (
-  //       <div className="flex gap-3 cursor-not-allowed items-center justify-between text-right">
-  //         <ImageToken imgUrl={row?.original?.token_image_url} symbol={symbol} />
-  //         <div className="font-medium text-neutral-300">{symbol}</div>
-  //       </div>
-  //     )
-  //   },
-  // },
   {
     accessorKey: 'movements',
     header: () => {

@@ -5,6 +5,7 @@ import { FindGemsTabTopBuys } from './tables/table-find-gems-top-buys'
 import { FindGemsTabSMNewListingsBuy } from './tables/table-find-gems-new-listing-buy'
 import { FindGemsTabFreshWalletUnusual } from './tables/table-unusual-buy'
 import { FindGemsFirstTimeBuy } from './tables/table-first-time-buy'
+import { FindGemsTopAiScore } from './tables/table-top-ai-score'
 
 interface FindGemsTabsProps {
   activeTab: ActiveTab
@@ -40,6 +41,8 @@ export const FindGemsTabs: React.FunctionComponent<FindGemsTabsProps> = ({
       return (
         <FindGemsFirstTimeBuy tab={activeTab} searchParams={searchParams} />
       )
+    case 'Top AI Score':
+      return <FindGemsTopAiScore tab={activeTab} searchParams={searchParams} />
     default:
       return (
         <FindGemsTabFreshWalletUnusual

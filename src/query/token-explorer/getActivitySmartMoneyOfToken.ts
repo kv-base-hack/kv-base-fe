@@ -17,26 +17,28 @@ export const useActivitySmartMoneyOfTokenQuery = ({
   chain: string
   action: string
   amount_filter: string
-}) =>
-  useQuery({
-    queryKey: [
-      GET_ACTIVITY_SMART_MONEY_OF_TOKEN,
-      {
-        limit,
-        start,
-        address,
-        chain,
-        action,
-        amount_filter,
-      },
-    ],
-    queryFn: () =>
-      getActivitySmartMoneyOfToken({
-        limit,
-        start,
-        address,
-        chain,
-        action,
-        amount_filter,
-      }),
-  })
+}) => ({
+  queryKey: [
+    GET_ACTIVITY_SMART_MONEY_OF_TOKEN,
+    {
+      limit,
+      start,
+      address,
+      chain,
+      action,
+      amount_filter,
+    },
+  ],
+  queryFn: async () => {
+    const result = await getActivitySmartMoneyOfToken({
+      limit,
+      start,
+      address,
+      chain,
+      action,
+      amount_filter,
+    })
+
+    return result.data
+  },
+})

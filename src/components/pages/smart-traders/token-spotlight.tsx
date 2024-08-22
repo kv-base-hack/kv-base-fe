@@ -16,6 +16,7 @@ import {
 } from '@/components/shared/icons/wallet-explorer/icon-trader-spotlight'
 import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
 import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
+import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
 
 const PieChartX = PieChart as any
 
@@ -122,6 +123,8 @@ export const TokenSpotLight = ({
     return result
   }, [totalVol, volumeBuy, volumeHold, volumePnl, volumeProfit])
 
+  console.log(data)
+
   return (
     <div className="flex h-full w-full justify-between gap-10">
       <div className="h-full w-1/2">
@@ -195,19 +198,35 @@ export const TokenSpotLight = ({
           title="Most Profitable"
           symbol={data?.most_profit?.symbol}
           icon={<IconTrendUp />}
+          image_url={data?.most_profit?.image_url}
+          address={data?.most_profit?.token_address}
+          data={data?.most_profit}
         />
         <TokenSpotlight
           title="Largest Buy Volume"
           symbol={data?.most_bought?.symbol}
           icon={<IconCart />}
+          image_url={data?.most_bought?.image_url}
+          address={data?.most_bought?.token_address}
+          data={data?.most_bought}
         />
         <TokenSpotlight
           title="Largest Hold Value"
           symbol={data?.largest_position_by_max_holders?.symbol}
           icon={<IconCoinHand />}
+          image_url={data?.largest_position_by_max_holders?.image_url}
+          address={data?.largest_position_by_max_holders?.token_address}
+          data={data?.largest_position_by_max_holders}
         />
-        <TokenSpotlight title="Most ST Buy" icon={<IconUsers />} />
-        <TokenSpotlight title="Most ST Hold" icon={<IconUsers />} />
+        <TokenSpotlight
+          title="Most ST Buy"
+          icon={<IconUsers />}
+          symbol={data?.most_bought?.symbol}
+          image_url={data?.most_bought?.image_url}
+          address={data?.most_bought?.token_address}
+          data={data?.most_bought}
+        />
+        <TokenSpotlight title="Most ST Hold" icon={<IconUsers />} data={[]} />
       </div>
     </div>
   )
@@ -239,16 +258,18 @@ const CustomTooltip = ({
 
 const TokenSpotlight = ({
   title,
-  imgUrl,
   symbol,
-  score,
   icon,
+  image_url,
+  address,
+  data,
 }: {
   title: string
-  imgUrl?: string
   symbol?: string
-  score?: number
+  address?: string
   icon: React.ReactNode
+  image_url?: string
+  data?: any
 }) => {
   return (
     <div className="flex items-center justify-between">
@@ -259,17 +280,21 @@ const TokenSpotlight = ({
         <p className="text-base font-medium text-neutral-200">{title}</p>
       </div>
 
-      <Link href="/wallet-analysis" className="flex items-center gap-3">
-        {!symbol && !imgUrl ? (
-          '-'
-        ) : (
-          <ImageToken imgUrl={imgUrl} symbol={symbol} />
-        )}
-        <p className="text-base font-medium uppercase text-white">
-          {symbol ? symbol : '-'}
-        </p>
-        {score ? <CircularProgress percentage={score} size={24} /> : '-'}
-      </Link>
+      <TooltipToken data={data} side="left">
+        <Link
+          href={`/smartmoney-onchain/token-explorer/${address}`}
+          className="flex items-center gap-3"
+        >
+          <p className="text-base font-medium uppercase text-white">
+            {symbol ? symbol : '-'}
+          </p>
+          {!symbol && !image_url ? (
+            '-'
+          ) : (
+            <ImageToken imgUrl={image_url} symbol={symbol} />
+          )}
+        </Link>
+      </TooltipToken>
     </div>
   )
 }

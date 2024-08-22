@@ -7,6 +7,7 @@ import Link from 'next/link'
 import numeral from 'numeral'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { cn } from '@/lib/utils'
+import { SmartTradersCell } from '../../Cell/smart-traders'
 
 const RenderTokenWithTitle = ({
   title,
@@ -43,20 +44,8 @@ export const columnsSmartMoneyRanking = (
       header: 'Smart Traders',
       enableSorting: false,
       cell: ({ row }) => {
-        const { user_address } = row.original
-        return (
-          <div className="flex w-32 items-center gap-2 truncate text-neutral-300">
-            <Link
-              className="underline"
-              href={`/smartmoney-onchain/wallet-explorer/${
-                user_address || '1'
-              }`}
-            >
-              {user_address}
-            </Link>
-            <CopyIcon />
-          </div>
-        )
+        console.log(row.original)
+        return <SmartTradersCell data={row.original} />
       },
     },
     {
@@ -107,7 +96,7 @@ export const columnsSmartMoneyRanking = (
         const { total_profit } = row.original
         return (
           <div className={total_profit < 0 ? 'text-error-500' : 'text-green'}>
-            {total_profit ? formatPriceNumber(total_profit) : '-'}
+            {total_profit ? `$${nFormatter(total_profit)}` : '-'}
           </div>
         )
       },
@@ -119,10 +108,11 @@ export const columnsSmartMoneyRanking = (
       ),
       enableSorting: false,
       cell: ({ row }) => {
+        console.log(row.original)
         const { balance_of_token } = row.original
         return (
           <div className="text-neutral-300">
-            {balance_of_token ? formatPriceNumber(balance_of_token) : '-'}
+            {balance_of_token ? `$${nFormatter(balance_of_token)}` : '-'}
           </div>
         )
       },

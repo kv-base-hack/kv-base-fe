@@ -5,19 +5,13 @@ import { useAtomValue } from 'jotai'
 import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 
 import { useCallback, useState } from 'react'
-import { IntegratedTerminal } from '@/components/common/Swap'
 
 import { cn } from '@/lib/utils'
-import { nFormatter } from '@/lib/utils/nFormatter'
 import { TradingSignal } from '@/components/common/TabWalletExplorer/TradingSignal'
 
-import { Transactions } from '@/components/common/TabWalletExplorer/Transactions'
 import { TopSmartMoney } from '@/components/common/TabWalletExplorer/TopSmartMoney'
 import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/ActivityOfTopSmartMoney'
-import { CardCommon } from '@/components/common/Card/CardCommon'
 import { WrapLineChart } from '@/components/common/Chart/ChartDetail/WrapLineChart'
-import { formatPriceNumber } from '@/utils/formatPriceNumber'
-import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
 import { TokenInfo } from '@/components/pages/token-explorer/token-info'
 import { StAnalysisByAI } from '@/components/pages/token-explorer/st-analysis-ai'
 import { UnusualBuyAnalysis } from '@/components/pages/token-explorer/unusual-buy-analysis'
@@ -70,20 +64,18 @@ const DUMMY_CHART = [
   [1701172800, 139.3115544795935061],
   [1701187200, 139.3333333333333333],
 ]
-const TABS = [
-  'Transactions',
-  'Top Smart Money',
-  'Activity of Top Smart Money',
-  'Trading Signal',
-]
+
+const TABS = ['Smart Traders Activity', 'Top Smart Traders', 'Trading Signal']
 
 export default function TokenExplorerDetail({
   params,
+  searchParams,
 }: {
   params: { token: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const [mode, setMode] = useState('1d')
-  const [tab, setTabs] = useState('Transactions')
+  const [tab, setTabs] = useState('Smart Traders Activity')
   const CHAIN = useAtomValue(chainAtom)
   const [hideSmallTrade, setHideSmallTrade] = useState(false)
   const [hideSmallBalance, setHideSmallBalance] = useState(false)
@@ -166,26 +158,28 @@ export default function TokenExplorerDetail({
 
   const renderContentTab = (tab: string) => {
     switch (tab) {
-      case 'Transactions':
-        return <Transactions dataTokenInfo={dataTokenInfo} />
-      case 'Top Smart Traders':
-        return <TopSmartMoney dataTokenInfo={dataTokenInfo} />
       case 'Smart Traders Activity':
-        return <ActivityOfTopSmartMoney dataTokenInfo={dataTokenInfo} />
+        return (
+          <ActivityOfTopSmartMoney
+            params={params}
+            searchParams={searchParams}
+          />
+        )
+      case 'Top Smart Traders':
+        return (
+          <TopSmartMoney
+            dataTokenInfo={dataTokenInfo}
+            params={params}
+            searchParams={searchParams}
+          />
+        )
       case 'Trading Signal':
-        return <TradingSignal />
+        return <TradingSignal params={params} searchParams={searchParams} />
     }
     return null
   }
 
   if (!dataTokenInfo) return null
-
-  const percentBuy =
-    (dataTokenInfo?.buy_volume * 100) /
-    (dataTokenInfo?.buy_volume + dataTokenInfo?.sell_volume)
-  const percentSell =
-    (dataTokenInfo?.sell_volume * 100) /
-    (dataTokenInfo?.buy_volume + dataTokenInfo?.sell_volume)
 
   return (
     <div className="flex h-full w-full flex-col gap-2 pt-2">
@@ -196,7 +190,7 @@ export default function TokenExplorerDetail({
         <UnusualBuyAnalysis params={params} />
       </div>
       <div className="m-0 my-2 flex items-start gap-2 lg:mx-4">
-        <div className="w-full overflow-hidden rounded-[20px] border-white/10 bg-neutral-07 shadow-2xl backdrop-blur-lg lg:w-2/3">
+        <div className="w-full overflow-hidden rounded-[20px] border-white/10 bg-neutral-07 shadow-2xl backdrop-blur-lg">
           <div className="flex flex-col items-start self-stretch overflow-hidden border border-solid border-white/10 shadow-box backdrop-blur-lg lg:gap-6">
             {/* overview */}
             <div className="mt-4 w-full lg:mt-0">

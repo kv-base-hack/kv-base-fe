@@ -61,7 +61,7 @@ export const SelectTradeValue = ({
 }) => {
   return (
     <Select>
-      <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-white">
+      <SelectTrigger className="my-auto flex h-8 w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-1 text-sm font-medium leading-6 tracking-normal text-white">
         <div className="flex items-center justify-between gap-2">
           {Array.isArray(valueSelected)
             ? valueSelected?.length === 0

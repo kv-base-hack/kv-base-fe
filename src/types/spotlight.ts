@@ -15,6 +15,7 @@ export interface LargestPositionByMaxHolders {
   roi: number
   pnl: number
   symbol: string
+  image_url: string
 }
 
 export interface LargestPositionByPnl {
@@ -26,6 +27,7 @@ export interface LargestPositionByPnl {
   roi: number
   pnl: number
   symbol: string
+  image_url: string
 }
 
 export interface MostBought {
@@ -37,6 +39,7 @@ export interface MostBought {
   roi: number
   pnl: number
   symbol: string
+  image_url: string
 }
 
 export interface MostProfit {
@@ -48,6 +51,7 @@ export interface MostProfit {
   roi: number
   pnl: number
   symbol: string
+  image_url: string
 }
 
 export interface LeaderboardSpotlightResponse {

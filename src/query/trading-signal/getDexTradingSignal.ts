@@ -7,18 +7,21 @@ export const useGetDexTradingSignalQuery = ({
   start,
   limit,
   type,
-  addresses,
+  token_addresses,
   chain,
 }: {
   start: number
   limit: number
   type?: string
-  addresses?: string
+  token_addresses?: string
   chain?: string
 }) => ({
-  queryKey: [GET_DEX_TRADING_SIGNAL, { start, limit, type, addresses, chain }],
+  queryKey: [
+    GET_DEX_TRADING_SIGNAL,
+    { start, limit, type, token_addresses, chain },
+  ],
   queryFn: async () => {
-    const data = getDexTradingSignal({ start, limit, type, addresses, chain })
-    return data
-  },
+    const result = await getDexTradingSignal({ start, limit, type, token_addresses, chain })
+    return result.data
+  }
 })

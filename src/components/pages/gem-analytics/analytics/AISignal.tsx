@@ -18,7 +18,7 @@ export const GemAnalyticsAISignal = () => {
     }),
   )
 
-  const dataDexTradingSignal = dataDexTradingSignalQuery?.data?.data?.data || []
+  const dataDexTradingSignal = dataDexTradingSignalQuery?.data?.data || []
   const CHAIN = useAtomValue(chainAtom)
 
   return (

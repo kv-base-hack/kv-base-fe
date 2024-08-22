@@ -4,6 +4,7 @@ export const tabs = [
   'ST Holding',
   'ST Top Buy',
   'ST First Time Buy',
+  'Top AI Score',
 ] as const
 
 export type ActiveTab = (typeof tabs)[number]
@@ -14,6 +15,7 @@ export const tabToURLMapping: Record<ActiveTab, string> = {
   'ST Holding': 'st-holding',
   'ST Top Buy': 'st-top-buy',
   'ST First Time Buy': 'st-first-time-buy',
+  'Top AI Score': 'top-ai-score',
 }
 
 export const URLToTabMapping: Record<string, ActiveTab> = Object.fromEntries(

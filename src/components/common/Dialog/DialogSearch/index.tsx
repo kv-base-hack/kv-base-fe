@@ -247,7 +247,7 @@ export const DialogSearchToken = ({
                     <TokenItem
                       onClick={() => handleNavigateTokenDetail(token)}
                       symbol={token.symbol}
-                      imageUrl={token.imageUrl}
+                      imageUrl={token.small}
                       name={token.name}
                       price={token.price}
                       percentChange24h={token.price_change_percentage_24h}

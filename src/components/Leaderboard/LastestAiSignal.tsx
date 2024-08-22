@@ -6,7 +6,7 @@ import { useGetAITradingSignalQuery } from '@/query/leaderboard/getAITradingSign
 import { useQuery } from '@tanstack/react-query'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
-import { CardAISignal } from '../pages/trading-signal/ai-trading-signal/CardAISignal'
+import { CardSignal } from '../pages/trading-signal/ai-trading-signal/CardAISignal'
 
 export const LastestAiSignal = () => {
   const CHAIN = useAtomValue(chainAtom)
@@ -31,7 +31,7 @@ export const LastestAiSignal = () => {
       <div className="flex items-center gap-2">
         {dataAITradingSignal.map((item, i) => {
           return (
-            <CardAISignal
+            <CardSignal
               item={item}
               key={i}
               loading={dataAITradingSignalQuery.isFetching}

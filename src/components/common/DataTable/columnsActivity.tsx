@@ -18,8 +18,7 @@ import {
   IconFilterFunnel,
 } from '@/components/shared/icons/activity/icon-filter-funnel'
 import { DropdownMovements } from '../Dropdown/dropdown-movements'
-import { TooltipWallet } from '../Tooltip/tooltip-wallet'
-import { ImageBadge, ImageRanking } from '../Image/image-ranking'
+import { SmartTradersCell } from '../Cell/smart-traders'
 
 export type Activity = {
   id: string
@@ -81,30 +80,7 @@ export const columnsActivity = (
       header: () => <div>Smart Money</div>,
       enableSorting: false,
       cell: ({ row }) => {
-        const { sender, ranking, badges } = row.original
-        return (
-          <TooltipWallet data={row.original}>
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-1">
-                <ImageRanking ranking={ranking} size={16} />
-
-                <Link
-                  className="max-w-32 truncate text-neutral-300 underline"
-                  href={`/smartmoney-onchain/wallet-explorer/${sender}`}
-                >
-                  {sender}
-                </Link>
-
-                <IconFilterFunnel className="h-4 w-4" />
-              </div>
-              <div className="flex items-center gap-1">
-                {badges?.map((badge) => (
-                  <ImageBadge badge={badge} size={16} key={badge} />
-                ))}
-              </div>
-            </div>
-          </TooltipWallet>
-        )
+        return <SmartTradersCell data={row.original} />
       },
     },
     {

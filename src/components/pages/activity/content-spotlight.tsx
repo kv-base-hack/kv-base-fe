@@ -161,11 +161,16 @@ export const ContentSpotlight = ({ item }: any) => {
         <div className="flex w-full flex-col">
           {renderWallet(sender, ranking, badges, item)}
           <div className="flex flex-wrap gap-x-0.5 text-neutral-300">
-            <>has sold</>
-            <RenderNumber value={avg_price}>
-              {renderPrice(avg_price)}
-            </RenderNumber>{' '}
-            ({numeral(balance_change_percent).format('0,0.[00]')}% Balance) of
+            <span>has sold</span>
+            <span>
+              <RenderNumber value={avg_price}>
+                {renderPrice(avg_price)}
+              </RenderNumber>
+            </span>
+            <span>
+              ({numeral(balance_change_percent).format('0,0.[00]')}% Balance)
+            </span>{' '}
+            of
             {renderToken(token_address, symbol, image_url)}
             at {renderPrice(price)} Make up{' '}
             <RenderNumber value={100}>{renderPrice(100)}</RenderNumber>
