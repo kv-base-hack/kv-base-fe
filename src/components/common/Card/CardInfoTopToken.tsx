@@ -50,8 +50,6 @@ export const CardInfoTopToken = ({
     number_of_users || number_of_smart_money_hold || number_of_smart_money
   const avgPrice = avg_price || avg_cost || 0
 
-  console.log(avgPrice)
-
   return (
     <div className="relative z-50 overflow-hidden rounded-[20px]">
       <div className="absolute -z-10 h-full w-full rounded-[20px] bg-black/25 backdrop-blur-md"></div>
