@@ -44,7 +44,6 @@ export const columnsSmartMoneyRanking = (
       header: 'Smart Traders',
       enableSorting: false,
       cell: ({ row }) => {
-        console.log(row.original)
         return <SmartTradersCell data={row.original} />
       },
     },
@@ -108,7 +107,6 @@ export const columnsSmartMoneyRanking = (
       ),
       enableSorting: false,
       cell: ({ row }) => {
-        console.log(row.original)
         const { balance_of_token } = row.original
         return (
           <div className="text-neutral-300">

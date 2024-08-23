@@ -1,48 +1,13 @@
 import { symbol } from 'zod'
 export interface DataLeaderboardSpotlight {
-  largest_position_by_max_holders: LargestPositionByMaxHolders
-  largest_position_by_pnl: LargestPositionByPnl
-  most_bought: MostBought
-  most_profit: MostProfit
+  most_buy_by_user_number: DataSpotlight
+  most_buy_by_volume: DataSpotlight
+  most_hold_by_user_number: DataSpotlight
+  most_hold_by_volume: DataSpotlight
+  most_profit: DataSpotlight
 }
 
-export interface LargestPositionByMaxHolders {
-  token_address: string
-  avg_price: number
-  value_in_usdt: number
-  value_in_token: number
-  volume: number
-  roi: number
-  pnl: number
-  symbol: string
-  image_url: string
-}
-
-export interface LargestPositionByPnl {
-  token_address: string
-  avg_price: number
-  value_in_usdt: number
-  value_in_token: number
-  volume: number
-  roi: number
-  pnl: number
-  symbol: string
-  image_url: string
-}
-
-export interface MostBought {
-  token_address: string
-  avg_price: number
-  value_in_usdt: number
-  value_in_token: number
-  volume: number
-  roi: number
-  pnl: number
-  symbol: string
-  image_url: string
-}
-
-export interface MostProfit {
+export interface DataSpotlight {
   token_address: string
   avg_price: number
   value_in_usdt: number

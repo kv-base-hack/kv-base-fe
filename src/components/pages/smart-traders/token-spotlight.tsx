@@ -17,6 +17,7 @@ import {
 import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
 import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
 import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
+import { DataSpotlight } from '@/types/spotlight'
 
 const PieChartX = PieChart as any
 
@@ -85,9 +86,9 @@ export const TokenSpotLight = ({
 
   const data = leaderboardSpotlightQuery?.data
 
-  const volumeHold = data?.largest_position_by_max_holders?.value_in_usdt || 0
-  const volumePnl = data?.largest_position_by_pnl?.value_in_usdt || 0
-  const volumeBuy = data?.most_bought?.value_in_usdt || 0
+  const volumeHold = data?.most_hold_by_volume?.value_in_usdt || 0
+  const volumePnl = data?.most_profit?.value_in_usdt || 0
+  const volumeBuy = data?.most_buy_by_volume?.value_in_usdt || 0
   const volumeProfit = data?.most_profit?.value_in_usdt || 0
 
   const totalVol = volumeHold + volumePnl + volumeBuy + volumeProfit
@@ -122,8 +123,6 @@ export const TokenSpotLight = ({
 
     return result
   }, [totalVol, volumeBuy, volumeHold, volumePnl, volumeProfit])
-
-  console.log(data)
 
   return (
     <div className="flex h-full w-full justify-between gap-10">
@@ -196,37 +195,29 @@ export const TokenSpotLight = ({
       <div className="my-auto flex w-2/3 flex-col gap-5">
         <TokenSpotlight
           title="Most Profitable"
-          symbol={data?.most_profit?.symbol}
           icon={<IconTrendUp />}
-          image_url={data?.most_profit?.image_url}
-          address={data?.most_profit?.token_address}
           data={data?.most_profit}
         />
         <TokenSpotlight
           title="Largest Buy Volume"
-          symbol={data?.most_bought?.symbol}
           icon={<IconCart />}
-          image_url={data?.most_bought?.image_url}
-          address={data?.most_bought?.token_address}
-          data={data?.most_bought}
+          data={data?.most_buy_by_volume}
         />
         <TokenSpotlight
           title="Largest Hold Value"
-          symbol={data?.largest_position_by_max_holders?.symbol}
           icon={<IconCoinHand />}
-          image_url={data?.largest_position_by_max_holders?.image_url}
-          address={data?.largest_position_by_max_holders?.token_address}
-          data={data?.largest_position_by_max_holders}
+          data={data?.most_hold_by_volume}
         />
         <TokenSpotlight
           title="Most ST Buy"
           icon={<IconUsers />}
-          symbol={data?.most_bought?.symbol}
-          image_url={data?.most_bought?.image_url}
-          address={data?.most_bought?.token_address}
-          data={data?.most_bought}
+          data={data?.most_buy_by_user_number}
         />
-        <TokenSpotlight title="Most ST Hold" icon={<IconUsers />} data={[]} />
+        <TokenSpotlight
+          title="Most ST Hold"
+          icon={<IconUsers />}
+          data={data?.most_buy_by_user_number}
+        />
       </div>
     </div>
   )
@@ -258,19 +249,15 @@ const CustomTooltip = ({
 
 const TokenSpotlight = ({
   title,
-  symbol,
   icon,
-  image_url,
-  address,
   data,
 }: {
   title: string
-  symbol?: string
-  address?: string
   icon: React.ReactNode
-  image_url?: string
-  data?: any
+  data?: DataSpotlight
 }) => {
+  const { token_address: address, symbol, image_url } = data || {}
+
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-3">

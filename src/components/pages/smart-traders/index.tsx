@@ -109,7 +109,6 @@ export const SmartTraders = ({
     : leaderboardQuery?.data?.leaderboard?.slice(0, 10) || []
   const totalLeaderboard = leaderboardQuery?.data?.total || 1
 
-  console.log({ leaderboardQuery })
   //
 
   const handleRemoveToken = (item: TokenList) => (e: any) => {
@@ -143,7 +142,7 @@ export const SmartTraders = ({
                 buy and tracking all their actions in real-time.
               </p>
             </div>
-            <button className="shadow-card mt-6 flex items-center justify-center rounded-[32px] border border-white/10 bg-[#282828B2]/70 px-8 py-2 text-base font-medium text-[#f8f8f8]/70 bg-blend-luminosity backdrop-blur-[50px]">
+            <button className="mt-6 flex items-center justify-center rounded-[32px] border border-white/10 bg-[#282828B2]/70 px-8 py-2 text-base font-medium text-[#f8f8f8]/70 bg-blend-luminosity shadow-card backdrop-blur-[50px]">
               Learn more
             </button>
           </div>

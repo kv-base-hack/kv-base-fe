@@ -20,7 +20,6 @@ export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
     accessorKey: 'time',
     header: () => 'Time',
     cell: ({ row }) => {
-      console.log(row.original)
       const { time, scan_link } = row.original
       return (
         <div className="flex items-center gap-1 text-neutral-04">
@@ -44,7 +43,6 @@ export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
     ),
     enableSorting: false,
     cell: ({ row }) => {
-      console.log(row.original)
       return <SmartTradersCell data={row.original} />
     },
   },
