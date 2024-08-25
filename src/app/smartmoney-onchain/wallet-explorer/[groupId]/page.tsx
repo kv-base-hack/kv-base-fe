@@ -117,13 +117,7 @@ export default function WalletExplorerDetail({
           />
         )
       case 'Assets':
-        return (
-          <PortfolioComp
-            address={params.groupId}
-            chain={CHAIN}
-            hideSmallAsset={hideSmallAsset}
-          />
-        )
+        return <PortfolioComp address={params.groupId} />
       case 'Activity':
         return (
           <BigTradeActivity

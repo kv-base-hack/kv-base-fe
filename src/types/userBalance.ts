@@ -1,20 +1,26 @@
-export interface DataUserBalance {
-  address: string
-  total_balance: number
-  tokens: Token[]
-}
 
-export interface Token {
+
+export interface Balances {
+  hold_in_token: number
+  hold_in_usdt: number
+  realized_percent: number
+  realized_profit: number
+  total_profit: number
+  tx_buy: number
+  tx_sell: number
+  unrealized_profit: number
   symbol: string
-  address: string
-  token_amount: number
-  usdt_amount: number
-  price: number
-  price_24h_change: number
-  balance_24h_change?: number
+  time: string
+  token_address: string
   image_url: string
+  pnl: number
+  buy_volume: number
+  avg_entry: number
+  avg_sell: number
+  unrealized_percent: number
+  sell_volume: number
 }
 
 export interface UserBalanceResponse {
-  data: DataUserBalance
+  balances: Balances[]
 }

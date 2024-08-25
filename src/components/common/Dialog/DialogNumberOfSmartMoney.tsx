@@ -138,10 +138,13 @@ export const DialogNumberOfSmartMoney = ({
       <Dialog>
         <DialogTrigger>
           <div
-            className="whitespace-nowrap text-sm font-medium not-italic leading-5 text-neutral-300 underline"
+            className={cn(
+              'whitespace-nowrap text-sm font-medium not-italic leading-5 text-neutral-300',
+              number ? 'underline' : '',
+            )}
             onClick={() => setVisible(true)}
           >
-            {nFormatter(number)}
+            {number || '-'}
           </div>
         </DialogTrigger>
         <DialogContent className="max-w-[617px] !rounded-xl !border-none !p-0">

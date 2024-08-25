@@ -3,6 +3,7 @@ import { CHAIN } from '@/constant/chain'
 import { useFindGemsFreshWalletUnusualQuery } from '@/query/find-gems/getFindGemsFreshWalletUnusual'
 import { useFindGemsSMNewListingsBuyQuery } from '@/query/find-gems/getFindGemsSMNewListingsBuy'
 import { useFindGemsSmartMoneyHoldingQuery } from '@/query/find-gems/getFindGemsSmartMoneyHolding'
+import { useFindGemsTopScore } from '@/query/find-gems/getFindGemsTopScore'
 import { useFreshUnusualBuyQuery } from '@/query/find-gems/getFindGemsUnusualBuy'
 import { useFirstTimeBuyQuery } from '@/query/find-gems/getFirstTimeBuy'
 import { useGetTopTokenBuy } from '@/query/onchain-signal/getTopTokenBuy'
@@ -73,6 +74,16 @@ async function FindGems({
       useFindGemsFreshWalletUnusualQuery({
         limit: parseInt(searchParams?.ub_limit?.toString() || '10'),
         start: parseInt(searchParams?.ub_start?.toString() || '1'),
+        duration: searchParams?.ub_duration?.toString() || '24h',
+        sort_by: searchParams?.ub_sort?.toString() || '',
+        chain: CHAIN,
+      }),
+    ),
+
+    queryClient.prefetchQuery(
+      useFindGemsTopScore({
+        start: parseInt(searchParams?.ub_start?.toString() || '1'),
+        limit: parseInt(searchParams?.ub_limit?.toString() || '10'),
         duration: searchParams?.ub_duration?.toString() || '24h',
         sort_by: searchParams?.ub_sort?.toString() || '',
         chain: CHAIN,

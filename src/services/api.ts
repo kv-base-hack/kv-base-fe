@@ -40,6 +40,7 @@ import { UserBalanceResponse } from '@/types/userBalance'
 import { UserInfoResponse } from '@/types/userInfo'
 import axios from 'axios'
 import { DataFirstTimeBuy } from '@/types/fist-time-buy'
+import { FindGemsTopScoreByAiResponse } from '@/types/find-gems/top-score'
 
 const api = axios.create({
   baseURL: 'https://api.kaivest.net/onchain',
@@ -1219,6 +1220,60 @@ export const getFindGemsSmartMoneyHolding = async ({
     },
   })
 }
+
+export const getFindGemsTopScore = async ({
+  start,
+  limit,
+  chain,
+  price_change_24h_min,
+  price_change_24h_max,
+  market_cap_min,
+  market_cap_max,
+  fdv_min,
+  fdv_max,
+  volume_24h_min,
+  volume_24h_max,
+  cex_net_flow_min,
+  cex_net_flow_max,
+  sort_by,
+  duration,
+}: {
+  start: number
+  limit: number
+  chain: string
+  price_change_24h_min?: number
+  price_change_24h_max?: number
+  market_cap_min?: number
+  market_cap_max?: number
+  fdv_min?: number
+  fdv_max?: number
+  volume_24h_min?: number
+  volume_24h_max?: number
+  cex_net_flow_min?: number
+  cex_net_flow_max?: number
+  sort_by?: string
+  duration: string
+}): Promise<FindGemsTopScoreByAiResponse> => {
+  return await api.get('/v1/findgems/top_score', {
+    params: {
+      start,
+      limit,
+      chain,
+      duration,
+      price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
+      price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
+      market_cap_min: market_cap_min ? market_cap_min : null,
+      market_cap_max: market_cap_max ? market_cap_max : null,
+      fdv_min: fdv_min ? fdv_min : null,
+      fdv_max: fdv_max ? fdv_max : null,
+      volume_24h_min: volume_24h_min ? volume_24h_min : null,
+      volume_24h_max: volume_24h_max ? volume_24h_max : null,
+      cex_net_flow_min: cex_net_flow_min ? cex_net_flow_min : null,
+      cex_net_flow_max: cex_net_flow_max ? cex_net_flow_max : null,
+      sort_by,
+    },
+  })
+}
 //
 export const getTradingSignal = async ({
   start,
@@ -1311,23 +1366,20 @@ export const getUserInfo = async ({
   })
 }
 
-export const getUserBalance = async ({
+export const getUserBalance = ({
   addresses,
   address,
   chain,
-  duration,
 }: {
   addresses?: string
   address?: string
   chain?: string
-  duration?: string
-}): Promise<UserBalanceResponse> => {
-  return await suiApi.get(`/v1/balance`, {
+}) => {
+  return api.get<UserBalanceResponse>(`/v1/user/balance`, {
     params: {
       addresses,
       address,
       chain,
-      duration,
     },
   })
 }

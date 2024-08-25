@@ -1,37 +1,39 @@
+'use client'
+
 import { DataTable } from '@/components/common/DataTable'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
+import { CHAIN } from '@/constant/chain'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
+import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { columnsTradeStatisticToken } from '../Statistic/columns-trade-statistic-token'
 
 type PortfolioProps = {
   address: string
-  chain: string
-  hideSmallAsset: boolean
 }
 
-export const PortfolioComp: React.FC<PortfolioProps> = ({
-  address,
-  chain,
-  hideSmallAsset,
-}) => {
-  const [sort, setSort] = useState('')
+export const PortfolioComp: React.FC<PortfolioProps> = ({ address }) => {
+  const [, setSort] = useState('')
   // pagination portfolio in FE
-  const [currentPage, setCurrentPage] = useState(1)
+  const [page, setPage] = useState(1)
   const [itemsPerPage] = useState(8)
   // get user balance
-  const userBalanceQuery = useGetUserBalanceQuery({
-    address,
-    chain,
-  })
-  const userBalance = userBalanceQuery?.data?.data
+  const userBalanceQuery = useQuery(
+    useGetUserBalanceQuery({
+      address,
+      chain: CHAIN,
+      page: 1,
+      perPage: 10,
+    }),
+  )
+  const userBalance = userBalanceQuery?.data?.balances
 
-  const totalPages = userBalance?.tokens?.length || 0
+  const totalPages = userBalance?.length || 0
 
   const getVisibleItems = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage
+    const startIndex = (page - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
-    return userBalance?.tokens?.slice(startIndex, endIndex)
+    return userBalance?.slice(startIndex, endIndex)
   }
 
   const dataSource = userBalanceQuery?.isFetching
@@ -51,10 +53,10 @@ export const PortfolioComp: React.FC<PortfolioProps> = ({
       />
       <PaginationTable
         className="mt-4"
-        currentPage={currentPage}
+        currentPage={page}
         pageSize={itemsPerPage}
         total={totalPages}
-        setPage={setCurrentPage}
+        setPage={setPage}
       />
     </div>
   )

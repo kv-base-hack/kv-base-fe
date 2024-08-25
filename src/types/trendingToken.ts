@@ -2,6 +2,7 @@ export interface TrendingToken {
   name: string
   symbol: string
   thumb: string
+  imageUrl: string
   small: string
   price: number
   market_cap: string
@@ -16,7 +17,11 @@ export interface TrendingToken {
   priceChangeH24: number
   liquidity: number
   fdv: number
-  imageUrl: string
+  score: number
+  hold_in_usdt: number
+  total_profit: number
+  number_of_smart_money_hold: number
+  realized_percent: number
 }
 
 export interface TrendingTokenData {

@@ -1,4 +1,4 @@
-import { symbol } from 'zod'
+
 export interface DataLeaderboardSpotlight {
   most_buy_by_user_number: DataSpotlight
   most_buy_by_volume: DataSpotlight
@@ -17,6 +17,9 @@ export interface DataSpotlight {
   pnl: number
   symbol: string
   image_url: string
+  total_profit: number
+  hold_in_usdt: number
+  realized_percent: number
 }
 
 export interface LeaderboardSpotlightResponse {

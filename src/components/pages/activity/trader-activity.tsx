@@ -41,7 +41,11 @@ export const TraderActivity = ({
     shallow: false,
   })
   const [hiddenSmallTrades, setHiddenSmallTrades] = useState(false)
-  const [token, setToken] = useState('')
+  const [token, setToken] = useQueryState('token', {
+    defaultValue: searchParams?.token?.toString() || '',
+    history: 'push',
+    shallow: false,
+  })
 
   const activityQuery = useQuery(
     useTopActivityQuery({
@@ -50,10 +54,11 @@ export const TraderActivity = ({
       start: parseInt(searchParams?.start_activity?.toString() || '1'),
       chain: searchParams?.chain?.toString() || CHAIN,
       amount_filter: searchParams?.amount_filter?.toString() || '',
-      token_addresses: searchParams?.token_addresses?.toString() || '',
+      token_addresses: token || '',
       sort_by: searchParams?.sort_by?.toString() || '',
     }),
   )
+
   const totalActivity = activityQuery.data?.total || 1
 
   return (

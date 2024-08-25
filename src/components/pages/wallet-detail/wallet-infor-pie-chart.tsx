@@ -4,9 +4,11 @@ import * as React from 'react'
 import { Label, Pie, PieChart, Tooltip } from 'recharts'
 
 import { ChartConfig, ChartContainer } from '@/components/ui/chart'
-import { nFormatter } from '@/lib/utils/nFormatter'
-import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
 import { useGetUserBalanceQuery } from '@/query/wallet-explorer/getUserBalance'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { useQuery } from '@tanstack/react-query'
+import { CHAIN } from '@/constant/chain'
+import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
 
 const chartConfig = {
   visitors: {
@@ -52,21 +54,28 @@ const renderColorChart = (i: number) => {
 const PieChartX = PieChart as any
 
 export function WalletInfoPieChart({ address }: { address: string }) {
-  const userBalanceQuery = useGetUserBalanceQuery({
-    address,
-    chain: 'base',
-  })
+  const userBalanceQuery = useQuery(
+    useGetUserBalanceQuery({
+      address,
+      chain: CHAIN,
+      page: 1,
+      perPage: 10,
+    }),
+  )
 
-  const totalVol = userBalanceQuery?.data?.data?.total_balance || 0
+  const dataBalance = userBalanceQuery?.data?.balances
 
-  const dataBalance = userBalanceQuery?.data?.data?.tokens
+  const totalVol =
+    dataBalance?.reduce((acc, cur) => {
+      return acc + cur.hold_in_usdt
+    }, 0) || 1
 
   const formatData = React.useMemo(() => {
     const otherTokens: any[] = []
     const result = []
 
     dataBalance?.forEach((item) => {
-      if (item.usdt_amount < 1000) {
+      if (item.hold_in_usdt < 1000) {
         otherTokens.push(item)
       } else {
         result.push(item)
@@ -76,11 +85,20 @@ export function WalletInfoPieChart({ address }: { address: string }) {
     if (otherTokens.length) {
       result.push({
         symbol: 'Others',
-        usdt_amount: otherTokens.reduce(
-          (acc, item) => acc + item.usdt_amount,
+        hold_in_usdt: otherTokens.reduce(
+          (acc, item) => acc + item.hold_in_usdt,
           0,
         ),
         image_url: '',
+        realized_percent: otherTokens.reduce(
+          (acc, item) => acc + item.realized_percent,
+          0,
+        ),
+        total_profit: otherTokens.reduce(
+          (acc, item) => acc + item.total_profit,
+          0,
+        ),
+        roi: otherTokens.reduce((acc, item) => acc + item.roi, 0),
       })
     }
 
@@ -91,16 +109,17 @@ export function WalletInfoPieChart({ address }: { address: string }) {
     return formatData?.map((item, i) => {
       return {
         token: item.symbol,
-        vol: item.usdt_amount / totalVol,
+        vol: item.hold_in_usdt / totalVol,
         fill: renderColorChart(i),
-        balance: item.usdt_amount,
+        balance: item.hold_in_usdt,
         imageUrl: item.image_url,
+        realized: item.realized_percent,
       }
     })
   }, [formatData, totalVol])
 
   return (
-    <div className="h-[400px] w-[360px] px-2">
+    <div className="h-[400px] w-[360px]">
       <ChartContainer config={chartConfig} className="mx-auto aspect-square">
         <PieChartX width={360} height={400}>
           <Pie
@@ -110,8 +129,8 @@ export function WalletInfoPieChart({ address }: { address: string }) {
             innerRadius={100}
             outerRadius={150}
             strokeWidth={5}
-            paddingAngle={dataChart?.length === 1 ? 0 : 8}
-            cornerRadius={6}
+            paddingAngle={dataChart?.length > 1 ? 8 : 0}
+            cornerRadius={dataChart?.length > 1 ? 6 : 0}
           >
             <Label
               content={({ viewBox }) => {
@@ -135,7 +154,7 @@ export function WalletInfoPieChart({ address }: { address: string }) {
                         y={(viewBox.cy || 0) + 15}
                         className="fill-neutral-100 text-[32px] leading-[48px]"
                       >
-                        ${nFormatter(totalVol)}
+                        ${nFormatter(totalVol as number)}
                       </tspan>
                     </text>
                   )

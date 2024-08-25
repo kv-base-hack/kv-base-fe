@@ -50,7 +50,7 @@ export const TrendingHeader = () => {
   }
 
   return (
-    <div className="mt-2 flex items-stretch justify-between gap-0 whitespace-nowrap pr-4 text-base leading-6 max-md:max-w-full max-md:flex-wrap">
+    <div className="mt-2 flex items-stretch justify-between gap-0 whitespace-nowrap text-base leading-6 max-md:max-w-full max-md:flex-wrap">
       <div className="!z-[10000] h-10 w-4 bg-background"></div>
       <div className="!z-[10000] flex flex-col items-stretch justify-center rounded-s-xl bg-core p-2 font-semibold tracking-normal">
         <div className="flex items-stretch justify-between gap-1">
@@ -81,12 +81,14 @@ export const TrendingHeader = () => {
                 current_price: token.price,
                 price_percent_change_24h: token.price_change_percentage_24h,
                 avg_price: 0,
-                hold_in_usdt: 0,
+                hold_in_usdt: token.hold_in_usdt,
                 roi: 0,
-                realized_percent: 0,
-                number_of_smart_money_hold: 0,
+                realized_percent: token.realized_percent,
+                number_of_smart_money_hold: token.number_of_smart_money_hold,
                 number_of_smart_money: 0,
                 percent: 0,
+                score: token.score,
+                total_profit: token.total_profit,
               }
               return (
                 <div key={index}>
@@ -139,6 +141,7 @@ export const TrendingHeader = () => {
           )}
         </div>
       </div>
+      <div className="!z-[10000] h-10 w-4 bg-background"></div>
     </div>
   )
 }

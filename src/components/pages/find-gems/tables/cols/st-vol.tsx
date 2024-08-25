@@ -1,8 +1,8 @@
 import { nFormatter } from '@/lib/utils/nFormatter'
 
 export const StVol = ({
-  buyVol,
-  sellVol,
+  buyVol = 0,
+  sellVol = 0,
 }: {
   buyVol: number
   sellVol: number

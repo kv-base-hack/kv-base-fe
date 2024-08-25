@@ -108,7 +108,6 @@ export const SmartTraders = ({
     ? [...(Array(10).keys() as any)]
     : leaderboardQuery?.data?.leaderboard?.slice(0, 10) || []
   const totalLeaderboard = leaderboardQuery?.data?.total || 1
-
   //
 
   const handleRemoveToken = (item: TokenList) => (e: any) => {

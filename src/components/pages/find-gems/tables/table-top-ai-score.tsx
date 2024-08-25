@@ -1,59 +1,70 @@
-import { chainAtom } from '@/atom/chain'
-import { TableFindGemsFisrtTimeBuy } from '@/components/common/DataTable/table-fisrt-time-buy'
-import { useFirstTimeBuyQuery } from '@/query/find-gems/getFirstTimeBuy'
+'use client'
 
+import { gemFilterAtom } from '@/atom/gemFilter'
+import { TableFindGemsTopScoreByAi } from '@/components/common/DataTable/table-find-gems-top-score'
+
+import { useFindGemsTopScore } from '@/query/find-gems/getFindGemsTopScore'
 import { useQuery } from '@tanstack/react-query'
-import { useAtomValue } from 'jotai'
+import { useAtom } from 'jotai'
 import { parseAsInteger, useQueryState } from 'nuqs'
 import React from 'react'
 
-interface FindGemsTabFirstTimeBuyProps {
+interface FindGemsTabSmartTopScoreAiProps {
   tab: string
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export const FindGemsTopAiScore: React.FC<FindGemsTabFirstTimeBuyProps> = ({
+export const FindGemsTopAiScore: React.FC<FindGemsTabSmartTopScoreAiProps> = ({
   tab,
   searchParams,
 }) => {
-  const currentPage = parseInt(searchParams?.ftb_start?.toString() || '1')
-  const currentPerPage = parseInt(searchParams?.ftb_limit?.toString() || '10')
-  const currentDuration = searchParams?.ftb_duration?.toString() || '24h'
-  const currentSortBy = searchParams?.ftb_sort?.toString() || ''
+  const currentPage = parseInt(searchParams?.smh_start?.toString() || '1')
+  const currentPerPage = parseInt(searchParams?.smh_limit?.toString() || '10')
+  const currentDuration = searchParams?.smh_duration?.toString() || '24h'
+  const currentSortBy = searchParams?.smh_sort?.toString() || ''
 
   const [, setPage] = useQueryState(
-    'ftb_start',
+    'smh_start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
     }),
   )
 
-  const [, setSortBy] = useQueryState('ftb_sort', {
+  const [, setSortBy] = useQueryState('smh_sort', {
     defaultValue: currentSortBy,
     history: 'push',
     shallow: false,
   })
 
-  const CHAIN = useAtomValue(chainAtom)
+  const [filter] = useAtom(gemFilterAtom)
 
-  const firstTimeBuyQuery = useQuery(
-    useFirstTimeBuyQuery({
+  // smart money top score ai
+  const findGemsTopScoreByAI = useQuery(
+    useFindGemsTopScore({
       limit: currentPerPage,
-      duration: currentDuration,
       start: currentPage,
-      chain: CHAIN,
+      chain: 'solana',
+      price_change_24h_min: filter.min24hVolumn,
+      price_change_24h_max: filter.max24hVolumn,
+      market_cap_min: filter.minMarketcap,
+      market_cap_max: filter.maxMarketcap,
+      fdv_min: filter.minFDV,
+      fdv_max: filter.maxFDV,
+      volume_24h_min: filter.min24hVolumn,
+      volume_24h_max: filter.max24hVolumn,
+      cex_net_flow_min: filter.minCexNetflow,
+      cex_net_flow_max: filter.maxCexNetflow,
       sort_by: currentSortBy,
+      duration: currentDuration,
     }),
   )
 
-  const dataFirstTimeBuy = firstTimeBuyQuery?.data?.first_time_buy || []
-
-  const dataFindGemsWithdraw = firstTimeBuyQuery.isFetching
+  const dataFindGemsTopScore = findGemsTopScoreByAI.isFetching
     ? [...Array(currentPerPage).keys()]
-    : dataFirstTimeBuy
+    : findGemsTopScoreByAI.data?.users || []
 
-  const total = firstTimeBuyQuery?.data?.total || 0
+  const totalFindGemsTopScore = findGemsTopScoreByAI.data?.total || 1
 
   const handleSortBy = (val: string) => {
     setSortBy(val)
@@ -61,14 +72,14 @@ export const FindGemsTopAiScore: React.FC<FindGemsTabFirstTimeBuyProps> = ({
   }
 
   return (
-    <TableFindGemsFisrtTimeBuy
+    <TableFindGemsTopScoreByAi
       tab={tab}
       page={currentPage}
       perPage={currentPerPage}
       setPage={setPage}
-      data={[]}
-      total={0}
-      isFetching={firstTimeBuyQuery.isFetching}
+      data={dataFindGemsTopScore}
+      total={totalFindGemsTopScore}
+      isFetching={findGemsTopScoreByAI.isFetching}
       setSort={handleSortBy}
     />
   )

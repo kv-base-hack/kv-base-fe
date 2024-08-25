@@ -1,6 +1,6 @@
 export const StTx = ({
-  tx_buy,
-  tx_sell,
+  tx_buy = 0,
+  tx_sell = 0,
 }: {
   tx_buy: number
   tx_sell: number

@@ -1,35 +1,32 @@
 import { ChartConfig, ChartContainer } from '@/components/ui/chart'
 import { nFormatter } from '@/lib/utils/nFormatter'
 
-import { Label, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
+import {
+  Cell,
+  Label,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+} from 'recharts'
 import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import CircularProgress from '@/components/common/CircularProgress'
 
+import { IconCart } from '@/components/shared/icons/spotlight'
 import { IconUsers } from '@/components/ui/icons'
 import { useQuery } from '@tanstack/react-query'
+import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
+import { SPOTLIGHT_TYPES } from '@/constant/spotlight'
 import {
   IconCoinHand,
   IconTrendUp,
-  IconCart,
 } from '@/components/shared/icons/wallet-explorer/icon-trader-spotlight'
-import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
 import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
-import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
 import { DataSpotlight } from '@/types/spotlight'
+import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
 
 const PieChartX = PieChart as any
-
-interface Token {
-  token_address: string
-  avg_price: number
-  value_in_usdt: number
-  value_in_token: number
-  volume: number
-  roi: number
-  pnl: number
-}
 
 const chartConfig = {
   visitors: {
@@ -67,6 +64,8 @@ const renderColorChart = (i: number) => {
       return 'var(--color-Cyan)'
     case 3:
       return 'var(--color-Electrician)'
+    case 4:
+      return 'var(--color-DarkPurple)'
     default:
       return 'var(--color-Electrician)'
   }
@@ -79,50 +78,39 @@ export const TokenSpotLight = ({
 }) => {
   const leaderboardSpotlightQuery = useQuery(
     useLeaderboardSpotlightQuery({
-      chain: 'base',
+      chain: 'solana',
       duration: durationSpotlight,
     }),
   )
 
   const data = leaderboardSpotlightQuery?.data
 
-  const volumeHold = data?.most_hold_by_volume?.value_in_usdt || 0
-  const volumePnl = data?.most_profit?.value_in_usdt || 0
-  const volumeBuy = data?.most_buy_by_volume?.value_in_usdt || 0
-  const volumeProfit = data?.most_profit?.value_in_usdt || 0
+  if (!data) return null
 
-  const totalVol = volumeHold + volumePnl + volumeBuy + volumeProfit
+  const totalVol = Object.values(SPOTLIGHT_TYPES).reduce(
+    (acc, type) => acc + (data[type]?.total_profit || 0),
+    0,
+  )
 
-  const dataChart = useMemo(() => {
-    const result = [
-      {
-        type: 'largest hold value',
-        volume: volumeHold,
-        percent: volumeHold / totalVol,
-        fill: renderColorChart(0),
-      },
-      {
-        type: 'largest position by pnl',
-        volume: volumePnl,
-        percent: volumePnl / totalVol,
-        fill: renderColorChart(1),
-      },
-      {
-        type: 'most buy',
-        volume: volumeBuy,
-        percent: volumeBuy / totalVol,
-        fill: renderColorChart(2),
-      },
-      {
-        type: 'most profit',
-        volume: volumeProfit,
-        percent: volumeProfit / totalVol,
-        fill: renderColorChart(3),
-      },
-    ]
+  const formatData = Object.entries(SPOTLIGHT_TYPES).map(
+    ([key, type], index) => ({
+      type: key,
+      profit: data[type]?.total_profit || 0,
+      balance: data[type]?.hold_in_usdt || 0,
+      realized: data[type]?.realized_percent || 0,
+      symbol: data[type]?.symbol || '',
+      imageUrl: data[type]?.image_url || '',
+      percent: (data[type]?.total_profit || 0) / totalVol,
+      fill: renderColorChart(index),
+    }),
+  )
 
-    return result
-  }, [totalVol, volumeBuy, volumeHold, volumePnl, volumeProfit])
+  const dataChart = formatData.map((item) => ({
+    ...item,
+    balance: item.balance,
+    profit: item.profit,
+    realized: item.realized,
+  }))
 
   return (
     <div className="flex h-full w-full justify-between gap-10">
@@ -143,6 +131,19 @@ export const TokenSpotLight = ({
                 paddingAngle={8}
                 cornerRadius={4}
               >
+                {dataChart.map((_, index) => {
+                  const segmentColor = renderColorChart(index)
+                  return (
+                    <Cell
+                      key={`cell-${index}`}
+                      style={{
+                        filter: `drop-shadow(0px 0px 2px ${segmentColor}`,
+                      }}
+                      stroke="0"
+                    />
+                  )
+                })}
+
                 <Label
                   content={({ viewBox }) => {
                     if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
@@ -238,8 +239,10 @@ const CustomTooltip = ({
         color={data.fill}
         symbol={data?.token}
         imgUrl={data?.imageUrl}
-        percent={data?.vol * 100}
+        percent={data?.percent * 100}
         balance={data?.balance}
+        realized={data?.realized}
+        profit={data?.profit}
       />
     )
   }

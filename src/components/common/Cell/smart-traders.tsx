@@ -3,16 +3,7 @@ import { ImageBadge, ImageRanking } from '../Image/image-ranking'
 import { TooltipWallet } from '../Tooltip/tooltip-wallet'
 import { IconFilterFunnel } from '@/components/shared/icons/activity/icon-filter-funnel'
 
-interface SmartTradersProps {
-  data: {
-    sender?: string
-    badges?: string[]
-    ranking?: string
-    user_address?: string
-  }
-}
-
-export const SmartTradersCell = ({ data }: SmartTradersProps) => {
+export const SmartTradersCell = ({ data }: any) => {
   const { sender, badges, ranking, user_address } = data
 
   const user = sender || user_address
@@ -33,7 +24,7 @@ export const SmartTradersCell = ({ data }: SmartTradersProps) => {
           <IconFilterFunnel className="h-4 w-4" />
         </div>
         <div className="flex items-center gap-1">
-          {badges?.map((badge) => (
+          {badges?.map((badge: string) => (
             <ImageBadge badge={badge} size={16} key={badge} />
           ))}
         </div>

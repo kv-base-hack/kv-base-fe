@@ -1,33 +1,33 @@
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
-import numeral from 'numeral'
 import Link from 'next/link'
 import moment from 'moment'
-import { TokenStat } from '@/types/tradeStatisticTokens'
 import { cn } from '@/lib/utils'
-import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
+import { Balances } from '@/types/userBalance'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { renderPrice } from '@/lib/utils/renderPrice'
+import { StTx } from '../../find-gems/tables/cols/st-tx'
 
 export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
-  const columns: ColumnDef<TokenStat>[] = [
+  const columns: ColumnDef<Balances>[] = [
     {
       accessorKey: 'symbol',
       header: () => <div className="whitespace-nowrap">Tokens/Last Active</div>,
       enableSorting: true,
       cell: ({ row }) => {
-        const { symbol, time } = row.original
+        const { symbol, time, token_address, image_url } = row.original
         return (
           <Link
-            href={`/smartmoney-onchain/token-explorer/${row.original.tokenAddress}`}
+            href={`/smartmoney-onchain/token-explorer/${token_address}`}
             className="flex items-center justify-between gap-3 text-right font-medium"
           >
-            <ImageToken imgUrl={row?.original?.imageUrl} symbol={symbol} />
+            <ImageToken imgUrl={image_url} symbol={symbol} />
             <div className="flex flex-col text-start text-neutral-300">
               <div className="text-sm font-medium hover:underline">
                 {symbol}
               </div>
               <div className="text-xs">
-                {moment(time).format('MMM DD, HH:mm')}
+                {time ? moment(time).format('MMM DD, HH:mm') : '-'}
               </div>
             </div>
           </Link>
@@ -41,18 +41,34 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       ),
       enableSorting: true,
       cell: ({ row }) => {
-        const { realized_percent_30d } = row.original
+        const { realized_profit, realized_percent } = row.original
         return (
-          <div className="flex flex-col text-start text-green">
-            <div className="text-sm font-medium">?</div>
+          <div className="flex flex-col text-start">
+            <div
+              className={cn(
+                'text-sm font-medium',
+                realized_profit > 0
+                  ? 'text-green'
+                  : realized_profit < 0
+                    ? 'text-red'
+                    : '',
+              )}
+            >
+              {realized_profit > 0 ? '+' : realized_profit < 0 ? '-' : ''}
+              {realized_profit ? `$${nFormatter(realized_profit)}` : '-'}
+            </div>
             <div
               className={cn(
                 'text-xs',
-                realized_percent_30d > 0 ? 'text-green' : 'text-red',
+                realized_percent > 0
+                  ? 'text-green'
+                  : realized_percent < 0
+                    ? 'text-red'
+                    : '',
               )}
             >
-              {realized_percent_30d > 0 ? '+' : '-'}
-              {realized_percent_30d?.toFixed(2)}%
+              {realized_percent > 0 ? '+' : realized_percent < 0 ? '-' : ''}
+              {realized_percent ? `${realized_percent?.toFixed(2)}%` : '-'}
             </div>
           </div>
         )
@@ -65,18 +81,34 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       ),
       enableSorting: true,
       cell: ({ row }) => {
-        const { unrealized_percent_30d } = row.original
+        const { unrealized_profit, unrealized_percent } = row.original
         return (
-          <div className="flex flex-col text-start text-green">
-            <div className="text-sm font-medium">?</div>
+          <div className="flex flex-col text-start">
+            <div
+              className={cn(
+                'text-sm font-medium',
+                unrealized_profit > 0
+                  ? 'text-green'
+                  : unrealized_profit < 0
+                    ? 'text-red'
+                    : '',
+              )}
+            >
+              {unrealized_profit > 0 ? '+' : unrealized_profit < 0 ? '-' : ''}
+              {unrealized_profit ? `$${nFormatter(unrealized_profit)}` : '-'}
+            </div>
             <div
               className={cn(
                 'text-xs',
-                unrealized_percent_30d > 0 ? 'text-green' : 'text-red',
+                unrealized_percent > 0
+                  ? 'text-green'
+                  : unrealized_percent < 0
+                    ? 'text-red'
+                    : '',
               )}
             >
-              {unrealized_percent_30d > 0 ? '+' : '-'}
-              {unrealized_percent_30d?.toFixed(2)}%
+              {unrealized_percent > 0 ? '+' : unrealized_percent < 0 ? '-' : ''}
+              {unrealized_percent ? `${unrealized_percent?.toFixed(2)}%` : '-'}
             </div>
           </div>
         )
@@ -87,18 +119,25 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => <div>30D Total Profit</div>,
       enableSorting: true,
       cell: ({ row }) => {
-        const { total_profit_30d, pnl } = row.original
+        const { total_profit, pnl } = row.original
         return (
-          <div className="flex flex-col text-start text-green">
-            <div className="text-sm font-medium">{formatPriceNumber(pnl)}</div>
-            <div
-              className={cn(
-                'text-xs',
-                total_profit_30d > 0 ? 'text-green' : 'text-red',
-              )}
-            >
-              {total_profit_30d > 0 ? '+' : '-'}
-              {total_profit_30d?.toFixed(2)}%
+          <div
+            className={cn(
+              'flex flex-col text-start',
+              total_profit > 0
+                ? 'text-green'
+                : total_profit < 0
+                  ? 'text-red'
+                  : '',
+            )}
+          >
+            <div className="text-sm font-medium">
+              {total_profit > 0 ? '+' : total_profit < 0 ? '-' : ''}
+              {total_profit ? `$${nFormatter(total_profit)}` : '-'}
+            </div>
+            <div className={cn('text-xs', pnl > 0 ? 'text-green' : 'text-red')}>
+              {pnl > 0 ? '+' : pnl < 0 ? '-' : ''}
+              {pnl ? `$${pnl?.toFixed(2)}%` : '-'}
             </div>
           </div>
         )
@@ -109,13 +148,13 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Balance',
       enableSorting: true,
       cell: ({ row }) => {
-        const { balance = 0, volume } = row.original
+        const { hold_in_usdt = 0 } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
             <div className="text-sm font-medium">
-              {formatPriceNumber(balance)}
+              ${nFormatter(hold_in_usdt)}
             </div>
-            <div className="text-xs">{formatPriceNumber(volume)}</div>
+            {/* <div className="text-xs">{formatPriceNumber(volume)}</div> */}
           </div>
         )
       },
@@ -140,13 +179,13 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Avg Entry/Vol',
       enableSorting: true,
       cell: ({ row }) => {
-        const { avg_price, volume } = row.original
+        const { avg_entry, buy_volume } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">
-              {formatPriceNumber(avg_price)}
+            <div className="text-sm font-medium">{renderPrice(avg_entry)}</div>
+            <div className="text-xs">
+              {buy_volume ? `$${nFormatter(buy_volume)}` : '-'}
             </div>
-            <div className="text-xs">{formatPriceNumber(volume)}</div>
           </div>
         )
       },
@@ -156,13 +195,13 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Avg Price Sell/Vol',
       enableSorting: true,
       cell: ({ row }) => {
-        const { entry_price_sell, volume } = row.original
+        const { avg_sell, sell_volume } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">
-              {formatPriceNumber(entry_price_sell)}
+            <div className="text-sm font-medium">{renderPrice(avg_sell)}</div>
+            <div className="text-xs">
+              {sell_volume ? `$${nFormatter(sell_volume)}` : '-'}
             </div>
-            <div className="text-xs">{formatPriceNumber(volume)}</div>
           </div>
         )
       },
@@ -172,11 +211,9 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => <div>TXs</div>,
       enableSorting: true,
       cell: ({ row }) => {
-        return (
-          <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">0/0</div>
-          </div>
-        )
+        const { tx_buy, tx_sell } = row.original
+
+        return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />
       },
     },
   ]

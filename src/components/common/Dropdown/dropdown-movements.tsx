@@ -26,18 +26,19 @@ export const DropdownMovements = ({
   setMovement: (v: string) => void
   setPage: (v: number) => void
 }) => {
-  const [filtered, setFiltered] = useState<boolean>(false)
-
   const handleSetMovement = (v: string) => {
     setMovement(v)
     setPage(1)
-    setFiltered(v === 'all' ? false : true)
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        {filtered ? <IconFiltedFunnel /> : <IconFilterFunnel />}
+        {movement === 'all' || !movement ? (
+          <IconFilterFunnel />
+        ) : (
+          <IconFiltedFunnel />
+        )}
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="border border-white/10 bg-black">
