@@ -50,7 +50,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const gtmId = 'G-HJ2P8J9GST'
+  const gtmId = 'G-VX7B46S6R2'
   return (
     <html lang="en" suppressHydrationWarning>
       <GoogleTagManager gtmId={gtmId} />
