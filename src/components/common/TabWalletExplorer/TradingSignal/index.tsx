@@ -11,6 +11,7 @@ import { ExternalLink } from 'lucide-react'
 import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import { useQuery } from '@tanstack/react-query'
 import { parseAsInteger, useQueryState } from 'nuqs'
+import { CHAIN } from '@/constant/chain'
 
 export const TradingSignal = ({
   params,
@@ -40,7 +41,7 @@ export const TradingSignal = ({
       limit: 10,
       start: currentPage,
       token_addresses: params?.token,
-      chain: 'solana',
+      chain: CHAIN,
     }),
   )
 

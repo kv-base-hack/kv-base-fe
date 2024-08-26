@@ -2,6 +2,7 @@
 
 import { gemFilterAtom } from '@/atom/gemFilter'
 import { TableFindGemsTopScoreByAi } from '@/components/common/DataTable/table-find-gems-top-score'
+import { CHAIN } from '@/constant/chain'
 
 import { useFindGemsTopScore } from '@/query/find-gems/getFindGemsTopScore'
 import { useQuery } from '@tanstack/react-query'
@@ -44,7 +45,7 @@ export const FindGemsTopAiScore: React.FC<FindGemsTabSmartTopScoreAiProps> = ({
     useFindGemsTopScore({
       limit: currentPerPage,
       start: currentPage,
-      chain: 'solana',
+      chain: CHAIN,
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,
       market_cap_min: filter.minMarketcap,

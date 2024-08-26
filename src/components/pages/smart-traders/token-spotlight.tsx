@@ -25,6 +25,7 @@ import {
 import { CardBalanceToken } from '@/components/common/Card/card-balance-token'
 import { DataSpotlight } from '@/types/spotlight'
 import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
+import { CHAIN } from '@/constant/chain'
 
 const PieChartX = PieChart as any
 
@@ -78,7 +79,7 @@ export const TokenSpotLight = ({
 }) => {
   const leaderboardSpotlightQuery = useQuery(
     useLeaderboardSpotlightQuery({
-      chain: 'solana',
+      chain: CHAIN,
       duration: durationSpotlight,
     }),
   )

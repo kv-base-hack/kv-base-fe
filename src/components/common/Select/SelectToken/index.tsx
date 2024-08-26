@@ -18,9 +18,6 @@ export const SelectSpecificToken = () => {
           Specific Token
         </div>
       </SelectTrigger>
-      {/* <SelectContent className="border-none bg-neutral-07 z-[9999]">
-        <SelectItem value="solana">Solana</SelectItem>
-      </SelectContent> */}
     </Select>
   )
 }
