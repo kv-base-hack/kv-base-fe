@@ -34,7 +34,7 @@ export const TraderActivity = ({
     history: 'push',
     shallow: false,
   })
-  const [tradeValue, setTradeValue] = useState<unknown>([])
+
   const [, setSortBy] = useQueryState('sort_by', {
     defaultValue: searchParams?.sort_by?.toString() || '',
     history: 'push',
@@ -43,6 +43,12 @@ export const TraderActivity = ({
   const [hiddenSmallTrades, setHiddenSmallTrades] = useState(false)
   const [token, setToken] = useQueryState('token', {
     defaultValue: searchParams?.token?.toString() || '',
+    history: 'push',
+    shallow: false,
+  })
+
+  const [tradeValue, setTradeValue] = useQueryState('amount_filter', {
+    defaultValue: searchParams?.amount_filter?.toString() || '',
     history: 'push',
     shallow: false,
   })

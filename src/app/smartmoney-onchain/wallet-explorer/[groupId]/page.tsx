@@ -34,6 +34,7 @@ import { WalletStatChart } from '@/components/pages/wallet-detail/wallet-stat-ch
 import IconCopyAddress from '@/components/shared/icons/icon-copy-address'
 import { ImageRanking } from '@/components/common/Image/image-ranking'
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
+import { nFormatter } from '@/lib/utils/nFormatter'
 
 const TABS = ['Trade Statistic', 'Assets', 'Activity']
 
@@ -282,14 +283,14 @@ export default function WalletExplorerDetail({
                   <div className="text-neutral-300">Total Profit</div>
                   <div className="mt-2 text-[32px] leading-[48px] text-core">
                     {userInfo?.total_pnl
-                      ? `${formatPriceNumber(userInfo?.total_pnl)}`
+                      ? `$${nFormatter(userInfo?.total_pnl)}`
                       : '-'}
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Realized</div>
                     <div className="text-core">
                       {userInfo?.realized_pnl
-                        ? `${formatPriceNumber(userInfo?.realized_pnl)}`
+                        ? `$${nFormatter(userInfo?.realized_pnl)}`
                         : '-'}
                     </div>
                   </div>
@@ -297,7 +298,7 @@ export default function WalletExplorerDetail({
                     <div className="text-neutral-300">Unrealized</div>
                     <div className="text-red">
                       {userInfo?.unrealized_pnl
-                        ? `${formatPriceNumber(userInfo?.unrealized_pnl)}`
+                        ? `$${nFormatter(userInfo?.unrealized_pnl)}`
                         : '-'}
                     </div>
                   </div>
@@ -311,7 +312,7 @@ export default function WalletExplorerDetail({
                     <div className="text-neutral-300">Realized</div>
                     <div className="text-core">
                       {userInfo?.roi_realized_percent
-                        ? `${formatPriceNumber(userInfo?.roi_realized_percent)}`
+                        ? `$${nFormatter(userInfo?.roi_realized_percent)}`
                         : '-'}
                     </div>
                   </div>
@@ -319,9 +320,7 @@ export default function WalletExplorerDetail({
                     <div className="text-neutral-300">Unrealized</div>
                     <div className="text-red">
                       {userInfo?.roi_unrealized_percent
-                        ? `${formatPriceNumber(
-                            userInfo?.roi_unrealized_percent,
-                          )}`
+                        ? `$${nFormatter(userInfo?.roi_unrealized_percent)}`
                         : '-'}
                     </div>
                   </div>

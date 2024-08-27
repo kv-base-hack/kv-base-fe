@@ -21,7 +21,7 @@ export const RenderTableFindGemsByTab = ({
   columns: any
 }) => {
   return (
-    <div>
+    <div className="flex h-full flex-1 flex-col justify-between">
       <div className="mt-4">
         <DataTable
           columns={columns}

@@ -104,7 +104,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div className="flex flex-col">
           {renderWallet(sender, ranking, badges, item)} has buy more{' '}
-          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline">
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-neutral-300">
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of{' '}
             {renderToken(token_address, symbol, image_url)}at{' '}
             {renderPrice(avg_price)}His avg entry price is{' '}
@@ -122,7 +122,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline">
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-neutral-300">
             has unusual buy{' '}
             <RenderNumber value={value_in_usdt}>
               {renderPrice(value_in_usdt)}
@@ -137,7 +137,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline">
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-neutral-300">
             has buy token create {renderText('3H ago')} with
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>
             {renderToken(token_address, symbol, image_url)} at{' '}
@@ -149,7 +149,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
             has first time buy
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>
             of {renderToken(token_address, symbol, image_url)} at{' '}
@@ -181,7 +181,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
             just withdraw{' '}
             <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span>{' '}
             of
@@ -195,7 +195,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
             just deposited{' '}
             <span className="text-semibold text-[#F04D1A]">
               {nFormatter(value_in_usdt)}
@@ -209,7 +209,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
             has sell token create {renderText(token_age || '-')}
             with
             <RenderNumber value={value_in_usdt}>

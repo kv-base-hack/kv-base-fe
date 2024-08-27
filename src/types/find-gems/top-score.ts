@@ -28,12 +28,13 @@ export interface TopScoreByAI {
   roi: number
   pnl: number
   realized_percent: number
-  number_of_smart_money_hold: number
+  number_of_users: number
   address: string
   tx_buy: number
   tx_sell: number
-  buy_usdt_amount: number
-  sell_usdt_amount: number
+  buy_volume_in_usdt: number
+  sell_volume_in_usdt: number
+  token_age: number
 }
 
 

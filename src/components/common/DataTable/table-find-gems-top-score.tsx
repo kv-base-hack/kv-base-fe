@@ -2,6 +2,7 @@ import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import { cn } from '@/lib/utils'
 import { ImageToken } from '@/components/common/Image/ImageToken'
+import { SmartMoneyHolding } from '@/types/find-gems/smartMoneyHolding'
 import Link from 'next/link'
 import numeral from 'numeral'
 import { TableFindGemsProps } from '@/types'
@@ -76,8 +77,8 @@ export const TableFindGemsTopScoreByAi = ({
         accessorKey: 'token_age',
         header: () => <div>Age</div>,
         cell: ({ row }) => {
-          const { token_Age } = row.original
-          return <div className="text-neutral-03">{token_Age}</div>
+          const { token_age } = row.original
+          return <div className="text-neutral-03">{token_age}</div>
         },
       },
       {
@@ -221,7 +222,7 @@ export const TableFindGemsTopScoreByAi = ({
         cell: ({ row }) => {
           const { realized_percent } = row.original
           return (
-            <>{realized_percent ? `${realized_percent?.toFixed(2)}%}` : '-'}</>
+            <>{realized_percent ? `${realized_percent?.toFixed(2)}%` : '-'}</>
           )
         },
       },
@@ -235,12 +236,12 @@ export const TableFindGemsTopScoreByAi = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { number_of_smart_money_hold, address } = row.original
+          const { number_of_users, tokenAddress } = row.original
           return (
             <DialogNumberOfSmartMoney
-              number={number_of_smart_money_hold}
-              address={address}
-              type="find-gems-sm-holding"
+              number={number_of_users}
+              address={tokenAddress}
+              type="top-score-ai"
               duration="24h"
             />
           )
@@ -258,8 +259,10 @@ export const TableFindGemsTopScoreByAi = ({
         accessorKey: 'st_vol',
         header: () => <div>ST Vol</div>,
         cell: ({ row }) => {
-          const { buy_usdt_amount, sell_usdt_amount } = row.original
-          return <StVol buyVol={buy_usdt_amount} sellVol={sell_usdt_amount} />
+          const { buy_volume_in_usdt, sell_volume_in_usdt } = row.original
+          return (
+            <StVol buyVol={buy_volume_in_usdt} sellVol={sell_volume_in_usdt} />
+          )
         },
         align: 'end',
         width: 128,

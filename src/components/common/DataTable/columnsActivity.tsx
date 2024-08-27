@@ -19,6 +19,8 @@ import {
 } from '@/components/shared/icons/activity/icon-filter-funnel'
 import { DropdownMovements } from '../Dropdown/dropdown-movements'
 import { SmartTradersCell } from '../Cell/smart-traders'
+import { TooltipTokenMoreInfo } from '../Tooltip/tool-tip-more-info'
+import { PopoverValue } from '../Popover/popover-value'
 
 export type Activity = {
   id: string
@@ -49,7 +51,7 @@ export const columnsActivity = (
   setMovement: (v: string) => void,
   movement: string,
   setPage: (v: number) => void,
-  setTradeValue: (v: string) => void,
+  setTradeValue: any,
   tradeValue: unknown,
 ) => {
   const columns: ColumnDef<TopActivity>[] = [
@@ -160,7 +162,16 @@ export const columnsActivity = (
     {
       accessorKey: 'value',
       header: () => {
-        return <div>Value</div>
+        return (
+          <div className="flex items-center gap-1">
+            Value
+            <PopoverValue
+              valueSelected={tradeValue}
+              setValueSelected={setTradeValue}
+              setPage={setPage}
+            />
+          </div>
+        )
       },
       enableSorting: false,
       size: 220,
@@ -201,11 +212,7 @@ export const columnsActivity = (
       accessorKey: ' ',
       enableSorting: false,
       cell: ({ row }) => {
-        return (
-          <div className="rounded-[36px] border border-white/10 bg-white/10 px-3 py-0.5 text-sm font-normal text-neutral-300">
-            More Infor
-          </div>
-        )
+        return <TooltipTokenMoreInfo data={row.original} />
       },
     },
   ]

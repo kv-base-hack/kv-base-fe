@@ -1,9 +1,7 @@
 'use client'
 
 import { DataTable } from '@/components/common/DataTable'
-import { columnsLeaderboard } from '@/components/common/DataTable/columnLeaderboard'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { GroupHeader } from '@/components/common/GroupHeader'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
@@ -16,6 +14,7 @@ import Close from '@/components/shared/icons/Close'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import Link from 'next/link'
 import { useQuery } from '@tanstack/react-query'
+import { ColumnsLeaderboard } from '@/components/common/DataTable/columnLeaderboard'
 
 export default function WalletAnalytics() {
   const CHAIN = useAtomValue(chainAtom)
@@ -119,7 +118,7 @@ export default function WalletAnalytics() {
           <div className="mt-8">
             <DataTable
               className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
-              columns={columnsLeaderboard(
+              columns={ColumnsLeaderboard(
                 pageLeaderboard,
                 perPageLeaderboard,
                 setSortBy,

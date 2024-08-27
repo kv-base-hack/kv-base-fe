@@ -35,7 +35,7 @@ export const FindGemsPage = ({
   }
 
   return (
-    <div className="mx-4 mt-2 h-full rounded-2xl border border-solid border-white/10 bg-black/50 p-6">
+    <div className="mx-4 mb-4 mt-2 flex h-full flex-1 flex-col rounded-2xl border border-solid border-white/10 bg-black/50 p-6">
       <FindGemsTabHeader {...{ activeTab, handleActiveTab }} />
       <FindGemsTabs searchParams={searchParams} {...{ activeTab }} />
     </div>

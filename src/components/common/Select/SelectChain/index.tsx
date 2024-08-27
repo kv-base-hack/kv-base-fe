@@ -3,7 +3,6 @@ import { useAtom } from 'jotai'
 import { Select, SelectTrigger } from '@/components/ui/select'
 import { chainAtom } from '@/atom/chain'
 import { cn } from '@/lib/utils'
-import SolanaIcon from '@/components/shared/icons/token/solana'
 
 export const SelectChain = ({
   showName = true,
@@ -25,18 +24,9 @@ export const SelectChain = ({
         )}
       >
         <div className="flex items-center justify-between gap-2">
-          <SolanaIcon
-            className={cn(
-              'aspect-square object-center',
-              size === 'lg' ? 'h-10 w-10' : 'h-8 w-8',
-            )}
-          />
           {showName ? <div className="grow">Solana</div> : null}
         </div>
       </SelectTrigger>
-      {/* <SelectContent className="border-none bg-neutral-07 z-[9999]">
-        <SelectItem value="solana">Solana</SelectItem>
-      </SelectContent> */}
     </Select>
   )
 }

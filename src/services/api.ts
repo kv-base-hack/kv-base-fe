@@ -1502,6 +1502,16 @@ export const getTopSmartMoneyTradeUsersList = ({
           duration,
         },
       })
+    case 'top-score-ai':
+      return api.get('/v1/findgems/top_score_users_list', {
+        params: {
+          chain,
+          limit,
+          start,
+          address,
+          duration,
+        },
+      })
     default:
       return api.get('/v1/findgems/smart_money_token_profit_users_list', {
         params: {

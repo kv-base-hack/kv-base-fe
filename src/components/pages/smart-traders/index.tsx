@@ -2,7 +2,7 @@
 'use client'
 
 import { DataTable } from '@/components/common/DataTable'
-import { columnsLeaderboard } from '@/components/common/DataTable/columnLeaderboard'
+import { ColumnsLeaderboard } from '@/components/common/DataTable/columnLeaderboard'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
@@ -19,6 +19,7 @@ import { parseAsInteger, useQueryState } from 'nuqs'
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
 import { TokenSpotLight } from './token-spotlight'
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
+import { ImageWithGlow } from './glow'
 
 export const SmartTraders = ({
   searchParams,
@@ -145,9 +146,7 @@ export const SmartTraders = ({
               Learn more
             </button>
           </div>
-          <div className="">
-            <img src="/images/ai-consolidation.png" alt="" />
-          </div>
+          <ImageWithGlow />
         </div>
         <div className="w-1/2">
           <WrapTable
@@ -204,7 +203,7 @@ export const SmartTraders = ({
         >
           <div className="mt-4">
             <DataTable
-              columns={columnsLeaderboard(
+              columns={ColumnsLeaderboard(
                 currentPageLeaderboard,
                 currentPerPageLeaderboard,
                 setSortByLeaderboard,
