@@ -69,7 +69,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
     <CardCommon className={className}>
       <TitleCard
         iconFirst={<IconRanking />}
-        title="Smart Money Overview"
+        title="Smart Traders Overview"
       ></TitleCard>
       <div className="flex flex-col items-center gap-3 xl:flex-row">
         <CardContent

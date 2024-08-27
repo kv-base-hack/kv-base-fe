@@ -144,7 +144,7 @@ export const TableFindGemsSMTopBuys = () => {
         accessorKey: 'buyer_count',
         header: () => (
           <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            # of SM Buy
+            # of ST Buy
           </div>
         ),
         align: 'center',
@@ -168,7 +168,7 @@ export const TableFindGemsSMTopBuys = () => {
     <CardCommon>
       <TitleCard
         iconFirst={<SmartMoneyTopBuyIcon />}
-        title="SM Top Buys"
+        title="ST Top Buys"
         iconSecond={<Info />}
       >
         <SelectDuration duration={duration} setDuration={setDuration} />

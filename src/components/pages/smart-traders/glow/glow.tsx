@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const Glow = ({
   size,
-  classNameText = 'left-9 top-[40px]',
+  classNameText = 'left-8 top-[40px]',
   text,
   className,
 }: {

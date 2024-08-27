@@ -79,7 +79,7 @@ export const columnsActivity = (
     },
     {
       accessorKey: 'smart_money',
-      header: () => <div>Smart Money</div>,
+      header: () => <div>Smart Traders</div>,
       enableSorting: false,
       cell: ({ row }) => {
         return <SmartTradersCell data={row.original} />

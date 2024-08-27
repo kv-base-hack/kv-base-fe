@@ -59,13 +59,13 @@ async function submitUserMessage(content: string) {
     1. If the user asks for information or smart money analysis of a specific token, call the \`smart_money_analyst\` function to display the token information and provide a smart money data analysis.
     2. If the user requests market news or insights, call the \`market_news\` function to show a summary of the latest news and insights.
     3. If the user seeks technical analysis of a particular token, call the \`technical_analysis\` function to present the technical analysis for that token.
-    4. If the user inquires about Smart Money transactions for a token, call the \`smart_money_transactions\` function to display the "Smart Money Transactions" UI for the specified token.
-    5. If the user asks about top Smart Money trading for a token, call the \`top_smart_money_trading\` function to show the "Top Smart Money Trading" UI for the given token.
-    6. If the user requests information on the activity of top Smart Money trading for a token, call the \`activity_of_top_smart_money_trading\` function to present the "Activity of Top Smart Money Trading" UI for the token in question.
+    4. If the user inquires about Smart Traders transactions for a token, call the \`smart_money_transactions\` function to display the "Smart Traders Transactions" UI for the specified token.
+    5. If the user asks about top Smart Traders trading for a token, call the \`top_smart_money_trading\` function to show the "Top Smart Traders Trading" UI for the given token.
+    6. If the user requests information on the activity of top Smart Traders trading for a token, call the \`activity_of_top_smart_money_trading\` function to present the "Activity of Top Smart Traders Trading" UI for the token in question.
     7. If the user requests analyze wallet by address, call the \`analyze_wallet\` function to show the analysis of the wallet.
     8. If the user requests about what tokens they should buy, call the \`should_buy_tokens\` function to provide a list of tokens that they should consider buying.
-    9. If the user inquires about Smart Money New Listing Buy, call the \`smart_money_new_listing_buy\` function to display the "Smart Money New Listing Buy" UI for the specified token on chain.
-    10. If the user inquires about Smart Money Top Buys, call the \`smart_money_top_buys\` function to display the "Smart Money Top Buys" UI for the specified token on chain.
+    9. If the user inquires about Smart Traders New Listing Buy, call the \`smart_money_new_listing_buy\` function to display the "Smart Traders New Listing Buy" UI for the specified token on chain.
+    10. If the user inquires about Smart Traders Top Buys, call the \`smart_money_top_buys\` function to display the "Smart Traders Top Buys" UI for the specified token on chain.
     11. If the user inquires about Insider Buy, call the \`insider_buy\` function to display the "Insider Buy" UI for the specified token on chain.
 
     In the UI, messages enclosed in square brackets [] indicate a UI element or a user event. For example:

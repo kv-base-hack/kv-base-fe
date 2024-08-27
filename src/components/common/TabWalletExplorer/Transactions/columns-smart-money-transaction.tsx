@@ -35,7 +35,7 @@ export const columnsSmartMoneyTransaction: ColumnDef<SmartMoneyTx>[] = [
     accessorKey: 'smart_money',
     header: () => (
       <div className="flex items-center gap-2">
-        <div>Smart Money</div>
+        <div>Smart Traders</div>
         <SortMultipleIcon className="h-4 w-4" />
       </div>
     ),

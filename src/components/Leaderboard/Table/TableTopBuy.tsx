@@ -161,7 +161,7 @@ export const TableTopBuy = ({
         enableSorting: false,
         header: () => (
           <div className="whitespace-nowrap" role="button">
-            # of SM Buy
+            # of ST Buy
           </div>
         ),
         cell: ({ row }) => {
@@ -184,7 +184,7 @@ export const TableTopBuy = ({
     <CardCommon>
       <TitleCard
         iconFirst={<IconShoppingCart />}
-        title="SM Top Buy"
+        title="ST Top Buy"
         content="Top purchases made by Smartmoney ranked by Volume Buy."
       >
         <div className="flex items-center gap-2">
@@ -193,7 +193,7 @@ export const TableTopBuy = ({
             <LinkCustom
               url="/find-gems"
               title="Detail"
-              onClick={() => setActiveTab('SM Top Buys')}
+              onClick={() => setActiveTab('ST Top Buys')}
             />
           )}
         </div>

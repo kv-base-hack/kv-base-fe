@@ -18,7 +18,7 @@ export const SmartMoneyNewListingBuyText = () => {
         project&apos;s goals, technology, and community support is crucial.
       </li>
       <li>
-        <span className="font-bold">3. Evaluate Smart Money Influence:</span>{' '}
+        <span className="font-bold">3. Evaluate Smart Traders Influence:</span>{' '}
         Consider tracking smart money investors involved in each token. A higher
         number might indicate stronger confidence among experienced investors,
         which could be a positive signal.

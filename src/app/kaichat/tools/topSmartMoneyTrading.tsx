@@ -100,7 +100,7 @@ export const createTopSmartMoneyTradingTool: CreateToolFunction = (aiState) => {
         })
         return (
           <BotMessage
-            content={`I can't find Top Smart Money trading of ${symbol}. Please try again!!!`}
+            content={`I can't find Top Smart Traders trading of ${symbol}. Please try again!!!`}
           />
         )
       }

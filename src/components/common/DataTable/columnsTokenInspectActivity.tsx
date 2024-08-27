@@ -24,7 +24,7 @@ export const columnsTokenInspectActivity: ColumnDef<Activity>[] = [
   },
   {
     accessorKey: 'smart_money',
-    header: () => 'Smart Money',
+    header: () => 'Smart Traders',
     enableSorting: false,
     cell: ({ row }) => {
       const { sender } = row.original

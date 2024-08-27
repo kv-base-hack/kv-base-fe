@@ -202,7 +202,7 @@ export const TableTopTokenBuy = ({
         accessorKey: 'buyer_count',
         header: () => (
           <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            # of SM Buy
+            # of ST Buy
           </div>
         ),
         align: 'center',

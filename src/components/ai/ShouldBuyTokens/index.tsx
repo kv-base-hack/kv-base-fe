@@ -21,13 +21,13 @@ export const ShouldBuyTokens = () => {
       {
         id: Date.now(),
         display: (
-          <UserMessage>Smart Money New Listing Buy on chain</UserMessage>
+          <UserMessage>Smart Traders New Listing Buy on chain</UserMessage>
         ),
       },
     ])
 
     const resp = await submitUserMessage(
-      `Smart Money New Listing Buy:
+      `Smart Traders New Listing Buy:
       - Chain: ${CHAIN}
       `,
     )
@@ -39,11 +39,11 @@ export const ShouldBuyTokens = () => {
       ...prev,
       {
         id: Date.now(),
-        display: <UserMessage>Smart Money Top Buys</UserMessage>,
+        display: <UserMessage>Smart Traders Top Buys</UserMessage>,
       },
     ])
     const resp = await submitUserMessage(
-      `Smart Money Top Buys on chain:
+      `Smart Traders Top Buys on chain:
       - Chain: ${CHAIN}
       `,
     )

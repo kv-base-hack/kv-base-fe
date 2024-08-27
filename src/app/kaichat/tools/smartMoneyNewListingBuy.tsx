@@ -98,7 +98,7 @@ export const createSmartMoneyNewListingBuyTool: CreateToolFunction = (
         })
         return (
           <BotMessage
-            content={`I can't find Smart Money New Listing Buy on chain: ${chain}. Please try again!!!`}
+            content={`I can't find Smart Traders New Listing Buy on chain: ${chain}. Please try again!!!`}
           />
         )
       }

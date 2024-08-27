@@ -244,7 +244,7 @@ export const TablePerformanceToken = () => {
             onClick={() => setSortBy('number_of_smart_money')}
             role="button"
           >
-            <div> # of SM</div>
+            <div> # of ST</div>
             <TooltipCustom content="Number of smart money entities that bought the token.">
               <Info />
             </TooltipCustom>
@@ -269,7 +269,7 @@ export const TablePerformanceToken = () => {
     <CardCommon>
       <TitleCard
         iconFirst={<IconCoins />}
-        title="Smart Money Top Performing Tokens"
+        title="Smart Traders Top Performing Tokens"
         content="Top tokens bought by Smartmoney ranked by PnL earned."
       >
         <div className="flex items-center gap-2">

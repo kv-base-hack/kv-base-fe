@@ -40,7 +40,7 @@ export const SelectSmartMoney = ({
         <div className="flex items-center justify-between gap-2">
           <div className="grow">
             {options.find((item) => item.value === smartMoney)?.label ||
-              'All Smart Money'}
+              'All Smart Traders'}
           </div>
         </div>
       </SelectTrigger>

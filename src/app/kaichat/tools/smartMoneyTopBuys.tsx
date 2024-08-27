@@ -98,7 +98,7 @@ export const createSmartMoneyTopBuysTool: CreateToolFunction = (aiState) => {
         })
         return (
           <BotMessage
-            content={`I can't find Smart Money Top Buys on chain: ${chain}. Please try again!!!`}
+            content={`I can't find Smart Traders Top Buys on chain: ${chain}. Please try again!!!`}
           />
         )
       }

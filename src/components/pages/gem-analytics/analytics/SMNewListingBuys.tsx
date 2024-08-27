@@ -24,7 +24,7 @@ export const GemAnalyticsSMNewListingBuy = () => {
       className="p-4"
       title={
         <div className="text-[15px] font-bold not-italic leading-6 tracking-[-0.15px]">
-          SM New Listing Buys
+          ST New Listing Buys
         </div>
       }
       icon={<GemAnalyticsSMNewListingBuyIcon />}

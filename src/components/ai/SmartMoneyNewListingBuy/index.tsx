@@ -84,7 +84,7 @@ export const SmartMoneyNewListingBuy: React.FC<NewListingBuyProps> = ({
       },
       {
         accessorKey: 'number_of_sm',
-        header: '# of SM',
+        header: '# of ST',
         cell: ({ row }) => {
           const { users } = row.original
           return <div>{users?.length}</div>
@@ -181,12 +181,12 @@ export const SmartMoneyNewListingBuy: React.FC<NewListingBuyProps> = ({
       <div className="flex flex-col gap-5 rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 p-6 font-semibold leading-[160%] max-md:px-5">
         <TitleCard
           iconFirst={<IconTarget />}
-          title="SM New Listing Buy"
-          content="List of tokens created less than 14 days ago, bought by Smartmoney, ranked by default according to PnL."
+          title="ST New Listing Buy"
+          content="List of tokens created less than 14 days ago, bought by Smart Traders, ranked by default according to PnL."
         >
           <Link
             href="/find-gems"
-            onClick={() => setActiveTab('SM New Listing Buys')}
+            onClick={() => setActiveTab('ST New Listing Buys')}
             className="rounded-full bg-neutral-07 px-5 py-2 text-[15px] leading-6 text-[#FCFCFC]"
           >
             See Detail in Find Gems

@@ -219,7 +219,7 @@ export const TableTopTokenSell = ({
         accessorKey: 'seller_count',
         header: () => (
           <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            # of SM Sell
+            # of ST Sell
           </div>
         ),
         cell: ({ row }) => {

@@ -156,7 +156,7 @@ export const TableNewListingBuy = ({
     <CardCommon>
       <TitleCard
         iconFirst={<IconTarget />}
-        title="SM New Listing Buy"
+        title="ST New Listing Buy"
         content="List of tokens created less than 14 days ago, bought by Smartmoney, ranked by default according to PnL."
       >
         <div className="flex items-center gap-2">
@@ -165,7 +165,7 @@ export const TableNewListingBuy = ({
             <LinkCustom
               url="/find-gems"
               title="Detail"
-              onClick={() => setActiveTab('SM New Listing Buys')}
+              onClick={() => setActiveTab('ST New Listing Buys')}
             />
           )}
         </div>

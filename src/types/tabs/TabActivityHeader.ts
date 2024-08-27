@@ -1,5 +1,5 @@
 export const tabsActivity = [
-  'Smart Money Activity',
+  'Smart Traders Activity',
   'Unusual Activity',
 ] as const
 

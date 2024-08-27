@@ -29,7 +29,7 @@ export const ColumnsLeaderboard = (
         accessorKey: 'smart_money',
         header: () => (
           <div className="flex items-center gap-2">
-            <div>Smart Money</div>
+            <div>Smart Traders</div>
           </div>
         ),
         enableSorting: false,

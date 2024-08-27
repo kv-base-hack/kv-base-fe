@@ -146,7 +146,7 @@ export const TableFindGemsSMNewListingBuy = () => {
     <CardCommon>
       <TitleCard
         iconFirst={<IconTarget />}
-        title="SM New Listing Buy"
+        title="ST New Listing Buy"
         iconSecond={<Info />}
       >
         <SelectDuration duration={duration} setDuration={setDuration} />

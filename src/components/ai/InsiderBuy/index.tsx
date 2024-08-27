@@ -83,7 +83,7 @@ export const InsiderBuy: React.FC<InsiderBuyProps> = ({ data }) => {
       },
       {
         accessorKey: 'number_of_sm',
-        header: '# of SM',
+        header: '# of ST',
         cell: ({ row }) => {
           const { number_of_users, address } = row.original
           return (

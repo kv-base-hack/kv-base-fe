@@ -40,7 +40,7 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
       },
       {
         accessorKey: 'sm',
-        header: () => <div>Smart Money</div>,
+        header: () => <div>Smart Traders</div>,
         enableSorting: false,
         cell: ({ row }) => {
           const { sender } = row.original
@@ -146,7 +146,7 @@ export const ActivityOfTopSmartMoneyTrading: React.FC<
     <div className="rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 p-6 font-semibold leading-[160%] shadow-chat-ai backdrop-blur-lg max-md:px-5">
       <div className="w-fit rounded-[20px] border border-white/10 bg-[#EFEFEF] px-4 py-2">
         <div className="flex items-center gap-2">
-          <p>Activity of Top SM</p>
+          <p>Activity of Top ST</p>
         </div>
       </div>
       <DataTable

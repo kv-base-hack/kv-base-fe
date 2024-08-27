@@ -18,7 +18,7 @@ export const SelectSmartMoney = ({
         <div className="grow">{value}</div>
       </SelectTrigger>
       <SelectContent className="z-[9999] border-none bg-neutral-07">
-        <SelectItem value="all">All Smart Money</SelectItem>
+        <SelectItem value="all">All Smart Traders</SelectItem>
       </SelectContent>
     </Select>
   )

@@ -51,12 +51,12 @@ export const TokenInfo = ({
         </div>
       </div>
       <div className="flex gap-10">
-        <MarketInfo title="AVG SM entry" loading={loading}>
+        <MarketInfo title="AVG ST entry" loading={loading}>
           {renderPrice(avg_entry)}
         </MarketInfo>
         <div className="h-10 w-px flex-1 bg-[#E7E9EB]"></div>
 
-        <MarketInfo title="# SM hold" loading={loading}>
+        <MarketInfo title="# ST hold" loading={loading}>
           <DialogNumberOfSmartMoney
             number={number_sm_hold || 0}
             address={address || ''}
@@ -78,7 +78,7 @@ export const TokenInfo = ({
           <div className="flex gap-1">
             <div className="flex flex-1 flex-col">
               <div className="flex items-center justify-center text-right text-xs leading-5 tracking-normal text-neutral-04">
-                <div>SM BUY VOL</div>
+                <div>ST BUY VOL</div>
               </div>
               <div className="text-sm font-medium leading-6 text-neutral-07">
                 {loading ? null : `$${nFormatter(volume_buy || 0)}`}
@@ -86,7 +86,7 @@ export const TokenInfo = ({
             </div>
             <div className="flex flex-1 flex-col items-end pl-20">
               <div className="flex items-center justify-center gap-1 text-right text-xs leading-5 tracking-normal text-neutral-04">
-                <div>SM SELL VOL</div>
+                <div>ST SELL VOL</div>
               </div>
               <div className="self-end text-sm font-medium leading-6 text-neutral-07">
                 {loading ? null : `$${nFormatter(volume_sell || 0)}`}

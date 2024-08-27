@@ -42,7 +42,7 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
         accessorKey: 'sm',
         header: () => (
           <div className="flex items-center gap-2">
-            <div>Smart Money</div>
+            <div>Smart Traders</div>
             <SortMultipleIcon className="h-4 w-4" />
           </div>
         ),
@@ -124,7 +124,7 @@ export const SmartMoneyTransactions: React.FC<SmartMoneyTransactionsProps> = ({
     <div className="mt-4 rounded-lg border border-solid border-white/10 bg-neutral-01 bg-opacity-50 p-6 font-semibold leading-[160%] shadow-2xl backdrop-blur-lg max-md:px-5">
       <div className="w-fit rounded-[20px] border border-white/10 bg-[#EFEFEF] px-4 py-2">
         <div className="flex items-center gap-2">
-          <p className="relative mt-1 grow font-medium">SM Transaction</p>
+          <p className="relative mt-1 grow font-medium">ST Transaction</p>
           <InfoIcon />
         </div>
       </div>

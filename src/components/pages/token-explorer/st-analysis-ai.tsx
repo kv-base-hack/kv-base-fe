@@ -127,7 +127,7 @@ export function StAnalysisByAI({ params }: { params: { token: string } }) {
         <div className="mt-2 flex justify-center gap-1">
           <div className="flex flex-1 flex-col py-px">
             <div className="text-xs uppercase leading-4 text-neutral-500">
-              SM Buy Vol
+              ST Buy Vol
             </div>
             <div className="text-sm leading-5 text-white">
               {renderPrice(dataTokenInfoTrade?.buy_usdt_amount || 0)}
@@ -135,7 +135,7 @@ export function StAnalysisByAI({ params }: { params: { token: string } }) {
           </div>
           <div className="flex flex-1 flex-col items-end py-px pl-20">
             <div className="self-end text-xs uppercase leading-4 text-neutral-500">
-              SM Sell Vol
+              ST Sell Vol
             </div>
             <div className="self-end text-sm leading-5 text-white">
               {renderPrice(dataTokenInfoTrade?.sell_usdt_amount || 0)}

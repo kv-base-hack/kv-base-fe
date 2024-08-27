@@ -35,7 +35,7 @@ export const TopTokenSell = () => {
 
   return (
     <WrapTable
-      title="Smart Money Top Sells"
+      title="Smart Traders Top Sells"
       info=""
       icon={<SmartMoneyTopSellIcon />}
       childHeader={

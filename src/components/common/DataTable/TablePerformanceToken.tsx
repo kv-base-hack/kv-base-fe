@@ -145,7 +145,7 @@ export const TablePerformanceToken = ({
             <div>Avg Price</div>
             <TooltipCustom
               className="z-999 w-[320px] border-white/10 bg-neutral-06 text-neutral-02 shadow-sm"
-              content="The average purchase price of the token by Smart Money."
+              content="The average purchase price of the token by Smart Traders."
             >
               <Info className="h-5 w-5" />
             </TooltipCustom>
@@ -229,7 +229,7 @@ export const TablePerformanceToken = ({
             onClick={() => setSortBy('number_of_smart_money')}
             role="button"
           >
-            # of SM
+            # of ST
           </div>
         ),
         align: 'center',

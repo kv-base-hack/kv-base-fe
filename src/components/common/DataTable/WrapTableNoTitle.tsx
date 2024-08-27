@@ -12,7 +12,7 @@ export const WrapTableNoTitle: React.FC<WrapTableNoTitleProps> = ({
       <div className="flex justify-between gap-0 self-stretch whitespace-nowrap text-base leading-6 tracking-normal max-md:flex-wrap">
         <div className="flex justify-between gap-2 pr-20 font-semibold max-md:max-w-full max-md:flex-wrap">
           <div className="grow justify-center rounded-lg bg-neutral-06 px-4 py-2 text-gray-300">
-            Smart Money Ranking
+            Smart Traders Ranking
           </div>
           <div className="grow justify-center rounded-lg bg-neutral-07 px-4 py-2 text-gray-500">
             Insider Trade Ranking

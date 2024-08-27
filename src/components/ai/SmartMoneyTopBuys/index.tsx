@@ -77,7 +77,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
       },
       {
         accessorKey: 'number_of_sm',
-        header: '# of SM',
+        header: '# of ST',
         cell: ({ row }) => {
           const { number_of_smart_money, address } = row.original
           return (
@@ -189,12 +189,12 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
       <div className="flex flex-col gap-5 rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 p-6 font-semibold leading-[160%] max-md:px-5">
         <TitleCard
           iconFirst={<IconShoppingCart />}
-          title="SM Top Buy"
+          title="ST Top Buy"
           content="Top purchases made by Smartmoney ranked by Volume Buy."
         >
           <Link
             href="/find-gems"
-            onClick={() => setActiveTab('SM Top Buys')}
+            onClick={() => setActiveTab('ST Top Buys')}
             className="rounded-full bg-neutral-07 px-5 py-2 text-[15px] leading-6 text-[#FCFCFC]"
           >
             See Detail in Find Gems

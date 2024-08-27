@@ -59,13 +59,13 @@ export default function WalletAnalytics() {
           </div>
           <div className="text-center text-2xl font-normal not-italic leading-9 text-neutral-200">
             In-depth analysis of wallets, highlighting key insights. You can
-            enter a Smart Money wallet in the search bar or find it in the Smart
-            Money rankings below
+            enter a Smart Traders wallet in the search bar or find it in the
+            Smart Money rankings below
           </div>
           <div className="text-center text-lg font-medium not-italic leading-6 tracking-[-0.36px] text-neutral-400">
             (Currently supporting{' '}
             <Link className="underline" href={'/gem-analytics'}>
-              Smart Money
+              Smart Traders
             </Link>{' '}
             and{' '}
             <Link className="underline" href={'/gem-analytics'}>
@@ -79,7 +79,7 @@ export default function WalletAnalytics() {
       <div className="m-10 mb-0 pb-10">
         <WrapTable
           icon={<SmartMoneyRankingIcon />}
-          title="Smart Money Leaderboard"
+          title="Smart Traders Leaderboard"
           childHeader={
             <div className="flex items-center gap-2">
               <span>Filter by</span>

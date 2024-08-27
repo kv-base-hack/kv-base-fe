@@ -35,7 +35,7 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
         accessorKey: 'smart_money',
         header: () => (
           <div className="flex items-center gap-2">
-            <div>Smart Money</div>
+            <div>Smart Traders</div>
             <SortMultipleIcon className="h-4 w-4" />
           </div>
         ),
@@ -189,7 +189,7 @@ export const TopSmartMoneyTrading: React.FC<TopSmartMoneyTradingProps> = ({
     <div className="rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 bg-opacity-50 p-6 font-semibold leading-[160%] shadow-2xl backdrop-blur-lg max-md:px-5">
       <div className="w-fit rounded-lg bg-[#EFEFEF] px-4 py-2">
         <div className="flex items-center gap-2">
-          <p className="relative mt-1 grow font-medium">Top SM</p>
+          <p className="relative mt-1 grow font-medium">Top ST</p>
         </div>
       </div>
       <DataTable

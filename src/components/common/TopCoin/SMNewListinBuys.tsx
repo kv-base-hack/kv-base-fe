@@ -31,7 +31,7 @@ export const SMNewListingBuys = () => {
 
   return (
     <WrapTable
-      title="Smart Money New Listing Buys"
+      title="Smart Traders New Listing Buys"
       info="A list of Tokens ranked by net withdrawals to Centralized exchanges. Net deposits are calculated as Withdrawals minus Deposits."
       icon={<NewListingBuyIcon />}
       childHeader={

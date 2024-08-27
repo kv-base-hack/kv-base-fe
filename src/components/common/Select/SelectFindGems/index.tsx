@@ -20,15 +20,15 @@ const options = [
   },
   {
     value: 'sm_holding',
-    label: 'SM Holding',
+    label: 'ST Holding',
   },
   {
     value: 'sm_top_buys',
-    label: 'SM Top Buys',
+    label: 'ST Top Buys',
   },
   {
     value: 'sm_top_sells',
-    label: 'SM Top Sells',
+    label: 'ST Top Sells',
   },
 ]
 

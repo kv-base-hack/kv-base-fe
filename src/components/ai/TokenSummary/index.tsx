@@ -51,7 +51,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
     address: string = '',
   ) => {
     const response = await submitUserMessage(
-      `Smart Money Transactions of token:
+      `Smart Traders Transactions of token:
       - Symbol: ${symbol}
       - Address: ${address}`,
     )
@@ -63,7 +63,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
     address: string = '',
   ) => {
     const response = await submitUserMessage(
-      `Top Smart Money trading:
+      `Top Smart Traders trading:
       - Symbol: ${symbol}
       - Address: ${address}`,
     )
@@ -75,7 +75,7 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
     address: string = '',
   ) => {
     const response = await submitUserMessage(
-      `Activity of Top Smart Money trading:
+      `Activity of Top Smart Traders trading:
       - Symbol: ${symbol}
       - Address: ${address}`,
     )
