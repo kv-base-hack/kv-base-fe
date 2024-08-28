@@ -37,7 +37,11 @@ export function UnusualBuyAnalysis({ params }: { params: { token: string } }) {
   return (
     <WrapTable
       title="Unusual Buy Analysis by AI"
-      icon={<IconSpotLight fill="#8F53F8" />}
+      icon={
+        <div className="rounded-full bg-[#182317] p-2">
+          <IconSpotLight fill="#8F53F8" />
+        </div>
+      }
       childHeader={
         <SelectDuration duration={duration} setDuration={setDuration} />
       }

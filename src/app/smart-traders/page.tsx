@@ -7,7 +7,7 @@ import {
 } from '@tanstack/react-query'
 import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
-import { SmartTraders } from '@/components/pages/smart-traders'
+import { WalletAnalysis } from '@/components/pages/smart-traders'
 import { CHAIN } from '@/constant/chain'
 import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
 
@@ -46,7 +46,7 @@ async function WalletAnalysisPage({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <SmartTraders searchParams={searchParams} />
+      <WalletAnalysis searchParams={searchParams} />
     </HydrationBoundary>
   )
 }

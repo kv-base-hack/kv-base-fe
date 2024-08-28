@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const Glow = ({
   size,
-  classNameText = 'left-8 top-[40px]',
+  classNameText = 'left-[34px] top-[40px]',
   text,
   className,
 }: {
@@ -14,7 +14,7 @@ export const Glow = ({
 }) => {
   return (
     <div className={className}>
-      <div className="relative z-10 h-[140] w-[140]">
+      <div className="relative h-[140] w-[140]">
         <Image
           src="/images/glow.png"
           alt=""

@@ -21,7 +21,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 }) => {
   return (
     <div className="flex w-full justify-start gap-3 text-base leading-6 text-white">
-      <div className="h-6 w-6">{icon}</div>
+      <div className="shrink-0">{icon}</div>
       <div className="font-medium">{name}</div>
     </div>
   )

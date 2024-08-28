@@ -50,7 +50,7 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
     user_balance,
     price,
     avg_entry_buy,
-    avg_entry_sell,
+    avg_price_sell,
     tx_buy,
     tx_sell,
     realized_profit,
@@ -72,10 +72,10 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <div className="rounded-[36px] border border-white/10 bg-white/10 px-3 py-0.5 text-sm font-normal text-neutral-300">
-            More Infor
+            More Info
           </div>
         </TooltipTrigger>
-        <TooltipContent className="w-[340px] border-none p-0">
+        <TooltipContent className="w-[300px] border-none p-0">
           <div className="flex flex-col gap-2.5 rounded-[20px] border border-white/10 bg-black/25 p-4 backdrop-blur-xl">
             <div className="flex items-center justify-between gap-2 whitespace-nowrap">
               <Link
@@ -98,27 +98,16 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
             {/* token info */}
             <div>
               <div className="flex items-center gap-1">
-                <Link
-                  href={`/smartmoney-onchain/token-explorer/${token_address}`}
-                  passHref
-                  legacyBehavior
-                >
-                  <a
-                    target="_blank"
-                    className="text-sm font-normal text-[#7F56D9] underline"
-                  >
-                    <div className="flex items-center gap-2">
-                      <ImageToken
-                        symbol={symbol}
-                        imgUrl={token_image_url}
-                        className="size-6"
-                      />
-                      <p className="text-base font-medium text-white underline">
-                        {symbol}
-                      </p>
-                    </div>
-                  </a>
-                </Link>
+                <div className="flex items-center gap-2">
+                  <ImageToken
+                    symbol={symbol}
+                    imgUrl={token_image_url}
+                    className="size-6"
+                  />
+                  <p className="text-base font-medium text-white underline">
+                    {symbol}
+                  </p>
+                </div>
                 <p className="text-base font-normal text-[#DCDCDC]">
                   {renderPrice(price)}
                 </p>
@@ -158,20 +147,20 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
                     : '-'}
                 </div>
                 <p className="flex items-center">
-                  {renderPrice(avg_entry_sell)}/
+                  {renderPrice(avg_price_sell)}/
                   {sell_volume_in_usdt
                     ? `$${nFormatter(sell_volume_in_usdt)}`
                     : '-'}
                 </p>
               </div>
-              <div className="flex items-center gap-0.5">
+              <div className="flex w-full items-center gap-0.5">
                 <div
-                  className="h-1 rounded-[100px] bg-core"
-                  style={{ width: percentBuyVolumne }}
+                  className="h-1 shrink-0 rounded-[100px] bg-core"
+                  style={{ width: percentBuyVolumne + '%' }}
                 ></div>
                 <div
-                  className="h-1 rounded-[100px] bg-red"
-                  style={{ width: percentSellVolumne }}
+                  className="h-1 shrink-0 rounded-[100px] bg-red"
+                  style={{ width: percentSellVolumne + '%' }}
                 ></div>
               </div>
             </div>

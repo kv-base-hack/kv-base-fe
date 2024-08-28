@@ -37,7 +37,11 @@ export function StAnalysisByAI({ params }: { params: { token: string } }) {
   return (
     <WrapTable
       title="Smart Traders Analysis by AI"
-      icon={<IconSpotLight />}
+      icon={
+        <div className="rounded-full bg-[#182317] p-2">
+          <IconSpotLight />
+        </div>
+      }
       childHeader={
         <SelectDuration duration={duration} setDuration={setDuration} />
       }

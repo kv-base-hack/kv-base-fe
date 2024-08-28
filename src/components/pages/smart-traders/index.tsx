@@ -7,21 +7,21 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
-import { useEffect, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import { TokenList } from '@/types/tokenList'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Close from '@/components/shared/icons/Close'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
-import { useTopTokenProfitQuery } from '@/query/onchain-signal/getTopTokenProfit'
-import { SelectDuration } from '@/components/common/Select/SelectDuration'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useSuspenseQuery } from '@tanstack/react-query'
 import { parseAsInteger, useQueryState } from 'nuqs'
+import { Glow } from './glow/glow'
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
+import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDuration/select-duration-leaderboard'
 import { TokenSpotLight } from './token-spotlight'
+import { IconBarChart01 } from '@/components/shared/icons/icon-bar-chart-01'
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
-import { ImageWithGlow } from './glow'
 
-export const SmartTraders = ({
+export const WalletAnalysis = ({
   searchParams,
 }: {
   searchParams?: { [key: string]: string | string[] | undefined }
@@ -34,14 +34,16 @@ export const SmartTraders = ({
     searchParams?.limit_leaderboard?.toString() || '10',
   )
   const currentDurationLeaderboard =
-    searchParams?.duration_leaderboard?.toString() || '24h'
+    searchParams?.duration_leaderboard?.toString() || '30d'
   const currentSortByLeaderboard =
     searchParams?.sort_leaderboard?.toString() || ''
-  const currentDurationTp = searchParams?.ttp_duration?.toString() || '24h'
+  const currentTokenAddresesLeaderboard =
+    searchParams?.ta_leaderboard?.toString() || ''
+  const currentDurationTp = searchParams?.ttp_duration?.toString() || '30d'
 
   const [listToken, setListToken] = useState<TokenList[]>([])
   const barChartSmartTraderRef = useRef<HTMLDivElement>(null)
-  const [widthChartSmartTrader, setWidthChartSmartTrader] = useState(0)
+  const [, setWidthChartSmartTrader] = useState(0)
 
   const [, setPageLeaderboard] = useQueryState(
     'start_leaderboard',
@@ -57,14 +59,22 @@ export const SmartTraders = ({
     shallow: false,
   })
 
-  const [, setSortByLeaderboard] = useQueryState('sort_leaderboard', {
-    defaultValue: currentSortByLeaderboard,
+  const [sortByLeaderboard, setSortByLeaderboard] = useQueryState(
+    'sort_leaderboard',
+    {
+      defaultValue: currentSortByLeaderboard,
+      history: 'push',
+      shallow: false,
+    },
+  )
+  const [, setTokenAddressesLeaderboard] = useQueryState('ta_leaderboard', {
+    defaultValue: currentTokenAddresesLeaderboard,
     history: 'push',
     shallow: false,
   })
   //
   const [, setTpDuration] = useQueryState('ttp_duration', {
-    defaultValue: currentDurationLeaderboard,
+    defaultValue: currentDurationTp,
     history: 'push',
     shallow: false,
   })
@@ -74,40 +84,20 @@ export const SmartTraders = ({
       (barChartSmartTraderRef?.current?.clientWidth as number) - 40,
     )
   }, [])
+
   //
-  const topTokenProfitQuery = useQuery(
-    useTopTokenProfitQuery({
-      limit: 8,
-      start: 1,
-      chain: CHAIN,
-      duration: currentDurationTp,
-      sort_by: '',
-    }),
-  )
-  const dataTopTokenProfit = topTokenProfitQuery.isFetching
-    ? [...(Array(8).keys() as any)]
-    : topTokenProfitQuery?.data?.top_smart_money_token_profit?.map(
-        (item, index) => {
-          return {
-            ...item,
-            index: index + 1,
-          }
-        },
-      ) || []
-  //
-  const leaderboardQuery = useQuery(
+  const leaderboardQuery = useSuspenseQuery(
     useLeaderboardQuery({
       start: currentPageLeaderboard,
       limit: currentPerPageLeaderboard,
       chain: CHAIN,
-      sortBy: currentSortByLeaderboard,
-      token_addresses:
-        listToken?.map((item) => item.tokenAddress)?.toString() || '',
+      token_addresses: currentTokenAddresesLeaderboard,
+      sortBy: sortByLeaderboard,
+      duration: currentDurationLeaderboard,
     }),
   )
-  const dataLeaderboard = leaderboardQuery.isFetching
-    ? [...(Array(10).keys() as any)]
-    : leaderboardQuery?.data?.leaderboard?.slice(0, 10) || []
+  const dataLeaderboard =
+    leaderboardQuery?.data?.leaderboard?.slice(0, 10) || []
   const totalLeaderboard = leaderboardQuery?.data?.total || 1
   //
 
@@ -118,6 +108,16 @@ export const SmartTraders = ({
       (token) => token.tokenAddress !== item.tokenAddress,
     )
     setListToken([...newListToken])
+    setTokenAddressesLeaderboard(
+      listToken?.map((item) => item.tokenAddress)?.toString() || '',
+    )
+  }
+
+  const handleChooseTokens = (items: TokenList[]) => {
+    setListToken(items)
+    setTokenAddressesLeaderboard(
+      items?.map((item) => item.tokenAddress)?.toString() || '',
+    )
   }
 
   return (
@@ -134,7 +134,7 @@ export const SmartTraders = ({
                 This dataset features the{' '}
                 <span className="font-bold">top-performing wallets</span> over
                 the last <span className="font-bold">30 days</span>, selected
-                for their exceptional trading metrics. Kaivest uses{' '}
+                for their exceptional trading metrics. Boltrade uses{' '}
                 <span className="font-bold">
                   cutting-edge algorithms and AI
                 </span>{' '}
@@ -146,16 +146,55 @@ export const SmartTraders = ({
               Learn more
             </button>
           </div>
-          <ImageWithGlow />
+          <div className="relative">
+            <img src="/images/ai-consolidation.png" alt="" />
+            <Glow
+              text="Balance"
+              size={110}
+              className="absolute -top-2 left-[38%] h-[110px] w-[110px]"
+            />
+            <Glow
+              text="% Win"
+              size={110}
+              className="absolute left-[55%] top-7 h-[110px] w-[110px]"
+              classNameText="left-10 top-10"
+            />
+
+            <Glow
+              text="PnL"
+              size={80}
+              className="absolute left-[40%] top-[84px] h-[80px] w-[80px]"
+              classNameText="top-[26px] left-[30px]"
+            />
+
+            <Glow
+              text="Risk"
+              size={60}
+              className="absolute left-[54%] top-[110px] h-[60px] w-[60px]"
+              classNameText="top-[18px] left-[23px] text-[10px] leading-4"
+            />
+
+            <Glow
+              text="ROI"
+              size={100}
+              className="absolute left-[47%] top-[150px] h-[100px] w-[100px]"
+              classNameText="left-[42px] top-9"
+            />
+          </div>
         </div>
-        <div className="w-1/2">
+        <div className="z-10 w-1/2">
           <WrapTable
-            title="Top 1000 Smart Traders Spotlight"
-            icon={<IconSpotLight />}
+            title="Trading Spotlight"
+            icon={
+              <div className="rounded-full border border-core bg-[#182317] p-2">
+                <IconSpotLight />
+              </div>
+            }
             childHeader={
-              <SelectDuration
+              <SelectDurationLeaderboard
                 duration={currentDurationTp}
                 setDuration={setTpDuration}
+                type="option2"
               />
             }
             className="flex w-full items-center gap-4 p-6 font-normal"
@@ -167,42 +206,52 @@ export const SmartTraders = ({
       {/* table */}
       <div className="m-10 mx-4 mt-2 pb-4">
         <WrapTable
-          icon={<IconSpotLight />}
+          icon={
+            <div className="rounded-full border border-core bg-[#182317] p-2">
+              <IconBarChart01 />
+            </div>
+          }
           title="Smart Traders Leaderboard"
           childHeader={
             <div className="flex items-center gap-2">
               <ButtonChooseToken
                 listToken={listToken}
-                setListToken={setListToken}
+                setListToken={handleChooseTokens}
               />
               {listToken?.length > 0 ? (
                 <div className="flex items-center gap-2">
                   {listToken.map((item) => (
                     <div
-                      className="h-9 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
+                      className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
                       key={item.tokenAddress}
                     >
-                      <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-07 px-4 text-sm leading-5 tracking-normal text-white">
+                      <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-07 px-4 text-xs leading-5 tracking-normal text-white">
                         <ImageToken
                           imgUrl={item?.imageUrl}
                           symbol={item?.symbol}
                         />
                         <div>{item.symbol}</div>
-                        <Close onclick={handleRemoveToken(item)} />
+                        <Close
+                          className="h-4 w-4"
+                          onclick={handleRemoveToken(item)}
+                        />
                       </div>
                     </div>
                   ))}
                 </div>
               ) : null}
-              <SelectDuration
-                duration={currentDurationTp}
-                setDuration={setTpDuration}
+              <SelectDurationLeaderboard
+                duration={currentDurationLeaderboard}
+                setDuration={setDurationLeaderboard}
+                setPage={setPageLeaderboard}
+                type="option3"
               />
             </div>
           }
         >
           <div className="mt-4">
             <DataTable
+              className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
               columns={ColumnsLeaderboard(
                 currentPageLeaderboard,
                 currentPerPageLeaderboard,

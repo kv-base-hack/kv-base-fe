@@ -1,7 +1,7 @@
 import LastDateIcon from '@/components/shared/icons/wallet-explorer/LastDateIcon'
 import { cn } from '@/lib/utils'
 import upperFirst from 'lodash.upperfirst'
-import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 import moment from 'moment'
 import Link from 'next/link'
 import {
@@ -51,7 +51,8 @@ const renderAction = (action: string) => {
   }
 }
 
-export const CardSpotlight = ({ item }: any) => {
+export const CardSpotlight = ({ ...item }) => {
+  const data = item?.item || {}
   return (
     <div className="flex w-full flex-col gap-2 rounded-2xl border border-white/10 bg-transparent p-4">
       <div className="flex items-start justify-between">
@@ -59,37 +60,42 @@ export const CardSpotlight = ({ item }: any) => {
           <div
             className={cn(
               'flex h-8 w-8 items-center justify-center rounded-full border',
-              item.action === 'selling' || item.action === 'new_listing_sell'
+              data.action === 'selling' || data.action === 'new_listing_sell'
                 ? 'border-[#F04D1A] text-[#F04D1A]'
                 : 'border-core text-core',
             )}
           >
-            {renderIcon(item.action)}
+            {renderIcon(data.action)}
           </div>
           <div>
             <p
               className={cn(
                 'text-sm',
-                item.action === 'selling' || item.action === 'new_listing_sell'
+                data.action === 'selling' || data.action === 'new_listing_sell'
                   ? 'text-[#F04D1A]'
                   : 'text-core',
               )}
             >
-              {renderAction(item.action)}
+              {renderAction(data.action)}
             </p>
             <div className="flex items-center text-xs text-neutral-400">
               <LastDateIcon />
-              <p>{moment(item.block_timestamp).fromNow()}</p>
+              <p>{moment(data.block_timestamp).fromNow()}</p>
             </div>
           </div>
         </div>
-        <Link href={item.scan_link} passHref legacyBehavior>
+        <Link href={data.scan_link} passHref legacyBehavior>
           <a target="_blank">
-            <ExternalLink className="h-4 w-4 text-neutral-03" />
+            <Image
+              src={'/images/logoTime.png'}
+              alt="time"
+              width={23}
+              height={23}
+            />
           </a>
         </Link>
       </div>
-      <ContentSpotlight item={item} />
+      <ContentSpotlight item={data} />
     </div>
   )
 }

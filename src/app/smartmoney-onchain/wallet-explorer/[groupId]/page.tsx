@@ -35,6 +35,7 @@ import IconCopyAddress from '@/components/shared/icons/icon-copy-address'
 import { ImageRanking } from '@/components/common/Image/image-ranking'
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
 import { nFormatter } from '@/lib/utils/nFormatter'
+import { IconCart } from '@/components/shared/icons/spotlight/card'
 
 const TABS = ['Trade Statistic', 'Assets', 'Activity']
 
@@ -66,7 +67,11 @@ export default function WalletExplorerDetail({
   const DATA_STATS = [
     {
       name: 'Most Bought 24h',
-      icon: <BoughtIcon />,
+      icon: (
+        <div className="rounded-full border border-core p-1 text-core">
+          <IconCart className="h-3 w-3" />
+        </div>
+      ),
       imgUrl: tradeStatistic?.most_buy?.imageUrl,
       title: tradeStatistic?.most_buy?.name,
       priceChangeH24: tradeStatistic?.most_buy?.priceChangeH24,
@@ -269,7 +274,11 @@ export default function WalletExplorerDetail({
         </div>
         <WrapTable
           title="Wallet Overview"
-          icon={<IconSpotLight />}
+          icon={
+            <div className="rounded-full bg-[#182317] p-2">
+              <IconSpotLight />
+            </div>
+          }
           childHeader={
             <SelectDuration duration={duration} setDuration={setDuration} />
           }
@@ -373,7 +382,11 @@ export default function WalletExplorerDetail({
         {/* right */}
         <WrapTable
           title="Wallet Spotlight"
-          icon={<IconSpotLight />}
+          icon={
+            <div className="rounded-full bg-[#182317] p-2">
+              <IconSpotLight />
+            </div>
+          }
           childHeader={
             <SelectDuration duration={duration} setDuration={setDuration} />
           }

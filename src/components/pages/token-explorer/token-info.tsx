@@ -24,7 +24,6 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
           <div className="mt-1">
             <CopyCustom value={params.token} icon={<CopyIcon />} />
           </div>
-          <HeartIcon />
           <VerifyIcon />
         </div>
       }

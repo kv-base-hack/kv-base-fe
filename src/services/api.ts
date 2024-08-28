@@ -8,7 +8,7 @@ import { FindGemsDepositResponse } from '@/types/find-gems/deposit'
 import { FindGemsSmartMoneyHoldingResponse } from '@/types/find-gems/smartMoneyHolding'
 import { FindGemsUnusualCexResponse } from '@/types/find-gems/unusual-cex'
 import { FindGemsWithdrawResponse } from '@/types/find-gems/withdraw'
-import { LeaderboardResponse } from '@/types/leaderboard'
+import { DataLeaderboard, LeaderboardResponse } from '@/types/leaderboard'
 import { ChannelResponse, ListChannelResponse } from '@/types/listChannel'
 import { NewListingBuyResponse } from '@/types/newListingBuy'
 import { PriceWithTransferResponse } from '@/types/priceWithTransfer'
@@ -669,26 +669,29 @@ export const getTradeActivity = async ({
   })
 }
 
-export const getLeaderboard = async ({
+export const getLeaderboard = ({
   limit = 5,
   start = 1,
   chain,
   sortBy,
   token_addresses = '',
+  duration,
 }: {
   limit?: number
   start?: number
   chain: string
-  sortBy: string
+  sortBy?: string
   token_addresses: string
-}): Promise<LeaderboardResponse> => {
-  return await api.get('/v1/leaderboard', {
+  duration?: string
+}) => {
+  return api.get<DataLeaderboard>('/v1/leaderboard', {
     params: {
       chain,
       limit,
       start,
       sort_by: sortBy,
       token_addresses,
+      frame: duration,
     },
   })
 }

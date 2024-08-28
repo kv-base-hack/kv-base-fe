@@ -24,7 +24,7 @@ const renderWallet = (
 
         <a
           href={`/smartmoney-onchain/wallet-explorer/${wallet}`}
-          className="flex font-semibold text-neutral-100 hover:underline"
+          className="flex text-sm font-normal text-neutral-100 underline"
         >
           {wallet?.slice(0, 4)}
           ...
@@ -68,10 +68,12 @@ const renderToken = (token: string, symbol: string, image_url: string) => {
   return (
     <a
       href={`/smartmoney-onchain/token-explorer/${token}`}
-      className="flex gap-1"
+      className="flex gap-1 px-0.5"
     >
       <ImageToken symbol={symbol} imgUrl={image_url} />
-      <span className="font-medium text-neutral-300 underline">{symbol}</span>
+      <span className="text-sm font-normal text-neutral-300 underline">
+        {symbol}
+      </span>
     </a>
   )
 }
@@ -80,7 +82,7 @@ const renderText = (text: string) => {
   return <span className="text-[#EFEFEF]">{text}</span>
 }
 
-export const ContentSpotlight = ({ item }: any) => {
+export const ContentSpotlight = ({ ...item }) => {
   const {
     action,
     image_url,
@@ -97,23 +99,24 @@ export const ContentSpotlight = ({ item }: any) => {
     token_age,
     ranking,
     badges,
-  } = item
+    total_volume_usdt,
+  } = item.item
 
   switch (action) {
     case 'buy':
       return (
         <div className="flex flex-col">
           {renderWallet(sender, ranking, badges, item)} has buy more{' '}
-          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-neutral-300">
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of{' '}
             {renderToken(token_address, symbol, image_url)}at{' '}
             {renderPrice(avg_price)}His avg entry price is{' '}
             {renderPrice(avg_price)}and{' '}
-            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>Total
+            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>Total{' '}
             Profit and ROI{' '}
             <RenderNumber value={40}>
               {numeral(40).format('0,0.[00]')}%
-            </RenderNumber>
+            </RenderNumber>{' '}
             Total actions is <span>6 Buy</span> and <span>0 Sell</span>
           </div>
         </div>
@@ -122,13 +125,13 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-neutral-300">
-            has unusual buy{' '}
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
+            Unusual buy{' '}
             <RenderNumber value={value_in_usdt}>
-              {renderPrice(value_in_usdt)}
-            </RenderNumber>
+              ${nFormatter(value_in_usdt)}
+            </RenderNumber>{' '}
             of {renderToken(token_address, symbol, image_url)} at{' '}
-            {renderPrice(avg_price)} Make up{' '}
+            {renderPrice(price)} Make up{' '}
             {numeral(portfolio_percenter).format('0,0.[00]')}% of portfolio
           </div>
         </div>
@@ -136,12 +139,13 @@ export const ContentSpotlight = ({ item }: any) => {
     case 'new_listing_buy':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-neutral-300">
-            has buy token create {renderText('3H ago')} with
-            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>
+          {renderWallet(sender, ranking, badges, item)} has buy token create{' '}
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
+            <span>Just bought</span>
+            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of
+            newly listed token (3H)
             {renderToken(token_address, symbol, image_url)} at{' '}
-            {renderPrice(1000)} Make up 40% of portfolio
+            {renderPrice(1000)} This trasaction accounts for 40% of portfolio
           </div>
         </div>
       )
@@ -149,7 +153,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             has first time buy
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>
             of {renderToken(token_address, symbol, image_url)} at{' '}
@@ -161,10 +165,10 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div className="flex w-full flex-col">
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-0.5 text-neutral-300">
+          <div className="flex flex-wrap gap-x-0.5 text-sm font-normal text-neutral-300">
             <>has sold</>
-            <RenderNumber value={avg_price}>
-              {renderPrice(avg_price)}
+            <RenderNumber value={value_in_usdt}>
+              ${nFormatter(value_in_usdt)}
             </RenderNumber>{' '}
             ({numeral(balance_change_percent).format('0,0.[00]')}% Balance) of
             {renderToken(token_address, symbol, image_url)}
@@ -181,7 +185,7 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             just withdraw{' '}
             <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span>{' '}
             of
@@ -195,10 +199,10 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             just deposited{' '}
             <span className="text-semibold text-[#F04D1A]">
-              {nFormatter(value_in_usdt)}
+              ${nFormatter(value_in_usdt)}
             </span>
             of {renderToken(token_address, symbol, image_url)} at{' '}
             {renderPrice(avg_price)} to {upperFirst(exchange_name)}
@@ -209,17 +213,19 @@ export const ContentSpotlight = ({ item }: any) => {
       return (
         <div>
           {renderWallet(sender, ranking, badges, item)}
-          <div className="flex flex-wrap gap-x-1 align-baseline text-neutral-300">
-            has sell token create {renderText(token_age || '-')}
-            with
-            <RenderNumber value={value_in_usdt}>
-              {renderPrice(value_in_usdt)}
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
+            just bought{' '}
+            <RenderNumber value={total_volume_usdt}>
+              ${nFormatter(total_volume_usdt)}
             </RenderNumber>
-            <div className="flex flex-wrap gap-x-1">
-              {renderToken(token_address, symbol, image_url)} at
-              {renderPrice(price)} Make <span>up</span>-<span>of</span>
-              portfolio
-            </div>
+            of newly listed token{' '}
+            {token_age && <span className="text-[#EFEFEF]">({token_age})</span>}{' '}
+            {renderToken(token_address, symbol, image_url)} at{' '}
+            {renderPrice(price)} This transaction accounts for{' '}
+            <span className="text-[#EFEFEF]">
+              {numeral(balance_change_percent).format('0,0.[000]')}%
+            </span>
+            of portfolio
           </div>
         </div>
       )

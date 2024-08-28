@@ -88,9 +88,14 @@ export const TokenSpotLight = ({
 
   if (!data) return null
 
-  const totalVol = Object.values(SPOTLIGHT_TYPES).reduce(
-    (acc, type) => acc + (data[type]?.total_profit || 0),
-    0,
+  const totalStats = Object.values(SPOTLIGHT_TYPES).reduce(
+    (acc, type) => {
+      const typeData = data[type] || {}
+      acc.totalProfit += typeData.total_profit || 0
+      acc.totalHold += typeData.hold_in_usdt || 0
+      return acc
+    },
+    { totalProfit: 0, totalHold: 0 },
   )
 
   const formatData = Object.entries(SPOTLIGHT_TYPES).map(
@@ -101,7 +106,7 @@ export const TokenSpotLight = ({
       realized: data[type]?.realized_percent || 0,
       symbol: data[type]?.symbol || '',
       imageUrl: data[type]?.image_url || '',
-      percent: (data[type]?.total_profit || 0) / totalVol,
+      percent: (data[type]?.total_profit || 0) / totalStats.totalProfit,
       fill: renderColorChart(index),
     }),
   )
@@ -157,17 +162,31 @@ export const TokenSpotLight = ({
                         >
                           <tspan
                             x={viewBox.cx}
-                            y={(viewBox.cy || 0) - 15}
-                            className="fill-light-telegray text-[18px] font-medium leading-6"
+                            y={(viewBox.cy || 0) - 34}
+                            className="fill-light-telegray text-xs font-medium leading-4"
                           >
-                            Total Balance
+                            Total Hold Value
                           </tspan>
                           <tspan
                             x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 15}
-                            className="fill-neutral-100 text-[32px] leading-[48px]"
+                            y={(viewBox.cy || 0) - 12}
+                            className="fill-neutral-100 text-[20px] font-bold leading-[32px]"
                           >
-                            ${nFormatter(totalVol)}
+                            ${nFormatter(totalStats.totalHold)}
+                          </tspan>
+                          <tspan
+                            x={viewBox.cx}
+                            y={(viewBox.cy || 0) + 28}
+                            className="fill-[#D0D0DA] text-xs font-medium"
+                          >
+                            Total Profit
+                          </tspan>
+                          <tspan
+                            x={viewBox.cx}
+                            y={(viewBox.cy || 0) + 46}
+                            className="fill-green text-lg font-bold"
+                          >
+                            +${nFormatter(totalStats.totalProfit)}
                           </tspan>
                         </text>
                       )
