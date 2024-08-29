@@ -10,6 +10,8 @@ export const useLeaderboardQuery = ({
   token_addresses = '',
   duration,
   enabled = true,
+  ranking,
+  badge,
 }: {
   chain: string
   limit: number
@@ -18,6 +20,8 @@ export const useLeaderboardQuery = ({
   token_addresses?: string
   duration?: string
   enabled?: boolean
+  ranking?: string
+  badge?: string
 }) => ({
   queryKey: [
     GET_LEADERBOARD,
@@ -29,6 +33,8 @@ export const useLeaderboardQuery = ({
       token_addresses,
       duration,
       enabled,
+      ranking,
+      badge,
     },
   ],
   enabled,
@@ -40,6 +46,8 @@ export const useLeaderboardQuery = ({
       sortBy,
       token_addresses,
       duration,
+      ranking,
+      badge,
     })
 
     return result.data

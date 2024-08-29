@@ -41,7 +41,7 @@ export const DropdownMovements = ({
         )}
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="border border-white/10 bg-black">
+      <DropdownMenuContent className="border border-white/10 bg-black/10 backdrop-blur-xl">
         <DropdownMenuItem onClick={() => handleSetMovement('all')}>
           <span className="w-full cursor-pointer">All Movement</span>
         </DropdownMenuItem>

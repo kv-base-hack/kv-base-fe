@@ -1,6 +1,5 @@
+import { getTokenInfoUnusualBuy } from "@/services/leaderboard/api"
 
-import { getTokenInfoUnusualBuy } from '@/services/leaderboard/api'
-import { useQuery } from '@tanstack/react-query'
 
 const GET_TOKEN_INFO_UNUSUAL_BUY = 'GET_TOKEN_INFO_UNUSUAL_BUY'
 
@@ -12,8 +11,10 @@ export const useTokenInfoUnusualBuyQuery = ({
   chain: string
   address: string
   duration: string
-}) =>
-  useQuery({
-    queryKey: [GET_TOKEN_INFO_UNUSUAL_BUY, { chain, address, duration }],
-    queryFn: () => getTokenInfoUnusualBuy({ chain, address, duration }),
-  })
+}) => ({
+  queryKey: [GET_TOKEN_INFO_UNUSUAL_BUY, { chain, address, duration }],
+  queryFn: async () => {
+    const result = await getTokenInfoUnusualBuy({ chain, address, duration })
+    return result.data
+  },
+})

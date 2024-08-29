@@ -1,5 +1,4 @@
 import { getTopActivity } from '@/services/api'
-import { useQuery } from '@tanstack/react-query'
 
 const GET_TOP_ACTIVITY = 'GET_TOP_ACTIVITY'
 
@@ -19,20 +18,27 @@ export const useTopActivityQuery = ({
   amount_filter: string
   token_addresses: string
   sort_by: string
-}) =>
-  useQuery({
-    queryKey: [
-      GET_TOP_ACTIVITY,
-      { action, limit, start, chain, amount_filter, token_addresses, sort_by },
-    ],
-    queryFn: () =>
-      getTopActivity({
-        action,
-        limit,
-        start,
-        chain,
-        amount_filter,
-        token_addresses,
-        sort_by,
-      }),
-  })
+}) => ({
+  queryKey: [
+    GET_TOP_ACTIVITY,
+    action,
+    limit,
+    start,
+    chain,
+    amount_filter,
+    token_addresses,
+    sort_by,
+  ],
+  queryFn: async () => {
+    const result = await getTopActivity({
+      action,
+      limit,
+      start,
+      chain,
+      amount_filter,
+      token_addresses,
+      sort_by,
+    })
+    return result.data
+  },
+})

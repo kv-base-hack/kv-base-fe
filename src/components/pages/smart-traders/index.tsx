@@ -20,6 +20,8 @@ import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDura
 import { TokenSpotLight } from './token-spotlight'
 import { IconBarChart01 } from '@/components/shared/icons/icon-bar-chart-01'
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
+import { SelectRank } from './select/select-ranking'
+import { SelectBadge } from './select/select-badge'
 
 export const WalletAnalysis = ({
   searchParams,
@@ -40,6 +42,11 @@ export const WalletAnalysis = ({
   const currentTokenAddresesLeaderboard =
     searchParams?.ta_leaderboard?.toString() || ''
   const currentDurationTp = searchParams?.ttp_duration?.toString() || '30d'
+
+  const currentRankingLeaderboard =
+    searchParams?.ranking_leaderboard?.toString() || 'all'
+  const currentBadgeLeaderboard =
+    searchParams?.badge_leaderboard?.toString() || 'all'
 
   const [listToken, setListToken] = useState<TokenList[]>([])
   const barChartSmartTraderRef = useRef<HTMLDivElement>(null)
@@ -72,6 +79,16 @@ export const WalletAnalysis = ({
     history: 'push',
     shallow: false,
   })
+  const [, setRankingLeaderboard] = useQueryState('ranking_leaderboard', {
+    defaultValue: currentRankingLeaderboard,
+    history: 'push',
+    shallow: false,
+  })
+  const [, setBadgeLeaderboard] = useQueryState('badge_leaderboard', {
+    defaultValue: currentBadgeLeaderboard,
+    history: 'push',
+    shallow: false,
+  })
   //
   const [, setTpDuration] = useQueryState('ttp_duration', {
     defaultValue: currentDurationTp,
@@ -94,6 +111,8 @@ export const WalletAnalysis = ({
       token_addresses: currentTokenAddresesLeaderboard,
       sortBy: sortByLeaderboard,
       duration: currentDurationLeaderboard,
+      ranking: currentRankingLeaderboard,
+      badge: currentBadgeLeaderboard,
     }),
   )
   const dataLeaderboard =
@@ -240,6 +259,16 @@ export const WalletAnalysis = ({
                   ))}
                 </div>
               ) : null}
+              <SelectRank
+                setPage={setPageLeaderboard}
+                setRanking={setRankingLeaderboard}
+                ranking={currentRankingLeaderboard}
+              />
+              <SelectBadge
+                setPage={setPageLeaderboard}
+                setBadge={setBadgeLeaderboard}
+                badge={currentBadgeLeaderboard}
+              />
               <SelectDurationLeaderboard
                 duration={currentDurationLeaderboard}
                 setDuration={setDurationLeaderboard}

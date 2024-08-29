@@ -1,27 +1,42 @@
 import { chainAtom } from '@/atom/chain'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
-import { SelectDuration } from '@/components/common/Select/SelectDuration'
+import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDuration/select-duration-leaderboard'
 
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
 import MoreInfoIcon from '@/components/shared/icons/token-explorer/more-info'
 import { cn } from '@/lib/utils'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { useTokenInfoTradeQuery } from '@/query/token-explorer/get-token-info-trade'
+import { useQuery } from '@tanstack/react-query'
 import { useAtomValue } from 'jotai'
 import numeral from 'numeral'
-import { useState } from 'react'
+import { useQueryState } from 'nuqs'
 
-export function StAnalysisByAI({ params }: { params: { token: string } }) {
+export function StAnalysisByAI({
+  params,
+  searchParams,
+}: {
+  params: { token: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) {
   const CHAIN = useAtomValue(chainAtom)
-  const [duration, setDuration] = useState('24h')
+  const currentDurationTrade = searchParams?.tit_duration?.toString() || '1d'
 
-  const tokenInfoTradeQuery = useTokenInfoTradeQuery({
-    address: params.token,
-    chain: CHAIN,
-    duration,
+  const [, setDurationTrade] = useQueryState('tit_duration', {
+    defaultValue: currentDurationTrade,
+    history: 'push',
+    shallow: false,
   })
-  const dataTokenInfoTrade = tokenInfoTradeQuery.data?.data.res
+
+  const tokenInfoTradeQuery = useQuery(
+    useTokenInfoTradeQuery({
+      address: params?.token?.toString() || '',
+      chain: CHAIN,
+      duration: currentDurationTrade,
+    }),
+  )
+  const dataTokenInfoTrade = tokenInfoTradeQuery?.data?.res
 
   const percentBuyTrade =
     dataTokenInfoTrade &&
@@ -43,7 +58,11 @@ export function StAnalysisByAI({ params }: { params: { token: string } }) {
         </div>
       }
       childHeader={
-        <SelectDuration duration={duration} setDuration={setDuration} />
+        <SelectDurationLeaderboard
+          duration={currentDurationTrade}
+          setDuration={setDurationTrade}
+          type="option3"
+        />
       }
       className="relative flex h-[unset] w-full items-center gap-4 p-6 font-normal"
     >

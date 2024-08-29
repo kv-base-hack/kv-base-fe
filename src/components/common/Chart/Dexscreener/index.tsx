@@ -3,13 +3,7 @@ import { useAtom } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 import { useSearchParams } from 'next/navigation'
 
-export const TradingDexscreener = ({
-  address,
-  symbol,
-}: {
-  address: string
-  symbol: string
-}) => {
+export const TradingDexscreener = ({ address }: { address: string }) => {
   const [CHAIN] = useAtom(chainAtom)
   const searchParams = useSearchParams()
   const search = searchParams.get('chain')

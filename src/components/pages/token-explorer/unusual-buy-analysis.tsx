@@ -8,20 +8,38 @@ import MoreInfoIcon from '@/components/shared/icons/token-explorer/more-info'
 import { cn } from '@/lib/utils'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { useTokenInfoUnusualBuyQuery } from '@/query/token-explorer/get-token-info-unusual-buy'
+import { useQuery } from '@tanstack/react-query'
 import { useAtomValue } from 'jotai'
 import numeral from 'numeral'
+import { useQueryState } from 'nuqs'
 import { useState } from 'react'
 
-export function UnusualBuyAnalysis({ params }: { params: { token: string } }) {
+export function UnusualBuyAnalysis({
+  params,
+  searchParams,
+}: {
+  params: { token: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) {
   const CHAIN = useAtomValue(chainAtom)
   const [duration, setDuration] = useState('24h')
+  const currentDurationUnusualBuy =
+    searchParams?.tiub_duration?.toString() || '24h'
 
-  const tokenInfoUnusualBuyQuery = useTokenInfoUnusualBuyQuery({
-    address: params.token,
-    chain: CHAIN,
-    duration,
+  const [, setDurationUnusualBuy] = useQueryState('tiub_duration', {
+    defaultValue: currentDurationUnusualBuy,
+    history: 'push',
+    shallow: false,
   })
-  const dataTokenInfoUnusualBuy = tokenInfoUnusualBuyQuery.data?.data.res
+
+  const tokenInfoUnusualBuyQuery = useQuery(
+    useTokenInfoUnusualBuyQuery({
+      address: params?.token?.toString() || '',
+      chain: CHAIN,
+      duration: currentDurationUnusualBuy,
+    }),
+  )
+  const dataTokenInfoUnusualBuy = tokenInfoUnusualBuyQuery?.data?.res
 
   const percentBuyUnusual =
     dataTokenInfoUnusualBuy &&
@@ -43,7 +61,11 @@ export function UnusualBuyAnalysis({ params }: { params: { token: string } }) {
         </div>
       }
       childHeader={
-        <SelectDuration duration={duration} setDuration={setDuration} />
+        <SelectDuration
+          duration={currentDurationUnusualBuy}
+          setDuration={setDurationUnusualBuy}
+          type="option2"
+        />
       }
       className="relative flex h-[unset] w-full items-center gap-4 p-6 font-normal"
     >

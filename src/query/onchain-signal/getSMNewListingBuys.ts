@@ -1,5 +1,5 @@
 import { getSMNewListingBuys } from '@/services/api'
-import { useQuery } from '@tanstack/react-query'
+import { queryOptions } from '@tanstack/react-query'
 
 const GET_SM_NEW_LISTING_BUY = 'GET_SM_NEW_LISTING_BUY'
 
@@ -18,11 +18,26 @@ export const useSMNewListingBuyQuery = ({
   chain,
   sort_by,
 }: SMNewListingBuy) =>
-  useQuery({
+  queryOptions({
     queryKey: [
       GET_SM_NEW_LISTING_BUY,
       { limit, duration, start, chain, sort_by },
     ],
-    queryFn: () =>
-      getSMNewListingBuys({ limit, duration, start, chain, sort_by }),
+    queryFn: async () => {
+      try {
+        const result = await getSMNewListingBuys({
+          limit,
+          duration,
+          start,
+          chain,
+          sort_by,
+        })
+        return result.data
+      } catch (error) {
+        return {
+          smart_money_new_listing_buy: [],
+          total: 0,
+        }
+      }
+    },
   })

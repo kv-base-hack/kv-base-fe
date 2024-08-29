@@ -57,10 +57,12 @@ export const columnsSmartMoneyRanking = (
       ),
       enableSorting: false,
       cell: ({ row }) => {
-        const { roi_3d_token = 0 } = row.original
+        const { realized_profit = 0 } = row.original
         return (
-          <div className={roi_3d_token < 0 ? 'text-error-500' : 'text-green'}>
-            {numeral(roi_3d_token).format('0,0.[00]')}%
+          <div
+            className={realized_profit < 0 ? 'text-error-500' : 'text-green'}
+          >
+            {realized_profit ? `$${nFormatter(realized_profit)}` : '-'}
           </div>
         )
       },

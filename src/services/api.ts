@@ -16,7 +16,7 @@ import { TradingSignalResponse } from '@/types/signal'
 import { SmartMoneyForTokenResponse } from '@/types/smartMoneyForToken'
 import { SmartMoneyTransactionResponse } from '@/types/smartMoneyTransaction'
 import { TokenExplorerTradingSignalResponse } from '@/types/token-explorer/tradingSignal'
-import { TokenInfoResponse } from '@/types/tokenInfo'
+import { DataTokenInfo, TokenInfoResponse } from '@/types/tokenInfo'
 import { TokenInspectActivityResponse } from '@/types/tokenInspectActivity'
 import { TokenInspectBuySellResponse } from '@/types/tokenInspectBuySell'
 import { TokenInspectDepositWithdrawResponse } from '@/types/tokenInspectDepositWithdraw'
@@ -338,7 +338,7 @@ export const getCexWithdraw = async ({
 export const getSMNewListingBuys = async ({
   limit = 5,
   start = 1,
-  duration = '24h',
+  duration = '1d',
   chain,
   sort_by,
 }: {
@@ -351,7 +351,7 @@ export const getSMNewListingBuys = async ({
   return await api.get('/v1/token/smart_money_new_listing_buy', {
     params: {
       limit,
-      duration,
+      frame: duration,
       start,
       chain,
       sort_by,
@@ -538,7 +538,7 @@ export const getTopTokenProfit = async ({
       limit,
       start,
       chain,
-      duration,
+      frame: duration,
       sort_by: sort_by,
     },
   })
@@ -676,6 +676,8 @@ export const getLeaderboard = ({
   sortBy,
   token_addresses = '',
   duration,
+  ranking,
+  badge,
 }: {
   limit?: number
   start?: number
@@ -683,6 +685,8 @@ export const getLeaderboard = ({
   sortBy?: string
   token_addresses: string
   duration?: string
+  ranking?: string
+  badge?: string
 }) => {
   return api.get<DataLeaderboard>('/v1/leaderboard', {
     params: {
@@ -692,6 +696,8 @@ export const getLeaderboard = ({
       sort_by: sortBy,
       token_addresses,
       frame: duration,
+      ranking,
+      badge,
     },
   })
 }
@@ -846,14 +852,14 @@ export const getTokenList = async ({
   })
 }
 
-export const getTokenInfo = async ({
+export const getTokenInfo = ({
   chain,
   address,
 }: {
   chain: string
   address: string
-}): Promise<TokenInfoResponse> => {
-  return await api.get('/v1/token/info', {
+}) => {
+  return api.get<DataTokenInfo>('/v1/token/info', {
     params: {
       address,
       chain,

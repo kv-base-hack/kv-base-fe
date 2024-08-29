@@ -29,7 +29,7 @@ export interface TokenInfo {
   trade_2h: Trade2h
   trade_6h: Trade6h
   trade_24h: Trade24h
-  websites: any
+  websites: string[]
   discord_url: string
   telegram_handle: string
   twitter_handle: string
@@ -38,6 +38,9 @@ export interface TokenInfo {
   price_change_h4: number
   price_change_h6: number
   token_age: string
+  source_price: string
+  score: number
+  token_action: string
 }
 
 export interface Trade1h {

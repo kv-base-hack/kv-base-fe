@@ -13,6 +13,7 @@ import { useTokenInfoQuery } from '@/query/token-explorer/getTokenInfo'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 import { LogoChat } from '@/components/shared/icons/LogoChat'
+import { useQuery } from '@tanstack/react-query'
 
 interface TokenListProps {
   symbol: string
@@ -28,12 +29,14 @@ export const TokenSummary: React.FC<TokenListProps> = ({ symbol, tokens }) => {
   const [analysis, setAnalysis] = React.useState<StreamableValue | null>(null)
   const CHAIN = useAtomValue(chainAtom)
 
-  const smTokenSummaryQuery = useTokenInfoQuery({
-    chain: selectedToken!?.chainId,
-    address: selectedToken!?.tokenAddress,
-  })
+  const smTokenSummaryQuery = useQuery(
+    useTokenInfoQuery({
+      chain: selectedToken!?.chainId,
+      address: selectedToken!?.tokenAddress,
+    }),
+  )
 
-  const smTokenSummary = smTokenSummaryQuery.data?.data?.info
+  const smTokenSummary = smTokenSummaryQuery?.data?.info
 
   if (!tokens.length) {
     return <BotMessage content={`No token found with symbol ${symbol}`} />

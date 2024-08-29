@@ -22,7 +22,7 @@ async function WalletAnalysisPage({
       useTopTokenProfitQuery({
         limit: 8,
         start: 1,
-        duration: searchParams?.ttp_duration?.toString() || '24h',
+        duration: searchParams?.ttp_duration?.toString() || '1d',
         sort_by: '',
         chain: 'base',
       }),
