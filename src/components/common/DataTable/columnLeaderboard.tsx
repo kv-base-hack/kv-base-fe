@@ -160,13 +160,13 @@ export const ColumnsLeaderboard = (
         cell: ({ row }) => {
           const { most_profit_token } = row.original
           return most_profit_token?.symbol ? (
-            most_profit_token?.tokenAddress ? (
+            most_profit_token?.token_address ? (
               <Link
-                href={`/smartmoney-onchain/token-explorer/${most_profit_token?.tokenAddress}`}
+                href={`/smartmoney-onchain/token-explorer/${most_profit_token?.token_address}`}
                 className="flex items-center justify-between gap-3 text-right"
               >
                 <ImageToken
-                  imgUrl={most_profit_token?.imageUrl}
+                  imgUrl={most_profit_token?.image_url}
                   symbol={most_profit_token?.symbol}
                 />
                 <div>{most_profit_token.symbol}</div>
@@ -174,7 +174,7 @@ export const ColumnsLeaderboard = (
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
-                  imgUrl={most_profit_token?.imageUrl}
+                  imgUrl={most_profit_token?.image_url}
                   symbol={most_profit_token?.symbol}
                 />
                 <div>{most_profit_token.symbol}</div>
@@ -190,13 +190,13 @@ export const ColumnsLeaderboard = (
         cell: ({ row }) => {
           const { current_largest_position } = row.original
           return current_largest_position ? (
-            current_largest_position?.tokenAddress ? (
+            current_largest_position?.token_address ? (
               <Link
-                href={`/smartmoney-onchain/token-explorer/${current_largest_position?.tokenAddress}`}
+                href={`/smartmoney-onchain/token-explorer/${current_largest_position?.token_address}`}
                 className="flex items-center justify-between gap-3 text-right"
               >
                 <ImageToken
-                  imgUrl={current_largest_position?.imageUrl}
+                  imgUrl={current_largest_position?.image_url}
                   symbol={current_largest_position?.symbol}
                 />
                 <div>{current_largest_position.symbol}</div>
@@ -204,7 +204,7 @@ export const ColumnsLeaderboard = (
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
-                  imgUrl={current_largest_position?.imageUrl}
+                  imgUrl={current_largest_position?.image_url}
                   symbol={current_largest_position?.symbol}
                 />
                 <div>{current_largest_position.symbol}</div>
@@ -220,13 +220,13 @@ export const ColumnsLeaderboard = (
         cell: ({ row }) => {
           const { most_token_buy } = row.original
           return [...Array(1).keys()].map((_, index) => {
-            return most_token_buy?.tokenAddress ? (
+            return most_token_buy?.token_address ? (
               <Link
-                href={`/smartmoney-onchain/token-explorer/${most_token_buy?.tokenAddress}`}
+                href={`/smartmoney-onchain/token-explorer/${most_token_buy?.token_address}`}
                 className="flex items-center justify-between gap-3 text-right"
               >
                 <ImageToken
-                  imgUrl={most_token_buy?.imageUrl}
+                  imgUrl={most_token_buy?.image_url}
                   symbol={most_token_buy?.symbol}
                 />
                 <div>{most_token_buy.symbol}</div>
@@ -234,7 +234,7 @@ export const ColumnsLeaderboard = (
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
-                  imgUrl={most_token_buy?.imageUrl}
+                  imgUrl={most_token_buy?.image_url}
                   symbol={most_token_buy?.symbol}
                 />
                 <div>{most_token_buy.symbol}</div>
@@ -250,13 +250,13 @@ export const ColumnsLeaderboard = (
         cell: ({ row }) => {
           const { most_profit_token_24h } = row.original
           return most_profit_token_24h ? (
-            most_profit_token_24h?.tokenAddress ? (
+            most_profit_token_24h?.token_address ? (
               <Link
-                href={`/smartmoney-onchain/token-explorer/${most_profit_token_24h?.tokenAddress}`}
+                href={`/smartmoney-onchain/token-explorer/${most_profit_token_24h?.token_address}`}
                 className="flex items-center justify-between gap-3 text-right"
               >
                 <ImageToken
-                  imgUrl={most_profit_token_24h?.imageUrl}
+                  imgUrl={most_profit_token_24h?.image_url}
                   symbol={most_profit_token_24h?.symbol}
                 />
                 <div>{most_profit_token_24h.symbol}</div>
@@ -264,7 +264,7 @@ export const ColumnsLeaderboard = (
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
-                  imgUrl={most_profit_token_24h?.imageUrl}
+                  imgUrl={most_profit_token_24h?.image_url}
                   symbol={most_profit_token_24h?.symbol}
                 />
                 <div>{most_profit_token_24h.symbol}</div>
@@ -280,20 +280,20 @@ export const ColumnsLeaderboard = (
         cell: ({ row }) => {
           const { token_holds } = row.original
           return token_holds?.map((token, index) => {
-            return token?.tokenAddress ? (
+            return token?.token_address ? (
               <Link
                 key={index}
-                href={`/smartmoney-onchain/token-explorer/${token?.tokenAddress}`}
+                href={`/smartmoney-onchain/token-explorer/${token?.token_address}`}
                 className="flex items-center justify-between gap-3 text-right"
               >
-                <ImageToken imgUrl={token?.imageUrl} symbol={token?.symbol} />
+                <ImageToken imgUrl={token?.image_url} symbol={token?.symbol} />
               </Link>
             ) : (
               <div
                 key={index}
                 className="flex items-center justify-between gap-3 text-right"
               >
-                <ImageToken imgUrl={token?.imageUrl} symbol={token?.symbol} />
+                <ImageToken imgUrl={token?.image_url} symbol={token?.symbol} />
               </div>
             )
           })

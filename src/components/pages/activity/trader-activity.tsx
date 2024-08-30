@@ -53,6 +53,12 @@ export const TraderActivity = ({
     shallow: false,
   })
 
+  const [userAddress, setUserAddress] = useQueryState('user_address', {
+    defaultValue: searchParams?.user_address?.toString() || '',
+    history: 'push',
+    shallow: false,
+  })
+
   const activityQuery = useQuery(
     useTopActivityQuery({
       action: searchParams?.action?.toString() || 'all',
@@ -62,6 +68,7 @@ export const TraderActivity = ({
       amount_filter: searchParams?.amount_filter?.toString() || '',
       token_addresses: token || '',
       sort_by: searchParams?.sort_by?.toString() || '',
+      user_address: searchParams?.user_address?.toString() || '',
     }),
   )
 
@@ -109,6 +116,8 @@ export const TraderActivity = ({
               setPageActivity,
               setTradeValue,
               tradeValue,
+              setUserAddress,
+              userAddress,
             )}
             data={activityQuery?.data?.activities || []}
             noneBorder

@@ -124,13 +124,13 @@ export const TrendingHeader = () => {
                         </TooltipProvider>
                         <div
                           className={cn(
-                            token.priceChangeH24 > 0
+                            token.price_change_percentage_24h > 0
                               ? 'text-[#16FFAB]'
                               : 'text-red',
                           )}
                         >
-                          {token.priceChangeH24 > 0 ? '+' : null}
-                          {token.priceChangeH24.toFixed(2)}%
+                          {token.price_change_percentage_24h > 0 ? '+' : null}
+                          {token.price_change_percentage_24h.toFixed(2)}%
                         </div>
                       </div>
                     </div>

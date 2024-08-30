@@ -19,6 +19,12 @@ export interface Balances {
   avg_sell: number
   unrealized_percent: number
   sell_volume: number
+  pair_address: string
+  balance_amount_in_token: number
+  avg_price_sell: number
+  volume_sell_in_usdt: number
+  avg_entry_buy: number
+  volume_buy_in_usdt: number
 }
 
 export interface UserBalanceResponse {

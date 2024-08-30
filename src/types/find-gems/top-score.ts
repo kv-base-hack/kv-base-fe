@@ -7,14 +7,14 @@ export interface DataTopTokenBuy {
 
 export interface TopScoreByAI {
   fdv: number
-  imageUrl: string
+  image_url: string
   liquidity_usd: number
   name: string
   priceChangeH1: number
   priceChangeH2: number
   priceChangeH4: number
   priceChangeH6: number
-  priceChangeH24: number
+  price_change_h24: number
   priceChangeM5: number
   score: number
   symbol: string
@@ -35,6 +35,8 @@ export interface TopScoreByAI {
   buy_volume_in_usdt: number
   sell_volume_in_usdt: number
   token_age: number
+  usd_price: number
+  token_address: string
 }
 
 

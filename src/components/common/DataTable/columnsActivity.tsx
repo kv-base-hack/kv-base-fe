@@ -53,6 +53,8 @@ export const columnsActivity = (
   setPage: (v: number) => void,
   setTradeValue: any,
   tradeValue: unknown,
+  setUserAddress: (v: string) => void,
+  userAddress: string,
 ) => {
   const columns: ColumnDef<TopActivity>[] = [
     {
@@ -82,7 +84,13 @@ export const columnsActivity = (
       header: () => <div>Smart Traders</div>,
       enableSorting: false,
       cell: ({ row }) => {
-        return <SmartTradersCell data={row.original} />
+        return (
+          <SmartTradersCell
+            data={row.original}
+            setUserAddress={setUserAddress}
+            userAddress={userAddress}
+          />
+        )
       },
     },
     {

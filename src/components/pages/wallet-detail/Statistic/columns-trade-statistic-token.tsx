@@ -148,11 +148,11 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Balance',
       enableSorting: true,
       cell: ({ row }) => {
-        const { hold_in_usdt = 0 } = row.original
+        const { balance_amount_in_token = 0 } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
             <div className="text-sm font-medium">
-              ${nFormatter(hold_in_usdt)}
+              ${nFormatter(balance_amount_in_token)}
             </div>
             {/* <div className="text-xs">{formatPriceNumber(volume)}</div> */}
           </div>
@@ -179,12 +179,12 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Avg Entry/Vol',
       enableSorting: true,
       cell: ({ row }) => {
-        const { avg_entry, buy_volume } = row.original
+        const { avg_entry_buy, volume_buy_in_usdt } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">{renderPrice(avg_entry)}</div>
+            <div className="text-sm font-medium">{renderPrice(avg_entry_buy)}</div>
             <div className="text-xs">
-              {buy_volume ? `$${nFormatter(buy_volume)}` : '-'}
+              {volume_buy_in_usdt ? `$${nFormatter(volume_buy_in_usdt)}` : '-'}
             </div>
           </div>
         )
@@ -195,12 +195,12 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Avg Price Sell/Vol',
       enableSorting: true,
       cell: ({ row }) => {
-        const { avg_sell, sell_volume } = row.original
+        const { avg_price_sell, volume_sell_in_usdt } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">{renderPrice(avg_sell)}</div>
+            <div className="text-sm font-medium">{renderPrice(avg_price_sell)}</div>
             <div className="text-xs">
-              {sell_volume ? `$${nFormatter(sell_volume)}` : '-'}
+              {volume_sell_in_usdt ? `$${nFormatter(volume_sell_in_usdt)}` : '-'}
             </div>
           </div>
         )

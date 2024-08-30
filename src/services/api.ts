@@ -41,6 +41,7 @@ import { UserInfoResponse } from '@/types/userInfo'
 import axios from 'axios'
 import { DataFirstTimeBuy } from '@/types/fist-time-buy'
 import { FindGemsTopScoreByAiResponse } from '@/types/find-gems/top-score'
+import { ActivityWalletExplorerResponse } from '@/types/wallet-explorer'
 
 const api = axios.create({
   baseURL: 'https://api.kaivest.net/onchain',
@@ -420,7 +421,7 @@ export const getTopTokenBuy = async ({
   return await api.get('/v1/findgems/top_smart_money_trade', {
     params: {
       limit,
-      duration,
+      frame: duration,
       start,
       chain,
       action,
@@ -614,6 +615,7 @@ export const getTopActivity = async ({
   amount_filter,
   token_addresses = '',
   sort_by = '',
+  user_address = '',
 }: {
   action?: string
   limit?: number
@@ -622,6 +624,7 @@ export const getTopActivity = async ({
   amount_filter: string
   token_addresses: string
   sort_by: string
+  user_address?: string
 }): Promise<TopActivityResponse> => {
   return await api.get('/v1/activities', {
     params: {
@@ -632,6 +635,7 @@ export const getTopActivity = async ({
       amount_filter,
       token_addresses,
       sort_by,
+      user_address,
     },
   })
 }
@@ -654,7 +658,7 @@ export const getTradeActivity = async ({
   is_big_trade_only: boolean
   token_address: string
   amount_filter: string
-}): Promise<TopActivityResponse> => {
+}): Promise<ActivityWalletExplorerResponse> => {
   return await api.get('v1/user/inspect/activities', {
     params: {
       chain,

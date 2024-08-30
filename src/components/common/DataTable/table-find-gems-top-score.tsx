@@ -42,16 +42,16 @@ export const TableFindGemsTopScoreByAi = ({
         enableSorting: false,
         header: () => <div>Token Name</div>,
         cell: ({ row }) => {
-          const { imageUrl, tokenAddress, symbol, name } = row.original
+          const { image_url, token_address, symbol, name } = row.original
           return (
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
-                {tokenAddress ? (
+                {token_address ? (
                   <Link
-                    href={`/smartmoney-onchain/token-explorer/${tokenAddress}`}
+                    href={`/smartmoney-onchain/token-explorer/${token_address}`}
                   >
                     <div className="flex w-full items-center justify-start gap-1.5">
-                      <ImageToken imgUrl={imageUrl} symbol={symbol} />
+                      <ImageToken imgUrl={image_url} symbol={symbol} />
                       <div>
                         <div className="text-normal max-w-[100px] truncate text-neutral-03 underline">
                           {name}
@@ -62,7 +62,7 @@ export const TableFindGemsTopScoreByAi = ({
                   </Link>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
-                    <ImageToken imgUrl={imageUrl} symbol={symbol} />
+                    <ImageToken imgUrl={image_url} symbol={symbol} />
                     <div className="text-normal text-neutral-03 underline">
                       {symbol}
                     </div>
@@ -124,17 +124,17 @@ export const TableFindGemsTopScoreByAi = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { priceChangeH24 } = row.original
-          return priceChangeH24 ? (
+          const { price_change_h24 } = row.original
+          return price_change_h24 ? (
             <div
               className={cn(
                 'flex items-center leading-[140%]',
-                priceChangeH24 > 0 ? 'text-green' : 'text-error-500',
-                priceChangeH24 === 0 && 'text-neutral-03',
+                price_change_h24 > 0 ? 'text-green' : 'text-error-500',
+                price_change_h24 === 0 && 'text-neutral-03',
               )}
             >
-              {priceChangeH24 > 0 ? '+' : ''}
-              {priceChangeH24.toFixed(2)}%
+              {price_change_h24 > 0 ? '+' : ''}
+              {price_change_h24.toFixed(2)}%
             </div>
           ) : (
             '-'
@@ -146,10 +146,10 @@ export const TableFindGemsTopScoreByAi = ({
         header: () => <div>Price</div>,
         enableSorting: false,
         cell: ({ row }) => {
-          const { usdPrice } = row.original
+          const { usd_price } = row.original
           return (
             <div className={cn('flex items-center justify-center')}>
-              {renderPrice(usdPrice)}
+              {renderPrice(usd_price)}
             </div>
           )
         },
@@ -236,11 +236,11 @@ export const TableFindGemsTopScoreByAi = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { number_of_users, tokenAddress } = row.original
+          const { number_of_users, token_address } = row.original
           return (
             <DialogNumberOfSmartMoney
               number={number_of_users}
-              address={tokenAddress}
+              address={token_address}
               type="top-score-ai"
               duration="24h"
             />

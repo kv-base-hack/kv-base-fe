@@ -12,17 +12,22 @@ import {
 } from '@/lib/utils/renderIconMovement'
 import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
 import { ImageToken } from '@/components/common/Image/ImageToken'
+import { ActivityWalletExplorer } from '@/types/wallet-explorer'
 
-export const columnsActivityWalletDetail: ColumnDef<Activity>[] = [
+export const columnsActivityWalletDetail: ColumnDef<ActivityWalletExplorer>[] = [
   {
     accessorKey: 'time',
     header: () => 'Time',
     cell: ({ row }) => {
-      const { time } = row.original
+      const { tx, scan_link } = row.original
       return (
         <div className="flex items-center gap-1 text-neutral-04">
-          {moment(time).fromNow()}
-          <TimeAgoIcon />
+          {moment(tx.time.seconds).fromNow()}
+          <Link href={scan_link} legacyBehavior passHref>
+            <a target="_blank">
+              <TimeAgoIcon />
+            </a>
+          </Link>
         </div>
       )
     },
@@ -32,10 +37,10 @@ export const columnsActivityWalletDetail: ColumnDef<Activity>[] = [
     header: () => 'Tokens',
     enableSorting: false,
     cell: ({ row }) => {
-      const { symbol } = row.original
-      return row?.original?.token_address ? (
+      const { symbol, tx } = row.original
+      return tx?.token_address ? (
         <Link
-          href={`/smartmoney-onchain/token-explorer/${row.original.token_address}`}
+          href={`/smartmoney-onchain/token-explorer/${tx?.token_address}`}
           className="flex items-center justify-between gap-3 text-right font-medium text-neutral-300"
         >
           <ImageToken imgUrl={row?.original?.token_image_url} symbol={symbol} />
@@ -56,28 +61,28 @@ export const columnsActivityWalletDetail: ColumnDef<Activity>[] = [
     },
     enableSorting: false,
     cell: ({ row }) => {
-      const { movement } = row.original
+      const { tx } = row.original
       return (
         <div
           className={cn(
             'my-auto flex items-center justify-center gap-2.5 self-stretch whitespace-nowrap rounded-md bg-opacity-10 px-2 py-1.5 text-center text-xs',
-            movement === 'deposit'
+            tx.movement === 'deposit'
               ? 'bg-secondary-1/10 text-secondary-1'
-              : movement === 'withdraw'
+              : tx.movement === 'withdraw'
                 ? 'bg-secondary-4/10 text-secondary-4'
-                : movement === 'buying'
+                : tx.movement === 'buying'
                   ? 'bg-success-500/10 text-green'
-                  : movement === 'selling'
+                  : tx.movement === 'selling'
                     ? 'bg-error-500/10 text-error-500'
-                    : movement === 'new_listing_buy'
+                    : tx.movement === 'new_listing_buy'
                       ? 'bg-[#89D36F]/10 text-[#89D36F]'
-                      : movement === 'new_listing_sell'
+                      : tx.movement === 'new_listing_sell'
                         ? 'bg-[#DC6803]/10 text-[#DC6803]'
                         : 'bg-success-500/10 text-green',
           )}
         >
-          {renderMovementIcon(movement)}
-          {renderMovementName(movement)}
+          {renderMovementIcon(tx.movement)}
+          {renderMovementName(tx.movement)}
         </div>
       )
     },
@@ -88,13 +93,13 @@ export const columnsActivityWalletDetail: ColumnDef<Activity>[] = [
     enableSorting: false,
     size: 220,
     cell: ({ row }) => {
-      const { value_in_usdt, symbol, value_in_token } = row.original
+      const { tx, symbol } = row.original
       return (
         <div className="flex items-center gap-2 text-neutral-300">
-          <div>{renderTradingValue(value_in_usdt)}</div>
+          <div>{renderTradingValue(tx.value_in_usdt)}</div>
           <div className="font-medium">
-            <span className="text-green">(${nFormatter(value_in_usdt)}) </span>
-            {nFormatter(value_in_token)} {symbol}
+            <span className="text-green">(${nFormatter(tx.value_in_usdt)}) </span>
+            {nFormatter(tx.value_in_token)} {symbol}
           </div>
         </div>
       )
@@ -120,12 +125,12 @@ export const columnsActivityWalletDetail: ColumnDef<Activity>[] = [
     header: () => 'Avg Entry Buy',
     enableSorting: false,
     cell: ({ row }) => {
-      const { avg_price } = row.original
+      const { tx } = row.original
       return (
         <div
           className={cn('flex items-center justify-center text-neutral-300')}
         >
-          {renderPrice(avg_price)}
+          {renderPrice(tx?.avg_price)}
         </div>
       )
     },

@@ -53,6 +53,8 @@ export interface CurrentLargestPosition {
   twitter_handle: string
   updated_at: string
   created_at: string
+  image_url: string
+  token_address: string
 }
 
 export interface MostTokenBuy {
@@ -82,6 +84,8 @@ export interface MostTokenBuy {
   twitter_handle: string
   updated_at: string
   created_at: string
+  image_url: string
+  token_address: string
 }
 
 export interface MostTokenSell {
@@ -111,6 +115,8 @@ export interface MostTokenSell {
   twitter_handle: string
   updated_at: string
   created_at: string
+  image_url: string
+  token_address: string
 }
 
 export interface MostProfitToken {
@@ -140,6 +146,8 @@ export interface MostProfitToken {
   twitter_handle: string
   updated_at: string
   created_at: string
+  image_url: string
+  token_address: string
 }
 
 export interface MostProfitToken24h {
@@ -169,6 +177,8 @@ export interface MostProfitToken24h {
   twitter_handle: string
   updated_at: string
   created_at: string
+  image_url: string
+  token_address: string
 }
 
 export interface TokenHold {
@@ -198,6 +208,8 @@ export interface TokenHold {
   twitter_handle: string
   updated_at: string
   created_at: string
+  image_url: string
+  token_address: string
 }
 
 export interface LeaderboardResponse {

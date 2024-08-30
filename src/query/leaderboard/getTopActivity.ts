@@ -10,6 +10,7 @@ export const useTopActivityQuery = ({
   amount_filter,
   token_addresses,
   sort_by,
+  user_address,
 }: {
   action: string
   limit: number
@@ -18,6 +19,7 @@ export const useTopActivityQuery = ({
   amount_filter: string
   token_addresses: string
   sort_by: string
+  user_address?: string
 }) => ({
   queryKey: [
     GET_TOP_ACTIVITY,
@@ -28,6 +30,7 @@ export const useTopActivityQuery = ({
     amount_filter,
     token_addresses,
     sort_by,
+    user_address,
   ],
   queryFn: async () => {
     const result = await getTopActivity({
@@ -38,6 +41,7 @@ export const useTopActivityQuery = ({
       amount_filter,
       token_addresses,
       sort_by,
+      user_address,
     })
     return result.data
   },
