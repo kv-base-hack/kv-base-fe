@@ -136,8 +136,8 @@ export const columnsActivityWalletDetail: ColumnDef<ActivityWalletExplorer>[] = 
     },
   },
   {
-    accessorKey: 'profit',
-    header: () => 'Profit',
+    accessorKey: '30D_TXs',
+    header: () => '30D TXs',
     enableSorting: false,
     cell: ({ row }) => {
       return (

@@ -102,11 +102,13 @@ export const ContentSpotlight = ({ ...item }) => {
     total_volume_usdt,
   } = item.item
 
+
+
   switch (action) {
     case 'buy':
       return (
         <div className="flex flex-col">
-          {renderWallet(sender, ranking, badges, item)} has buy more{' '}
+          {renderWallet(sender, ranking, badges, item.item)} has buy more{' '}
           <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of{' '}
             {renderToken(token_address, symbol, image_url)}at{' '}
@@ -124,7 +126,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'unusual_buy':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)}
+          {renderWallet(sender, ranking, badges, item.item)}
           <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
             Unusual buy{' '}
             <RenderNumber value={value_in_usdt}>
@@ -139,7 +141,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'new_listing_buy':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)} has buy token create{' '}
+          {renderWallet(sender, ranking, badges, item.item)} has buy token create{' '}
           <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
             <span>Just bought</span>
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of
@@ -152,7 +154,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'first_time_buy':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)}
+          {renderWallet(sender, ranking, badges, item.item)}
           <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             has first time buy
             <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>
@@ -164,7 +166,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'selling':
       return (
         <div className="flex w-full flex-col">
-          {renderWallet(sender, ranking, badges, item)}
+          {renderWallet(sender, ranking, badges, item.item)}
           <div className="flex flex-wrap gap-x-0.5 text-sm font-normal text-neutral-300">
             <>has sold</>
             <RenderNumber value={value_in_usdt}>
@@ -184,7 +186,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'withdraw':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)}
+          {renderWallet(sender, ranking, badges, item.item)}
           <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             just withdraw{' '}
             <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span>{' '}
@@ -198,7 +200,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'deposit':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)}
+          {renderWallet(sender, ranking, badges, item.item)}
           <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             just deposited{' '}
             <span className="text-semibold text-[#F04D1A]">
@@ -212,7 +214,7 @@ export const ContentSpotlight = ({ ...item }) => {
     case 'new_listing_sell':
       return (
         <div>
-          {renderWallet(sender, ranking, badges, item)}
+          {renderWallet(sender, ranking, badges, item.item)}
           <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
             just bought{' '}
             <RenderNumber value={total_volume_usdt}>

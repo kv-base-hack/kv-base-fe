@@ -1462,7 +1462,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           limit,
           start,
           address,
-          duration,
+          frame: duration,
         },
       })
     case 'unusual_buy':
@@ -1522,7 +1522,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           limit,
           start,
           address,
-          duration,
+          frame:duration,
         },
       })
     default:

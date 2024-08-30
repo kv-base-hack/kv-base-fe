@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts'
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 
@@ -77,6 +77,9 @@ export const TokenSpotLight = ({
 }: {
   durationSpotlight: string
 }) => {
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
   const leaderboardSpotlightQuery = useQuery(
     useLeaderboardSpotlightQuery({
       chain: CHAIN,
@@ -119,128 +122,133 @@ export const TokenSpotLight = ({
   }))
 
   return (
-    <div className="flex h-full w-full justify-between gap-10">
-      <div className="h-full w-1/2">
-        <ResponsiveContainer width="100%" height="100%">
-          <ChartContainer
-            config={chartConfig}
-            className="mx-auto aspect-square"
-          >
-            <PieChartX>
-              <Pie
-                data={dataChart}
-                dataKey="percent"
-                nameKey="type"
-                innerRadius={90}
-                outerRadius={130}
-                strokeWidth={5}
-                paddingAngle={8}
-                cornerRadius={4}
-              >
-                {dataChart.map((_, index) => {
-                  const segmentColor = renderColorChart(index)
+    <div className="flex h-full w-full flex-col lg:flex-row justify-between gap-10">
+    <div className="h-[300px] lg:h-full w-full lg:w-1/2">
+      <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer
+          config={chartConfig}
+          className="mx-auto w-full h-full"
+        >
+          <PieChartX>
+            <Pie
+              data={dataChart}
+              dataKey="percent"
+              nameKey="type"
+              innerRadius="64%"
+              outerRadius="94%"
+              strokeWidth={5}
+              paddingAngle={8}
+              cornerRadius={4}
+              onMouseEnter={(_, index) => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
+            >
+              {dataChart.map((_, index) => {
+                const segmentColor = renderColorChart(index)
+                const isActive = index === activeIndex
+                return (
+                  <Cell
+                    key={`cell-${index}`}
+                    style={{
+                      filter: `drop-shadow(0px 0px 3px ${segmentColor}) ${isActive ? 'brightness(1.2)' : ''}`,
+                      stroke: segmentColor,
+                      strokeWidth: 2,
+                      transition: 'all 0.3s ease',
+                    }}
+                  />
+                )
+              })}
+
+              <Label
+                content={({ viewBox }) => {
+                  const { cx, cy } = viewBox as any;
+                  const radius = Math.min(cx, cy);
                   return (
-                    <Cell
-                      key={`cell-${index}`}
-                      style={{
-                        filter: `drop-shadow(0px 0px 2px ${segmentColor}`,
-                      }}
-                      stroke="0"
-                    />
+                    <text
+                      x={cx}
+                      y={cy}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >
+                      <tspan
+                        x={cx}
+                        y={cy - radius * 0.3}
+                        className="fill-light-telegray text-xs font-medium leading-4"
+                      >
+                        Total Hold Value
+                      </tspan>
+                      <tspan
+                        x={cx}
+                        y={cy - radius * 0.15}
+                        className="fill-neutral-100 text-[20px] font-bold leading-[32px]"
+                      >
+                        ${nFormatter(totalStats.totalHold)}
+                      </tspan>
+                      <tspan
+                        x={cx}
+                        y={cy + radius * 0.2}
+                        className="fill-[#D0D0DA] text-xs font-medium"
+                      >
+                        Total Profit
+                      </tspan>
+                      <tspan
+                        x={cx}
+                        y={cy + radius * 0.32}
+                        className="fill-green text-lg font-bold"
+                      >
+                        +${nFormatter(totalStats.totalProfit)}
+                      </tspan>
+                    </text>
                   )
-                })}
-
-                <Label
-                  content={({ viewBox }) => {
-                    if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
-                      return (
-                        <text
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                        >
-                          <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) - 34}
-                            className="fill-light-telegray text-xs font-medium leading-4"
-                          >
-                            Total Hold Value
-                          </tspan>
-                          <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) - 12}
-                            className="fill-neutral-100 text-[20px] font-bold leading-[32px]"
-                          >
-                            ${nFormatter(totalStats.totalHold)}
-                          </tspan>
-                          <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 28}
-                            className="fill-[#D0D0DA] text-xs font-medium"
-                          >
-                            Total Profit
-                          </tspan>
-                          <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 46}
-                            className="fill-green text-lg font-bold"
-                          >
-                            +${nFormatter(totalStats.totalProfit)}
-                          </tspan>
-                        </text>
-                      )
-                    }
-                  }}
-                />
-              </Pie>
-              <Tooltip
-                wrapperStyle={{
-                  backgroundColor: 'transparent',
                 }}
-                contentStyle={{
-                  backgroundColor: 'transparent',
-                }}
-                cursor={{
-                  stroke: '#ffffff1a',
-                  strokeWidth: 1,
-                  strokeDasharray: '5 5',
-                }}
-                content={<CustomTooltip />}
               />
-            </PieChartX>
-          </ChartContainer>
-        </ResponsiveContainer>
-      </div>
-
-      <div className="my-auto flex w-2/3 flex-col gap-5">
-        <TokenSpotlight
-          title="Most Profitable"
-          icon={<IconTrendUp />}
-          data={data?.most_profit}
-        />
-        <TokenSpotlight
-          title="Largest Buy Volume"
-          icon={<IconCart />}
-          data={data?.most_buy_by_volume}
-        />
-        <TokenSpotlight
-          title="Largest Hold Value"
-          icon={<IconCoinHand />}
-          data={data?.most_hold_by_volume}
-        />
-        <TokenSpotlight
-          title="Most ST Buy"
-          icon={<IconUsers />}
-          data={data?.most_buy_by_user_number}
-        />
-        <TokenSpotlight
-          title="Most ST Hold"
-          icon={<IconUsers />}
-          data={data?.most_buy_by_user_number}
-        />
-      </div>
+            </Pie>
+            <Tooltip
+              wrapperStyle={{
+                backgroundColor: 'transparent',
+              }}
+              contentStyle={{
+                backgroundColor: 'transparent',
+              }}
+              cursor={{
+                stroke: '#ffffff1a',
+                strokeWidth: 1,
+                strokeDasharray: '5 5',
+              }}
+              content={<CustomTooltip />}
+            />
+          </PieChartX>
+        </ChartContainer>
+      </ResponsiveContainer>
     </div>
+
+    <div className="w-full lg:w-2/3 flex flex-col gap-5 my-auto">
+      <TokenSpotlight
+        title="Most Profitable"
+        icon={<IconTrendUp />}
+        data={data?.most_profit}
+      />
+      <TokenSpotlight
+        title="Largest Buy Volume"
+        icon={<IconCart />}
+        data={data?.most_buy_by_volume}
+      />
+      <TokenSpotlight
+        title="Largest Hold Value"
+        icon={<IconCoinHand />}
+        data={data?.most_hold_by_volume}
+      />
+      <TokenSpotlight
+        title="Most ST Buy"
+        icon={<IconUsers />}
+        data={data?.most_buy_by_user_number}
+      />
+      <TokenSpotlight
+        title="Most ST Hold"
+        icon={<IconUsers />}
+        data={data?.most_buy_by_user_number}
+      />
+    </div>
+  </div>
   )
 }
 

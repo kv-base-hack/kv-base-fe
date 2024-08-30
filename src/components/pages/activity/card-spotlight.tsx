@@ -53,6 +53,7 @@ const renderAction = (action: string) => {
 
 export const CardSpotlight = ({ ...item }) => {
   const data = item?.item || {}
+
   return (
     <div className="flex w-full flex-col gap-2 rounded-2xl border border-white/10 bg-transparent p-4">
       <div className="flex items-start justify-between">
