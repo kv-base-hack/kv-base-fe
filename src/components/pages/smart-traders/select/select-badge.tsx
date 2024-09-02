@@ -1,17 +1,7 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from '@/components/ui/select'
-import Image from 'next/image'
 import React from 'react'
+import { MultiSelect } from './multi-select'
 
 const badgeOptions = [
-  {
-    value: 'all',
-    label: 'All Badges',
-  },
   {
     value: 'balance_whale',
     label: 'Balance Whale',
@@ -63,48 +53,20 @@ export const SelectBadge = ({
   setBadge: (badge: string) => void
   badge: string
 }) => {
+  const handleSetBadge = (values: string[]) => {
+    const filteredValues = values.includes('all') && values.length > 1
+      ? values.filter(value => value !== 'all')
+      : values;
+    setBadge(filteredValues.join(','))
+  }
   return (
-    <Select
-      value={badge}
-      onValueChange={(value) => {
-        setBadge(value)
-        setPage(1)
-      }}
-    >
-      <SelectTrigger className="flex h-7 w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-[#656565] bg-transparent px-4 py-3 text-sm font-medium leading-6 tracking-normal text-white">
-        <Image
-          src={`/images/badges/${badge}.png`}
-          alt={badge}
-          width={20}
-          height={20}
-          className={badge === 'all' ? 'hidden' : ''}
-        />
-        {badgeOptions.find((option) => option.value === badge)?.label}
-      </SelectTrigger>
-      <SelectContent className="z-[9999] border-none bg-neutral-07 p-0">
-        {badgeOptions.map((option) => (
-          <SelectItem
-            key={option.value}
-            value={option.value}
-            className="px-2"
-            showCheck={false}
-          >
-            <div className="flex items-center gap-2">
-              {option.value === 'all' ? (
-                <div className="h-4 w-4 bg-transparent"></div>
-              ) : (
-                <Image
-                  src={`/images/badges/${option.value}.png`}
-                  alt={option.label}
-                  width={20}
-                  height={20}
-                />
-              )}
-              {option.label}
-            </div>
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <MultiSelect
+      setPage={setPage}
+      setSelectedValues={handleSetBadge}
+      selectedValues={badge}
+      title="Select Badge"
+      options={badgeOptions}
+      type="badges"
+    />
   )
 }

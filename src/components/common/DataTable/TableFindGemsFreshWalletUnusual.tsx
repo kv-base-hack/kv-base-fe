@@ -11,6 +11,7 @@ import numeral from 'numeral'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
 import { TooltipTable } from '../Tooltip/TooltipTable'
+import { TooltipToken } from '../Tooltip/tooltip-token'
 
 export const TableFindGemsFreshWalletUnusual = ({
   tab,
@@ -47,7 +48,8 @@ export const TableFindGemsFreshWalletUnusual = ({
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
-                  <Link
+                  <TooltipToken data={row?.original}>
+                    <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
                     <div className="flex w-full items-center justify-start gap-1.5">
@@ -58,8 +60,9 @@ export const TableFindGemsFreshWalletUnusual = ({
                       <div className="text-normal max-w-[120px] truncate text-neutral-03 underline">
                         {row?.original?.symbol}
                       </div>
-                    </div>
-                  </Link>
+                      </div>
+                    </Link>
+                  </TooltipToken>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken

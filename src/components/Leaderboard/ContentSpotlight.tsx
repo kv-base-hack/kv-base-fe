@@ -1,24 +1,44 @@
-import { chainAtom } from '@/atom/chain'
+
+import { ImageToken } from '@/components/common/Image/ImageToken'
 import { cn } from '@/lib/utils'
-import { nFormatter } from '@/utils/nFormatter'
-import { renderPrice } from '@/utils/renderPrice'
-import { useAtomValue } from 'jotai'
-import { upperCase, upperFirst } from 'lodash'
-import moment from 'moment'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { renderPrice } from '@/lib/utils/renderPrice'
+import upperFirst from 'lodash.upperfirst'
 import numeral from 'numeral'
 import { ReactNode } from 'react'
-import { ImageToken } from '../common/Image/ImageToken'
+import { TooltipWallet } from '../common/Tooltip/tooltip-wallet'
+import { ImageBadge, ImageRanking } from '../common/Image/image-ranking'
+import { TooltipToken } from '../common/Tooltip/tooltip-token'
 
-const renderWallet = (wallet: string, chain: string) => {
+const renderWallet = (
+  wallet: string,
+  ranking: string,
+  badges: string[],
+  item: any,
+) => {
   return (
-    <a
-      href={`/smartmoney-onchain/wallet-explorer/${wallet}?chain=${chain}`}
-      className="flex font-semibold text-[#0C68E9] hover:underline"
-    >
-      {wallet.slice(0, 4)}
-      ...
-      {wallet.slice(-4)}
-    </a>
+    <TooltipWallet data={item.item}>
+      <div className="flex items-center gap-1">
+        <ImageRanking ranking={ranking} size={16} />
+
+        <a
+          href={`/smartmoney-onchain/wallet-explorer/${wallet}`}
+          className="flex text-sm font-normal text-neutral-100 underline"
+        >
+          {wallet?.slice(0, 4)}
+          ...
+          {wallet?.slice(-4)}
+        </a>
+
+        {badges && (
+          <div className="flex gap-1">
+            {badges?.map((badge) => (
+              <ImageBadge badge={badge} size={16} key={badge} />
+            ))}
+          </div>
+        )}
+      </div>
+    </TooltipWallet>
   )
 }
 
@@ -32,14 +52,14 @@ const RenderNumber = ({
   children: ReactNode
 }) => {
   return (
-    <div
+    <span
       className={cn(
-        value > 0 ? 'text-[#32AE60]' : value < 0 ? 'text-[#F04D1A]' : 'hidden',
+        value > 0 ? 'text-core' : value < 0 ? 'text-[#F04D1A]' : 'hidden',
         className,
       )}
     >
       {children}
-    </div>
+    </span>
   )
 }
 
@@ -47,223 +67,177 @@ const renderToken = (
   token: string,
   symbol: string,
   image_url: string,
-  chain: string,
+  data: any,
 ) => {
   return (
-    <a
-      href={`/smartmoney-onchain/token-explorer/${token}?chain=${chain}`}
-      className="flex gap-1"
-    >
-      <ImageToken symbol={symbol} imgUrl={image_url} />
-      <span className="font-semibold underline">{upperCase(symbol)}</span>
-    </a>
+    <TooltipToken data={data} type="hold" side="right">
+      <a
+        href={`/smartmoney-onchain/token-explorer/${token}`}
+        className="flex gap-1 px-0.5"
+      >
+        <ImageToken symbol={symbol} imgUrl={image_url} />
+        <span className="text-sm font-normal text-neutral-300 underline">
+          {symbol}
+        </span>
+      </a>
+    </TooltipToken>
   )
 }
 
-export const ContentSpotlight = ({ item }: any) => {
-  const CHAIN = useAtomValue(chainAtom)
+const renderText = (text: string) => {
+  return <span className="text-[#EFEFEF]">{text}</span>
+}
 
+export const ContentSpotlight = ({ ...item }) => {
   const {
     action,
+    image_url,
+    symbol,
+    token_address,
     sender,
+    portfolio_percenter,
     value_in_usdt,
     avg_price,
-    pnl,
-    roi,
-    token_age,
-    price_change_24h,
-    exchange_name,
-    price,
     balance_change_percent,
-    token_address,
-    symbol,
-    portfolio_percent,
-    image_url,
-  } = item
+    price,
+    roi,
+    exchange_name,
+    token_age,
+    ranking,
+    badges,
+    total_volume_usdt,
+  } = item.item
 
   switch (action) {
     case 'buy':
       return (
-        <div className="flex flex-wrap gap-x-1">
-          {renderWallet(sender, CHAIN)}
-          has bought
-          <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span> of
-          {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
-          {renderPrice(price)} His avg price is{' '}
-          <RenderNumber value={avg_price}>
-            {renderPrice(avg_price)}
-          </RenderNumber>{' '}
-          <span className={pnl ? '' : 'hidden'}>and</span>
-          <RenderNumber value={pnl}>{nFormatter(pnl)}</RenderNumber>{' '}
-          <span className={pnl ? '' : 'hidden'}>PnL with ROI</span>{' '}
-          <RenderNumber value={roi}>{roi?.toFix(2)}</RenderNumber>
-        </div>
-      )
-    case 'withdraw':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          {renderWallet(sender, CHAIN)}
-          just withdraw{' '}
-          <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span> of
-          {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
-          <span>{renderPrice(price)}</span> His avg price is{' '}
-          {renderPrice(avg_price)}
-        </div>
-      )
-    case 'selling':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          {renderWallet(sender, CHAIN)}
-          has sold
-          <span className="text-semibold text-[#F04D1A]">
-            ${nFormatter(value_in_usdt)}
-          </span>
-          ({numeral(balance_change_percent).format('0,0.[00]')}% Balance) of
-          {renderToken(token_address, symbol, image_url, CHAIN)} at
-          <span className="text-semibold text-[#F04D1A]">
-            {renderPrice(price)}
-          </span>
-          His avg price is
-          <span className="text-semibold text-[#F04D1A]">
-            {renderPrice(avg_price)}
-          </span>
-          <span className={pnl ? '' : 'hidden'}>and</span>
-          <span
-            className={cn('text-semibold text-[#F04D1A]', pnl ? '' : 'hidden')}
-          >
-            {nFormatter(pnl)}
-          </span>
-          <span className={pnl ? '' : 'hidden'}>PnL with ROI</span>
-          <span
-            className={cn(
-              'text-semibold',
-              roi > 0
-                ? 'text-[#32AE60]'
-                : roi < 0
-                  ? 'text-[#F04D1A]'
-                  : 'hidden',
-            )}
-          >
-            {nFormatter(roi)}
-          </span>
-        </div>
-      )
-    case 'deposit':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          {renderWallet(sender, CHAIN)}
-          just deposited{' '}
-          <span className="text-semibold text-[#F04D1A]">
-            {nFormatter(value_in_usdt)}
-          </span>
-          of {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
-          {renderPrice(avg_price)} to {upperFirst(exchange_name)}
-        </div>
-      )
-    case 'new_listing_buy':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          {renderWallet(sender, CHAIN)} has bought{' '}
-          <span className="font-semibold text-[#32AE60]">
-            ${nFormatter(value_in_usdt)}
-          </span>{' '}
-          at {renderPrice(price)}.{' '}
-          <div
-            className={cn(
-              'flex-wrap gap-x-1',
-              Boolean(token_age) && Boolean(price_change_24h)
-                ? 'flex'
-                : 'hidden',
-            )}
-          >
-            <span>This token is</span>
-            {token_age && <> created {moment(token_age).fromNow()}</>}
-            24h Price % is
-            <span
-              className={
-                price_change_24h > 0
-                  ? 'text-[#32AE60]'
-                  : price_change_24h < 0
-                    ? 'text-[#F04D1A]'
-                    : ''
-              }
-            >
-              {price_change_24h}%
-            </span>
+        <div className="flex flex-col">
+          {renderWallet(sender, ranking, badges, item)} has buy more{' '}
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
+            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of{' '}
+            {renderToken(token_address, symbol, image_url, item.item)}at{' '}
+            {renderPrice(avg_price)}His avg entry price is{' '}
+            {renderPrice(avg_price)}and{' '}
+            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>Total{' '}
+            Profit and ROI{' '}
+            <RenderNumber value={40}>
+              {numeral(40).format('0,0.[00]')}%
+            </RenderNumber>{' '}
+            Total actions is <span>6 Buy</span> and <span>0 Sell</span>
           </div>
-          .
         </div>
       )
     case 'unusual_buy':
       return (
-        <div className="flex flex-wrap gap-1">
-          <div className="flex flex-wrap gap-x-1">
-            {renderWallet(sender, CHAIN)} has bought
-            <span className="font-semibold text-[#32AE60]">
+        <div>
+          {renderWallet(sender, ranking, badges, item)}
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
+            Unusual buy{' '}
+            <RenderNumber value={value_in_usdt}>
+              ${nFormatter(value_in_usdt)}
+            </RenderNumber>{' '}
+            of {renderToken(token_address, symbol, image_url, item.item)} at{' '}
+            {renderPrice(price)} Make up{' '}
+            {numeral(portfolio_percenter).format('0,0.[00]')}% of portfolio
+          </div>
+        </div>
+      )
+    case 'new_listing_buy':
+      return (
+        <div>
+          {renderWallet(sender, ranking, badges, item)} has buy token create{' '}
+          <div className="flex flex-wrap items-center gap-x-0.5 align-baseline text-sm font-normal text-neutral-300">
+            <span>Just bought</span>
+            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber> of
+            newly listed token (3H)
+            {renderToken(token_address, symbol, image_url, item.item)} at{' '}
+            {renderPrice(1000)} This trasaction accounts for 40% of portfolio
+          </div>
+        </div>
+      )
+    case 'first_time_buy':
+      return (
+        <div>
+          {renderWallet(sender, ranking, badges, item)}
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
+            has first time buy
+            <RenderNumber value={1000}>{renderPrice(1000)}</RenderNumber>
+            of {renderToken(
+              token_address,
+              symbol,
+              image_url,
+              item.item,
+            )} at {renderPrice(price)} Make up 40% of portfolio
+          </div>
+        </div>
+      )
+    case 'selling':
+      return (
+        <div className="flex w-full flex-col">
+          {renderWallet(sender, ranking, badges, item)}
+          <div className="flex flex-wrap gap-x-0.5 text-sm font-normal text-neutral-300">
+            <>has sold</>
+            <RenderNumber value={value_in_usdt}>
+              ${nFormatter(value_in_usdt)}
+            </RenderNumber>{' '}
+            ({numeral(balance_change_percent).format('0,0.[00]')}% Balance) of
+            {renderToken(token_address, symbol, image_url, item.item)}
+            at {renderPrice(price)} Make up{' '}
+            <RenderNumber value={100}>{renderPrice(100)}</RenderNumber>
+            total Profit and ROI
+            <RenderNumber value={roi}>
+              {numeral(roi).format('0,0.[00]')}%
+            </RenderNumber>
+          </div>
+        </div>
+      )
+    case 'withdraw':
+      return (
+        <div>
+          {renderWallet(sender, ranking, badges, item)}
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
+            just withdraw{' '}
+            <span className="text-[#32AE60]">{nFormatter(value_in_usdt)}</span>{' '}
+            of
+            {renderToken(token_address, symbol, image_url, item.item)} at{' '}
+            <span>{renderPrice(price)}</span> His avg price is{' '}
+            {renderPrice(avg_price)}
+          </div>
+        </div>
+      )
+    case 'deposit':
+      return (
+        <div>
+          {renderWallet(sender, ranking, badges, item)}
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
+            just deposited{' '}
+            <span className="text-semibold text-[#F04D1A]">
               ${nFormatter(value_in_usdt)}
             </span>
-            <>
-              of {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
-              {renderPrice(avg_price)}
-            </>
+            of {renderToken(token_address, symbol, image_url, item.item)} at{' '}
+            {renderPrice(avg_price)} to {upperFirst(exchange_name)}
           </div>
-          <div
-            className={cn(
-              'flex-wrap gap-x-1',
-              Boolean(token_age) && Boolean(price_change_24h)
-                ? 'flex'
-                : 'hidden',
-            )}
-          >
-            <span>This token is</span>
-            {token_age && <> created {moment(token_age).fromNow()}</>}
-            24h Price % is
-            <span
-              className={
-                price_change_24h > 0
-                  ? 'text-[#32AE60]'
-                  : price_change_24h < 0
-                    ? 'text-[#F04D1A]'
-                    : ''
-              }
-            >
-              {price_change_24h}%
+        </div>
+      )
+    case 'new_listing_sell':
+      return (
+        <div>
+          {renderWallet(sender, ranking, badges, item)}
+          <div className="flex flex-wrap gap-x-1 align-baseline text-sm font-normal text-neutral-300">
+            just bought{' '}
+            <RenderNumber value={total_volume_usdt}>
+              ${nFormatter(total_volume_usdt)}
+            </RenderNumber>
+            of newly listed token{' '}
+            {token_age && <span className="text-[#EFEFEF]">({token_age})</span>}{' '}
+            {renderToken(token_address, symbol, image_url, item.item)} at{' '}
+            {renderPrice(price)}. This transaction accounts for{' '}
+            <span className="text-[#EFEFEF]">
+              {numeral(balance_change_percent).format('0,0.[000]')}%
             </span>
+            of portfolio
           </div>
         </div>
       )
-    case 'fresh_wallet_buy':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          Fresh wallet {renderWallet(sender, CHAIN)} just buy
-          {nFormatter(value_in_usdt)} of{' '}
-          {renderToken(token_address, symbol, image_url, CHAIN)} at
-          {renderPrice(price)} 24h Price % is
-          <RenderNumber value={price_change_24h}>
-            {numeral(price_change_24h).format('0,0.[00]')}%
-          </RenderNumber>
-        </div>
-      )
-    case 'fresh_wallet_received':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          Fresh wallet {renderWallet(sender, CHAIN)} received
-          {nFormatter(value_in_usdt)} of
-          {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
-          {renderPrice(price)} from wallet
-        </div>
-      )
-    case 'fresh_wallet_withdraw':
-      return (
-        <div className="flex flex-wrap gap-x-1">
-          Fresh wallet {renderWallet(sender, CHAIN)} withdraw
-          {nFormatter(value_in_usdt)} of
-          {renderToken(token_address, symbol, image_url, CHAIN)} at{' '}
-          {renderPrice(price)} from
-          {upperFirst(exchange_name)}
-        </div>
-      )
-    default:
-      return null
   }
 }

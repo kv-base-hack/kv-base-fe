@@ -73,6 +73,7 @@ export const DialogSearchToken = ({
   const listTokenData = listTokenQuery.data?.tokens || []
   const listWalletData = listTokenQuery.data?.users || []
 
+
   useDebounce(
     () => {
       setDebounceSearch(search)
@@ -138,6 +139,7 @@ export const DialogSearchToken = ({
     setFocusing(false)
   })
 
+
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -181,9 +183,9 @@ export const DialogSearchToken = ({
                     <TokenItem
                       onClick={() => handleNavigateTokenDetail(token)}
                       symbol={token.symbol}
-                      imageUrl={token.imageUrl}
+                      imageUrl={token.image_url}
                       name={token.name}
-                      price={token.usdPrice}
+                      price={token.usd_price}
                       percentChange24h={token.price_24h}
                     />
                   </DialogClose>

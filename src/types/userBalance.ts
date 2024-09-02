@@ -25,6 +25,7 @@ export interface Balances {
   volume_sell_in_usdt: number
   avg_entry_buy: number
   volume_buy_in_usdt: number
+  balance_amount_in_usdt: number
 }
 
 export interface UserBalanceResponse {

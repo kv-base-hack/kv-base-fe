@@ -66,7 +66,7 @@ export default function WalletExplorerDetail({
 
   const DATA_STATS = [
     {
-      name: 'Most Bought 24h',
+      name: 'Most Bought',
       icon: (
         <div className="rounded-full border border-core p-1 text-core">
           <IconCart className="h-3 w-3" />
@@ -409,6 +409,7 @@ export default function WalletExplorerDetail({
             pnl={DATA_STATS[0].pnl}
             address={DATA_STATS[0].address}
             loading={tradeStatisticQuery.isFetching}
+            data={DATA_STATS[0]}
           />
           <WalletInfoItemTitle
             name={DATA_STATS[1].name}
@@ -426,6 +427,7 @@ export default function WalletExplorerDetail({
             pnl={DATA_STATS[1].pnl}
             address={DATA_STATS[1].address}
             loading={tradeStatisticQuery.isFetching}
+            data={DATA_STATS[1]}
           />
         </WrapTable>
       </div>

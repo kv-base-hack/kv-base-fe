@@ -1,3 +1,5 @@
+'use client'
+
 import Close from '@/components/shared/icons/Close'
 import SearchIcon from '@/components/shared/icons/SearchIcon'
 import {
@@ -18,6 +20,7 @@ import { TokenList } from '@/types/tokenList'
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import { useQuery } from '@tanstack/react-query'
+import { renderPrice } from '@/lib/utils/renderPrice'
 
 export function DialogSelectToken({
   children,
@@ -31,6 +34,7 @@ export function DialogSelectToken({
   setListToken?: (listToken: TokenList[]) => void
 }) {
   const [tokens, setTokens] = useState<TokenList[]>(listToken || [])
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     setTokens(listToken || [])
@@ -41,12 +45,13 @@ export function DialogSelectToken({
   const [debounceSearch, setDebounceSearch] = useState('')
   const CHAIN = useAtomValue(chainAtom)
 
-  const listTokenQuery = useQuery(
-    useTokenListQuery({
+  const listTokenQuery = useQuery({
+    ...useTokenListQuery({
       symbol_search: debounceSearch,
       chain: CHAIN,
     }),
-  )
+    enabled: open,
+  })
   const listTokenData = listTokenQuery.data?.tokens || []
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -62,14 +67,14 @@ export function DialogSelectToken({
   )
 
   const handleNavigte = (token: TokenList) => () => {
-    router.push(`/smartmoney-onchain/token-explorer/${token.tokenAddress}`)
+    router.push(`/smartmoney-onchain/token-explorer/${token.token_address}`)
   }
 
   const handleSelectToken = (token: TokenList) => () => {
     if (action === 'default') {
       const tmp = [...tokens]
       const index = tmp.findIndex(
-        (item) => item.tokenAddress === token.tokenAddress,
+        (item) => item.token_address === token.token_address,
       )
       if (index !== -1) {
         tmp.splice(index, 1)
@@ -90,13 +95,13 @@ export function DialogSelectToken({
   }
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="z-[999999] max-w-[433px] overflow-hidden rounded-[20px] !p-0">
         <div className="flex max-w-[510px] flex-col rounded-[20px] border-none border-white/10 bg-black/50 py-4">
           <div className="flex w-full justify-between gap-5 px-4 text-xl font-bold leading-7 tracking-tight text-zinc-100 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
             <div />
-            <div className="flex justify-center font-[AoenikPro] text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-[#F4F4F4]">
+            <div className="flex justify-center font-sans text-xl font-medium not-italic leading-8 tracking-[-0.4px] text-[#F4F4F4]">
               Choose Tokens
             </div>
             <DialogClose>
@@ -116,7 +121,7 @@ export function DialogSelectToken({
           </div>
           <div className="relative h-[500px] overflow-y-auto px-4 pb-16">
             {listTokenData?.map((token, index) =>
-              token.tokenAddress && action === 'navigate' ? (
+              token.token_address && action === 'navigate' ? (
                 <DialogClose key={index} className="w-full cursor-pointer">
                   <div
                     onClick={handleNavigte(token)}
@@ -125,7 +130,7 @@ export function DialogSelectToken({
                     <div className="flex justify-between gap-4 whitespace-nowrap">
                       <ImageToken
                         symbol={token?.symbol}
-                        imgUrl={token?.imageUrl}
+                        imgUrl={token?.image_url}
                       />
                       <div className="flex flex-1 flex-col items-start">
                         <div className="text-base font-bold leading-6 tracking-normal text-zinc-100">
@@ -138,7 +143,7 @@ export function DialogSelectToken({
                     </div>
                     <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
                       <div className="self-end text-base font-bold leading-6 tracking-normal text-zinc-100">
-                        {formatPriceNumber(token.usdPrice)}
+                        {renderPrice(token.usd_price)}
                       </div>
                       <div className="flex items-center justify-between gap-2 text-sm leading-4 tracking-normal">
                         {token.price_24h === 0 ? (
@@ -169,7 +174,7 @@ export function DialogSelectToken({
                   className={cn(
                     'mt-4 p-px',
                     tokens?.find(
-                      (item) => item.tokenAddress === token.tokenAddress,
+                      (item) => item.token_address === token.token_address,
                     )
                       ? 'z-0 rounded-xl bg-gradient-to-b from-[#9945FF] to-[#14F195]'
                       : 'rounded-xl hover:bg-white/5',
@@ -180,7 +185,7 @@ export function DialogSelectToken({
                     className={cn(
                       'z-1 flex h-full w-full cursor-pointer justify-between rounded-xl',
                       tokens?.find(
-                        (item) => item.tokenAddress === token.tokenAddress,
+                        (item) => item.token_address === token.token_address,
                       )
                         ? 'bg-black/90'
                         : '',
@@ -190,7 +195,7 @@ export function DialogSelectToken({
                       className={cn(
                         'z-1 flex h-full w-full cursor-pointer justify-between rounded-xl p-2',
                         tokens?.find(
-                          (item) => item.tokenAddress === token.tokenAddress,
+                          (item) => item.token_address === token.token_address,
                         )
                           ? 'bg-[#15ffab0d]'
                           : 'bg-transparent',
@@ -198,7 +203,7 @@ export function DialogSelectToken({
                     >
                       <div className="flex justify-between gap-4 whitespace-nowrap">
                         <ImageToken
-                          imgUrl={token?.imageUrl}
+                          imgUrl={token?.image_url}
                           symbol={token?.symbol}
                         />
                         <div className="flex flex-1 flex-col">
@@ -212,7 +217,7 @@ export function DialogSelectToken({
                       </div>
                       <div className="flex flex-1 flex-col items-end justify-center whitespace-nowrap">
                         <div className="self-end text-base font-bold leading-6 tracking-normal text-zinc-100">
-                          {formatPriceNumber(token.usdPrice)}
+                          {formatPriceNumber(token.usd_price)}
                         </div>
                         <div className="flex items-center justify-between gap-2 text-sm leading-4 tracking-normal">
                           {token.price_24h === 0 ? (

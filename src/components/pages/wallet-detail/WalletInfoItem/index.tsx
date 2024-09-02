@@ -1,14 +1,12 @@
 import { ImageToken } from '@/components/common/Image/ImageToken'
-import SkeletonChart from '@/components/common/Skeleton/SkeletonChart'
 import SkeletonDefault from '@/components/common/Skeleton/SkeletonDefault'
+import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import { cn } from '@/lib/utils'
 import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
-import { nFormatter } from '@/lib/utils/nFormatter'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import Link from 'next/link'
-import numeral from 'numeral'
 
 type WalletInfoItemTitleProps = {
   icon?: JSX.Element
@@ -21,7 +19,7 @@ export const WalletInfoItemTitle: React.FC<WalletInfoItemTitleProps> = ({
 }) => {
   return (
     <div className="flex w-full justify-start gap-3 text-base leading-6 text-white">
-      <div className="shrink-0">{icon}</div>
+      <div className="h-6 w-6">{icon}</div>
       <div className="font-medium">{name}</div>
     </div>
   )
@@ -39,6 +37,7 @@ type WalletInfoItemProps = {
   pnl?: number
   address?: string
   loading?: boolean
+  data?: any
 }
 
 export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
@@ -53,6 +52,7 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
   pnl,
   address,
   loading,
+  data,
 }) => {
   return (
     <div className="flex flex-col self-stretch">
@@ -62,12 +62,14 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
             <SkeletonDefault />
           </div>
         ) : (
-          <Link
-            href={`/smartmoney-onchain/token-explorer/${address}`}
-            className="hover:underline"
-          >
-            <ImageToken imgUrl={imgUrl} symbol={symbol} className="h-8 w-8" />
-          </Link>
+          <TooltipToken data={data}>
+            <Link
+              href={`/smartmoney-onchain/token-explorer/${address}`}
+              className="hover:underline"
+            >
+              <ImageToken imgUrl={imgUrl} symbol={symbol} className="h-8 w-8" />
+            </Link>
+          </TooltipToken>
         )}
         <div className="flex flex-1 flex-col justify-center gap-1">
           {loading ? (

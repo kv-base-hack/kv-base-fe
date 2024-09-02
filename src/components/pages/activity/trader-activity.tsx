@@ -123,6 +123,7 @@ export const TraderActivity = ({
             noneBorder
             noneBgHeader
             emptyData="No results."
+            isFetching={activityQuery.isLoading || activityQuery.isFetching}
           />
           <PaginationTable
             className="mt-4"

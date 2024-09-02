@@ -148,11 +148,12 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
       header: () => 'Balance',
       enableSorting: true,
       cell: ({ row }) => {
-        const { balance_amount_in_token = 0 } = row.original
+        const { balance_amount_in_usdt, hold_in_usdt } = row.original
+        const balance = balance_amount_in_usdt || hold_in_usdt
         return (
           <div className="flex flex-col text-start text-neutral-300">
             <div className="text-sm font-medium">
-              ${nFormatter(balance_amount_in_token)}
+              {balance ? `$${nFormatter(balance)}` : '-'}
             </div>
             {/* <div className="text-xs">{formatPriceNumber(volume)}</div> */}
           </div>

@@ -15,6 +15,7 @@ import CircularProgress from '../CircularProgress'
 import { TopScoreByAI } from '@/types/find-gems/top-score'
 import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
 import { StVol } from '@/components/pages/find-gems/tables/cols/st-vol'
+import { TooltipToken } from '../Tooltip/tooltip-token'
 
 export const TableFindGemsTopScoreByAi = ({
   tab,
@@ -45,21 +46,23 @@ export const TableFindGemsTopScoreByAi = ({
           const { image_url, token_address, symbol, name } = row.original
           return (
             <div className="w-full">
-              <div className="flex w-full items-center justify-start">
+              <div className="flex w-full ">
                 {token_address ? (
-                  <Link
+                  <TooltipToken data={row?.original}>
+                    <Link
                     href={`/smartmoney-onchain/token-explorer/${token_address}`}
                   >
-                    <div className="flex w-full items-center justify-start gap-1.5">
+                    <div className="flex w-full justify-start gap-1.5">
                       <ImageToken imgUrl={image_url} symbol={symbol} />
-                      <div>
+                      <div className='flex flex-col items-start justify-start'>
                         <div className="text-normal max-w-[100px] truncate text-neutral-03 underline">
                           {name}
                         </div>
                         <div className="max-w-[100px] truncate">{symbol}</div>
                       </div>
-                    </div>
-                  </Link>
+                      </div>
+                    </Link>
+                  </TooltipToken>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken imgUrl={image_url} symbol={symbol} />

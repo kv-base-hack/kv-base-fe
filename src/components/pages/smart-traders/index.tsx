@@ -7,12 +7,12 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { chainAtom } from '@/atom/chain'
 import { useAtomValue } from 'jotai'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
-import { Suspense, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { TokenList } from '@/types/tokenList'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Close from '@/components/shared/icons/Close'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query'
+import { useSuspenseQuery } from '@tanstack/react-query'
 import { parseAsInteger, useQueryState } from 'nuqs'
 import { Glow } from './glow/glow'
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
@@ -42,7 +42,6 @@ export const WalletAnalysis = ({
   const currentTokenAddresesLeaderboard =
     searchParams?.ta_leaderboard?.toString() || ''
   const currentDurationTp = searchParams?.ttp_duration?.toString() || '30d'
-
   const currentRankingLeaderboard =
     searchParams?.ranking_leaderboard?.toString() || 'all'
   const currentBadgeLeaderboard =
@@ -79,6 +78,7 @@ export const WalletAnalysis = ({
     history: 'push',
     shallow: false,
   })
+
   const [, setRankingLeaderboard] = useQueryState('ranking_leaderboard', {
     defaultValue: currentRankingLeaderboard,
     history: 'push',
@@ -287,7 +287,7 @@ export const WalletAnalysis = ({
                 setSortByLeaderboard,
               )}
               data={dataLeaderboard}
-              isFetching={leaderboardQuery.isFetching}
+              isFetching={leaderboardQuery.isFetching || leaderboardQuery.isLoading}
               noneBorder
               noneBgHeader
               emptyData="No results."

@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils'
 import { FirstTimeBuy } from '@/types/fist-time-buy'
 import { StVol } from '@/components/pages/find-gems/tables/cols/st-vol'
 import { StTx } from '@/components/pages/find-gems/tables/cols/st-tx'
+import { TooltipToken } from '../Tooltip/tooltip-token'
 
 export const TableFindGemsFisrtTimeBuy = ({
   tab,
@@ -46,7 +47,8 @@ export const TableFindGemsFisrtTimeBuy = ({
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
-                  <Link
+                 <TooltipToken data={row?.original}>
+                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
                     <div className="flex w-full items-center justify-start gap-1.5">
@@ -54,7 +56,7 @@ export const TableFindGemsFisrtTimeBuy = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <div>
+                      <div className='flex flex-col items-start justify-start'>
                         <div className="text-normal max-w-[100px] truncate text-neutral-03 underline">
                           {row?.original?.name}
                         </div>
@@ -64,6 +66,7 @@ export const TableFindGemsFisrtTimeBuy = ({
                       </div>
                     </div>
                   </Link>
+                 </TooltipToken>
                 ) : (
                   <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
                     <ImageToken

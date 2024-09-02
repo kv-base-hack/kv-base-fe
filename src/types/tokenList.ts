@@ -13,6 +13,9 @@ export interface TokenList {
   imageUrl: string
   market_cap: number
   price_24h: number
+  image_url: string
+  usd_price: number
+  token_address: string
 }
 
 export interface WalletList {
