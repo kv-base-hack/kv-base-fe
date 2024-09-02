@@ -22,6 +22,8 @@ export interface TrendingToken {
   total_profit: number
   number_of_smart_money_hold: number
   realized_percent: number
+  token_address: string
+  image_url: string
 }
 
 export interface TrendingTokenData {

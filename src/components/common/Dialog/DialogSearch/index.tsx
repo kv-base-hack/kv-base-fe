@@ -86,7 +86,7 @@ export const DialogSearchToken = ({
     updateRecentlySearched(token)
     router.push(
       `/smartmoney-onchain/token-explorer/${
-        token?.address || token?.tokenAddress
+        token?.address || token?.tokenAddress || token?.token_address
       }`,
     )
   }
@@ -114,7 +114,7 @@ export const DialogSearchToken = ({
     updateRecentlySearched(token)
     router.push(
       `/smartmoney-onchain/token-explorer/${
-        token?.tokenAddress || token?.address
+        token?.tokenAddress || token?.address || token?.token_address
       }`,
     )
   }
@@ -352,7 +352,7 @@ export const DialogSearchToken = ({
                       <div className="flex flex-1 items-center gap-2 py-px pr-20 max-md:flex-wrap">
                         <ImageToken
                           symbol={item.symbol}
-                          imgUrl={item.imageUrl || item.thumb}
+                          imgUrl={item.image_url || item.thumb}
                           className="aspect-square h-5 w-5 self-center"
                         />
                         <div className="font-Inter flex gap-1 text-base">
