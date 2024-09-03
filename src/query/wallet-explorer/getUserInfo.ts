@@ -1,16 +1,19 @@
 import { getUserInfo } from '@/services/api'
-import { useQuery } from '@tanstack/react-query'
 
 const GET_USER_INFO = 'GET_USER_INFO'
 
 export const useGetUserInfoQuery = ({
   address,
   chain,
+  frame,
 }: {
   address: string
   chain: string
-}) =>
-  useQuery({
-    queryKey: [GET_USER_INFO, { address, chain }],
-    queryFn: () => getUserInfo({ address, chain }),
-  })
+  frame?: string
+}) => ({
+  queryKey: [GET_USER_INFO, { address, chain, frame }],
+  queryFn: async () => {
+    const result = await getUserInfo({ address, chain, frame })
+    return result.data
+  },
+})

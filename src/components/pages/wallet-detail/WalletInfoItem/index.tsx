@@ -104,9 +104,9 @@ export const WalletInfoItem: React.FC<WalletInfoItemProps> = ({
                       priceChangeH24 !== 0 &&
                       (priceChangeH24 as number) > 0 ? (
                         <PercentUpIcon />
-                      ) : (
+                      ) : (priceChangeH24 as number) < 0 ? (
                         <PercentDownIcon />
-                      )}
+                      ) : ''}
                       {priceChangeH24?.toFixed(2)}%
                     </div>
                     <div className="text-neutral-50">

@@ -44,8 +44,8 @@ export const WalletAnalysis = ({
   const currentDurationTp = searchParams?.ttp_duration?.toString() || '30d'
   const currentRankingLeaderboard =
     searchParams?.ranking_leaderboard?.toString() || 'all'
-  const currentBadgeLeaderboard =
-    searchParams?.badge_leaderboard?.toString() || 'all'
+  const currentBadgesLeaderboard =
+    searchParams?.badges_leaderboard?.toString() || 'all'
 
   const [listToken, setListToken] = useState<TokenList[]>([])
   const barChartSmartTraderRef = useRef<HTMLDivElement>(null)
@@ -84,8 +84,8 @@ export const WalletAnalysis = ({
     history: 'push',
     shallow: false,
   })
-  const [, setBadgeLeaderboard] = useQueryState('badge_leaderboard', {
-    defaultValue: currentBadgeLeaderboard,
+  const [, setBadgeLeaderboard] = useQueryState('badges_leaderboard', {
+    defaultValue: currentBadgesLeaderboard,
     history: 'push',
     shallow: false,
   })
@@ -112,7 +112,7 @@ export const WalletAnalysis = ({
       sortBy: sortByLeaderboard,
       duration: currentDurationLeaderboard,
       ranking: currentRankingLeaderboard,
-      badge: currentBadgeLeaderboard,
+      badges: currentBadgesLeaderboard,
     }),
   )
   const dataLeaderboard =
@@ -267,7 +267,7 @@ export const WalletAnalysis = ({
               <SelectBadge
                 setPage={setPageLeaderboard}
                 setBadge={setBadgeLeaderboard}
-                badge={currentBadgeLeaderboard}
+                badge={currentBadgesLeaderboard}
               />
               <SelectDurationLeaderboard
                 duration={currentDurationLeaderboard}

@@ -129,8 +129,8 @@ export function WalletInfoPieChart({ address }: { address: string }) {
             innerRadius={100}
             outerRadius={150}
             strokeWidth={5}
-            paddingAngle={dataChart?.length > 1 ? 8 : 0}
-            cornerRadius={dataChart?.length > 1 ? 6 : 0}
+            paddingAngle={dataChart.length > 1 ? 8 : 0}
+            cornerRadius={dataChart.length > 1 ? 6 : 0}
           >
             <Label
               content={({ viewBox }) => {

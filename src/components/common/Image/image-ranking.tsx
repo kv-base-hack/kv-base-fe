@@ -7,7 +7,7 @@ export const ImageRanking = ({
   ranking: string | undefined
   size: number
 }) => {
-  const typeRank = ranking || 'expert_trader'
+  const typeRank = ranking === "nothing" || ranking === "" ? 'expert_trader' : ranking || ''
 
   return (
     <Image

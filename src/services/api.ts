@@ -37,7 +37,7 @@ import { SignalTriggeredResponse } from '@/types/trading-signal/SignalTriggered'
 import { TrendingTokenResponse } from '@/types/trendingToken'
 import { UnusualBuyResponse } from '@/types/unusualBuy'
 import { UserBalanceResponse } from '@/types/userBalance'
-import { UserInfoResponse } from '@/types/userInfo'
+import { DataUserInfo, UserInfoResponse } from '@/types/userInfo'
 import axios from 'axios'
 import { DataFirstTimeBuy } from '@/types/fist-time-buy'
 import { FindGemsTopScoreByAiResponse } from '@/types/find-gems/top-score'
@@ -194,7 +194,7 @@ export const tradeStatistic = async ({
     params: {
       address,
       chain,
-      duration,
+      frame:duration,
       token_address,
     },
   })
@@ -217,7 +217,7 @@ export const tradeStatisticTokens = async ({
     params: {
       address,
       chain,
-      duration,
+      frame: duration,
       token_address,
       sort_by,
     },
@@ -681,7 +681,7 @@ export const getLeaderboard = ({
   token_addresses = '',
   duration,
   ranking,
-  badge,
+  badges,
 }: {
   limit?: number
   start?: number
@@ -690,7 +690,7 @@ export const getLeaderboard = ({
   token_addresses: string
   duration?: string
   ranking?: string
-  badge?: string
+  badges?: string
 }) => {
   return api.get<DataLeaderboard>('/v1/leaderboard', {
     params: {
@@ -700,8 +700,8 @@ export const getLeaderboard = ({
       sort_by: sortBy,
       token_addresses,
       frame: duration,
-      ranking,
-      badge,
+      ranking: ranking === 'all' ? '' : ranking,
+      badges: badges === 'all' ? '' : badges,
     },
   })
 }
@@ -1361,20 +1361,20 @@ export const getChanelDetail = async ({
   return await signalApi.get(`/channels/${id}`)
 }
 
-export const getUserInfo = async ({
+export const getUserInfo = ({
   address,
   chain,
-  duration,
+  frame,
 }: {
   address: string
   chain: string
-  duration?: string
-}): Promise<UserInfoResponse> => {
-  return await api.get('/v1/user/info', {
+  frame?: string
+}) => {
+  return api.get<DataUserInfo>('/v1/user/info', {
     params: {
       chain,
       address,
-      duration,
+      frame,
     },
   })
 }

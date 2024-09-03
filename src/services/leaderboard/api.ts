@@ -369,16 +369,25 @@ export const getSpotlight = ({
   chain,
   limit,
   start,
+  token_addresses,
+  ranking,
+  badges,
 }: {
   chain: string
   limit: number
   start: number
+  token_addresses?: string
+  ranking?: string
+  badges?: string
 }) => {
   return api.get<SpotlightResp>('/v1/spotlight', {
     params: {
       chain,
       limit,
       start,
+      token_addresses,
+      ranking: ranking === 'all' ? '' : ranking,
+      badges: badges === 'all' ? '' : badges,
     },
   })
 }

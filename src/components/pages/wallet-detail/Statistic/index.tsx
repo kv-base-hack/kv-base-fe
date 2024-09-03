@@ -1,7 +1,8 @@
+'use client'
+
 import { DataTable } from '@/components/common/DataTable'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import { useTradeStatisticTokensQuery } from '@/query/wallet-explorer/getTradeStatisticTokens'
-import { TokenList } from '@/types/tokenList'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { columnsTradeStatisticToken } from './columns-trade-statistic-token'
@@ -10,14 +11,14 @@ type StatisticProps = {
   address: string
   chain: string
   filterDate: string
-  listToken: TokenList[]
+  filterListToken: string
 }
 
 export const Statistic: React.FC<StatisticProps> = ({
   address,
   chain,
   filterDate,
-  listToken,
+  filterListToken,
 }) => {
   const [sort, setSort] = useState('')
 
@@ -26,8 +27,7 @@ export const Statistic: React.FC<StatisticProps> = ({
       address,
       chain,
       duration: filterDate,
-      token_address:
-        listToken?.map((item) => item.tokenAddress)?.toString() || '',
+      token_address: filterListToken,
       sort_by: sort,
     }),
   )

@@ -48,7 +48,7 @@ export const TooltipWallet = ({
     <TooltipProvider delayDuration={200}>
       <Tooltip>
         <TooltipTrigger>{children}</TooltipTrigger>
-        <TooltipContent className="w-[342px] overflow-hidden rounded-[20px] border border-white/10 !p-0">
+        <TooltipContent className="min-w-[360px] overflow-hidden rounded-[20px] border border-white/10 !p-0">
           <div className="relative overflow-hidden rounded-[20px]">
             <div className="absolute -z-10 h-full w-full rounded-[20px] bg-black/25 backdrop-blur-md"></div>
             <div className="flex w-full flex-col gap-2.5 self-stretch bg-black/25 p-4 backdrop-blur-xl">

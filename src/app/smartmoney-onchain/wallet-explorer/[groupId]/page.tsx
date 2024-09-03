@@ -1,11 +1,8 @@
 'use client'
 
-import { chainAtom } from '@/atom/chain'
-import { useAtomValue } from 'jotai'
 import { useTradeStatisticQuery } from '@/query/wallet-explorer/getTradeStatistic'
 
 import LastDateIcon from '@/components/shared/icons/wallet-explorer/LastDateIcon'
-import BoughtIcon from '@/components/shared/icons/wallet-explorer/BoughtIcon'
 import BigestGainerIcon from '@/components/shared/icons/wallet-explorer/BigestGainerIcon'
 import { CopyCustom } from '@/components/common/CopyCustom'
 import { useGetUserInfoQuery } from '@/query/wallet-explorer/getUserInfo'
@@ -21,105 +18,166 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { SelectDuration } from '@/components/common/Select/SelectDuration'
 import { TokenList } from '@/types/tokenList'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Close from '@/components/shared/icons/Close'
-import { Switch } from '@/components/ui/switch'
 import numeral from 'numeral'
-import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
+import { useQuery } from '@tanstack/react-query'
+import { CHAIN } from '@/constant/chain'
+import { parseAsBoolean, useQueryState } from 'nuqs'
+import { Switch } from '@/components/ui/switch'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { IconCart } from '@/components/shared/icons/spotlight'
+import React from 'react'
+import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
+import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDuration/select-duration-leaderboard'
+import { ImageRanking } from '@/components/common/Image/image-ranking'
+import IconCopyAddress from '@/components/shared/icons/icon-copy-address'
 import { WalletInfoPieChart } from '@/components/pages/wallet-detail/wallet-infor-pie-chart'
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
 import { WalletStatChart } from '@/components/pages/wallet-detail/wallet-stat-chart'
-import IconCopyAddress from '@/components/shared/icons/icon-copy-address'
-import { ImageRanking } from '@/components/common/Image/image-ranking'
-import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
-import { nFormatter } from '@/lib/utils/nFormatter'
-import { IconCart } from '@/components/shared/icons/spotlight/card'
 
 const TABS = ['Trade Statistic', 'Assets', 'Activity']
 
-export default function WalletExplorerDetail({
+export default function WalletExplorerDetail ({
   params,
+  searchParams,
 }: {
   params: { groupId: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const [tab, setTabs] = useState('Trade Statistic')
-  const [duration, setDuration] = useState('24h')
-  const [filterDateStatistic, setFilterDateStatistic] = useState('24h')
-  const [listToken, setListToken] = useState<TokenList[]>([])
+
+  const refWalletDetail = React.useRef(null)
+
+  const currentTradeStatisticDuration =
+    searchParams?.statistic_duration?.toString() || '30d'
+  const currentUserInfoDuration =
+    searchParams?.u_info_duration?.toString() || '30d'
+
   const [hideSmallAsset, setHideSmallAsset] = useState(false)
-  const [hideSmallTrade, setHideSmallTrade] = useState(false)
-  const CHAIN = useAtomValue(chainAtom)
+
+  const [listToken, setListToken] = useState<TokenList[]>([])
+
+  const currentHideSmallTrade = Boolean(
+    searchParams?.ta_is_big_trade_only?.toString() || false,
+  )
+  const currentFilterDateStatistic =
+    searchParams?.tst_duration?.toString() || '30d'
+  const currentListToken = searchParams?.tst_token_address?.toString() || ''
+
+  const [, setUserInfoDuration] = useQueryState('u_info_duration', {
+    defaultValue: currentUserInfoDuration,
+    history: 'push',
+    shallow: false,
+  })
+
+  const [, setTradeStatisticDuration] = useQueryState('statistic_duration', {
+    defaultValue: currentTradeStatisticDuration,
+    history: 'push',
+    shallow: false,
+  })
+
+  const [, setFilterDateStatistic] = useQueryState('tst_duration', {
+    defaultValue: currentFilterDateStatistic,
+    history: 'push',
+    shallow: false,
+  })
+
+  const [, setFilterListToken] = useQueryState('tst_token_address', {
+    defaultValue: currentListToken,
+    history: 'push',
+    shallow: false,
+  })
+
+  const [, setHideSmallTrade] = useQueryState(
+    'ta_is_big_trade_only',
+    parseAsBoolean.withDefault(currentHideSmallTrade).withOptions({
+      history: 'push',
+      shallow: false,
+    }),
+  )
+
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
   }
 
-  const tradeStatisticQuery = useTradeStatisticQuery({
-    address: params.groupId,
-    chain: CHAIN,
-    token_address: '',
-    duration: '24h',
-  })
+  const tradeStatisticQuery = useQuery(
+    useTradeStatisticQuery({
+      address: params?.groupId?.toString() || '',
+      chain: CHAIN,
+      token_address: '',
+      duration: currentTradeStatisticDuration,
+    }),
+  )
 
-  const tradeStatistic = tradeStatisticQuery?.data?.data
+  const tradeStatistic = tradeStatisticQuery?.data
 
   const DATA_STATS = [
     {
       name: 'Most Bought',
       icon: (
-        <div className="rounded-full border border-core p-1 text-core">
+        <div className="flex items-center justify-center rounded-full border border-core p-1 text-core">
           <IconCart className="h-3 w-3" />
         </div>
       ),
-      imgUrl: tradeStatistic?.most_buy?.imageUrl,
-      title: tradeStatistic?.most_buy?.name,
-      priceChangeH24: tradeStatistic?.most_buy?.priceChangeH24,
-      symbol: tradeStatistic?.most_buy?.symbol,
+      imgUrl: tradeStatistic?.most_buy_detail?.image_url,
+      title: tradeStatistic?.most_buy_detail?.name,
+      priceChangeH24: tradeStatistic?.most_buy_detail?.price_change_24h,
+      symbol: tradeStatistic?.most_buy_detail?.symbol,
       token_address: tradeStatistic?.most_buy_detail?.token_address,
       avg_price: tradeStatistic?.most_buy_detail?.avg_price,
       value_in_usdt: tradeStatistic?.most_buy_detail?.value_in_usdt,
-      usdPrice: tradeStatistic?.most_buy?.usdPrice,
+      usdPrice: tradeStatistic?.most_buy_detail?.value_in_usdt,
       volume: tradeStatistic?.most_buy_detail?.volume,
       roi: tradeStatistic?.most_buy_detail?.roi,
       pnl: tradeStatistic?.most_buy_detail?.pnl,
-      chain: tradeStatistic?.most_buy?.chain,
-      address: tradeStatistic?.most_buy?.tokenAddress,
+      address: tradeStatistic?.most_buy_detail?.token_address,
+      realized_percent: tradeStatistic?.most_buy_detail?.realized_percent,
+      score: tradeStatistic?.most_buy_detail?.score,
+      hold_in_usdt: tradeStatistic?.most_buy_detail?.hold_in_usdt,
+      number_of_users: tradeStatistic?.most_buy_detail?.number_of_users,
     },
     {
-      name: 'Most Profitable Token',
+      name: 'Most Profitable',
       icon: <BigestGainerIcon />,
-      imgUrl: tradeStatistic?.most_profit?.imageUrl,
-      title: tradeStatistic?.most_profit?.name,
-      priceChangeH24: tradeStatistic?.most_profit?.priceChangeH24,
-      symbol: tradeStatistic?.most_profit?.symbol,
+      imgUrl: tradeStatistic?.most_profit_detail?.image_url,
+      title: tradeStatistic?.most_profit_detail?.name,
+      priceChangeH24: tradeStatistic?.most_profit_detail?.price_change_24h,
+      symbol: tradeStatistic?.most_profit_detail?.symbol,
       token_address: tradeStatistic?.most_profit_detail?.token_address,
       avg_price: tradeStatistic?.most_profit_detail?.avg_price,
-      usdPrice: tradeStatistic?.most_profit?.usdPrice,
+      usdPrice: tradeStatistic?.most_profit_detail?.value_in_usdt,
       volume: tradeStatistic?.most_profit_detail?.volume,
       roi: tradeStatistic?.most_profit_detail?.roi,
       pnl: tradeStatistic?.most_profit_detail?.pnl,
-      chain: tradeStatistic?.most_profit?.chain,
-      address: tradeStatistic?.most_profit?.tokenAddress,
+      address: tradeStatistic?.most_profit_detail?.token_address,
+      realized_percent: tradeStatistic?.most_profit_detail?.realized_percent,
+      score: tradeStatistic?.most_profit_detail?.score,
+      hold_in_usdt: tradeStatistic?.most_profit_detail?.hold_in_usdt,
+      number_of_users: tradeStatistic?.most_profit_detail?.number_of_users,
     },
   ]
 
   // get user info
-  const userInfoQuery = useGetUserInfoQuery({
-    address: params.groupId,
-    chain: CHAIN,
-  })
-  const userInfo = userInfoQuery?.data?.data.user_info
+  const userInfoQuery = useQuery(
+    useGetUserInfoQuery({
+      address: params?.groupId?.toString() || '',
+      chain: CHAIN,
+      frame: currentUserInfoDuration,
+    }),
+  )
+  const userInfo = userInfoQuery?.data?.user_info
 
   const renderTab = () => {
     switch (tab) {
       case 'Trade Statistic':
         return (
           <Statistic
-            filterDate={filterDateStatistic}
-            address={params.groupId}
+            filterDate={currentFilterDateStatistic}
+            address={params?.groupId?.toString() || ''}
             chain={CHAIN}
-            listToken={listToken}
+            filterListToken={currentListToken}
           />
         )
       case 'Assets':
@@ -128,8 +186,9 @@ export default function WalletExplorerDetail({
         return (
           <BigTradeActivity
             address={params.groupId}
+            searchParams={searchParams}
             chain={CHAIN}
-            hideSmallTrade={hideSmallTrade}
+            hideSmallTrade={currentHideSmallTrade}
           />
         )
     }
@@ -139,9 +198,10 @@ export default function WalletExplorerDetail({
     e.preventDefault()
     e.stopPropagation()
     const newListToken = listToken.filter(
-      (token) => token.tokenAddress !== item.tokenAddress,
+      (token) => token.token_address !== item.token_address,
     )
     setListToken([...newListToken])
+    setFilterListToken([...newListToken].toString())
   }
   const renderFilterTab = () => {
     switch (tab) {
@@ -157,12 +217,12 @@ export default function WalletExplorerDetail({
                 <div className="flex items-center gap-2">
                   {listToken.map((item) => (
                     <div
-                      className="h-9 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
-                      key={item.tokenAddress}
+                      className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
+                      key={item.token_address}
                     >
-                      <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-07 px-4 text-sm leading-5 tracking-normal text-white">
+                      <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-07 px-4 text-xs leading-5 tracking-normal text-white">
                         <ImageToken
-                          imgUrl={item?.imageUrl}
+                          imgUrl={item?.imageUrl || item?.image_url}
                           symbol={item?.symbol}
                         />
                         <div>{item.symbol}</div>
@@ -173,9 +233,10 @@ export default function WalletExplorerDetail({
                 </div>
               ) : null}
             </div>
-            <SelectDuration
-              duration={filterDateStatistic}
+            <SelectDurationLeaderboard
+              duration={currentFilterDateStatistic}
               setDuration={setFilterDateStatistic}
+              type="option2"
             />
           </div>
         )
@@ -198,8 +259,8 @@ export default function WalletExplorerDetail({
               {`Hide Small Trades (<$1K)`}
             </span>
             <Switch
-              checked={hideSmallTrade}
-              onCheckedChange={(checked: boolean) => setHideSmallTrade(checked)}
+              checked={currentHideSmallTrade}
+              onCheckedChange={() => setHideSmallTrade(!currentHideSmallTrade)}
             />
           </div>
         )
@@ -210,67 +271,72 @@ export default function WalletExplorerDetail({
     <div className="h-full w-full">
       <div className="mx-4 mt-2 flex flex-col justify-center gap-2 self-stretch md:flex-row md:flex-wrap xl:flex-nowrap">
         {/* left */}
-        <div className="max-w-1/2 flex w-full flex-col gap-4 self-stretch overflow-hidden rounded-2xl border border-solid border-white/10 bg-black/50 p-4 shadow-2xl backdrop-blur-lg md:w-1/2 xl:w-1/4">
-          <div className="flex flex-col gap-2">
-            <div className="mt-6 flex gap-4 whitespace-nowrap px-5 text-base font-medium leading-6 tracking-normal text-[#EFEFEF]">
-              <ImageRanking ranking={userInfo?.ranking} size={56} />
-              <div>
-                <div className="flex items-center gap-2">
-                  <div>{`${params.groupId?.substring(
-                    0,
-                    6,
-                  )}...${params.groupId?.slice(-6)}`}</div>
-                  <div className="mt-1">
-                    <CopyCustom
-                      value={params.groupId}
-                      icon={<IconCopyAddress />}
-                    />
-                  </div>
-                  <a
-                    href={`https://solscan.io/account/${params.groupId}`}
-                    target="_blank"
-                  >
-                    <Image
-                      loading="lazy"
-                      src="/images/scan.webp"
-                      className="h-[23px] w-[23px]"
-                      width={23}
-                      height={23}
-                      alt="scan"
-                    />
-                  </a>
+        <div
+          ref={refWalletDetail}
+          className="max-w-1/2 flex w-full flex-col self-stretch overflow-hidden rounded-2xl border border-solid border-white/10 bg-black/50 shadow-2xl backdrop-blur-lg md:w-1/2 xl:w-1/4"
+        >
+          <div className="mt-6 flex gap-4 whitespace-nowrap px-5 text-base font-medium leading-6 tracking-normal text-[#EFEFEF]">
+            <ImageRanking ranking={userInfo?.ranking} size={56} />
+            <div>
+              <div className="flex items-center gap-2">
+                <div>{`${params.groupId?.substring(
+                  0,
+                  6,
+                )}...${params.groupId?.slice(-6)}`}</div>
+                <div className="mt-1">
+                  <CopyCustom value={params.groupId} icon={<IconCopyAddress />} />
                 </div>
-                <div className="mt-2 flex items-end">
-                  {userInfo?.badges?.map((item, index) => {
-                    return (
-                      <Image
-                        key={index}
-                        src={`/images/badges/${item}.png`}
-                        alt={item}
-                        width={24}
-                        height={24}
-                      />
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-2 px-5 text-base tracking-normal text-zinc-300">
-              <div className="flex items-center gap-1 text-neutral-400">
-                <LastDateIcon />
-                <div>Last trade</div>
-              </div>
-              {userInfo?.last_activity ? (
-                <div className="font-medium">
-                  <ReactTimeAgo
-                    date={new Date(userInfo.last_activity)}
-                    locale="en-US"
+                <a
+                  href={`https://solscan.io/account/${params.groupId}`}
+                  target="_blank"
+                >
+                  <Image
+                    loading="lazy"
+                    src="/images/scan.webp"
+                    className="h-[23px] w-[23px]"
+                    width={23}
+                    height={23}
+                    alt="scan"
                   />
-                </div>
-              ) : null}
+                </a>
+              </div>
+              <div className="mt-2 flex items-end">
+                {userInfo?.badges?.map((item, index) => {
+                  return (
+                    <Image
+                      key={index}
+                      src={`/images/badges/${item}.png`}
+                      alt={item}
+                      width={24}
+                      height={24}
+                    />
+                  )
+                })}
+              </div>
             </div>
           </div>
-          <WalletInfoPieChart address={params.groupId} />
+          <div className="mt-2.5 flex items-center gap-2 px-5 text-base tracking-normal text-zinc-300">
+            <div className="flex items-center gap-1 text-neutral-400">
+              <LastDateIcon />
+              <div className="test-sm">Last trade</div>
+            </div>
+            {userInfo?.last_activity ? (
+              <div className="text-sm font-medium">
+                <ReactTimeAgo
+                  date={new Date(userInfo.last_activity)}
+                  locale="en-US"
+                />
+              </div>
+            ) : null}
+            <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+              <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-3 text-sm leading-5 tracking-normal text-white">
+                Ask Kai Chat
+              </div>
+            </div>
+          </div>
+          <div className="flex h-full w-full items-center justify-center">
+            <WalletInfoPieChart address={params.groupId} />
+          </div>
         </div>
         <WrapTable
           title="Wallet Overview"
@@ -280,12 +346,16 @@ export default function WalletExplorerDetail({
             </div>
           }
           childHeader={
-            <SelectDuration duration={duration} setDuration={setDuration} />
+            <SelectDurationLeaderboard
+              duration={currentUserInfoDuration}
+              setDuration={setUserInfoDuration}
+              type="option3"
+            />
           }
           className="relative order-3 flex h-[unset] w-full items-center gap-4 p-6 font-normal xl:order-2 xl:w-1/2"
         >
           <div className="h-px w-full bg-white/10" />
-          <div className="flex w-full gap-6">
+          <div className="flex w-full items-center gap-4">
             <div className="mt-2 w-[55%]">
               <div className="flex w-full items-center justify-between gap-16">
                 <div className="w-1/2">
@@ -354,20 +424,15 @@ export default function WalletExplorerDetail({
                 <div className="w-1/2">
                   <div className="text-neutral-300"># of Trades</div>
                   <div className="mt-2 text-[32px] leading-[48px]">
-                    {Number(userInfo?.tx_buy || 0) +
-                      Number(userInfo?.tx_sell || 0)}
+                    {userInfo?.total}
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Buy</div>
-                    <div className="text-core">
-                      {Number(userInfo?.tx_buy || 0)}
-                    </div>
+                    <div className="text-core">{userInfo?.tx_buy}</div>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Sell</div>
-                    <div className="text-red">
-                      {Number(userInfo?.tx_sell || 0)}
-                    </div>
+                    <div className="text-red">{userInfo?.tx_sell}</div>
                   </div>
                 </div>
               </div>
@@ -388,7 +453,11 @@ export default function WalletExplorerDetail({
             </div>
           }
           childHeader={
-            <SelectDuration duration={duration} setDuration={setDuration} />
+            <SelectDurationLeaderboard
+              duration={currentTradeStatisticDuration}
+              setDuration={setTradeStatisticDuration}
+              type="option3"
+            />
           }
           className="relative order-2 flex h-auto w-full items-center justify-between gap-3 p-6 md:w-1/3 xl:order-3 xl:w-1/4"
         >
