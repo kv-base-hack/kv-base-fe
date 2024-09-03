@@ -82,7 +82,7 @@ export const SelectMovement = ({
         if (setPage) setPage(1)
       }}
     >
-      <SelectTrigger className="my-auto flex h-8 w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-0 text-sm font-medium leading-6 tracking-normal text-white">
+      <SelectTrigger className="my-auto flex h-7 w-auto cursor-pointer gap-2 whitespace-nowrap rounded-[360px] border border-solid border-white/40 bg-transparent px-4 py-0 text-sm font-medium leading-6 tracking-normal text-white">
         <div className="flex items-center justify-between gap-2">
           {renderMovement(movement).icon}
           <div className="grow">{renderMovement(movement).value}</div>

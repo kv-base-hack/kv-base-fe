@@ -33,7 +33,7 @@ const SelectTrigger = React.forwardRef<
         width={16}
         height={16}
         src="/assets/icons/arrow-down.svg"
-        className="my-auto mr-1 aspect-square h-4 w-4 items-center justify-center object-center"
+        className="aspect-square items-center justify-center object-center"
       />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>

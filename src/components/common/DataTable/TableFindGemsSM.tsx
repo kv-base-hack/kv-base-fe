@@ -48,7 +48,7 @@ export const TableFindGemsSM = ({
             <div className="w-full">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
-                  <TooltipToken data={row?.original}>
+                  <TooltipToken data={row?.original} side="bottom">
                     <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >

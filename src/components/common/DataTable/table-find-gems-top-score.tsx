@@ -48,7 +48,7 @@ export const TableFindGemsTopScoreByAi = ({
             <div className="w-full">
               <div className="flex w-full ">
                 {token_address ? (
-                  <TooltipToken data={row?.original}>
+                  <TooltipToken data={row?.original} side='bottom'>
                     <Link
                     href={`/smartmoney-onchain/token-explorer/${token_address}`}
                   >

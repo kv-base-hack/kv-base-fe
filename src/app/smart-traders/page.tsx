@@ -24,7 +24,7 @@ async function WalletAnalysisPage({
         start: 1,
         duration: searchParams?.ttp_duration?.toString() || '1d',
         sort_by: '',
-        chain: 'base',
+        chain: CHAIN,
       }),
     ),
     queryClient.prefetchQuery(

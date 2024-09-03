@@ -3,16 +3,23 @@
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
 import { DataTable } from '@/components/common/DataTable'
 import { columnsActivity } from '@/components/common/DataTable/columnsActivity'
+import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import SmartmoneyActivityIcon from '@/components/shared/icons/activity/SmartmoneyActivityIcon'
+import Close from '@/components/shared/icons/Close'
 import { Switch } from '@/components/ui/switch'
 import { CHAIN } from '@/constant/chain'
 import { useTopActivityQuery } from '@/query/leaderboard/getTopActivity'
 import { TokenList } from '@/types/tokenList'
 
 import { useQuery } from '@tanstack/react-query'
-import { parseAsInteger, useQueryState } from 'nuqs'
+import { parseAsInteger, useQueryState, parseAsString } from 'nuqs'
 import { useState } from 'react'
+
+const customParseAsString = parseAsString.withDefault('').withOptions({
+  history: 'push',
+  shallow: false,
+}) as unknown as typeof parseAsString
 
 export const TraderActivity = ({
   searchParams,
@@ -29,11 +36,8 @@ export const TraderActivity = ({
       }),
   )
   const [listToken, setListToken] = useState<TokenList[]>([])
-  const [filterActivity, setFilterActivity] = useQueryState('action', {
-    defaultValue: searchParams?.action?.toString() || 'all',
-    history: 'push',
-    shallow: false,
-  })
+
+  const [filterActivity, setFilterActivity] = useQueryState('action', customParseAsString)
 
   const [, setSortBy] = useQueryState('sort_by', {
     defaultValue: searchParams?.sort_by?.toString() || '',
@@ -41,23 +45,11 @@ export const TraderActivity = ({
     shallow: false,
   })
   const [hiddenSmallTrades, setHiddenSmallTrades] = useState(false)
-  const [token, setToken] = useQueryState('token', {
-    defaultValue: searchParams?.token?.toString() || '',
-    history: 'push',
-    shallow: false,
-  })
+  const [token, setToken] = useQueryState('token_activity', customParseAsString)
 
-  const [tradeValue, setTradeValue] = useQueryState('amount_filter', {
-    defaultValue: searchParams?.amount_filter?.toString() || '',
-    history: 'push',
-    shallow: false,
-  })
+  const [tradeValue, setTradeValue] = useQueryState('amount_filter', customParseAsString)
 
-  const [userAddress, setUserAddress] = useQueryState('user_address', {
-    defaultValue: searchParams?.user_address?.toString() || '',
-    history: 'push',
-    shallow: false,
-  })
+  const [userAddress, setUserAddress] = useQueryState('user_address', customParseAsString)
 
   const activityQuery = useQuery(
     useTopActivityQuery({
@@ -66,13 +58,28 @@ export const TraderActivity = ({
       start: parseInt(searchParams?.start_activity?.toString() || '1'),
       chain: searchParams?.chain?.toString() || CHAIN,
       amount_filter: searchParams?.amount_filter?.toString() || '',
-      token_addresses: token || '',
+      token_addresses: searchParams?.token_activity?.toString() || '',
       sort_by: searchParams?.sort_by?.toString() || '',
       user_address: searchParams?.user_address?.toString() || '',
     }),
   )
 
   const totalActivity = activityQuery.data?.total || 1
+
+  const handleRemoveToken = (item: TokenList) => (e: any) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const newListToken = listToken.filter(
+      (token) => token.token_address !== item.token_address,
+    )
+    setListToken([...newListToken])
+    setToken(newListToken?.map((item) => item.token_address)?.toString() || '')
+  }
+
+  const handleChooseTokens = (items: TokenList[]) => {
+    setListToken(items)
+    setToken(items?.map((item) => item.token_address)?.toString() || '')
+  }
 
   return (
     <div className="flex flex-col gap-4 rounded-[20px] border border-white/10 bg-black/50 p-6">
@@ -88,8 +95,30 @@ export const TraderActivity = ({
         <div className="flex items-center gap-3">
           <ButtonChooseToken
             listToken={listToken}
-            setListToken={setListToken}
+            setListToken={handleChooseTokens}
           />
+          {listToken?.length > 0 ? (
+            <div className="flex items-center gap-2">
+              {listToken.map((item) => (
+                <div
+                  className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]"
+                  key={item.token_address}
+                >
+                  <div className="flex h-full cursor-pointer items-center justify-center gap-1 rounded-3xl bg-neutral-07 px-4 text-xs leading-5 tracking-normal text-white">
+                    <ImageToken
+                      imgUrl={item?.imageUrl || item?.image_url}
+                      symbol={item?.symbol}
+                    />
+                    <div>{item.symbol}</div>
+                    <Close
+                      className="h-4 w-4"
+                      onclick={handleRemoveToken(item)}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : null}
           <div className="flex items-center gap-2">
             <Switch
               checked={hiddenSmallTrades}
@@ -110,14 +139,14 @@ export const TraderActivity = ({
             columns={columnsActivity(
               setSortBy,
               setToken,
-              token,
+              token as string,
               setFilterActivity,
-              filterActivity,
+              filterActivity as string,
               setPageActivity,
               setTradeValue,
               tradeValue,
               setUserAddress,
-              userAddress,
+              userAddress as string,
             )}
             data={activityQuery?.data?.activities || []}
             noneBorder
