@@ -2,7 +2,7 @@ export const tabs = [
   'Unusual Buying',
   'ST New Listing Buys',
   'ST Holding',
-  'ST Top Buy',
+  'ST Top Buys',
   'ST First Time Buy',
   'Top AI Score',
 ] as const
@@ -13,7 +13,7 @@ export const tabToURLMapping: Record<ActiveTab, string> = {
   'Unusual Buying': 'unusual-buying',
   'ST New Listing Buys': 'st-new-listing-buys',
   'ST Holding': 'st-holding',
-  'ST Top Buy': 'st-top-buy',
+  'ST Top Buys': 'st-top-buy',
   'ST First Time Buy': 'st-first-time-buy',
   'Top AI Score': 'top-ai-score',
 }

@@ -14,12 +14,10 @@ export const FindGemsTabHint: React.FC<FindGemsTabHintProps> = ({
     case 'ST New Listing Buys':
       return 'Here is a list of tokens buys by smart money with token age <14 days'
     case 'ST Holding':
-      return 'List of token holding by smart money'
+      return 'List of token holding by smart money.'
     case 'ST Top Buys':
-      return 'List the top purchases made by smart money'
-    case 'ST Top Sells':
-      return 'List the top sales made by smart money'
-    case 'Top CEX Withdraw':
+      return 'Top purchases made by Smartmoney ranked by Volume Buy.'
+    case 'ST First Time Buy':
       return 'List tokens with the highest net withdrawals from centralized exchanges to wallet.'
     default:
       return ''

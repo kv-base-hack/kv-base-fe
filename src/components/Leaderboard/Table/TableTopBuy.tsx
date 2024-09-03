@@ -184,7 +184,7 @@ export const TableTopBuy = ({
     <CardCommon>
       <TitleCard
         iconFirst={<IconShoppingCart />}
-        title="ST Top Buy"
+        title="ST Top Buys"
         content="Top purchases made by Smartmoney ranked by Volume Buy."
       >
         <div className="flex items-center gap-2">

@@ -3,7 +3,10 @@ import { ActivitySmartMoneyOfTokenResponse } from '@/types/activitySmartMoneyOfT
 import { CexDepositResponse } from '@/types/cexDeposit'
 import { CexWithdrawResponse } from '@/types/cexWithdraw'
 import { CourseResponse } from '@/types/course'
-import { DataDexTradingSignal, DexTradingSignalResponse } from '@/types/trading-signal/dexTradingSignal'
+import {
+  DataDexTradingSignal,
+  DexTradingSignalResponse,
+} from '@/types/trading-signal/dexTradingSignal'
 import { FindGemsDepositResponse } from '@/types/find-gems/deposit'
 import { FindGemsSmartMoneyHoldingResponse } from '@/types/find-gems/smartMoneyHolding'
 import { FindGemsUnusualCexResponse } from '@/types/find-gems/unusual-cex'
@@ -194,7 +197,7 @@ export const tradeStatistic = async ({
     params: {
       address,
       chain,
-      frame:duration,
+      frame: duration,
       token_address,
     },
   })
@@ -499,10 +502,10 @@ export const getTopTokenSell = async ({
   cex_net_flow_max?: number
   sort_by?: string
 }): Promise<TopTokenSellResponse> => {
-  return await api.get('/v1/token/top_smart_money_trade', {
+  return await api.get('/v1/findgems/top_smart_money_trade', {
     params: {
       limit,
-      duration,
+      frame: duration,
       start,
       chain,
       action,
@@ -1164,7 +1167,7 @@ export const getFindGemsFreshWalletUnusual = async ({
       start,
       limit,
       chain,
-      duration,
+      frame: duration,
       price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
       price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
       market_cap_min: market_cap_min ? market_cap_min : null,
@@ -1218,7 +1221,7 @@ export const getFindGemsSmartMoneyHolding = async ({
       start,
       limit,
       chain,
-      duration,
+      frame: duration,
       price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
       price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
       market_cap_min: market_cap_min ? market_cap_min : null,
@@ -1272,7 +1275,7 @@ export const getFindGemsTopScore = async ({
       start,
       limit,
       chain,
-      duration,
+      frame: duration,
       price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
       price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
       market_cap_min: market_cap_min ? market_cap_min : null,
@@ -1522,7 +1525,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           limit,
           start,
           address,
-          frame:duration,
+          frame: duration,
         },
       })
     default:

@@ -18,7 +18,7 @@ export const FindGemsFirstTimeBuy: React.FC<FindGemsTabFirstTimeBuyProps> = ({
 }) => {
   const currentPage = parseInt(searchParams?.ftb_start?.toString() || '1')
   const currentPerPage = parseInt(searchParams?.ftb_limit?.toString() || '10')
-  const currentDuration = searchParams?.ftb_duration?.toString() || '24h'
+  const currentDuration = searchParams?.duration?.toString() || '24h'
   const currentSortBy = searchParams?.ftb_sort?.toString() || ''
 
   const [, setPage] = useQueryState(

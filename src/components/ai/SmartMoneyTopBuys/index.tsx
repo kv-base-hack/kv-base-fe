@@ -189,7 +189,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
       <div className="flex flex-col gap-5 rounded-lg border border-solid border-[#EFEFEF] bg-neutral-01 p-6 font-semibold leading-[160%] max-md:px-5">
         <TitleCard
           iconFirst={<IconShoppingCart />}
-          title="ST Top Buy"
+          title="ST Top Buys"
           content="Top purchases made by Smartmoney ranked by Volume Buy."
         >
           <Link

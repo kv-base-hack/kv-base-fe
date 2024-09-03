@@ -16,7 +16,7 @@ export const FindGemsTabFreshWalletUnusual: React.FC<
 > = ({ tab, searchParams }) => {
   const currentPage = parseInt(searchParams?.ub_start?.toString() || '1')
   const currentPerPage = parseInt(searchParams?.ub_limit?.toString() || '10')
-  const currentDuration = searchParams?.ub_duration?.toString() || '24h'
+  const currentDuration = searchParams?.duration?.toString() || '24h'
   const currentSortBy = searchParams?.ub_sort?.toString() || ''
 
   const [, setPage] = useQueryState(

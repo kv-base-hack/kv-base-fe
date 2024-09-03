@@ -21,7 +21,7 @@ export const FindGemsTopAiScore: React.FC<FindGemsTabSmartTopScoreAiProps> = ({
 }) => {
   const currentPage = parseInt(searchParams?.smh_start?.toString() || '1')
   const currentPerPage = parseInt(searchParams?.smh_limit?.toString() || '10')
-  const currentDuration = searchParams?.smh_duration?.toString() || '24h'
+  const currentDuration = searchParams?.duration?.toString() || '24h'
   const currentSortBy = searchParams?.smh_sort?.toString() || ''
 
   const [, setPage] = useQueryState(

@@ -1,54 +1,60 @@
+'use client'
+
 import React from 'react'
-import { ActiveTab } from '@/types/find-gems'
 import { FindGemsTabSmartHolding } from '../gem-analytics/tabs/FindGemsTabSmartHolding'
-import { FindGemsTabTopBuys } from './tables/table-find-gems-top-buys'
 import { FindGemsTabSMNewListingsBuy } from './tables/table-find-gems-new-listing-buy'
-import { FindGemsTabFreshWalletUnusual } from './tables/table-unusual-buy'
+import { FindGemsTabTopBuys } from './tables/table-find-gems-top-buys'
 import { FindGemsFirstTimeBuy } from './tables/table-first-time-buy'
+import { FindGemsTabFreshWalletUnusual } from './tables/table-unusual-buy'
 import { FindGemsTopAiScore } from './tables/table-top-ai-score'
 
 interface FindGemsTabsProps {
-  activeTab: ActiveTab
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
 export const FindGemsTabs: React.FunctionComponent<FindGemsTabsProps> = ({
-  activeTab,
   searchParams,
 }) => {
-  switch (activeTab) {
-    case 'ST Holding':
+  const currentCategory = searchParams?.category?.toString() || ''
+
+  switch (currentCategory) {
+    case 'st-holding':
       return (
-        <FindGemsTabSmartHolding tab={activeTab} searchParams={searchParams} />
+        <FindGemsTabSmartHolding
+          tab={currentCategory}
+          searchParams={searchParams}
+        />
       )
-    case 'ST Top Buy':
-      return <FindGemsTabTopBuys tab={activeTab} searchParams={searchParams} />
-    case 'ST New Listing Buys':
+    case 'st-top-buy':
+      return (
+        <FindGemsTabTopBuys tab={currentCategory} searchParams={searchParams} />
+      )
+    case 'st-new-listing-buys':
       return (
         <FindGemsTabSMNewListingsBuy
-          tab={activeTab}
+          tab={currentCategory}
           searchParams={searchParams}
         />
       )
-    case 'Unusual Buying':
+    case 'unusual-buying':
       return (
         <FindGemsTabFreshWalletUnusual
-          tab={activeTab}
+          tab={currentCategory}
           searchParams={searchParams}
         />
       )
-    case 'ST First Time Buy':
+    case 'st-first-time-buy':
       return (
-        <FindGemsFirstTimeBuy tab={activeTab} searchParams={searchParams} />
+        <FindGemsFirstTimeBuy
+          tab={currentCategory}
+          searchParams={searchParams}
+        />
       )
-    case 'Top AI Score':
-      return <FindGemsTopAiScore tab={activeTab} searchParams={searchParams} />
+    case 'top-score-by-ai':
+      return (
+        <FindGemsTopAiScore tab={currentCategory} searchParams={searchParams} />
+      )
     default:
-      return (
-        <FindGemsTabFreshWalletUnusual
-          tab={activeTab}
-          searchParams={searchParams}
-        />
-      )
+      return null
   }
 }

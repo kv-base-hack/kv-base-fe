@@ -1,26 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
+import { tabToURLMapping, tabs } from './types'
 import { cn } from '@/lib/utils'
 import { TooltipCustom } from '@/components/common/Tooltip'
 import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
-
 import { SelectDuration } from '@/components/common/Select/SelectDuration'
 import { useQueryState } from 'nuqs'
+import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDuration/select-duration-leaderboard'
 import { findGemsTabHint } from '@/constant/find-gems-tab-hint'
-import { ActiveTab, tabs } from '@/types/find-gems'
 
 interface FindGemsTabHeaderProps {
-  activeTab: ActiveTab
-  handleActiveTab: (value: ActiveTab) => void
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
 export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
-  activeTab,
-  handleActiveTab,
   searchParams,
 }) => {
-  const currentDuration = searchParams?.ub_duration?.toString() || '24h'
+  const currentCategory = searchParams?.category?.toString() || 'unusual-buying'
+  const currentDuration =
+    searchParams?.duration?.toString() ||
+    (currentCategory === 'Unusual Buying' ||
+    currentCategory === 'ST First Time Buy'
+      ? '24h'
+      : '1d')
 
   const [, setDuration] = useQueryState('duration', {
     defaultValue: currentDuration,
@@ -28,26 +30,46 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
     shallow: false,
   })
 
+  const [, setCategory] = useQueryState('category', {
+    defaultValue: currentCategory,
+    history: 'push',
+    shallow: false,
+  })
+  // run only first time if no have category
+  useEffect(() => {
+    if (currentCategory === 'unusual-buying') {
+      setCategory(currentCategory)
+    }
+  }, [currentCategory, setCategory])
+
+  const onChangeTab = (value: string) => () => {
+    setDuration('')
+    setCategory(value)
+  }
+
   return (
     <div className="flex items-center justify-between text-base tracking-normal">
       <div className="hidden gap-4 self-stretch overflow-y-auto text-center font-medium leading-8 tracking-tight text-neutral-03 max-md:flex-wrap max-md:pr-5 lg:flex">
-        {tabs.map((item, index) => {
+        {tabs.map((label, index) => {
+          const value = tabToURLMapping[label]
           return (
             <div
               key={index}
-              onClick={() => handleActiveTab(item)}
+              onClick={onChangeTab(value)}
               className={cn(
                 'flex cursor-pointer items-center justify-center px-4 py-2 text-base font-medium not-italic leading-6 transition-all duration-300 hover:text-neutral-100',
-                activeTab === item ? 'text-neutral-100' : 'text-neutral-500',
+                currentCategory === value
+                  ? 'text-neutral-100'
+                  : 'text-neutral-500',
               )}
             >
               <div className="flex flex-col items-center">
                 <div className="flex h-auto w-auto items-center">
-                  {item}
+                  {label}
 
                   <TooltipCustom
-                    className="z-[999] w-[210px] border-white/10 bg-neutral-06 font-inter text-neutral-02 shadow-sm"
-                    content={findGemsTabHint(item)}
+                    className="w-[210px] border-white/10 bg-neutral-06 font-inter text-neutral-02 shadow-sm"
+                    content={findGemsTabHint(value)}
                   >
                     <InfoIcon className="h-4 w-4 md:w-5 lg:w-5" />
                   </TooltipCustom>
@@ -55,7 +77,7 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
                 <div
                   className={cn(
                     'mt-2 h-px w-full',
-                    activeTab === item ? 'bg-core' : 'bg-transparent',
+                    currentCategory === value ? 'bg-core' : 'bg-transparent',
                   )}
                 ></div>
               </div>
@@ -64,20 +86,23 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
         })}
       </div>
       <div className="depth-1 flex items-center justify-start overflow-x-auto p-4 text-lg font-medium leading-6 tracking-tight lg:hidden">
-        {tabs.map((item, idx) => (
-          <div
-            className={cn(
-              'cursor-pointer whitespace-nowrap',
-              activeTab === item
-                ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
-                : 'my-auto self-stretch',
-            )}
-            key={idx}
-            onClick={() => handleActiveTab(item)}
-          >
-            <div className="flex gap-2 px-4 py-1">{item}</div>
-          </div>
-        ))}
+        {tabs.map((label, idx) => {
+          const value = tabToURLMapping[label]
+          return (
+            <div
+              className={cn(
+                'cursor-pointer whitespace-nowrap',
+                currentCategory === value
+                  ? 'justify-center self-stretch rounded-3xl bg-neutral-01/10'
+                  : 'my-auto self-stretch',
+              )}
+              key={idx}
+              onClick={onChangeTab(value)}
+            >
+              <div className="flex gap-2 px-4 py-1">{label}</div>
+            </div>
+          )
+        })}
       </div>
 
       <div className="flex items-center gap-2">
@@ -86,8 +111,20 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
             Add Filter
           </div>
         </div>
-
-        <SelectDuration duration={currentDuration} setDuration={setDuration} />
+        {currentCategory === 'unusual-buying' ||
+        currentCategory === 'st-first-time-buy' ? (
+          <SelectDuration
+            duration={currentDuration}
+            setDuration={setDuration}
+            type={currentCategory === 'unusual-buying' ? 'option4' : 'option2'}
+          />
+        ) : (
+          <SelectDurationLeaderboard
+            duration={currentDuration}
+            setDuration={setDuration}
+            type="option3"
+          />
+        )}
       </div>
     </div>
   )

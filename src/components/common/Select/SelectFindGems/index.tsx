@@ -3,50 +3,50 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from '@/components/ui/select'
+} from "@/components/ui/select";
 
 const options = [
   {
-    value: 'top_cex_withdraw',
-    label: 'Top CEX Withdraw',
+    value: "top_cex_withdraw",
+    label: "Top CEX Withdraw",
   },
   {
-    value: 'top_cex_deposit',
-    label: 'Top CEX Deposit',
+    value: "top_cex_deposit",
+    label: "Top CEX Deposit",
   },
   {
-    value: 'unusual_cex',
-    label: 'Unusual CEX',
+    value: "unusual_cex",
+    label: "Unusual CEX",
   },
   {
-    value: 'sm_holding',
-    label: 'ST Holding',
+    value: "sm_holding",
+    label: "ST Holding",
   },
   {
-    value: 'sm_top_buys',
-    label: 'ST Top Buys',
+    value: "sm_top_buys",
+    label: "ST Top Buys",
   },
   {
-    value: 'sm_top_sells',
-    label: 'ST Top Sells',
+    value: "sm_top_sells",
+    label: "ST Top Sells",
   },
-]
+];
 
 export const SelectFindGems = ({
   gem,
   setGem,
   setPage,
 }: {
-  gem: string
-  setGem: (value: string) => void
-  setPage: (value: number) => void
+  gem: string;
+  setGem: (value: string) => void;
+  setPage: (value: number) => void;
 }) => {
   return (
     <Select
       value={gem}
       onValueChange={(val: string) => {
-        setGem(val)
-        setPage(1)
+        setGem(val);
+        setPage(1);
       }}
     >
       <SelectTrigger className="my-auto flex w-auto cursor-pointer gap-2 whitespace-nowrap border-none bg-transparent px-4 py-3 text-base font-medium leading-6 tracking-normal text-white">
@@ -66,5 +66,5 @@ export const SelectFindGems = ({
         </div>
       </SelectContent>
     </Select>
-  )
-}
+  );
+};

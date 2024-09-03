@@ -16,7 +16,7 @@ export const FindGemsTabSMNewListingsBuy: React.FC<
 > = ({ tab, searchParams }) => {
   const currentPage = parseInt(searchParams?.nlb_start?.toString() || '1')
   const currentPerPage = parseInt(searchParams?.nlb_limit?.toString() || '10')
-  const currentDuration = searchParams?.nlb_duration?.toString() || '24h'
+  const currentDuration = searchParams?.duration?.toString() || '24h'
   const currentSortBy = searchParams?.nlb_sort?.toString() || ''
 
   const [, setPage] = useQueryState(
