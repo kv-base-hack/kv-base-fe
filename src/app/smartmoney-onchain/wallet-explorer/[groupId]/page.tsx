@@ -445,27 +445,11 @@ export default function WalletExplorerDetail({
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Win</div>
-                    <div
-                      className={cn(
-                        userInfo && userInfo.token_win > 0
-                          ? 'text-core'
-                          : 'text-red',
-                      )}
-                    >
-                      {userInfo?.token_win}
-                    </div>
+                    <div className="text-core">{userInfo?.token_win}</div>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Lose</div>
-                    <div
-                      className={cn(
-                        userInfo && userInfo.token_loss > 0
-                          ? 'text-core'
-                          : 'text-red',
-                      )}
-                    >
-                      {userInfo?.token_loss}
-                    </div>
+                    <div className="text-red">{userInfo?.token_loss}</div>
                   </div>
                 </div>
                 <div className="w-1/2">
@@ -475,27 +459,11 @@ export default function WalletExplorerDetail({
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Buy</div>
-                    <div
-                      className={cn(
-                        userInfo && userInfo.tx_buy > 0
-                          ? 'text-core'
-                          : 'text-red',
-                      )}
-                    >
-                      {userInfo?.tx_buy}
-                    </div>
+                    <div className="text-core">{userInfo?.tx_buy}</div>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Sell</div>
-                    <div
-                      className={cn(
-                        userInfo && userInfo.tx_sell > 0
-                          ? 'text-core'
-                          : 'text-red',
-                      )}
-                    >
-                      {userInfo?.tx_sell}
-                    </div>
+                    <div className="text-red">{userInfo?.tx_sell}</div>
                   </div>
                 </div>
               </div>
