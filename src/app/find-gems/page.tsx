@@ -54,7 +54,7 @@ async function FindGems({
       useGetTopTokenBuy({
         limit: parseInt(searchParams?.ttb_limit?.toString() || '10'),
         start: parseInt(searchParams?.ttb_start?.toString() || '1'),
-        duration: searchParams?.ttb_duration?.toString() || '24h',
+        duration: searchParams?.ttb_duration?.toString() || '1d',
         sort_by: searchParams?.ttb_sort?.toString() || '',
         chain: CHAIN,
         action: 'buying',

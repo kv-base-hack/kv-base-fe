@@ -40,7 +40,7 @@ import { SignalTriggeredResponse } from '@/types/trading-signal/SignalTriggered'
 import { TrendingTokenResponse } from '@/types/trendingToken'
 import { UnusualBuyResponse } from '@/types/unusualBuy'
 import { UserBalanceResponse } from '@/types/userBalance'
-import { DataUserInfo, UserInfoResponse } from '@/types/userInfo'
+import { DataUserInfo } from '@/types/userInfo'
 import axios from 'axios'
 import { DataFirstTimeBuy } from '@/types/fist-time-buy'
 import { FindGemsTopScoreByAiResponse } from '@/types/find-gems/top-score'
@@ -355,7 +355,7 @@ export const getSMNewListingBuys = async ({
   return await api.get('/v1/token/smart_money_new_listing_buy', {
     params: {
       limit,
-      frame: duration,
+      duration,
       start,
       chain,
       sort_by,
@@ -1167,7 +1167,7 @@ export const getFindGemsFreshWalletUnusual = async ({
       start,
       limit,
       chain,
-      frame: duration,
+      duration,
       price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
       price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
       market_cap_min: market_cap_min ? market_cap_min : null,
@@ -1221,7 +1221,6 @@ export const getFindGemsSmartMoneyHolding = async ({
       start,
       limit,
       chain,
-      frame: duration,
       price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
       price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
       market_cap_min: market_cap_min ? market_cap_min : null,
@@ -1275,7 +1274,6 @@ export const getFindGemsTopScore = async ({
       start,
       limit,
       chain,
-      frame: duration,
       price_change_24h_min: price_change_24h_min ? price_change_24h_min : null,
       price_change_24h_max: price_change_24h_max ? price_change_24h_max : null,
       market_cap_min: market_cap_min ? market_cap_min : null,
@@ -1525,7 +1523,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           limit,
           start,
           address,
-          frame: duration,
+          duration,
         },
       })
     default:

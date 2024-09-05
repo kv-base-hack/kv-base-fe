@@ -19,8 +19,9 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
   const currentCategory = searchParams?.category?.toString() || 'unusual-buying'
   const currentDuration =
     searchParams?.duration?.toString() ||
-    (currentCategory === 'Unusual Buying' ||
-    currentCategory === 'ST First Time Buy'
+    (currentCategory === 'unusual-buying' ||
+    currentCategory === 'st-first-time-buy' ||
+    currentCategory === 'st-new-listing-buys'
       ? '24h'
       : '1d')
 
@@ -45,6 +46,31 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
   const onChangeTab = (value: string) => () => {
     setDuration('')
     setCategory(value)
+  }
+
+  const renderDuration = (category: string) => {
+    switch (category) {
+      case 'unusual-buying':
+      case 'st-first-time-buy':
+      case 'st-new-listing-buys':
+        return (
+          <SelectDuration
+            duration={currentDuration}
+            setDuration={setDuration}
+            type={currentCategory === 'unusual-buying' ? 'option4' : 'option2'}
+          />
+        )
+      case 'st-top-buy':
+        return (
+          <SelectDurationLeaderboard
+            duration={currentDuration}
+            setDuration={setDuration}
+            type="option3"
+          />
+        )
+      default:
+        return null
+    }
   }
 
   return (
@@ -104,27 +130,16 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
           )
         })}
       </div>
-
-      <div className="flex items-center gap-2">
-        <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
-          <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-4 text-sm leading-5 tracking-normal text-white">
-            Add Filter
+      <div className="flex flex-col">
+        <div className="flex items-center gap-2">
+          <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+            <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-4 text-sm leading-5 tracking-normal text-white">
+              Add Filter
+            </div>
           </div>
+          {renderDuration(currentCategory)}
         </div>
-        {currentCategory === 'unusual-buying' ||
-        currentCategory === 'st-first-time-buy' ? (
-          <SelectDuration
-            duration={currentDuration}
-            setDuration={setDuration}
-            type={currentCategory === 'unusual-buying' ? 'option4' : 'option2'}
-          />
-        ) : (
-          <SelectDurationLeaderboard
-            duration={currentDuration}
-            setDuration={setDuration}
-            type="option3"
-          />
-        )}
+        <div className="mt-2 h-px w-full bg-transparent"></div>
       </div>
     </div>
   )

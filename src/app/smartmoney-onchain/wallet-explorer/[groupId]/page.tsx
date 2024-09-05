@@ -39,7 +39,7 @@ import { WalletStatChart } from '@/components/pages/wallet-detail/wallet-stat-ch
 
 const TABS = ['Trade Statistic', 'Assets', 'Activity']
 
-export default function WalletExplorerDetail ({
+export default function WalletExplorerDetail({
   params,
   searchParams,
 }: {
@@ -284,7 +284,10 @@ export default function WalletExplorerDetail ({
                   6,
                 )}...${params.groupId?.slice(-6)}`}</div>
                 <div className="mt-1">
-                  <CopyCustom value={params.groupId} icon={<IconCopyAddress />} />
+                  <CopyCustom
+                    value={params.groupId}
+                    icon={<IconCopyAddress />}
+                  />
                 </div>
                 <a
                   href={`https://solscan.io/account/${params.groupId}`}
@@ -355,58 +358,86 @@ export default function WalletExplorerDetail ({
           className="relative order-3 flex h-[unset] w-full items-center gap-4 p-6 font-normal xl:order-2 xl:w-1/2"
         >
           <div className="h-px w-full bg-white/10" />
-          <div className="flex w-full items-center gap-4">
-            <div className="mt-2 w-[55%]">
-              <div className="flex w-full items-center justify-between gap-16">
-                <div className="w-1/2">
+          <div className="flex w-full flex-col items-center gap-4 lg:flex-row">
+            <div className="mt-2 w-full lg:w-1/2">
+              <div className="flex w-full flex-col items-center justify-between gap-6 lg:flex-row">
+                <div className="w-full lg:w-1/2">
                   <div className="text-neutral-300">Total Profit</div>
-                  <div className="mt-2 text-[32px] leading-[48px] text-core">
+                  <div className="mt-2 w-full text-[32px] leading-[48px] text-core">
                     {userInfo?.total_pnl
                       ? `$${nFormatter(userInfo?.total_pnl)}`
                       : '-'}
                   </div>
-                  <div className="mt-2 flex items-center justify-between">
+                  <div className="mt-2 flex w-full items-center justify-between">
                     <div className="text-neutral-300">Realized</div>
-                    <div className="text-core">
+                    <div
+                      className={cn(
+                        userInfo && userInfo?.realized_pnl > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
                       {userInfo?.realized_pnl
                         ? `$${nFormatter(userInfo?.realized_pnl)}`
                         : '-'}
                     </div>
                   </div>
-                  <div className="mt-2 flex items-center justify-between">
+                  <div className="mt-2 flex w-full items-center justify-between">
                     <div className="text-neutral-300">Unrealized</div>
-                    <div className="text-red">
+                    <div
+                      className={cn(
+                        userInfo && userInfo?.unrealized_pnl > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
                       {userInfo?.unrealized_pnl
                         ? `$${nFormatter(userInfo?.unrealized_pnl)}`
                         : '-'}
                     </div>
                   </div>
                 </div>
-                <div className="w-1/2">
+                <div className="w-full lg:w-1/2">
                   <div className="text-neutral-300">Total ROI</div>
                   <div className="mt-2 text-[32px] leading-[48px] text-core">
                     {numeral(userInfo?.roi_percent).format('0,0.[00]')}%
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Realized</div>
-                    <div className="text-core">
+                    <div
+                      className={cn(
+                        userInfo && userInfo?.roi_realized_percent > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
                       {userInfo?.roi_realized_percent
-                        ? `$${nFormatter(userInfo?.roi_realized_percent)}`
+                        ? numeral(userInfo?.roi_realized_percent).format(
+                            '0,0.[00]%',
+                          )
                         : '-'}
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Unrealized</div>
-                    <div className="text-red">
+                    <div
+                      className={cn(
+                        userInfo && userInfo?.roi_unrealized_percent > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
                       {userInfo?.roi_unrealized_percent
-                        ? `$${nFormatter(userInfo?.roi_unrealized_percent)}`
+                        ? numeral(userInfo?.roi_unrealized_percent).format(
+                            '0,0.[00]%',
+                          )
                         : '-'}
                     </div>
                   </div>
                 </div>
               </div>
               <div className="my-8 h-px w-full bg-white/10" />
-              <div className="flex w-full items-center justify-between gap-16">
+              <div className="flex w-full items-center justify-between gap-6">
                 <div className="w-1/2">
                   <div className="text-neutral-300">Winrate</div>
                   <div className="mt-2 text-[32px] leading-[48px]">
@@ -414,11 +445,27 @@ export default function WalletExplorerDetail ({
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Win</div>
-                    <div className="text-core">{userInfo?.token_win}</div>
+                    <div
+                      className={cn(
+                        userInfo && userInfo.token_win > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
+                      {userInfo?.token_win}
+                    </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Lose</div>
-                    <div className="text-red">{userInfo?.token_loss}</div>
+                    <div
+                      className={cn(
+                        userInfo && userInfo.token_loss > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
+                      {userInfo?.token_loss}
+                    </div>
                   </div>
                 </div>
                 <div className="w-1/2">
@@ -428,16 +475,32 @@ export default function WalletExplorerDetail ({
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Buy</div>
-                    <div className="text-core">{userInfo?.tx_buy}</div>
+                    <div
+                      className={cn(
+                        userInfo && userInfo.tx_buy > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
+                      {userInfo?.tx_buy}
+                    </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-neutral-300">Sell</div>
-                    <div className="text-red">{userInfo?.tx_sell}</div>
+                    <div
+                      className={cn(
+                        userInfo && userInfo.tx_sell > 0
+                          ? 'text-core'
+                          : 'text-red',
+                      )}
+                    >
+                      {userInfo?.tx_sell}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex w-[45%] items-center justify-center">
+            <div className="flex w-full items-center justify-center lg:w-1/2">
               <WalletStatChart
                 userInfoChart={userInfo?.user_info_chart_point}
               />
