@@ -85,7 +85,11 @@ export const TableFindGemsSmartMoneyHolding = ({
       },
       {
         accessorKey: "token_age",
-        header: () => <div>Age</div>,
+        header: () => (
+          <div onClick={() => setSort("token_age")} role="button">
+            Age
+          </div>
+        ),
         cell: ({ row }) => {
           const { token_age } = row.original;
           return <div className="text-neutral-03">{token_age}</div>;
@@ -182,8 +186,11 @@ export const TableFindGemsSmartMoneyHolding = ({
       },
       {
         accessorKey: "hold_value",
-        header: () => <div>Hold Value</div>,
-
+        header: () => (
+          <div onClick={() => setSort("hold_value")} role="button">
+            Hold Value
+          </div>
+        ),
         cell: ({ row }) => {
           const { hold_in_usdt } = row.original;
           return (
@@ -268,6 +275,7 @@ export const TableFindGemsSmartMoneyHolding = ({
           const { tx_buy, tx_sell } = row.original;
           return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />;
         },
+        enableSorting: false,
       },
       {
         accessorKey: "st_vol",
@@ -279,6 +287,7 @@ export const TableFindGemsSmartMoneyHolding = ({
           );
         },
         align: "end",
+        enableSorting: false,
         width: 128,
       },
     ];

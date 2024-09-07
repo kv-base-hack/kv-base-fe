@@ -4,13 +4,15 @@ import { WrapTable } from '@/components/common/DataTable/WrapTable'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Link from '@/components/shared/icons/Link'
 import { Discord, Telegram, Twitter } from '@/components/shared/icons/social'
-import { HeartIcon, VerifyIcon } from '@/components/shared/icons/token-explorer'
+import { VerifyIcon } from '@/components/shared/icons/token-explorer'
 import CopyIcon from '@/components/shared/icons/token-explorer/CopyIcon'
 import { cn } from '@/lib/utils'
 import { checkScoreToken } from '@/utils/checkScoreToken'
 import { nFormatter } from '@/utils/nFormatter'
 
 export function TokenInfo({ dataTokenInfo, params }: any) {
+  console.log('dataTokenInfo', dataTokenInfo)
+
   return (
     <WrapTable
       className="relative flex h-[unset] min-w-[430px] items-center gap-4 rounded-[20px] p-6 font-normal"
@@ -46,34 +48,58 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
       <div className="h-px w-full bg-white/10" />
       <div className="flex w-full items-center justify-start gap-3">
         <div className="flex items-center gap-2">
-          <a
+          {dataTokenInfo?.websites?.[0] ? (
+            <a
             href={dataTokenInfo?.websites?.[0] || ''}
             target="_blank"
             className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
           >
             <Link />
-          </a>
-          <a
-            href={dataTokenInfo?.discord_url || ''}
-            target="_blank"
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
-          >
-            <Discord />
-          </a>
-          <a
+            </a>
+          ) : (
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
+              <Link />
+            </div>
+          )}
+          {dataTokenInfo?.discord_url ? (
+            <a
+              href={dataTokenInfo?.discord_url || ''}
+              target="_blank"
+              className="flex h-7 w-7 cursor-not-allowed items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
+            >
+              <Discord />
+            </a>
+          ) : (
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]  opacity-10">
+              <Discord />
+            </div>
+          )}
+          {dataTokenInfo?.telegram_handle ? (
+            <a
             href={dataTokenInfo?.telegram_handle || ''}
             target="_blank"
             className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
           >
             <Telegram />
-          </a>
-          <a
+            </a>
+          ) : (
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
+              <Telegram />
+            </div>
+          )}
+          {dataTokenInfo?.twitter_handle ? (
+            <a
             href={dataTokenInfo?.twitter_handle || ''}
             target="_blank"
             className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
           >
             <Twitter />
           </a>
+          ) : (
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
+              <Twitter />
+            </div>
+          )}
         </div>
         <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
           <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-3 text-sm leading-5 tracking-normal text-white">

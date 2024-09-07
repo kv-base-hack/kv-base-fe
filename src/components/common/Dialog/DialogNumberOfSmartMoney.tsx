@@ -31,11 +31,13 @@ export const DialogNumberOfSmartMoney = ({
   address,
   type,
   duration,
+  className,
 }: {
   number: number
   address: string
   type: string
   duration: string
+  className?: string
 }) => {
   const [start, setStart] = useState(1)
   const [limit, setLimit] = useState(5)
@@ -141,6 +143,7 @@ export const DialogNumberOfSmartMoney = ({
             className={cn(
               'whitespace-nowrap text-sm font-medium not-italic leading-5 text-neutral-300',
               number ? 'underline' : '',
+              className,
             )}
             onClick={() => setVisible(true)}
           >

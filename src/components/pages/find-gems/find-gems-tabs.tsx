@@ -18,6 +18,20 @@ export const FindGemsTabs: React.FunctionComponent<FindGemsTabsProps> = ({
   const currentCategory = searchParams?.category?.toString() || ''
 
   switch (currentCategory) {
+    case 'unusual-buying':
+      return (
+        <FindGemsTabFreshWalletUnusual
+          tab={currentCategory}
+          searchParams={searchParams}
+        />
+      )
+    case 'st-new-listing-buys':
+      return (
+        <FindGemsTabSMNewListingsBuy
+          tab={currentCategory}
+          searchParams={searchParams}
+        />
+      )
     case 'st-holding':
       return (
         <FindGemsTabSmartHolding
@@ -28,20 +42,6 @@ export const FindGemsTabs: React.FunctionComponent<FindGemsTabsProps> = ({
     case 'st-top-buy':
       return (
         <FindGemsTabTopBuys tab={currentCategory} searchParams={searchParams} />
-      )
-    case 'st-new-listing-buys':
-      return (
-        <FindGemsTabSMNewListingsBuy
-          tab={currentCategory}
-          searchParams={searchParams}
-        />
-      )
-    case 'unusual-buying':
-      return (
-        <FindGemsTabFreshWalletUnusual
-          tab={currentCategory}
-          searchParams={searchParams}
-        />
       )
     case 'st-first-time-buy':
       return (

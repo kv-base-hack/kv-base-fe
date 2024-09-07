@@ -173,8 +173,11 @@ export const TableFindGemsTopScoreByAi = ({
       },
       {
         accessorKey: 'hold_value',
-        header: () => <div>Hold Value</div>,
-
+        header: () => (
+          <div onClick={() => setSort('hold_value')} role="button">
+            Hold Value
+          </div>
+        ),
         cell: ({ row }) => {
           const { hold_in_usdt } = row.original
           return <>{hold_in_usdt ? `$${nFormatter(hold_in_usdt)}` : '-'}</>
@@ -257,6 +260,7 @@ export const TableFindGemsTopScoreByAi = ({
           const { tx_buy, tx_sell } = row.original
           return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />
         },
+        enableSorting: false,
       },
       {
         accessorKey: 'st_vol',
@@ -268,6 +272,7 @@ export const TableFindGemsTopScoreByAi = ({
           )
         },
         align: 'end',
+        enableSorting: false,
         width: 128,
       },
     ]

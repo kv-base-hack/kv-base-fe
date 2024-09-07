@@ -14,6 +14,7 @@ export interface TokenInfoUnusualBuy {
   realized_percent: number
   buy_volume_in_usdt: number
   sell_volume_in_usdt: number
+  hold_in_usdt: number
 }
 export interface TokenInfoUnusualBuyResponse {
   data: DataTokenInfoUnusualBuy

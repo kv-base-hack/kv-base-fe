@@ -240,30 +240,6 @@ export default function WalletExplorerDetail({
             />
           </div>
         )
-      case 'Assets':
-        return (
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
-              {`Hide Small Assets (<$1K)`}
-            </span>
-            <Switch
-              checked={hideSmallAsset}
-              onCheckedChange={(checked: boolean) => setHideSmallAsset(checked)}
-            />
-          </div>
-        )
-      case 'Activity':
-        return (
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
-              {`Hide Small Trades (<$1K)`}
-            </span>
-            <Switch
-              checked={currentHideSmallTrade}
-              onCheckedChange={() => setHideSmallTrade(!currentHideSmallTrade)}
-            />
-          </div>
-        )
     }
   }
 

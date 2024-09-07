@@ -14,6 +14,7 @@ import {
 import { FilterIcon } from 'lucide-react'
 import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
 import { SmartTradersCell } from '../../Cell/smart-traders'
+import { TooltipTokenMoreInfo } from '../../Tooltip/tool-tip-more-info'
 
 export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
   {
@@ -128,31 +129,10 @@ export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
     },
   },
   {
-    accessorKey: 'profit',
-    header: () => 'Profit',
+    accessorKey: ' ',
     enableSorting: false,
     cell: ({ row }) => {
-      return (
-        <div
-          className={cn('flex items-center justify-center text-neutral-300')}
-        >
-          _
-        </div>
-      )
+      return <TooltipTokenMoreInfo data={row.original} />
     },
   },
-  // {
-  //   accessorKey: 'link_scan',
-  //   header: () => 'Scan',
-  //   size: 50,
-  //   enableSorting: false,
-  //   cell: ({ row }) => {
-  //     const { scan_link } = row.original
-  //     return (
-  //       <a href={scan_link} target="_blank">
-  //         <ExternalLink className="w-4 h-4 text-neutral-300" />
-  //       </a>
-  //     )
-  //   },
-  // },
 ]

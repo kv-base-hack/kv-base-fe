@@ -1,27 +1,27 @@
-import Link from 'next/link'
-import { ImageToken } from '../Image/ImageToken'
-import { renderPrice } from '@/lib/utils/renderPrice'
-import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
-import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
-import numeral from 'numeral'
-import { cn } from '@/lib/utils'
-import { nFormatter } from '@/lib/utils/nFormatter'
-import React, { ReactNode } from 'react'
+import Link from "next/link";
+import { ImageToken } from "../Image/ImageToken";
+import { renderPrice } from "@/lib/utils/renderPrice";
+import PercentUpIcon from "@/components/shared/icons/PercentUpIcon";
+import PercentDownIcon from "@/components/shared/icons/PercentDownIcon";
+import numeral from "numeral";
+import { cn } from "@/lib/utils";
+import { nFormatter } from "@/lib/utils/nFormatter";
+import React, { ReactNode } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from "@/components/ui/tooltip";
 
 const Info = ({
   title,
   children,
   number,
 }: {
-  title: string
-  children?: ReactNode
-  number?: number
+  title: string;
+  children?: ReactNode;
+  number?: number;
 }) => {
   return (
     <div className="flex items-center justify-between text-xs">
@@ -29,17 +29,17 @@ const Info = ({
       {number ? (
         <span
           className={cn(
-            number > 0 ? 'text-green' : number < 0 ? 'text-red' : '',
+            number > 0 ? "text-green" : number < 0 ? "text-red" : "",
           )}
         >
-          {number !== 0 ? `$${nFormatter(number)}` : '-'}
+          {number !== 0 ? `$${nFormatter(number)}` : "-"}
         </span>
       ) : (
         children
       )}
     </div>
-  )
-}
+  );
+};
 
 export const TooltipTokenMoreInfo = ({ ...data }) => {
   const {
@@ -59,13 +59,14 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
     sell_volume_in_usdt,
     total_profit,
     realized_percent,
-  } = data.data
+  } = data.data;
 
   const percentBuyVolumne =
-    (buy_volume_in_usdt / (buy_volume_in_usdt + sell_volume_in_usdt)) * 100 || 0
+    (buy_volume_in_usdt / (buy_volume_in_usdt + sell_volume_in_usdt)) * 100 ||
+    0;
   const percentSellVolumne =
     (sell_volume_in_usdt / (buy_volume_in_usdt + sell_volume_in_usdt)) * 100 ||
-    0
+    0;
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -75,7 +76,8 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
             More Info
           </div>
         </TooltipTrigger>
-        <TooltipContent className="w-[300px] border-none p-0">
+        <TooltipContent className="w-[300px] border-none p-0 z-[10001] relative" side="bottom">
+          <div className="absolute top-0 left-0 w-full h-full bg-black/25 backdrop-blur-2xl"></div>
           <div className="flex flex-col gap-2.5 rounded-[20px] border border-white/10 bg-black/25 p-4 backdrop-blur-xl">
             <div className="flex items-center justify-between gap-2 whitespace-nowrap">
               <Link
@@ -120,15 +122,15 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
 
                 <div
                   className={cn(
-                    'text-base font-medium',
+                    "text-base font-medium",
                     price_change_24h > 0
-                      ? 'text-core'
+                      ? "text-core"
                       : price_change_24h < 0
-                        ? 'text-error-500'
-                        : 'text-neutral-100',
+                        ? "text-error-500"
+                        : "text-neutral-100",
                   )}
                 >
-                  {numeral(price_change_24h).format('0,0.[00]')}%
+                  {numeral(price_change_24h).format("0,0.[00]")}%
                 </div>
               </div>
             </div>
@@ -141,26 +143,26 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
               </div>
               <div className="flex items-center justify-between text-xs font-medium text-[#EFEFEF]">
                 <div className="flex items-center">
-                  {renderPrice(avg_entry_buy) || '-'}/
+                  {renderPrice(avg_entry_buy) || "-"}/
                   {buy_volume_in_usdt
                     ? `$${nFormatter(buy_volume_in_usdt)}`
-                    : '-'}
+                    : "-"}
                 </div>
                 <p className="flex items-center">
                   {renderPrice(avg_price_sell)}/
                   {sell_volume_in_usdt
                     ? `$${nFormatter(sell_volume_in_usdt)}`
-                    : '-'}
+                    : "-"}
                 </p>
               </div>
               <div className="flex w-full items-center gap-0.5">
                 <div
                   className="h-1 shrink-0 rounded-[100px] bg-core"
-                  style={{ width: percentBuyVolumne + '%' }}
+                  style={{ width: percentBuyVolumne + "%" }}
                 ></div>
                 <div
                   className="h-1 shrink-0 rounded-[100px] bg-red"
-                  style={{ width: percentSellVolumne + '%' }}
+                  style={{ width: percentSellVolumne + "%" }}
                 ></div>
               </div>
             </div>
@@ -169,24 +171,28 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
             <div className="flex flex-col gap-2">
               <Info title="TXs">
                 <div>
-                  <span className="text-green">{tx_buy || '-'}</span>/
-                  <span className="text-red">{tx_sell || '-'}</span>
+                  <span className="text-green">{tx_buy || "-"}</span>/
+                  <span className="text-red">{tx_sell || "-"}</span>
                 </div>
               </Info>
               <Info title="Realized Profit" number={realized_profit} />
               <Info title="Unrealized Profit" number={unrealized_profit} />
               <Info title="Total Profit" number={total_profit} />
               <Info title="Balance">
-                <span className="text-[#EFEFEF]">
-                  ${nFormatter(user_balance)}{' '}
-                  {`(${nFormatter(user_balance / price)} ${symbol})`}
-                </span>
+                {user_balance ? (
+                  <span className="text-[#EFEFEF]">
+                    ${nFormatter(user_balance)}{" "}
+                    {`(${nFormatter(user_balance / price)} ${symbol})`}
+                  </span>
+                ) : (
+                  "-"
+                )}
               </Info>
               <Info title="Realized %">
                 <span className="text-[#EFEFEF]">
                   {realized_percent
-                    ? `${numeral(realized_percent).format('0,0.[00]')}%`
-                    : '-'}
+                    ? `${numeral(realized_percent).format("0,0.[00]")}%`
+                    : "-"}
                 </span>
               </Info>
             </div>
@@ -194,5 +200,5 @@ export const TooltipTokenMoreInfo = ({ ...data }) => {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
-}
+  );
+};

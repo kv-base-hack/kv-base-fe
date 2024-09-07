@@ -85,7 +85,7 @@ export function PopoverValue({
               >
                 <label
                   htmlFor={item?.value as string}
-                  className="text-base font-normal not-italic leading-6 tracking-[-0.16px] text-[#6F767E]"
+                  className="text-sm font-normal not-italic leading-6 tracking-[-0.16px] text-[#6F767E]"
                 >
                   {item.label}
                 </label>

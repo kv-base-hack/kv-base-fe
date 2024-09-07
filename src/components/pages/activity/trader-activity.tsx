@@ -7,7 +7,6 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 import SmartmoneyActivityIcon from '@/components/shared/icons/activity/SmartmoneyActivityIcon'
 import Close from '@/components/shared/icons/Close'
-import { Switch } from '@/components/ui/switch'
 import { CHAIN } from '@/constant/chain'
 import { useTopActivityQuery } from '@/query/leaderboard/getTopActivity'
 import { TokenList } from '@/types/tokenList'
@@ -15,6 +14,8 @@ import { TokenList } from '@/types/tokenList'
 import { useQuery } from '@tanstack/react-query'
 import { parseAsInteger, useQueryState, parseAsString } from 'nuqs'
 import { useState } from 'react'
+import { SelectRank } from '../smart-traders/select/select-ranking'
+import { SelectBadge } from '../smart-traders/select/select-badge'
 
 const customParseAsString = parseAsString.withDefault('').withOptions({
   history: 'push',
@@ -44,12 +45,15 @@ export const TraderActivity = ({
     history: 'push',
     shallow: false,
   })
-  const [hiddenSmallTrades, setHiddenSmallTrades] = useState(false)
+
   const [token, setToken] = useQueryState('token_activity', customParseAsString)
 
   const [tradeValue, setTradeValue] = useQueryState('amount_filter', customParseAsString)
 
   const [userAddress, setUserAddress] = useQueryState('user_address', customParseAsString)
+
+  const [, setRankingActivity] = useQueryState('ranking_activity', customParseAsString)
+  const [, setBadgesActivity] = useQueryState('badges_activity', customParseAsString)
 
   const activityQuery = useQuery(
     useTopActivityQuery({
@@ -61,6 +65,8 @@ export const TraderActivity = ({
       token_addresses: searchParams?.token_activity?.toString() || '',
       sort_by: searchParams?.sort_by?.toString() || '',
       user_address: searchParams?.user_address?.toString() || '',
+      ranking: searchParams?.ranking_activity?.toString() || 'all',
+      badges: searchParams?.badges_activity?.toString() || 'all',
     }),
   )
 
@@ -119,17 +125,16 @@ export const TraderActivity = ({
               ))}
             </div>
           ) : null}
-          <div className="flex items-center gap-2">
-            <Switch
-              checked={hiddenSmallTrades}
-              onCheckedChange={(checked: boolean) =>
-                setHiddenSmallTrades(checked)
-              }
-            />
-            <p className="text-sm font-normal text-neutral-300">
-              Hide Small Trades {`(<$1K)`}
-            </p>
-          </div>
+          <SelectRank
+            setPage={setPageActivity}
+            setRanking={setRankingActivity}
+            ranking={searchParams?.ranking_activity?.toString() || 'all'}
+          />
+          <SelectBadge
+            setPage={setPageActivity}
+            setBadge={setBadgesActivity}
+            badge={searchParams?.badges_activity?.toString() || 'all'}
+          />
         </div>
       </div>
       <div>

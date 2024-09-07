@@ -81,7 +81,11 @@ export const TableFindGemsFreshWalletUnusual = ({
       },
       {
         accessorKey: "age",
-        header: () => <div>Age</div>,
+        header: () => (
+          <div role="button" onClick={() => setSort("token_age")}>
+            Age
+          </div>
+        ),
         cell: ({ row }) => {
           const { token_age } = row.original;
           return <div className="text-neutral-03">{token_age}</div>;
@@ -102,7 +106,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         enableSorting: false,
       },
       {
-        accessorKey: "price",
+        accessorKey: "price_change_percent",
         header: () => (
           <div onClick={() => setSort("price_change")} role="button">
             24h%
@@ -157,7 +161,11 @@ export const TableFindGemsFreshWalletUnusual = ({
       },
       {
         accessorKey: "buy_vol",
-        header: () => <div>Buy Vol</div>,
+        header: () => (
+          <div onClick={() => setSort('buy_vol')} role="button">
+            Buy Vol
+          </div>
+        ),
         cell: ({ row }) => {
           const { total_spent } = row.original;
           return (
@@ -168,7 +176,11 @@ export const TableFindGemsFreshWalletUnusual = ({
 
       {
         accessorKey: "hold_value",
-        header: () => <div>Hold Value</div>,
+        header: () => (
+          <div onClick={() => setSort('hold_value')} role="button">
+            Hold Value
+          </div>
+        ),
         cell: ({ row }) => {
           const { hold_in_usdt } = row.original;
           return (
@@ -208,7 +220,11 @@ export const TableFindGemsFreshWalletUnusual = ({
       },
       {
         accessorKey: "realized",
-        header: () => <div>Realized %</div>,
+        header: () => (
+          <div onClick={() => setSort('realized_percent')} role="button">
+            Realized %
+          </div>
+        ),
         cell: ({ row }) => {
           const { realized_percent } = row.original;
           return <div>{realized_percent.toFixed(2)}%</div>;
@@ -218,7 +234,9 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: "buyer_count",
         header: () => (
           <div className="flex items-center gap-0.5">
-            <div># Wallet</div>
+            <div onClick={() => setSort('number_of_smart_money')} role="button">
+              # Wallet
+            </div>
             <TooltipTable type="numberOfSMBuy" />
           </div>
         ),

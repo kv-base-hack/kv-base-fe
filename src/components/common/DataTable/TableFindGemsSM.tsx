@@ -185,7 +185,11 @@ export const TableFindGemsSM = ({
       },
       {
         accessorKey: 'hold_value',
-        header: () => <div>Hold Value</div>,
+        header: () => (
+          <div onClick={() => setSort('hold_value')} role="button">
+            Hold Value
+          </div>
+        ),
         cell: ({ row }) => {
           const { hold_in_usdt } = row.original
           return (
@@ -270,6 +274,7 @@ export const TableFindGemsSM = ({
           const { tx_buy, tx_sell } = row.original
           return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />
         },
+        enableSorting: false,
       },
       {
         accessorKey: 'st_vol',
@@ -280,6 +285,7 @@ export const TableFindGemsSM = ({
           return <StVol buyVol={buy_usdt_amount} sellVol={sell_usdt_amount} />
         },
         align: 'end',
+        enableSorting: false,
       },
     ]
   }, [duration, page, perPage, setSort])

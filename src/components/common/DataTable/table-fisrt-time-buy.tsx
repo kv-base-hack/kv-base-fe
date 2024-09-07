@@ -180,8 +180,11 @@ export const TableFindGemsFisrtTimeBuy = ({
       },
       {
         accessorKey: 'hold_value',
-        header: () => <div>Hold Value</div>,
-
+        header: () => (
+          <div onClick={() => setSort('hold_value')} role="button">
+            Hold Value
+          </div>
+        ),
         cell: ({ row }) => {
           const { hold_in_usdt } = row.original
           return (
@@ -266,6 +269,7 @@ export const TableFindGemsFisrtTimeBuy = ({
           const { tx_buy, tx_sell } = row.original
           return <StTx tx_buy={tx_buy} tx_sell={tx_sell} />
         },
+        enableSorting: false,
       },
       {
         accessorKey: 'st_vol',
@@ -275,6 +279,7 @@ export const TableFindGemsFisrtTimeBuy = ({
           return <StVol buyVol={buy_usdt_amount} sellVol={sell_usdt_amount} />
         },
         align: 'end',
+        enableSorting: false,
         width: 128,
       },
     ]

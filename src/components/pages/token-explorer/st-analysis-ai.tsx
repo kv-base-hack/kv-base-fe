@@ -6,6 +6,7 @@ import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDura
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
 import MoreInfoIcon from '@/components/shared/icons/token-explorer/more-info'
 import { cn } from '@/lib/utils'
+import { nFormatter } from '@/lib/utils/nFormatter'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { useTokenInfoTradeQuery } from '@/query/token-explorer/get-token-info-trade'
 import { useQuery } from '@tanstack/react-query'
@@ -49,6 +50,7 @@ export function StAnalysisByAI({
       (dataTokenInfoTrade?.buy_usdt_amount +
         dataTokenInfoTrade?.sell_usdt_amount)
 
+
   return (
     <WrapTable
       title="Smart Traders Analysis by AI"
@@ -69,21 +71,16 @@ export function StAnalysisByAI({
       <div className="h-px w-full bg-white/10" />
       <div className="flex w-full flex-col gap-2">
         <div className="flex w-full flex-wrap items-start justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1  flex-col items-start">
             <div className="flex items-center text-xs font-normal text-light-telegray">
               Hold Value
               <span className="ml-1">
                 <MoreInfoIcon />
               </span>
             </div>
-            <DialogNumberOfSmartMoney
-              number={dataTokenInfoTrade?.number_of_hold_users || 0}
-              address={dataTokenInfoTrade?.address || params.token || ''}
-              type="find-gems-sm-holding"
-              duration={'24h'}
-            />
+           <p className='text-base font-medium text-[#EFEFEF]'>${nFormatter(dataTokenInfoTrade?.hold_in_usdt || 0)}</p>
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1  flex-col items-start">
             <div className="flex items-center self-start text-xs font-normal text-light-telegray">
               # ST Buy
               <span className="ml-1">
@@ -93,55 +90,60 @@ export function StAnalysisByAI({
             <DialogNumberOfSmartMoney
               number={dataTokenInfoTrade?.number_of_smart_money || 0}
               address={dataTokenInfoTrade?.address || params.token || ''}
-              type="find-gems-sm-holding"
-              duration={'24h'}
+              type="trade"
+              duration={currentDurationTrade}
+              className='text-base font-medium text-[#EFEFEF]'
             />
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-end">
+          <div className="flex flex-1 flex-col items-end">
             <div className="self-endfont-normal text-xs text-light-telegray">
               Avg Entry
             </div>
-            <div className="text-sm font-medium">
+            <div className="text-base font-medium text-[#EFEFEF]">
               {renderPrice(dataTokenInfoTrade?.avg_price || 0)}
             </div>
           </div>
         </div>
         <div className="flex w-full flex-wrap items-start justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="self-start text-xs font-normal text-light-telegray">
               Total Profit
             </div>
             <div
               className={cn(
-                'text-sm font-medium',
+                'text-base font-medium ',
                 dataTokenInfoTrade && dataTokenInfoTrade?.total_profit < 0
                   ? 'text-red'
-                  : 'text-core',
+                  : dataTokenInfoTrade && dataTokenInfoTrade?.total_profit > 0
+                    ? 'text-core'
+                    : 'text-[#EFEFEF]',
               )}
             >
               {renderPrice(dataTokenInfoTrade?.total_profit || 0)}
             </div>
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1  flex-col items-start">
             <div className="self-start text-xs font-normal text-light-telegray">
               Avg ROI
             </div>
             <div
               className={cn(
-                'text-sm font-medium',
+                'text-base font-medium',
                 dataTokenInfoTrade && dataTokenInfoTrade?.roi < 0
                   ? 'text-red'
-                  : 'text-core',
+                  : dataTokenInfoTrade && dataTokenInfoTrade?.roi > 0
+                    ? 'text-core'
+                    : 'text-[#EFEFEF]',
               )}
             >
               {numeral(dataTokenInfoTrade?.roi).format('0,0.[00]')}%
             </div>
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-end">
+          <div className="flex flex-1 flex-col items-end">
             <div className="self-end text-xs font-normal text-light-telegray">
               Realized %
             </div>
-            <div className="text-sm font-medium">
+            <div className="text-base font-medium text-[#EFEFEF]">
               {numeral(dataTokenInfoTrade?.realized_percent).format('0,0.[00]')}
               %
             </div>

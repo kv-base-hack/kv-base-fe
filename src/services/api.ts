@@ -619,6 +619,8 @@ export const getTopActivity = async ({
   token_addresses = '',
   sort_by = '',
   user_address = '',
+  ranking = 'all',
+  badges = 'all',
 }: {
   action?: string
   limit?: number
@@ -628,6 +630,8 @@ export const getTopActivity = async ({
   token_addresses: string
   sort_by: string
   user_address?: string
+  ranking?: string
+  badges?: string
 }): Promise<TopActivityResponse> => {
   return await api.get('/v1/activities', {
     params: {
@@ -639,6 +643,8 @@ export const getTopActivity = async ({
       token_addresses,
       sort_by,
       user_address,
+      ranking: ranking === 'all' ? '' : ranking,
+      badges: badges === 'all' ? '' : badges,
     },
   })
 }

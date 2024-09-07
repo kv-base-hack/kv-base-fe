@@ -6,6 +6,7 @@ import { SelectDuration } from '@/components/common/Select/SelectDuration'
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
 import MoreInfoIcon from '@/components/shared/icons/token-explorer/more-info'
 import { cn } from '@/lib/utils'
+import { nFormatter } from '@/lib/utils/nFormatter'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { useTokenInfoUnusualBuyQuery } from '@/query/token-explorer/get-token-info-unusual-buy'
 import { useQuery } from '@tanstack/react-query'
@@ -72,21 +73,18 @@ export function UnusualBuyAnalysis({
       <div className="h-px w-full bg-white/10" />
       <div className="flex w-full flex-col gap-2">
         <div className="flex w-full flex-wrap items-start justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1  flex-col items-start">
             <div className="flex items-center text-xs font-normal text-light-telegray">
               Hold Value
               <span className="ml-1">
                 <MoreInfoIcon />
               </span>
             </div>
-            <DialogNumberOfSmartMoney
-              number={dataTokenInfoUnusualBuy?.number_of_hold_users || 0}
-              address={dataTokenInfoUnusualBuy?.address || params.token || ''}
-              type="find-gems-sm-holding"
-              duration={'24h'}
-            />
+            <p className="text-base font-medium text-[#EFEFEF]">
+              ${nFormatter(dataTokenInfoUnusualBuy?.hold_in_usdt || 0)}
+            </p>
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1  flex-col items-start">
             <div className="flex items-center self-start text-xs font-normal text-light-telegray">
               # Wallet Buy
               <span className="ml-1">
@@ -96,48 +94,60 @@ export function UnusualBuyAnalysis({
             <DialogNumberOfSmartMoney
               number={dataTokenInfoUnusualBuy?.number_of_users || 0}
               address={dataTokenInfoUnusualBuy?.address || params.token || ''}
-              type="find-gems-sm-holding"
-              duration={'24h'}
+              type="unusual_buy"
+              duration={currentDurationUnusualBuy}
+              className='text-base font-medium text-[#EFEFEF]'
             />
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-end">
+          <div className="flex flex-1  flex-col items-end">
             <div className="self-endfont-normal text-xs text-light-telegray">
               Avg Entry
             </div>
-            <div className="text-sm font-medium">
+            <div className='text-base font-medium text-[#EFEFEF]'>
               {renderPrice(dataTokenInfoUnusualBuy?.avg_price || 0)}
             </div>
           </div>
         </div>
         <div className="flex w-full flex-wrap items-start justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="self-start text-xs font-normal text-light-telegray">
               Total Profit
             </div>
-            <div className="text-sm font-medium text-core">
-              {renderPrice(dataTokenInfoUnusualBuy?.pnl || 0)}
+            <div
+              className={cn(
+                'text-base font-medium',
+                dataTokenInfoUnusualBuy && dataTokenInfoUnusualBuy?.pnl < 0
+                  ? 'text-red'
+                  : dataTokenInfoUnusualBuy && dataTokenInfoUnusualBuy?.pnl > 0
+                    ? 'text-core'
+                    : '',
+              )}
+            >
+              ${nFormatter(dataTokenInfoUnusualBuy?.pnl || 0)}
             </div>
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-start">
+          <div className="flex flex-1  flex-col items-start">
             <div className="self-start text-xs font-normal text-light-telegray">
               Avg ROI
             </div>
             <div
               className={cn(
-                'text-sm font-medium',
+                'text-base font-medium',
                 dataTokenInfoUnusualBuy && dataTokenInfoUnusualBuy?.roi < 0
                   ? 'text-red'
-                  : 'text-core',
+                  : dataTokenInfoUnusualBuy && dataTokenInfoUnusualBuy?.roi > 0
+                    ? 'text-core'
+                    : '',
               )}
             >
               {numeral(dataTokenInfoUnusualBuy?.roi).format('0,0.[00]')}%
             </div>
           </div>
-          <div className="flex flex-1 cursor-pointer flex-col items-end">
+          <div className="flex flex-1  flex-col items-end">
             <div className="self-end text-xs font-normal text-light-telegray">
               Realized %
             </div>
-            <div className="text-sm font-medium">
+            <div className="text-base font-medium">
               {numeral(dataTokenInfoUnusualBuy?.realized_percent).format(
                 '0,0.[00]',
               )}

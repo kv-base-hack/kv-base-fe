@@ -13,15 +13,10 @@ import { ActivityOfTopSmartMoney } from '@/components/common/TabWalletExplorer/A
 
 import { SelectDuration } from '@/components/common/Select/SelectDuration'
 
-import { Switch } from '@/components/ui/switch'
-
 import { useQuery } from '@tanstack/react-query'
-import { useQueryState } from 'nuqs'
 import { TokenInfo } from '../token-explorer/token-info'
 import { StAnalysisByAI } from '../token-explorer/st-analysis-ai'
 import { UnusualBuyAnalysis } from '../token-explorer/unusual-buy-analysis'
-import { useTokenInfoTradeQuery } from '@/query/token-explorer/get-token-info-trade'
-import { useTokenInfoUnusualBuyQuery } from '@/query/token-explorer/get-token-info-unusual-buy'
 import MoreInfoIcon from '@/components/shared/icons/token-explorer/more-info'
 
 const TABS = ['Smart Traders Activity', 'Top Smart Traders', 'Trading Signal']
@@ -33,24 +28,8 @@ export const TokenExplorerDetail = ({
   params: { token: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }) => {
-  const currentDurationTrade = searchParams?.tit_duration?.toString() || '1d'
-  const currentDurationUnusualBuy =
-    searchParams?.tiub_duration?.toString() || '24h'
-
   const [duration, setDuration] = useState('24h')
-  const [, setDurationTrade] = useQueryState('tit_duration', {
-    defaultValue: currentDurationTrade,
-    history: 'push',
-    shallow: false,
-  })
-  const [, setDurationUnusualBuy] = useQueryState('tiub_duration', {
-    defaultValue: currentDurationUnusualBuy,
-    history: 'push',
-    shallow: false,
-  })
 
-  const [hideSmallTrade, setHideSmallTrade] = useState(false)
-  const [hideSmallBalance, setHideSmallBalance] = useState(false)
   const [tab, setTabs] = useState('Smart Traders Activity')
   const CHAIN = useAtomValue(chainAtom)
   //
@@ -62,23 +41,7 @@ export const TokenExplorerDetail = ({
   )
   const dataTokenInfo = tokenInfoQuery?.data?.info
   //
-  const tokenInfoTradeQuery = useQuery(
-    useTokenInfoTradeQuery({
-      address: params?.token?.toString() || '',
-      chain: CHAIN,
-      duration: currentDurationTrade,
-    }),
-  )
-  const dataTokenInfoTrade = tokenInfoTradeQuery?.data?.res
-  //
-  const tokenInfoUnusualBuyQuery = useQuery(
-    useTokenInfoUnusualBuyQuery({
-      address: params?.token?.toString() || '',
-      chain: CHAIN,
-      duration: currentDurationUnusualBuy,
-    }),
-  )
-  const dataTokenInfoUnusualBuy = tokenInfoUnusualBuyQuery?.data?.res
+
   const handleChangeTab = (tab: string) => () => {
     setTabs(tab)
   }
@@ -107,32 +70,9 @@ export const TokenExplorerDetail = ({
   }
   const renderFilterTab = (tab: string) => {
     switch (tab) {
-      case 'Smart Traders Activity':
-        return (
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
-              {`Hide Small Trades (<$1K)`}
-            </span>
-            <Switch
-              checked={hideSmallTrade}
-              onCheckedChange={(checked: boolean) => setHideSmallTrade(checked)}
-            />
-          </div>
-        )
       case 'Top Smart Traders':
         return (
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-4">
-              <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
-                {`Hide Small Token Balance (<$1K)`}
-              </span>
-              <Switch
-                checked={hideSmallBalance}
-                onCheckedChange={(checked: boolean) =>
-                  setHideSmallBalance(checked)
-                }
-              />
-            </div>
             <SelectDuration
               duration={duration}
               setDuration={setDuration}
@@ -141,19 +81,7 @@ export const TokenExplorerDetail = ({
           </div>
         )
       case 'Trading Signal':
-        return (
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-normal not-italic leading-5 tracking-[-0.14px]">
-              {`Hide Small Token Balance (<$1K)`}
-            </span>
-            <Switch
-              checked={hideSmallBalance}
-              onCheckedChange={(checked: boolean) =>
-                setHideSmallBalance(checked)
-              }
-            />
-          </div>
-        )
+        return <div className="flex items-center gap-4"></div>
     }
     return null
   }

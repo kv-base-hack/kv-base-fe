@@ -44,5 +44,11 @@ export const formatPriceNumber = (value: number | undefined) => {
   if (value < 0.01) {
     return numeral(value).format('$0,0.[0000]')
   }
-  return numeral(value).format('$0,0.[000]')
+  if (value > 100) {
+    return numeral(value).format('$0,0.[00]')
+  }
+  if (value > 1000) {
+    return numeral(value).format('$0,0.[0]')
+  }
+  return numeral(value).format('$0,0.[0000]')
 }

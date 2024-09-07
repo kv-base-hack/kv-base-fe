@@ -18,7 +18,7 @@ export const SmartTradersCell = ({
 
   return (
     <TooltipWallet data={data}>
-      <div className="flex flex-col gap-1">
+      
         <div className="flex items-center gap-1">
           <ImageRanking ranking={ranking} size={16} />
 
@@ -44,7 +44,7 @@ export const SmartTradersCell = ({
             <ImageBadge badge={badge} size={16} key={badge} />
           ))}
         </div>
-      </div>
+      
     </TooltipWallet>
   )
 }

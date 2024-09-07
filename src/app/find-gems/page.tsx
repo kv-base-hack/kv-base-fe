@@ -82,10 +82,10 @@ async function FindGems({
 
     queryClient.prefetchQuery(
       useFindGemsTopScore({
-        start: parseInt(searchParams?.ub_start?.toString() || '1'),
-        limit: parseInt(searchParams?.ub_limit?.toString() || '10'),
-        duration: searchParams?.ub_duration?.toString() || '24h',
-        sort_by: searchParams?.ub_sort?.toString() || '',
+        start: parseInt(searchParams?.tsc_start?.toString() || '1'),
+        limit: parseInt(searchParams?.tsc_limit?.toString() || '10'),
+        duration: searchParams?.tsc_duration?.toString() || '24h',
+        sort_by: searchParams?.tsc_sort?.toString() || '',
         chain: CHAIN,
       }),
     ),

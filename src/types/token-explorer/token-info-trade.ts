@@ -17,6 +17,7 @@ export interface TokenInfoTrade {
   buy_usdt_amount: number
   sell_usdt_amount: number
   total_profit: number
+  hold_in_usdt: number
 }
 
 export interface TokenInfoTradeResponse {

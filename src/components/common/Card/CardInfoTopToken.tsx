@@ -49,8 +49,6 @@ export const CardInfoTopToken = ({
     imgUrl,
   } = token;
 
-  console.log(token);
-
   const percentChange =
     price_percent_change_24h ||
     price_change_24h ||
@@ -64,8 +62,6 @@ export const CardInfoTopToken = ({
   const avg = avg_price || avg_cost || avg_entry_buy || tx?.avg_price || 0;
   const imageUrl = token_image_url || image_url || imgUrl;
   const tokenPrice = current_price || usd_price || price || 0;
-
-  console.log(avg);
 
   return (
     <div className="relative z-50 overflow-hidden rounded-[20px]">
