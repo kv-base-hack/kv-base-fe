@@ -10,6 +10,7 @@ import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import { WalletAnalysis } from '@/components/pages/smart-traders'
 import { CHAIN } from '@/constant/chain'
 import { useLeaderboardSpotlightQuery } from '@/query/leaderboard/getLeaderboardSpotlight'
+import { useFindGemsSmartMoneyHoldingQuery } from '@/query/find-gems/getFindGemsSmartMoneyHolding'
 
 async function WalletAnalysisPage({
   searchParams,
@@ -40,6 +41,15 @@ async function WalletAnalysisPage({
       useLeaderboardSpotlightQuery({
         chain: CHAIN,
         duration: searchParams?.ttp_duration?.toString() || '24h',
+      }),
+    ),
+     // smart money hold
+     queryClient.prefetchQuery(
+      useFindGemsSmartMoneyHoldingQuery({
+        start: parseInt(searchParams?.smh_start?.toString() || '1'),
+        limit: parseInt(searchParams?.smh_limit?.toString() || '10'),
+        duration: searchParams?.duration?.toString() || '1d',
+        chain: CHAIN,
       }),
     ),
   ])

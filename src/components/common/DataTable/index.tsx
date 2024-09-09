@@ -28,7 +28,7 @@ interface DataTableProps<TData, TValue> {
   rowClassName?: string
   noneBgHeader?: boolean
   noneBorder?: boolean
-  emptyData: string
+  emptyData: string | React.ReactNode
   contentClassName?: string
   tableClassName?: string
   classNameHeader?: string

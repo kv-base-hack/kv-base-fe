@@ -23,7 +23,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
   const currentPage = parseInt(searchParams?.ta_start?.toString() || '1')
 
   const [, setPage] = useQueryState(
-    'smft_start',
+    'ta_start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
@@ -58,7 +58,7 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
         isFetching={activityQuery.isFetching}
         noneBorder
         noneBgHeader
-        emptyData="No results."
+        emptyData={<EmptyData />}
       />
       <PaginationTable
         className="mt-4"
@@ -67,6 +67,23 @@ export const BigTradeActivity: React.FC<BigTradeActivityProps> = ({
         total={totalActivity}
         setPage={setPage}
       />
+    </div>
+  )
+}
+
+function EmptyData() {
+  return (
+    <div className="flex flex-col items-center justify-center text-neutral-04 gap-1">
+      <p>There are no transactions for this wallet in the last 3 days. </p>
+      <p>
+        If you want to see more, please click &apos;Load more&apos; to view
+        additional transactions.
+      </p>
+      <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
+        <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-3 text-sm leading-5 tracking-normal text-white">
+          Load more
+        </div>
+      </div>
     </div>
   )
 }

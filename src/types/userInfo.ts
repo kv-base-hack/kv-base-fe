@@ -21,6 +21,7 @@ export interface UserInfo {
   tx_sell: number
   unrealized_pnl: number
   user_info_chart_point: UserInfoChartPoint
+  total_balance: number
 
   volume: number
   volume_24h: number

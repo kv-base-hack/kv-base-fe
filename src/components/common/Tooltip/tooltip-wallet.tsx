@@ -147,7 +147,7 @@ export const TooltipWallet = ({
                             : 'text-neutral-100',
                       )}
                     >
-                      {roi ? `$${numeral(roi).format('0,0.[00]')}%` : '-'}
+                      {roi ? `${numeral(roi).format('0,0.[00]')}%` : '-'}
                     </p>
                   </div>
                 </div>

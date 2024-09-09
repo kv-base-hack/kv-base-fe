@@ -18,7 +18,7 @@ export function nFormatter(number: number) {
   )
   const formattedNumber = (
     absoluteNumber / Math.pow(10, 3 * suffixIndex)
-  ).toFixed(1)
+  ).toFixed(absoluteNumber > 1000000000 ? 3 : 2)
 
   return (isNegative ? '-' : '') + formattedNumber + suffixes[suffixIndex]
 }

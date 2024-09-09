@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { ImageRanking } from '../Image/image-ranking'
 import { TooltipWallet } from '../Tooltip/tooltip-wallet'
 import { useMemo } from 'react'
+import moment from 'moment'
 
 export const ColumnsLeaderboard = (
   page: number,
@@ -308,6 +309,24 @@ export const ColumnsLeaderboard = (
           return <div>{total_trade}</div>
         },
         align: 'center',
+      },
+      {
+        accessorKey: 'latest_trade',
+        enableSorting: false,
+        header: () => (
+          <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap">
+            Last Trade
+          </div>
+        ),
+        cell: ({ row }) => {
+          const { last_trade } = row.original
+          return (
+            <div className="flex justify-end whitespace-nowrap text-right text-neutral-04">
+              {moment(last_trade).fromNow()}
+            </div>
+          )
+        },
+        align: 'end',
       },
     ]
   }, [page, perPage, setSortBy])

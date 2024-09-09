@@ -1,4 +1,5 @@
 import { ImageToken } from '@/components/common/Image/ImageToken'
+import { cn } from '@/lib/utils'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import numeral from 'numeral'
 
@@ -10,6 +11,7 @@ export const CardBalanceToken = ({
   balance,
   realized,
   profit,
+  roi,
 }: {
   color: string
   symbol: string
@@ -18,7 +20,9 @@ export const CardBalanceToken = ({
   balance: number
   realized?: number
   profit?: number
+  roi?: number
 }) => {
+
   return (
     <div className="relative overflow-hidden rounded-[20px]">
       <div className="absolute -z-10 h-full w-full rounded-[20px] bg-black/25 backdrop-blur-md"></div>
@@ -49,13 +53,15 @@ export const CardBalanceToken = ({
           </div>
           <div className="flex items-center justify-between">
             <p className="text-xs font-medium text-neutral-400">Total Profit</p>
-            <p className="text-sm font-semibold text-core">
+            <p className={cn("text-sm font-semibold", profit && profit > 0 ? 'text-core' : profit && profit < 0 ? 'text-red' : '')}>
               {profit ? `$${nFormatter(profit)}` : '-'}
             </p>
           </div>
           <div className="flex items-center justify-between">
             <p className="text-xs font-medium text-neutral-400">ROI</p>
-            <p className="text-sm font-semibold text-neutral-200">-</p>
+            <p className="text-sm font-semibold text-neutral-200">
+              {roi ? `${numeral(roi).format('0,0.[00]')}%` : '-'}
+            </p>
           </div>
         </div>
       </div>

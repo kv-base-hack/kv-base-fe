@@ -53,7 +53,13 @@ const renderColorChart = (i: number) => {
 
 const PieChartX = PieChart as any
 
-export function WalletInfoPieChart({ address }: { address: string }) {
+export function WalletInfoPieChart({
+  address,
+  total_balance,
+}: {
+  address: string
+  total_balance: number
+}) {
   const userBalanceQuery = useQuery(
     useGetUserBalanceQuery({
       address,
@@ -64,11 +70,6 @@ export function WalletInfoPieChart({ address }: { address: string }) {
   )
 
   const dataBalance = userBalanceQuery?.data?.balances
-
-  const totalVol =
-    dataBalance?.reduce((acc, cur) => {
-      return acc + cur.hold_in_usdt
-    }, 0) || 1
 
   const formatData = React.useMemo(() => {
     const otherTokens: any[] = []
@@ -109,14 +110,14 @@ export function WalletInfoPieChart({ address }: { address: string }) {
     return formatData?.map((item, i) => {
       return {
         token: item.symbol,
-        vol: item.hold_in_usdt / totalVol,
+        vol: item.hold_in_usdt / total_balance,
         fill: renderColorChart(i),
         balance: item.hold_in_usdt,
         imageUrl: item.image_url,
         realized: item.realized_percent,
       }
     })
-  }, [formatData, totalVol])
+  }, [formatData, total_balance])
 
   return (
     <div className="h-[400px] w-[360px]">
@@ -154,7 +155,9 @@ export function WalletInfoPieChart({ address }: { address: string }) {
                         y={(viewBox.cy || 0) + 15}
                         className="fill-neutral-100 text-[32px] leading-[48px]"
                       >
-                        ${nFormatter(totalVol as number)}
+                        {total_balance
+                          ? `$${nFormatter(total_balance as number)}`
+                          : '-'}
                       </tspan>
                     </text>
                   )

@@ -314,7 +314,7 @@ export default function WalletExplorerDetail({
             </div>
           </div>
           <div className="flex h-full w-full items-center justify-center">
-            <WalletInfoPieChart address={params.groupId} />
+            <WalletInfoPieChart address={params.groupId} total_balance={userInfo?.total_balance || 0}/>
           </div>
         </div>
         <WrapTable

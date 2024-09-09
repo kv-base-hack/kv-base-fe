@@ -181,7 +181,7 @@ export const TableFindGemsFisrtTimeBuy = ({
       {
         accessorKey: 'hold_value',
         header: () => (
-          <div onClick={() => setSort('hold_value')} role="button">
+          <div onClick={() => setSort('hold_in_usdt')} role="button">
             Hold Value
           </div>
         ),
