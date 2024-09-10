@@ -3,17 +3,18 @@ import { ColumnDef } from '@tanstack/react-table'
 import { cn } from '@/lib/utils'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Link from 'next/link'
-import { useMemo } from 'react'
-import { DataTable } from '.'
 import { TableProps } from '@/types'
-import { NewListingBuy } from '@/types/newListingBuy'
+import { FirstTimeBuy } from '@/types/fist-time-buy'
+import { useMemo } from 'react'
+import { TooltipToken } from '@/components/common/Tooltip/tooltip-token'
+import { TooltipTable } from '@/components/common/Tooltip/TooltipTable'
+import CircularProgress from '@/components/common/CircularProgress'
 import numeral from 'numeral'
-import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TooltipTable } from '../Tooltip/TooltipTable'
-import CircularProgress from '../CircularProgress'
-import { TooltipToken } from '../Tooltip/tooltip-token'
+import { DialogNumberOfSmartMoney } from '@/components/common/Dialog/DialogNumberOfSmartMoney'
+import { DataTable } from '@/components/common/DataTable'
 
-export const TableSMNewListingBuy = ({
+
+export const TableFirstTimeBuy = ({
   page,
   perPage,
   data,
@@ -21,7 +22,7 @@ export const TableSMNewListingBuy = ({
   duration,
   setSortBy,
 }: TableProps) => {
-  const columns: ColumnDef<NewListingBuy>[] = useMemo(() => {
+  const columns: ColumnDef<FirstTimeBuy>[] = useMemo(() => {
     return [
       {
         accessorKey: 'id',
@@ -79,7 +80,6 @@ export const TableSMNewListingBuy = ({
             </TooltipToken>
           )
         },
-        align: 'start',
       },
       {
         accessorKey: 'token_age',
@@ -92,7 +92,6 @@ export const TableSMNewListingBuy = ({
             Token Age
           </div>
         ),
-        align: 'start',
         cell: ({ row }) => {
           const { token_age } = row.original
           return (
@@ -129,7 +128,7 @@ export const TableSMNewListingBuy = ({
         },
       },
       {
-        accessorKey: 'price',
+        accessorKey: 'price_change_24h',
         header: () => (
           <div
             className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
@@ -153,7 +152,7 @@ export const TableSMNewListingBuy = ({
               {price_change_24h.toFixed(2)}%
             </div>
           ) : (
-            <div className="w-full text-center">-</div>
+            '-'
           )
         },
         align: 'start',
@@ -190,12 +189,12 @@ export const TableSMNewListingBuy = ({
             Profit
           </div>
         ),
-        align: 'start',
+        align: 'total-profit',
         cell: ({ row }) => {
           const { pnl } = row.original
           return (
             <div className="font-medium">
-              {!pnl || pnl === 0 ? (
+              {pnl === 0 ? (
                 '-'
               ) : (
                 <div className={pnl < 0 ? 'text-error-500' : 'text-green'}>
@@ -220,12 +219,12 @@ export const TableSMNewListingBuy = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { number_of_smart_money, address } = row.original
+          const { users, address } = row.original
           return (
             <DialogNumberOfSmartMoney
-              number={number_of_smart_money}
+              number={users.length}
               address={address}
-              type="new_listing_buy"
+              type="first-time-buy"
               duration={duration as string}
             />
           )

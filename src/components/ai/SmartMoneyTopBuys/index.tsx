@@ -190,7 +190,7 @@ export const SmartMoneyTopBuys: React.FC<TopTokenBuyResponse> = ({ data }) => {
         <TitleCard
           iconFirst={<IconShoppingCart />}
           title="ST Top Buys"
-          content="Top purchases made by Smartmoney ranked by Volume Buy."
+          content="Top purchases made by Smart Trader ranked by Volume Buy."
         >
           <Link
             href="/find-gems"

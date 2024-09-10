@@ -1,12 +1,11 @@
 import React from 'react'
 import { ImageToken } from '../Image/ImageToken'
-import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { cn } from '@/lib/utils'
 import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
 import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
 import numeral from 'numeral'
-import { WrapGradient } from '../Dialog/DialogSearch/wrap-gradient'
 import { renderPrice } from '@/lib/utils/renderPrice'
+import { WrapGradient } from '../Dialog/DialogSearch/wrap-gradient'
 
 interface TokenItemProps {
   onClick?: () => void
@@ -26,8 +25,8 @@ export const TokenItem: React.FC<TokenItemProps> = ({
   percentChange24h,
 }) => {
   return (
-    <WrapGradient onClick={onClick}>
-      <div className="m-px flex !w-[165px] cursor-pointer flex-col rounded-xl bg-white/10 p-3 hover:bg-neutral-06">
+    <WrapGradient className="rounded-xl" onClick={onClick}>
+      <div className="flex !w-[165px] cursor-pointer flex-col rounded-xl p-3">
         <div className="flex items-center gap-2">
           <ImageToken
             symbol={symbol}
@@ -42,11 +41,11 @@ export const TokenItem: React.FC<TokenItemProps> = ({
         <div className="mt-1 flex items-center gap-1">
           <div className="text-xs font-medium">{renderPrice(price)}</div>
           <div className="flex items-center">
-            {percentChange24h > 0 ? <PercentUpIcon /> : <PercentDownIcon />}
+            {percentChange24h > 0 ? <PercentUpIcon /> : percentChange24h < 0 ? <PercentDownIcon /> : null}
             <div
               className={cn(
                 'text-xs font-medium',
-                percentChange24h > 0 ? 'text-green' : 'text-red',
+                percentChange24h > 0 ? 'text-green' : percentChange24h < 0 ? 'text-red' : '',
               )}
             >
               {numeral(percentChange24h).format('0,0.[00]')}%

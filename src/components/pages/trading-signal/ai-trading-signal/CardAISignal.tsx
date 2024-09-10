@@ -6,10 +6,10 @@ import { ImageToken } from '@/components/common/Image/ImageToken'
 import Skeleton from '@/components/common/Skeleton/Skeleton'
 import SkeletonRound from '@/components/common/Skeleton/SkeletonRound'
 import { TooltipCustom } from '@/components/common/Tooltip'
-import { IconTarget } from '@/components/shared/icons/spotlight'
 import { IconBarChart } from '@/components/shared/icons/trading-signal/IconBarChart'
 import { IconClockCounter } from '@/components/shared/icons/trading-signal/IconClockCounter'
 import { IconScale } from '@/components/shared/icons/trading-signal/IconScale'
+import { IconTarget } from '@/components/shared/icons/trading-signal/IconTarget'
 import { renderPrice } from '@/lib/utils/renderPrice'
 import { DexTradingSignalInfo } from '@/types/trading-signal/dexTradingSignal'
 import moment from 'moment'
@@ -26,6 +26,8 @@ export const CardSignal = ({
   index: number
   className?: string
 }) => {
+  console.log('item', item)
+
   const renderIcon = (type: string) => {
     switch (type) {
       case 'new_listing_buy':

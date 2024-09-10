@@ -13,21 +13,21 @@ import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 import { TokenList } from '@/types/tokenList'
 import { TrendingToken } from '@/types/trendingToken'
-import { ImageToken } from '../../Image/ImageToken'
 import LastDateIcon from '@/components/shared/icons/wallet-explorer/LastDateIcon'
 import { cn } from '@/lib/utils'
 import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
 import { useClickAway, useDebounce } from 'react-use'
 import numeral from 'numeral'
-import { TokenItem } from '../../Search/token-item'
 import ViewWalletIcon from '@/components/shared/icons/ViewWallet'
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { useLeaderboardQuery } from '@/query/leaderboard/getLeaderboard'
 import Image from 'next/image'
 import { useQuery } from '@tanstack/react-query'
+import { TokenItem } from '../../Search/token-item'
 import { WrapGradient } from './wrap-gradient'
 import { TooltipWallet } from '../../Tooltip/tooltip-wallet'
 import { ImageRanking } from '../../Image/image-ranking'
+import { ImageToken } from '../../Image/ImageToken'
 
 export const DialogSearchToken = ({
   children,
@@ -36,16 +36,21 @@ export const DialogSearchToken = ({
 }) => {
   const router = useRouter()
   const CHAIN = useAtomValue(chainAtom)
+  const [open, setOpen] = useState(false)
   const [search, setSearch] = useState('')
   const [debounceSearch, setDebounceSearch] = useState('')
   const [focusing, setFocusing] = useState(false)
   const [dataRecently, setDataRecently] = useState<TrendingToken[]>([])
   const ref = useRef<HTMLInputElement>(null)
 
-  const trendingTokenQuery = useTrendingTokenQuery({
-    chain: CHAIN,
-    limit: 5,
-  })
+  const trendingTokenQuery = useQuery(
+    useTrendingTokenQuery({
+      chain: CHAIN,
+      search: debounceSearch,
+      limit: 5,
+      enabled: open,
+    }),
+  )
 
   const leaderboardQuery = useQuery(
     useLeaderboardQuery({
@@ -54,6 +59,7 @@ export const DialogSearchToken = ({
       chain: CHAIN,
       sortBy: '',
       token_addresses: '',
+      enabled: open,
     }),
   )
   const dataLeaderboard = leaderboardQuery.isFetching
@@ -61,18 +67,18 @@ export const DialogSearchToken = ({
     : leaderboardQuery?.data?.leaderboard?.slice(0, 3) || []
 
   //
-  const dataToken = trendingTokenQuery?.data?.data?.trending_tokens || []
+  const dataToken = trendingTokenQuery?.data?.trending_tokens || []
 
-  const listTokenQuery = useQuery(
-    useTokenListQuery({
+  const listTokenQuery = useQuery({
+    ...useTokenListQuery({
       symbol_search: debounceSearch,
       chain: CHAIN,
-      enabled: debounceSearch !== '',
     }),
-  )
+    enabled: open,
+  })
+
   const listTokenData = listTokenQuery.data?.tokens || []
   const listWalletData = listTokenQuery.data?.users || []
-
 
   useDebounce(
     () => {
@@ -110,6 +116,11 @@ export const DialogSearchToken = ({
     localStorage.setItem('recently_searched', JSON.stringify(tokenData))
   }
 
+  const handleNavigateWalletDetail =
+    (wallet: any) => (e: React.MouseEvent<HTMLElement>) => {
+      router.push(`/smartmoney-onchain/wallet-explorer/${wallet?.address}`)
+    }
+
   const handleNavigateTokenDetail = (token: any) => {
     updateRecentlySearched(token)
     router.push(
@@ -118,13 +129,6 @@ export const DialogSearchToken = ({
       }`,
     )
   }
-
-  const handleNavigateWalletDetail =
-    (wallet: any) => (e: React.MouseEvent<HTMLElement>) => {
-      e.preventDefault()
-      e.stopPropagation()
-      router.push(`/smartmoney-onchain/wallet-explorer/${wallet?.address}`)
-    }
 
   const handleRemoveAllRecently = () => {
     localStorage.removeItem('recently_searched')
@@ -139,9 +143,8 @@ export const DialogSearchToken = ({
     setFocusing(false)
   })
 
-
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="left-[30%] top-[20%] z-[999999] flex h-[660px] max-w-[750px] translate-x-[-10%] translate-y-[-10%] flex-col justify-start rounded-[20px] bg-black/50 p-6 shadow-search backdrop-blur-xl">
         <div
@@ -172,7 +175,7 @@ export const DialogSearchToken = ({
           </div>
         </div>
         {search ? (
-          <div className="flex h-full flex-col">
+          <div className="flex h-full flex-col gap-3">
             <div className="flex gap-3 self-start text-base leading-6 text-[#9AA0A6]">
               Token ({listTokenData?.length || 0} results)
             </div>
@@ -199,39 +202,42 @@ export const DialogSearchToken = ({
             {listWalletData ? (
               <div className="flex flex-wrap gap-2">
                 {listWalletData?.map((wallet, index: number) => (
-                  <div
-                    key={index}
-                    onClick={handleNavigateWalletDetail(wallet)}
-                    className="z-50 flex max-w-[585px] justify-between gap-3.5 self-stretch rounded-xl px-4 py-3 max-md:flex-wrap"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="my-auto h-2 w-2 shrink-0 self-stretch rounded-full bg-purple-500" />
-                      <div>{`${wallet.address?.substring(
-                        0,
-                        6,
-                      )}...${wallet.address?.slice(-6)}`}</div>
-                      <ViewWalletIcon />
-                    </div>
-                    <div className="text-green-500 flex justify-between gap-5 text-right text-sm font-semibold leading-6 tracking-normal">
-                      <div className="text-base tracking-normal text-stone-300">
-                        <span className="text-gray-500">Volume 24h.</span>{' '}
-                        <span className="text-stone-300">
-                          {nFormatter(wallet.volume_24h)}
-                        </span>
+                  <DialogClose asChild className="border-none" key={index}>
+                    <div
+                      key={index}
+                      onClick={handleNavigateWalletDetail(wallet)}
+                      className="z-50 flex max-w-[585px] justify-between gap-3.5 self-stretch rounded-xl px-4 py-3 max-md:flex-wrap"
+                      role="button"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="my-auto h-2 w-2 shrink-0 self-stretch rounded-full bg-purple-500" />
+                        <div>{`${wallet.address?.substring(
+                          0,
+                          6,
+                        )}...${wallet.address?.slice(-6)}`}</div>
+                        <ViewWalletIcon />
                       </div>
-                      <div
-                        className={cn(
-                          'text-base',
-                          wallet?.roi_percent > 0
-                            ? 'text-green'
-                            : 'text-error-500',
-                        )}
-                      >
-                        ROI: {wallet.roi_percent?.toFixed(2)}%
+                      <div className="text-green-500 flex justify-between gap-5 text-right text-sm font-semibold leading-6 tracking-normal">
+                        <div className="text-base tracking-normal text-stone-300">
+                          <span className="text-gray-500">Volume 24h.</span>{' '}
+                          <span className="text-stone-300">
+                            {nFormatter(wallet.volume_24h)}
+                          </span>
+                        </div>
+                        <div
+                          className={cn(
+                            'text-base',
+                            wallet?.roi_percent > 0
+                              ? 'text-green'
+                              : 'text-error-500',
+                          )}
+                        >
+                          ROI: {wallet.roi_percent?.toFixed(2)}%
+                        </div>
+                        <div>PNL: {nFormatter(wallet?.pnl)}</div>
                       </div>
-                      <div>PNL: {nFormatter(wallet?.pnl)}</div>
                     </div>
-                  </div>
+                  </DialogClose>
                 ))}
               </div>
             ) : null}
@@ -247,9 +253,8 @@ export const DialogSearchToken = ({
                 {dataToken.map((token, index: number) => (
                   <DialogClose asChild className="border-none" key={index}>
                     <TokenItem
-                      onClick={() => handleNavigateTokenDetail(token)}
                       symbol={token.symbol}
-                      imageUrl={token.small}
+                      imageUrl={token.thumb}
                       name={token.name}
                       price={token.price}
                       percentChange24h={token.price_change_percentage_24h}
@@ -263,8 +268,8 @@ export const DialogSearchToken = ({
               </div>
               <div className="flex flex-col gap-2">
                 {dataLeaderboard?.map((item, index) => (
-                  <WrapGradient key={index}>
-                    <div className="m-px flex cursor-pointer items-center justify-between rounded-xl border border-solid border-white/10 p-3 text-sm hover:bg-neutral-06">
+                  <WrapGradient key={index} className="rounded-xl">
+                    <div className="flex cursor-pointer items-center justify-between rounded-xl p-3 text-sm">
                       <div className="flex flex-col gap-1">
                         <TooltipWallet data={item}>
                           <div className="flex items-center gap-1">

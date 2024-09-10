@@ -35,6 +35,7 @@ export interface TopTokenBuy {
   token_Age: string
   score: number
   pnl: number
+  token_age: string
 }
 
 export interface User {

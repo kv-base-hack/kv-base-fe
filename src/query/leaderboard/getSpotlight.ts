@@ -1,4 +1,4 @@
-import { getSpotlight } from '@/services/leaderboard/api'
+import { getSpotlight } from "@/services/leaderboard/api"
 
 export const GET_SPOTLIGHT = 'GET_SPOTLIGT'
 
@@ -9,6 +9,7 @@ export const useGetSpotlight = ({
   token_addresses,
   ranking,
   badges,
+  action,
 }: {
   chain: string
   limit: number
@@ -16,10 +17,29 @@ export const useGetSpotlight = ({
   token_addresses?: string
   ranking?: string
   badges?: string
+  action?: string
 }) => ({
-  queryKey: [GET_SPOTLIGHT, { limit, start, chain, token_addresses, ranking, badges }],
+  queryKey: [
+    GET_SPOTLIGHT,
+    { limit, start, chain, token_addresses, ranking, action, badges },
+  ],
   queryFn: async () => {
-    const data = await getSpotlight({ limit, start, chain, token_addresses, ranking, badges })
-    return data.data
+    try {
+      const result = await getSpotlight({
+        limit,
+        start,
+        chain,
+        token_addresses,
+        ranking,
+        badges,
+        action,
+      })
+      return result.data
+    } catch (error) {
+      return {
+        spot_light: [],
+        total: 0,
+      }
+    }
   },
 })

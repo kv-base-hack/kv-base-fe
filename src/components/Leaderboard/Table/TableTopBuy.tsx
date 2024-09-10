@@ -185,7 +185,7 @@ export const TableTopBuy = ({
       <TitleCard
         iconFirst={<IconShoppingCart />}
         title="ST Top Buys"
-        content="Top purchases made by Smartmoney ranked by Volume Buy."
+        content="Top purchases made by Smart Traders ranked by Volume Buy."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />

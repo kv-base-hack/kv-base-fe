@@ -46,6 +46,7 @@ export const SpotlightByAI = ({
 
   const currentRanking = searchParams?.ranking?.toString() || 'all'
   const currentBadges = searchParams?.badges?.toString() || 'all'
+  const currentAction = searchParams?.action_spotlight?.toString() || 'all'
 
   const [, setRanking] = useQueryState('ranking', {
     defaultValue: currentRanking,
@@ -59,6 +60,12 @@ export const SpotlightByAI = ({
     shallow: false,
   })
 
+  const [, setAction] = useQueryState('action_spotlight', {
+    defaultValue: currentBadges,
+    history: 'push',
+    shallow: false,
+  })
+
   const dataSpotlightQuery = useQuery(
     useGetSpotlight({
       chain: searchParams?.chain?.toString() || CHAIN,
@@ -67,6 +74,7 @@ export const SpotlightByAI = ({
       token_addresses: token || '',
       ranking: currentRanking,
       badges: currentBadges,
+      action: currentAction,
     }),
   )
 
@@ -146,8 +154,9 @@ export const SpotlightByAI = ({
           />
           <SelectMovement
             text="All Action"
-            movement=""
-            setMovement={() => {}}
+            setPage={setPageSpotlight}
+            movement={currentAction}
+            setMovement={setAction}
           />
         </div>
       </div>

@@ -1,10 +1,11 @@
-import { chainAtom } from '@/atom/chain'
 import { cn } from '@/lib/utils'
-import { useTrendingTokenQuery } from '@/query/wallet-explorer/getTrendingToken'
-import { useAtomValue } from 'jotai'
+import {
+  GET_TRENDING_TOKEN,
+  useTrendingTokenQuery,
+} from '@/query/wallet-explorer/getTrendingToken'
 import Image from 'next/image'
 import { ImageToken } from '../Image/ImageToken'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import {
   Tooltip,
   TooltipContent,
@@ -12,6 +13,10 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import Link from 'next/link'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { CHAIN } from '@/constant/chain'
+import React from 'react'
+import { getTrendingToken } from '@/services/api'
 import { CardInfoTopToken } from '../Card/CardInfoTopToken'
 
 const renderIconRank = (rank: number) => {
@@ -28,13 +33,39 @@ const renderIconRank = (rank: number) => {
 }
 
 export const TrendingHeader = () => {
-  const CHAIN = useAtomValue(chainAtom)
+  const queryClient = useQueryClient()
+  const rerender = React.useState(0)[1]
+  const chain = CHAIN
+  const search = ''
+  const limit = 10
 
-  const trendingTokenQuery = useTrendingTokenQuery({
-    chain: CHAIN,
-    search: '',
-    limit: 10,
-  })
+  useEffect(() => {
+    ;(async () =>
+      await queryClient.prefetchQuery({
+        queryKey: [GET_TRENDING_TOKEN, { chain, search, limit }],
+        queryFn: async () => {
+          const result = await getTrendingToken({
+            chain,
+            search,
+            limit,
+          })
+          return result.data
+        },
+      }))()
+    setTimeout(() => {
+      rerender(1)
+    }, 1)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const trendingTokenQuery = useQuery(
+    useTrendingTokenQuery({
+      chain,
+      search,
+      limit,
+    }),
+  )
+
   const scrollRef: any = useRef(null)
 
   const handleMouseEnter = () => {
@@ -50,7 +81,7 @@ export const TrendingHeader = () => {
   }
 
   return (
-    <div className="mt-2 flex items-stretch justify-between gap-0 whitespace-nowrap text-base leading-6 max-md:max-w-full max-md:flex-wrap">
+    <div className="mt-2 flex items-stretch justify-between gap-0 whitespace-nowrap text-base leading-6 max-md:max-w-full">
       <div className="!z-[10000] h-10 w-4 bg-background"></div>
       <div className="!z-[10000] flex flex-col items-stretch justify-center rounded-s-xl bg-core p-2 font-semibold tracking-normal">
         <div className="flex items-stretch justify-between gap-1">
@@ -73,7 +104,7 @@ export const TrendingHeader = () => {
           onMouseLeave={handleMouseLeave}
           className="flex w-max items-stretch gap-5"
         >
-          {trendingTokenQuery.data?.data?.trending_tokens?.map(
+          {trendingTokenQuery?.data?.trending_tokens?.map(
             (token, index: number) => {
               const tokenFormat = {
                 image_url: token.small,
@@ -130,7 +161,7 @@ export const TrendingHeader = () => {
                           )}
                         >
                           {token.price_change_percentage_24h > 0 ? '+' : null}
-                          {token.price_change_percentage_24h.toFixed(2)}%
+                          {token.price_change_percentage_24h?.toFixed(2)}%
                         </div>
                       </div>
                     </div>

@@ -1,15 +1,17 @@
 import { WrapTable } from '@/components/common/DataTable/WrapTable'
-import { PaginationTable } from '../Pagination/PaginationTable'
 import { useSMNewListingBuyQuery } from '@/query/onchain-signal/getSMNewListingBuys'
-import { TableSMNewListingBuy } from '../DataTable/TableSMNewListingBuy'
+
 import NewListingBuyIcon from '@/components/shared/icons/dashboard/NewListingBuyIcon'
 
 import { parseAsInteger, useQueryState } from 'nuqs'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { CHAIN } from '@/constant/chain'
 import { Suspense } from 'react'
-import { SelectDuration } from '../Select/SelectDuration'
-import { LinkFindGems } from '../Link/link-find-gems'
+import { LinkFindGems } from '@/components/common/Link/link-find-gems'
+import { SelectDuration } from '@/components/common/Select/SelectDuration'
+import { ButtonReset } from '@/components/common/Button/button-reset'
+import { TableSMNewListingBuy } from '@/components/common/DataTable/TableSMNewListingBuy'
+import { PaginationTable } from '@/components/common/Pagination/PaginationTable'
 
 export const SMNewListingBuys = ({
   searchParams,
@@ -58,10 +60,16 @@ export const SMNewListingBuys = ({
     setPage(1)
   }
 
+  const handleReset = () => {
+    setSortBy(null)
+    setPage(null)
+    setDuration(null)
+  }
+
   return (
     <WrapTable
       title="Smart Traders New Listing Buy"
-      info="List of tokens created less than 14 days ago, bought by Smartmoney, ranked by default according to PnL."
+      info="List of tokens created less than 14 days ago, bought by Smart Traders, ranked by default according to PnL."
       icon={<NewListingBuyIcon />}
       childHeader={
         <div className="flex items-center gap-2">
@@ -75,9 +83,9 @@ export const SMNewListingBuys = ({
             setPage={setPage}
             type="option2"
           />
+          {currentSortBy && <ButtonReset onClick={handleReset} />}
         </div>
       }
-      className="z-[10]"
     >
       <div className="mt-4 h-full">
         <Suspense fallback={<div>Loading...</div>}>

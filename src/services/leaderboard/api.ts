@@ -7,6 +7,7 @@ import { DataLeaderboardSpotlight } from '@/types/spotlight'
 import { DataTokenInfoTrade, TokenInfoTradeResponse } from '@/types/token-explorer/token-info-trade'
 import { TokenInfoUnusualBuyResponse } from '@/types/token-explorer/token-info-unusual-buy'
 import { TokenListResponse } from '@/types/tokenList'
+import { TotalScore } from '@/types/total-score'
 import { TopTokenBuyResponse } from '@/types/top-token-buy'
 import { DataTopTokenProfit } from '@/types/top-token-profit'
 import { TopActivityResponse } from '@/types/topActivity'
@@ -372,6 +373,7 @@ export const getSpotlight = ({
   token_addresses,
   ranking,
   badges,
+  action = 'all',
 }: {
   chain: string
   limit: number
@@ -379,6 +381,7 @@ export const getSpotlight = ({
   token_addresses?: string
   ranking?: string
   badges?: string
+  action?: string
 }) => {
   return api.get<SpotlightResp>('/v1/spotlight', {
     params: {
@@ -388,6 +391,7 @@ export const getSpotlight = ({
       token_addresses,
       ranking: ranking === 'all' ? '' : ranking,
       badges: badges === 'all' ? '' : badges,
+      action,
     },
   })
 }
@@ -439,6 +443,14 @@ export const getTokenInfoTrade = ({
       address,
       chain,
       frame: duration,
+    },
+  })
+}
+
+export const getTotalScore = ({ chain }: { chain: string }) => {
+  return api.get<TotalScore>('/v1/total_score', {
+    params: {
+      chain,
     },
   })
 }

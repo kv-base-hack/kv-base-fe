@@ -74,7 +74,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
       <div className="flex flex-col items-center gap-3 xl:flex-row">
         <CardContent
           title="3D Total Earning"
-          content="Total earnings of the top 500 Smartmoney in the last 3 days."
+          content="Total earnings of the top 500 Smart Traders in the last 3 days."
           className="bg-[#B5E4CA]/30"
         >
           {totalEarningQuery.isFetching ? (
@@ -96,7 +96,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
         </CardContent>
         <CardContent
           title="Top Token Holding by Value"
-          content="Top 5 tokens held by Smartmoney ranked by Value Buy in the last 1 day."
+          content="Top 5 tokens held by Smart Traders ranked by Value Buy in the last 1 day."
           className="bg-[#b1e5fc40]"
         >
           <div className="flex items-center gap-1">
@@ -128,7 +128,7 @@ export const SMMoneyOverview = ({ className }: { className?: string }) => {
         </CardContent>
         <CardContent
           title="Top New Token Holding"
-          content="Top 5 newly launched tokens bought by Smartmoney ranked by Value Buy in the last 1 day."
+          content="Top 5 newly launched tokens bought by Smart Traders ranked by Value Buy in the last 1 day."
           className="bg-[#F0ECFD]"
         >
           <div className="flex items-center gap-1">

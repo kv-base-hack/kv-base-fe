@@ -13,7 +13,7 @@ import { FindGemsUnusualCexResponse } from '@/types/find-gems/unusual-cex'
 import { FindGemsWithdrawResponse } from '@/types/find-gems/withdraw'
 import { DataLeaderboard, LeaderboardResponse } from '@/types/leaderboard'
 import { ChannelResponse, ListChannelResponse } from '@/types/listChannel'
-import { NewListingBuyResponse } from '@/types/newListingBuy'
+import { DataNewListingBuy, NewListingBuyResponse } from '@/types/newListingBuy'
 import { PriceWithTransferResponse } from '@/types/priceWithTransfer'
 import { TradingSignalResponse } from '@/types/signal'
 import { SmartMoneyForTokenResponse } from '@/types/smartMoneyForToken'
@@ -351,16 +351,19 @@ export const getSMNewListingBuys = async ({
   duration?: string
   chain: string
   sort_by: string
-}): Promise<NewListingBuyResponse> => {
-  return await api.get('/v1/token/smart_money_new_listing_buy', {
-    params: {
-      limit,
-      duration,
-      start,
-      chain,
-      sort_by,
+}) => {
+  return api.get<DataNewListingBuy>(
+    '/v1/findgems/smart_money_new_listing_buy',
+    {
+      params: {
+        limit,
+        duration,
+        start,
+        chain,
+        sort_by,
+      },
     },
-  })
+  )
 }
 
 export const getFreshWalletUnusualBuy = async ({
@@ -376,7 +379,7 @@ export const getFreshWalletUnusualBuy = async ({
   chain: string
   sort_by: string
 }): Promise<UnusualBuyResponse> => {
-  return await api.get('/v1/findgem/unusual_token_buy', {
+  return await api.get('/v1/findgems/unusual_token_buy', {
     params: {
       limit,
       duration,

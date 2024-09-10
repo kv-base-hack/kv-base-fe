@@ -9,6 +9,7 @@ import { ButtonConnectWallet } from '../ConnectWallet'
 import { useAtomValue } from 'jotai'
 import { chainAtom } from '@/atom/chain'
 import { Suspense } from 'react'
+import { MENU } from '@/constant/menu'
 
 export const Header = ({
   navbarOpen,
@@ -19,21 +20,6 @@ export const Header = ({
 }) => {
   const pathname = usePathname()
   const CHAIN = useAtomValue(chainAtom)
-
-  const MENU = [
-    {
-      url: '/smart-traders',
-      menu: 'Smart Traders',
-    },
-    {
-      url: '/find-gems',
-      menu: 'Find Gems',
-    },
-    {
-      url: '/activity',
-      menu: 'Activity',
-    },
-  ]
 
   return (
     <div className="flex items-center gap-3 bg-header px-4 py-2 max-md:px-5 md:gap-5">
@@ -53,6 +39,7 @@ export const Header = ({
 
       <div className="leading-6max-md:flex-wrap hidden w-full gap-8 px-2 py-1.5 text-base font-medium max-md:px-5 lg:flex lg:justify-center">
         {MENU.map((i) => {
+         
           const isActive = pathname.includes(i.url?.split('?')[0])
           return (
             <MenuItem

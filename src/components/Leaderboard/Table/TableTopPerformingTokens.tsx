@@ -270,7 +270,7 @@ export const TablePerformanceToken = () => {
       <TitleCard
         iconFirst={<IconCoins />}
         title="Smart Traders Top Performing Tokens"
-        content="Top tokens bought by Smartmoney ranked by PnL earned."
+        content="Top tokens bought by Smart Traders ranked by PnL earned."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />

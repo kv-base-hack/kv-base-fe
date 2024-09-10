@@ -1,5 +1,3 @@
-'use client'
-
 import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import { cn } from '@/lib/utils'
@@ -9,10 +7,10 @@ import { useMemo } from 'react'
 import { DataTable } from '.'
 import { TableProps } from '@/types'
 import numeral from 'numeral'
-import { renderPrice } from '@/lib/utils/renderPrice'
 import { UnusualBuy } from '@/types/unusualBuy'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TokenSymbol } from '../TokenSymbol'
+import { TooltipTable } from '../Tooltip/TooltipTable'
+import { TooltipToken } from '../Tooltip/tooltip-token'
 
 export const TableFreshUnusualBuy = ({
   page,
@@ -27,24 +25,29 @@ export const TableFreshUnusualBuy = ({
       {
         accessorKey: 'id',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
-        ),
-        cell: ({ row }) => {
-          return <div>{row.index + 1 + (page - 1) * perPage}</div>
-        },
-        size: 50,
-        enableSorting: false,
-      },
-      {
-        accessorKey: 'symbol',
-        header: () => (
-          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
-            Tokens
+          <div className="text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
+            #
           </div>
         ),
         cell: ({ row }) => {
           return (
-            <div className="w-full">
+            <div className="font-medium">
+              {row.index + 1 + (page - 1) * perPage}
+            </div>
+          )
+        },
+        size: 50,
+      },
+      {
+        accessorKey: 'symbol',
+        header: () => (
+          <div className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
+            Token Name
+          </div>
+        ),
+        cell: ({ row }) => {
+          return (
+            <TooltipToken data={row?.original}>
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
@@ -55,7 +58,9 @@ export const TableFreshUnusualBuy = ({
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
+                      <div className="text-normal max-w-[100px] truncate font-medium text-neutral-300 underline">
+                        {row?.original?.symbol}
+                      </div>
                     </div>
                   </Link>
                 ) : (
@@ -64,83 +69,46 @@ export const TableFreshUnusualBuy = ({
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <TokenSymbol>{row?.original?.symbol}</TokenSymbol>
+                    <div className="text-normal font-medium text-neutral-300 underline">
+                      {row?.original?.symbol}
+                    </div>
                   </div>
                 )}
               </div>
-            </div>
+            </TooltipToken>
           )
         },
-        enableSorting: false,
       },
       {
-        accessorKey: 'total_spent',
+        accessorKey: 'age',
         header: () => (
           <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px] text-neutral-04"
-            onClick={() => setSortBy('total_spent')}
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
+            onClick={() => setSortBy('price_change')}
             role="button"
           >
-            Total Spent
+            Token Age
           </div>
         ),
-        align: 'center',
         cell: ({ row }) => {
-          const { total_spent } = row.original
+          const { token_age } = row.original
           return (
-            <div className="w-full items-center justify-center text-center text-neutral-07">
-              ${nFormatter(total_spent)}
+            <div className="whitespace-nowrap font-medium text-neutral-03">
+              {token_age}
             </div>
           )
         },
-      },
-      {
-        accessorKey: 'pnl',
-        header: () => (
-          <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('pnl')}
-            role="button"
-          >
-            PnL
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { pnl } = row.original
-          return pnl === 0 ? (
-            '-'
-          ) : (
-            <div className={pnl < 0 ? 'text-error-500' : 'text-success-500'}>
-              {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
-                ? numeral(pnl).format('0,0.[000000]')
-                : nFormatter(pnl)}
-              $
-            </div>
-          )
-        },
-      },
-      {
-        accessorKey: 'avg_price',
-        header: () => (
-          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            Avg Price
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { avg_price } = row.original
-          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
-        },
-        enableSorting: false,
+        align: 'start',
       },
       {
         accessorKey: 'price',
         header: () => (
           <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('price_change')}
             role="button"
           >
-            Price %
+            24h%
           </div>
         ),
         cell: ({ row }) => {
@@ -148,27 +116,83 @@ export const TableFreshUnusualBuy = ({
           return price_change_24h ? (
             <div
               className={cn(
-                'flex items-center leading-[140%]',
-                price_change_24h > 0 ? 'text-success-500' : 'text-error-500',
+                'flex items-center font-medium leading-[140%]',
+                price_change_24h > 0 ? 'text-green' : 'text-error-500',
                 price_change_24h === 0 && 'text-neutral-03',
               )}
             >
               {price_change_24h > 0 ? '+' : ''}
-              {price_change_24h.toFixed(2)}%
+              {numeral(price_change_24h).format('0,0.[00]')}%
             </div>
           ) : (
-            <div className="w-full text-center">-</div>
+            '-'
           )
         },
+        align: 'start',
+      },
+
+      {
+        accessorKey: 'buy_volumn',
+        header: () => (
+          <div
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
+            onClick={() => setSortBy('total_spent')}
+            role="button"
+          >
+            Buy Vol
+          </div>
+        ),
+        cell: ({ row }) => {
+          const { total_spent } = row.original
+          return (
+            <div className="w-full items-center justify-start font-medium text-neutral-300">
+              ${nFormatter(total_spent)}
+            </div>
+          )
+        },
+        align: 'start',
+      },
+      {
+        accessorKey: 'pnl',
+        header: () => (
+          <div
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
+            onClick={() => setSortBy('pnl')}
+            role="button"
+          >
+            Profit
+          </div>
+        ),
+        cell: ({ row }) => {
+          const { pnl } = row.original
+          return pnl === 0 ? (
+            '-'
+          ) : (
+            <div
+              className={cn(
+                pnl < 0 ? 'text-error-500' : 'text-green',
+                'font-medium',
+              )}
+            >
+              $
+              {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
+                ? numeral(pnl).format('0,0.[000000]')
+                : nFormatter(pnl)}
+            </div>
+          )
+        },
+        align: 'start',
       },
       {
         accessorKey: 'buyer_count',
         header: () => (
-          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            # of Wallet
+          <div className="flex items-center gap-0.5">
+            <div className="w-full whitespace-nowrap text-center text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
+              # Wallet
+            </div>
+            <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
-        align: 'center',
         cell: ({ row }) => {
           const { number_of_users, address } = row.original
           return (
@@ -180,7 +204,7 @@ export const TableFreshUnusualBuy = ({
             />
           )
         },
-        enableSorting: false,
+        align: 'center',
       },
     ]
   }, [duration, page, perPage, setSortBy])

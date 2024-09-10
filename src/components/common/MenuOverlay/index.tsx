@@ -1,5 +1,6 @@
 import { chainAtom } from '@/atom/chain'
 import Close from '@/components/shared/icons/Close'
+import { MENU } from '@/constant/menu'
 import { cn } from '@/lib/utils'
 import { useAtomValue } from 'jotai'
 import Image from 'next/image'
@@ -16,25 +17,6 @@ const MenuOverlay = ({
   const pathname = usePathname()
   const CHAIN = useAtomValue(chainAtom)
 
-  const MENU = [
-    {
-      url: '/smart-traders',
-      menu: 'Smart Traders',
-    },
-    {
-      url: '/find-gems',
-      menu: 'Find Gems',
-    },
-    {
-      url: '/activity',
-      menu: 'Activity',
-    },
-
-    {
-      url: '/kaichat',
-      menu: 'Kaichat',
-    },
-  ]
   return (
     <nav
       className={`fixed left-0 top-0 !z-[9999] flex h-screen w-screen transform overflow-y-auto bg-neutral-07/50 text-white shadow-lg backdrop-blur-[20px] transition-all delay-100 duration-300 ${

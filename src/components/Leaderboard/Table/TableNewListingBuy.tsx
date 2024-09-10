@@ -157,7 +157,7 @@ export const TableNewListingBuy = ({
       <TitleCard
         iconFirst={<IconTarget />}
         title="ST New Listing Buy"
-        content="List of tokens created less than 14 days ago, bought by Smartmoney, ranked by default according to PnL."
+        content="List of tokens created less than 14 days ago, bought by Smart Traders, ranked by default according to PnL."
       >
         <div className="flex items-center gap-2">
           <SelectDuration duration={duration} setDuration={setDuration} />

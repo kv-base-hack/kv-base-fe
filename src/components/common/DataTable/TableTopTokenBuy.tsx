@@ -1,19 +1,16 @@
-'use client'
-
-import { nFormatter } from '@/lib/utils/nFormatter'
 import { ColumnDef } from '@tanstack/react-table'
 import { cn } from '@/lib/utils'
 import { TopTokenBuy } from '@/types/topTokenBuy'
-import PercentUpIcon from '@/components/shared/icons/PercentUpIcon'
-import PercentDownIcon from '@/components/shared/icons/PercentDownIcon'
-import { formatPriceNumber } from '@/lib/utils/formatPriceNumber'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import Link from 'next/link'
 import { useMemo } from 'react'
 import { DataTable } from '.'
-import { renderPrice } from '@/lib/utils/renderPrice'
 import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TokenSymbol } from '../TokenSymbol'
+import { TooltipTable } from '../Tooltip/TooltipTable'
+import CircularProgress from '../CircularProgress'
+import numeral from 'numeral'
+import { nFormatter } from '@/lib/utils/nFormatter'
+import { TooltipToken } from '../Tooltip/tooltip-token'
 
 export const TableTopTokenBuy = ({
   page,
@@ -35,177 +32,204 @@ export const TableTopTokenBuy = ({
       {
         accessorKey: 'id',
         header: () => (
-          <div className="font-normal leading-6 tracking-[-0.14px]">#</div>
-        ),
-        cell: ({ row }) => {
-          return <div>{row.index + 1 + (page - 1) * perPage}</div>
-        },
-        size: 50,
-        enableSorting: false,
-      },
-      {
-        accessorKey: 'symbol',
-        header: () => (
-          <div className="whitespace-nowrap font-normal leading-6 tracking-[-0.14px]">
-            Tokens
+          <div className="text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
+            #
           </div>
         ),
         cell: ({ row }) => {
           return (
-            <div className="w-full">
+            <div className="font-medium">
+              {row.index + 1 + (page - 1) * perPage}
+            </div>
+          )
+        },
+        size: 50,
+      },
+      {
+        accessorKey: 'symbol',
+        header: () => (
+          <div className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
+            Token Name
+          </div>
+        ),
+        cell: ({ row }) => {
+          return (
+            <TooltipToken data={row?.original} type="hold">
               <div className="flex w-full items-center justify-start">
                 {row?.original?.address ? (
                   <Link
                     href={`/smartmoney-onchain/token-explorer/${row?.original?.address}`}
                   >
-                    <div className="flex w-full items-center justify-start gap-1.5">
+                    <div className="flex w-full items-center justify-start gap-3">
                       <ImageToken
                         imgUrl={row?.original?.image_url}
                         symbol={row?.original?.symbol}
                       />
-                      <TokenSymbol className="text-neutral-03">
+                      <div className="text-normal max-w-[100px] truncate font-medium text-neutral-dark-03 underline">
                         {row?.original?.symbol}
-                      </TokenSymbol>
+                      </div>
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-1.5">
+                  <div className="flex w-full cursor-not-allowed items-center justify-start gap-3">
                     <ImageToken
                       imgUrl={row?.original?.image_url}
                       symbol={row?.original?.symbol}
                     />
-                    <TokenSymbol className="text-neutral-03">
+                    <div className="text-normal font-medium text-neutral-dark-03 underline">
                       {row?.original?.symbol}
-                    </TokenSymbol>
+                    </div>
                   </div>
                 )}
+              </div>
+            </TooltipToken>
+          )
+        },
+        align: 'start',
+      },
+      {
+        accessorKey: 'token_age',
+        header: () => (
+          <div
+            className="whitespace-nowrap"
+            onClick={() => setSortBy('token_age')}
+            role="button"
+          >
+            Token Age
+          </div>
+        ),
+        align: 'age',
+        cell: ({ row }) => {
+          const { token_age } = row.original
+          return (
+            <div className="w-full whitespace-nowrap font-medium text-neutral-300">
+              {token_age}
+            </div>
+          )
+        },
+      },
+      {
+        accessorKey: 'score',
+        header: () => (
+          <div className="flex items-center gap-1">
+            AI Score
+            <TooltipTable type="" />
+          </div>
+        ),
+        enableSorting: false,
+        cell: ({ row }) => {
+          const { score } = row.original
+          return (
+            <div className="relative">
+              <div className="absolute -top-[18px]">
+                <CircularProgress
+                  percentage={parseFloat(
+                    numeral(score.toString()).format('0,0.[00]'),
+                  )}
+                  size={35}
+                  fontSize={10}
+                />
               </div>
             </div>
           )
         },
-        enableSorting: false,
-      },
-      // {
-      //   accessorKey: 'pnl',
-      //   header: () => 'PnL',
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const { pnl } = row.original
-      //     return !pnl || pnl === 0 ? (
-      //       '-'
-      //     ) : (
-      //       <div className={pnl < 0 ? 'text-error-500' : 'text-success-500'}>
-      //         {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
-      //           ? numeral(pnl).format('0,0.[000000]')
-      //           : nFormatter(pnl)}
-      //         $
-      //       </div>
-      //     )
-      //   },
-      // },
-      {
-        accessorKey: 'volume',
-        header: () => (
-          <div
-            className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('volume')}
-            role="button"
-          >
-            Volume
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { volume } = row.original
-          return <div className="text-neutral-07">${nFormatter(volume)}</div>
-        },
-      },
-      {
-        accessorKey: 'balance_change_percent',
-        header: () => (
-          <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('balance_change')}
-            role="button"
-          >
-            Balance Change
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { balance_change_percent } = row.original
-          return balance_change_percent ? (
-            <div
-              className={cn(
-                'flex items-center leading-[140%]',
-                balance_change_percent > 0
-                  ? 'text-success-500'
-                  : 'text-error-500',
-                balance_change_percent === 0 && 'text-neutral-03',
-              )}
-            >
-              {balance_change_percent !== 0 && balance_change_percent > 0 ? (
-                <PercentUpIcon />
-              ) : (
-                <PercentDownIcon />
-              )}
-              {balance_change_percent.toFixed(2)}%
-            </div>
-          ) : (
-            <div className="w-full text-center">-</div>
-          )
-        },
-      },
-      {
-        accessorKey: 'avg_price',
-        header: () => (
-          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            Avg Price
-          </div>
-        ),
-        cell: ({ row }) => {
-          const { avg_price } = row.original
-          return <div className="text-neutral-07">{renderPrice(avg_price)}</div>
-        },
-        enableSorting: false,
       },
       {
         accessorKey: 'price_change',
         header: () => (
           <div
-            className="w-full whitespace-nowrap font-normal leading-6 tracking-[-0.14px]"
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
             onClick={() => setSortBy('price_change')}
             role="button"
           >
-            Price %
+            24h%
           </div>
         ),
         cell: ({ row }) => {
-          const { price_percent_change } = row.original
-          return price_percent_change ? (
+          const { price_percent_change_24h } = row.original
+          return price_percent_change_24h ? (
             <div
               className={cn(
-                'flex items-center leading-[140%]',
-                price_percent_change > 0
-                  ? 'text-success-500'
-                  : 'text-error-500',
-                price_percent_change === 0 && 'text-neutral-03',
+                'flex items-center font-medium leading-[140%]',
+                price_percent_change_24h > 0 ? 'text-green' : 'text-error-500',
+                price_percent_change_24h === 0 && 'text-neutral-300',
               )}
             >
-              {price_percent_change > 0 ? '+' : ''}
-              {price_percent_change.toFixed(2)}%
+              {price_percent_change_24h > 0 ? '+' : ''}
+              {price_percent_change_24h.toFixed(2)}%
             </div>
           ) : (
             <div className="w-full text-center">-</div>
+          )
+        },
+        align: 'start',
+      },
+      {
+        accessorKey: 'total-spent',
+        header: () => (
+          <div
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
+            onClick={() => setSortBy('total_spent')}
+            role="button"
+          >
+            Total Hold
+          </div>
+        ),
+        align: 'start',
+        cell: ({ row }) => {
+          const { hold_in_usdt } = row.original
+          return (
+            <div className="w-full font-medium text-neutral-300">
+              {hold_in_usdt ? `$${nFormatter(hold_in_usdt)}` : '-'}
+            </div>
+          )
+        },
+      },
+      {
+        accessorKey: 'pnl',
+        header: () => (
+          <div
+            className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
+            onClick={() => setSortBy('pnl')}
+            role="button"
+          >
+            Profit
+          </div>
+        ),
+        align: 'start',
+        cell: ({ row }) => {
+          const { users } = row.original
+          return (
+            <div className="font-medium">
+              {!users?.[0]?.pnl || users?.[0]?.pnl === 0 ? (
+                '-'
+              ) : (
+                <div
+                  className={
+                    users?.[0]?.pnl < 0 ? 'text-error-500' : 'text-green'
+                  }
+                >
+                  $
+                  {(users?.[0]?.pnl < 0.001 && users?.[0]?.pnl > 0) ||
+                  (users?.[0]?.pnl > -0.001 && users?.[0]?.pnl < 0)
+                    ? numeral(users?.[0]?.pnl).format('0,0.[000000]')
+                    : nFormatter(users?.[0]?.pnl)}
+                </div>
+              )}
+            </div>
           )
         },
       },
       {
         accessorKey: 'buyer_count',
         header: () => (
-          <div className="w-full whitespace-nowrap text-center font-normal leading-6 tracking-[-0.14px]">
-            # of ST Buy
+          <div className="flex items-center gap-0.5">
+            <div className="w-full whitespace-nowrap text-center text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
+              # ST
+            </div>
+            <TooltipTable type="numberOfSMBuy" />
           </div>
         ),
-        align: 'center',
         cell: ({ row }) => {
           const { number_of_smart_money, address } = row.original
           return (
@@ -213,11 +237,11 @@ export const TableTopTokenBuy = ({
               number={number_of_smart_money}
               address={address}
               type="trade"
-              duration={duration}
+              duration={duration as string}
             />
           )
         },
-        enableSorting: false,
+        align: 'center',
       },
     ]
   }, [duration, page, perPage, setSortBy])
