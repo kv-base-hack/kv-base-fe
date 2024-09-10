@@ -14,20 +14,20 @@ interface FindGemsTabFreshWalletUnusualProps {
 export const FindGemsTabFreshWalletUnusual: React.FC<
   FindGemsTabFreshWalletUnusualProps
 > = ({ tab, searchParams }) => {
-  const currentPage = parseInt(searchParams?.ub_start?.toString() || '1')
-  const currentPerPage = parseInt(searchParams?.ub_limit?.toString() || '10')
+  const currentPage = parseInt(searchParams?.start?.toString() || '1')
+  const currentPerPage = parseInt(searchParams?.limit?.toString() || '10')
   const currentDuration = searchParams?.duration?.toString() || '24h'
-  const currentSortBy = searchParams?.ub_sort?.toString() || ''
+  const currentSortBy = searchParams?.sort?.toString() || ''
 
   const [, setPage] = useQueryState(
-    'ub_start',
+    'start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
     }),
   )
 
-  const [, setSortBy] = useQueryState('ub_sort', {
+  const [, setSortBy] = useQueryState('sort_by', {
     defaultValue: currentSortBy,
     history: 'push',
     shallow: false,

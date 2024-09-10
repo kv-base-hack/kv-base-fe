@@ -15,20 +15,20 @@ export const FindGemsTabTopBuys: React.FC<FindGemsTabTopBuysProps> = ({
   tab,
   searchParams,
 }) => {
-  const currentPage = parseInt(searchParams?.ttb_start?.toString() || '1')
-  const currentPerPage = parseInt(searchParams?.ttb_limit?.toString() || '10')
+  const currentPage = parseInt(searchParams?.start?.toString() || '1')
+  const currentPerPage = parseInt(searchParams?.limit?.toString() || '10')
   const currentDuration = searchParams?.duration?.toString() || '1d'
-  const currentSortBy = searchParams?.ttb_sort?.toString() || ''
+  const currentSortBy = searchParams?.sort_by?.toString() || ''
 
   const [, setPage] = useQueryState(
-    'ttb_start',
+    'start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
     }),
   )
 
-  const [, setSortBy] = useQueryState('ttb_sort', {
+  const [, setSortBy] = useQueryState('sort_by', {
     defaultValue: currentSortBy,
     history: 'push',
     shallow: false,

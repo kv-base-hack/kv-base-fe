@@ -1,58 +1,30 @@
+'use client'
+
 import LastDateIcon from '@/components/shared/icons/wallet-explorer/LastDateIcon'
 import { cn } from '@/lib/utils'
-import upperFirst from 'lodash.upperfirst'
-import Image from 'next/image'
 import moment from 'moment'
 import Link from 'next/link'
-import {
-  IconCart,
-  IconFirstTimeBuy,
-  IconSell,
-  IconTarget,
-  IconUnusualBuy,
-} from '@/components/shared/icons/spotlight'
+import Image from 'next/image'
+import { SpotlightType } from '@/types/activity/spotlight'
 import { ContentSpotlight } from './content-spotlight'
+import { ACTION_SPOTLIGHT } from '@/constant/spotlight-by-ai'
 
-const renderIcon = (action: string) => {
-  switch (action) {
-    case 'buy_more':
-      return <IconCart />
-    case 'new_listing_buy':
-      return <IconTarget />
-    case 'first_time_buy':
-      return <IconFirstTimeBuy />
-    case 'selling':
-      return <IconSell />
-    case 'new_listing_sell':
-      return <IconSell />
-    case 'unusual_buy':
-      return <IconUnusualBuy />
-    default:
-      return <IconCart />
-  }
+
+interface CardSpotlightProps {
+  item: SpotlightType
 }
 
-const renderAction = (action: string) => {
-  switch (action) {
-    case 'unusual_buy':
-      return 'Unusual Buy'
-    case 'new_listing_buy':
-      return 'New Listing Buy'
-    case 'first_time_buy':
-      return 'First Time Buy'
-    case 'buy_more':
-      return 'Buy More'
-    case 'selling':
-      return 'Sell'
-    case 'new_listing_sell':
-      return 'New Listing Sell'
-    default:
-      return upperFirst(action)
-  }
-}
-
-export const CardSpotlight = ({ ...item }) => {
-  const data = item?.item || {}
+export const CardSpotlight = ({ item }: CardSpotlightProps) => {
+  const listActionSell = [
+    'selling',
+    'new_listing_sell',
+    'deposit',
+    'major_sell_off',
+    'sell_all_position',
+    'token_dump',
+    'panic_sell',
+    'withdraw',
+  ]
 
   return (
     <div className="flex w-full flex-col gap-2 rounded-2xl border border-white/10 bg-transparent p-4">
@@ -61,31 +33,33 @@ export const CardSpotlight = ({ ...item }) => {
           <div
             className={cn(
               'flex h-8 w-8 items-center justify-center rounded-full border',
-              data.action === 'selling' || data.action === 'new_listing_sell'
+              listActionSell.includes(item.action)
                 ? 'border-[#F04D1A] text-[#F04D1A]'
                 : 'border-core text-core',
             )}
           >
-            {renderIcon(data.action)}
+            {ACTION_SPOTLIGHT[item.action as keyof typeof ACTION_SPOTLIGHT]
+              ?.icon || ''}
           </div>
           <div>
             <p
               className={cn(
                 'text-sm',
-                data.action === 'selling' || data.action === 'new_listing_sell'
+                listActionSell.includes(item.action)
                   ? 'text-[#F04D1A]'
                   : 'text-core',
               )}
             >
-              {renderAction(data.action)}
+              {ACTION_SPOTLIGHT[item.action as keyof typeof ACTION_SPOTLIGHT]
+                ?.name || ''}
             </p>
             <div className="flex items-center text-xs text-neutral-400">
               <LastDateIcon />
-              <p>{moment(data.block_timestamp).fromNow()}</p>
+              <p>{moment(item.block_timestamp).fromNow()}</p>
             </div>
           </div>
         </div>
-        <Link href={data.scan_link} passHref legacyBehavior>
+        <Link href={item.scan_link} passHref legacyBehavior>
           <a target="_blank">
             <Image
               src={'/images/logoTime.png'}
@@ -96,7 +70,7 @@ export const CardSpotlight = ({ ...item }) => {
           </a>
         </Link>
       </div>
-      <ContentSpotlight item={data} />
+      <ContentSpotlight item={item} />
     </div>
   )
 }

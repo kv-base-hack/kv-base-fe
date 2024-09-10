@@ -53,7 +53,7 @@ export const SpotlightByAI = ({
     shallow: false,
   })
 
-  const [, setBadges] = useQueryState('badge', {
+  const [, setBadges] = useQueryState('badges', {
     defaultValue: currentBadges,
     history: 'push',
     shallow: false,

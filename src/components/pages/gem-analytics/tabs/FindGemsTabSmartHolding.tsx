@@ -14,20 +14,19 @@ interface FindGemsTabSmartHoldingProps {
 export const FindGemsTabSmartHolding: React.FC<
   FindGemsTabSmartHoldingProps
 > = ({ tab, searchParams }) => {
-  const currentPage = parseInt(searchParams?.smh_start?.toString() || '1')
-  const currentPerPage = parseInt(searchParams?.smh_limit?.toString() || '10')
-  const currentDuration = searchParams?.duration?.toString() || '24h'
-  const currentSortBy = searchParams?.smh_sort?.toString() || ''
+  const currentPage = parseInt(searchParams?.start?.toString() || '1')
+  const currentPerPage = parseInt(searchParams?.limit?.toString() || '10')
+  const currentSortBy = searchParams?.sort_by?.toString() || ''
 
   const [, setPage] = useQueryState(
-    'smh_start',
+    'start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
     }),
   )
 
-  const [, setSortBy] = useQueryState('smh_sort', {
+  const [, setSortBy] = useQueryState('sort_by', {
     defaultValue: currentSortBy,
     history: 'push',
     shallow: false,
@@ -52,7 +51,6 @@ export const FindGemsTabSmartHolding: React.FC<
       cex_net_flow_min: filter.minCexNetflow,
       cex_net_flow_max: filter.maxCexNetflow,
       sort_by: currentSortBy,
-      duration: currentDuration,
     }),
   )
   const dataFindGemsTrending = findGemsTrendingQuery.isFetching

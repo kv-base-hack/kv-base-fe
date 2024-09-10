@@ -22,6 +22,7 @@ import { IconBarChart01 } from '@/components/shared/icons/icon-bar-chart-01'
 import { ButtonChooseToken } from '@/components/common/Button/button-choose-token'
 import { SelectRank } from './select/select-ranking'
 import { SelectBadge } from './select/select-badge'
+import { ButtonReset } from '@/components/common/Button/button-reset'
 
 export const WalletAnalysis = ({
   searchParams,
@@ -139,6 +140,14 @@ export const WalletAnalysis = ({
     )
   }
 
+  const handleReset = () => {
+    setSortByLeaderboard(null)
+    setRankingLeaderboard(null)
+    setBadgeLeaderboard(null)
+    setDurationLeaderboard(null)
+    setPageLeaderboard(null)
+  }
+
   return (
     <div className="h-full w-full">
       {/* header */}
@@ -213,7 +222,7 @@ export const WalletAnalysis = ({
               <SelectDurationLeaderboard
                 duration={currentDurationTp}
                 setDuration={setTpDuration}
-                type="option2"
+                type="option3"
               />
             }
             className="flex w-full items-center gap-4 p-6 font-normal"
@@ -275,6 +284,12 @@ export const WalletAnalysis = ({
                 setPage={setPageLeaderboard}
                 type="option3"
               />
+              {currentRankingLeaderboard !== 'all' ||
+              currentBadgesLeaderboard !== 'all' ||
+              currentDurationLeaderboard !== '30d' ||
+              sortByLeaderboard !== '' ? (
+                <ButtonReset onClick={handleReset} />
+              ) : null}
             </div>
           }
         >
@@ -287,7 +302,9 @@ export const WalletAnalysis = ({
                 setSortByLeaderboard,
               )}
               data={dataLeaderboard}
-              isFetching={leaderboardQuery.isFetching || leaderboardQuery.isLoading}
+              isFetching={
+                leaderboardQuery.isFetching || leaderboardQuery.isLoading
+              }
               noneBorder
               noneBgHeader
               emptyData="No results."

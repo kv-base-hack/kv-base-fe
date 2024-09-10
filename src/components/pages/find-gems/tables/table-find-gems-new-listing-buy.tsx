@@ -1,5 +1,6 @@
 import { gemFilterAtom } from '@/atom/gemFilter'
 import { TableFindGemsSMNewListingsBuy } from '@/components/common/DataTable/TableFindGemsSMNewListingsBuy'
+import { CHAIN } from '@/constant/chain'
 import { useFindGemsSMNewListingsBuyQuery } from '@/query/find-gems/getFindGemsSMNewListingsBuy'
 import { useQuery } from '@tanstack/react-query'
 import { useAtom } from 'jotai'
@@ -14,20 +15,20 @@ interface FindGemsTabSMNewListingsBuyProps {
 export const FindGemsTabSMNewListingsBuy: React.FC<
   FindGemsTabSMNewListingsBuyProps
 > = ({ tab, searchParams }) => {
-  const currentPage = parseInt(searchParams?.nlb_start?.toString() || '1')
-  const currentPerPage = parseInt(searchParams?.nlb_limit?.toString() || '10')
+  const currentPage = parseInt(searchParams?.start?.toString() || '1')
+  const currentPerPage = parseInt(searchParams?.limit?.toString() || '10')
   const currentDuration = searchParams?.duration?.toString() || '24h'
-  const currentSortBy = searchParams?.nlb_sort?.toString() || ''
+  const currentSortBy = searchParams?.sort_by?.toString() || ''
 
   const [, setPage] = useQueryState(
-    'nlb_start',
+    'start',
     parseAsInteger.withDefault(currentPage).withOptions({
       history: 'push',
       shallow: false,
     }),
   )
 
-  const [, setSortBy] = useQueryState('nlb_sort', {
+  const [, setSortBy] = useQueryState('sort_by', {
     defaultValue: currentSortBy,
     history: 'push',
     shallow: false,
@@ -40,7 +41,7 @@ export const FindGemsTabSMNewListingsBuy: React.FC<
     useFindGemsSMNewListingsBuyQuery({
       limit: currentPerPage,
       start: currentPage,
-      chain: 'base',
+      chain: CHAIN,
       price_change_24h_min: filter.min24hVolumn,
       price_change_24h_max: filter.max24hVolumn,
       market_cap_min: filter.minMarketcap,

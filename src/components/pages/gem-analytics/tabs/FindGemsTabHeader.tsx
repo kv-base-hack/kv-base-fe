@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 
-import { tabToURLMapping, tabs } from './types'
+import { ActiveTab, tabToURLMapping, tabs } from './types'
 import { cn } from '@/lib/utils'
 import { TooltipCustom } from '@/components/common/Tooltip'
 import InfoIcon from '@/components/shared/icons/dashboard/InfoIcon'
+
 import { SelectDuration } from '@/components/common/Select/SelectDuration'
 import { useQueryState } from 'nuqs'
 import { SelectDurationLeaderboard } from '@/components/common/Select/SelectDuration/select-duration-leaderboard'
 import { findGemsTabHint } from '@/constant/find-gems-tab-hint'
+import { ButtonReset } from '@/components/common/Button/button-reset'
 
 interface FindGemsTabHeaderProps {
   searchParams?: { [key: string]: string | string[] | undefined }
@@ -24,9 +26,22 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
     currentCategory === 'st-new-listing-buys'
       ? '24h'
       : '1d')
+  const currentSortBy = searchParams?.sort_by?.toString() || ''
 
   const [, setDuration] = useQueryState('duration', {
     defaultValue: currentDuration,
+    history: 'push',
+    shallow: false,
+  })
+
+  const [, setSortBy] = useQueryState('sort_by', {
+    defaultValue: searchParams?.sort_by?.toString() || '',
+    history: 'push',
+    shallow: false,
+  })
+
+  const [, setPage] = useQueryState('start', {
+    defaultValue: searchParams?.start?.toString() || '1',
     history: 'push',
     shallow: false,
   })
@@ -44,7 +59,9 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
   }, [currentCategory, setCategory])
 
   const onChangeTab = (value: string) => () => {
-    setDuration('')
+    setDuration(null)
+    setSortBy(null)
+    setPage(null)
     setCategory(value)
   }
 
@@ -71,6 +88,12 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
       default:
         return null
     }
+  }
+
+  const handleReset = () => {
+    setSortBy(null)
+    setPage(null)
+    setDuration(null)
   }
 
   return (
@@ -130,16 +153,15 @@ export const FindGemsTabHeader: React.FC<FindGemsTabHeaderProps> = ({
           )
         })}
       </div>
-      <div className="flex flex-col">
-        <div className="flex items-center gap-2">
-          <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
-            <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-4 text-sm leading-5 tracking-normal text-white">
-              Add Filter
-            </div>
+
+      <div className="flex items-center gap-2">
+        <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px pr-[1.5px] shadow-lg backdrop-blur-[2px]">
+          <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-4 text-sm leading-5 tracking-normal text-white">
+            Add Filter
           </div>
-          {renderDuration(currentCategory)}
         </div>
-        <div className="mt-2 h-px w-full bg-transparent"></div>
+        {renderDuration(currentCategory)}
+        {currentSortBy && <ButtonReset onClick={handleReset} />}
       </div>
     </div>
   )
