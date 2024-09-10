@@ -139,7 +139,7 @@ export const BarChartTopPerformingTokens = ({
               position: 'top',
             }}
             tickFormatter={formatYAxis}
-            tick={{ fill: '#fff', fontSize: '14px' }}
+            tick={{ fill: '#fff', fontSize: '12px' }}
             axisLine={false}
             tickLine={false}
             domain={[0, 40000]}
