@@ -26,8 +26,6 @@ export const CardSignal = ({
   index: number
   className?: string
 }) => {
-  console.log('item', item)
-
   const renderIcon = (type: string) => {
     switch (type) {
       case 'new_listing_buy':

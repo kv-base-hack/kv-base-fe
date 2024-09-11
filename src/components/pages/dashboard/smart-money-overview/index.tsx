@@ -49,7 +49,6 @@ export const SmartMoneyOverview = ({
   const totalScore = totalScoreQuery.data?.total_score || 0
   const onchainScore = totalScoreQuery.data?.onchain_score || 0
   const technicalScore = totalScoreQuery.data?.technical_score || 0
-
   //
 
   return (
@@ -66,7 +65,6 @@ export const SmartMoneyOverview = ({
                   alt="base"
                   width={24}
                   height={24}
-                 
                 />
                 <div>BASE Analysis by AI</div>
               </div>
@@ -105,8 +103,7 @@ export const SmartMoneyOverview = ({
             </div>
           </CardContent>
         </div>
-
-        {/* Top Holding */}
+         {/* Top Holding */}
         <div className="w-full lg:w-1/2">
           <Suspense fallback={<div>loading...</div>}>
             <CardContent title="Top Holding Tokens">

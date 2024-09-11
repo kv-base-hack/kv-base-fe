@@ -11,8 +11,6 @@ import { checkScoreToken } from '@/utils/checkScoreToken'
 import { nFormatter } from '@/utils/nFormatter'
 
 export function TokenInfo({ dataTokenInfo, params }: any) {
-  console.log('dataTokenInfo', dataTokenInfo)
-
   return (
     <WrapTable
       className="relative flex h-[unset] min-w-[430px] items-center gap-4 rounded-[20px] p-6 font-normal"
@@ -50,11 +48,11 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
         <div className="flex items-center gap-2">
           {dataTokenInfo?.websites?.[0] ? (
             <a
-            href={dataTokenInfo?.websites?.[0] || ''}
-            target="_blank"
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
-          >
-            <Link />
+              href={dataTokenInfo?.websites?.[0] || ''}
+              target="_blank"
+              className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
+            >
+              <Link />
             </a>
           ) : (
             <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
@@ -70,17 +68,17 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
               <Discord />
             </a>
           ) : (
-            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]  opacity-10">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
               <Discord />
             </div>
           )}
           {dataTokenInfo?.telegram_handle ? (
             <a
-            href={dataTokenInfo?.telegram_handle || ''}
-            target="_blank"
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
-          >
-            <Telegram />
+              href={dataTokenInfo?.telegram_handle || ''}
+              target="_blank"
+              className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
+            >
+              <Telegram />
             </a>
           ) : (
             <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
@@ -89,12 +87,12 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
           )}
           {dataTokenInfo?.twitter_handle ? (
             <a
-            href={dataTokenInfo?.twitter_handle || ''}
-            target="_blank"
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
-          >
-            <Twitter />
-          </a>
+              href={dataTokenInfo?.twitter_handle || ''}
+              target="_blank"
+              className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827]"
+            >
+              <Twitter />
+            </a>
           ) : (
             <div className="flex h-7 w-7 items-center justify-center rounded-md border border-solid border-gray-800 bg-[#111827] opacity-10">
               <Twitter />

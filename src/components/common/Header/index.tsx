@@ -1,25 +1,25 @@
-import { SelectChain } from '@/components/common/SelectChain'
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { SearchComp } from '../Search'
-import MenuIcon from '@/components/shared/icons/onchain/MenuIcon'
-import { ButtonConnectWallet } from '../ConnectWallet'
-import { useAtomValue } from 'jotai'
-import { chainAtom } from '@/atom/chain'
-import { Suspense } from 'react'
-import { MENU } from '@/constant/menu'
+import { SelectChain } from "@/components/common/SelectChain";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { SearchComp } from "../Search";
+import MenuIcon from "@/components/shared/icons/onchain/MenuIcon";
+import { ButtonConnectWallet } from "../ConnectWallet";
+import { useAtomValue } from "jotai";
+import { chainAtom } from "@/atom/chain";
+import { Suspense } from "react";
+import { MENU } from "@/constant/menu";
 
 export const Header = ({
   navbarOpen,
   setNavbarOpen,
 }: {
-  navbarOpen: boolean
-  setNavbarOpen: (value: boolean) => void
+  navbarOpen: boolean;
+  setNavbarOpen: (value: boolean) => void;
 }) => {
-  const pathname = usePathname()
-  const CHAIN = useAtomValue(chainAtom)
+  const pathname = usePathname();
+  const CHAIN = useAtomValue(chainAtom);
 
   return (
     <div className="flex items-center gap-3 bg-header px-4 py-2 max-md:px-5 md:gap-5">
@@ -39,8 +39,7 @@ export const Header = ({
 
       <div className="leading-6max-md:flex-wrap hidden w-full gap-8 px-2 py-1.5 text-base font-medium max-md:px-5 lg:flex lg:justify-center">
         {MENU.map((i) => {
-         
-          const isActive = pathname.includes(i.url?.split('?')[0])
+          const isActive = pathname.includes(i.url?.split("?")[0]);
           return (
             <MenuItem
               key={i.url}
@@ -48,7 +47,7 @@ export const Header = ({
               menu={i.menu}
               isActive={isActive}
             />
-          )
+          );
         })}
         <SearchComp />
       </div>
@@ -71,27 +70,27 @@ export const Header = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const MenuItem = ({
   menu,
   url,
   isActive,
 }: {
-  menu: string
-  url: string
-  isActive: boolean
+  menu: string;
+  url: string;
+  isActive: boolean;
 }) => {
   return (
     <Link
       href={url}
       className={cn(
-        'my-auto !cursor-pointer self-stretch whitespace-nowrap',
-        isActive ? 'text-core' : 'text-disabled',
+        "my-auto !cursor-pointer self-stretch whitespace-nowrap",
+        isActive ? "text-core" : "text-disabled",
       )}
     >
       {menu}
     </Link>
-  )
-}
+  );
+};

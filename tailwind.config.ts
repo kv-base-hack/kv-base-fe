@@ -29,7 +29,7 @@ const config: Config = {
         'gradient-card-ai':
           'radial-gradient(70.71% 70.71% at 50% 50%, ), rgba(11, 2, 23, 0.10);',
         'conic-gradient-logo':
-          'conic-gradient(from -90deg at 50% 50%, #B7CFFF 0deg, #0355FD 360deg)'
+          'conic-gradient(from -90deg at 50% 50%, #B7CFFF 0deg, #0355FD 360deg)',
       },
       colors: {
         'primary-1': '#E7F177',
@@ -83,8 +83,7 @@ const config: Config = {
           '0px 32px 48px -8px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         tooltip:
           '0px 32px 48px -8px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-        card:
-          '2px 4px 16px 0px rgba(248, 248, 248, 0.06)'
+        card: '2px 4px 16px 0px rgba(248, 248, 248, 0.06)',
       },
       screens: {
         xl: '1440px',

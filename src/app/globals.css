@@ -302,3 +302,15 @@ html {
 .active-tab-gradient {
   background: linear-gradient(80deg, #9945ff 0%, #14f195 100%);
 }
+
+@keyframes fillDots {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

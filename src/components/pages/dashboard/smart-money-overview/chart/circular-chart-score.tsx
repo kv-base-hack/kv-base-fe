@@ -30,9 +30,9 @@ const CircularChartScore = ({
   onchainScore: number
 }) => {
   const radius = size / 2 - dotSize
-  const filledDots = (score: number) => {
-    return Math.floor((score / 100) * numberOfDots)
-  }
+  const filledDots = Math.floor((40 / 100) * numberOfDots)
+  const filledDotsOnChain = Math.floor((onchainScore / 100) * numberOfDots)
+  const filledDotsTechnical = Math.floor((technicalScore / 100) * numberOfDots)
 
   const renderDotsOnchain = () => {
     const dots = []
@@ -48,8 +48,8 @@ const CircularChartScore = ({
           cx={x}
           cy={y}
           r={dotSize / 2}
-          fill={i < filledDots(onchainScore) ? color : colorInactive}
-          filter={i < filledDots(onchainScore) ? 'url(#glow)' : ''}
+          fill={i < filledDotsOnChain ? color : colorInactive}
+          filter={i < filledDotsOnChain ? 'url(#glow)' : ''}
           style={{
             animation: `fillDots 0.005s ease-out forwards`,
             animationDelay: `${i * 0.02}s`,
@@ -75,8 +75,8 @@ const CircularChartScore = ({
           cx={x}
           cy={y}
           r={dotSize / 2}
-          fill={i < filledDots(technicalScore) ? color2 : colorInactive2}
-          filter={i < filledDots(technicalScore) ? 'url(#glow)' : ''}
+          fill={i < filledDotsTechnical ? color2 : colorInactive2}
+          filter={i < filledDotsTechnical ? 'url(#glow)' : ''}
           rotate={25.714}
           style={{
             animation: `fillDots 0.005s ease-out forwards`,

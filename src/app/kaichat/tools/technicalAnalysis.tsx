@@ -81,8 +81,6 @@ export const createTechnicalAnalysisTool: CreateToolFunction = (aiState) => {
           interval,
         )
 
-        console.log('taResp', taResp)
-
         aiState.done({
           chatId: aiState.get().chatId,
           messages: [
