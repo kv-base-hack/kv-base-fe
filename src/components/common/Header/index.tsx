@@ -58,7 +58,7 @@ export const Header = ({
         </div>
       </div>
 
-      <div className="flex items-center gap-4 w-fit">
+      <div className="flex items-center gap-4 w-fit pr-4">
         <div className="flex shrink-0 items-stretch justify-between gap-4">
           <Suspense fallback={<div>Loading...</div>}>
             <SelectChain size="lg" showName={false} />
