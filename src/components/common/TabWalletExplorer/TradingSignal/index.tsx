@@ -90,26 +90,6 @@ export const TradingSignal = ({
         enableSorting: false,
         align: 'start',
       },
-      // {
-      //   accessorKey: 'users',
-      //   header: () => '# of Wallet',
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const { users } = row.original
-      //     return <DialogUsers users={users} />
-      //   },
-      //   align: 'center',
-      // },
-      // {
-      //   accessorKey: 'avg_entry_price',
-      //   header: () => 'Avg Entry',
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const avgPrice = row.original.data.summary.avg_entry_price
-      //     return <div className="text-neutral-300">{renderPrice(avgPrice)}</div>
-      //   },
-      //   align: 'center',
-      // },
       {
         accessorKey: 'entry',
         header: () => 'Entry',
@@ -137,40 +117,6 @@ export const TradingSignal = ({
         },
         align: 'center',
       },
-      // {
-      //   accessorKey: 'net_flow',
-      //   header: () => 'Net Flow',
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const net_flow = row.original.data.summary.net_flow
-      //     return (
-      //       <div className="text-neutral-300">
-      //         {formatPriceNumber(net_flow)}
-      //       </div>
-      //     )
-      //   },
-      //   align: 'center',
-      // },
-      // {
-      //   accessorKey: 'realized',
-      //   header: () => 'Realized %',
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const realized = row.original.data.summary.realized_percent
-      //     return <div className="text-neutral-300">{realized.toFixed(2)}</div>
-      //   },
-      //   align: 'center',
-      // },
-      // {
-      //   accessorKey: 'ai-score',
-      //   header: () => 'AI Score',
-      //   enableSorting: false,
-      //   cell: ({ row }) => {
-      //     const { ai_score } = row.original
-      //     return <div className="text-neutral-300">{ai_score}/100</div>
-      //   },
-      //   align: 'end',
-      // },
       {
         accessorKey: 'view_signal',
         header: () => 'View Signal',
@@ -180,7 +126,7 @@ export const TradingSignal = ({
           return (
             <a
               className="flex w-full items-center justify-center"
-              href="https://app.boltrade.ai/trading-signal"
+              href="/trading-signal"
               target="_blank"
             >
               <ExternalLink className="h-4 w-4 text-neutral-03" />

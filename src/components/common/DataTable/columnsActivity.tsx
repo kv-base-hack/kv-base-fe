@@ -63,12 +63,12 @@ export const columnsActivity = (
       cell: ({ row }) => {
         const { time, scan_link } = row.original
         return (
-          <div className="flex items-center text-xs font-bold text-neutral-04">
+          <div className="flex items-center text-xs font-bold text-neutral-04 gap-2">
             {moment(time).format('MMM DD, HH:mm')}
             <Link href={scan_link} passHref legacyBehavior>
               <a target="_blank">
                 <Image
-                  src={'/images/logoTime.png'}
+                  src={'/images/logo-scan.svg'}
                   alt="time"
                   width={23}
                   height={23}

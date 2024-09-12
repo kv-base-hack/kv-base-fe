@@ -10,9 +10,9 @@ import {
   renderMovementIcon,
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
-import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
 import { ImageToken } from '@/components/common/Image/ImageToken'
 import { ActivityWalletExplorer } from '@/types/wallet-explorer'
+import Image from 'next/image'
 
 export const columnsActivityWalletDetail: ColumnDef<ActivityWalletExplorer>[] = [
   {
@@ -25,7 +25,12 @@ export const columnsActivityWalletDetail: ColumnDef<ActivityWalletExplorer>[] = 
           {moment(tx.time).fromNow()}
           <Link href={scan_link} legacyBehavior passHref>
             <a target="_blank">
-              <TimeAgoIcon />
+              <Image
+                src={'/images/logo-scan.svg'}
+                alt="base-scan"
+                width={20}
+                height={20}
+              />
             </a>
           </Link>
         </div>

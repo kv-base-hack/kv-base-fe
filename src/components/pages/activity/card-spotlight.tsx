@@ -62,10 +62,10 @@ export const CardSpotlight = ({ item }: CardSpotlightProps) => {
         <Link href={item.scan_link} passHref legacyBehavior>
           <a target="_blank">
             <Image
-              src={'/images/logoTime.png'}
+              src={'/images/logo-scan.svg'}
               alt="time"
-              width={23}
-              height={23}
+              width={20}
+              height={20}
             />
           </a>
         </Link>

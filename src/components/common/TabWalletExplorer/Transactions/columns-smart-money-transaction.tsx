@@ -1,4 +1,3 @@
-import { ImageToken } from '@/components/common/Image/ImageToken'
 import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
 import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import { cn } from '@/lib/utils'
@@ -13,8 +12,8 @@ import {
   renderMovementIcon,
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
-import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
 import { TooltipTable } from '../../Tooltip/TooltipTable'
+import Image from 'next/image'
 
 export const columnsSmartMoneyTransaction: ColumnDef<SmartMoneyTx>[] = [
   {
@@ -26,7 +25,12 @@ export const columnsSmartMoneyTransaction: ColumnDef<SmartMoneyTx>[] = [
       return (
         <div className="flex items-center gap-1 text-neutral-04">
           {moment(time).format('MMM DD, HH:mm')}
-          <TimeAgoIcon />
+          <Image
+            src={'/images/logo-scan.svg'}
+            alt="base-scan"
+            width={20}
+            height={20}
+          />
         </div>
       )
     },

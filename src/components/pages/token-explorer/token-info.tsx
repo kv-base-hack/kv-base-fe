@@ -13,7 +13,7 @@ import { nFormatter } from '@/utils/nFormatter'
 export function TokenInfo({ dataTokenInfo, params }: any) {
   return (
     <WrapTable
-      className="relative flex h-[unset] min-w-[430px] items-center gap-4 rounded-[20px] p-6 font-normal"
+      className="relative flex h-[unset] min-w-[430px] w-full items-center gap-4 rounded-[20px] p-6 font-normal"
       title={
         <div className="flex items-center gap-2">
           <ImageToken
@@ -43,7 +43,7 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
         </div>
       }
     >
-      <div className="h-px w-full bg-white/10" />
+      <div className="h-px w-full bg-white/10"/>
       <div className="flex w-full items-center justify-start gap-3">
         <div className="flex items-center gap-2">
           {dataTokenInfo?.websites?.[0] ? (

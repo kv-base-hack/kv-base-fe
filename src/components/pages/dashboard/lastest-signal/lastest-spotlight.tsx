@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useGetSpotlight } from '@/query/leaderboard/getSpotlight'
 import { IconStar } from '@/components/shared/icons/activity/icon-star'
 import { CardSpotlight } from '../../activity/card-spotlight'
+import { CHAIN } from '@/constant/chain'
 
 export const LastestSpotlight = () => {
   const [start] = useState(0)
@@ -16,7 +17,7 @@ export const LastestSpotlight = () => {
 
   const dataSpotlightQuery = useSuspenseQuery(
     useGetSpotlight({
-      chain: 'solana',
+      chain: CHAIN,
       start: 1,
       limit,
     }),

@@ -1,5 +1,4 @@
 import { renderTradingValue } from '@/components/common/Image/ImageTradingValue'
-import SortMultipleIcon from '@/components/shared/icons/SortMultipleIcon'
 import { cn } from '@/lib/utils'
 import { Activity } from '@/types/activitySmartMoneyOfToken'
 import { nFormatter } from '@/lib/utils/nFormatter'
@@ -12,9 +11,9 @@ import {
   renderMovementName,
 } from '@/lib/utils/renderIconMovement'
 import { FilterIcon } from 'lucide-react'
-import TimeAgoIcon from '@/components/shared/icons/TimeAgo'
 import { SmartTradersCell } from '../../Cell/smart-traders'
 import { TooltipTokenMoreInfo } from '../../Tooltip/tool-tip-more-info'
+import Image from 'next/image'
 
 export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
   {
@@ -23,11 +22,16 @@ export const columnsActivitySmartMoneyOfToken: ColumnDef<Activity>[] = [
     cell: ({ row }) => {
       const { time, scan_link } = row.original
       return (
-        <div className="flex items-center gap-1 text-neutral-04">
+        <div className="flex items-center gap-2 text-neutral-04">
           {moment(time).format('MMM DD, HH:mm')}
           <Link href={scan_link} passHref legacyBehavior>
             <a target="_blank">
-              <TimeAgoIcon />
+              <Image
+                src={'/images/logo-scan.svg'}
+                alt="base-scan"
+                width={20}
+                height={20}
+              />
             </a>
           </Link>
         </div>
