@@ -152,7 +152,7 @@ export const WalletAnalysis = ({
     <div className="h-full w-full">
       {/* header */}
       <div className="mx-4 mt-4 flex flex-col gap-2 xl:flex-row">
-        <div className="flex w-1/2 items-center justify-between rounded-[20px] border border-white/10 bg-black/50 py-4 pl-4">
+        <div className="flex w-full xl:w-1/2 items-center justify-between rounded-[20px] border border-white/10 bg-black/50 py-4 pl-4">
           <div className="w-1/2 px-4">
             <div className="flex flex-col gap-2">
               <p className="text-base font-medium text-[#f8f8f8]/95">
@@ -210,7 +210,7 @@ export const WalletAnalysis = ({
             />
           </div>
         </div>
-        <div className="z-10 w-1/2">
+        <div className="z-10  w-full xl:w-1/2">
           <WrapTable
             title="Trading Spotlight"
             icon={

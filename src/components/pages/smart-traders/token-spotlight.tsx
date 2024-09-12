@@ -170,8 +170,8 @@ export const TokenSpotLight = ({
   if (!data) return null
 
   return (
-    <div className="flex h-full w-full flex-col justify-between gap-10 lg:flex-row">
-      <div className="h-[300px] w-full lg:h-full lg:w-1/2">
+    <div className="flex h-full w-full flex-col gap-10 lg:flex-row">
+      <div className="lg:w-1/2">
         <ResponsiveContainer width="100%" height="100%">
           <ChartContainer
             config={chartConfig}
@@ -282,28 +282,28 @@ const CenterLabel = React.memo(
       <tspan
         x={cx}
         y={cy - radius * 0.26}
-        className="fill-light-telegray text-xs font-medium leading-4"
+        className="fill-light-telegray text-[8px] md:text-[10px] xl:text-xs font-medium leading-4"
       >
         Total Hold Value
       </tspan>
       <tspan
         x={cx}
         y={cy - radius * 0.1}
-        className="fill-neutral-100 text-[20px] font-bold leading-[32px]"
+        className="fill-neutral-100 text-xs md:text-base xl:text-[20px] font-bold leading-[32px]"
       >
         ${nFormatter(totalHold || 0)}
       </tspan>
       <tspan
         x={cx}
         y={cy + radius * 0.2}
-        className="fill-[#D0D0DA] text-xs font-medium"
+        className="fill-[#D0D0DA] text-[8px] md:text-[10px] xl:text-xs font-medium"
       >
         Total Profit
       </tspan>
       <tspan
         x={cx}
         y={cy + radius * 0.35}
-        className="fill-green text-lg font-bold"
+        className="fill-green text-[10px] md:text-base xl:text-lg font-bold"
       >
         +${nFormatter(totalProfit || 0)}
       </tspan>

@@ -19,9 +19,7 @@ export interface ActivityWalletExplorer {
     }
     movement: string
     sender: string
-    time: {
-      seconds: number
-    }
+    time: string
     token_address: string
     value_in_token: number
     value_in_usdt: number

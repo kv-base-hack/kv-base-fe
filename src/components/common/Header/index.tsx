@@ -10,6 +10,7 @@ import { useAtomValue } from "jotai";
 import { chainAtom } from "@/atom/chain";
 import { Suspense } from "react";
 import { MENU } from "@/constant/menu";
+import { useWindowSize } from "react-use";
 
 export const Header = ({
   navbarOpen,
@@ -19,25 +20,28 @@ export const Header = ({
   setNavbarOpen: (value: boolean) => void;
 }) => {
   const pathname = usePathname();
+  const { width } = useWindowSize();
   const CHAIN = useAtomValue(chainAtom);
 
   return (
-    <div className="flex items-center gap-3 bg-header px-4 py-2 max-md:px-5 md:gap-5">
-      <Link href="/" className="flex items-center gap-4">
-        <Image
-          loading="lazy"
-          src="/assets/images/logo.svg"
-          className="w-[36px] shrink-0"
-          width={36}
-          height={41}
-          alt="logo"
-        />
-        <p className="font-sora hidden bg-conic-gradient-logo bg-clip-text text-[30px] font-medium leading-10 text-transparent lg:block">
-          KAIVEST
-        </p>
-      </Link>
+    <div className="flex items-center justify-between gap-3 bg-header px-4 py-2 max-md:px-5 md:gap-5">
+      <div>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            loading="lazy"
+            src="/assets/images/logo.svg"
+            className="w-[36px] shrink-0"
+            width={36}
+            height={41}
+            alt="logo"
+          />
+          <p className="font-sora hidden md:block lg:hidden bg-conic-gradient-logo bg-clip-text text-[30px] font-medium leading-10 text-transparent xl:block ">
+            KAIVEST
+          </p>
+        </Link>
+      </div>
 
-      <div className="leading-6max-md:flex-wrap hidden w-full gap-8 px-2 py-1.5 text-base font-medium max-md:px-5 lg:flex lg:justify-center">
+      <div className="leading-6 max-md:flex-wrap hidden w-full gap-5 xl:gap-8 px-0 xl:px-2 py-1.5 text-base font-medium max-md:px-5 lg:flex md:justify-center">
         {MENU.map((i) => {
           const isActive = pathname.includes(i.url?.split("?")[0]);
           return (
@@ -49,20 +53,22 @@ export const Header = ({
             />
           );
         })}
-        <SearchComp />
+        <div className="flex w-1/3 justify-end">
+          <SearchComp />
+        </div>
       </div>
 
-      <div className="flex items-center justify-end gap-4">
+      <div className="flex items-center gap-4 w-fit">
         <div className="flex shrink-0 items-stretch justify-between gap-4">
           <Suspense fallback={<div>Loading...</div>}>
             <SelectChain size="lg" showName={false} />
           </Suspense>
         </div>
-        <ButtonConnectWallet />
+        {width > 1023 && <ButtonConnectWallet />}
         <div className="flex items-center justify-center !rounded-full bg-[#0080FF]">
           <div
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className="flex h-8 w-8 items-center justify-center overflow-visible rounded-full lg:h-10 lg:w-10 xl:hidden"
+            className="flex h-8 w-8 items-center justify-center overflow-visible rounded-full lg:hidden"
             role="button"
           >
             <MenuIcon />

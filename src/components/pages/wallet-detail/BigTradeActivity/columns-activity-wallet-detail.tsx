@@ -22,7 +22,7 @@ export const columnsActivityWalletDetail: ColumnDef<ActivityWalletExplorer>[] = 
       const { tx, scan_link } = row.original
       return (
         <div className="flex items-center gap-1 text-neutral-04">
-          {moment(tx.time.seconds).fromNow()}
+          {moment(tx.time).fromNow()}
           <Link href={scan_link} legacyBehavior passHref>
             <a target="_blank">
               <TimeAgoIcon />
