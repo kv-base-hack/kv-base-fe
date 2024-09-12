@@ -68,15 +68,14 @@ export const TooltipWallet = ({
                       <CopyCustom value={sender} icon={<IconCopyAddress />} />
                     </div>
                     <a
-                      href={`https://solscan.io/account/${sender}`}
+                      href={`https://basescan.org/address/${sender}`}
                       target="_blank"
                     >
                       <Image
                         loading="lazy"
-                        src="/images/scan.webp"
-                        className="h-[23px] w-[23px]"
-                        width={23}
-                        height={23}
+                        src="/images/logo-scan.svg"
+                        width={22}
+                        height={22}
                         alt="scan"
                       />
                     </a>

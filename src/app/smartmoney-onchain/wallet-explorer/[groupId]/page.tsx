@@ -243,6 +243,7 @@ export default function WalletExplorerDetail({
     }
   }
 
+
   return (
     <div className="h-full w-full">
       <div className="mx-4 mt-2 flex flex-col justify-center gap-2 self-stretch md:flex-row md:flex-wrap xl:flex-nowrap">
@@ -266,13 +267,12 @@ export default function WalletExplorerDetail({
                   />
                 </div>
                 <a
-                  href={`https://solscan.io/account/${params.groupId}`}
+                  href={userInfo?.scan_link}
                   target="_blank"
                 >
                   <Image
                     loading="lazy"
-                    src="/images/scan.webp"
-                    className="h-[23px] w-[23px]"
+                    src="/images/logo-scan.svg"
                     width={23}
                     height={23}
                     alt="scan"
