@@ -36,6 +36,7 @@ import IconCopyAddress from '@/components/shared/icons/icon-copy-address'
 import { WalletInfoPieChart } from '@/components/pages/wallet-detail/wallet-infor-pie-chart'
 import IconSpotLight from '@/components/shared/icons/smart-traders/icon-spot-light'
 import { WalletStatChart } from '@/components/pages/wallet-detail/wallet-stat-chart'
+import { DialogWalletAnalysis } from '@/components/pages/wallet-detail/dialog-wallet-analysis'
 
 const TABS = ['Trade Statistic', 'Assets', 'Activity']
 
@@ -243,7 +244,6 @@ export default function WalletExplorerDetail({
     }
   }
 
-
   return (
     <div className="h-full w-full">
       <div className="mx-4 mt-2 flex flex-col justify-center gap-2 self-stretch md:flex-row md:flex-wrap xl:flex-nowrap">
@@ -307,11 +307,7 @@ export default function WalletExplorerDetail({
                 />
               </div>
             ) : null}
-            <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
-              <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-3 text-sm leading-5 tracking-normal text-white">
-                Ask Kai Chat
-              </div>
-            </div>
+            <DialogWalletAnalysis address={params.groupId} />
           </div>
           <div className="flex h-full w-full items-center justify-center">
             <WalletInfoPieChart address={params.groupId} total_balance={userInfo?.total_balance || 0}/>

@@ -34,21 +34,47 @@ const chartConfig = {
     label: 'Electrician',
     color: 'hsl(var(--chart-5))',
   },
+  Idingo: {
+    label: 'Idingo',
+    color: 'hsl(var(--chart-6))',
+  },
+  Amber: {
+    label: 'Amber',
+    color: 'hsl(var(--chart-7))',
+  },
+  DarkOrange: {
+    label: 'DarkOrange',
+    color: 'hsl(var(--chart-8))',
+  },
+  Brown: {
+    label: 'Brown',
+    color: 'hsl(var(--chart-9))',
+  },
+  Pink: {
+    label: 'Pink',
+    color: 'hsl(var(--chart-10))',
+  },
+  LightGreen: {
+    label: 'LightGreen',
+    color: 'hsl(var(--chart-11))',
+  },
 } satisfies ChartConfig
 
 const renderColorChart = (i: number) => {
-  switch (i) {
-    case 0:
-      return 'var(--color-Amethyst)'
-    case 1:
-      return 'var(--color-Azure)'
-    case 2:
-      return 'var(--color-Cyan)'
-    case 3:
-      return 'var(--color-DarkPurple)'
-    case 4:
-      return 'var(--color-Electrician)'
-  }
+  const colors = [
+    'var(--color-Amethyst)',
+    'var(--color-Azure)',
+    'var(--color-Cyan)',
+    'var(--color-Electrician)',
+    'var(--color-DarkPurple)',
+    'var(--color-Idingo)',
+    'var(--color-Amber)',
+    'var(--color-DarkOrange)',
+    'var(--color-Brown)',
+    'var(--color-Pink)',
+    'var(--color-LightGreen)',
+  ]
+  return colors[i] || 'var(--color-Electrician)'
 }
 
 const PieChartX = PieChart as any

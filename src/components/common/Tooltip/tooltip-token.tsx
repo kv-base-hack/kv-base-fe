@@ -26,7 +26,7 @@ export const TooltipToken = ({
       <Tooltip>
         <TooltipTrigger>{children}</TooltipTrigger>
         <TooltipContent
-          className={cn('min-w-[240px] !border-none !p-0', className)}
+          className={cn('min-w-[240px] !border-none !p-0 z-[9999999]', className)}
           side={side}
         >
           <CardInfoTopToken view="token" token={data} type={type} />

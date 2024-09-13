@@ -26,7 +26,7 @@ export const LastestSignal = () => {
   const dataDexTradingSignal = dataDexTradingSignalQuery?.data?.data || []
 
   return (
-    <div className="flex h-full w-full flex-col gap-4 rounded-2xl border border-white/10 bg-black/50 p-6">
+    <div className="flex h-full w-full flex-col gap-4 rounded-2xl border border-white/10 bg-black/50 p-6 z-0">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="rounded-full border border-core p-2">

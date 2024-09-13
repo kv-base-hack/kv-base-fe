@@ -9,6 +9,7 @@ import CopyIcon from '@/components/shared/icons/token-explorer/CopyIcon'
 import { cn } from '@/lib/utils'
 import { checkScoreToken } from '@/utils/checkScoreToken'
 import { nFormatter } from '@/utils/nFormatter'
+import { DialogTokenAnalysis } from './dialog-analysis-token'
 
 export function TokenInfo({ dataTokenInfo, params }: any) {
   return (
@@ -99,11 +100,12 @@ export function TokenInfo({ dataTokenInfo, params }: any) {
             </div>
           )}
         </div>
-        <div className="h-7 rounded-3xl bg-gradient-to-r from-[#9945FF] to-[#14F195] p-px shadow-lg backdrop-blur-[2px]">
-          <div className="flex h-full cursor-pointer items-center justify-center whitespace-nowrap rounded-3xl bg-black px-3 text-sm leading-5 tracking-normal text-white">
-            Ask Kaichat
-          </div>
-        </div>
+        <DialogTokenAnalysis
+          tokenAddress={dataTokenInfo?.token_address}
+          image_url={dataTokenInfo?.image_url}
+          symbol={dataTokenInfo?.symbol}
+          name={dataTokenInfo?.name}
+        />
       </div>
       <div className="flex w-full flex-wrap justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
         <div className="flex w-[90px] flex-1 cursor-pointer flex-col justify-center pb-1.5 pl-4 pr-4 pt-1.5">

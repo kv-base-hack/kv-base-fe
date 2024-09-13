@@ -131,7 +131,7 @@ export const SmartMoneyOverview = ({
                               </Link>
                             </TooltipTrigger>
                             <TooltipContent
-                              className="w-[200px] !border-none !p-0"
+                              className="min-w-[210px] !border-none !p-0"
                               side="bottom"
                             >
                               <CardInfoTopToken

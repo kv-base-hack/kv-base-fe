@@ -64,7 +64,7 @@ export const CardInfoTopToken = ({
   const tokenPrice = current_price || usd_price || price || 0;
 
   return (
-    <div className="relative z-50 overflow-hidden rounded-[20px]">
+    <div className="relative z-50 overflow-hidden rounded-[20px] min-w-[210px]">
       <div className="absolute -z-10 h-full w-full rounded-[20px] bg-black/25 backdrop-blur-md"></div>
       <div className="custom-tooltip flex min-w-[173px] flex-col gap-2 rounded-[20px] border border-solid border-white/10 bg-black/25 p-4 font-sans shadow-tooltip backdrop-blur-md">
         <div className="flex items-center gap-3">

@@ -1,14 +1,15 @@
-import { ImageToken } from '@/components/common/Image/ImageToken'
-import { Leaderboard } from '@/types/leaderboard'
-import { nFormatter } from '@/lib/utils/nFormatter'
-import { ColumnDef } from '@tanstack/react-table'
-import Link from 'next/link'
-import numeral from 'numeral'
-import Image from 'next/image'
-import { ImageRanking } from '../Image/image-ranking'
-import { TooltipWallet } from '../Tooltip/tooltip-wallet'
-import { useMemo } from 'react'
-import moment from 'moment'
+import { ImageToken } from "@/components/common/Image/ImageToken";
+import { Leaderboard } from "@/types/leaderboard";
+import { nFormatter } from "@/lib/utils/nFormatter";
+import { ColumnDef } from "@tanstack/react-table";
+import Link from "next/link";
+import numeral from "numeral";
+import Image from "next/image";
+import { ImageRanking } from "../Image/image-ranking";
+import { TooltipWallet } from "../Tooltip/tooltip-wallet";
+import { useMemo } from "react";
+import moment from "moment";
+import { TooltipToken } from "../Tooltip/tooltip-token";
 
 export const ColumnsLeaderboard = (
   page: number,
@@ -18,16 +19,16 @@ export const ColumnsLeaderboard = (
   const columns: ColumnDef<Leaderboard>[] = useMemo(() => {
     return [
       {
-        accessorKey: 'id',
-        header: () => '#',
+        accessorKey: "id",
+        header: () => "#",
         enableSorting: false,
         cell: ({ row }) => {
-          return <div>{row.index + 1 + (page - 1) * perPage}</div>
+          return <div>{row.index + 1 + (page - 1) * perPage}</div>;
         },
         size: 50,
       },
       {
-        accessorKey: 'smart_money',
+        accessorKey: "smart_money",
         header: () => (
           <div className="flex items-center gap-2">
             <div>Smart Traders</div>
@@ -35,7 +36,7 @@ export const ColumnsLeaderboard = (
         ),
         enableSorting: false,
         cell: ({ row }) => {
-          const { user_address, ranking } = row.original
+          const { user_address, ranking } = row.original;
           return (
             <TooltipWallet data={row.original}>
               <div className="flex items-center gap-1">
@@ -48,17 +49,17 @@ export const ColumnsLeaderboard = (
                 </Link>
               </div>
             </TooltipWallet>
-          )
+          );
         },
       },
       {
-        accessorKey: 'badges',
+        accessorKey: "badges",
         header: () => {
-          return <div>Badges</div>
+          return <div>Badges</div>;
         },
         enableSorting: false,
         cell: ({ row }) => {
-          const { badges } = row.original
+          const { badges } = row.original;
           return (
             <div className="flex gap-1">
               {badges?.map((badge, index) => {
@@ -70,17 +71,17 @@ export const ColumnsLeaderboard = (
                     width={16}
                     height={16}
                   />
-                )
+                );
               })}
             </div>
-          )
+          );
         },
       },
       {
-        accessorKey: 'roi',
+        accessorKey: "roi",
         header: () => (
           <div
-            onClick={() => setSortBy('roi')}
+            onClick={() => setSortBy("roi")}
             className="whitespace-nowrap"
             role="button"
           >
@@ -88,17 +89,17 @@ export const ColumnsLeaderboard = (
           </div>
         ),
         cell: ({ row }) => {
-          const { roi } = row.original
+          const { roi } = row.original;
           return (
-            <div className="text-green">{roi ? `${roi.toFixed(2)}%` : '-'}</div>
-          )
+            <div className="text-green">{roi ? `${roi.toFixed(2)}%` : "-"}</div>
+          );
         },
       },
       {
-        accessorKey: 'net_profit',
+        accessorKey: "net_profit",
         header: () => (
           <div
-            onClick={() => setSortBy('net_profit')}
+            onClick={() => setSortBy("net_profit")}
             className="whitespace-nowrap"
             role="button"
           >
@@ -106,19 +107,19 @@ export const ColumnsLeaderboard = (
           </div>
         ),
         cell: ({ row }) => {
-          const { net_profit } = row.original
+          const { net_profit } = row.original;
           return (
             <div className="text-green">
-              {net_profit ? `$${nFormatter(net_profit)}` : '-'}
+              {net_profit ? `$${nFormatter(net_profit)}` : "-"}
             </div>
-          )
+          );
         },
       },
       {
-        accessorKey: 'win_rate',
+        accessorKey: "win_rate",
         header: () => (
           <div
-            onClick={() => setSortBy('win_rate')}
+            onClick={() => setSortBy("win_rate")}
             className="whitespace-nowrap"
             role="button"
           >
@@ -126,17 +127,17 @@ export const ColumnsLeaderboard = (
           </div>
         ),
         cell: ({ row }) => {
-          const { win_rate_percent } = row.original
+          const { win_rate_percent } = row.original;
           return (
-            <div>{numeral(win_rate_percent).format('0,0.[00]') || '-'}%</div>
-          )
+            <div>{numeral(win_rate_percent).format("0,0.[00]") || "-"}%</div>
+          );
         },
       },
       {
-        accessorKey: 'total_balance',
+        accessorKey: "total_balance",
         header: () => (
           <div
-            onClick={() => setSortBy('total_balance')}
+            onClick={() => setSortBy("total_balance")}
             className="whitespace-nowrap"
             role="button"
           >
@@ -144,34 +145,36 @@ export const ColumnsLeaderboard = (
           </div>
         ),
         cell: ({ row }) => {
-          const { total_balance } = row.original
+          const { total_balance } = row.original;
           return (
-            <div>{total_balance ? `$${nFormatter(total_balance)}` : '-'}</div>
-          )
+            <div>{total_balance ? `$${nFormatter(total_balance)}` : "-"}</div>
+          );
         },
       },
       {
-        accessorKey: 'most_profitable_trade',
+        accessorKey: "most_profitable_trade",
         header: () => {
           return (
             <div className="flex items-center gap-0.5">Most Profitable</div>
-          )
+          );
         },
         enableSorting: false,
         cell: ({ row }) => {
-          const { most_profit_token } = row.original
+          const { most_profit_token } = row.original;
           return most_profit_token?.symbol ? (
             most_profit_token?.token_address ? (
-              <Link
-                href={`/smartmoney-onchain/token-explorer/${most_profit_token?.token_address}`}
-                className="flex items-center justify-between gap-3 text-right"
-              >
-                <ImageToken
-                  imgUrl={most_profit_token?.image_url}
-                  symbol={most_profit_token?.symbol}
-                />
-                <div>{most_profit_token.symbol}</div>
-              </Link>
+              <TooltipToken data={most_profit_token} type="hold" side="bottom">
+                <Link
+                  href={`/smartmoney-onchain/token-explorer/${most_profit_token?.token_address}`}
+                  className="flex items-center justify-between gap-3 text-right"
+                >
+                  <ImageToken
+                    imgUrl={most_profit_token?.image_url}
+                    symbol={most_profit_token?.symbol}
+                  />
+                  <div>{most_profit_token.symbol}</div>
+                </Link>
+              </TooltipToken>
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
@@ -181,27 +184,33 @@ export const ColumnsLeaderboard = (
                 <div>{most_profit_token.symbol}</div>
               </div>
             )
-          ) : null
+          ) : null;
         },
       },
       {
-        accessorKey: 'current_largest_position',
+        accessorKey: "current_largest_position",
         header: () => <div className="w-full text-center">Largest Hold</div>,
         enableSorting: false,
         cell: ({ row }) => {
-          const { current_largest_position } = row.original
+          const { current_largest_position } = row.original;
           return current_largest_position ? (
             current_largest_position?.token_address ? (
-              <Link
-                href={`/smartmoney-onchain/token-explorer/${current_largest_position?.token_address}`}
-                className="flex items-center justify-between gap-3 text-right"
+              <TooltipToken
+                data={current_largest_position}
+                type="hold"
+                side="bottom"
               >
-                <ImageToken
-                  imgUrl={current_largest_position?.image_url}
-                  symbol={current_largest_position?.symbol}
-                />
-                <div>{current_largest_position.symbol}</div>
-              </Link>
+                <Link
+                  href={`/smartmoney-onchain/token-explorer/${current_largest_position?.token_address}`}
+                  className="flex items-center justify-between gap-3 text-right"
+                >
+                  <ImageToken
+                    imgUrl={current_largest_position?.image_url}
+                    symbol={current_largest_position?.symbol}
+                  />
+                  <div>{current_largest_position.symbol}</div>
+                </Link>
+              </TooltipToken>
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
@@ -211,27 +220,29 @@ export const ColumnsLeaderboard = (
                 <div>{current_largest_position.symbol}</div>
               </div>
             )
-          ) : null
+          ) : null;
         },
       },
       {
-        accessorKey: 'most_bought_token_24h',
-        header: () => 'Top Buy 24h',
+        accessorKey: "most_bought_token_24h",
+        header: () => "Top Buy 24h",
         enableSorting: false,
         cell: ({ row }) => {
-          const { most_token_buy } = row.original
+          const { most_token_buy } = row.original;
           return [...Array(1).keys()].map((_, index) => {
             return most_token_buy?.token_address ? (
-              <Link
-                href={`/smartmoney-onchain/token-explorer/${most_token_buy?.token_address}`}
-                className="flex items-center justify-between gap-3 text-right"
-              >
-                <ImageToken
-                  imgUrl={most_token_buy?.image_url}
-                  symbol={most_token_buy?.symbol}
-                />
-                <div>{most_token_buy.symbol}</div>
-              </Link>
+              <TooltipToken data={most_token_buy} type="hold" side="bottom">
+                <Link
+                  href={`/smartmoney-onchain/token-explorer/${most_token_buy?.token_address}`}
+                  className="flex items-center justify-between gap-3 text-right"
+                >
+                  <ImageToken
+                    imgUrl={most_token_buy?.image_url}
+                    symbol={most_token_buy?.symbol}
+                  />
+                  <div>{most_token_buy.symbol}</div>
+                </Link>
+              </TooltipToken>
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
@@ -240,28 +251,34 @@ export const ColumnsLeaderboard = (
                 />
                 <div>{most_token_buy.symbol}</div>
               </div>
-            )
-          })
+            );
+          });
         },
       },
       {
-        accessorKey: 'most_gain_token_24h',
-        header: () => 'Most Gain 24h',
+        accessorKey: "most_gain_token_24h",
+        header: () => "Most Gain 24h",
         enableSorting: false,
         cell: ({ row }) => {
-          const { most_profit_token_24h } = row.original
+          const { most_profit_token_24h } = row.original;
           return most_profit_token_24h ? (
             most_profit_token_24h?.token_address ? (
-              <Link
-                href={`/smartmoney-onchain/token-explorer/${most_profit_token_24h?.token_address}`}
-                className="flex items-center justify-between gap-3 text-right"
+              <TooltipToken
+                data={most_profit_token_24h}
+                type="hold"
+                side="bottom"
               >
-                <ImageToken
-                  imgUrl={most_profit_token_24h?.image_url}
-                  symbol={most_profit_token_24h?.symbol}
-                />
-                <div>{most_profit_token_24h.symbol}</div>
-              </Link>
+                <Link
+                  href={`/smartmoney-onchain/token-explorer/${most_profit_token_24h?.token_address}`}
+                  className="flex items-center justify-between gap-3 text-right"
+                >
+                  <ImageToken
+                    imgUrl={most_profit_token_24h?.image_url}
+                    symbol={most_profit_token_24h?.symbol}
+                  />
+                  <div>{most_profit_token_24h.symbol}</div>
+                </Link>
+              </TooltipToken>
             ) : (
               <div className="flex items-center justify-between gap-3 text-right">
                 <ImageToken
@@ -271,47 +288,52 @@ export const ColumnsLeaderboard = (
                 <div>{most_profit_token_24h.symbol}</div>
               </div>
             )
-          ) : null
+          ) : null;
         },
       },
       {
-        accessorKey: 'token_hold',
-        header: () => 'Tokens Hold',
+        accessorKey: "token_hold",
+        header: () => "Tokens Hold",
         enableSorting: false,
         cell: ({ row }) => {
-          const { token_holds } = row.original
+          const { token_holds } = row.original;
           return token_holds?.map((token, index) => {
             return token?.token_address ? (
-              <Link
-                key={index}
-                href={`/smartmoney-onchain/token-explorer/${token?.token_address}`}
-                className="flex items-center justify-between gap-3 text-right"
-              >
-                <ImageToken imgUrl={token?.image_url} symbol={token?.symbol} />
-              </Link>
+              <TooltipToken data={token} type="hold" side="bottom">
+                <Link
+                  key={index}
+                  href={`/smartmoney-onchain/token-explorer/${token?.token_address}`}
+                  className="relative -ml-1 flex items-center justify-between gap-3 text-right z-0"
+                >
+                  <ImageToken
+                    imgUrl={token?.image_url}
+                    symbol={token?.symbol}
+                  />
+                </Link>
+              </TooltipToken>
             ) : (
               <div
                 key={index}
-                className="flex items-center justify-between gap-3 text-right"
+                className="relative -ml-1 flex items-center justify-between gap-3 text-right z-0"
               >
                 <ImageToken imgUrl={token?.image_url} symbol={token?.symbol} />
               </div>
-            )
-          })
+            );
+          });
         },
       },
       {
-        accessorKey: 'number_of_trades',
+        accessorKey: "number_of_trades",
         header: () => <div className=""># of Trades</div>,
         enableSorting: false,
         cell: ({ row }) => {
-          const { total_trade } = row.original
-          return <div>{total_trade}</div>
+          const { total_trade } = row.original;
+          return <div>{total_trade}</div>;
         },
-        align: 'center',
+        align: "center",
       },
       {
-        accessorKey: 'latest_trade',
+        accessorKey: "latest_trade",
         enableSorting: false,
         header: () => (
           <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap">
@@ -319,16 +341,16 @@ export const ColumnsLeaderboard = (
           </div>
         ),
         cell: ({ row }) => {
-          const { last_trade } = row.original
+          const { last_trade } = row.original;
           return (
             <div className="flex justify-end whitespace-nowrap text-right text-neutral-04">
               {moment(last_trade).fromNow()}
             </div>
-          )
+          );
         },
-        align: 'end',
+        align: "end",
       },
-    ]
-  }, [page, perPage, setSortBy])
-  return columns
-}
+    ];
+  }, [page, perPage, setSortBy]);
+  return columns;
+};
