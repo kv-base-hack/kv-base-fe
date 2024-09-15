@@ -96,7 +96,6 @@ export function UnusualBuyAnalysis({
               address={dataTokenInfoUnusualBuy?.address || params.token || ''}
               type="unusual-buy"
               duration={currentDurationUnusualBuy}
-              className="text-base font-medium text-[#EFEFEF]"
             />
           </div>
           <div className="flex flex-1 flex-col items-end">
