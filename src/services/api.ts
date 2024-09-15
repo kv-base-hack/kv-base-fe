@@ -1475,7 +1475,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           frame: duration,
         },
       })
-    case 'unusual_buy':
+    case 'unusual-buy':
       return api.get('/v1/findgems/unusual_token_buy_users_list', {
         params: {
           chain,
@@ -1485,7 +1485,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           duration,
         },
       })
-    case 'new_listing_buy':
+    case 'new-listing-buy':
       return api.get('/v1/findgems/smart_money_new_listing_buy_users_list', {
         params: {
           chain,
@@ -1532,7 +1532,7 @@ export const getTopSmartMoneyTradeUsersList = ({
           limit,
           start,
           address,
-          duration,
+          frame: duration,
         },
       })
     default:

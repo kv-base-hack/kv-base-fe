@@ -1,21 +1,21 @@
-import { ImageToken } from '../../Image/ImageToken'
-import { renderPrice } from '@/lib/utils/renderPrice'
-import { TokenInfoProps } from '@/types'
-import SkeletonCell from '../../Skeleton/SkeletonCell'
-import Link from 'next/link'
-import { ReactNode } from 'react'
-import { nFormatter } from '@/utils/nFormatter'
-import { DialogNumberOfSmartMoney } from '../../Dialog/DialogNumberOfSmartMoney'
-import Skeleton from '../../Skeleton'
+import { ImageToken } from "../../Image/ImageToken";
+import { renderPrice } from "@/lib/utils/renderPrice";
+import { TokenInfoProps } from "@/types";
+import SkeletonCell from "../../Skeleton/SkeletonCell";
+import Link from "next/link";
+import { ReactNode } from "react";
+import { nFormatter } from "@/utils/nFormatter";
+import { DialogNumberOfSmartMoney } from "../../Dialog/DialogNumberOfSmartMoney";
+import Skeleton from "../../Skeleton";
 
 const MarketInfo = ({
   title,
   loading,
   children,
 }: {
-  title: string
-  loading?: boolean
-  children?: ReactNode
+  title: string;
+  loading?: boolean;
+  children?: ReactNode;
 }) => {
   return (
     <div className="flex flex-col items-center justify-between gap-1">
@@ -24,8 +24,8 @@ const MarketInfo = ({
         {loading ? <SkeletonCell /> : <>{children}</>}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const TokenInfo = ({
   symbol,
@@ -38,8 +38,8 @@ export const TokenInfo = ({
   volume_sell,
   unusual_buy,
 }: TokenInfoProps) => {
-  const percentBuy = (volume_buy * 100) / (volume_buy + volume_sell)
-  const percentSell = (volume_sell * 100) / (volume_buy + volume_sell)
+  const percentBuy = (volume_buy * 100) / (volume_buy + volume_sell);
+  const percentSell = (volume_sell * 100) / (volume_buy + volume_sell);
 
   return (
     <div className="mb-4 flex w-full items-center justify-between rounded-full border border-white/10 bg-[#EFEFEF] px-6 py-3">
@@ -59,18 +59,18 @@ export const TokenInfo = ({
         <MarketInfo title="# ST hold" loading={loading}>
           <DialogNumberOfSmartMoney
             number={number_sm_hold || 0}
-            address={address || ''}
+            address={address || ""}
             type="find-gems-sm-holding"
-            duration={'24h'}
+            duration={"24h"}
           />
         </MarketInfo>
         <div className="h-10 w-px bg-[#E7E9EB]"></div>
         <MarketInfo title="# Unusual buy" loading={loading}>
           <DialogNumberOfSmartMoney
             number={unusual_buy || 0}
-            address={address || ''}
-            type="unusual_buy"
-            duration={'24h'}
+            address={address || ""}
+            type="unusual-buy"
+            duration={"24h"}
           />
         </MarketInfo>
         <div className="h-10 w-px bg-[#E7E9EB]"></div>
@@ -100,7 +100,7 @@ export const TokenInfo = ({
               </div>
             ) : (
               <div
-                style={{ width: percentBuy + '%' }}
+                style={{ width: percentBuy + "%" }}
                 className="h-1 shrink-0 rounded-[100px] bg-lime-300"
               />
             )}
@@ -110,7 +110,7 @@ export const TokenInfo = ({
               </div>
             ) : (
               <div
-                style={{ width: percentSell + '%' }}
+                style={{ width: percentSell + "%" }}
                 className="h-1 shrink-0 rounded-[100px] bg-rose-500"
               />
             )}
@@ -124,5 +124,5 @@ export const TokenInfo = ({
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -50,7 +50,6 @@ export function StAnalysisByAI({
       (dataTokenInfoTrade?.buy_usdt_amount +
         dataTokenInfoTrade?.sell_usdt_amount)
 
-
   return (
     <WrapTable
       title="Smart Traders Analysis by AI"
@@ -71,16 +70,18 @@ export function StAnalysisByAI({
       <div className="h-px w-full bg-white/10" />
       <div className="flex w-full flex-col gap-2">
         <div className="flex w-full flex-wrap items-start justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
-          <div className="flex flex-1  flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="flex items-center text-xs font-normal text-light-telegray">
               Hold Value
               <span className="ml-1">
                 <MoreInfoIcon />
               </span>
             </div>
-           <p className='text-base font-medium text-[#EFEFEF]'>${nFormatter(dataTokenInfoTrade?.hold_in_usdt || 0)}</p>
+            <p className="text-base font-medium text-[#EFEFEF]">
+              ${nFormatter(dataTokenInfoTrade?.hold_in_usdt || 0)}
+            </p>
           </div>
-          <div className="flex flex-1  flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="flex items-center self-start text-xs font-normal text-light-telegray">
               # ST Buy
               <span className="ml-1">
@@ -92,7 +93,6 @@ export function StAnalysisByAI({
               address={dataTokenInfoTrade?.address || params.token || ''}
               type="trade"
               duration={currentDurationTrade}
-              className='text-base font-medium text-[#EFEFEF]'
             />
           </div>
           <div className="flex flex-1 flex-col items-end">
@@ -111,7 +111,7 @@ export function StAnalysisByAI({
             </div>
             <div
               className={cn(
-                'text-base font-medium ',
+                'text-base font-medium',
                 dataTokenInfoTrade && dataTokenInfoTrade?.total_profit < 0
                   ? 'text-red'
                   : dataTokenInfoTrade && dataTokenInfoTrade?.total_profit > 0
@@ -122,7 +122,7 @@ export function StAnalysisByAI({
               {renderPrice(dataTokenInfoTrade?.total_profit || 0)}
             </div>
           </div>
-          <div className="flex flex-1  flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="self-start text-xs font-normal text-light-telegray">
               Avg ROI
             </div>

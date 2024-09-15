@@ -54,7 +54,7 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
                     : '',
               )}
             >
-              {realized_profit > 0 ? '+' : realized_profit < 0 ? '-' : ''}
+              {realized_profit > 0 ? '+' : ''}
               {realized_profit ? `$${nFormatter(realized_profit)}` : '-'}
             </div>
             <div
@@ -67,7 +67,7 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
                     : '',
               )}
             >
-              {realized_percent > 0 ? '+' : realized_percent < 0 ? '-' : ''}
+              {realized_percent > 0 ? '+' : ''}
               {realized_percent ? `${realized_percent?.toFixed(2)}%` : '-'}
             </div>
           </div>
@@ -94,7 +94,7 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
                     : '',
               )}
             >
-              {unrealized_profit > 0 ? '+' : unrealized_profit < 0 ? '-' : ''}
+              {unrealized_profit > 0 ? '+' : ''}
               {unrealized_profit ? `$${nFormatter(unrealized_profit)}` : '-'}
             </div>
             <div
@@ -107,7 +107,7 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
                     : '',
               )}
             >
-              {unrealized_percent > 0 ? '+' : unrealized_percent < 0 ? '-' : ''}
+              {unrealized_percent > 0 ? '+' : ''}
               {unrealized_percent ? `${unrealized_percent?.toFixed(2)}%` : '-'}
             </div>
           </div>
@@ -132,7 +132,7 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
             )}
           >
             <div className="text-sm font-medium">
-              {total_profit > 0 ? '+' : total_profit < 0 ? '-' : ''}
+              {total_profit > 0 ? '+' : ''}
               {total_profit ? `$${nFormatter(total_profit)}` : '-'}
             </div>
             <div className={cn('text-xs', pnl > 0 ? 'text-green' : 'text-red')}>
@@ -183,7 +183,9 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
         const { avg_entry_buy, volume_buy_in_usdt } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">{renderPrice(avg_entry_buy)}</div>
+            <div className="text-sm font-medium">
+              {renderPrice(avg_entry_buy)}
+            </div>
             <div className="text-xs">
               {volume_buy_in_usdt ? `$${nFormatter(volume_buy_in_usdt)}` : '-'}
             </div>
@@ -199,9 +201,13 @@ export const columnsTradeStatisticToken = (setSort: (v: string) => void) => {
         const { avg_price_sell, volume_sell_in_usdt } = row.original
         return (
           <div className="flex flex-col text-start text-neutral-300">
-            <div className="text-sm font-medium">{renderPrice(avg_price_sell)}</div>
+            <div className="text-sm font-medium">
+              {renderPrice(avg_price_sell)}
+            </div>
             <div className="text-xs">
-              {volume_sell_in_usdt ? `$${nFormatter(volume_sell_in_usdt)}` : '-'}
+              {volume_sell_in_usdt
+                ? `$${nFormatter(volume_sell_in_usdt)}`
+                : '-'}
             </div>
           </div>
         )

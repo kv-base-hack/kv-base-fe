@@ -1,17 +1,17 @@
-import { nFormatter } from '@/lib/utils/nFormatter'
-import { ColumnDef } from '@tanstack/react-table'
-import { cn } from '@/lib/utils'
-import { ImageToken } from '@/components/common/Image/ImageToken'
-import Link from 'next/link'
-import { useMemo } from 'react'
-import { DataTable } from '.'
-import { TableProps } from '@/types'
-import { NewListingBuy } from '@/types/newListingBuy'
-import numeral from 'numeral'
-import { DialogNumberOfSmartMoney } from '../Dialog/DialogNumberOfSmartMoney'
-import { TooltipTable } from '../Tooltip/TooltipTable'
-import CircularProgress from '../CircularProgress'
-import { TooltipToken } from '../Tooltip/tooltip-token'
+import { nFormatter } from "@/lib/utils/nFormatter";
+import { ColumnDef } from "@tanstack/react-table";
+import { cn } from "@/lib/utils";
+import { ImageToken } from "@/components/common/Image/ImageToken";
+import Link from "next/link";
+import { useMemo } from "react";
+import { DataTable } from ".";
+import { TableProps } from "@/types";
+import { NewListingBuy } from "@/types/newListingBuy";
+import numeral from "numeral";
+import { DialogNumberOfSmartMoney } from "../Dialog/DialogNumberOfSmartMoney";
+import { TooltipTable } from "../Tooltip/TooltipTable";
+import CircularProgress from "../CircularProgress";
+import { TooltipToken } from "../Tooltip/tooltip-token";
 
 export const TableSMNewListingBuy = ({
   page,
@@ -24,7 +24,7 @@ export const TableSMNewListingBuy = ({
   const columns: ColumnDef<NewListingBuy>[] = useMemo(() => {
     return [
       {
-        accessorKey: 'id',
+        accessorKey: "id",
         header: () => (
           <div className="text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
             #
@@ -35,12 +35,12 @@ export const TableSMNewListingBuy = ({
             <div className="font-medium">
               {row.index + 1 + (page - 1) * perPage}
             </div>
-          )
+          );
         },
         size: 50,
       },
       {
-        accessorKey: 'symbol',
+        accessorKey: "symbol",
         header: () => (
           <div className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
             Token Name
@@ -77,33 +77,33 @@ export const TableSMNewListingBuy = ({
                 )}
               </div>
             </TooltipToken>
-          )
+          );
         },
-        align: 'start',
+        align: "start",
       },
       {
-        accessorKey: 'token_age',
+        accessorKey: "token_age",
         header: () => (
           <div
             className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('token_age')}
+            onClick={() => setSortBy("token_age")}
             role="button"
           >
             Token Age
           </div>
         ),
-        align: 'start',
+        align: "start",
         cell: ({ row }) => {
-          const { token_age } = row.original
+          const { token_age } = row.original;
           return (
             <div className="w-full whitespace-nowrap font-medium text-neutral-300">
               {token_age}
             </div>
-          )
+          );
         },
       },
       {
-        accessorKey: 'score',
+        accessorKey: "score",
         header: () => (
           <div className="flex items-center gap-1">
             AI Score
@@ -112,105 +112,105 @@ export const TableSMNewListingBuy = ({
         ),
         enableSorting: false,
         cell: ({ row }) => {
-          const { score } = row.original
+          const { score } = row.original;
           return (
             <div className="relative">
               <div className="absolute -top-[18px]">
                 <CircularProgress
                   percentage={parseFloat(
-                    numeral(score.toString()).format('0,0.[00]'),
+                    numeral(score.toString()).format("0,0.[00]"),
                   )}
                   size={35}
                   fontSize={10}
                 />
               </div>
             </div>
-          )
+          );
         },
       },
       {
-        accessorKey: 'price',
+        accessorKey: "price",
         header: () => (
           <div
             className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('price_change')}
+            onClick={() => setSortBy("price_change")}
             role="button"
           >
             24h%
           </div>
         ),
         cell: ({ row }) => {
-          const { price_change_24h } = row.original
+          const { price_change_24h } = row.original;
           return price_change_24h ? (
             <div
               className={cn(
-                'flex items-center font-medium leading-[140%]',
-                price_change_24h > 0 ? 'text-green' : 'text-error-500',
-                price_change_24h === 0 && 'text-neutral-300',
+                "flex items-center font-medium leading-[140%]",
+                price_change_24h > 0 ? "text-green" : "text-error-500",
+                price_change_24h === 0 && "text-neutral-300",
               )}
             >
-              {price_change_24h > 0 ? '+' : ''}
+              {price_change_24h > 0 ? "+" : ""}
               {price_change_24h.toFixed(2)}%
             </div>
           ) : (
             <div className="w-full text-center">-</div>
-          )
+          );
         },
-        align: 'start',
+        align: "start",
       },
       {
-        accessorKey: 'total-spent',
+        accessorKey: "total-spent",
         header: () => (
           <div
             className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('total_spent')}
+            onClick={() => setSortBy("total_spent")}
             role="button"
           >
             Total Hold
           </div>
         ),
-        align: 'start',
+        align: "start",
         cell: ({ row }) => {
-          const { hold_in_usdt } = row.original
+          const { hold_in_usdt } = row.original;
           return (
             <div className="w-full font-medium text-neutral-300">
-              {hold_in_usdt ? `$${nFormatter(hold_in_usdt)}` : '-'}
+              {hold_in_usdt ? `$${nFormatter(hold_in_usdt)}` : "-"}
             </div>
-          )
+          );
         },
       },
       {
-        accessorKey: 'pnl',
+        accessorKey: "pnl",
         header: () => (
           <div
             className="whitespace-nowrap text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]"
-            onClick={() => setSortBy('pnl')}
+            onClick={() => setSortBy("pnl")}
             role="button"
           >
             Profit
           </div>
         ),
-        align: 'start',
+        align: "start",
         cell: ({ row }) => {
-          const { pnl } = row.original
+          const { pnl } = row.original;
           return (
             <div className="font-medium">
               {!pnl || pnl === 0 ? (
-                '-'
+                "-"
               ) : (
-                <div className={pnl < 0 ? 'text-error-500' : 'text-green'}>
+                <div className={pnl < 0 ? "text-error-500" : "text-green"}>
                   $
                   {(pnl < 0.001 && pnl > 0) || (pnl > -0.001 && pnl < 0)
-                    ? numeral(pnl).format('0,0.[000000]')
+                    ? numeral(pnl).format("0,0.[000000]")
                     : nFormatter(pnl)}
                 </div>
               )}
             </div>
-          )
+          );
         },
       },
       {
-        accessorKey: 'buyer_count',
+        accessorKey: "buyer_count",
         header: () => (
           <div className="flex items-center gap-0.5">
             <div className="w-full whitespace-nowrap text-center text-[15px] font-medium not-italic leading-6 tracking-[-0.14px]">
@@ -220,20 +220,20 @@ export const TableSMNewListingBuy = ({
           </div>
         ),
         cell: ({ row }) => {
-          const { number_of_smart_money, address } = row.original
+          const { number_of_smart_money, address } = row.original;
           return (
             <DialogNumberOfSmartMoney
               number={number_of_smart_money}
               address={address}
-              type="new_listing_buy"
+              type="new-listing-buy"
               duration={duration as string}
             />
-          )
+          );
         },
-        align: 'center',
+        align: "center",
       },
-    ]
-  }, [duration, page, perPage, setSortBy])
+    ];
+  }, [duration, page, perPage, setSortBy]);
   return (
     <DataTable
       className="bg-neutral-06 bg-neutral-07/50 text-xs font-bold leading-4 tracking-normal text-gray-300"
@@ -244,5 +244,5 @@ export const TableSMNewListingBuy = ({
       noneBgHeader
       emptyData="No results."
     />
-  )
-}
+  );
+};

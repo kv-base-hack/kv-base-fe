@@ -73,7 +73,7 @@ export function UnusualBuyAnalysis({
       <div className="h-px w-full bg-white/10" />
       <div className="flex w-full flex-col gap-2">
         <div className="flex w-full flex-wrap items-start justify-between gap-3 whitespace-nowrap text-center leading-[150%]">
-          <div className="flex flex-1  flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="flex items-center text-xs font-normal text-light-telegray">
               Hold Value
               <span className="ml-1">
@@ -84,7 +84,7 @@ export function UnusualBuyAnalysis({
               ${nFormatter(dataTokenInfoUnusualBuy?.hold_in_usdt || 0)}
             </p>
           </div>
-          <div className="flex flex-1  flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="flex items-center self-start text-xs font-normal text-light-telegray">
               # Wallet Buy
               <span className="ml-1">
@@ -94,16 +94,16 @@ export function UnusualBuyAnalysis({
             <DialogNumberOfSmartMoney
               number={dataTokenInfoUnusualBuy?.number_of_users || 0}
               address={dataTokenInfoUnusualBuy?.address || params.token || ''}
-              type="unusual_buy"
+              type="unusual-buy"
               duration={currentDurationUnusualBuy}
-              className='text-base font-medium text-[#EFEFEF]'
+              className="text-base font-medium text-[#EFEFEF]"
             />
           </div>
-          <div className="flex flex-1  flex-col items-end">
+          <div className="flex flex-1 flex-col items-end">
             <div className="self-endfont-normal text-xs text-light-telegray">
               Avg Entry
             </div>
-            <div className='text-base font-medium text-[#EFEFEF]'>
+            <div className="text-base font-medium text-[#EFEFEF]">
               {renderPrice(dataTokenInfoUnusualBuy?.avg_price || 0)}
             </div>
           </div>
@@ -126,7 +126,7 @@ export function UnusualBuyAnalysis({
               ${nFormatter(dataTokenInfoUnusualBuy?.pnl || 0)}
             </div>
           </div>
-          <div className="flex flex-1  flex-col items-start">
+          <div className="flex flex-1 flex-col items-start">
             <div className="self-start text-xs font-normal text-light-telegray">
               Avg ROI
             </div>
@@ -143,7 +143,7 @@ export function UnusualBuyAnalysis({
               {numeral(dataTokenInfoUnusualBuy?.roi).format('0,0.[00]')}%
             </div>
           </div>
-          <div className="flex flex-1  flex-col items-end">
+          <div className="flex flex-1 flex-col items-end">
             <div className="self-end text-xs font-normal text-light-telegray">
               Realized %
             </div>

@@ -61,7 +61,7 @@ export const TableFindGemsSMNewListingsBuy = ({
                           imgUrl={row?.original?.image_url}
                           symbol={row?.original?.symbol}
                         />
-                        <div className='flex flex-col items-start justify-start'>
+                        <div className="flex flex-col items-start justify-start">
                           <div className="text-normal max-w-[100px] truncate text-neutral-03 underline">
                             {row?.original?.name}
                           </div>
@@ -196,7 +196,7 @@ export const TableFindGemsSMNewListingsBuy = ({
             <div onClick={() => setSort("hold_value")} role="button">
               Hold Value
             </div>
-          )
+          );
         },
         cell: ({ row }) => {
           const { hold_in_usdt } = row.original;
@@ -268,7 +268,7 @@ export const TableFindGemsSMNewListingsBuy = ({
             <DialogNumberOfSmartMoney
               number={number_of_smart_money}
               address={address}
-              type="new_listing_buy"
+              type="new-listing-buy"
               duration={duration as string}
             />
           );

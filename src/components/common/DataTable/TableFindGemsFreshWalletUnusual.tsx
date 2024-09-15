@@ -162,7 +162,7 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: "buy_vol",
         header: () => (
-          <div onClick={() => setSort('buy_vol')} role="button">
+          <div onClick={() => setSort("buy_vol")} role="button">
             Buy Vol
           </div>
         ),
@@ -177,7 +177,7 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: "hold_value",
         header: () => (
-          <div onClick={() => setSort('hold_in_usdt')} role="button">
+          <div onClick={() => setSort("hold_in_usdt")} role="button">
             Hold Value
           </div>
         ),
@@ -221,7 +221,7 @@ export const TableFindGemsFreshWalletUnusual = ({
       {
         accessorKey: "realized",
         header: () => (
-          <div onClick={() => setSort('realized_percent')} role="button">
+          <div onClick={() => setSort("realized_percent")} role="button">
             Realized %
           </div>
         ),
@@ -234,7 +234,7 @@ export const TableFindGemsFreshWalletUnusual = ({
         accessorKey: "buyer_count",
         header: () => (
           <div className="flex items-center gap-0.5">
-            <div onClick={() => setSort('number_of_smart_money')} role="button">
+            <div onClick={() => setSort("number_of_smart_money")} role="button">
               # Wallet
             </div>
             <TooltipTable type="numberOfSMBuy" />
@@ -247,7 +247,7 @@ export const TableFindGemsFreshWalletUnusual = ({
             <DialogNumberOfSmartMoney
               number={number_of_users}
               address={address}
-              type="unusual_buy"
+              type="unusual-buy"
               duration={duration as string}
             />
           );

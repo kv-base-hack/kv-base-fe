@@ -1,6 +1,12 @@
 'use client'
 
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
+import {
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+} from 'recharts'
 
 import {
   ChartConfig,
@@ -32,22 +38,27 @@ export function WalletStatChart({ userInfoChart }: any) {
   }
 
   return (
-    <div className="h-[290px] w-[300px]">
-      <ChartContainer config={chartConfig} className="z-50 aspect-square">
-        <RadarChartX data={chartData}>
-          <ChartTooltip
-            cursor={false}
-            content={<ChartTooltipContent hideLabel />}
-          />
-          <PolarAngleAxis dataKey="month" />
-          <PolarGrid />
-          <Radar
-            dataKey="desktop"
-            fill="var(--color-desktop)"
-            fillOpacity={0.6}
-          />
-        </RadarChartX>
-      </ChartContainer>
+    <div className="h-[300px] w-[320px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer
+          config={chartConfig}
+          className="z-50 ml-2 aspect-square"
+        >
+          <RadarChartX data={chartData}>
+            <ChartTooltip
+              cursor={false}
+              content={<ChartTooltipContent hideLabel />}
+            />
+            <PolarAngleAxis dataKey="month" />
+            <PolarGrid />
+            <Radar
+              dataKey="desktop"
+              fill="var(--color-desktop)"
+              fillOpacity={0.6}
+            />
+          </RadarChartX>
+        </ChartContainer>
+      </ResponsiveContainer>
     </div>
   )
 }
