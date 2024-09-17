@@ -14,7 +14,7 @@ import {
 const options = [
   {
     value: 'shrimp',
-    label: '$5k - $15k',
+    label: '$1k - $15k',
     icon: '🦐',
   },
   {

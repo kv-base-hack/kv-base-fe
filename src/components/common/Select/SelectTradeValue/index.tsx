@@ -8,7 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 const options = [
   {
     value: 'shrimp',
-    label: '$5k - $15k',
+    label: '$1k - $15k',
     icon: '🦐',
   },
   {
