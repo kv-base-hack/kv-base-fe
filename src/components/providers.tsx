@@ -22,21 +22,23 @@ import {
   connectorsForWallets,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit'
-import { getDefaultConfig } from '@rainbow-me/rainbowkit'
-import { mainnet, base } from 'wagmi/chains'
+import { base } from 'wagmi/chains'
 
 import {
   bitgetWallet,
+  coinbaseWallet,
   walletConnectWallet,
 } from '@rainbow-me/rainbowkit/wallets'
 
 const id = '1ebe6fb9116de9c6b95344ccc29e7cec'
 
+coinbaseWallet.preference = 'smartWalletOnly'
+
 const connectors = connectorsForWallets(
   [
     {
       groupName: 'Recommended',
-      wallets: [bitgetWallet, walletConnectWallet],
+      wallets: [coinbaseWallet, bitgetWallet, walletConnectWallet],
     },
   ],
   {
